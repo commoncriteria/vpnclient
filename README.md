@@ -10,7 +10,7 @@ Quickstart
 2. Copy the URL to the projects git file to the clipboard. Run the following script, pasting the value copied into where you see $NEW_REPO_GIT_URL.
 
 ````
-git clone --bare https://github.com/common-criteria/pp-template.git
+git clone --bare https://github.com/commoncriteria/pp-template.git
 # Make a bare clone of the repository
 
 cd pp-template.git
