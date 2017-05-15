@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 
-<PP xmlns="http://common-criteria.rhcloud.com/ns/cc" name="General Purpose Operating System"
+<PP xmlns="http://common-criteria.rhcloud.com/ns/cc" name="Protection Profile QQQQ"
     xmlns:h="http://www.w3.org/1999/xhtml">
   <!-- <inline-comment color='green'> Hello World QQQQ </inline-comment> -->
   <!-- <inline-comment color='blue' linebreak='yes'> Hello World QQQQ </inline-comment> -->
   <PPReference title="PP Reference">
     <ReferenceTable>
       <PPTitle>Protection Profile for QQQQ</PPTitle>
-      <PPVersion>4.0</PPVersion>
+      <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
       <PPPubDate>2015-08-14</PPPubDate>
       <PPCertificationID>unassigned</PPCertificationID>
@@ -25,15 +25,15 @@
     <entry>
       <version>Round 1</version>
       <date>2015-04-23</date>
-      <subject>First draft of version 4.0 for comment</subject>
+      <subject>First draft of version 1.0 for comment</subject>
     </entry>
   </RevisionHistory>
 
   <RevisionHistory role="final">
     <entry>
-      <version>4.0</version>
+      <version>1.0</version>
       <date>2015-08-14</date>
-      <subject>Release - significant revision</subject>
+      <subject>Release - first version released</subject>
     </entry>
   </RevisionHistory>
 
@@ -260,10 +260,13 @@
         <h:b>Iteration</h:b> operation: are identified with a number inside parentheses (e.g.
         "(1)")</h:li>
     </h:ul>
+
     <section title="Security Functional Requirements" id="SFRs">The Security Functional Requirements
       included in this section are derived from Part 2 of the Common Criteria for Information
       Technology Security Evaluation, Version 3.1, Revision 4, with additional extended functional
       components. 
+
+      <!-- Note: Every SFR must have a status = "threshold" or "optional" or "sel-based" or "objective" -->
       <subsection title="QQQQ" id="QQQQ">
         <f-component id="QQQ_QQQ.1" name="QQQQQ" status="threshold">
           <f-element id="QQQ_QQQ.1.1">
@@ -805,6 +808,10 @@
     </section>
   </chapter>
 
+  <!-- 
+       Do NOT put SFRs in this section. All SFR belong up above in SFR section. 
+       To make an SFR optional tag it above as status="optional" 
+  -->
   <appendix title="Optional Requirements" id="optional"> As indicated in <secref linkend="ccl"/>,
     the baseline requirements (those that must be performed by the <abbr linkend="OS"/>) are
     contained in the body of this PP. Additionally, there are three other types of requirements
@@ -820,12 +827,20 @@
       <appref linkend="optional"/>, <appref linkend="sel-based"/>, and <appref linkend="objective"/>
     but are not listed (e.g., FMT-type requirements) are also included in the ST. </appendix>
 
+  <!-- 
+       Do NOT put SFRs in this section. All SFR belong up above in SFR section. 
+       To make an SFR optional tag it above as status="sel-based" 
+  -->
   <appendix title="Selection-Based Requirements" id="sel-based"> As indicated in the introduction to
     this PP, the baseline requirements (those that must be performed by the OS or its underlying
     platform) are contained in the body of this PP. There are additional requirements based on
     selections in the body of the PP: if certain selections are made, then additional requirements
     below will need to be included. </appendix>
 
+  <!-- 
+       Do NOT put SFRs in this section. All SFR belong up above in SFR section. 
+       To make an SFR optional tag it above as status="objective" 
+  -->
   <appendix title="Objective Requirements" id="objective"> This appendix includes requirements that
     specify security functionality which also addresses threats. The requirements are not currently
     mandated in the body of this PP as they describe security functionality not yet widely-available
@@ -927,6 +942,7 @@
 
   </appendix>
 
+  <!-- Remove this section if an Entropy Assessment is not needed -->
   <appendix title="Entropy Documentation and Assessment" id="entropyappendix"> This appendix
     describes the required supplementary information for the entropy source used by the OS. <h:br/>
     The documentation of the entropy source should be detailed enough that, after reading, the

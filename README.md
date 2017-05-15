@@ -41,7 +41,7 @@ git mv input/pp-template.xml input/something.xml
 Some project
 ===============
 
-Protection Profile for QQQQ
+Protection Profile or Extended Package for QQQQ
 
 
 ## Working Draft
@@ -50,7 +50,7 @@ Protection Profile for QQQQ
 [Protection Profile for QQQQ ](http://common-criteria.rhcloud.com/qqq/output/qqqq-release.html)
 
 ## Release Version
-[Protection Profile for QQQQ v4.0](https://www.niap-ccevs.org/) 8/14/3000
+[Protection Profile for QQQQ v4.0](https://www.niap-ccevs.org/)
 
 ## Technical Community
 [How to join the NIAP OS Technical Community (Mailing list and updates)](
