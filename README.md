@@ -33,8 +33,9 @@ If something was the project name it would be,
 ````
 git mv input/pp-template.xml input/something.xml
 ````
+5. If creating a Protection Profile Module rename Module.make to Makefile otherwise rename ProtectionProfile.make to Makefile and delete the other .make file.
 
-5. Remove this content from the readme, up to the line below and customize. 
+6. Remove this content from the readme, up to the line below and customize. 
 
 ----
 
