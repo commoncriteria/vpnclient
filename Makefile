@@ -3,4 +3,4 @@ TRANS?=transforms
 -include User.make
 
 # Include the bulk
-include $(TRANS)/Module.make
+include $(TRANS)/module/Module.make
