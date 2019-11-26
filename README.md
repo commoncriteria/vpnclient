@@ -13,6 +13,9 @@ A list of products that have passed evaluation against this Protection Profile c
 * [Protection Profile for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient-release.html) (html)
 * [Protection Profile for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient-release.pdf) (pdf)
 
+## Combined Module/SD Version
+* [Protection Profile for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient.html) (html)
+
 ## Release Version
 * [Protection Profile for QQQQ](QQQQ)
 
