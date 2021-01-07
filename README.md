@@ -1,23 +1,23 @@
 
-Protection Profile or Extended Package for Virtual Private Network (VPN) Clients
+PP-Module for Virtual Private Network (VPN) Clients
 ===============
 
-This repository hosts the draft version of the Protection Profile for QQQQ based on the 
-[Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/QQQQ/QQQQ-esr.html) for this technology class of 
+This repository hosts the draft version of the PP-Module for Virtual Private Network (VPN) Clients based on the 
+[Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/vpnclient/vpnclient-esr.html) for this technology class of 
 products. This repository is used to facilitate collaboration and development on the draft document. 
 See the [release](#Release-Version) section if you are looking for the officially released version for evaluations. 
 A list of products that have passed evaluation against this Protection Profile can be found [here](QQQQ).
 
 ## Draft Version
 
-* [Protection Profile for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient-release.html) (html)
-* [Protection Profile for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient-release.pdf) (pdf)
+* [PP-Module for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient-release.html) (html)
+* [PP-Module for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient-release.pdf) (pdf)
 
 ## Combined Module/SD Version
-* [Protection Profile for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient.html) (html)
+* [PP-Module for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient.html) (html)
 
 ## Release Version
-* [Protection Profile for QQQQ](QQQQ)
+* [PP-Module for Virtual Private Network (VPN) Clients](VPN Module)
 
 ## Contributing
 
