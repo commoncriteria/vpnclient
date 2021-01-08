@@ -6,9 +6,9 @@
 <Module boilerplate="yes" target-products="Virtual Private Network (VPN) Clients" xmlns="https://niap-ccevs.org/cc/v1" name="Virtual Private Network (VPN) Clients" xmlns:h="http://www.w3.org/1999/xhtml">
   <PPReference>
     <ReferenceTable>
-      <PPVersion>2.1</PPVersion>
+      <PPVersion>2.2</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2019-11-14</PPPubDate>
+      <PPPubDate>2021-01-05</PPPubDate>
       <Keywords>VPN, VPN Client</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -20,15 +20,20 @@
     </entry>
   </RevisionHistory>
 
+  <!-- 1.0 Introduction -->
   <chapter title="Introduction" id="int">
+    
+    <!-- 1.1 Overview -->
     <section title="Overview" id="ppoverview">
       The scope of this PP-Module is to describe the security functionality of a virtual private network (VPN)
-      client in terms of  <cite linkend="bibCC"/> and to define functional and assurance requirements for such products. This PP-Module is intended for use with the following Base-PPs:
+      client in terms of  <cite linkend="bibCC"/> and to define functional and assurance requirements for such
+      products. This PP-Module is intended for use with the following Base-PPs:
 
       <h:ul>
-        <h:li>Protection Profile for General Purpose Operating Systems (OS PP)</h:li>
-        <h:li>Protection Profile for Mobile Device Fundamentals (MD PP)</h:li>
-        <h:li>Protection Profile for Application Software (App PP)</h:li>
+        <h:li>Protection Profile for General Purpose Operating Systems (OS PP), Version 4.2.1</h:li>
+        <h:li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 3.1</h:li>
+        <h:li>Protection Profile for Application Software (App PP), Version 1.3</h:li>
+        <h:li>Protection Profile for Mobile Device Management (MDM PP), Version 4.0</h:li>
       </h:ul>
 
       These Base-PPs are all valid because a VPN client may be a specific type of stand-alone software
@@ -39,6 +44,10 @@
       needed to support the VPN client functionality.
      </section>
 
+    <!-- 1.2 Terms -->
+    <!-- 1.2.1 Common Criteria Terms -->
+      <!-- Boilerplate -->
+    <!-- 1.2.2 Technology Terms  -->
     <tech-terms>
       <term full="Administrator">
         A user that has administrative privilege to configure the TOE in privileged
@@ -126,8 +135,9 @@
       <term abbr="TCP" full="Transmission Control Protocol"/>
       <term abbr="UDP" full="User Datagram Protocol"/>
       <term abbr="VPN" full="Virtual Private Network"/>
-
     </tech-terms>
+    
+    <!-- 1.3 Compliant Targets of Evaluation -->
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       The TOE defined by this PP-Module is the VPN client, a software application that runs on a physical or
       virtual host platform, used to establish a secure IPsec connection between that host platform and a
@@ -145,132 +155,108 @@
       a less trusted (sometimes public) network. All VPN clients that comply with this document will support
       IPsec.<h:p/>
 
-      This PP-Module extends the OS PP when the VPN client is installed on an operating system that is
-      discussed in that PP (e.g., Windows, Mac OS, Linux). This PP-Module extends the MD PP when the VPN
-      client is installed on a self-contained mobile device that is bundled with an operating system (e.g.
-      Android, iOS). This PP-Module extends the App PP when the VPN client
-      is provided by a third party and is a standalone application that is not a bundled part of an operating
-      system or mobile device.<h:p/>
+      This PP-Module extends the GPOS PP when the VPN client is installed on an operating system discussed
+      in that PP (e.g., Windows, Mac OS, Linux). This PP-Module extends the MDF PP when the VPN client is
+      installed on a self-contained mobile device that is bundled with an operating system (e.g. Android,
+      BlackBerry OS, iOS, Windows Mobile). This PP-Module extends the App PP when the VPN client is
+      provided by a third party and is a standalone application that is not a bundled part of an operating
+      system or mobile device. This PP-Module extends the MDM PP when the VPN Client is included with
+      MDM Server software that is used for centralized deployment and administration of enterprise mobile
+      device policies.  <h:p/>
 
       As a PP-Module of any of these PPs, it is expected that the content of this PP-Module and the chosen
-      Base-PP be appropriately combined in the context of each product-specific Security Target. This PP-Module has been specifically defined such that there should be no difficulty or ambiguity in doing so.
+      Base-PP be appropriately combined in the context of each product-specific Security Target. This PPModule has been specifically defined such that there should be no difficulty or ambiguity in doing so.
       When this PP-Module is used, conformant TOEs are obligated to implement the functionality required in
       the claimed Base-PP with the additional functionality defined in this PP-Module in response to the
       threat environment discussed subsequently herein.
 
+      <!-- 1.3.1 TOE Boundary -->
       <subsection title="TOE Boundary" id="TOEboundary">
-        The TOE defined by this PP-Module is purely a software solution executing on a “platform” (some sort of
-        operating system running on hardware). Depending on the Base-PP claimed as part of the TOE, the
-        platform may also be part of the TOE or it may be an environmental component that the TOE vendor has
-        no control over. Regardless of whether the platform itself is within the scope of the evaluation, the VPN
-        client itself will rely on the platform for its execution domain and proper usage. The vendor is expected
-        to provide sufficient installation and configuration instructions to identify an Operational Environment
-        with the necessary features and to provide instructions for how to configure it correctly.<h:p/>
+      The TOE defined by this PP-Module is purely a software solution executing on a platform (some sort of
+      operating system running on hardware). Depending on the Base-PP claimed as part of the TOE, the
+      platform may also be part of the TOE or it may be an environmental component that the TOE vendor has
+      no control over. Regardless of whether the platform itself is within the scope of the evaluation, the VPN
+      client itself will rely on the platform for its execution domain and proper usage. The vendor is expected
+      to provide sufficient installation and configuration instructions to identify an Operational Environment
+      with the necessary features and to provide instructions for how to configure it correctly.<h:p/>
 
-        The PP-Module contains requirements that must be met by the TOE. Depending on the Base-PP that is
-        claimed, there may be some variation in the applicable requirements. This is because a given Base-PP
-        may include one or more requirements that the VPN client can inherit but are not shared amongst each
-        possible Base-PP.<h:p/>
+      The PP-Module contains requirements that must be met by the TOE. Depending on the Base-PP that is
+      claimed, there may be some variation in the applicable requirements. This is because a given Base-PP
+      may include one or more requirements that the VPN client can inherit but are not shared amongst each
+      possible Base-PP.<h:p/>
 
-        This is somewhat different than other PPs, but addresses most implementations of VPN clients where
-        some part of the functionality of the IPsec tunnel is provided by the platform. In terms of the
-        cryptographic primitives (random bit generation, encryption/decryption, key generation, etc.) it is
-        actually desirable that a well-tested implementation in the platform is used rather than trying to
-        implement these functions in each client.<h:p/>
+      This is somewhat different than other PPs, but addresses most implementations of VPN clients where
+      some part of the functionality of the IPsec tunnel is provided by the platform. In terms of the
+      cryptographic primitives (random bit generation, encryption/decryption, key generation, etc.) it is
+      actually desirable that a well-tested implementation in the platform is used rather than trying to
+      implement these functions in each client.<h:p/>
 
-        Requirements that can be satisfied by either the TOE or the platform are identified in Section 5 by text
-        such as “The [selection: TSF, TOE platform] shall…” The ST author will make the appropriate selection
-        based on where that element is implemented. It is allowable for some elements in a component to be
-        implemented by the TOE, while other elements in that same component be implemented by the
-        platform (requirements on the usage of X.509 certificates is an example of where this might be the case,
-        where using the information contained in the certificates and the implementation of revocation
-        checking may be done by the TOE, but storage and protection of the certificates may be done by the
-        platform). Note that in the cases where this PP-Module is used to extend the OS PP or MD PP, “the
-        TOE” includes both the VPN client and the platform. In this case, it is appropriate to indicate that the
-        TOE satisfies this requirement. However, the ST author should make it clear, for each of these
-        components, which are implemented by the VPN client portion of the TOE versus the platform portion.<h:p/>
+      Requirements that can be satisfied by either the TOE or the platform are identified in Section 5 by text
+      such as “The [selection: TSF, TOE platform] shall…” The ST author will make the appropriate selection
+      based on where that element is implemented. It is allowable for some elements in a component to be 
+      implemented by the TOE, while other elements in that same component be implemented by the
+      platform (requirements on the usage of X.509 certificates is an example of where this might be the case,
+      where using the information contained in the certificates and the implementation of revocation
+      checking may be done by the TOE, but storage and protection of the certificates may be done by the
+      platform). Note that in the cases where this PP-Module is used to extend the GPOS PP or MDF PP, the
+      TOE includes both the VPN client and the platform. In this case, it is appropriate to indicate that the TOE
+      satisfies this requirement. However, the ST author should make it clear, for each of these components,
+      which are implemented by the VPN client portion of the TOE versus the platform portion.<h:p/>
 
-        A Supporting Document (SD) accompanies this PP-Module and contains guidance for how to evaluate
-        the requirements defined by the PP-Module, expressed as ‘Evaluation Activities.’ Evaluation Activities
-        will differ based on where the function that meets the requirement is implemented. In most cases,
-        requirements implemented by the platform will require that the evaluator examine documents
-        pertaining to the platform (generally the ST), while requirements implemented by the TOE may require
-        examination of the TSS, examination of the Operational Guidance, and/or execution of evaluator
-        testing. For requirements implemented by the platform there may also be requirements that the
-        evaluator examine the interfaces used by the TOE to access these functions on the platform to ensure
-        that the functionality being invoked to satisfy the requirements of this PP-Module is the same
-        functionality that was evaluated.<h:p/>
+      A Supporting Document (SD) accompanies this PP-Module and contains guidance for how to evaluate
+      the requirements defined by the PP-Module, expressed as Evaluation Activities (EAs). EAs will differ
+      based on where the function that meets the requirement is implemented. In most cases, requirements
+      implemented by the platform will require that the evaluator examine documents pertaining to the
+      platform (generally the ST), while requirements implemented by the TOE may require examination of
+      the TSS, examination of the Operational Guidance, and/or execution of evaluator testing. For
+      requirements implemented by the platform there may also be requirements that the evaluators
+      examine the interfaces used by the TOE to access these functions on the platform to ensure that the
+      functionality being invoked to satisfy the requirements of this PP-Module is the same functionality that
+      was evaluated.<h:p/>
 
-        Given the degree of coupling between a VPN client and its underlying platform, it is expected that the
-        client will be tested on each platform claimed in the ST. In cases where the platforms are simply
-        different versions of the same operating system (provided by the same platform vendor), an equivalency
-        argument may be made in lieu of testing on each version. The argument would have to demonstrate
-        that the client interacts in exactly the same way with the versions of the OS - e.g., same APIs are used
-        with the same parameters, the network stack is modified with exactly the same kernel modules. The
-        evaluator uses the operational guidance to configure the TOE and underlying platform.<h:p/>
+      Given the degree of coupling between a VPN client and its underlying platform, it is expected that the
+      client will be tested on each platform claimed in the ST. In cases where the platforms are simply
+      different versions of the same operating system (provided by the same platform vendor), an equivalency
+      argument may be made in lieu of testing on each version. The argument would have to demonstrate
+      that the client interacts in exactly the same way with the versions of the OS - e.g., same APIs are used
+      with the same parameters, the network stack is modified with exactly the same kernel modules. The
+      evaluator uses the operational guidance to configure the TOE and underlying platform.<h:p/>
 
-        A TOE that conforms to this PP-Module will implement the Internet Engineering Task Force (IETF)
-        Internet Protocol Security (IPsec) Security Architecture for the Internet Protocol, RFC 4301, as well as
-        the IPsec Encapsulating Security Payload (ESP) protocol. IPsec ESP is specified in RFC 2406 and RFC 4303.
-        The IPsec VPN client will support ESP in either tunnel mode, transport mode, or both modes. <h:p/>
+      A TOE that conforms to this PP-Module will implement the Internet Engineering Task Force (IETF)
+      Internet Protocol Security (IPsec) Security Architecture for the Internet Protocol, RFC 4301, as well as
+      the IPsec Encapsulating Security Payload (ESP) protocol. IPsec ESP is specified in RFC 2406 and RFC 4303.
+      The IPsec VPN client will support ESP in either tunnel mode, transport mode, or both modes.  <h:p/>
 
-        The IPsec VPN client will use either the Internet Key Exchange (IKE)v1 protocol as defined in RFCs 2407,
-        2408, 2409, 4109 or the IKEv2 protocol as specified in RFCs 7296 (with mandatory support for NAT
-        traversal as specified in section 2.23), and 4307 to authenticate and establish session keys with the VPN
-        entities.<h:p/>
+      The IPsec VPN client will use the Internet Key Exchange (IKE)v1 protocol, IKEv2, or both. IKEv1 is
+      implemented as defined in RFCs 2407, 2408, 2409, 4109, and IKEv2 is implemented as specified in RFC
+      7296 (with mandatory support for NAT traversal as specified in section 2.23) and 4307 to authenticate
+      and establish session keys with the VPN entities. <h:p/>
 
-        In order to show that the TSF implements the RFCs correctly, the evaluator shall perform Assurance
-        Activities documented in the Supporting Document that accompanies this PP-Module. In future versions
-        of this PP-Module, Evaluation Activities may be augmented, or new ones introduced that cover more
-        aspects of RFC compliance than is currently described in this publication.<h:p/>
+      In order to show that the TSF implements the RFCs correctly, the evaluator will perform EAs
+      documented in the Supporting Document that accompanies this PP-Module. In future versions of this
+      PP-Module, EAs may be augmented, or new ones introduced that cover more aspects of RFC compliance
+      than is currently described in this publication.<h:p/>
 
-        The IPsec VPN client enables encryption of all information that flows between itself and its IPsec peer.
-        The VPN client serves as an endpoint for an IPsec VPN connection and performs a number of
-        cryptographic functions related to establishing and maintaining that connection. If the cryptography
-        used to perform endpoint authentication, generate keys, and encrypt information is sufficiently robust
-        and the implementation has no critical design mistakes, an adversary will be unable to exhaust the
-        encryption key space to obtain the data. Compliance with IPsec standards, use of a properly seeded
-        Random Bit Generator (RBG), and secure authentication factors will ensure that access to the
-        transmitted information cannot be obtained with less work than a full exhaust of the key space. Any
-        plaintext secret and private keys or other cryptographic security parameters will be zeroized when no
-        longer in use to prevent disclosure of security critical data.
-
+      The IPsec VPN client enables encryption of all information that flows between itself and its IPsec peer.
+      The VPN client serves as an endpoint for an IPsec VPN connection and performs a number of
+      cryptographic functions related to establishing and maintaining that connection. If the cryptography
+      used to perform endpoint authentication, generate keys, and encrypt information is sufficiently robust
+      and the implementation has no critical design mistakes, an adversary will be unable to exhaust the
+      encryption key space to obtain the data. Compliance with IPsec standards, use of a properly seeded
+      Random Bit Generator (RBG), and secure authentication factors will ensure that access to the 
+      transmitted information cannot be obtained with less work than a full exhaust of the key space. Any
+      plaintext secret and private keys or other cryptographic security parameters will be zeroized when no
+      longer in use to prevent disclosure of security critical data.
       </subsection>
     </section>
+    
+    <!-- 1.4 Use Cases -->
     <section title="Use Cases" id="usecases">
       A VPN client allows users on the TOE platform to establish secure IPsec communications, providing
       confidentiality, integrity, and protection of data, across a less trusted network in order to secure data in
       transit. This PP-Module defines three use cases for VPN clients. A conformant TOE will implement one or
-      more of the use cases specified below.<h:p/>
-
-      Regardless of the specific usage of the TOE, the focus of the Security Functional Requirements in this PPModule is on the following fundamental aspects of a VPN client:
-      <h:ul>
-        <h:li>Authentication of the IPsec peer</h:li>
-        <h:li>Cryptographic protection of data in transit</h:li>
-        <h:li>Implementation of services</h:li>
-      </h:ul>
-
-      A VPN client can establish VPN connectivity either to a VPN gateway with traffic bound for a remote
-      endpoint in the private network that is protected by the VPN gateway (Use Case 1), to a VPN client peer
-      residing on a remote endpoint in the same network as the TOE (Use Case 2), and/or to a network device
-      with IPsec capability for the purposes of managing that device (Use Case 3). In the first case, the entire
-      IP packet is encapsulated and a new header is applied so that the gateway can route the packet to its
-      intended destination. This is known as tunnel mode. In the latter two cases, the original IP header is
-      preserved and only the payload is encrypted. This is known as transport mode.<h:p/>
-
-      Beyond the implementation differences specified by these use cases, the remaining security
-      functionality is expected to be implemented by all VPN clients, regardless of whether it supports one or
-      more of the use cases. Regardless of the intended use case, VPN endpoints authenticate each other to
-      ensure they are communicating with an authorized external IT entity. Authentication of IPsec peers is
-      performed as part of the Internet Key Exchange (IKE) negotiation. The IKE negotiation uses a pre-existing
-      public key infrastructure for authentication and can optionally use a pre-shared key. When IKE
-      completes, an IPsec tunnel secured with Encapsulating Security Payload (ESP) is established.<h:p/>
-
-      It is assumed that the VPN client is implemented properly and contains no critical design mistakes. The
-      VPN client relies on the system or device on which it is installed for its proper execution. The vendor is
-      required to provide configuration guidance (AGD_PRE, AGD_OPE) to correctly install and administer the
-      client machine and the TOE for every operational environment supported.
-
+      more of the use cases specified below:<h:p/>
+      
       <usecases>
         <usecase id="usecase1" title="TOE to VPN Gateway">
           <description>A VPN client allows users on the TOE platform to establish an encrypted IPsec tunnel across a
@@ -278,7 +264,7 @@
             the TOE provides encryption/decryption of network packets as they leave/arrive the VPN client’s
             underlying platform. IP packets crossing from the private network to the public network will be
             encrypted if their destination is a remote access VPN client supporting the same VPN policy as
-            the source network.<h:p/>
+            the source network. <h:p/>
             The TOE is responsible for encrypting the packets that are intended to be received by the target
             on the private network and then encapsulating these packets in a way that allows the VPN
             gateway to securely receive them and forward them to their final destination.
@@ -296,7 +282,6 @@
               use case, when two peers are communicating directly, is the disclosure of the
               source/destination of the packets. Users should take into consideration any security risks
               associated with this disclosure when architecting their networks in line with this use case.
-
               <figure entity="images/usecase2.png" title="TOE to VPN Client" id="usecase2"/>
             </description>
           </usecase>
@@ -305,51 +290,86 @@
           <description>Similar to Use Case 2 above, a VPN client TOE can also be used to establish a secure connection
             to an IPsec-capable network device using IPsec, similar to how SSH can be used. In this case,
             where a network device is being managed remotely over an IPsec connection, the network
-            device itself must contain IPsec functionality to act as the peer for the connection (see Figure 3).<h:p/>
-
+            device itself must contain IPsec functionality to act as the peer for the connection (see Figure 3).
+            <h:p/>
             While this will behave functionally the same way as the scenario described by Use Case 2, the
             user of the TOE in Use Case 3 is a network administrator who is assumed to have administrative
             access to the network device they are connecting to.
-
             <figure entity="images/usecase3.png" title="TOE to IPsec-capable Network Device" id="usecase3"/>
           </description>
         </usecase>
-
-
       </usecases>
+
+      Regardless of the specific usage of the TOE, the focus of the Security Functional Requirements in this PPModule
+      is on the following fundamental aspects of a VPN client:
+      <h:ul>
+        <h:li>Authentication of the IPsec peer</h:li>
+        <h:li>Cryptographic protection of data in transit</h:li>
+        <h:li>Implementation of services</h:li>
+      </h:ul>
+
+      A VPN client can establish VPN connectivity either to a VPN gateway with traffic bound for a remote
+      endpoint in the private network that is protected by the VPN gateway (Use Case 1), to a VPN client peer
+      residing on a remote endpoint in the same network as the TOE (Use Case 2), and/or to a network device
+      with IPsec capability for the purposes of managing that device (Use Case 3). In the first case, the entire
+      IP packet is encapsulated and a new header is applied so that the gateway can route the packet to its 
+      intended destination. This is known as tunnel mode. In the latter two cases, the original IP header is
+      preserved and only the payload is encrypted. This is known as transport mode.<h:p/>
+
+      Beyond the implementation differences specified by these use cases, the remaining security
+      functionality is expected to be implemented by all VPN clients, regardless of whether it supports one or
+      more of the use cases. Regardless of the intended use case, VPN endpoints authenticate each other to
+      ensure they are communicating with an authorized external IT entity. Authentication of IPsec peers is
+      performed as part of the Internet Key Exchange (IKE) negotiation. The IKE negotiation uses a pre-existing
+      public key infrastructure for authentication and can optionally use a pre-shared key. When IKE
+      completes, an IPsec tunnel secured with Encapsulating Security Payload (ESP) is established.<h:p/>
+
+      It is assumed that the VPN client is implemented properly and contains no critical design mistakes. The
+      VPN client relies on the system or device on which it is installed for its proper execution. The vendor is
+      required to provide configuration guidance (AGD_PRE, AGD_OPE) to correctly install and administer the
+      client machine and the TOE for every operational environment supported.
     </section>
   </chapter>
+  
+  <!-- 2. Conformance Claims -->
   <chapter title="Conformance Claims" id="ConformanceClaims">
+    
+    <!-- 2.1 CC Conformance -->
     <cclaims>
       <cclaim title="Conformance Statement">
-        <description> This PP-Module inherits exact conformance as required from the specified
-          Base-PP and as defined in the CC and CEM addenda for Exact Conformance, Selection-Based
-          SFRs, and Optional SFRs (dated May 2017).<h:br/><h:br/> The following PPs and PP-Modules
-          are allowed to be specified in a PP-Configuration with this PP-Module: <h:ul>
-            <h:li>Protection Profile for General Purpose Operating Systems, Version 4.2.1</h:li>
-            <h:li>Protection Profile for Mobile Device Fundamentals, version 3.1</h:li>
-            <h:li>Protection Profile for Application Software, version 1.3</h:li>
+        <description> This PP-Module inherits exact conformance as required from the specified Base-PPs and as defined
+          in the CC and CEM addenda for Exact Conformance, Selection-Based SFRs, and Optional SFRs (dated
+          May 2017).<h:br/><h:br/> 
+          The following PPs and PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module: <h:ul>
+            <h:li>PP-Module for MDM Agents, Version 1.0</h:li>
+            <h:li>PP-Module for File Encryption Enterprise Management, Version 1.0</h:li>
+            <h:li>PP-Module for File Encryption, Version 2.0</h:li>
           </h:ul>
         </description>
       </cclaim>
       <cclaim title="CC Conformance Claims">
-        <description>This PP-Module is conformant to Parts 2 (extended) and 3 (conformant) of Common
-          Criteria Version 3.1, Release 5 [CC]. </description>
+        <description>This PP-Module is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria Version
+          3.1, Revision 5 [CC] when App PP, GPOS PP, or MDF is the Base-PP. <h:p/>
+          This PP-Module is conformant to Parts 2 (extended) and 3 (conformant) of Common Criteria Version
+          3.1, Revision 5 [CC] when MDM PP is the Base-PP.
+        </description>
       </cclaim>
-      <cclaim title="Package Claims">
-        <description><!-- NIAP: Does this module need to claim any packages? -->
-          <!-- If YES: This PP-Module is <package name> Conformant. --> This PP-Module does not
-          claim conformance to any packages.</description>
+      <cclaim title="PP Claim">
+        <description>This PP-Module does not claim conformance to any Protection Profile.</description>
+      <cclaim title="Package Claim">
+        <description>This PP-Module does not claim conformance to any packages.</description>
       </cclaim>
     </cclaims>
   </chapter>
+    
+  <!-- Security Problem Description -->
   <chapter title="Security Problem Description" id="spd">
     The security problem is described in terms of the threats that the TOE is expected to address,
     assumptions about its operational environment, and any organizational security policies that the TOE is
     expected to enforce.<h:p/>
     This PP-Module is written to address the situation in which a user accesses a private network (e.g. the
     user’s office network) or terminal endpoint (e.g. a network device) using a less trusted network (such as
-    a public Wi-Fi network or local-area network). Protection of network packets is desired as they traverse
+    a public Wi-Fi network or local area network). Protection of network packets is desired as they traverse
     a public network. To protect the data in-transit from disclosure and modification, a VPN is created to
     establish secure communications. The VPN client provides one end of the secure VPN tunnel and
     performs encryption and decryption of network packets in accordance with a VPN security policy
@@ -361,169 +381,88 @@
     Requirements defined in this PP-Module will mitigate the threats that are defined in the PP-Module but
     may also mitigate some threats defined in the Base-PPs in more comprehensive detail due to the
     specific capabilities provided by a VPN client.
+    
+    <!-- 3.1 Threats -->
     <section title="Threats" id="threats">
+      The following threats defined in this PP-Module extend the threats defined by the Base-PPs.
       <threats>
         <threat id="T.UNAUTHORIZED_ACCESS">
-          <description>This PP-Module does not include requirements that can protect against an insider threat.
-            Authorized users are not considered hostile or malicious and are trusted to follow appropriate
-            guidance. Only authorized personnel should have access to the system or device that contains
-            the IPsec VPN client. Therefore, the primary threat agents are the unauthorized entities that try
-            to gain access to the protected network (in cases where tunnel mode is used) or to plaintext
-            data that traverses the public network (regardless of whether transport mode or tunnel mode is
-            used). <h:p/>
-
-            The endpoint of the network communication can be both geographically and logically distant
-            from the TOE, and can pass through a variety of other systems. These intermediate systems may
-            be under the control of the adversary, and offer an opportunity for communications over the
-            network to be compromised.<h:p/>
-
-            Plaintext communication over the network may allow critical data (such as passwords,
-            configuration settings, and user data) to be read and/or manipulated directly by intermediate
-            systems, leading to a compromise of the TOE or to the secured environmental system(s) that the
-            TOE is being used to facilitate communications with. IPsec can be used to provide protection for
-            this communication; however, there are myriad options that can be implemented for the
-            protocol to be compliant to the protocol specification listed in the RFC. Some of these options
-            can have negative impacts on the security of the connection. For instance, using a weak
-            encryption algorithm (even one that is allowed by the RFC, such as DES) can allow an adversary
-            to read and even manipulate the data on the encrypted channel, thus circumventing
-            countermeasures in place to prevent such attacks. Further, if the protocol is implemented with
-            little-used or non-standard options, it may be compliant with the protocol specification but will
-            not be able to interact with other, diverse equipment that is typically found in large enterprises.<h:p/>
-
-            Even though the communication path is protected, there is a possibility that the IPsec peer
-            could be duped into thinking that a malicious third-party user or system is the TOE. For instance,
-            a middleman could intercept a connection request to the TOE, and respond to the request as if
-            it were the TOE. In a similar manner, the TOE could also be duped into thinking that it is
-            establishing communications with a legitimate IPsec peer when in fact it is not. An attacker
-            could also mount a malicious man-in-the-middle-type of attack, in which an intermediate
-            system is compromised, and the traffic is proxied, examined, and modified by this system. This
-            attack can even be mounted via encrypted communication channels if appropriate
-            countermeasures are not applied. These attacks are, in part, enabled by a malicious attacker
-            capturing network traffic (for instance, an authentication session) and “playing back” that traffic
-            in order to fool an endpoint into thinking it was communicating with a legitimate remote entity.</description>
-          <objective-refer ref="O.PLACEHOLDER">
-            <rationale>PLACEHOLDER</rationale>
+          <description>This PP-Module does not include requirements that can protect against an insider threat. Authorized
+            users are not considered hostile or malicious and are trusted to follow appropriate guidance. Only
+            authorized personnel should have access to the system or device that contains the IPsec VPN client.
+            Therefore, the primary threat agents are the unauthorized entities that try to gain access to the
+            protected network (in cases where tunnel mode is used) or to plaintext data that traverses the
+            public network (regardless of whether transport mode or tunnel mode is used). <h:p/>
+            The endpoint of the network communication can be both geographically and logically distant from
+            the TOE, and can pass through a variety of other systems. These intermediate systems may be under
+            the control of the adversary, and offer an opportunity for communications over the network to be
+            compromised. <h:p/>
+            Plaintext communication over the network may allow critical data (such as passwords, configuration
+            settings, and user data) to be read and/or manipulated directly by intermediate systems, leading to
+            a compromise of the TOE or to the secured environmental system(s) that the TOE is being used to
+            facilitate communications with. IPsec can be used to provide protection for this communication;
+            however, there are myriad options that can be implemented for the protocol to be compliant to the
+            protocol specification listed in the RFC. Some of these options can have negative impacts on the
+            security of the connection. For instance, using a weak encryption algorithm (even one that is
+            allowed by the RFC, such as DES) can allow an adversary to read and even manipulate the data on
+            the encrypted channel, thus circumventing countermeasures in place to prevent such attacks.
+            Further, if the protocol is implemented with little-used or non-standard options, it may be compliant 
+            with the protocol specification but will not be able to interact with other, diverse equipment that is
+            typically found in large enterprises. <h:p/>
+            Even though the communication path is protected, there is a possibility that the IPsec peer could be
+            duped into thinking that a malicious third-party user or system is the TOE. For instance, a
+            middleman could intercept a connection request to the TOE, and respond to the request as if it were
+            the TOE. In a similar manner, the TOE could also be duped into thinking that it is establishing
+            communications with a legitimate IPsec peer when in fact it is not. An attacker could also mount a
+            malicious man-in-the-middle-type of attack, in which an intermediate system is compromised, and
+            the traffic is proxied, examined, and modified by this system. This attack can even be mounted via
+            encrypted communication channels if appropriate countermeasures are not applied. These attacks
+            are, in part, enabled by a malicious attacker capturing network traffic (for instance, an
+            authentication session) and “playing back” that traffic in order to fool an endpoint into thinking it
+            was communicating with a legitimate remote entity.</description>
+          <objective-refer ref="O.AUTHENTICATION">
+            <rationale>The TOE mitigates the threat of unauthorized access by requiring IPsec
+              communications to be properly authenticated.
+            </rationale>
           </objective-refer>
-
-          <!--
-          <objective-refer ref="O.SYSTEM_MONITORING">
-            <rationale>The threat T.Unauthorized_Disclosure_of_Information is countered by
-              O.SYSTEM_MONITORING as this provides for visibility into the network which enables
-              detection of network violations.</rationale>
+          <objective-refer ref="O.CRYPTOGRAPHIC_FUNCTIONS">
+            <rationale>The TOE mitigates the threat of unauthorized access by implementing IPsec
+              using strong cryptographic algorithms.
+            </rationale>
           </objective-refer>
-          <objective-refer ref="O.WIDS_ANALYZE">
-            <rationale>The threat T.Unauthorized_Disclosure_of_Information is countered by
-              O.WIDS_ANALYZE as this provides detection of potential violations of approved network
-              usage.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.WIPS_REACT">
-            <rationale>The threat T.Unauthorized_Disclosure_of_Information is countered by
-              O.WIPS_REACT as this provides containment of unauthorized APs and EUDs.</rationale>
-          </objective-refer>    -->
         </threat>
+
         <threat id="T.TSF_CONFIGURATION">
           <description> Configuring VPN tunnels is a complex and time-consuming process, and prone to errors if the
-            interface for doing so is not well-specified or well-behaved. The inability to configure certain
-            aspects of the interface may also lead to the mis-specification of the desired communications
-            policy or use of cryptography that may be desired or required for a particular site. This may
-            result in unintended weak or plaintext communications while the user thinks that their data are
-            being protected. Other aspects of configuring the TOE or using its security mechanisms (for
-            example, the update process) may also result in a reduction in the trustworthiness of the VPN
-            client.</description>
-          <objective-refer ref="O.PLACEHOLDER">
-            <rationale>PLACEHOLDER</rationale>
+            interface for doing so is not well-specified or well-behaved. The inability to configure certain aspects
+            of the interface may also lead to the mis-specification of the desired communications policy or use
+            of cryptography that may be desired or required for a particular site. This may result in unintended
+            weak or plaintext communications while the user thinks that their data are being protected. Other
+            aspects of configuring the TOE or using its security mechanisms (for example, the update process)
+            may also result in a reduction in the trustworthiness of the VPN client.</description>
+          <objective-refer ref="O.KNOWN_STATE">
+            <rationale>The TOE mitigates the threat of inadequate configuration by providing a management
+              interface that allows all security-relevant functionality to be configured.</rationale>
           </objective-refer>
-          <!--
-          <objective-refer ref="O.SYSTEM_MONITORING">
-            <rationale>The threat T.UNAUTHORIZED_ACCESS is countered by O.SYSTEM_MONITORING as this
-              provides for visibility into the network which enables detection of unauthorized APs
-              and EUDs.</rationale>
+          <objective-refer ref="OE.TRUSTED_CONFIG">
+            <rationale>This objective mitigates the threat of misconfiguration by ensuring that a
+              malicious actor is not given direct administrative control over the TOE.</rationale>
           </objective-refer>
-          <objective-refer ref="O.WIDS_ANALYZE">
-            <rationale>The threat T.UNAUTHORIZED_ACCESS is countered by O.WIDS_ANALYZE as this
-              provides detection of potential violations of approved network usage.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.WIPS_REACT">
-            <rationale>The threat T.UNAUTHORIZED_ACCESS is countered by O.WIPS_REACT as this
-              provides containment of unauthorized APs and EUDs.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.TOE_ADMINISTRATION">
-            <rationale>The threat T.UNAUTHORIZED_ACCESS is countered by
-              O.TOE_ADMINISTRATION.</rationale>
-          </objective-refer> -->
-        </threat>
-        <threat id="T.UNAUTHORIZED_UPDATE">
-          <description> Since the most common attack vector used involves attacking unpatched versions of software
-            containing well-known flaws, updating the VPN client is necessary to ensure that changes to
-            threat environment are addressed. Timely application of patches ensures that the client is a
-            “hard target,” thus increasing the likelihood that product will be able to maintain and enforce its
-            security policy. However, the updates to be applied to the product must be trustable in some
-            manner; otherwise, an attacker can write their own “update” that instead contains malicious
-            code of their choosing, such as a rootkit, bot, or other malware. Once this “update” is installed,
-            the attacker then has control of the system and all of its data.<h:p/>
-
-            Methods of countering this threat typically involve hashes of the updates, and potentially
-            cryptographic operations (e.g., digital signatures) on those hashes as well. However, the validity
-            of these methods introduces additional threats. For instance, a weak hash function could result
-            in the attacker being able to modify the legitimate update in such a way that the hash remained
-            unchanged. For cryptographic signature schemes, there are dependencies on
-
-            <h:ul>
-              <h:li>The strength of the cryptographic algorithm used to provide the signature, and </h:li>
-              <h:li>The ability of the end user to verify the signature, which typically involves checking a
-                hierarchy of digital signatures back to a root of trust (a certificate authority).</h:li>
-            </h:ul>
-
-            If a cryptographic signature scheme is weak, then it may be compromised by an attacker and the
-            end user will install a malicious update, thinking that it is legitimate. Similarly, if the root of trust
-            can be compromised, then a strong digital signature algorithm will not stop the malicious
-            update from being installed. In this case, the attacker will just create their own signature on the update
-            using the compromised root of trust, and the malicious update will then be installed without
-            detection.
-          </description>
-          <objective-refer ref="O.PLACEHOLDER">
-            <rationale>PLACEHOLDER</rationale>
-          </objective-refer>
-
-          <!--
-          <objective-refer ref="O.SYSTEM_MONITORING">
-            <rationale>The threat T.DISRUPTION is countered by O.SYSTEM_MONITORING as this provides
-              for visibility into the network which enables detection of DoS attacks.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.WIDS_ANALYZE">
-            <rationale>The threat T.DISRUPTION is countered by O.WIDS_ANALYZE as this provides for
-              detection of potential violations of approved network usage.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.WIPS_REACT">
-            <rationale>The threat T.DISRUPTION is countered by O.WIPS_REACT as this provides
-              containment of unauthorized APs and EUDs.</rationale>
-          </objective-refer>  -->
         </threat>
 
         <threat id="T.USER_DATA_REUSE">
           <description>Data traversing the TOE could inadvertently be sent to a different user; since these data may be
             sensitive, this may cause a compromise that is unacceptable. The specific threat that must be
-            addressed concerns user data that is retained by the TOE in the course of processing network
-            traffic that could be inadvertently re-used in sending network traffic to a user other than that
-            intended by the sender of the original network traffic.
+            addressed concerns user data that is retained by the TOE in the course of processing network traffic
+            that could be inadvertently re-used in sending network traffic to a user other than that intended by
+            the sender of the original network traffic.
           </description>
-          <objective-refer ref="O.PLACEHOLDER">
-            <rationale>PLACEHOLDER</rationale>
+          <objective-refer ref="O.NONDISCLOSURE">
+            <rationale>The TOE mitigates the threat of data reuse by ensuring that persistently stored data is
+              protected from unauthorized access, nonpersistently stored data is appropriately
+              purged, and potentially to ensure that no network traffic is inadvertently transmitted
+              outside of the IPsec tunnel.</rationale>
           </objective-refer>
-
-          <!--
-          <objective-refer ref="O.SYSTEM_MONITORING">
-            <rationale>The threat T.DISRUPTION is countered by O.SYSTEM_MONITORING as this provides
-              for visibility into the network which enables detection of DoS attacks.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.WIDS_ANALYZE">
-            <rationale>The threat T.DISRUPTION is countered by O.WIDS_ANALYZE as this provides for
-              detection of potential violations of approved network usage.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.WIPS_REACT">
-            <rationale>The threat T.DISRUPTION is countered by O.WIPS_REACT as this provides
-              containment of unauthorized APs and EUDs.</rationale>
-          </objective-refer>  -->
         </threat>
 
         <threat id="T.TSF_FAILURE">
@@ -532,101 +471,161 @@
             mechanisms. Failure of the primitive mechanisms could lead to a compromise in more complex
             mechanisms, resulting in a compromise of the TSF.
           </description>
-          <objective-refer ref="O.PLACEHOLDER">
-            <rationale>PLACEHOLDER</rationale>
+          <objective-refer ref="O.KNOWN_STATE">
+            <rationale>The TOE mitigates the threat of TSF failure by enforcing the use of self-tests so that the
+              TOE remains in a known state, and potentially to generate audit records that
+              allow for potential failures to be diagnosed.</rationale>
           </objective-refer>
-          <!--
-          <objective-refer ref="O.SYSTEM_MONITORING">
-            <rationale>The threat T.DISRUPTION is countered by O.SYSTEM_MONITORING as this provides
-              for visibility into the network which enables detection of DoS attacks.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.WIDS_ANALYZE">
-            <rationale>The threat T.DISRUPTION is countered by O.WIDS_ANALYZE as this provides for
-              detection of potential violations of approved network usage.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.WIPS_REACT">
-            <rationale>The threat T.DISRUPTION is countered by O.WIPS_REACT as this provides
-              containment of unauthorized APs and EUDs.</rationale>
-          </objective-refer>  -->
         </threat>
-
-
       </threats>
     </section>
+    
+    <!-- 3.2 Assumptions -->
     <section title="Assumptions" id="assumption">
+      These assumptions are made on the operational environment in order to be able to ensure that the
+      security functionality specified in the PP-Module can be provided by the TOE. If the TOE is placed in an
+      operational environment that does not meet these assumptions, the TOE may no longer be able to
+      provide all of its security functionality.
       <assumptions>
         <assumption id="A.NO_TOE_BYPASS">
-          <description> Information cannot flow onto the network to which the VPN client's host is connected without
+          <description>Information cannot flow onto the network to which the VPN client's host is connected without
             passing through the TOE.
           </description>
           <objective-refer ref="OE.NO_TOE_BYPASS">
-            <rationale> The operational environment objective OE.NO_TOE_BYPASS is realized through
-              A.NO_TOE_BYPASS.</rationale>
+            <rationale>This assumption is satisfied by the environmental objective that ensures
+              network routes do not exist that allow traffic to be transmitted from the TOE system to its
+              intended destination without going through the TOE’s IPsec tunnel.</rationale>
           </objective-refer>
         </assumption>
         <assumption id="A.PHYSICAL">
-          <description>Physical security, commensurate with the value of the TOE and the data it contains, is assumed
-            to be provided by the environment.
+          <description>Physical security, commensurate with the value of the TOE and the data it contains, is assumed to
+            be provided by the environment.
           </description>
           <objective-refer ref="OE.PHYSICAL">
-            <rationale> The operational environment objective OE.PHYSICAL is realized through
-              A.PHYSICAL.</rationale>
+            <rationale>This assumption is satisfied by the environmental objective that ensures the
+              TOE is not deployed on a system that is vulnerable to loss of physical custody.</rationale>
           </objective-refer>
         </assumption>
         <assumption id="A.TRUSTED_CONFIG">
-          <description> Personnel configuring the TOE and its operational environment will follow the applicable
-            security configuration guidance. </description>
+          <description>Personnel configuring the TOE and its operational environment will follow the applicable security
+            configuration guidance.
+          </description>
           <objective-refer ref="OE.TRUSTED_CONFIG">
-            <rationale> The operational environment objective A.TRUSTED_CONFIG is realized through
-              OE.TRUSTED_CONFIG.</rationale>
+            <rationale>This assumption is satisfied by the environmental objective that ensures that
+              anyone responsible for administering the TOE can be trusted not to misconfigure it,
+              whether intentionally or not.</rationale>
           </objective-refer>
         </assumption>
       </assumptions>
     </section>
-    <section title="Organizational Security Policies" id="osp"> This PP-Module defines no additional organizational security policies beyond those defined in the supported Base-PPs.
+    
+    <!-- 3.3 Organizational Security Policies -->
+    <section title="Organizational Security Policies" id="osp"> 
+      This PP-Module defines no additional organizational security policies beyond those defined in the
+      supported Base-PPs.    
     </section>
   </chapter>
+    
+  <!-- 4. Security Objectives -->  
   <chapter title="Security Objectives" id="obj">
+    
+    <!-- 4.1 Security Objectives for the TOE -->
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
-        <SO id="O.PLACEHOLDER">
-          <description>PLACEHOLDER OBJECTIVE.<h:br/>
+        <SO id="O.AUTHENTICATION">
+          <description>To address the issues associated with unauthorized disclosure of information in transit, a compliant
+            TOE’s authentication ability (IPsec) will allow the TSF to establish VPN connectivity with a remote
+            VPN gateway or peer and ensure that any such connection attempt is both authenticated and
+            authorized.<h:p/>
+            Addressed by: FIA_X509_EXT.3 (when GPOS PP is Base-PP), FIA_X509_EXT.2 (refined from MDF PP),
+            FIA_X509_EXT.2 (refined from App PP), FIA_X509_EXT.2 (refined from MDM PP), FCS_IPSEC_EXT.1,
+            FIA_PSK_EXT.1 (optional)
+          </description>
+          <addressed-by>fcs_ipsec_ext.1</addressed-by>
+          <consistency-rationale/>
+        </SO>
+        <SO id="O.CRYPTOGRAPHIC_FUNCTIONS">
+          <description>To address the issues associated with unauthorized disclosure of information in transit, a compliant
+            TOE will implement cryptographic capabilities. These capabilities are intended to maintain
+            confidentiality and allow for detection and modification of data that is transmitted outside of the
+            TOE.<h:p/>
+            Addressed by: FCS_CKM.1 (refined from GPOS PP), FCS_CKM.2 (refined from GPOS PP),
+            FCS_COP.1(1) (refined from GPOS PP), FTP_ITC.1 (when GPOS PP is Base-PP), FCS_CKM.1 (refined
+            from MDF PP), FCS_CKM.2(1) (refined from MDF PP), FCS_COP.1(1) (refined from MDF PP),
+            FTP_ITC_EXT.1 (refined from MDF PP), FCS_CKM.1(1) (refined from App PP), FCS_CKM.2 (refined
+            from App PP), FCS_CKM_EXT.1 (refined from App PP), FCS_COP.1(1) (refined from App PP),
+            FCS_CKM.1 (refined from MDM PP), FCS_CKM.2 (refined from MDM PP), FCS_COP.1(1) (refined
+            from MDM PP), FPT_ITT.1(1) (if applicable, refined from MDM PP), FTP_ITC.1(1) (if applicable,
+            refined from MDM PP), FTP_TRP.1(1) (if applicable, refined from MDM PP), FCS_CKM.1/VPN,
+            FCS_IPSEC_EXT.1
+          </description>
+          <addressed-by>fcs_ipsec_ext.1</addressed-by>
+          <consistency-rationale/>
+        </SO>
+        <SO id="O.KNOWN_STATE">
+          <description>The TOE will provide sufficient measures to ensure it is operating in a known state. At minimum this
+            includes management functionality to allow the security functionality to be configured and self-test
+            functionality that allows it to assert its own integrity. It may also include auditing functionality that
+            can be used to determine the operational behavior of the TOE.<h:p/>
+            Addressed by: FMT_SMF.1/VPN, FPT_TST_EXT.1/VPN, FAU_GEN.1/VPN (optional), FAU_SEL.1/VPN
+            (optional)
+          </description>
+          <addressed-by>fcs_ipsec_ext.1</addressed-by>
+          <consistency-rationale/>
+        </SO>
+        <SO id="O.NONDISCLOSURE">
+          <description>To address the issues associated with unauthorized disclosure of information at rest, a compliant
+            TOE will ensure that non-persistent data is purged when no longer needed. The TSF may also
+            implement measures to protect against the disclosure of stored cryptographic keys and data
+            through implementation of protected storage and secure erasure methods. The TOE may optionally
+            also enforce split-tunneling prevention to ensure that data in transit cannot be disclosed
+            inadvertently outside of the IPsec tunnel.<h:p/>
+            Addressed by: FCS_CKM_EXT.2 (when GPOS PP is Base-PP), FCS_CKM_EXT.2 (when App PP is BasePP), 
+            FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_RIP.1, FDP_IFC_EXT.1 (optional)
           </description>
           <addressed-by>fcs_ipsec_ext.1</addressed-by>
           <consistency-rationale/>
         </SO>
       </SOs>
     </section>
+    
+    <!-- 4.2 Security Objectives for the Operational Environment -->
     <section title="Security Objectives for the Operational Environment" id="SecurityObjectivesTOEorEnvironment">
       The Operational Environment of the TOE implements technical and procedural measures to assist the
       TOE in correctly providing its security functionality (which is defined by the security objectives for the
       TOE). This section defines the security objectives that are to be addressed by the IT domain or by nontechnical or procedural means. As indicated above, if requirements supporting an objective on the TOE
       (in the previous table) are implemented in whole or in part by the platform, the ST should indicate this
       by an entry in this table with that objective.
+
       <SOEs>
         <SOE id="OE.NO_TOE_BYPASS">
-          <description> Information cannot flow onto the network to which the VPN client's host is connected without
+          <description>Information cannot flow onto the network to which the VPN client’s host is connected without
             passing through the TOE.
           </description>
           <consistency-rationale/>
         </SOE>
         <SOE id="OE.PHYSICAL">
-          <description>Physical security, commensurate with the value of the TOE and the data it contains, is assumed
-            to be provided by the environment.</description>
+          <description>Physical security, commensurate with the value of the TOE and the data it contains, is assumed to
+            be provided by the environment.</description>
           <consistency-rationale/>
         </SOE>
         <SOE id="OE.TRUSTED_CONFIG">
-          <description>Personnel configuring the TOE and its operational environment will follow the applicable
-            security configuration guidance.
+          <description>Personnel configuring the TOE and its operational environment will follow the applicable security
+            configuration guidance.
           </description>
           <consistency-rationale/>
         </SOE>
       </SOEs>
     </section>
+    
+    <!-- 4.3 Security Objectives Rationale -->
     <section title="Security Objectives Rationale" id="SOR">
       <!-- NOTE: This section should remain empty and is populated from the rationale tags in the previous sections.  -->
     </section>
+    
   </chapter>
+        
+  <!-- 5. Security Requirements -->
   <chapter title="Security Requirements" id="sfrs">
     <base-pp version="4.2.1" name="General Purpose Operating System" product="General Purpose Operating System" short="OS" url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=442" xmlurl="test">
 
