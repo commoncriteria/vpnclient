@@ -1,6 +1,9 @@
 
 PP-Module for Virtual Private Network (VPN) Clients
 ===============
+[![Build Status](https://travis-ci.com/commoncriteria/vpnclient.svg?branch=master)](https://travis-ci.com/commoncriteria/vpnclient)
+[![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/vpnclient.svg?maxAge=2592000)](https://github.com/commoncriteria/vpnclient/issues) 
+![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
 This repository hosts the draft version of the PP-Module for Virtual Private Network (VPN) Clients based on the 
 [Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/vpnclient/vpnclient-esr.html) for this technology class of 
