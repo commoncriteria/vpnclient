@@ -1601,9 +1601,8 @@
               <audit-event/>
             </f-component>
 
-          <!-- QQQQQQQQQQQQQQQQQQQQ -->
-          
-            <f-component name="Cryptographic Key Generation Services" id="fcs_ckm_ext.1">
+            <!-- 5.3.1.3 FCS_CKM_EXT.1 Cryptographic Key Generation Services -->          
+            <f-component name="Cryptographic Key Generation Services" cc-id="fcs_ckm_ext.1">
               <consistency-rationale>The ST author is instructed to make specific selections at minimum to
                 address VPN client requirements; specifically, since key generation
                 services are required in some capacity in order to support VPN
@@ -1611,69 +1610,78 @@
                 application does not have any key generation functionality.
                 Additionally, this behavior is selection-based in the App PP but is made
                 mandatory since it is required for VPN client functionality.</consistency-rationale>
-              <f-element>
-                <title>The application shall <selectables>
-                  <selectable>invoke platform-provided functionality for asymmetric key generation</selectable>
-                  <selectable>implement asymmetric key generation</selectable>
-                </selectables>.</title>
-                <note role="application">This selection differs from its definition in the App PP by
-                  removing the selection for “generate no asymmetric cryptographic keys” for this PP-Module because a VPN Client TOE will either perform its own key generation
-                  or interface with the underlying platform to provide this service, either of which causes <no-link>FCS_CKM.1</no-link>(1) to be claimed.</note>
-                <aactivity>
+              <f-element id="fcs-ckm-ext.1e1">
+                <title>The application shall 
+                  <selectables>
+                    <selectable>invoke platform-provided functionality for asymmetric key generation</selectable>
+                    <selectable>implement asymmetric key generation</selectable>
+                  </selectables>.
+                </title>
+                <note role="application">
+                  This selection differs from its definition in the App PP by
+                  removing the selection for “generate no asymmetric cryptographic keys” for this PP-Module because a VPN Client
+                  TOE will either perform its own key generation or interface with the underlying platform to provide this 
+                  service, either of which causes <no-link>FCS_CKM.1</no-link>(1) to be claimed.
+                </note>
+                <aactivity>   <!-- QQQQ -->
                   This SFR is evaluated in conjunction with <no-link>FCS_CKM.1</no-link>(1) in the App PP.
-                <no-tests/>
+                  <no-tests/>
                 </aactivity>
               </f-element>
+              <audit-event/>
             </f-component>
 
-            <f-component id="fcs_cop.1" name="Cryptographic Operation" iteration="1">
+            <!-- 5.3.1.4 FCS_COP.1(1) Cryptographic Operation - Encryption/Decryption -->
+            <f-component cc-id="fcs_cop.1" name="Cryptographic Operation" iteration="1">
               <consistency-rationale>The ST author is instructed to make specific selections at minimum to
                 address VPN client requirements; the SFR behavior itself is
                 unmodified.</consistency-rationale>
-              <f-element>
+              <f-element id="fcs-cop-1e1-1">
                 <title>The application shall perform encryption/decryption in accordance with
                   a specified cryptographic algorithm <h:b>
                   <h:ul>
                     <h:li>AES-CBC (as defined in NIST SP 800-38A) mode,</h:li>
                     <h:li>AES-GCM (as defined in NIST SP 800-38D) mode,</h:li>
-                  </h:ul>
-                  and </h:b><selectables linebreak="yes">
+                  </h:ul>; and </h:b>
+                  <selectables linebreak="yes">
                     <selectable>AES-XTS (as defined in NIST SP 800-38E) mode</selectable>
                     <selectable><h:b>no other modes</h:b></selectable>
                   </selectables>
-
                   and cryptographic key sizes [<h:i>128-bit, 256-bit</h:i>].
                 </title>
-
                 <note role="application">
-                  This SFR is identified in the App PP as <no-link>FCS_COP.1</no-link>(1). It is otherwise identical to what is defined in the App PP except that support for CBC and GCM modes
-                  and support for both 128-bit and 256-bit key sizes are all mandatory in order to address
-                  the requirements for FCS_IPSEC_EXT.1. Therefore, the relevant selections have
-                  already been completed.<h:p/>
+                  This SFR is selection-based in the Base-PP and remains selection-based here because
+                  this PP-Module allows for the possibility that the TSF relies on platform-provided
+                  cryptographic algorithm services for its own implementation of IPsec. However, if
+                  the TSF does claim this SFR to support IPsec, the ST author must select at minimum
+                  both AES-CBC and AES-GCM with both 128-bit and 256-bit key sizes for consistency
+                  with the relevant IPsec claims (FCS_IPSEC_EXT.1.4 requires both 128-bit and 256-bit
+                  AES-GCM and FCS_IPSEC_EXT.1.6 requires both 128-bit and 256-bit AES-CBC).
                 </note>
-                <aactivity>
+                <aactivity>   <!-- QQQQ -->
                   Refer to the evaluation activity for <no-link>FCS_COP.1</no-link>(1) in the App PP.
                   <no-tests/>
                 </aactivity>
               </f-element>
+              <audit-event/>
             </f-component>
           </subsection>
+        
           <subsection title="Identification and Authentication (FIA)" id="fia">
-            <f-component id="fia_x509_ext.2" name="X.509 Certificate Authentication">
+            
+            <!-- 5.3.1.5 FIA_X509_EXT.2 X.509 Certificate Authentication -->
+            <f-component cc-id="fia_x509_ext.2" name="X.509 Certificate Authentication">
               <consistency-rationale>This PP-Module adds IPsec as a new trusted protocol where x.509
                 certificate authentication is used.</consistency-rationale>
-              <f-element>
+              <f-element id="fia-x509-ext-2e1">
                 <title>The application shall use X.509v3 certificates as defined by RFC 5280 to support
-                  authentication for <h:b>IPsec and</h:b> <selectables>
-                    <selectable>HTTPS</selectable>
-                    <selectable>TLS</selectable>
-                    <selectable>DTLS</selectable>
-                    <selectable><h:b>no other protocol</h:b></selectable>
-                  </selectables>.</title>
+                  authentication for <h:b>IPsec</h:b> and [<h:b>no other protocols</h:b>].
+                </title>
               </f-element>
-              <f-element>
+              <f-element id="fia-x509-ext-2e2">
                 <title>When the application cannot establish a connection to determine the validity of a
-                  certificate, the TSF shall <selectables>
+                  certificate, the TSF shall 
+                  <selectables>
                     <selectable>allow the administrator to choose whether to accept the certificate in these cases</selectable>
                     <selectable>accept the certificate</selectable>
                     <selectable>not accept the certificate</selectable>
@@ -1683,70 +1691,54 @@
                   This SFR is identical to what is defined in the App PP except that mandatory
                   support for IPsec is added. Additionally, because this SFR is selection-based in
                   the App PP but is mandatory for VPN client usage, the ‘no other protocols’
-                  selection item has been added in the case that IPsec is the TOE’s only use of
-                  certificates.
+                  selection item has been added since it is expected that IPsec is the TOE’s only use
+                  of certificates.
                 </note>
-                <aactivity>
+                <aactivity>  <!-- QQQQ -->
                   Refer to the evaluation activity for <no-link>FIA_X509_EXT.2</no-link> in the App PP.
                   <no-tests/>
                 </aactivity>
               </f-element>
+              <audit-event/>
             </f-component>
           </subsection>
+        
           <subsection title="Trusted Path/Channels (FTP)" id="ftp">
-            <f-component id="ftp_dit_ext.1" name="Protection of Data in Transit">
+            
+            <!-- 5.3.1.6 FTP_DIT_EXT.1 Protection of Data in Transit -->
+            <f-component cc-id="ftp_dit_ext.1" name="Protection of Data in Transit">
               <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
                 implement trusted channels.</consistency-rationale>
-              <f-element>
-                <title>The application shall [<h:i>encrypt all transmitted [sensitive data, data] with [<h:b>IPsec as defined in the PP-Module for VPN Client</h:b>]</h:i>] between itself
-                  and another trusted IT product.</title>
+              <f-element id="ftp-dit-ext-1e1">
+                <title>The application shall [<h:i>not encrypt any [sensitive data]]</h:i> between itself
+                  and another trusted IT product.
+                </title>
                 <note role="application">
-                  This SFR is refined from what is defined in the App PP as the ST author is forced to select the ‘encrypt all transmitted sensitive data’ and ‘encrypt all data’ options using IPsec.
-                  The ST author may iterate the SFR if the TOE supports additional trusted channels beyond the IPsec channel used for VPN client functionality.
+                  The VPN client itself is the application, and does not maintain any sensitive data
+                  of its own. Therefore, there is no need to protect (through FTP_DIT_EXT.1.1)
+                  VPN-client-specific data.                
                 </note>
-                <aactivity>
+                <aactivity>  <!-- QQQQ -->
                   For IPsec, refer to the evaluation activity for FCS_IPSEC_EXT.1.<h:p/>
-                  If this SFR is iterated to select additional protocols for other uses, refer to the evaluation activity for <no-link>FTP_DIT_EXT.1</no-link> in the App PP.
+                  If this SFR is iterated to select additional protocols for other uses, refer to the evaluation activity 
+                  for <no-link>FTP_DIT_EXT.1</no-link> in the App PP.
                   <no-tests/>
                 </aactivity>
               </f-element>
+              <audit-event/>
             </f-component>
           </subsection>
       </modified-sfrs>
+      
+      <!-- 5.3.2 Additional SFRs -->
       <additional-sfrs>
+        This section lists additional SFRs that must be added to the TOE boundary in order to implement the
+        functionality in any PP-Configuration where the App PP is claimed as the Base-PP.
+
         <subsection title="Cryptographic Support (FCS)" id="fcs">
-          <f-component id="fcs_ckm.1" name="Cryptographic Key Generation (IKE)" iteration="VPN">
-            <consistency-rationale>Generation of IKE peer authentication keys is added functionality that
-              does not prevent the existing application functions from being performed.</consistency-rationale>
-            <f-element>
-              <title>The application shall <h:b><selectables>
-                <selectable>invoke platform-provided functionality</selectable>
-                <selectable>implement functionality</selectable>
-              </selectables></h:b> to generate <h:b>asymmetric</h:b> cryptographic keys <h:b>used for IKE peer authentication</h:b> in accordance with: <selectables linebreak="yes">
-                <selectable>FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.3 for RSA schemes</selectable>
-                <selectable>FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.4 for ECDSA schemes and implementing “NIST curves” P-256, P-384 and
-                  <selectables><selectable>P-521</selectable><selectable>no other curves</selectable></selectables></selectable>
-              </selectables> and specified cryptographic key sizes <h:b>equivalent to, or greater than, a
-                symmetric key strength of 112 bits</h:b>.</title>
-              <note role="application">
-                The keys that are required to be generated by the TOE through this requirement are intended to be used for the authentication of the VPN entities during the IKE (either v1 or v2) key exchange.
-                While it is required that the public key be associated with an identity in an X509v3 certificate,
-                this association is not required to be performed by the TOE, and instead is expected to be performed by a Certificate Authority in the Operational Environment.<h:p/>
-
-                As indicated in FCS_IPSEC_EXT.1, the TOE is required to implement support for RSA or ECDSA (or both) for authentication.<h:p/>
-
-                See NIST Special Publication 800-57, “Recommendation for Key Management” for information about equivalent key strengths.
-              </note>
-              <aactivity>
-                <TSS>The evaluator shall examine the TSS to verify that it describes how the key generation functionality is invoked.<h:p/></TSS>
-                <Guidance>There are no guidance evaluation activities for this component.<h:p/></Guidance>
-                <Tests>Refer to the evaluation activities for <no-link>FCS_CKM.1</no-link>(1) in the App PP.</Tests>
-              </aactivity>
-            </f-element>
-          </f-component>
-
-
-          <f-component id="fcs_ckm_ext.2" name="Cryptographic Key Storage"  notnew='true'>
+          
+          <!-- 5.3.2.1 FCS_CKM_EXT.2 Cryptographic Key Storage -->
+          <f-component cc-id="fcs_ckm_ext.2" name="Cryptographic Key Storage"  notnew='true'>
             <consistency-rationale>This PP-Module adds a requirement for key storage, which is new
               functionality when compared to the Base-PP but does not interfere
               with its existing security functions.</consistency-rationale>
@@ -1757,22 +1749,22 @@
             <audit>There are no auditable events foreseen.
             </audit>
             <dependencies>No dependencies</dependencies>
-            <f-element>
-              <title>The <selectables>
-                <selectable>TOE</selectable>
-                <selectable>TOE platform</selectable>
-              </selectables> shall store persistent secrets and private keys
+            <f-element id="fcs-ckm-ext-2e1">
+              <title>The 
+                <selectables>
+                  <selectable>TOE</selectable>
+                  <selectable>TOE platform</selectable>
+                </selectables> shall store persistent secrets and private keys
                 when not in use in platform-provided key storage.
               </title>
-
               <note role="application">
                 This requirement ensures that persistent secrets and private keys are stored
-                securely when not in use. This differs from FCS_STO_EXT.1 in the App PP, which
+                securely when not in use. This differs from FCS_STO_EXT.1 in the Base-PP, which
                 only applies to secure storage of administrative credentials. If some secrets/keys
                 are manipulated by the TOE and others are manipulated by the platform, then
                 both of the selections can be specified by the ST author.
               </note>
-              <aactivity>
+              <aactivity>    <!-- QQQQ -->
                 <TSS>Regardless of whether this requirement is met by the TOE or the TOE platform, the evaluator will
                   check the TSS to ensure that it lists each persistent secret (credential, secret key) and private key
                   needed to meet the requirements in the ST. For each of these items, the evaluator will confirm that
@@ -1795,9 +1787,11 @@
                 <Tests>There are no test evaluation activities for this component.</Tests>
               </aactivity>
             </f-element>
+            <audit-event/>
           </f-component>
 
-          <f-component id="fcs_ckm_ext.4" name="Cryptographic Key Destruction">
+          <!-- 5.3.2.2 FCS_CKM_EXT.4 Cryptographic Key Destruction -->
+          <f-component cc-id="fcs_ckm_ext.4" name="Cryptographic Key Destruction">
             <consistency-rationale>This PP-Module adds a requirement for key destruction, which is new
               functionality when compared to the Base-PP but does not interfere
               with its existing security functions.</consistency-rationale>
@@ -1808,12 +1802,13 @@
             <audit>There are no auditable events foreseen.
             </audit>
             <dependencies>No dependencies</dependencies>
-            <f-element>
-              <title>The <selectables>
-                <selectable>TOE</selectable>
-                <selectable>TOE platform</selectable>
-              </selectables> shall zeroize all plaintext secret and private
-                cryptographic keys and CSPs when no longer required.
+            <f-element id="fcs-ckm-ext-4e1">
+              <title>The 
+                <selectables>
+                  <selectable>TOE</selectable>
+                  <selectable>TOE platform</selectable>
+                </selectables> 
+                shall zeroize all plaintext secret and private cryptographic keys and CSPs when no longer required.
               </title>
               <note role="application">
                 Any security related information (such as keys, authentication data, and
@@ -1836,11 +1831,10 @@
                 zeroized.<h:p/>
 
                 In the likely event that some of the data are manipulated by the TOE and other
-                data are manipulated entirely by the platform, the ST author shall select both
-                options and make it clear in the TSS the entity responsible (TOE, TOE platform)
-                for performing the zeroization.
+                data are manipulated entirely by the platform, the ST author must select both
+                options.
               </note>
-              <aactivity>
+              <aactivity>   <!-- QQQQ -->
                 <TSS>The evaluator shall ensure that all plaintext secret and private cryptographic keys and CSPs (whether
                   manipulated by the TOE or exclusively by the platform) are identified in the VPN Client ST's TSS, and
                   that they are accounted for by the evaluation activity in this section. <h:p/>
@@ -1890,6 +1884,7 @@
                 </Tests>
               </aactivity>
             </f-element>
+            <audit-event/>
           </f-component>
         </subsection>
       </additional-sfrs>
@@ -1907,9 +1902,6 @@
         The assumptions in both this PP-Module and the App PP have a direct one-to-one
         correspondence with each other so the assumptions in this PP-Module are consistent with those in the
         App PP for the same reasons as outlined in the table below.<h:p/></con-op-en>
-
-
-
       <con-mod id="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
         that is transmitted over it is consistent with the T.NETWORK_ATTACK
         and T.NETWORK_EAVESDROP threats in the App PP.</con-mod>
@@ -1923,7 +1915,6 @@
         consistent with the T.NETWORK_EAVESDROP threat in the App PP.</con-mod>
       <con-mod id="T.TSF_FAILURE">A failure of TSF functionality could compromise the local system,
         which is consistent with the T.LOCAL_ATTACK threat in the App PP.</con-mod>
-
       <con-mod id="OE.NO_TOE_BYPASS">This objective addresses behavior that is out of scope of the App PP
         and does not define an environment that is globally applicable to all
         software applications.</con-mod>
@@ -1932,7 +1923,6 @@
         considered ‘trustworthy.’</con-mod>
       <con-mod id="OE.TRUSTED_CONFIG">The expectation of trusted configuration is consistent with
         OE.PROPER_USER and OE.PROPER_ADMIN in the App PP.</con-mod>
-
       <con-mod id="fcs_ipsec_ext.1">This SFR defines the VPN client’s IPsec implementation, which is added
         functionality that does not interfere with the application functions.</con-mod>
       <con-mod id="fdp_rip.2">The requirement to protect against re-use of residual data is a
@@ -1943,10 +1933,8 @@
         whether the application as a whole can perform its security functions.</con-mod>
       <con-mod id="fpt_tst_ext.1">Self-testing of the VPN client functionality does not impact the ability
         of the application to perform its security functions.</con-mod>
-
       <con-mod id="fia_psk_ext.1">This SFR defines the use of pre-shared keys, which is behavior that
         only relates to the establishment of IPsec connections.</con-mod>
-
       <con-mod id="fau_gen.1">Audit records generated by the VPN client do not interfere with
         application functionality. For cases where auditing is performed by the
         TOE platform, a software application is installed on a general purpose
@@ -1961,6 +1949,335 @@
         from being supported.</con-mod>
     </base-pp>
 
+    <!-- 5.4 MDM PP Security Functional Requirements Direction -->
+    <base-pp version="3.1" name="Mobile Device Fundamentals" product="Mobile Device" short="MD" url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=417" xmlurl="test">
+
+      In a PP-Configuration that includes the MDM PP, the VPN client is expected to rely on some of the
+      security functions implemented by the operating system as a whole and evaluated against the Base-PP.
+      In this case, the following sections describe any modifications that the ST author must make to the SFRs
+      defined in the Base-PP in addition to what is mandated by section 5.5.
+      
+      <!-- 5.4.1 Modified SFRs -->  
+      <modified-sfrs>
+        The SFRs listed in this section are defined in the MDM PP and relevant to the secure operation of the
+        VPN client. It is necessary for the ST author to complete selections and/or assignments for these SFRs in
+        a specific manner in order to ensure that the functionality provided by the application is consistent with
+        the functionality required by the VPN client in order for it to conform to this PP-Module.
+        <subsection title="Cryptographic Support (FCS)" id="fcs">
+          
+          <!-- 5.4.1.1 FCS_CKM.1 Cryptographic Key Generation -->
+          <f-component cc-id="fcs_ckm.1" name="Cryptographic Key Generation">
+            <consistency-rationale>The ST author is instructed to make specific selections at minimum to
+              address VPN client requirements; the SFR behavior itself is
+              unmodified.</consistency-rationale>
+            <f-element id="fcs-ckm-1e1">
+              <title><h:b>The TSF shall 
+                <selectables>
+                  <selectable>invoke platform-provided functionality</selectable>
+                  <selectable>implement functionality</selectable>
+                <selectables>
+                to generate asymmetric cryptographic keys in accordance with a specified cryptographic key
+                generation algorithm: 
+                <h:ul>
+                  <h:li><h:b>ECC schemes using “NIST curves” P-256, P-384, and 
+                      <selectables>
+                        <selectable>P-521</selectable>
+                        <selectable>no other curves</selectable>
+                      </selectables> 
+                      that meet the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.4, and</h:b>
+                  </h:li>
+                </h:ul>
+                <selectables linebreak="yes">
+                  <selectable>RSA schemes using cryptographic key sizes of 2048-bit or greater that meet
+                    FIPS PUB 186-4, "Digital Signature Standard (DSS),” Appendix B.3,</selectable>
+                  <selectable>FFC schemes using cryptographic key sizes of 2048-bit or greater that meet
+                    the following: FIPS PU 186-4, “Digital Signature Standards (DSS),” Appendix B.4,</selectable>
+                  <selectable>FFC schemes using “safe-prime” groups that meet the following: ‘NIST
+                    Special Publication 800-56A Revision 3, “ Recommendation for Pair-Wise Key
+                    Establishment Schemes Using Discrete Logarithm Cryptography,” and
+                    <selectables>
+                      <selectable>RFC 3526</selectable>
+                      <selectable>RFC 7919</selectable>
+                    </selectables>,</selectable>
+                  <selectable><h:b>FFC schemes using Diffie-Hellman group 14 that meets the following: RFC
+                    3526, Section 3, </h:b></sselectable>
+                  <selectable><h:b>No other key generation schemes</h:b></selectable>
+                </selectables>.
+              </title>
+              <note role="application">
+                This SFR is modified from its definition in the MDM PP by mandating the key
+                generation algorithms that are required by this PP-Module in support of IPsec due to
+                the mandated support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8. Other
+                selections may be chosen by the ST author as needed for parts of the TOE that are
+                not specifically related to VPN client functionality
+              </note>
+              <aactivity>  <!-- QQQQ -->
+                Refer to the evaluation activity for <no-link>FCS_CKM.1</no-link> in the MDM PP for evaluating this SFR. <h:p/>
+                Testing for FFC schemes using Diffie-Hellman group 14 is done as part of testing for <no-link>FCS_CKM.2</no-link>.
+                <no-tests/>
+              </aactivity>
+            </f-element>
+            <audit-event/>
+          </f-component>
+<!--- QQQQQQ  -->
+          <!-- 5.2.1.2 FCS_CKM.2(1) Cryptographic Key Establishment -->
+          <f-component cc-id="fcs_ckm.2" name="Cryptographic Key Establishment" iteration="1">
+            <consistency-rationale>The ST author is instructed to make specific selections at minimum to
+              address VPN client requirements; the SFR behavior itself is
+              unmodified.</consistency-rationale>
+            <f-element id="fcs-ckm-2e1-1">
+              <title><h:b>The TSF shall perform cryptographic key
+                establishment in accordance with a specified key establishment method:
+                <h:ul>
+                  <h:li>Elliptic curve-based key establishment schemes that meets the following:
+                    NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
+                    Establishment Schemes Using Discrete Logarithm Cryptography,”
+                  </h:li>
+                </h:ul>and
+                <selectables linebreak="yes">
+                  <selectable>Finite field-based key establishment schemes that meets the following: NIST
+                    Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
+                    Establishment Schemes Using Discrete Logarithm Cryptography”</selectable>
+                  <selectable><h:b>Key establishment scheme using Diffie-Hellman group 14 that meets the
+                    following: RFC 3526, Section 3</h:b></selectable>
+                  <selectable>RSA-based key establishment schemes that meet the following: 
+                    <selectables>
+                      <selectable>NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key
+                        Establishment Schemes using Integer Factorization Cryptography,”</selectable>
+                      <selectable>RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017,
+                        “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.2</selectable>
+                    </selectables>
+                  </selectable>
+                  <selectable>no other key establishment schemes</selectable>
+                </selectables>.</h:b>
+              </title>
+              <note role="application">
+                This SFR differs from its definition in the MDF PP by moving elliptic curve-based
+                key establishment schemes from selectable to mandatory (due to the mandated
+                support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8). It also provides the
+                ability to claim either NIST SP 800-56A or RFC 3526 for key establishment using
+                finite field cryptography if DH group 14 is claimed. The use of RSA is not
+                explicitly mandated by the VPN client but may be selected in the MDF PP, which
+                is why it remains here.
+              </note>
+              <aactivity> <!-- QQQQ -->
+                For all key establishment schemes that conform to NIST SP 800-56A or 800-56B, refer to the
+                evaluation activity for <no-link>FCS_CKM.2</no-link>(1) in the MD PP.<h:p/>
+                If “Key establishment scheme using Diffie-Hellman group 14…” is selected, the evaluator shall ensure
+                that the TSS describes how the implementation meets RFC 3526 Section 3. The evaluator shall also
+                verify the correctness of the TSF’s implementation of Diffie-Hellman group 14 by using a known good
+                implementation for each protocol selected in <no-link>FTP_ITC_EXT.1</no-link> in the MD PP that
+                uses Diffie-Hellman group 14. Note that because a TOE that conforms to this PP-Module must
+                implement IPsec, the tested protocols shall include IPsec at minimum.
+                <no-tests/>
+              </aactivity>
+            </f-element>
+            <audit-event/>
+          </f-component>
+
+          <!-- 5.2.1.3 FCS_COP.1(1) Cryptographic Operation -->
+          <f-component cc-id="fcs_cop.1" name="Cryptographic Operation" iteration="1">
+            <consistency-rationale>The ST author is instructed to make specific selections at minimum to
+              address VPN client requirements; the SFR behavior itself is
+              unmodified.</consistency-rationale>
+            <f-element id="fcs-cop-1e1-1">
+              <title>The OS shall perform [<h:i>encryption/decryption</h:i>] in accordance with
+                a specified cryptographic algorithm
+                <h:ul>
+                  <h:li>AES-CBC (as defined in FIPS PUB 197, NIST SP 800-38A),</h:li>
+                  <h:li>AES-CCMP (as defined in FIPS PUB 197, NIST SP 800-38C and IEEE 802.11-2012),</h:li>
+                  <h:li><h:b>AES-GCM (as defined in NIST SP 800-38D),</h:b></h:li>
+                </h:ul> and
+                <selectables linebreak="yes">
+                  <selectable>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</selectable>
+                  <selectable>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</selectable>
+                  <selectable>AES-CCM (as defined in NIST SP 800-38C)</selectable>
+                  <selectable>AES-XTS (as defined in NIST SP 800-38E)</selectable>
+                  <selectable>AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)</selectable>
+                  <selectable>AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)</selectable>
+                  <selectable>no other modes</selectable>
+                </selectables>
+                and cryptographic key sizes 128-bit key sizes and [<h:i>256-bit key sizes</h:i>].
+              </title>
+              <note role="application">
+                This SFR is identical to what is defined in the MDF PP except that support for
+                GCM mode and support for 256-bit key sizes are both mandatory in order to
+                address the requirements for FCS_IPSEC_EXT.1.
+              </note>
+              <aactivity>  <!-- QQQQ -->
+                Refer to the evaluation activity for <no-link>FCS_COP.1</no-link>(1) in the MD PP.
+                <no-tests/>
+              </aactivity>
+            </f-element>
+            <audit-event/>
+          </f-component>
+        </subsection>
+        
+        <subsection title="Identification and Authentication (FIA)" id="fia">
+          
+          <!-- 5.2.1.4 FIA_X509_EXT.2 X.509 Certificate Authentication -->
+          <f-component cc-id="fia_x509_ext.2" name="X.509 Certificate Authentication">
+            <consistency-rationale>This PP-Module adds IPsec as a new trusted protocol where x.509
+              certificate authentication is used.</consistency-rationale>
+            <f-element id="fia-x509-ext-2e1">
+              <title>The TSF shall use X.509v3 certificates as defined by RFC 5280 to support
+                authentication for <h:b>IPsec</h:b> and 
+                <selectables>
+                  <selectable>TLS</selectable>
+                  <selectable>HTTPS</selectable>
+                  <selectable>DTLS</selectable>
+                  <selectable><h:b>no other protocols</h:b></selectable>
+                </selectables>, and 
+                <selectables>
+                  <selectable>code signing for system software updates</selectable>
+                  <selectable>code signing for mobile applications</selectable>
+                  <selectable>code signing for integrity verification</selectable>
+                  <selectable><assignable>other uses</assignable></selectable>
+                  <selectable>no additional uses</selectable>
+                </selectables>.
+              </title>
+            </f-element>
+            <f-element id="fia-x509-ext-2e2">
+              <title>When the TSF cannot establish a connection to determine the validity of a
+                certificate, the TSF shall 
+                <selectables>
+                  <selectable>allow the administrator to choose whether to accept the certificate in these cases</selectable>
+                  <selectable>allow the user to choose whether to accept the certificate in these cases</selectable>
+                  <selectable>accept the certificate</selectable>
+                  <selectable>not accept the certificate</selectable>
+                </selectables>.
+              </title>
+              <note role="application">
+                This SFR is identical to what is defined in the MDF PP except that support for
+                IPsec is mandated. Since the original SFR did not explicitly require at least one of
+                TLS, HTTPS, or DTLS to be selected, “no other protocols” has also been added as
+                a selection in the event that IPsec is the only protocol for which the TOE uses
+                X.509v3 certificates for authentication.
+              </note>
+              <aactivity>  <!-- QQQQ -->
+                Refer to the evaluation activity for <no-link>FIA_X509_EXT.2</no-link> in the MD PP.
+                <no-tests/>
+              </aactivity>
+            </f-element>
+            <audit-event/>
+          </f-component>
+        </subsection>
+        
+        <subsection title="Trusted Path/Channels (FTP)" id="ftp">
+          
+          <!-- 5.2.1.5 FTP_ITC_EXT.1 Trusted Channel Communications -->
+          <f-component cc-id="ftp_itc_ext.1" name="Trusted Channel Communication">
+            <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
+              implement trusted channels.</consistency-rationale>
+            <f-element id="ftp-itc-ext-1e1">
+              <title>The TSF shall use 802.11-2012, 802.1X, EAP-TLS, <h:b>IPsec,</h:b> and
+                <selectables>
+                  <selectable>TLS</selectable>
+                  <selectable>DTLS</selectable>
+                  <selectable>HTTPS</selectable>
+                  <selectable><h:b>no other protocols</h:b></selectable>
+                </selectables>
+                to provide a communication channel between itself
+                and another trusted IT product that is logically distinct from other
+                communication channels, provides assured identification of its end points,
+                protects channel data from disclosure, and detects modification of the channel
+                data.
+                </title>
+            </f-element>
+            <f-element id="ftp-itc-ext-1e2">
+              <title>The TSF shall permit the TSF to initiate communication via the trusted channel.
+              </title>
+            </f-element>
+            <f-element id="ftp-itc-ext-1e3">
+              <title>
+                The TSF shall initiate communication via the trusted channel for wireless access
+                point connections, administrative communication, configured enterprise
+                connections, and 
+                <selectables>
+                  <selectable>OTA updates</selectable>
+                  <selectable>no other connections</selectable>
+                </selectables>.
+              </title>
+              <note role="application">
+                This SFR is identical to what is defined in the Base-PP except that support for
+                IPsec is mandated. Additionally, since the Base-PP requires ‘at least one of’ the
+                selected protocols which previously included IPsec, ‘no other protocols’ is now
+                available as an option in the selection.
+              </note>
+              <aactivity>  <!-- QQQQ -->
+                Refer to the evaluation activity for <no-link>FTP_ITC_EXT.1</no-link> in the MD PP.
+                <no-tests/>
+              </aactivity>
+            </f-element>
+            <audit-event/>
+          </f-component>
+        </subsection>
+      </modified-sfrs>
+      
+      <!-- 5.2.2 Additional SFRs -->
+      <additional-sfrs>
+        There are no additional SFRs that must be claimed only in cases where the MDF PP is the claimed BasePP.
+      </additional-sfrs>
+      <con-toe>If this PP-Module is used to extend the MD PP, the TOE type for the overall TOE is still a mobile device.
+        The TOE boundary is simply extended to include VPN client functionality that is built in to the device’s
+        software so that additional security functionality is claimed within the scope of the TOE. </con-toe>
+      <con-sec-prob>
+      </con-sec-prob>
+      <con-obj>This PP-Module does not define any TOE objectives; the functionality provided by the VPN client assists
+        in satisfying the O.COMMS, O.STORAGE, and O.CONFIG objectives in the MD PP.<h:p/>
+        <h:p/></con-obj>
+      <con-op-en>The objectives for the
+        VPN client’s operational environment are consistent with the MD PP based on the rationale below.<h:p/>
+        The environmental assumptions in both this PP-Module and the MD PP have a direct one-to-one
+        correspondence with each other so the assumptions in this PP-Module are consistent with those in the
+        MD PP for the same reasons as outlined in the table below.<h:p/></con-op-en>
+      <con-mod id="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
+        that is transmitted over it is consistent with the T.NETWORK and
+        T.EAVESDROP threats in the MD PP.</con-mod>
+      <con-mod id="T.TSF_CONFIGURATION">The threat of a mis-configured VPN client is consistent with the
+        T.NETWORK and T.EAVESDROP threats in the MD PP because failure
+        to mitigate against mis-configuration makes these threats more
+        significant.</con-mod>
+      <con-mod id="T.UNAUTHORIZED_UPDATE">The threat of an unauthorized update to the VPN client software is a
+        specific subset of the T.NETWORK threat in the MD PP.</con-mod>
+      <con-mod id="T.USER_DATA_REUSE">Inadvertent disclosure of user data to an unauthorized recipient is
+        consistent with the T.EAVESDROP threat in the MD PP.</con-mod>
+      <con-mod id="T.TSF_FAILURE">A failure of TSF functionality could compromise the local system,
+        which is consistent with the T.FLAWAPP threat in the MD PP.</con-mod>
+      <con-mod id="OE.NO_TOE_BYPASS">This objective addresses behavior that is out of scope of the MD PP
+        and does not define an environment that an MD TOE is incapable of
+        existing in.</con-mod>
+      <con-mod id="OE.PHYSICAL">The operational environment of a mobile device cannot guarantee
+        physical security, but the OE.PRECAUTION objective in the MD PP
+        ensures that an appropriate level of physical security is provided.</con-mod>
+      <con-mod id="OE.TRUSTED_CONFIG">The expectation of trusted configuration is consistent with OE.CONFIG
+        in the MD PP.</con-mod>
+      <con-mod id="fcs_ipsec_ext.1">This SFR defines the VPN client’s IPsec implementation, which is added
+        functionality that does not interfere with the MD functions.</con-mod>
+      <con-mod id="fdp_rip.2">The requirement to protect against re-use of residual data is a
+        property of the VPN client behavior and does not impact the MD
+        functionality.
+      </con-mod>
+      <con-mod id="fmt_smf.1">The ability to configure the VPN client behavior does not affect
+        whether the MD as a whole can perform its security functions.</con-mod>
+      <con-mod id="fpt_tst_ext.1">Self-testing of the VPN client functionality does not impact the ability
+        of the MD to perform its security functions.</con-mod>
+      <con-mod id="fia_psk_ext.1">This SFR defines the use of pre-shared keys, which is behavior that
+        only relates to the establishment of IPsec connections.</con-mod>
+      <con-mod id="fau_gen.1">Audit records generated by the VPN client do not interfere with MD
+        functionality. The possibility of the underlying MD platform
+        generating audit records is consistent with the MD PP, which already
+        contains FAU_GEN.1.</con-mod>
+      <con-mod id="fau_sel.1">The ability to suppress the generation of certain audit records related
+        to VPN activity does not interfere with the ability of the MD to satisfy
+        its security functionality.</con-mod>
+      <con-mod id="fdp_ifc_ext.1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+        requires it to have hooks into lower-level mobile device behavior, but
+        there are no requirements in the MD PP that would prevent this
+        functionality from being supported.</con-mod>
+    </base-pp>
+
+    
     <man-sfrs>
       <subsection title="Cryptographic Support (FCS)" id="fcs">
 
