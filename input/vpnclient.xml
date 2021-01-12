@@ -1546,61 +1546,63 @@
               <audit-event/>
             </f-component>
 
-            <f-component id="fcs_ckm.2" name="Cryptographic Key Establishment">
+            <!-- 6.3.1.2 FCS_CKM.2 Cryptographic Key Establishment -->
+            <f-component cc-id="fcs_ckm.2" name="Cryptographic Key Establishment">
               <consistency-rationale>The ST author is instructed to make specific selections at minimum to
                 address VPN client requirements and is modified to include Diffie-Hellman Group 14 as an additional supported method for key
                 establishment.</consistency-rationale>
-              <f-element>
-                <title>The application shall <selectables>
-                  <selectable>invoke platform-provided functionality</selectable>
-                  <selectable>implement functionality</selectable>
-                </selectables> to perform cryptographic key
+              <f-element id="fcs-ckm-2e1">
+                <title>The application shall 
+                  <selectables>
+                    <selectable>invoke platform-provided functionality</selectable>
+                    <selectable>implement functionality</selectable>
+                  </selectables> to perform cryptographic key
                   establishment in accordance with a specified key establishment method:
-
                   <h:ul>
                     <h:li><h:b>[<h:i>Elliptic curve-based key establishment schemes</h:i>] that meets the following: [<h:i>NIST
                       Special Publication 800-56A, “Recommendation for Pair-Wise Key Establishment
-                      Schemes Using Discrete Logarithm Cryptography”</h:i>],</h:b>
+                      Schemes Using Discrete Logarithm Cryptography”</h:i>]; and</h:b>
                     </h:li>
                   </h:ul>
-
-                  <h:b>
                   <selectables linebreak="yes">
                     <selectable>[Finite field-based key establishment schemes] that meets the following: [NIST
                       Special Publication 800-56A, “Recommendation for Pair-Wise Key Establishment
                       Schemes Using Discrete Logarithm Cryptography”]</selectable>
-                    <selectable>[Key establishment scheme using Diffie-Hellman group 14] that meets the
-                      following: RFC 3526, Section 3,
+                    <selectable>Key establishment scheme using Diffie-Hellman group 14] that meets the
+                      following: [RFC 3526, Section 3,</selectable>
+                    <selectable>[FFC Schemes using “safe-prime” groups]that meet the following: ‘NIST Special
+                      Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
+                      Establishment Schemes Using Discrete Logarithm Cryptography” and 
+                      <selectables>
+                        <selectable>RFC 3526</selectable>
+                        <selectable>RFC 7919</selectable>
+                      </selectables>
                     </selectable>
-                  </selectables> and </h:b><selectables linebreak="yes">
-                    <selectable> [RSA-based key establishment schemes] that meets the following: RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017,
-                      “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.2</selectable>
-                    <selectable>[RSA-based key establishment schemes] that meets the following: [NIST Special
+                    <selectable> [RSA-based key establishment schemes] that meets the following: RSAES-PKCS1-v1_5 as specified
+                      in Section 7.2 of RFC 8017, “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications
+                      Version 2.2</selectable>
+                    <selectable>[RSA-based key establishment schemes] that meet the following: [NIST Special
                       Publication 800-56B, “Recommendation for Pair-Wise Key Establishment
                       Schemes Using Integer Factorization Cryptography”]</selectable>
-                    <selectable>[FFC Schemes using “safe-prime” groups]that meet the following: ‘NIST Special
-                    Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
-                    Establishment Schemes Using Discrete Logarithm Cryptography” and [selection:
-                    RFC 3526, RFC 7919]</selectable>
-                    <selectable><h:b>No other key establishment schemes</h:b></selectable>
+                    <selectable>No other schemes</selectable>
                   </selectables>.
                 </title>
-
                 <note role="application">
                   This SFR differs from its definition in the App PP by moving elliptic curve-based
                   key establishment schemes from selectable to mandatory (due to the mandated
                   support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8). It also provides the
-                  ability to claim either NIST SP 800-56A or RFC 3526 for key establishment using
-                  finite field cryptography. One of these two claims must be made in support of DH
-                  group 14 in FCS_IPSEC_EXT.1.8. Other selections remain conditional for TSF functionality that may exist outside the VPN Client portion of the TOE.
-                </note>
-                <aactivity>
+                  ability to claim at least one of NIST SP 800-56A, RFC 3526, or NIST SP 800-56A
+                  rev. 3 “safe-prime” groups for key establishment using finite field cryptography.</note>
+                <aactivity>   <!-- QQQQ -->
                   For all key establishment schemes refer to the evaluation activity for <no-link>FCS_CKM.2</no-link> in the App PP.
                   <no-tests/>
                 </aactivity>
               </f-element>
+              <audit-event/>
             </f-component>
 
+          <!-- QQQQQQQQQQQQQQQQQQQQ -->
+          
             <f-component name="Cryptographic Key Generation Services" id="fcs_ckm_ext.1">
               <consistency-rationale>The ST author is instructed to make specific selections at minimum to
                 address VPN client requirements; specifically, since key generation
