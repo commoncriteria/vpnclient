@@ -1482,68 +1482,68 @@
         specific manner in order to ensure that the functionality provided by the application is consistent with
         the functionality required by the VPN client in order for it to conform to this PP-Module.
         
-          <subsection title="Cryptographic Support (FCS)" id="fcs">
+        <subsection title="Cryptographic Support (FCS)" id="fcs">
             
-            <!-- 5.3.1.1 FCS_CKM.1(1) Cryptographic Asymmetrix Key Generation -->
-            <f-component id="fcs_ckm.1" name="Cryptographic Asymmetric Key Generation" iteration="1">
-              <consistency-rationale>The ST author is instructed to make specific selections at minimum to
-                address VPN client requirements; the SFR behavior itself is
-                unmodified. Additionally, this behavior is selection-based in the App
-                PP but is made mandatory since it is required for VPN client
-                functionality.</consistency-rationale>
-              <f-element>
-                <title>The application shall <selectables linebreak="yes">
+          <!-- 5.3.1.1 FCS_CKM.1(1) Cryptographic Asymmetric Key Generation -->
+          <f-component cc-id="fcs_ckm.1" name="Cryptographic Asymmetric Key Generation" iteration="1">
+            <consistency-rationale>The ST author is instructed to make specific selections at minimum to
+              address VPN client requirements; the SFR behavior itself is
+              unmodified. Additionally, this behavior is selection-based in the App
+              PP but is made mandatory since it is required for VPN client
+              functionality.</consistency-rationale>
+            <f-element id="fcs-ckm-1e1">
+              <title>The application shall 
+                <selectables linebreak="yes">
                   <selectable>invoke platform-provided functionality</selectable>
                   <selectable>implement functionality</selectable>
                 </selectables> to generate asymmetric cryptographic keys in accordance with a specified
-                  cryptographic key generation algorithm
-                  <h:b>
+                cryptographic key generation algorithm
                   <h:ul>
-                    <h:li>[ECC schemes] using [“NIST curves” P-256, P-384, and <selectables>
+                    <h:li<h:b>>[ECC schemes] using [“NIST curves” P-256, P-384, and 
+                      <selectables>
                           <selectable>P-521</selectable>
                           <selectable>no other curves</selectable>
-                        </selectables>] that meet the following: FIPS PUB 186-4, “Digital Signature
-                        Standard (DSS),” Appendix B.4,
-                    </h:li></h:ul> <selectables linebreak="yes">
-                    <selectable>[FFC schemes] using cryptographic key sizes of [2048-bit or greater] that meet
-                      the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),”
-                      Appendix B.1</selectable>
-                      <selectable>[FFC schemes] using Diffie-Hellman group 14 that meet the following: RFC 3526, Section 3,</selectable>
-                      </selectables>
-
-                </h:b>
-
+                      </selectables>] that meet the following: [FIPS PUB 186-4, “Digital Signature
+                    Standard (DSS),” Appendix B.4], and,</h:b>
+                    </h:li>
+                  </h:ul> 
                   <selectables linebreak="yes">
-                    <selectable>[RSA schemes] using cryptographic key sizes of [2048-bit or greater] that meet
-                      the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),
-                      Appendix B.3"</selectable>
-                    <selectable>[FFC schemes] using "safe-prime" groups that meet the following:
-                      NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Estbalishment Schemes using Discrete
-                      Logarithm Cryptography" and <selectables>
+                    <selectable><h:b>[FFC schemes] using cryptographic key sizes of [2048-bit or greater] that meet
+                      the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.1</h:b></selectable>
+                    <selectable><h:b>[FFC schemes] using Diffie-Hellman group 14 that meet the following: RFC 3526, Section 3,</h:b></selectable>
+                    <selectable><h:b>[FFC Schemes using “safe-prime” groups] that meet the following: ‘NIST Special Publication 800-56A 
+                      Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm
+                      Cryptography” and 
+                      <selectables>
                         <selectable>RFC 3526</selectable>
                         <selectable>RFC 7919</selectable>
-                      </selectables></selectable>
-                    <selectable><h:b>No other key generation methods</h:b></selectable>
-                  </selectables>.
+                      </selectables>;</h:b>
+                    </selectable>
+                    <selectable>[RSA schemes] using cryptographic key sizes of [2048-bit or greater] that
+                      meet the following: [FIPS PUB 186-4, “Digital Signature Standard (DSS),”
+                      Appendix B.3];
+                    </selectable>
+                    <selectable>no other key generation methods
+                    </selectable>
+                  </selectables>
                 </title>
-
                 <note role="application">
-                  This SFR is identified in the App PP as <no-link>FCS_CKM.1</no-link>(1). It is also selection-based in the App PP depending on the selection made in
-                  <no-link>FCS_CKM_EXT.1</no-link>. Because key generation services (whether implemented by the
+                  This SFR is selection-based in the App PP depending on the selection made in
+                  FCS_CKM_EXT.1. Because key generation services (whether implemented by the
                   TOE or invoked from the platform) are required for IPsec, this SFR is mandatory
                   for any TOE that claims conformance to this PP-Module.<h:p/>
-
-                  This SFR is functionally identical to what is defined in the App PP except that ECC key generation and at least one of FFC or DH group 14
-                  key generation have been made mandatory in support of IPsec due to
-                  the mandated support for DH groups 14, 19, and 20 in FCS_IPSEC_EXT.1.8. RSA and "safe-prime" FFC
-                  remain present as selections since they may be used by parts of the TSF
-                  that are not specifically related to VPN client functionality.
+                  This SFR is functionally identical to what is defined in the App PP except that ECC
+                  key generation has been made mandatory in support of IPsec due to the
+                  mandated support for DH groups 19, and 20 in FCS_IPSEC_EXT.1.8. RSA remains
+                  present as a selection since it may be used by parts of the TOE that are not
+                  specifically related to VPN client functionality.
                 </note>
-                <aactivity>
+                <aactivity>   <!-- QQQQ -->
                   Refer to the evaluation activity for <no-link>FCS_CKM.1</no-link>(1) in the App PP for evaluating this SFR.
                   <no-tests/>
                 </aactivity>
               </f-element>
+              <audit-event/>
             </f-component>
 
             <f-component id="fcs_ckm.2" name="Cryptographic Key Establishment">
