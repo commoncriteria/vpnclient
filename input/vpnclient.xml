@@ -689,14 +689,14 @@
         a specific manner in order to ensure that the functionality provided by the OS is consistent with the
         functionality required by the VPN client in order for it to conform to this PP-Module. 
         
-        <subsection title="Cryptographic Support (FCS)" id="fcs">
+        <subsection title="Cryptographic Support (FCS)" id="os-m-fcs">
           
           <!-- 5.1.1.1 FCS_CKM.1 Cryptographic Key Generation -->
-          <f-component cc-id="fcs_ckm.1" name="Cryptographic Key Generation">
+          <f-component cc-id="fcs_ckm.1" id="os-fcs-ckm-1" name="Cryptographic Key Generation">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
-            <f-element if="fcs-ckm-1e1">
+            <f-element if="os-fcs-ckm-1e1">
               <title><h:b>The OS shall generate asymmetric cryptographic keys in accordance with a specified
                 cryptographic key generation algorithm: 
                 <h:ul><h:i>
@@ -746,12 +746,12 @@
             <audit-event/>
           </f-component>
 
-          <!-- 5.1.1.2 Cryptographic Key Establishment -->
-          <f-component cc-id="fcs_ckm.2" name="Cryptographic Key Establishment">
+          <!-- 5.1.1.2 FCS_CKM.2 Cryptographic Key Establishment -->
+          <f-component cc-id="fcs_ckm.2" id="os-fcs-ckm-2" name="Cryptographic Key Establishment">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
-            <f-element id="fcs-ckm-2e1">
+            <f-element id="os-fcs-ckm-2e1">
               <title><h:b>The OS shall implement functionality to perform cryptographic key
                 establishment in accordance with a specified key establishment method:</h:b>
                 <h:ul>
@@ -798,12 +798,12 @@
           </f-component>
 
           <!-- 5.1.1.3 FCS_COP.1(1) Cryptographic Operation (Encryption/Decryption)  -->
-          <f-component cc-id="fcs_cop.1" name="Cryptographic Operation (Encryption and Decryption)" iteration="1">
+          <f-component cc-id="fcs_cop.1" id="os-fcs-cop-1i1" name="Cryptographic Operation (Encryption and Decryption)" iteration="1">
             <consistency-rationale>The SFR is refined to list an additional AES mode that must be
               supported to address VPN client requirements; the use of this mode
               for VPN connectivity does not impact the ability of the OS to satisfy
               any of its other security requirements.</consistency-rationale>
-            <f-element id="fcs-cop-1e1-1">
+            <f-element id="os-fcs-cop-1e1i1">
               <title>The OS shall perform encryption/decryption services for data in accordance with
                 a specified cryptographic algorithm
                 <h:ul><h:b>
@@ -848,13 +848,13 @@
         This section lists additional SFRs that must be added to the TOE boundary in order to implement the
         functionality in any PP-Configuration where the GPOS PP is claimed as the Base-PP.
 
-        <subsection title="Cryptographic Support (FCS)" id="fcs">
+        <subsection title="Cryptographic Support (FCS)" id="os-a-fcs">
           
           <!-- 5.1.2.1 FCS_CKM_EXT.2 Cryptographic Key Storage  -->
-          <f-component cc-id="fcs_ckm_ext.2" name="Cryptographic Key Storage">
+          <f-component cc-id="fcs_ckm_ext.2" id="os-fcs-ckm-ext-2 name="Cryptographic Key Storage">
             <consistency-rationale>Storage of key data related to VPN functionality can be accomplished
               using the same mechanism defined by FCS_STO_EXT.1 in the OS PP.</consistency-rationale>
-            <f-element id="fcs-ckm-ext-2e1">
+            <f-element id="os-fcs-ckm-ext-2e1">
               <title>The <selectables>
                 <selectable>VPN client</selectable>
                 <selectable>OS</selectable>
@@ -884,14 +884,14 @@
           </f-component>
         </subsection>
 
-        <subsection title="Identification and Authentication (FIA)" id="fia">
+        <subsection title="Identification and Authentication (FIA)" id="os-a-fia">
           <ext-comp-def title="X.509 Certificate Use and Management" fam-id="FIA_X509_EXT">
             <fam-behavior>Components in this family describe the requirements that pertain to IP traffic and information flow
               through the VPN client.</fam-behavior>
           </ext-comp-def>
           
           <!-- 5.1.2.2 FIA_X509_EXT.3 X.509 Certificate Authentication -->
-          <f-component cc-id="fia_x509_ext.3" name="X.509 Certificate Use and Management">
+          <f-component cc-id="fia_x509_ext.3" id="os-fia-x509-ext-3" name="X.509 Certificate Use and Management">
             <consistency-rationale>This SFR defines additional uses for X.509 certificate functionality that
               do not conflict with those defined in the OS PP.</consistency-rationale>
             <comp-lev>requires the TOE to perform X.509 certificate
@@ -904,7 +904,7 @@
             <dependencies>FIA_X509_EXT.1 X.509 Certificate Validation<h:p/>
               <no-link>FPT_TST_EXT.1</no-link> TSF Self-Test<h:p/>
             FPT_TUD_EXT.1 Trusted Update</dependencies>
-            <f-element id="fia-x509-ext-3e1">
+            <f-element id="os-fia-x509-ext-3e1">
               <title>The TSF shall use X.509v3 certificates as defined by RFC 5280 to support
               authentication for IPsec exchanges, and <selectables>
                 <selectable>digital signatures for FPT_TUD_EXT.1</selectable>
@@ -913,7 +913,7 @@
               </selectables>.
               </title>
             </f-element>
-            <f-element id="fia-x509-ext-3e2">
+            <f-element id="os-fia-x509-ext-3e2">
                 <title>
                   When a connection to determine the validity of a certificate cannot be
                   established, the <selectables>
@@ -939,7 +939,7 @@
                     FMT_SMF.1/VPN.
                 </note>
             </f-element>
-            <f-element id="fia-x509-ext-3e3">
+            <f-element id="os-fia-x509-ext-3e3">
               <title>
                 The <selectables>
                   <selectable>VPN client</selectable>
@@ -982,15 +982,15 @@
           </f-component>
         </subsection>
 
-        <subsection title="Trusted Path/Channels (FTP)" id="ftp">
+        <subsection title="Trusted Path/Channels (FTP)" id="os-a-ftp">
           
           <!-- 5.1.2.3 FTP_ITC Inter-TSF Trusted Channel -->
-          <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel">
+          <f-component cc-id="ftp_itc.1" id="os-ftp-itc-1" name="Inter-TSF Trusted Channel">
             <consistency-rationale>This SFR defines a trusted channel for IPsec, which is added
               functionality that does not prevent the existing OS functions from
               being performed.
             </consistency-rationale>
-            <f-element id="ftp-itc-1e1">
+            <f-element id="os-ftp-itc-1e1">
               <title>
                 The <h:b><selectables>
                   <selectable>VPN client</selectable>
@@ -1008,7 +1008,7 @@
                 detection of modification of the channel data</h:b>.
               </title>
             </f-element>
-            <f-element id="ftp-itc-1e2">
+            <f-element id="os-ftp-itc-1e2">
               <title>
                 The <h:b>
                 <selectables>
@@ -1017,7 +1017,7 @@
                 </selectables></h:b> shall permit [<h:i>the TSF</h:i>] to initiate communication with the trusted channel.
               </title>
             </f-element>
-            <f-element id="ftp-itc-1e3">
+            <f-element id="os-ftp-itc-1e3">
               <title>
                 The <h:b>
                 <selectables>
@@ -1144,14 +1144,14 @@
       captured in the MDF PP is included.
       
       <modified-sfrs>
-        <subsection title="Cryptographic Support (FCS)" id="fcs">
+        <subsection title="Cryptographic Support (FCS)" id="md-m-fcs">
           
           <!-- 5.2.1.1 FCS_CKM.1 Cryptographic Key Generation -->
-          <f-component cc-id="fcs_ckm.1" name="Cryptographic Key Generation">
+          <f-component cc-id="fcs_ckm.1" id="md-fcs-ckm-1" name="Cryptographic Key Generation">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
-            <f-element id="fcs-ckm-1e1">
+            <f-element id="md-fcs-ckm-1e1">
               <title><h:b>The TSF shall generate asymmetric cryptographic keys in accordance with a specified cryptographic key
                 generation algorithm: 
                 <h:ul>
@@ -1211,11 +1211,11 @@
           </f-component>
 
           <!-- 5.2.1.2 FCS_CKM.2(1) Cryptographic Key Establishment -->
-          <f-component cc-id="fcs_ckm.2" name="Cryptographic Key Establishment" iteration="1">
+          <f-component cc-id="fcs_ckm.2" id="md-fcs-ckm-2i1" name="Cryptographic Key Establishment" iteration="1">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
-            <f-element id="fcs-ckm-2e1-1">
+            <f-element id="md-fcs-ckm-2e1i1">
               <title><h:b>The TSF shall perform cryptographic key
                 establishment in accordance with a specified key establishment method:
                 <h:ul>
@@ -1266,11 +1266,11 @@
           </f-component>
 
           <!-- 5.2.1.3 FCS_COP.1(1) Cryptographic Operation -->
-          <f-component cc-id="fcs_cop.1" name="Cryptographic Operation" iteration="1">
+          <f-component cc-id="fcs_cop.1" id="md-fcs-cop-1i1" name="Cryptographic Operation" iteration="1">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
-            <f-element id="fcs-cop-1e1-1">
+            <f-element id="md-fcs-cop-1e1i1">
               <title>The OS shall perform [<h:i>encryption/decryption</h:i>] in accordance with
                 a specified cryptographic algorithm
                 <h:ul>
@@ -1303,13 +1303,13 @@
           </f-component>
         </subsection>
         
-        <subsection title="Identification and Authentication (FIA)" id="fia">
+        <subsection title="Identification and Authentication (FIA)" id="md-m-fia">
           
           <!-- 5.2.1.4 FIA_X509_EXT.2 X.509 Certificate Authentication -->
-          <f-component cc-id="fia_x509_ext.2" name="X.509 Certificate Authentication">
+          <f-component cc-id="fia_x509_ext.2" id="md-fia-x509-ext-2" name="X.509 Certificate Authentication">
             <consistency-rationale>This PP-Module adds IPsec as a new trusted protocol where x.509
               certificate authentication is used.</consistency-rationale>
-            <f-element id="fia-x509-ext-2e1">
+            <f-element id="md-fia-x509-ext-2e1">
               <title>The TSF shall use X.509v3 certificates as defined by RFC 5280 to support
                 authentication for <h:b>IPsec</h:b> and 
                 <selectables>
@@ -1327,7 +1327,7 @@
                 </selectables>.
               </title>
             </f-element>
-            <f-element id="fia-x509-ext-2e2">
+            <f-element id="md-fia-x509-ext-2e2">
               <title>When the TSF cannot establish a connection to determine the validity of a
                 certificate, the TSF shall 
                 <selectables>
@@ -1353,13 +1353,13 @@
           </f-component>
         </subsection>
         
-        <subsection title="Trusted Path/Channels (FTP)" id="ftp">
+        <subsection title="Trusted Path/Channels (FTP)" id="md-m-ftp">
           
           <!-- 5.2.1.5 FTP_ITC_EXT.1 Trusted Channel Communications -->
-          <f-component cc-id="ftp_itc_ext.1" name="Trusted Channel Communication">
+          <f-component cc-id="ftp_itc_ext.1" id="md-ftp-itc-ext-1" name="Trusted Channel Communication">
             <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
               implement trusted channels.</consistency-rationale>
-            <f-element id="ftp-itc-ext-1e1">
+            <f-element id="md-ftp-itc-ext-1e1">
               <title>The TSF shall use 802.11-2012, 802.1X, EAP-TLS, <h:b>IPsec,</h:b> and
                 <selectables>
                   <selectable>TLS</selectable>
@@ -1374,11 +1374,11 @@
                 data.
                 </title>
             </f-element>
-            <f-element id="ftp-itc-ext-1e2">
+            <f-element id="md-ftp-itc-ext-1e2">
               <title>The TSF shall permit the TSF to initiate communication via the trusted channel.
               </title>
             </f-element>
-            <f-element id="ftp-itc-ext-1e3">
+            <f-element id="md-ftp-itc-ext-1e3">
               <title>
                 The TSF shall initiate communication via the trusted channel for wireless access
                 point connections, administrative communication, configured enterprise
@@ -1482,16 +1482,16 @@
         specific manner in order to ensure that the functionality provided by the application is consistent with
         the functionality required by the VPN client in order for it to conform to this PP-Module.
         
-        <subsection title="Cryptographic Support (FCS)" id="fcs">
+        <subsection title="Cryptographic Support (FCS)" id="ap-m-fcs">
             
           <!-- 5.3.1.1 FCS_CKM.1(1) Cryptographic Asymmetric Key Generation -->
-          <f-component cc-id="fcs_ckm.1" name="Cryptographic Asymmetric Key Generation" iteration="1">
+          <f-component cc-id="fcs_ckm.1" id="ap-fcs-ckm-1i1" name="Cryptographic Asymmetric Key Generation" iteration="1">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified. Additionally, this behavior is selection-based in the App
               PP but is made mandatory since it is required for VPN client
               functionality.</consistency-rationale>
-            <f-element id="fcs-ckm-1e1">
+            <f-element id="ap-fcs-ckm-1e1i1">
               <title>The application shall 
                 <selectables linebreak="yes">
                   <selectable>invoke platform-provided functionality</selectable>
@@ -1547,11 +1547,11 @@
             </f-component>
 
             <!-- 6.3.1.2 FCS_CKM.2 Cryptographic Key Establishment -->
-            <f-component cc-id="fcs_ckm.2" name="Cryptographic Key Establishment">
+            <f-component cc-id="fcs_ckm.2" id="ap-fcs-ckm-2" name="Cryptographic Key Establishment">
               <consistency-rationale>The ST author is instructed to make specific selections at minimum to
                 address VPN client requirements and is modified to include Diffie-Hellman Group 14 as an additional supported method for key
                 establishment.</consistency-rationale>
-              <f-element id="fcs-ckm-2e1">
+              <f-element id="ap-fcs-ckm-2e1">
                 <title>The application shall 
                   <selectables>
                     <selectable>invoke platform-provided functionality</selectable>
@@ -1602,7 +1602,7 @@
             </f-component>
 
             <!-- 5.3.1.3 FCS_CKM_EXT.1 Cryptographic Key Generation Services -->          
-            <f-component name="Cryptographic Key Generation Services" cc-id="fcs_ckm_ext.1">
+            <f-component name="Cryptographic Key Generation Services" cc-id="fcs_ckm_ext.1" id="ap-fcs-ckm-ext.1">
               <consistency-rationale>The ST author is instructed to make specific selections at minimum to
                 address VPN client requirements; specifically, since key generation
                 services are required in some capacity in order to support VPN
@@ -1610,7 +1610,7 @@
                 application does not have any key generation functionality.
                 Additionally, this behavior is selection-based in the App PP but is made
                 mandatory since it is required for VPN client functionality.</consistency-rationale>
-              <f-element id="fcs-ckm-ext.1e1">
+              <f-element id="ap-fcs-ckm-ext.1e1">
                 <title>The application shall 
                   <selectables>
                     <selectable>invoke platform-provided functionality for asymmetric key generation</selectable>
@@ -1632,11 +1632,11 @@
             </f-component>
 
             <!-- 5.3.1.4 FCS_COP.1(1) Cryptographic Operation - Encryption/Decryption -->
-            <f-component cc-id="fcs_cop.1" name="Cryptographic Operation" iteration="1">
+            <f-component cc-id="fcs_cop.1" id="ap-fcs-cop-1i1" name="Cryptographic Operation" iteration="1">
               <consistency-rationale>The ST author is instructed to make specific selections at minimum to
                 address VPN client requirements; the SFR behavior itself is
                 unmodified.</consistency-rationale>
-              <f-element id="fcs-cop-1e1-1">
+              <f-element id="ap-fcs-cop-1e1i1">
                 <title>The application shall perform encryption/decryption in accordance with
                   a specified cryptographic algorithm <h:b>
                   <h:ul>
@@ -1667,18 +1667,18 @@
             </f-component>
           </subsection>
         
-          <subsection title="Identification and Authentication (FIA)" id="fia">
+          <subsection title="Identification and Authentication (FIA)" id="ap-m-fia">
             
             <!-- 5.3.1.5 FIA_X509_EXT.2 X.509 Certificate Authentication -->
-            <f-component cc-id="fia_x509_ext.2" name="X.509 Certificate Authentication">
+            <f-component cc-id="fia_x509_ext.2" id="ap-fia-x509-ext-2" name="X.509 Certificate Authentication">
               <consistency-rationale>This PP-Module adds IPsec as a new trusted protocol where x.509
                 certificate authentication is used.</consistency-rationale>
-              <f-element id="fia-x509-ext-2e1">
+              <f-element id="ap-fia-x509-ext-2e1">
                 <title>The application shall use X.509v3 certificates as defined by RFC 5280 to support
                   authentication for <h:b>IPsec</h:b> and [<h:b>no other protocols</h:b>].
                 </title>
               </f-element>
-              <f-element id="fia-x509-ext-2e2">
+              <f-element id="ap-fia-x509-ext-2e2">
                 <title>When the application cannot establish a connection to determine the validity of a
                   certificate, the TSF shall 
                   <selectables>
@@ -1703,13 +1703,13 @@
             </f-component>
           </subsection>
         
-          <subsection title="Trusted Path/Channels (FTP)" id="ftp">
+          <subsection title="Trusted Path/Channels (FTP)" id="ap-m-ftp">
             
             <!-- 5.3.1.6 FTP_DIT_EXT.1 Protection of Data in Transit -->
-            <f-component cc-id="ftp_dit_ext.1" name="Protection of Data in Transit">
+            <f-component cc-id="ftp_dit_ext.1" id="ap-ftp-dit-ext-1" name="Protection of Data in Transit">
               <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
                 implement trusted channels.</consistency-rationale>
-              <f-element id="ftp-dit-ext-1e1">
+              <f-element id="ap-ftp-dit-ext-1e1">
                 <title>The application shall [<h:i>not encrypt any [sensitive data]]</h:i> between itself
                   and another trusted IT product.
                 </title>
@@ -1735,10 +1735,10 @@
         This section lists additional SFRs that must be added to the TOE boundary in order to implement the
         functionality in any PP-Configuration where the App PP is claimed as the Base-PP.
 
-        <subsection title="Cryptographic Support (FCS)" id="fcs">
+        <subsection title="Cryptographic Support (FCS)" id="md-a-fcs">
           
           <!-- 5.3.2.1 FCS_CKM_EXT.2 Cryptographic Key Storage -->
-          <f-component cc-id="fcs_ckm_ext.2" name="Cryptographic Key Storage"  notnew='true'>
+          <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage"  notnew='true'>
             <consistency-rationale>This PP-Module adds a requirement for key storage, which is new
               functionality when compared to the Base-PP but does not interfere
               with its existing security functions.</consistency-rationale>
@@ -1749,7 +1749,7 @@
             <audit>There are no auditable events foreseen.
             </audit>
             <dependencies>No dependencies</dependencies>
-            <f-element id="fcs-ckm-ext-2e1">
+            <f-element id="ap-fcs-ckm-ext-2e1">
               <title>The 
                 <selectables>
                   <selectable>TOE</selectable>
@@ -1791,7 +1791,7 @@
           </f-component>
 
           <!-- 5.3.2.2 FCS_CKM_EXT.4 Cryptographic Key Destruction -->
-          <f-component cc-id="fcs_ckm_ext.4" name="Cryptographic Key Destruction">
+          <f-component cc-id="fcs_ckm_ext.4" id="ap-fcs-ckm-ext-4" name="Cryptographic Key Destruction">
             <consistency-rationale>This PP-Module adds a requirement for key destruction, which is new
               functionality when compared to the Base-PP but does not interfere
               with its existing security functions.</consistency-rationale>
@@ -1802,7 +1802,7 @@
             <audit>There are no auditable events foreseen.
             </audit>
             <dependencies>No dependencies</dependencies>
-            <f-element id="fcs-ckm-ext-4e1">
+            <f-element id="ap-fcs-ckm-ext-4e1">
               <title>The 
                 <selectables>
                   <selectable>TOE</selectable>
@@ -1963,14 +1963,14 @@
         VPN client. It is necessary for the ST author to complete selections and/or assignments for these SFRs in
         a specific manner in order to ensure that the functionality provided by the application is consistent with
         the functionality required by the VPN client in order for it to conform to this PP-Module.
-        <subsection title="Cryptographic Support (FCS)" id="fcs">
+        <subsection title="Cryptographic Support (FCS)" id="dm-m-fcs">
           
           <!-- 5.4.1.1 FCS_CKM.1 Cryptographic Key Generation -->
-          <f-component cc-id="fcs_ckm.1" name="Cryptographic Key Generation">
+          <f-component cc-id="fcs_ckm.1" id="dm-fcs-ckm-1" name="Cryptographic Key Generation">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
-            <f-element id="fcs-ckm-1e1">
+            <f-element id="dm-fcs-ckm-1e1">
               <title>The TSF shall 
                 <selectables>
                   <selectable>invoke platform-provided functionality</selectable>
@@ -2019,8 +2019,8 @@
             </f-element>
             <audit-event/>
           </f-component>
-<!--- QQQQQQ  -->
-          <!-- 5.2.1.2 FCS_CKM.2(1) Cryptographic Key Establishment -->
+<!-- QQQQQQQQ -->
+          <!-- 5.4.1.2 FCS_CKM.2 Cryptographic Key Establishment -->
           <f-component cc-id="fcs_ckm.2" name="Cryptographic Key Establishment" iteration="1">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
