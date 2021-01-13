@@ -1271,7 +1271,7 @@
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
             <f-element id="md-fcs-cop-1e1i1">
-              <title>The OS shall perform [<h:i>encryption/decryption</h:i>] in accordance with
+              <title>The TSF shall perform [<h:i>encryption/decryption</h:i>] in accordance with
                 a specified cryptographic algorithm
                 <h:ul>
                   <h:li>AES-CBC (as defined in FIPS PUB 197, NIST SP 800-38A),</h:li>
@@ -1546,7 +1546,7 @@
               <audit-event/>
             </f-component>
 
-            <!-- 6.3.1.2 FCS_CKM.2 Cryptographic Key Establishment -->
+            <!-- 5.3.1.2 FCS_CKM.2 Cryptographic Key Establishment -->
             <f-component cc-id="fcs_ckm.2" id="ap-fcs-ckm-2" name="Cryptographic Key Establishment">
               <consistency-rationale>The ST author is instructed to make specific selections at minimum to
                 address VPN client requirements and is modified to include Diffie-Hellman Group 14 as an additional supported method for key
@@ -1963,6 +1963,7 @@
         VPN client. It is necessary for the ST author to complete selections and/or assignments for these SFRs in
         a specific manner in order to ensure that the functionality provided by the application is consistent with
         the functionality required by the VPN client in order for it to conform to this PP-Module.
+        
         <subsection title="Cryptographic Support (FCS)" id="dm-m-fcs">
           
           <!-- 5.4.1.1 FCS_CKM.1 Cryptographic Key Generation -->
@@ -2019,46 +2020,51 @@
             </f-element>
             <audit-event/>
           </f-component>
-<!-- QQQQQQQQ -->
+
           <!-- 5.4.1.2 FCS_CKM.2 Cryptographic Key Establishment -->
-          <f-component cc-id="fcs_ckm.2" name="Cryptographic Key Establishment" iteration="1">
+          <f-component cc-id="fcs_ckm.2" id="dm-fcs-ckm-2" name="Cryptographic Key Establishment">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
-            <f-element id="fcs-ckm-2e1-1">
-              <title><h:b>The TSF shall perform cryptographic key
-                establishment in accordance with a specified key establishment method:
+            <f-element id="dm-fcs-ckm-2e1">
+              <title><h:b>The TSF shall 
+                <selectables>
+                  <selectable>invoke platform-provided functionality</selectable>
+                  <selectable>implement functionality</selectable>
+                </selectables>
+                to perform cryptographic key establishment in accordance with a specified key establishment method:
                 <h:ul>
-                  <h:li>Elliptic curve-based key establishment schemes that meets the following:
+                  <h:li><h:b>Elliptic curve-based key establishment schemes that meets the following:
                     NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
-                    Establishment Schemes Using Discrete Logarithm Cryptography,”
+                    Establishment Schemes Using Discrete Logarithm Cryptography,”</h:b>
                   </h:li>
                 </h:ul>and
-                <selectables linebreak="yes">
+                <selectables linebreak="yes">                  
+                  <selectable>RSA-based key establishment schemes that meet the following: 
+                    RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, “Public-Key Cryptography Standards
+                    (PKCS) #1: RSA Cryptography Specifications Version 2.1,"</selectable>
                   <selectable>Finite field-based key establishment schemes that meets the following: NIST
                     Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
                     Establishment Schemes Using Discrete Logarithm Cryptography”</selectable>
-                  <selectable><h:b>Key establishment scheme using Diffie-Hellman group 14 that meets the
-                    following: RFC 3526, Section 3</h:b></selectable>
-                  <selectable>RSA-based key establishment schemes that meet the following: 
+                  <selectable>FFC schemes using "safe-prime" groups that meet the following: 'NIST
+                    Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key
+                    Establishment Schemes Using Discrete Logarithm Cryptography,"' and
                     <selectables>
-                      <selectable>NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key
-                        Establishment Schemes using Integer Factorization Cryptography,”</selectable>
-                      <selectable>RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017,
-                        “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.2</selectable>
+                      <selectable>RFC 3526</selectable>
+                      <selectable>RFC 7919</selectable>
                     </selectables>
                   </selectable>
-                  <selectable>no other key establishment schemes</selectable>
-                </selectables>.</h:b>
+                  <selectable>Key establishment scheme using Diffie-Hellman group 14 that meets the
+                    following: RFC 3526, Section 3</selectable>
+                  <selectable><h:b>No other schemes</h:b></selectable>
+                </selectables>.
               </title>
               <note role="application">
-                This SFR differs from its definition in the MDF PP by moving elliptic curve-based
-                key establishment schemes from selectable to mandatory (due to the mandated
-                support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8). It also provides the
-                ability to claim either NIST SP 800-56A or RFC 3526 for key establishment using
-                finite field cryptography if DH group 14 is claimed. The use of RSA is not
-                explicitly mandated by the VPN client but may be selected in the MDF PP, which
-                is why it remains here.
+                This SFR is modified from its definition in the MDM PP by mandating the key
+                establishment algorithms that are required by this PP-Module in support of IPsec due
+                to the mandated support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8. Other
+                selections may be chosen by the ST author as needed for parts of the TOE that are
+                not specifically related to VPN client functionality.
               </note>
               <aactivity> <!-- QQQQ -->
                 For all key establishment schemes that conform to NIST SP 800-56A or 800-56B, refer to the
@@ -2075,34 +2081,36 @@
             <audit-event/>
           </f-component>
 
-          <!-- 5.2.1.3 FCS_COP.1(1) Cryptographic Operation -->
-          <f-component cc-id="fcs_cop.1" name="Cryptographic Operation" iteration="1">
+          <!-- 5.4.1.3 FCS_COP.1(1) Cryptographic Operation (Confidentiality Algorithms) -->
+          <f-component cc-id="fcs_cop.1" id="dm-fcs-cop-1i1" name="Cryptographic Operation" iteration="1">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
-            <f-element id="fcs-cop-1e1-1">
-              <title>The OS shall perform [<h:i>encryption/decryption</h:i>] in accordance with
-                a specified cryptographic algorithm
-                <h:ul>
+            <f-element id="dm-fcs-cop-1e1i1">
+              <title>The TSF shall
+                <selectables>
+                  <selectable>invoke platform-provided functionality</selectable>
+                  <selectable>implement functionality</selectable>
+                </selectables>
+                perform encryption/decryption in accordance with a specified cryptographic algorithm
+                <h:ul><h:b>
                   <h:li>AES-CBC (as defined in FIPS PUB 197, NIST SP 800-38A),</h:li>
-                  <h:li>AES-CCMP (as defined in FIPS PUB 197, NIST SP 800-38C and IEEE 802.11-2012),</h:li>
-                  <h:li><h:b>AES-GCM (as defined in NIST SP 800-38D),</h:b></h:li>
-                </h:ul> and
+                  <h:li>AES-GCM (as defined in NIST SP 800-38D), and</h:li></h:b>
+                </h:ul>
                 <selectables linebreak="yes">
                   <selectable>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</selectable>
                   <selectable>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</selectable>
                   <selectable>AES-CCM (as defined in NIST SP 800-38C)</selectable>
-                  <selectable>AES-XTS (as defined in NIST SP 800-38E)</selectable>
-                  <selectable>AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)</selectable>
-                  <selectable>AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)</selectable>
                   <selectable>no other modes</selectable>
                 </selectables>
-                and cryptographic key sizes 128-bit key sizes and [<h:i>256-bit key sizes</h:i>].
+                and cryptographic key sizes [<h:i>128-bit, 256-bit</h:i>].
               </title>
               <note role="application">
-                This SFR is identical to what is defined in the MDF PP except that support for
-                GCM mode and support for 256-bit key sizes are both mandatory in order to
-                address the requirements for FCS_IPSEC_EXT.1.
+                This SFR is modified from its definition in the Base-PP by mandating support for both
+                128-bit and 256-bit implementations of AES-CBC (which this PP-Module requires for
+                the use of IKE and allows for the use of ESP) and AES-GCM (which this PP-Module
+                requires for the use of ESP and allows for the use of IKE). Other AES modes may be
+                selected by the ST author as needed to address functions not required by this PPModule.
               </note>
               <aactivity>  <!-- QQQQ -->
                 Refer to the evaluation activity for <no-link>FCS_COP.1</no-link>(1) in the MD PP.
@@ -2116,43 +2124,61 @@
         <subsection title="Identification and Authentication (FIA)" id="fia">
           
           <!-- 5.2.1.4 FIA_X509_EXT.2 X.509 Certificate Authentication -->
-          <f-component cc-id="fia_x509_ext.2" name="X.509 Certificate Authentication">
+          <f-component cc-id="fia_x509_ext.2" id="dm-fia-x509-ext-2" name="X.509 Certificate Authentication">
             <consistency-rationale>This PP-Module adds IPsec as a new trusted protocol where x.509
               certificate authentication is used.</consistency-rationale>
-            <f-element id="fia-x509-ext-2e1">
-              <title>The TSF shall use X.509v3 certificates as defined by RFC 5280 to support
-                authentication for <h:b>IPsec</h:b> and 
+            <f-element id="dm-fia-x509-ext-2e1">
+              <title>The TSF shall
                 <selectables>
-                  <selectable>TLS</selectable>
-                  <selectable>HTTPS</selectable>
-                  <selectable>DTLS</selectable>
-                  <selectable><h:b>no other protocols</h:b></selectable>
-                </selectables>, and 
-                <selectables>
-                  <selectable>code signing for system software updates</selectable>
-                  <selectable>code signing for mobile applications</selectable>
-                  <selectable>code signing for integrity verification</selectable>
-                  <selectable><assignable>other uses</assignable></selectable>
-                  <selectable>no additional uses</selectable>
-                </selectables>.
-              </title>
-            </f-element>
-            <f-element id="fia-x509-ext-2e2">
-              <title>When the TSF cannot establish a connection to determine the validity of a
-                certificate, the TSF shall 
-                <selectables>
-                  <selectable>allow the administrator to choose whether to accept the certificate in these cases</selectable>
-                  <selectable>allow the user to choose whether to accept the certificate in these cases</selectable>
-                  <selectable>accept the certificate</selectable>
-                  <selectable>not accept the certificate</selectable>
+                  <selectable>
+                    Invoke platform-provided functionality to use X.509v3 certificates as defined by
+                    RFC 5280 to support authentication for 
+                    <selectables>
+                      <selectable><h:s>IPsec</h:s></selectable>
+                      <selectable>HTTPS</selectable>
+                      <selectable>TLS</selectable>
+                      <selectable>DTLS</selectable>
+                      <selectable>SSH</selectable>
+                      <selectable>no protocols</selectable>
+                    </selectables> and 
+                    <selectables linebreak="yes">
+                      <selectable>code signing for system software updates</selectable>
+                      <selectable>code signing for integrity verification</selectable>
+                      <selectable>policy signing</selectable>
+                      <selectable><assignable>other uses</assignable></selectable>
+                      <selectable>no additional uses</selectable>
+                    </selectables>
+                  </selectable>
+                  <selectable>use X.509v3 certificates as defined by RFC 5280 to support
+                    authentication for 
+                    <h:ul>
+                      <h:li><h:b>IPsec as specified in the PP-Module for VPN client and</h:b></h:li>
+                    </h:ul>
+                    <selectables linebreak="yes">
+                      <selectable>HTTPS in accordance with FCS_HTTPS_EXT.1</selectable>
+                      <selectable>TLS as defined in the Package for Transport Layer Security</selectable>
+                      <selectable>DTLS as defined in the Package for Transport Layer Security</selectable>
+                      <selectable>SSH as defined in the Extended Package for Secure Shell</selectable>
+                      <selectable>no other protocols</selectable>
+                    </selectables>, and
+                    <selectables linebreak="yes">
+                      <selectable>code signing for system software updates</selectable>
+                      <selectable>code signing for integrity verification</selectable>
+                      <selectable>policy signing</selectable>
+                      <selectable><assignable>other uses</assignable></selectable>
+                      <selectable>no additional uses</selectable>
+                    </selectables>
+                  </selectable>
                 </selectables>.
               </title>
               <note role="application">
-                This SFR is identical to what is defined in the MDF PP except that support for
-                IPsec is mandated. Since the original SFR did not explicitly require at least one of
-                TLS, HTTPS, or DTLS to be selected, “no other protocols” has also been added as
-                a selection in the event that IPsec is the only protocol for which the TOE uses
-                X.509v3 certificates for authentication.
+                The PP-Module requires the TOE to implement its own X.509 authentication
+                mechanism in support of IPsec communications. Other selections may be chosen by
+                the ST author as needed for parts of the TOE that are not specifically related to VPN
+                client functionality. The TSF may also rely on a platform-provided mechanism for
+                uses of X.509 that do not relate to the establishment of trusted communications, as
+                specified in the original SFR. FIA_X509_EXT.2.2 has not been included here as the PPModule 
+                does not modify this element.
               </note>
               <aactivity>  <!-- QQQQ -->
                 Refer to the evaluation activity for <no-link>FIA_X509_EXT.2</no-link> in the MD PP.
@@ -2164,12 +2190,15 @@
         </subsection>
         
         <subsection title="Trusted Path/Channels (FTP)" id="ftp">
+<!-- QQQQQQQQQQQQQQQQ  -->
           
-          <!-- 5.2.1.5 FTP_ITC_EXT.1 Trusted Channel Communications -->
-          <f-component cc-id="ftp_itc_ext.1" name="Trusted Channel Communication">
+          
+          
+          <!-- 5.4.1.5 FTP_ITC_EXT.1 Trusted Channel Communications -->
+          <f-component cc-id="ftp_itc_ext.1" id="dm-ftp-itc-ext-1" name="Trusted Channel Communication">
             <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
               implement trusted channels.</consistency-rationale>
-            <f-element id="ftp-itc-ext-1e1">
+            <f-element id="dm-ftp-itc-ext-1e1">
               <title>The TSF shall use 802.11-2012, 802.1X, EAP-TLS, <h:b>IPsec,</h:b> and
                 <selectables>
                   <selectable>TLS</selectable>
@@ -2184,11 +2213,11 @@
                 data.
                 </title>
             </f-element>
-            <f-element id="ftp-itc-ext-1e2">
+            <f-element id="dm-ftp-itc-ext-1e2">
               <title>The TSF shall permit the TSF to initiate communication via the trusted channel.
               </title>
             </f-element>
-            <f-element id="ftp-itc-ext-1e3">
+            <f-element id="dm-ftp-itc-ext-1e3">
               <title>
                 The TSF shall initiate communication via the trusted channel for wireless access
                 point connections, administrative communication, configured enterprise
