@@ -3017,7 +3017,7 @@
 				</selectables> 
 				that use X.509v3 certificates that conform to RFC 4945 and 
 				<selectables>
-					<selectable>Pre-shared keys</selectable>
+					<selectable id="sel-ipsec-e11-psk">Pre-shared keys</selectable>
 					<selectable>no other method</selectable>
 				</selectables>.
             </title>
@@ -3291,29 +3291,32 @@
         </f-component>
       </subsection>
 
-  		  		 <!-- QQQQQQQQQQQQQQQQ  -->
-
+	<!-- 5.5.3 Security Management (FMT)  -->
     <subsection title="Security Management (FMT)" id="fmt">
         <description>
-        The TOE is not required to maintain a separate management role. It is, however, required to provide
-        functionality to configure certain aspects of TOE operation that should not be available to the general
-        user population. It is possible for the TOE, TOE Platform, or VPN Gateway to provide this functionality.
-        The client itself has to be configurable - whether it is from the EUD or from a VPN gateway.</description>
+			The TOE is not required to maintain a separate management role. It is, however, required to provide
+			functionality to configure certain aspects of TOE operation that should not be available to the general
+			user population. It is possible for the TOE, TOE Platform, or VPN Gateway to provide this functionality.
+			The client itself has to be configurable - whether it is from the EUD or from a VPN gateway.
+		</description>
 
-        <f-component id="fmt_smf.1" name="Specification of Management Functions (VPN)" iteration="VPN">
+		<!-- 5.5.3.1 FMT_SMF.1/VPN Specification of Management Functions (VPN) -->
+        <f-component cc-id="fmt_smf.1" name="Specification of Management Functions (VPN)" iteration="VPN">
           <consistency-rationale/>
-          <f-element>
-            <title> The TSF shall be capable of performing the following management functions: <selectables linebreak="yes">
-              <selectable>Specify VPN gateways to use for connections</selectable>
-              <selectable>Specify IPsec VPN Clients to use for connections</selectable>
-              <selectable>Specify IPsec-capable network devices to use for connections</selectable>
-              <selectable>Specify client credentials to be used for connections</selectable>
-              <selectable>Configure the reference identifier of the peer</selectable>
-              <selectable><assignable>any additional management functions</assignable></selectable>
-            </selectables>
+          <f-element id="fmt-smf-1e1-vpn">
+            <title> The TSF shall be capable of performing the following management functions: 
+				<selectables linebreak="yes">
+					<selectable>Specify VPN gateways to use for connections</selectable>
+					<selectable>Specify IPsec VPN Clients to use for connections</selectable>
+					<selectable>Specify IPsec-capable network devices to use for connections</selectable>
+					<selectable>Specify client credentials to be used for connections</selectable>
+					<selectable>Configure the reference identifier of the peer</selectable>
+					<selectable><assignable>any additional management functions</assignable></selectable>
+				</selectables>
             </title>
             <note role="application">Several of the management functions defined above correspond to the use cases
-              of the TOE as follows: <h:ul>
+              of the TOE as follows: 
+			  <h:ul>
                 <h:li>“Specify VPN gateways to use for connections” – Use Case 1</h:li>
                 <h:li>“Specify IPsec VPN Clients to use for connections” – Use Case 2 (specifically
                   refers to different end points to use for client-to-client connections)</h:li>
@@ -3322,14 +3325,12 @@
               Selections appropriate for the use case(s) supported by the TOE should be
               claimed. "Client credentials" will include the client certificate used for IPsec
               authentication, and may also include a username/password.<h:p/>
-
               For TOEs that support only IP address and FQDN identifier types, configuration
               of the reference identifier may be the same as configuration of the peer’s name
               for the purposes of connection.<h:p/>
-
               If there are additional management functions performed by the TOE (including
               those specified in FCS_IPSEC_EXT.1), they should be added in the assignment.
-              </note>
+            </note>
             <aactivity>
               <TSS>The evaluator shall check to ensure the TSS describes the client credentials and how they are used
                 by the TOE.<h:p/>
@@ -3348,16 +3349,19 @@
               </Tests>
             </aactivity>
           </f-element>
+		  <audit-event/>
         </f-component>
       </subsection>
 
+	  <!-- 5.5.4 Protection of the TSF (FPT) -->
       <subsection title="Protection of the TSF (FPT)" id="fpt">
-
         <ext-comp-def title="TSF Self-Test" fam-id="FPT_TST_EXT">
           <fam-behavior>Components in this family describe requirements for self-test to verify functionality and integrity of the
             TOE.</fam-behavior>
         </ext-comp-def>
-        <f-component id="fpt_tst_ext.1" name="TSF Self-Test">
+
+		<!-- 5.5.4.1 FPT_TST_EXT.1/VPN TSF Self-Test (VPN Client)  -->
+        <f-component cc-id="fpt_tst_ext.1" name="TSF Self-Test" iteration="VPN">
           <consistency-rationale/>
           <comp-lev>requires the TOE to perform power on self-tests to verify its functionality and
             the integrity of its stored executable code.</comp-lev>
@@ -3366,39 +3370,43 @@
           <audit>There are no auditable events foreseen.
           </audit>
           <dependencies>FCS_COP.1 Cryptographic Operation</dependencies>
-          <f-element>
+          <f-element id="fpt-tst-ext-1e1-vpn">
             <title>
-            The <selectables>
-              <selectable>TOE</selectable>
-              <selectable>TOE platform</selectable>
-            </selectables> shall run a suite of self tests during initial
-            start-up (on power on) to demonstrate the correct operation of the TSF.
+				The 
+				<selectables>
+					<selectable>TOE</selectable>
+					<selectable>TOE platform</selectable>
+				</selectables> 
+				shall run a suite of self tests during initial start-up (on power on) to demonstrate the correct 
+				operation of the TSF.
             </title>
           </f-element>
-          <f-element>
+          <f-element id="fpt-tst-ext-1e2-vpn">
             <title>
-              The <selectables>
-                <selectable>TOE</selectable>
-                <selectable>TOE platform</selectable>
-              </selectables> shall provide the capability to verify the
-              integrity of stored TSF executable code when it is loaded for execution through
-              the use of the <assignable>cryptographic services provided either by the portion
+				The 
+				<selectables>
+					<selectable>TOE</selectable>
+					<selectable>TOE platform</selectable>
+				</selectables> 
+				shall provide the capability to verify the integrity of stored TSF executable code when it is loaded 
+				for execution through the use of the 
+				<assignable>cryptographic services provided either by the portion
                 of the TOE described by the Base-PP or by the operational environment</assignable>.
             </title>
-            <note role="application">While the TOE is typically a software package running in the IT Environment, it is
-              still capable of performing the self-test activities required above. It should be
-              understood, however, that there is a significant dependency on the host
-              environment in assessing the assurance provided by the tests mentioned above
-              (meaning that if the host environment is compromised, the self-tests will not be
-              meaningful).<h:p/>
-
-              Cryptographic verification of the integrity is required, but the method by which
-              this can be accomplished is specified in the ST in the assignment. The ST author
-              will fill in the assignment with references to the cryptographic functions used to
-              perform the integrity checks; this will include hashing and may potentially
-              include digital signatures signed using X.509 certificates. If the TSF provides the
-              cryptographic services used to verify updates, all relevant FCS_COP requirements
-              will be identified in the assignment by the ST author.
+            <note role="application">
+				While the TOE is typically a software package running in the IT Environment, it is
+				still capable of performing the self-test activities required above. It should be
+				understood, however, that there is a significant dependency on the host
+				environment in assessing the assurance provided by the tests mentioned above
+				(meaning that if the host environment is compromised, the self-tests will not be
+				meaningful).<h:p/>
+				Cryptographic verification of the integrity is required, but the method by which
+				this can be accomplished is specified in the ST in the assignment. The ST author
+				will fill in the assignment with references to the cryptographic functions used to
+				perform the integrity checks; this will include hashing and may potentially
+				include digital signatures signed using X.509 certificates. If the TSF provides the
+				cryptographic services used to verify updates, all relevant FCS_COP requirements
+				will be identified in the assignment by the ST author.
             </note>
             <aactivity>
               Except for where it is explicitly noted, the evaluator is expected to check the following information
@@ -3443,24 +3451,46 @@
               </Tests>
             </aactivity>
           </f-element>
+		  <audit-event/>
         </f-component>
       </subsection>
-
-
-
     </man-sfrs>
 
+	<!-- Appendix A.1: Strictly Optional Requirements -->
     <opt-sfrs>
-     <!-- No optional SFRs -->
+     <!-- No optional SFRs 
+		There are currently no strictly optional requirements defined by this PP-Module.-->
     </opt-sfrs>
 
+	<!-- Appendix B: Selection-Based Requirements -->
+	<!-- I don't understand why these are in a separate section in Modules but not anywhere else. -->
     <sel-sfrs>
+	
+	  <!-- B.1 Identification and Authentication (FIA) -->
       <subsection title="Identification and Authentication (FIA)" id="fia">
+		<description>
+			The TOE may support pre-shared keys for use in the IPsec protocol, and may use pre-shared keys in
+			other protocols as well. There are two types of pre-shared keys that must be supported by the TOE, as
+			specified in the requirements below. The first type is referred to as “text-based pre-shared keys,” which
+			refer to pre-shared keys that are entered by users as a string of characters from a standard character
+			set, similar to a password. Such pre-shared keys must be conditioned so that the string of characters is
+			transformed into a string of bits, which is then used as the key.<h:p/>
+			The second type is referred to as “bit-based pre-shared keys” (for lack of a standard term); this refers to
+			keys that are either generated by the TSF on a command from the administrator, or input in "direct
+			form" by an administrator. "Direct form" means that the input is used directly as the key, with no
+			"conditioning" as was the case for text-based pre-shared keys. An example would be a string of hex
+			digits that represent the bits that comprise the key.<h:p/>
+			The requirements below mandate that the TOE support text-based pre-shared keys. Bit-based preshared keys may or may not be supported, and if they are, generation of these keys may be done either
+			by the TOE or in the operational environment.
+		</description
+	  
         <ext-comp-def title="Pre-Shared Key Composition" fam-id="FIA_PSK_EXT">
           <fam-behavior>Components in this family describes the requirements for pre-shared keys when implementing IPsec</fam-behavior>
         </ext-comp-def>
-        <f-component id="fia_psk_ext.1" name="Pre-Shared Key Composition">
-          <selection-depends req="fcs-ipsec-ext-1e11" ids="test"/> <!-- TODO: commented as schema issue -->
+		
+		<!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
+        <f-component cc-id="fia_psk_ext.1" name="Pre-Shared Key Composition" status="sel-based">
+          <selection-depends req="fcs-ipsec-ext-1e11" ids="sel-ipsec-e11-psk"/>
           <consistency-rationale/>
           <comp-lev>defines the use and composition of pre-shared keys used for IPsec</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -3470,68 +3500,64 @@
             </h:ul>
           </audit>
           <dependencies>FCS_RBG_EXT.1 Random Bit Generation</dependencies>
-          <f-element>
-            <title>The <selectables>
-              <selectable>TOE</selectable>
-              <selectable>TOE platform</selectable>
-            </selectables> shall be able to use pre-shared keys for IPsec.
-            </title>
-          </f-element>
-
-          <f-element>
-            <title>The <selectables>
-              <selectable>TOE</selectable>
-              <selectable>TOE platform</selectable>
-            </selectables> shall be able to accept text-based pre-shared
-              keys that: <h:ul>
-                <h:li>Are 22 characters and <selectables><selectable><assignable>other supported lengths</assignable></selectable><selectable>no other lengths</selectable></selectables>,</h:li>
-                <h:li>Composed of any combination of upper and lower case letters, numbers,
-                  and special characters (that include: “!”, “@”, “#”, “$”, “%”, “^”, “&amp;”, “*”,
-                  “(“, “)”, and <selectables>
-                    <selectable>no other special characters</selectable>
-                    <selectable><assignable>list of additional supported special characters</assignable></selectable>
-                  </selectables>.</h:li>
-              </h:ul>
-            </title>
-          </f-element>
-          <f-element>
+          <f-element id="fia-psk-ext-1e1">
             <title>
-              The <selectables>
-                <selectable>TOE</selectable>
-                <selectable>TOE platform</selectable>
-              </selectables> shall condition the text-based pre-shared
-              keys by using <selectables>
+				The TSF shall be able to use pre-shared keys for IPsec.
+            </title>
+          </f-element>
+          <f-element id="fia-psk-ext-1e2">
+            <title>The TSF shall be able to accept text-based pre-shared keys that: 
+				<h:ul>
+					<h:li>Are 22 characters and 
+						<selectables>
+							<selectable><assignable>other supported lengths</assignable></selectable>
+							<selectable>no other lengths</selectable>
+							</selectables>,</h:li>
+					<h:li>Composed of any combination of upper and lower case letters, numbers,
+						and special characters (that include: “!”, “@”, “#”, “$”, “%”, “^”, “&amp;”, “*”,
+						“(“, “)”, and 
+						<selectables>
+							<selectable>no other special characters</selectable>
+							<selectable><assignable>list of additional supported special characters</assignable></selectable>
+						</selectables>.</h:li>
+				</h:ul>
+            </title>
+          </f-element>
+          <f-element id="fia-psk-ext-1e3">
+            <title>
+              The TSF shall condition the text-based pre-shared keys by using 
+			  <selectables>
                 <selectable>SHA-1</selectable>
                 <selectable>SHA-256</selectable>
                 <selectable>SHA-512</selectable>
                 <selectable><assignable>method of conditioning text string</assignable></selectable>
-              </selectables>, <selectables>
-                <selectable>be able to <selectables>
-                  <selectable>accept</selectable>
-                  <selectable>generate using the random bit generator specified in FCS_RBG_EXT.1</selectable>
-                </selectables></selectable>
+              </selectables>, 
+			  <selectables>
+                <selectable>be able to 
+					<selectables>
+						<selectable>accept</selectable>
+						<selectable>generate using the random bit generator specified in FCS_RBG_EXT.1</selectable>
+					</selectables></selectable>
                 <selectable>perform no other conditioning</selectable>
               </selectables>.
             </title>
+            <note role="application">
+				This SFR is claimed if “pre-shared keys” is selected in FCS_IPSEC_EXT.1.11.<h:p/>
+				For the length of the text-based pre-shared keys, a common length (22
+				characters) is required to help promote interoperability. If other lengths are
+				supported they should be listed in the assignment; this assignment can also
+				specify a range of values (e.g., "lengths from 5 to 55 characters") as well.<h:p/>
 
-            <note role="application">“TOE platform” is to be selected if the TOE claims conformance to the App PP. In
-              the OS and MD cases, the underlying platform is still part of the TOE, so “TOE”
-              is to be selected regardless of whether it is implemented by the VPN client itself
-              or by the underlying operating system or mobile device.<h:p/>
-
-              For the length of the text-based pre-shared keys, a common length (22
-              characters) is required to help promote interoperability. If other lengths are
-              supported they should be listed in the assignment; this assignment can also
-              specify a range of values (e.g., "lengths from 5 to 55 characters") as well.<h:p/>
-
-              For FIA_PSK_EXT.1.3, the ST author fills in the method by which the text string
-              entered by the administrator is “conditioned” into the bit string used as the key.
-              This can be done by using one of the specified hash functions, or some other
-              method through the assignment statement. If “bit-based pre-shared keys” is
-              selected, the ST author specifies whether the TSF merely accepts bit-based pre-shared keys, or is capable of generating them. If it generates them, the
-              requirement specified that they must be generated using the RBG specified by
-              the requirements. If the TOE does not use bit-based pre-shared keys, the second
-              selection should be completed with “perform no other conditioning,” as text-based pre-shared keys would then be the only type used.</note>
+				For FIA_PSK_EXT.1.3, the ST author fills in the method by which the text string
+				entered by the administrator is “conditioned” into the bit string used as the key.
+				This can be done by using one of the specified hash functions, or some other
+				method through the assignment statement. If “bit-based pre-shared keys” is
+				selected, the ST author specifies whether the TSF merely accepts bit-based preshared keys, 
+				or is capable of generating them. If it generates them, the
+				requirement specified that they must be generated using the RBG specified by
+				the requirements. If the TOE does not use bit-based pre-shared keys, the second
+				selection should be completed with “perform no other conditioning,” as textbased pre-shared 
+				keys would then be the only type used.<h:p/>
             <aactivity>
               <TSS>The evaluator shall also examine the TSS to ensure it describes the process by which the bit-based
                 pre-shared keys are generated (if the TOE supports this functionality), and confirm that this process
@@ -3586,25 +3612,36 @@
               </Tests>
             </aactivity>
           </f-element>
+		  <audit-event/>
         </f-component>
       </subsection>
     </sel-sfrs>
 
-    <obj-sfrs>
-      <subsection title="Security Audit (FAU)" id="fau">
-        <f-component name="Audit Data Generation" id="fau_gen.1">
-          <consistency-rationale></consistency-rationale>
-          <f-element>
-            <title>The TSF <h:b>and <selectables>
-              <selectable>TOE platform</selectable>
-              <selectable>no other component</selectable>
-            </selectables></h:b> shall be able to generate an audit record of the following auditable events: <h:ol type="a">
-              <h:li>Start-up and shutdown of the audit functions;</h:li>
-              <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li>
-              <h:li>All administrative actions;</h:li>
-              <h:li>[<h:i>Specifically defined auditable events listed in Auditable Events table</h:i>].</h:li> <!-- TODO: check this reference -->
-            </h:ol>
 
+	<!-- Appendix A.2: Objective Requirements -->
+    <obj-sfrs>
+	
+	  <!-- Appendix A.2.1 Security Audit (FAU) -->
+      <subsection title="Security Audit (FAU)" id="fau">
+	  
+		<!-- A.2.1.1 FAU_GEN.1/VPN Audit Data Generation (VPN Client) -->
+        <f-component name="Audit Data Generation" cc-id="fau_gen.1" iteration="VPN" id="fau-gen-1-vpn" status="objective">
+          <consistency-rationale></consistency-rationale>
+          <f-element id="fau-gen-1e1-vpn">
+            <title>
+				The TSF <h:b>and 
+				<selectables>
+					<selectable>TOE platform</selectable>
+					<selectable>no other component</selectable>
+				</selectables></h:b> 
+				shall be able to generate an audit record of the following auditable events: 
+				<h:ol type="a">
+					<h:li>Start-up and shutdown of the audit functions;</h:li>
+					<h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li>
+					<h:li>All administrative actions;</h:li>
+					<h:li>[<h:i>Specifically defined auditable events listed in <h:b>the Auditable Events tables</h:b></h:i>].</h:li> <!-- TODO: check this reference -->
+				</h:ol>
+<!-- QQQQ
               <h:table>
                 <h:caption>Table C-1: Auditable Events</h:caption>
                 <h:tr>
@@ -3659,54 +3696,44 @@
                   <h:td>None.</h:td>
                 </h:tr>
               </h:table>
-
+-->
             </title>
-            <note role="application">In the case of "a," the audit functions referred to are those provided by the TOE.
-              For example, in the case that the TOE was a stand-alone executable, auditing
-              the startup and the shutdown of the TOE itself would be sufficient to meet the
-              requirements of this clause.<h:p/>
-              In the case where the TOE platform is responsible for some audit functions, the
-              ST author should identify which auditable events are generated by the TSF and
-              which are generated by the TOE platform.<h:p/>
-              Many auditable aspects of the SFRs included in this document deal with
-              administrative actions. Item c above requires all administrative actions to be
-              auditable, so no additional specification of the auditability of these actions is
-              present in Table C-1. While the TOE itself does not need to provide the ability to
-              perform I&amp;A for an administrator, this requirement implies that the TOE possess
-              the capability to audit the events described by the Base-PP as "administrative
-              actions" (primarily dealing with configuration of the functionality provided by
-              the TOE). It is expected that the operational guidance detail the steps needed to ensure
-              the audit data generated by the TOE is integrated with the audit capabilities of
-              the underlying IT environment.<h:p/>
-
-              The auditable events listed in Table C-1 are for the SFRs that are explicitly defined in this PP-Module.
-              This table also defines auditable events for Base-PP requirements FCS_RBG_EXT.1 and FPT_TUD_EXT.1. These are included because
-              the App PP lacks an audit generation requirement, so if a TOE that uses the App PP as its Base-PP should also audit this App PP behavior
-              if FAU_GEN.1 is claimed. For any SFRs that are included as part of the TOE
-              based on the claimed Base-PP, it is expected that any applicable auditable
-              events defined for those SFRs in the Base-PP are also claimed as part of the TSF. In other words, claiming this requirement adds to any audit requirements already
-              present in the claimed Base-PP; it does not replace any required auditing.
-              These auditable events only apply if the client actually performs these functions.
-              If the platform performs any of these actions, then the platform is responsible
-              for performing the auditing, not the TSF</note>
+            <note role="application">
+				In the case of "a", the audit functions referred to are those provided by the TOE.
+				For example, in the case that the TOE was a stand-alone executable, auditing
+				the startup and the shutdown of the TOE itself would be sufficient to meet the
+				requirements of this clause. <h:p/>
+				Many auditable aspects of the SFRs included in this document deal with
+				administrative actions. Item c above requires all administrative actions to be
+				auditable, so no additional specification of the auditability of these actions is
+				present in the Auditable Events table. While the TOE itself does not need to
+				provide the ability to perform I&A for an administrator, this requirement implies
+				that the TOE possess the capability to audit the events described by the Base-PP
+				as "administrative actions" (primarily dealing with configuration of the
+				functionality provided by the TOE). <h:p/>
+				The auditable events defined in the Auditable Events table are for the SFRs that
+				are explicitly defined in this PP-Module. For any SFRs that are included as part of
+				the TOE based on the claimed Base-PP, it is expected that any applicable
+				auditable events defined for those SFRs in the Base-PP are also claimed as part
+				of the TSF. These auditable events only apply if the client actually performs these
+				functions. If the platform performs any of these actions, then the platform is
+				responsible for performing the auditing, not the TSF<h:p/>
           </f-element>
-          <f-element>
-            <title>The TSF <h:b>and <selectables>
-              <selectable>TOE platform</selectable>
-              <selectable>no other component</selectable>
-            </selectables></h:b> shall record within
-              each audit record at least the following information: <h:ol type="a">
-              <h:li>Date and time of the event, type of event, subject identity, and the outcome
-                (success or failure) of the event; and</h:li>
-              <h:li>For each audit event type, based on the auditable event definitions of the
-              functional components included in the PP-Module/ST, [<h:i>information
-                specified in column three of  Auditable Events table</h:i>].</h:li>
-              </h:ol>
+          <f-element id="fau-gen-1e2-vpn">
+            <title>The TSF <h:b>and 
+				<selectables>
+					<selectable>TOE platform</selectable>
+					<selectable>no other component</selectable>
+				</selectables></h:b> 
+				shall record within each audit record at least the following information: 
+				<h:ol type="a">
+					<h:li>Date and time of the event, type of event, subject identity, and the outcome
+						(success or failure) of the event; and</h:li>
+					<h:li>For each audit event type, based on the auditable event definitions of the
+						functional components included in the PP-Module/ST, [<h:i>information
+						specified in column three of  Auditable Events table</h:i>].</h:li>
+				</h:ol>
             </title>
-            <note role="application">As with the previous element, the ST author should update the table with any
-              additional information that is generated, and identify how the required information is presented by the TOE if it is ambiguous.
-              For example, "subject identity" in the context of this requirement could refer to an administrator's user ID or to an affected network interface,
-              depending on the event that is being generated.</note>
             <aactivity>
               <TSS>The evaluator shall examine the TSS to determine that it describes the auditable events and the
                 component that is responsible for each type of auditable event.<h:p/></TSS>
@@ -3750,26 +3777,33 @@
               </Tests>
             </aactivity>
           </f-element>
+		  <audit-event/>
         </f-component>
-        <f-component name="Selective Audit" id="fau_sel.1">
+		
+		<!-- A.2.1.2 FAU_SEL.1/VPN Selective Audit (VPN Client) -->
+        <f-component name="Selective Audit" id="fau_sel.1" iteration="VPN" id="fau-sel-1-vpn" status="objective">
           <consistency-rationale></consistency-rationale>
           <f-element>
             <title>
-              The <h:b><selectables>
-                <selectable>TSF</selectable>
-                <selectable>TOE platform</selectable>
-              </selectables></h:b> shall be able to select the set of events to be audited from the set of all auditable events based on the following attributes:
-              [<h:i>event type, [success of auditable security events, failure of auditable security events], <assignable>list of additional attributes that audit selectivity is based upon</assignable></h:i>].
+              The <h:b>
+				<selectables>
+					<selectable>TSF</selectable>
+					<selectable>TOE platform</selectable>
+				</selectables></h:b> 
+				shall be able to select the set of events to be audited from the set of all auditable events based on
+				the following attributes:
+				[<h:i>event type, [success of auditable security events, failure of auditable security events], 
+				<assignable>list of additional attributes that audit selectivity is based upon</assignable></h:i>].
             </title>
-            <note role="application">The intent of this requirement is to identify all criteria that can be selected to
-              trigger an audit event. This can be configured through an interface on the client
-              for a user/administrator to invoke, or it could be an interface that the VPN
-              gateway uses to instruct the client on which events are to be audited. For the ST
-              author, the assignment is used to list any additional criteria or “none.” The
-              auditable event types are listed in Table C-1.<h:p/>
-
-              The intent of the first selection is to allow for the case where the underlying
-              platform is responsible for some audit log generation functionality.
+            <note role="application">
+				The intent of this requirement is to identify all criteria that can be selected to
+				trigger an audit event. This can be configured through an interface on the client
+				for a user/administrator to invoke, or it could be an interface that the VPN
+				gateway uses to instruct the client on which events are to be audited. For the ST
+				author, the assignment is used to list any additional criteria or “none”. The
+				auditable event types are listed in the Auditable Events table<h:p/>
+				The intent of the first selection is to allow for the case where the underlying
+				platform is responsible for some audit log generation functionality.
             </note>
             <aactivity>
               <TSS>There are no TSS evaluation activities for this component.<h:p/></TSS>
@@ -3796,14 +3830,18 @@
               </Tests>
             </aactivity>
           </f-element>
+		  <audit-event/>
         </f-component>
       </subsection>
 
+	  <!-- A.2.2 User Data Protection (FDP) -->
       <subsection title="User Data Protection (FDP)" id="fdp">
         <ext-comp-def title="Subset Information Flow Control" fam-id="FDP_IFC_EXT">
           <fam-behavior>Components in this family describe the requirements that pertain to IP traffic and information flow
             through the VPN client.</fam-behavior>
         </ext-comp-def>
+		
+		<!-- A.2.2.1 FDP_IFC_EXT.1 Subset Information Flow Control -->
         <f-component id="fdp_ifc_ext.1" name="Subset Information Flow Control">
           <consistency-rationale/>
           <comp-lev>requires the TSF to process all IP traffic through its VPN client
@@ -3813,13 +3851,17 @@
           <audit>There are no auditable events foreseen.
           </audit>
           <dependencies>No dependencies</dependencies>
-          <f-element>
-            <title>The TSF shall ensure that all IP traffic (other than IP traffic required to establish
-              the VPN connection) flow through the IPsec VPN client. </title>
-            <note role="application">This requirement is used when the VPN client is able to enforce the requirement
-              through its own components. This generally will have to be done through using
-              hooks provided by the platform such that the TOE is able to ensure that no IP
-              traffic can flow through other network interfaces.</note>
+          <f-element id="fdp-ifc-ext-1e1">
+            <title>
+				The TSF shall ensure that all IP traffic (other than IP traffic required to establish
+				the VPN connection) flow through the IPsec VPN client. 
+			</title>
+            <note role="application">
+				This requirement is used when the VPN client is able to enforce the requirement
+				through its own components. This generally will have to be done through using
+				hooks provided by the platform such that the TOE is able to ensure that no IP
+				traffic can flow through other network interfaces.
+			</note>
             <aactivity>
               <TSS>The evaluator shall verify that the TSS section of the ST describes the routing of IP traffic through
                 processes on the TSF when a VPN client is enabled. The evaluator shall ensure that the description
@@ -3862,40 +3904,58 @@
               </Tests>
             </aactivity>
           </f-element>
+		  <audit-event/>
         </f-component>
       </subsection>
     </obj-sfrs>
   </chapter>
+  
+  
   <bibliography>
     <cc-entry/>
     <entry id="bibOSPP">
       <tag>OS PP</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=442&amp;id=442/">Protection Profile for General Purpose Operating Systems</h:a>, Version 4.2.1, April 2019
+        <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=442&amp;id=442/">
+			Protection Profile for General Purpose Operating Systems</h:a>, Version 4.2.1, April 2019
       </description>
     </entry>
 
     <entry id="bibMDPP">
       <tag>MD PP</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=417&amp;id=417">Protection Profile for Mobile Device Fundamentals</h:a>, Version 3.1, June 2017
+        <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=417&amp;id=417">
+			Protection Profile for Mobile Device Fundamentals</h:a>, Version 3.1, June 2017
+      </description>
+    </entry>
+
+    <entry id="bibMDMPP">
+      <tag>MDM PP</tag>
+      <description>
+        <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=417&amp;id=417">
+			Protection Profile for Mobile Device Management (This needs to be updated) </h:a>, Version 3.1, June 2017
       </description>
     </entry>
 
     <entry id="bibAppPP">
       <tag>App PP</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=429&amp;id=429/">Protection Profile for Application Software</h:a>, Version 1.3, March 2019
+        <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=429&amp;id=429/">
+			Protection Profile for Application Software</h:a>, Version 1.3, March 2019
       </description>
     </entry>
 
     <entry id="bibSD"> <!-- TODO: Not sure if this is even necessary or if the 'combined' document is going to be the primary one used -->
       <tag>SD</tag>
       <description>
-        Supporting Document Mandatory Technical Document, PP-Module for Virtual Private Network (VPN) Clients, Version 2.1, November 2019
+        Supporting Document Mandatory Technical Document, PP-Module for Virtual Private Network (VPN) Clients, 
+			Version 2.1, November 2019
       </description>
     </entry>
-  </bibliography>
-  <acronyms/>
+
+	</bibliography>
+
+	<!-- Appendix G: Acronyms -->
+	<acronyms/>
 </Module>
 
