@@ -268,7 +268,8 @@
             The TOE is responsible for encrypting the packets that are intended to be received by the target
             on the private network and then encapsulating these packets in a way that allows the VPN
             gateway to securely receive them and forward them to their final destination.
-            <figure entity="images/usecase1.png" title="TOE to VPN Gateway" id="usecase1"/>
+            <figure entity="images/usecase1.png" title="TOE to VPN Gateway" id="fig-usecase1"/>
+			<figref ref-id="fig-usecase1"/>
           </description>
         </usecase>
 
@@ -282,7 +283,8 @@
               use case, when two peers are communicating directly, is the disclosure of the
               source/destination of the packets. Users should take into consideration any security risks
               associated with this disclosure when architecting their networks in line with this use case.
-              <figure entity="images/usecase2.png" title="TOE to VPN Client" id="usecase2"/>
+              <figure entity="images/usecase2.png" title="TOE to VPN Client" id="fig-usecase2"/>
+			  <figref ref-id="fig-usecase2"/>
             </description>
           </usecase>
 
@@ -295,7 +297,8 @@
             While this will behave functionally the same way as the scenario described by Use Case 2, the
             user of the TOE in Use Case 3 is a network administrator who is assumed to have administrative
             access to the network device they are connecting to.
-            <figure entity="images/usecase3.png" title="TOE to IPsec-capable Network Device" id="usecase3"/>
+            <figure entity="images/usecase3.png" title="TOE to IPsec-capable Network Device" id="fig-usecase3"/>
+		    <figref ref-id="fig-usecase3"/>
           </description>
         </usecase>
       </usecases>
@@ -2343,7 +2346,7 @@
           </f-component>
         </subsection>
         
-        <subsection title="Identification and Authentication (FIA)" id="dm-mfia">
+        <subsection title="Identification and Authentication (FIA)" id="dm-m-fia">
           
           <!-- 5.4.1.4 FIA_X509_EXT.2 X.509 Certificate Authentication -->
           <f-component cc-id="fia_x509_ext.2" id="dm-fia-x509-ext-2" name="X.509 Certificate Authentication">
@@ -2715,8 +2718,10 @@
 		The following section describes the SFRs that must be satisfied by any TOE that claims conformance to
 		this PP-Module. These SFRs must be claimed regardless of which PP-Configuration is used to define the TOE.
 
+		<!-- I don't like that the mandatory, optional, selection-based, etc. are separated into different sections. -->
+
 	  <!-- 5.5.1 Cryptographic Support --> 
-      <subsection title="Cryptographic Support (FCS)" id="fcs">
+      <subsection title="Cryptographic Support (FCS)" id="m-fcs">
 
         <!--
         <ext-comp-def title="Cryptographic Key Management" fam-id="FCS_CKM_EXT">
@@ -3540,7 +3545,7 @@
       </subsection>
 
 	  <!-- 5.5.2.1 User Data Protection -->
-      <subsection title="User Data Protection (FDP)" id="fdp">
+      <subsection title="User Data Protection (FDP)" id="m-fdp">
 
         <!-- TODO: stuck here as placeholder but this is not where it's supposed to live (schema issue) -->
         <!-- <ext-comp-def title="Cryptographic Key Management" fam-id="FCS_CKM_EXT">
@@ -3591,7 +3596,7 @@
       </subsection>
 
 	<!-- 5.5.3 Security Management (FMT)  -->
-    <subsection title="Security Management (FMT)" id="fmt">
+    <subsection title="Security Management (FMT)" id="m-fmt">
         <description>
 			The TOE is not required to maintain a separate management role. It is, however, required to provide
 			functionality to configure certain aspects of TOE operation that should not be available to the general
@@ -3655,7 +3660,7 @@
       </subsection>
 
 	  <!-- 5.5.4 Protection of the TSF (FPT) -->
-      <subsection title="Protection of the TSF (FPT)" id="fpt">
+      <subsection title="Protection of the TSF (FPT)" id="m-fpt">
         <ext-comp-def title="TSF Self-Test" fam-id="FPT_TST_EXT">
           <fam-behavior>Components in this family describe requirements for self-test to verify functionality and integrity of the
             TOE.</fam-behavior>
@@ -3768,7 +3773,7 @@
     <sel-sfrs>
 	
 	  <!-- B.1 Identification and Authentication (FIA) -->
-      <subsection title="Identification and Authentication (FIA)" id="fia">
+      <subsection title="Identification and Authentication (FIA)" id="s-fia">
 		<description>
 			The TOE may support pre-shared keys for use in the IPsec protocol, and may use pre-shared keys in
 			other protocols as well. There are two types of pre-shared keys that must be supported by the TOE, as
@@ -3924,7 +3929,7 @@
     <obj-sfrs>
 	
 	  <!-- Appendix A.2.1 Security Audit (FAU) -->
-      <subsection title="Security Audit (FAU)" id="fau">
+      <subsection title="Security Audit (FAU)" id="ob-fau">
 	  
 		<!-- A.2.1.1 FAU_GEN.1/VPN Audit Data Generation (VPN Client) -->
         <f-component name="Audit Data Generation" cc-id="fau_gen.1" iteration="VPN" id="fau-gen-1-vpn" status="objective">
@@ -4141,7 +4146,7 @@
       </subsection>
 
 	  <!-- A.2.2 User Data Protection (FDP) -->
-      <subsection title="User Data Protection (FDP)" id="fdp">
+      <subsection title="User Data Protection (FDP)" id="ob-fdp">
         <ext-comp-def title="Subset Information Flow Control" fam-id="FDP_IFC_EXT">
           <fam-behavior>Components in this family describe the requirements that pertain to IP traffic and information flow
             through the VPN client.</fam-behavior>
