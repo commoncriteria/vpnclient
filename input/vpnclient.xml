@@ -3570,6 +3570,46 @@
 		</Tests>
             </aactivity>
           </f-element>
+<!-- 
+	  <aactivity>
+		<TSS>
+			In addition to the TSS EAs for the individual FCS_IPSEC_EXT.1 elements below, the evaluator shall perform
+			the following:<h:p/>
+			If the TOE boundary includes a general-purpose operating system or mobile device, the evaluator shall
+			examine the TSS to ensure that it describes whether the VPN client capability is architecturally integrated
+			with the platform itself or whether it is a separate executable that is bundled with the platform.
+		</TSS>
+		<Guidance>
+			In addition to the Operational Guidance EAs for the individual FCS_IPSEC_EXT.1 elements below, the
+			evaluator shall perform the following:<h:p/>
+			If the configuration of the IPsec behavior is from an environmental source, most notably a VPN gateway
+			(e.g through receipt of required connection parameters from a VPN gateway), the evaluator shall ensure
+			that the operational guidance contains any appropriate information for ensuring that this configuration
+			can be properly applied.<h:p/>
+			Note in this case that the implementation of the IPsec protocol must be enforced entirely within the TOE
+			boundary; i.e. it is not permissible for a software application TOE to be a graphical front-end for IPsec
+			functionality implemented totally or in part by the underlying OS platform. The behavior referenced here
+			is for the possibility that the configuration of the IPsec connection is initiated from outside the TOE, which
+			is permissible so long as the TSF is solely responsible for enforcing the configured behavior. However, it is
+			allowable for the TSF to rely on low-level platform-provided networking functions to implement the SPD
+			from the client (e.g., enforcement of packet routing decisions).
+		</Guidance>
+		<Tests>
+			As a prerequisite for performing the Test EAs for the individual FCS_IPSEC_EXT.1 elements below, the
+			evaluator shall do the following:<h:p/>
+			The evaluator shall minimally create a test environment equivalent to the test environment illustrated
+			below. It is expected that the traffic generator is used to construct network packets and will provide the
+			evaluator with the ability manipulate fields in the ICMP, IPv4, IPv6, UDP, and TCP packet headers. The
+			evaluator shall provide justification for any differences in the test environment.<h:p/>
+
+   			<figure entity="images/network.png" title="Test Environment" id="fig-testenv"/>
+			<figref ref-id="fig-testenv"/><h:p/>
+
+   			Note that the evaluator shall perform all tests using the VPN client and a representative sample of
+			platforms listed in the ST (for TOEs that claim to support multiple platforms).
+		</Tests>
+      </aactivity>
+-->		
 	  <audit-event>
 		  <audit-event-descr>Decisions to DISCARD or BYPASS network packets processed by the TOE.</audit-event-descr>
 		  <audit-event-info>Presumed identity of source subject.</audit-event-info>
@@ -3798,7 +3838,6 @@
       </subsection>
     </man-sfrs>
 
-	<!-- QQQQQ Next Do AAs for Objective and Sel-Based -->
 	
 	<!-- Appendix A.1: Strictly Optional Requirements -->
     <opt-sfrs>
@@ -3904,60 +3943,53 @@
 				keys would then be the only type used.<h:p/>
 			</note>
             <aactivity>
-              <TSS>The evaluator shall also examine the TSS to ensure it describes the process by which the bit-based
-                pre-shared keys are generated (if the TOE supports this functionality), and confirm that this process
-                uses the RBG specified in FCS_RBG_EXT.1.<h:p/>
-                <h:b>Requirement met by the platform</h:b><h:p/>
-                For each platform listed in the ST, the evaluator shall examine the ST of the platform to ensure that
-                the functions associated with pre-shared keys claimed in that platform's ST contains the same
-                functions specified in the VPN Client's ST. If the TOE does not perform any management or input of
-                the pre-shared keys then no further activity is required.<h:p/>
-                <h:b>Requirement met by the TOE</h:b><h:p/>
-                The evaluator shall examine the TSS to ensure that it states that text-based pre-shared keys of 22
-                characters are supported. The evaluator shall also confirm that the TSS states the conditioning that
-                takes place to transform the text-based pre-shared key from the key sequence entered by the user
-                (e.g., ASCII representation) to the bit string used by IPsec, and that this conditioning is consistent
-                with the claims made in FIA_PSK_EXT.1.3.<h:p/>
+              <TSS>The evaluator shall also examine the TSS to ensure it describes the process by which the
+		      bit-based preshared keys are generated (if the TOE supports this functionality), and
+		      confirm that this process uses the RBG specified in FCS_RBG_EXT.1.<h:p/>
+		      The evaluator shall examine the TSS to ensure that it states that text-based pre-shared keys of 22
+			characters are supported. The evaluator shall also confirm that the TSS states the conditioning that takes
+			place to transform the text-based pre-shared key from the key sequence entered by the user (e.g., ASCII
+			representation) to the bit string used by IPsec, and that this conditioning is consistent with the
+			FIA_PSK_EXT.1.3.<h:p/>
               </TSS>
               <Guidance>If the TOE supports bit-based pre-shared keys, the evaluator shall confirm the operational guidance
-                contains instructions for either entering bit-based pre- shared keys for each protocol identified in
-                the requirement, or generating a bit-based pre-shared key (or both). The evaluator shall also
-                examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are
-                generated (if the TOE supports this functionality), and confirm that this process uses the RBG
-                specified in FCS_RBG_EXT.1.<h:p/>
-                The evaluator shall check that any management functions related to pre-shared keys that are
-                performed by the TOE are specified in the operational guidance.<h:p/>
-                <h:b>Requirement met by the TOE</h:b><h:p/>
+		contains instructions for either entering bit-based pre- shared keys for each protocol identified in the
+		requirement, or generating a bit-based pre-shared key (or both). The evaluator shall also examine the TSS
+		to ensure it describes the process by which the bit-based pre-shared keys are generated (if the TOE
+		supports this functionality), and confirm that this process uses the RBG specified in FCS_RBG_EXT.1. <h:p/>
+                The evaluator shall check that any management functions related to pre-shared keys that are performed
+		by the TOE are specified in the operational guidance.</h:b><h:p/>
                 The evaluator shall examine the operational guidance to determine that it provides guidance on the
-                composition of strong text-based pre-shared keys, and (if the selection indicates keys of various
-                lengths can be entered) that it provides information on the merits of shorter or longer pre-shared
-                keys. The guidance must specify the allowable characters for pre-shared keys, and that list must
-                include, at minimum, the same items contained in FIA_PSK_EXT.1.2.<h:p/>
+		composition of strong text-based pre-shared keys, and (if the selection indicates keys of various lengths
+		can be entered) that it provides information on the merits of shorter or longer pre-shared keys. The
+		guidance must specify the allowable characters for pre-shared keys, and that list must include, at
+		minimum, the same items contained in FIA_PSK_EXT.1.2.<h:p/>
               </Guidance>
               <Tests>The evaluator shall perform the following tests:
               <testlist>
-                <test>The evaluator shall compose a pre-shared key of 22 characters that contains a combination of
-                  the allowed characters in accordance with the operational guidance, and demonstrates that a
-                  successful protocol negotiation can be performed with the key.</test>
-                <test>[conditional]: If the TOE supports pre-shared keys of multiple lengths, the evaluator shall
+                <test>The evaluator shall compose a pre-shared key of 22 characters that contains a combination of the
+			allowed characters in accordance with the operational guidance, and demonstrates that a successful
+			protocol negotiation can be performed with the key.
+		</test>
+                <test> [conditional]: If the TOE supports pre-shared keys of multiple lengths, the evaluator shall
                   repeat Test 1 using the minimum length; the maximum length; and invalid lengths that are below
                   the minimum length, above the maximum length, null length, empty length, or zero length. The
                   minimum and maximum length tests should be successful, and the invalid lengths must be rejected
                   by the TOE.
                 </test>
-                <test>[conditional]: If the TOE supports but does not generate bit-based pre-shared keys, the
-                  evaluator shall obtain a bit-based pre-shared key of the appropriate length and enter it per the
-                  instructions in the operational guidance. The evaluator shall then demonstrate that a successful
-                  protocol negotiation can be performed with the key.</test>
-                <test>[conditional]: If the TOE does generate bit-based pre-shared keys, the evaluator shall generate
-                  a bit-based pre-shared key of the appropriate length and use it according to the instructions in the
-                  operational guidance. The evaluator shall then demonstrate that a successful protocol negotiation
-                  can be performed with the key.</test>
+                <test> [conditional]: If the TOE supports but does not generate bit-based pre-shared keys, the evaluator
+			shall obtain a bit-based pre-shared key of the appropriate length and enter it per the instructions in the 
+			operational guidance. The evaluator shall then demonstrate that a successful protocol negotiation can be
+			performed with the key.</test>
+                <test> [conditional]: If the TOE does generate bit-based pre-shared keys, the evaluator shall generate a
+			bit-based pre-shared key of the appropriate length and use it according to the instructions in the
+			operational guidance. The evaluator shall then demonstrate that a successful protocol negotiation can be
+			performed with the key.</test>
               </testlist>
               </Tests>
             </aactivity>
           </f-element>
-		  <audit-event/>
+		 <audit-event/>
         </f-component>
       </subsection>
     </sel-sfrs>
@@ -4082,48 +4114,55 @@
             </title>
             <aactivity>
               <TSS>The evaluator shall examine the TSS to determine that it describes the auditable events and the
-                component that is responsible for each type of auditable event.<h:p/></TSS>
-              <Guidance>The evaluator shall check the operational guidance and ensure that it lists all of the auditable events
-                and provides a format for audit records. Each audit record format type must be covered, along with
-                a brief description of each field. The evaluator shall check to make sure that every audit event type
-                mandated by the PP-Module is described and that the description of the fields contains the
-                information required in FAU_GEN.1.2, and the additional information specified in Table C-1 of the
-                PP-Module.<h:p/>
+		component that is responsible for each type of auditable event.<h:p/></TSS>
+              <Guidance>The evaluator shall check the operational guidance and ensure that it lists all of the auditable events and
+			provides a format for audit records. Each audit record format type must be covered, along with a brief
+			description of each field. The evaluator shall check to make sure that every audit event type mandated by
+			the VPN Client PP-Module is described and that the description of the fields contains the information
+			required in FAU_GEN.1.2/VPN, and the additional information specified in the Auditable Events table of
+			the VPN Client PP-PP-Module.
+			<h:p/>
 
-                In particular, the evaluator shall ensure that the operational guidance is clear in relation to the
-                contents for failed cryptographic events. In Table C-1 of the PP-Module, information detailing the
-                cryptographic mode of operation and a name or identifier for the object being encrypted is required.
-                The evaluator shall ensure that name or identifier is sufficient to allow an administrator reviewing
-                the audit log to determine the context of the cryptographic operation (for example, performed
-                during a key negotiation exchange, performed when encrypting data for transit) as well as the non-TOE endpoint of the connection for cryptographic failures relating to communications with other IT
-                systems.<h:p/>
+               In particular, the evaluator shall ensure that the operational guidance is clear in relation to the contents
+		for failed cryptographic events. In the Auditable Events table of the VPN Client PP-Module, information
+		detailing the cryptographic mode of operation and a name or identifier for the object being encrypted is
+		required. The evaluator shall ensure that name or identifier is sufficient to allow an administrator
+		reviewing the audit log to determine the context of the cryptographic operation (for example, performed
+		during a key negotiation exchange, performed when encrypting data for transit) as well as the non-TOE
+		endpoint of the connection for cryptographic failures relating to communications with other IT systems.<h:p/>
 
-                The evaluator shall also make a determination of the administrative actions that are relevant in the
-                context of this PP-Module. The TOE may contain functionality that is not evaluated in the context of
-                this PP-Module because the functionality is not specified in an SFR. This functionality may have
-                administrative aspects that are described in the operational guidance. Since such administrative
-                actions will not be performed in an evaluated configuration of the TOE, the evaluator shall examine
-                the operational guidance and make a determination of which administrative commands, including
-                subcommands, scripts, and configuration files, are related to the configuration (including enabling or
-                disabling) of the mechanisms implemented in the TOE that are necessary to enforce the
-                requirements specified in the PP-Module, which thus form the set of “all administrative actions.”
-                The evaluator may perform this activity as part of the activities associated with ensuring the
-                operational guidance satisfies the requirements.<h:p/></Guidance>
-              <Tests>The evaluator shall test the TOE’s ability to correctly generate audit records by having the TOE
-                generate audit records in accordance with the evaluation activities associated with the functional
-                requirements in this PP-Module. Additionally, the evaluator shall test that each administrative action
-                applicable in the context of this PP-Module is auditable. When verifying the test results, the
-                evaluator shall ensure the audit records generated during testing match the format specified in the
-                administrative guide, and that the fields in each audit record have the proper entries.<h:p/>
+               The evaluator shall also make a determination of the administrative actions that are relevant in the
+		context of the VPN Client PP-Module. The TOE may contain functionality that is not evaluated in the
+		context of the VPN Client PP-Module because the functionality is not specified in an SFR. This functionality
+		may have administrative aspects that are described in the operational guidance. Since such administrative
+		actions will not be performed in an evaluated configuration of the TOE, the evaluator shall examine the
+		operational guidance and make a determination of which administrative commands, including
+		subcommands, scripts, and configuration files, are related to the configuration (including enabling or
+		disabling) of the mechanisms implemented in the TOE that are necessary to enforce the requirements
+		specified in the VPN Client PP-Module, which thus form the set of “all administrative actions”. The
+		evaluator may perform this activity as part of the activities associated with ensuring the AGD_OPE
+		guidance satisfies the requirements.<h:p/>
+		    
+		For each required auditable event, the evaluator shall examine the operational guidance to determine
+		that it is clear to the reader where each event is generated (e.g. the TSF may generate its own audit logs
+		in one location while the platform-provided auditable events are generated elsewhere).
+	</Guidance>
+              <Tests>The evaluator shall test the TOE’s ability to correctly generate audit records by having the TOE generate
+		audit records in accordance with the EAs associated with the functional requirements in the VPN Client 
+		PP-Module. Additionally, the evaluator shall test that each administrative action applicable in the context
+		of the VPN Client PP-Module is auditable. When verifying the test results, the evaluator shall ensure the
+		audit records generated during testing match the format specified in the administrative guide, and that
+		the fields in each audit record have the proper entries.
+		<h:p/>
 
-              Note that the testing here can be accomplished in conjunction with the testing of the security
-              mechanisms directly. For example, testing performed to ensure that the administrative guidance
-              provided is correct verifies that AGD_OPE.1 is satisfied and should address the invocation of the
-              administrative actions that are needed to verify the audit records are generated as expected.
+              Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms
+		directly. For example, testing performed to ensure that the administrative guidance provided is correct
+		verifies that AGD_OPE.1 is satisfied and should address the invocation of the administrative actions that
+		are needed to verify the audit records are generated as expected.
               </Tests>
             </aactivity>
           </f-element>
-		  <audit-event/>
+	<audit-event/>
         </f-component>
 		
 	<!-- A.2.1.2 FAU_SEL.1/VPN Selective Audit (VPN Client) -->
@@ -4152,25 +4191,23 @@
 				platform is responsible for some audit log generation functionality.
             </note>
             <aactivity>
-              <TSS>There are no TSS evaluation activities for this component.<h:p/></TSS>
+              <TSS>There are no TSS EAs for this SFR.<h:p/></TSS>
               <Guidance>The evaluator shall review the administrative guidance to ensure that the guidance itemizes all event
-                types, as well as describes all attributes that are to be selectable in accordance with the
-                requirement, to include those attributes listed in the assignment. The administrative guidance shall
-                also contain instructions on how to set the pre-selection, or how the VPN gateway will configure the
-                client, as well as explain the syntax (if present) for multi-value pre-selection. The administrative
-                guidance shall also identify those audit records that are always recorded, regardless of the selection
-                criteria currently being enforced.<h:p/></Guidance>
+		types, as well as describes all attributes that are to be selectable in accordance with the requirement, to
+		include those attributes listed in the assignment. The administrative guidance shall also contain
+		instructions on how to set the pre-selection, or how the VPN gateway will configure the client, as well as
+		explain the syntax (if present) for multi-value pre-selection. The administrative guidance shall also identify
+		those audit records that are always recorded, regardless of the selection criteria currently being enforced.<h:p/></Guidance>
               <Tests>The evaluator shall perform the following tests:
               <testlist>
-                <test>For each attribute listed in the requirement, the evaluator shall devise a test to show that
-                  selecting the attribute causes only audit events with that attribute (or those that are always
-                  recorded, as identified in the administrative guidance) to be recorded.
+                <test>For each attribute listed in the requirement, the evaluator shall devise a test to show that selecting
+			the attribute causes only audit events with that attribute (or those that are always recorded, as identified
+			in the administrative guidance) to be recorded.
                 </test>
-                <test>[conditional]: If the TSF supports specification of more complex audit pre-selection criteria
-                  (e.g., multiple attributes, logical expressions using attributes) then the evaluator shall devise tests
-                  showing that this capability is correctly implemented. The evaluator shall also, in the test plan,
-                  provide a short narrative justifying the set of tests as representative and sufficient to exercise the
-                  capability.
+                <test>[conditional] If the TSF supports specification of more complex audit pre-selection criteria (e.g.,
+			multiple attributes, logical expressions using attributes) then the evaluator shall devise tests showing that
+			this capability is correctly implemented. The evaluator shall also, in the test plan, provide a short narrative
+			justifying the set of tests as representative and sufficient to exercise the capability.
                 </test>
               </testlist>
               </Tests>
@@ -4211,44 +4248,42 @@
 				traffic can flow through other network interfaces.
 			</note>
             <aactivity>
-              <TSS>The evaluator shall verify that the TSS section of the ST describes the routing of IP traffic through
-                processes on the TSF when a VPN client is enabled. The evaluator shall ensure that the description
-                indicates which traffic does not go through the VPN and which traffic does and that a configuration
-                exists for each baseband protocol in which only the traffic identified by the ST author as necessary
-                for establishing the VPN connection (IKE traffic and perhaps HTTPS or DNS traffic) is not
-                encapsulated by the VPN protocol (IPsec). The ST author shall also identify in the TSS section any
-                differences in the routing of IP traffic when using any supported baseband protocols (e.g. WiFi or
-                LTE).<h:p/>
+              <TSS>The evaluator shall verify that the TSS section of the ST describes the routing of IP traffic through processes
+		on the TSF when a VPN client is enabled. The evaluator shall ensure that the description indicates which
+		traffic does not go through the VPN and which traffic does and that a configuration exists for each
+		baseband protocol in which only the traffic identified by the ST author is necessary for establishing the
+		VPN connection (IKE traffic and perhaps HTTPS or DNS traffic) is not encapsulated by the VPN protocol 
+		(IPsec). The ST author shall also identify in the TSS section any differences in the routing of IP traffic when
+		using any supported baseband protocols (e.g. WiFi or, LTE).
+		<h:p/>
               </TSS>
               <Guidance>The evaluator shall verify that the following is addressed by the documentation:
                 <h:ul>
-                <h:li>The description above indicates that if a VPN client is enabled, all configurations route all
-                IP traffic (other than IP traffic required to establish the VPN connection) through the
-                VPN client.</h:li>
-                <h:li>The operational guidance describes how the user and/or administrator can configure the TSF to
-                  meet this requirement.</h:li>
+                <h:li>The description above indicates that if a VPN client is enabled, all configurations route all IP traffic
+			(other than IP traffic required to establish the VPN connection) through the VPN client.</h:li>
+                <h:li>The AGD guidance describes how the user and/or administrator can configure the TSF to meet
+			this requirement.</h:li>
                 </h:ul><h:p/>
               </Guidance>
               <Tests>
                 The evaluator shall perform the following test:<h:p/>
-                Step 1 - The evaluator shall use the platform to enable a network connection without using IPsec.
-                The evaluator shall use a packet sniffing tool between the platform and an Internet-connected
-                network. The evaluator shall turn on the sniffing tool and perform actions with the device such as
-                navigating to websites, using provided applications, accessing other Internet resources (Use Case 1),
-                accessing another VPN client (Use Case 2), or accessing an IPsec-capable network device (Use Case
-                3). The evaluator shall verify that the sniffing tool captures the traffic generated by these actions,
-                turn off the sniffing tool, and save the session data.<h:p/>
+                Step 1 - The evaluator shall use the platform to enable a network connection without using IPsec. The
+		evaluator shall use a packet sniffing tool between the platform and an Internet-connected network. The
+		evaluator shall turn on the sniffing tool and perform actions with the device such as navigating to
+		websites, using provided applications, accessing other Internet resources (Use Case 1), accessing another
+		VPN client (Use Case 2), or accessing an IPsec-capable network device (Use Case 3). The evaluator shall
+		verify that the sniffing tool captures the traffic generated by these actions, turn off the sniffing tool, and
+		save the session data. <h:p/>
                 Step 2 - The evaluator shall configure an IPsec VPN client that supports the routing specified in this
-                requirement, and if necessary, configure the device to perform the routing specified as described in
-                the AGD guidance. The evaluator shall turn on the sniffing tool, establish the VPN connection, and
-                perform the same actions with the device as performed in the first step. The evaluator shall verify
-                that the sniffing tool captures traffic generated by these actions, turn off the sniffing tool, and save
-                the session data.<h:p/>
-                Step 3 - The evaluator shall examine the traffic from both step one and step two to verify that all IP
-                traffic, aside from and after traffic necessary for establishing the VPN (such as IKE, DNS, and possibly
-                HTTPS), is encapsulated by IPsec.<h:p/>
-                Step 4 - The evaluator shall attempt to send packets to the TOE outside the VPN connection and
-                shall verify that the TOE discards them.
+		requirement, and if necessary, configure the device to perform the routing specified as described in the
+		AGD guidance. The evaluator shall turn on the sniffing tool, establish the VPN connection, and perform
+		the same actions with the device as performed in the first step. The evaluator shall verify that the sniffing
+		tool captures traffic generated by these actions, turn off the sniffing tool, and save the session data.<h:p/>
+                Step 3 - The evaluator shall examine the traffic from both step one and step two to verify that all IP traffic,
+		aside from and after traffic necessary for establishing the VPN (such as IKE, DNS, and possibly HTTPS), is
+		encapsulated by IPsec.<h:p/>
+                Step 4 - The evaluator shall attempt to send packets to the TOE outside the VPN connection and shall
+		verify that the TOE discards them.
               </Tests>
             </aactivity>
           </f-element>
