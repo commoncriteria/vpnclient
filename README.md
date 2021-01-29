@@ -15,6 +15,8 @@ A list of products that have passed evaluation against this Protection Profile c
 
 * [PP-Module for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient-release.html) (html)
 * [PP-Module for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient-release.pdf) (pdf)
+* [Supporting Documents for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient-sd.html) (html)
+* [Supporting Documents for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient-sd.pdf) (pdf)
 
 ## Combined Module/SD Version
 * [PP-Module for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient.html) (html)
