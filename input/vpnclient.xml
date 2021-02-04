@@ -2877,7 +2877,7 @@
 			the following:<h:p/>
 			If the TOE boundary includes a general-purpose operating system or mobile device, the evaluator shall
 			examine the TSS to ensure that it describes whether the VPN client capability is architecturally integrated
-			with the platform itself or whether it is a separate executable that is bundled with the platform.
+			with the platform itself or whether it is a separate executable that is bundled with the platform.<h:p/>
 		</TSS>
 		<Guidance>
 			In addition to the Operational Guidance EAs for the individual FCS_IPSEC_EXT.1 elements below, the
@@ -2892,7 +2892,7 @@
 			is for the possibility that the configuration of the IPsec connection is initiated from outside the TOE, which
 			is permissible so long as the TSF is solely responsible for enforcing the configured behavior. However, it is
 			allowable for the TSF to rely on low-level platform-provided networking functions to implement the SPD
-			from the client (e.g., enforcement of packet routing decisions).
+			from the client (e.g., enforcement of packet routing decisions).<h:p/>
 		</Guidance>
 		<Tests>
 			As a prerequisite for performing the Test EAs for the individual FCS_IPSEC_EXT.1 elements below, the
@@ -2944,7 +2944,7 @@
 				inbound and outbound packets) is sufficient to determine the action that will be applied, especially in the
 				case where two different rules may apply. This description shall cover both the initial packets (that is, no
 				SA is established on the interface or for that particular packet) as well as packets that are part of an
-				established SA. 
+				established SA. <h:p/>
 			</TSS>    
               <Guidance>
                 The evaluator shall examine the operational guidance to verify it describes how the SPD is created and
@@ -3018,7 +3018,7 @@
               <Guidance>The evaluator shall confirm that the operational guidance contains instructions on how to configure the
 			connection in each mode selected.<h:p/>
 		      If both transport mode and tunnel mode are implemented, the evaluator shall review the operational
-			guidance to determine how the use of a given mode is specified.
+			guidance to determine how the use of a given mode is specified.<h:p/>
               </Guidance>
               <Tests>The evaluator shall perform the following test(s) based on the selections chosen:
               <testlist>
@@ -3148,7 +3148,8 @@
 		perform NAT traversal for the test below. If XAUTH is implemented, the evaluator shall verify that the
 		operational guidance provides instructions on how it is enabled or disabled. <h:p/>
                 If the TOE supports IKEv1, the evaluator shall verify that the operational guidance either asserts that only
-		main mode is used for Phase 1 exchanges, or provides instructions for disabling aggressive mode.<h:p/></Guidance>
+		main mode is used for Phase 1 exchanges, or provides instructions for disabling aggressive mode.<h:p/>
+		</Guidance>
               <Tests>
                 <testlist>
                   <test>The evaluator shall configure the TOE so that it will perform NAT traversal processing as described
