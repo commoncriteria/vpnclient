@@ -2805,10 +2805,6 @@
     
 
 		<!-- 5.5.1.2 FCS_IPSEC_EXT.1 IPsec  -->	
-	    
-	    <!-- It looks like this Module wants to have EAs for both each element and for the component. 
-		UGGGHHHHHHHHHHHH   QQQQQQQQQQQQQQ  -->
-	    
         <f-component name="IPsec" cc-id="fcs_ipsec_ext.1" id="fcs-ipsec-ext-1">
 			In the following elements of the FCS_IPSEC_EXT.1 component, it is allowable for some or all of the
 			individual elements to be implemented by the platform on which the VPN client operates. However, this
@@ -2875,42 +2871,81 @@
 				activities to be implemented by platform capabilities (e.g., a network driver) as
 				configured by the client.
             </note>
-            <aactivity> 
+			<aactivity level="component">
+		<TSS>
+			In addition to the TSS EAs for the individual FCS_IPSEC_EXT.1 elements below, the evaluator shall perform
+			the following:<h:p/>
+			If the TOE boundary includes a general-purpose operating system or mobile device, the evaluator shall
+			examine the TSS to ensure that it describes whether the VPN client capability is architecturally integrated
+			with the platform itself or whether it is a separate executable that is bundled with the platform.
+		</TSS>
+		<Guidance>
+			In addition to the Operational Guidance EAs for the individual FCS_IPSEC_EXT.1 elements below, the
+			evaluator shall perform the following:<h:p/>
+			If the configuration of the IPsec behavior is from an environmental source, most notably a VPN gateway
+			(e.g through receipt of required connection parameters from a VPN gateway), the evaluator shall ensure
+			that the operational guidance contains any appropriate information for ensuring that this configuration
+			can be properly applied.<h:p/>
+			Note in this case that the implementation of the IPsec protocol must be enforced entirely within the TOE
+			boundary; i.e. it is not permissible for a software application TOE to be a graphical front-end for IPsec
+			functionality implemented totally or in part by the underlying OS platform. The behavior referenced here
+			is for the possibility that the configuration of the IPsec connection is initiated from outside the TOE, which
+			is permissible so long as the TSF is solely responsible for enforcing the configured behavior. However, it is
+			allowable for the TSF to rely on low-level platform-provided networking functions to implement the SPD
+			from the client (e.g., enforcement of packet routing decisions).
+		</Guidance>
+		<Tests>
+			As a prerequisite for performing the Test EAs for the individual FCS_IPSEC_EXT.1 elements below, the
+			evaluator shall do the following:<h:p/>
+			The evaluator shall minimally create a test environment equivalent to the test environment illustrated
+			below. It is expected that the traffic generator is used to construct network packets and will provide the
+			evaluator with the ability manipulate fields in the ICMP, IPv4, IPv6, UDP, and TCP packet headers. The
+			evaluator shall provide justification for any differences in the test environment.<h:p/>
+
+   			<figure entity="images/network.png" title="Test Environment" id="fig-testenv"/>
+<!--			<figref ref-id="fig-testenv"/><h:p/>   -->
+
+   			Note that the evaluator shall perform all tests using the VPN client and a representative sample of
+			platforms listed in the ST (for TOEs that claim to support multiple platforms).
+		</Tests>
+			
+			</aactivity>
+            <aactivity level="element"> 
               <TSS>The evaluator shall examine the TSS and determine that it describes how the IPsec capabilities are
-		implemented.<h:p/>
+				implemented.<h:p/>
 
                 If the TOE is a standalone software application, the evaluator shall ensure that the TSS asserts that all
-		IPsec functionality is implemented by the TSF. The evaluator shall also ensure that the TSS identifies what
-		platform functionality the TSF relies upon to support its IPsec implementation, if any (e.g. does it invoke
-		cryptographic primitive functions from the platform’s cryptographic library, enforcement of packet
-		routing decisions by low-level network drivers).<h:p/>
+				IPsec functionality is implemented by the TSF. The evaluator shall also ensure that the TSS identifies what
+				platform functionality the TSF relies upon to support its IPsec implementation, if any (e.g. does it invoke
+				cryptographic primitive functions from the platform’s cryptographic library, enforcement of packet
+				routing decisions by low-level network drivers).<h:p/>
 
                 If the TOE is part of a general-purpose desktop or mobile operating system, the evaluator shall ensure
-		that the TSS describes at a high level the architectural relationship between the VPN client portion of the
-		TOE and the rest of the TOE (e.g. is the VPN client an integrated part of the OS or is it a standalone
-		executable that is bundled into the OS package). If the SPD is implemented by the underlying platform in
-		this case, then the TSS describes how the client interacts with the platform to establish and populate the
-		SPD, including the identification of the platform's interfaces that are used by the client.<h:p/>
+				that the TSS describes at a high level the architectural relationship between the VPN client portion of the
+				TOE and the rest of the TOE (e.g. is the VPN client an integrated part of the OS or is it a standalone
+				executable that is bundled into the OS package). If the SPD is implemented by the underlying platform in
+				this case, then the TSS describes how the client interacts with the platform to establish and populate the
+				SPD, including the identification of the platform's interfaces that are used by the client.<h:p/>
 		    
-		In all cases, the evaluator shall also ensure that the TSS describes how the client interacts with the network
-		stack of the platform(s) on which it can run (e.g., does the client insert itself within the stack via kernel
-		mods, does the client simply invoke APIs to gain access to network services).<h:p/>
+				In all cases, the evaluator shall also ensure that the TSS describes how the client interacts with the network
+				stack of the platform(s) on which it can run (e.g., does the client insert itself within the stack via kernel
+				mods, does the client simply invoke APIs to gain access to network services).<h:p/>
 		      
-		The evaluator shall ensure that the TSS describes how the SPD is implemented and the rules for processing
-		both inbound and outbound packets in terms of the IPsec policy. The TSS describes the rules that are
-		available and the resulting actions available after matching a rule. The TSS describes how the available
-		rules and actions form the SPD using terms defined in RFC 4301 such as BYPASS (e.g., no encryption),
-		DISCARD (e.g., drop the packet), and PROTECT (e.g., encrypt the packet) actions defined in RFC 4301.
-      
-		As noted in section 4.4.1 of RFC 4301, the processing of entries in the SPD is non-trivial and the evaluator
-		shall determine that the description in the TSS is sufficient to determine which rules will be applied given
-		the rule structure implemented by the TOE. For example, if the TOE allows specification of ranges,
-		conditional rules, etc., the evaluator shall determine that the description of rule processing (for both
-		inbound and outbound packets) is sufficient to determine the action that will be applied, especially in the
-		case where two different rules may apply. This description shall cover both the initial packets (that is, no
-		SA is established on the interface or for that particular packet) as well as packets that are part of an
-		established SA. 
-	      </TSS>    
+				The evaluator shall ensure that the TSS describes how the SPD is implemented and the rules for processing
+				both inbound and outbound packets in terms of the IPsec policy. The TSS describes the rules that are
+				available and the resulting actions available after matching a rule. The TSS describes how the available
+				rules and actions form the SPD using terms defined in RFC 4301 such as BYPASS (e.g., no encryption),
+				DISCARD (e.g., drop the packet), and PROTECT (e.g., encrypt the packet) actions defined in RFC 4301.
+			  
+				As noted in section 4.4.1 of RFC 4301, the processing of entries in the SPD is non-trivial and the evaluator
+				shall determine that the description in the TSS is sufficient to determine which rules will be applied given
+				the rule structure implemented by the TOE. For example, if the TOE allows specification of ranges,
+				conditional rules, etc., the evaluator shall determine that the description of rule processing (for both
+				inbound and outbound packets) is sufficient to determine the action that will be applied, especially in the
+				case where two different rules may apply. This description shall cover both the initial packets (that is, no
+				SA is established on the interface or for that particular packet) as well as packets that are part of an
+				established SA. 
+			</TSS>    
               <Guidance>
                 The evaluator shall examine the operational guidance to verify it describes how the SPD is created and
 		configured. If there is an administrative interface to the client, then the guidance describes how the
@@ -2977,7 +3012,7 @@
 				purpose of secure remote administration, the ST author is expected to select
 				transport mode.
 			</note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator shall check the TSS to ensure it states that the VPN can be established to operate in tunnel
 			mode and/or transport mode (as selected). <h:p/></TSS>
               <Guidance>The evaluator shall confirm that the operational guidance contains instructions on how to configure the
@@ -3016,7 +3051,7 @@
             <title>The TSF shall have a nominal, final entry in the SPD that matches anything that
 				is otherwise unmatched, and discards it.
             </title>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator shall examine the TSS to verify that the TSS provides a description of how a packet is
 		processed against the SPD and that if no “rules” are found to match, that a final rule exists, either implicitly
 		or explicitly, that causes the network packet to be discarded.<h:p/>
@@ -3053,7 +3088,7 @@
 				If this functionality is configurable, the TSF may be configured by a VPN Gateway
 				or by an Administrator of the TOE itself.
 			</note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator shall examine the TSS to verify that the algorithms AES-GCM-128 and AES-GCM-256 are
 		implemented. If the ST author has selected either AES-CBC-128 or AES-CBC-256 in the requirement, then
 		the evaluator verifies the TSS describes these as well. In addition, the evaluator ensures that the SHA-
@@ -3102,7 +3137,7 @@
 					</selectables></selectable>
               </selectables>.
             </title>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator shall examine the TSS to verify that IKEv1 and/or IKEv2 are implemented. If IKEv1 is
 		implemented, the evaluator shall verify that the TSS indicates whether or not XAUTH is supported, and
 		that aggressive mode is not used for IKEv1 Phase 1 exchanges (i.e. only main mode is used). It may be that
@@ -3149,7 +3184,7 @@
 				If this functionality is configurable, the TSF may be configured by a VPN Gateway
 				or by an Administrator of the TOE itself.
 			</note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator shall ensure the TSS identifies the algorithms used for encrypting the IKEv1 and/or IKEv2
 		payload, and that the algorithms AES-CBC-128, AES-CBC-256 are specified, and if others are chosen in the
 		selection of the requirement, those are included in the TSS discussion.<h:p/></TSS>
@@ -3234,7 +3269,7 @@
 				as the TOE is capable of setting a limit on the amount of traffic that is protected
 				by the same key (the total volume of all IPsec traffic protected by that key).
 			</note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>There are no TSS EAs for this requirement.<h:p/></TSS>
               <Guidance>The evaluator shall check the operational guidance to ensure it provides instructions on how the TOE
 		configures the values for SA lifetimes. In addition, the evaluator shall check that the guidance has the
@@ -3299,7 +3334,7 @@
 				FCS_IPSEC_EXT.1.10 it would read “[112, 192]” (although in this case the
 				requirement should probably be refined so that it makes sense mathematically).
 			</note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator shall check to ensure that the DH groups specified in the requirement are listed as being
 		supported in the TSS. If there is more than one DH group supported, the evaluator checks to ensure the
 		TSS describes how a particular DH group is specified/negotiated with a peer.<h:p/></TSS>
@@ -3322,7 +3357,7 @@
               Table 2 of NIST SP 800-57, Recommendation for Key Management – Part 1:
               General</assignable> bits.
             </title>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator shall check to ensure that, for each DH group supported, the TSS describes the process for
 		generating "x" (as defined in FCS_IPSEC_EXT.1.9) and each nonce. The evaluator shall verify that the TSS
 		indicates that the random number generated that meets the requirements in this EP is used, and that the
@@ -3338,7 +3373,7 @@
 				associated with the negotiated Diffie-Hellman group as listed in Table 2 of NIST
 				SP 800-57, Recommendation for Key Management – Part 1: General</assignable>.
             </title>
-            <aactivity>
+            <aactivity level="element">
               EAs for this element are tested through EAs for FCS_IPSEC_EXT.1.9.
               <no-tests/>
             </aactivity>
@@ -3367,7 +3402,7 @@
 				If “pre-shared keys” is selected, the selection-based requirement FIA_PSK_EXT.1
 				must be claimed.<h:p/>
             </note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator ensures that the TSS identifies RSA and/or ECDSA as being used to perform peer
 		authentication.<h:p/>
                 If pre-shared keys are chosen in the selection, the evaluator shall check to ensure that the TSS describes
@@ -3476,7 +3511,7 @@
 				versions supported by the TOE in general. The ST author may assign additional
 				supported identifier types in the second selection.
 			</note>
-            <aactivity>
+            <aactivity level="element">
               EAs for this element are tested through EAs for FCS_IPSEC_EXT.1.11.
               <no-tests/>
             </aactivity>
@@ -3507,7 +3542,7 @@
 				The configuration of the peer reference identifier is addressed by
 				FMT_SMF.1.1/VPN.
 			</note>
-            <aactivity>
+            <aactivity level="element">
               EAs for this element are tested through EAs for FCS_IPSEC_EXT.1.11.
               <no-tests/>
             </aactivity>
@@ -3541,7 +3576,7 @@
 				by configuration guidance in the AGD documentation) must enable this
 				functionality.<h:p/>
 			</note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator shall check that the TSS describes the potential strengths (in terms of the number of bits in
 		the symmetric key) of the algorithms that are allowed for the IKE and ESP exchanges. The TSS shall also
 		describe the checks that are done when negotiating IKEv1 Phase 2 and/or IKEv2 CHILD_SA suites to ensure
@@ -3570,46 +3605,6 @@
 		</Tests>
             </aactivity>
           </f-element>
-<!-- 
-	  <aactivity>
-		<TSS>
-			In addition to the TSS EAs for the individual FCS_IPSEC_EXT.1 elements below, the evaluator shall perform
-			the following:<h:p/>
-			If the TOE boundary includes a general-purpose operating system or mobile device, the evaluator shall
-			examine the TSS to ensure that it describes whether the VPN client capability is architecturally integrated
-			with the platform itself or whether it is a separate executable that is bundled with the platform.
-		</TSS>
-		<Guidance>
-			In addition to the Operational Guidance EAs for the individual FCS_IPSEC_EXT.1 elements below, the
-			evaluator shall perform the following:<h:p/>
-			If the configuration of the IPsec behavior is from an environmental source, most notably a VPN gateway
-			(e.g through receipt of required connection parameters from a VPN gateway), the evaluator shall ensure
-			that the operational guidance contains any appropriate information for ensuring that this configuration
-			can be properly applied.<h:p/>
-			Note in this case that the implementation of the IPsec protocol must be enforced entirely within the TOE
-			boundary; i.e. it is not permissible for a software application TOE to be a graphical front-end for IPsec
-			functionality implemented totally or in part by the underlying OS platform. The behavior referenced here
-			is for the possibility that the configuration of the IPsec connection is initiated from outside the TOE, which
-			is permissible so long as the TSF is solely responsible for enforcing the configured behavior. However, it is
-			allowable for the TSF to rely on low-level platform-provided networking functions to implement the SPD
-			from the client (e.g., enforcement of packet routing decisions).
-		</Guidance>
-		<Tests>
-			As a prerequisite for performing the Test EAs for the individual FCS_IPSEC_EXT.1 elements below, the
-			evaluator shall do the following:<h:p/>
-			The evaluator shall minimally create a test environment equivalent to the test environment illustrated
-			below. It is expected that the traffic generator is used to construct network packets and will provide the
-			evaluator with the ability manipulate fields in the ICMP, IPv4, IPv6, UDP, and TCP packet headers. The
-			evaluator shall provide justification for any differences in the test environment.<h:p/>
-
-   			<figure entity="images/network.png" title="Test Environment" id="fig-testenv"/>
-			<figref ref-id="fig-testenv"/><h:p/>
-
-   			Note that the evaluator shall perform all tests using the VPN client and a representative sample of
-			platforms listed in the ST (for TOEs that claim to support multiple platforms).
-		</Tests>
-      </aactivity>
--->		
 	  <audit-event>
 		  <audit-event-descr>Decisions to DISCARD or BYPASS network packets processed by the TOE.</audit-event-descr>
 		  <audit-event-info>Presumed identity of source subject.</audit-event-info>
