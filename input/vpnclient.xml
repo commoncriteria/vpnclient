@@ -390,7 +390,7 @@
     <section title="Threats" id="threats">
       The following threats defined in this PP-Module extend the threats defined by the Base-PPs.
       <threats>
-        <threat id="T.UNAUTHORIZED_ACCESS">
+        <threat name="T.UNAUTHORIZED_ACCESS">
           <description>This PP-Module does not include requirements that can protect against an insider threat. Authorized
             users are not considered hostile or malicious and are trusted to follow appropriate guidance. Only
             authorized personnel should have access to the system or device that contains the IPsec VPN client.
@@ -436,7 +436,7 @@
           </objective-refer>
         </threat>
 
-        <threat id="T.TSF_CONFIGURATION">
+        <threat name="T.TSF_CONFIGURATION">
           <description> Configuring VPN tunnels is a complex and time-consuming process, and prone to errors if the
             interface for doing so is not well-specified or well-behaved. The inability to configure certain aspects
             of the interface may also lead to the mis-specification of the desired communications policy or use
@@ -454,7 +454,7 @@
           </objective-refer>
         </threat>
 
-        <threat id="T.USER_DATA_REUSE">
+        <threat name="T.USER_DATA_REUSE">
           <description>Data traversing the TOE could inadvertently be sent to a different user; since these data may be
             sensitive, this may cause a compromise that is unacceptable. The specific threat that must be
             addressed concerns user data that is retained by the TOE in the course of processing network traffic
@@ -469,7 +469,7 @@
           </objective-refer>
         </threat>
 
-        <threat id="T.TSF_FAILURE">
+        <threat name="T.TSF_FAILURE">
           <description> Security mechanisms of the TOE generally build up from a primitive set of mechanisms (e.g.,
             memory management, privileged modes of process execution) to more complex sets of
             mechanisms. Failure of the primitive mechanisms could lead to a compromise in more complex
@@ -491,7 +491,7 @@
       operational environment that does not meet these assumptions, the TOE may no longer be able to
       provide all of its security functionality.
       <assumptions>
-        <assumption id="A.NO_TOE_BYPASS">
+        <assumption name="A.NO_TOE_BYPASS">
           <description>Information cannot flow onto the network to which the VPN client's host is connected without
             passing through the TOE.
           </description>
@@ -501,7 +501,7 @@
               intended destination without going through the TOE’s IPsec tunnel.</rationale>
           </objective-refer>
         </assumption>
-        <assumption id="A.PHYSICAL">
+        <assumption name="A.PHYSICAL">
           <description>Physical security, commensurate with the value of the TOE and the data it contains, is assumed to
             be provided by the environment.
           </description>
@@ -510,7 +510,7 @@
               TOE is not deployed on a system that is vulnerable to loss of physical custody.</rationale>
           </objective-refer>
         </assumption>
-        <assumption id="A.TRUSTED_CONFIG">
+        <assumption name="A.TRUSTED_CONFIG">
           <description>Personnel configuring the TOE and its operational environment will follow the applicable security
             configuration guidance.
           </description>
@@ -536,7 +536,7 @@
     <!-- 4.1 Security Objectives for the TOE -->
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
-        <SO id="O.AUTHENTICATION">
+        <SO name="O.AUTHENTICATION">
           <description>To address the issues associated with unauthorized disclosure of information in transit, a compliant
             TOE’s authentication ability (IPsec) will allow the TSF to establish VPN connectivity with a remote
             VPN gateway or peer and ensure that any such connection attempt is both authenticated and
@@ -565,7 +565,7 @@
 			<consistency-rationale>This SFR supports the objective by optionally
 				requiring support for pre-shared keys as an alternate authentication method for IPsec.</consistency-rationale>
         </SO>
-        <SO id="O.CRYPTOGRAPHIC_FUNCTIONS">
+        <SO name="O.CRYPTOGRAPHIC_FUNCTIONS">
           <description>To address the issues associated with unauthorized disclosure of information in transit, a compliant
             TOE will implement cryptographic capabilities. These capabilities are intended to maintain
             confidentiality and allow for detection and modification of data that is transmitted outside of the
@@ -652,7 +652,7 @@
 			<consistency-rationale>This SFR supports the objective by requiring the TOE
 				to implement the IPsec protocol in the specified manner.</consistency-rationale>
         </SO>
-        <SO id="O.KNOWN_STATE">
+        <SO name="O.KNOWN_STATE">
           <description>The TOE will provide sufficient measures to ensure it is operating in a known state. At minimum this
             includes management functionality to allow the security functionality to be configured and self-test
             functionality that allows it to assert its own integrity. It may also include auditing functionality that
@@ -673,7 +673,7 @@
 			<consistency-rationale>This SFR supports the objective by optionally
 				requiring the TOE to allow for the configuration of what behavior is audited.</consistency-rationale>
         </SO>
-        <SO id="O.NONDISCLOSURE">
+        <SO name="O.NONDISCLOSURE">
           <description>To address the issues associated with unauthorized disclosure of information at rest, a compliant
             TOE will ensure that non-persistent data is purged when no longer needed. The TSF may also
             implement measures to protect against the disclosure of stored cryptographic keys and data
@@ -712,18 +712,18 @@
       by an entry in this table with that objective.
 
       <SOEs>
-        <SOE id="OE.NO_TOE_BYPASS">
+        <SOE name="OE.NO_TOE_BYPASS">
           <description>Information cannot flow onto the network to which the VPN client’s host is connected without
             passing through the TOE.
           </description>
           <consistency-rationale/>
         </SOE>
-        <SOE id="OE.PHYSICAL">
+        <SOE name="OE.PHYSICAL">
           <description>Physical security, commensurate with the value of the TOE and the data it contains, is assumed to
             be provided by the environment.</description>
           <consistency-rationale/>
         </SOE>
-        <SOE id="OE.TRUSTED_CONFIG">
+        <SOE name="OE.TRUSTED_CONFIG">
           <description>Personnel configuring the TOE and its operational environment will follow the applicable security
             configuration guidance.
           </description>
