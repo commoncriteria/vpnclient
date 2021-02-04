@@ -21,7 +21,7 @@
   </RevisionHistory>
 
   <!-- 1.0 Introduction -->
-  <chapter title="Introduction" id="int">
+  <section title="Introduction" id="int">
     
     <!-- 1.1 Overview -->
     <section title="Overview" id="ppoverview">
@@ -171,7 +171,7 @@
       threat environment discussed subsequently herein.
 
       <!-- 1.3.1 TOE Boundary -->
-      <subsection title="TOE Boundary" id="TOEboundary">
+      <section title="TOE Boundary" id="TOEboundary">
       The TOE defined by this PP-Module is purely a software solution executing on a platform (some sort of
       operating system running on hardware). Depending on the Base-PP claimed as part of the TOE, the
       platform may also be part of the TOE or it may be an environmental component that the TOE vendor has
@@ -247,7 +247,7 @@
       transmitted information cannot be obtained with less work than a full exhaust of the key space. Any
       plaintext secret and private keys or other cryptographic security parameters will be zeroized when no
       longer in use to prevent disclosure of security critical data.
-      </subsection>
+      </section>
     </section>
     
     <!-- 1.4 Use Cases -->
@@ -269,8 +269,9 @@
             on the private network and then encapsulating these packets in a way that allows the VPN
             gateway to securely receive them and forward them to their final destination.
             <figure entity="images/usecase1.png" title="TOE to VPN Gateway" id="fig-usecase1"/>
-			<figref ref-id="fig-usecase1"/>
-          </description>
+<!--			<figref ref-id="fig-usecase1"/>  -->
+			<xref to="fig-usecase1"/> 
+			</description>
         </usecase>
 
           <usecase id="usecase2" title="TOE to VPN Client">
@@ -284,7 +285,7 @@
               source/destination of the packets. Users should take into consideration any security risks
               associated with this disclosure when architecting their networks in line with this use case.
               <figure entity="images/usecase2.png" title="TOE to VPN Client" id="fig-usecase2"/>
-			  <figref ref-id="fig-usecase2"/>
+			  <xref to="fig-usecase2"/>
             </description>
           </usecase>
 
@@ -298,7 +299,7 @@
             user of the TOE in Use Case 3 is a network administrator who is assumed to have administrative
             access to the network device they are connecting to.
             <figure entity="images/usecase3.png" title="TOE to IPsec-capable Network Device" id="fig-usecase3"/>
-		    <figref ref-id="fig-usecase3"/>
+		    <xref to="fig-usecase3"/>
           </description>
         </usecase>
       </usecases>
@@ -332,10 +333,10 @@
       required to provide configuration guidance (AGD_PRE, AGD_OPE) to correctly install and administer the
       client machine and the TOE for every operational environment supported.
     </section>
-  </chapter>
+  </section>
   
   <!-- 2. Conformance Claims -->
-  <chapter title="Conformance Claims" id="ConformanceClaims">
+  <section title="Conformance Claims" id="ConformanceClaims">
     
     <!-- 2.1 CC Conformance -->
     <cclaims>
@@ -364,10 +365,10 @@
         <description>This PP-Module does not claim conformance to any packages.</description>
       </cclaim>
     </cclaims>
-  </chapter>
+  </section>
     
   <!-- Security Problem Description -->
-  <chapter title="Security Problem Description" id="spd">
+  <section title="Security Problem Description" id="spd">
     The security problem is described in terms of the threats that the TOE is expected to address,
     assumptions about its operational environment, and any organizational security policies that the TOE is
     expected to enforce.<h:p/>
@@ -528,10 +529,10 @@
       This PP-Module defines no additional organizational security policies beyond those defined in the
       supported Base-PPs.    
     </section>
-  </chapter>
+  </section>
     
   <!-- 4. Security Objectives -->  
-  <chapter title="Security Objectives" id="obj">
+  <section title="Security Objectives" id="obj">
     
     <!-- 4.1 Security Objectives for the TOE -->
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
@@ -737,10 +738,10 @@
       <!-- NOTE: This section should remain empty and is populated from the rationale tags in the previous sections.  -->
     </section>
     
-  </chapter>
+  </section>
         
   <!-- 5. Security Requirements -->
-  <chapter title="Security Requirements" id="sfrs">
+  <section title="Security Requirements" id="sfrs">
     
     The Security Functional Requirements (SFRs) included in this section are derived from Part 2 of the
     Common Criteria for Information Technology Security Evaluation, Version 3.1, Revision 5, with
@@ -791,7 +792,7 @@
         a specific manner in order to ensure that the functionality provided by the OS is consistent with the
         functionality required by the VPN client in order for it to conform to this PP-Module. 
         
-        <subsection title="Cryptographic Support (FCS)" id="os-m-fcs">
+        <section title="Cryptographic Support (FCS)" id="os-m-fcs">
           
           <!-- 5.1.1.1 FCS_CKM.1 Cryptographic Key Generation -->
           <f-component cc-id="fcs_ckm.1" id="os-fcs-ckm-1" name="Cryptographic Key Generation">
@@ -937,7 +938,7 @@
             </f-element>
             <audit-event/>
           </f-component>
-        </subsection>
+        </section>
       </modified-sfrs>
         
       <!-- 5.1.2 Additional SFRs -->
@@ -945,7 +946,7 @@
         This section lists additional SFRs that must be added to the TOE boundary in order to implement the
         functionality in any PP-Configuration where the GPOS PP is claimed as the Base-PP.
 
-        <subsection title="Cryptographic Support (FCS)" id="os-a-fcs">
+        <section title="Cryptographic Support (FCS)" id="os-a-fcs">
           <ext-comp-def title="Cryptographic Key Management" fam-id="FCS_CKM_EXT">
             <fam-behavior>Components in this family describe requirements for key management functionality such as key
 		storage and destruction.</fam-behavior>
@@ -987,9 +988,9 @@
             </f-element>
             <audit-event/>
           </f-component>
-        </subsection>
+        </section>
 
-        <subsection title="Identification and Authentication (FIA)" id="os-a-fia">
+        <section title="Identification and Authentication (FIA)" id="os-a-fia">
           <ext-comp-def title="X.509 Certificate Use and Management" fam-id="FIA_X509_EXT">
             <fam-behavior>Components in this family describe the requirements that pertain to IP traffic and information flow
               through the VPN client.</fam-behavior>
@@ -1083,9 +1084,9 @@
             </f-element>
             <audit-event/>
           </f-component>
-        </subsection>
+        </section>
 
-        <subsection title="Trusted Path/Channels (FTP)" id="os-a-ftp">
+        <section title="Trusted Path/Channels (FTP)" id="os-a-ftp">
           
           <!-- 5.1.2.3 FTP_ITC Inter-TSF Trusted Channel -->
           <f-component cc-id="ftp_itc.1" id="os-ftp-itc-1" name="Inter-TSF Trusted Channel">
@@ -1173,7 +1174,7 @@
             </f-element>
             <audit-event/>
           </f-component>
-        </subsection>
+        </section>
       </additional-sfrs>
       
 	  <!-- 6.1.1 Consistency of TOE Type -->
@@ -1288,7 +1289,7 @@
       captured in the MDF PP is included.
       
       <modified-sfrs>
-        <subsection title="Cryptographic Support (FCS)" id="md-m-fcs">
+        <section title="Cryptographic Support (FCS)" id="md-m-fcs">
           
           <!-- 5.2.1.1 FCS_CKM.1 Cryptographic Key Generation -->
           <f-component cc-id="fcs_ckm.1" id="md-fcs-ckm-1" name="Cryptographic Key Generation">
@@ -1439,9 +1440,9 @@
             </f-element>
             <audit-event/>
           </f-component>
-        </subsection>
+        </section>
         
-        <subsection title="Identification and Authentication (FIA)" id="md-m-fia">
+        <section title="Identification and Authentication (FIA)" id="md-m-fia">
           
           <!-- 5.2.1.4 FIA_X509_EXT.2 X.509 Certificate Authentication -->
           <f-component cc-id="fia_x509_ext.2" id="md-fia-x509-ext-2" name="X.509 Certificate Authentication">
@@ -1489,9 +1490,9 @@
             </f-element>
             <audit-event/>
           </f-component>
-        </subsection>
+        </section>
         
-        <subsection title="Trusted Path/Channels (FTP)" id="md-m-ftp">
+        <section title="Trusted Path/Channels (FTP)" id="md-m-ftp">
           
           <!-- 5.2.1.5 FTP_ITC_EXT.1 Trusted Channel Communications -->
           <f-component cc-id="ftp_itc_ext.1" id="md-ftp-itc-ext-1" name="Trusted Channel Communication">
@@ -1539,7 +1540,7 @@
             </f-element>
             <audit-event/>
           </f-component>
-        </subsection>
+        </section>
       </modified-sfrs>
       
       <!-- 5.2.2 Additional SFRs -->
@@ -1659,7 +1660,7 @@
         specific manner in order to ensure that the functionality provided by the application is consistent with
         the functionality required by the VPN client in order for it to conform to this PP-Module.
         
-        <subsection title="Cryptographic Support (FCS)" id="ap-m-fcs">
+        <section title="Cryptographic Support (FCS)" id="ap-m-fcs">
             
           <!-- 5.3.1.1 FCS_CKM.1(1) Cryptographic Asymmetric Key Generation -->
           <f-component cc-id="fcs_ckm.1" id="ap-fcs-ckm-1-1" name="Cryptographic Asymmetric Key Generation" iteration="1">
@@ -1852,9 +1853,9 @@
               </f-element>
               <audit-event/>
             </f-component>
-          </subsection>
+          </section>
         
-          <subsection title="Identification and Authentication (FIA)" id="ap-m-fia">
+          <section title="Identification and Authentication (FIA)" id="ap-m-fia">
             
             <!-- 5.3.1.5 FIA_X509_EXT.2 X.509 Certificate Authentication -->
             <f-component cc-id="fia_x509_ext.2" id="ap-fia-x509-ext-2" name="X.509 Certificate Authentication">
@@ -1888,9 +1889,9 @@
               </f-element>
               <audit-event/>
             </f-component>
-          </subsection>
+          </section>
         
-          <subsection title="Trusted Path/Channels (FTP)" id="ap-m-ftp">
+          <section title="Trusted Path/Channels (FTP)" id="ap-m-ftp">
             
             <!-- 5.3.1.6 FTP_DIT_EXT.1 Protection of Data in Transit -->
             <f-component cc-id="ftp_dit_ext.1" id="ap-ftp-dit-ext-1" name="Protection of Data in Transit">
@@ -1912,7 +1913,7 @@
               </f-element>
               <audit-event/>
             </f-component>
-          </subsection>
+          </section>
       </modified-sfrs>
       
       <!-- 5.3.2 Additional SFRs -->
@@ -1920,7 +1921,7 @@
         This section lists additional SFRs that must be added to the TOE boundary in order to implement the
         functionality in any PP-Configuration where the App PP is claimed as the Base-PP.
 
-        <subsection title="Cryptographic Support (FCS)" id="md-a-fcs">
+        <section title="Cryptographic Support (FCS)" id="md-a-fcs">
           
           <!-- 5.3.2.1 FCS_CKM_EXT.2 Cryptographic Key Storage -->
           <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage"  notnew='true'>
@@ -2069,7 +2070,7 @@
             </f-element>
             <audit-event/>
           </f-component>
-        </subsection>
+        </section>
       </additional-sfrs>
 
 	  <!-- 6.3 App PP Base -->
@@ -2206,7 +2207,7 @@
         a specific manner in order to ensure that the functionality provided by the application is consistent with
         the functionality required by the VPN client in order for it to conform to this PP-Module.
         
-        <subsection title="Cryptographic Support (FCS)" id="dm-m-fcs">
+        <section title="Cryptographic Support (FCS)" id="dm-m-fcs">
           
           <!-- 5.4.1.1 FCS_CKM.1 Cryptographic Key Generation -->
           <f-component cc-id="fcs_ckm.1" id="dm-fcs-ckm-1" name="Cryptographic Key Generation">
@@ -2353,9 +2354,9 @@
             </f-element>
             <audit-event/>
           </f-component>
-        </subsection>
+        </section>
         
-        <subsection title="Identification and Authentication (FIA)" id="dm-m-fia">
+        <section title="Identification and Authentication (FIA)" id="dm-m-fia">
           
           <!-- 5.4.1.4 FIA_X509_EXT.2 X.509 Certificate Authentication -->
           <f-component cc-id="fia_x509_ext.2" id="dm-fia-x509-ext-2" name="X.509 Certificate Authentication">
@@ -2421,9 +2422,9 @@
             </f-element>
             <audit-event/>
           </f-component>
-        </subsection>
+        </section>
         
-        <subsection title="Trusted Path/Channels (FTP)" id="dm-m-ftp">
+        <section title="Trusted Path/Channels (FTP)" id="dm-m-ftp">
 
           <!-- 5.4.1.5 FPT_ITT.1(1) Basic Internal TSF Data Transfer Protection -->
          <f-component cc-id="ftp_itt.1" iteration="1" id="dm-ftp-itt-1-1" name="Basic Internal TSF Data Transfer Protection">
@@ -2596,7 +2597,7 @@
             </f-element>
             <audit-event/>
           </f-component>
-        </subsection>
+        </section>
       </modified-sfrs>
       		 
       <!-- 5.4.2 Additional SFRs -->
@@ -2731,7 +2732,7 @@
 		this PP-Module. These SFRs must be claimed regardless of which PP-Configuration is used to define the TOE.
 
 	  <!-- 5.5.1 Cryptographic Support --> 
-      <subsection title="Cryptographic Support (FCS)" id="m-fcs">
+      <section title="Cryptographic Support (FCS)" id="m-fcs">
 
 <!--        <ext-comp-def title="Cryptographic Key Management" fam-id="FCS_CKM_EXT">
             <fam-behavior>Components in this family describe requirements for key management functionality such as key storage
@@ -3623,10 +3624,10 @@
 		  <audit-event-info>Non-TOE endpoint of connection (IP address) for both successes and failures.</audit-event-info>
 	  </audit-event>
         </f-component>
-      </subsection>
+      </section>
 
 	  <!-- 5.5.2.1 User Data Protection -->
-      <subsection title="User Data Protection (FDP)" id="m-fdp">
+      <section title="User Data Protection (FDP)" id="m-fdp">
 
         <f-component cc-id="fdp_rip.2" id="fdp-rip-2" name="Full Residual Information Protection">
           <consistency-rationale/>
@@ -3668,10 +3669,10 @@
           </f-element>
 		  <audit-event/>
         </f-component>
-      </subsection>
+      </section>
 
 	<!-- 5.5.3 Security Management (FMT)  -->
-    <subsection title="Security Management (FMT)" id="m-fmt">
+    <section title="Security Management (FMT)" id="m-fmt">
         <description>
 			The TOE is not required to maintain a separate management role. It is, however, required to provide
 			functionality to configure certain aspects of TOE operation that should not be available to the general
@@ -3731,10 +3732,10 @@
 		  <audit-event-descr>Success or failure of management function.</audit-event-descr>
  	  </audit-event>
         </f-component>
-      </subsection>
+      </section>
 
 	  <!-- 5.5.4 Protection of the TSF (FPT) -->
-      <subsection title="Protection of the TSF (FPT)" id="m-fpt">
+      <section title="Protection of the TSF (FPT)" id="m-fpt">
 	  
         <ext-comp-def title="TSF Self-Test" fam-id="FPT_TST_EXT">
           <fam-behavior>Components in this family describe requirements for self-test to verify functionality and integrity of the
@@ -3830,7 +3831,7 @@
           </f-element>
 		  <audit-event/>
         </f-component>
-      </subsection>
+      </section>
     </man-sfrs>
 
 	
@@ -3845,7 +3846,7 @@
     <sel-sfrs>
 	
 	  <!-- B.1 Identification and Authentication (FIA) -->
-      <subsection title="Identification and Authentication (FIA)" id="s-fia">
+      <section title="Identification and Authentication (FIA)" id="s-fia">
 		<description>
 			The TOE may support pre-shared keys for use in the IPsec protocol, and may use pre-shared keys in
 			other protocols as well. There are two types of pre-shared keys that must be supported by the TOE, as
@@ -3986,7 +3987,7 @@
           </f-element>
 		 <audit-event/>
         </f-component>
-      </subsection>
+      </section>
     </sel-sfrs>
 
 
@@ -3994,7 +3995,7 @@
     <obj-sfrs>
 	
 	  <!-- Appendix A.2.1 Security Audit (FAU) -->
-      <subsection title="Security Audit (FAU)" id="ob-fau">
+      <section title="Security Audit (FAU)" id="ob-fau">
 	  
 		<!-- A.2.1.1 FAU_GEN.1/VPN Audit Data Generation (VPN Client) -->
         <f-component name="Audit Data Generation" cc-id="fau_gen.1" iteration="VPN" id="fau-gen-1-vpn" status="objective">
@@ -4213,10 +4214,10 @@
 			that occur while the audit collection functions are operating.</audit-event-descr> 
 	  </audit-event>
         </f-component>
-      </subsection>
+      </section>
 
 	  <!-- A.2.2 User Data Protection (FDP) -->
-      <subsection title="User Data Protection (FDP)" id="ob-fdp">
+      <section title="User Data Protection (FDP)" id="ob-fdp">
 	  
         <ext-comp-def title="Subset Information Flow Control" fam-id="FDP_IFC_EXT">
           <fam-behavior>Components in this family describe the requirements that pertain to IP traffic and information flow
@@ -4284,9 +4285,9 @@
           </f-element>
 	  <audit-event/>
         </f-component>
-      </subsection>
+      </section>
     </obj-sfrs>
-  </chapter>
+  </section>
   
   
   <bibliography>
