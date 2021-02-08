@@ -1188,43 +1188,43 @@
       <con-obj>The security objectives defined by this PP-Module (see sections 4.1 and 4.2) supplement those defined
 		in the GPOS PP as follows:</con-obj>
       <con-op-en></con-op-en>
-      <con-mod id="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
+      <con-mod ref="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
         that is transmitted over it is consistent with the T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats in the GPOS PP.</con-mod>
-      <con-mod id="T.TSF_CONFIGURATION">The threat of a misconfigured VPN client is consistent with the
+      <con-mod ref="T.TSF_CONFIGURATION">The threat of a misconfigured VPN client is consistent with the
 		T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats on the GPOS PP because misconfiguration could allow VPN traffic to be subjected
 		unexpectedly to unauthorized modification or disclosure..</con-mod>
-      <con-mod id="T.USER_DATA_REUSE">Inadvertent disclosure of user data to an unauthorized recipient is
+      <con-mod ref="T.USER_DATA_REUSE">Inadvertent disclosure of user data to an unauthorized recipient is
 		consistent with the T.NETWORK_EAVESDROP threat in the GPOS PP.</con-mod>
-      <con-mod id="T.TSF_FAILURE">A failure of TSF functionality could compromise the local system, which is
+      <con-mod ref="T.TSF_FAILURE">A failure of TSF functionality could compromise the local system, which is
 		consistent with the T.LOCAL_ATTACK threat in the GPOS PP.</con-mod>
-      <con-mod id="A.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
+      <con-mod ref="A.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
 		environment is configured in such a manner that the only network route to the protected network is through the TOE. This does not conflict with
 		the GPOS PP because the GPOS PP makes no assumptions about the network architecture in which the TOE is deployed.</con-mod>
-      <con-mod id="A.PHYSICAL">The assumption that physical security is provided by the environment is
+      <con-mod ref="A.PHYSICAL">The assumption that physical security is provided by the environment is
 		not explicitly stated in the GPOS PP but is consistent with the A.PLATFORM assumption defined in the GPOS PP, which expects the computing
 		platform to be trusted.</con-mod>
-      <con-mod id="A.TRUSTED_CONFIG">The assumption that personnel responsible for the TOE’s configuration are
+      <con-mod ref="A.TRUSTED_CONFIG">The assumption that personnel responsible for the TOE’s configuration are
 		trusted to follow the guidance is consistent with the A.PROPER_ADMIN
 		defined in the GPOS PP.</con-mod>
 			
 	  <!-- 6.1.3 Consistency of Objectives -->
-      <con-mod id="O.AUTHENTICATION">This objective is consistent with the O.PROTECTED_COMMS objective of the
+      <con-mod ref="O.AUTHENTICATION">This objective is consistent with the O.PROTECTED_COMMS objective of the
 		Base-PP, which also expects that trusted remote channels will enforce
 		authentication of remote endpoints.</con-mod>
-      <con-mod id="O.CRYPTOGRAPHIC_FUNCTIONS">This objective is consistent with the O.PROTECTED_COMMS objective of the
+      <con-mod ref="O.CRYPTOGRAPHIC_FUNCTIONS">This objective is consistent with the O.PROTECTED_COMMS objective of the
 		Base-PP, which also expects that secure cryptographic functions are used to
 		implement trusted communications.</con-mod>
-      <con-mod id="O.KNOWN_STATE">This objective is consistent with the O.INTEGRITY objective of the Base-PP,
+      <con-mod ref="O.KNOWN_STATE">This objective is consistent with the O.INTEGRITY objective of the Base-PP,
 		which expects a conformant TOE to implement measures to maintain its
 		own integrity.</con-mod>
-      <con-mod id="O.NONDISCLOSURE ">This objective is consistent with the O.PROTECTED_STORAGE objective of
+      <con-mod ref="O.NONDISCLOSURE ">This objective is consistent with the O.PROTECTED_STORAGE objective of
 		the Base-PP, which ensures that sensitive data is not disclosed without
 		authorization.</con-mod>
-      <con-mod id="OE.NO_TOE_BYPASS">This objective addresses behavior that is out of scope of the Base-PP and
+      <con-mod ref="OE.NO_TOE_BYPASS">This objective addresses behavior that is out of scope of the Base-PP and
 		does not define an environment that a GPOS TOE is incapable of existing in.</con-mod>
-      <con-mod id="OE.PHYSICAL ">This is part of satisfying OE.PLATFORM as defined in the GPOS PP because
+      <con-mod ref="OE.PHYSICAL ">This is part of satisfying OE.PLATFORM as defined in the GPOS PP because
 		physical security is required for hardware to be considered ‘trusted’</con-mod>
-      <con-mod id="OE.TRUSTED_CONFIG">The expectation of trusted configuration is consistent with OE.PROPER_USER
+      <con-mod ref="OE.TRUSTED_CONFIG">The expectation of trusted configuration is consistent with OE.PROPER_USER
 		and OE.PROPER_ADMIN in the GPOS PP.</con-mod>
 	  
 	  <!-- 6.1.4 Consistency of Requirements -->
@@ -1234,45 +1234,45 @@
 		from the GPOS PP as well as new SFRs that are used entirely to provide VPN client functionality. The
 		rationale for why this does not conflict with SFRs defined by the GPOS PP are as follows: -->
 	  
-      <con-mod id="os-fcs-ckm-1">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="os-fcs-ckm-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
-      <con-mod id="os-fcs-ckm-2">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="os-fcs-ckm-2">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified</con-mod>
-      <con-mod id="os-fcs-cop-1i1">The SFR is refined to list an additional AES mode that must be supported to
+      <con-mod ref="os-fcs-cop-1i1">The SFR is refined to list an additional AES mode that must be supported to
 		address VPN client requirements; the use of this mode for VPN connectivity
 		does not impact the ability of the GPOS to satisfy any of its other security
 		requirements.</con-mod>
 
-      <con-mod id="os-fcs-ckm-ext-2">Storage of key data related to VPN functionality can be accomplished using
+      <con-mod ref="os-fcs-ckm-ext-2">Storage of key data related to VPN functionality can be accomplished using
 		the same mechanism defined by FCS_STO_EXT.1 in the GPOS PP.</con-mod>
-      <con-mod id="os-fia-x509-ext-3">This SFR defines additional uses for X.509 certificate functionality that do
+      <con-mod ref="os-fia-x509-ext-3">This SFR defines additional uses for X.509 certificate functionality that do
 		not conflict with those defined in the GPOS PP.</con-mod>
-      <con-mod id="os-ftp-itc-1">This SFR defines a trusted channel for IPsec, which is added functionality
+      <con-mod ref="os-ftp-itc-1">This SFR defines a trusted channel for IPsec, which is added functionality
 		that does not prevent the existing GPOS functions from being performed.</con-mod>
 		
-      <con-mod id="fcs-ckm-1-vpn">Generation of IKE peer authentication keys is added functionality that does
+      <con-mod ref="fcs-ckm-1-vpn">Generation of IKE peer authentication keys is added functionality that does
 		not prevent the existing GPOS functions from being performed.</con-mod>
-      <con-mod id="fcs-ipsec-ext-1">This SFR defines the VPN client’s IPsec implementation, which is added
+      <con-mod ref="fcs-ipsec-ext-1">This SFR defines the VPN client’s IPsec implementation, which is added
 		functionality that does not interfere with the GPOS functions.</con-mod>
-      <con-mod id="fdp-rip-2">The requirement to protect against re-use of residual data is a property of
+      <con-mod ref="fdp-rip-2">The requirement to protect against re-use of residual data is a property of
 		the VPN client behavior and does not impact the GPOS functionality.</con-mod>
-      <con-mod id="fmt-smf-1-vpn">The ability to configure the VPN client behavior does not affect whether the
+      <con-mod ref="fmt-smf-1-vpn">The ability to configure the VPN client behavior does not affect whether the
 		GPOS as a whole can perform its security functions.</con-mod>
-      <con-mod id="fpt-tst-ext-1-vpn">Self-testing of the VPN client functionality does not impact the ability of the
+      <con-mod ref="fpt-tst-ext-1-vpn">Self-testing of the VPN client functionality does not impact the ability of the
 		GPOS to perform its security functions.</con-mod>
 
-      <con-mod id="fau-gen-1-vpn">Audit records generated by the VPN client do not interfere with GPOS
+      <con-mod ref="fau-gen-1-vpn">Audit records generated by the VPN client do not interfere with GPOS
 		functionality. The possibility of the underlying OS platform generating audit
 		records is consistent with the GPOS PP, which already contains FAU_GEN.1.</con-mod>
-      <con-mod id="fau-sel-1-vpn">The ability to suppress the generation of certain audit records related to
+      <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain audit records related to
 		VPN activity does not interfere with the ability of the GPOS to satisfy its
 		security functionality.</con-mod>
-      <con-mod id="fdp-ifc-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+      <con-mod ref="fdp-ifc-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the GPOS PP that would prevent this functionality from
 		being supported.</con-mod>
 
-      <con-mod id="fia-psk-ext-1">This SFR defines the use of pre-shared keys, which is behavior that only
+      <con-mod ref="fia-psk-ext-1">This SFR defines the use of pre-shared keys, which is behavior that only
 		relates to the establishment of IPsec connections.</con-mod>
     </base-pp>
 
@@ -1560,41 +1560,41 @@
 		in the MDF PP as follows:</con-obj>		
       <con-op-en></con-op-en>
 
-      <con-mod id="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
+      <con-mod ref="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
 		that is transmitted over it is consistent with the T.NETWORK and T.EAVESDROP threats in the MDF PP.</con-mod>
-      <con-mod id="T.TSF_CONFIGURATION">The threat of a mis-configured VPN client is consistent with the
+      <con-mod ref="T.TSF_CONFIGURATION">The threat of a mis-configured VPN client is consistent with the
 		T.NETWORK and T.EAVESDROP threats in the MDF PP because failure to mitigate against mis-configuration makes these threats more significant.</con-mod>
-      <con-mod id="T.USER_DATA_REUSE">Inadvertent disclosure of user data to an unauthorized recipient is
+      <con-mod ref="T.USER_DATA_REUSE">Inadvertent disclosure of user data to an unauthorized recipient is
 		consistent with the T.EAVESDROP threat in the MDF PP.</con-mod>
-      <con-mod id="T.TSF_FAILURE">A failure of TSF functionality could compromise the local system, which is
+      <con-mod ref="T.TSF_FAILURE">A failure of TSF functionality could compromise the local system, which is
 		consistent with the T.FLAWAPP threat in the MDF PP.</con-mod>
-      <con-mod id="OE.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
+      <con-mod ref="OE.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
 		environment is configured in such a manner that the only network route
 		to the protected network is through the TOE. This does not conflict with
 		the MDF PP because the MDF PP makes no assumptions about the
 		network architecture in which the TOE is deployed.</con-mod>
-      <con-mod id="A.PHYSICAL">The MDF PP includes the A.NOTIFY and A.PRECAUTION assumptions to
+      <con-mod ref="A.PHYSICAL">The MDF PP includes the A.NOTIFY and A.PRECAUTION assumptions to
 		mitigate the risk of physical theft of the TOE. This is consistent with the
 		A.PHYSICAL assumption in this PP-Module because the MDF PP includes
 		reasonable assumptions about the physical security of the TOE.</con-mod>
-      <con-mod id="A.TRUSTED_CONFIG">This assumption is consistent with the MDF PP because the MDF PP
+      <con-mod ref="A.TRUSTED_CONFIG">This assumption is consistent with the MDF PP because the MDF PP
 		includes the A.CONFIG assumption which assumes that all security functions are appropriately configured.</con-mod>
 		
 	  <!-- 6.2.3 Consistency of Objectives -->
-      <con-mod id="O.AUTHENTICATION ">This objective is consistent with the O.AUTH objective of the BasePP, which also expects that trusted remote channels will enforce
+      <con-mod ref="O.AUTHENTICATION ">This objective is consistent with the O.AUTH objective of the BasePP, which also expects that trusted remote channels will enforce
 		authentication of remote endpoints.</con-mod>
-      <con-mod id="O.CRYPTOGRAPHIC_FUNCTIONS">This objective is consistent with the O.COMMS objective of the
+      <con-mod ref="O.CRYPTOGRAPHIC_FUNCTIONS">This objective is consistent with the O.COMMS objective of the
 		Base-PP, which also expects that secure cryptographic functions are used to implement trusted communications.</con-mod>
-      <con-mod id="O.KNOWN_STATE">This objective is consistent with the O.INTEGRITY objective of the
+      <con-mod ref="O.KNOWN_STATE">This objective is consistent with the O.INTEGRITY objective of the
 		Base-PP, which expects a conformant TOE to implement measures to maintain its own integrity.</con-mod>
-      <con-mod id="O.NONDISCLOSURE">This objective is consistent with the O.STORAGE objective of the
+      <con-mod ref="O.NONDISCLOSURE">This objective is consistent with the O.STORAGE objective of the
 		Base-PP, which ensures that sensitive data is not disclosed without authorization.</con-mod>
-      <con-mod id="OE.NO_TOE_BYPASS ">This objective addresses behavior that is out of scope of the Base-PP
+      <con-mod ref="OE.NO_TOE_BYPASS ">This objective addresses behavior that is out of scope of the Base-PP
 		and does not define an environment that an MDF TOE is incapable of existing in.</con-mod>
-      <con-mod id="OE.PHYSICAL">The operational environment of a mobile device cannot guarantee
+      <con-mod ref="OE.PHYSICAL">The operational environment of a mobile device cannot guarantee
 		physical security, but the OE.PRECAUTION objective in the MDF PP
 		ensures that an appropriate level of physical security is provided.</con-mod>
-      <con-mod id="OE.TRUSTED_CONFIG ">The expectation of trusted configuration is consistent with
+      <con-mod ref="OE.TRUSTED_CONFIG ">The expectation of trusted configuration is consistent with
 		OE.CONFIG in the MDF PP.</con-mod>
 	  
 	  <!-- 6.2.4 Consistency of Requirements -->
@@ -1604,43 +1604,43 @@
 		from the MDF PP as well as new SFRs that are used entirely to provide VPN client functionality. The
 		rationale for why this does not conflict with SFRs defined by the MDF PP are as follows: -->
 
-      <con-mod id="md-fcs-ckm-1">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="md-fcs-ckm-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
-      <con-mod id="md-fcs-ckm-2-1">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="md-fcs-ckm-2-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
-      <con-mod id="md-fcs-cop-1-1">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="md-fcs-cop-1-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
-      <con-mod id="md-fia-x509-ext-2">This PP-Module adds IPsec as a new trusted protocol where x.509
+      <con-mod ref="md-fia-x509-ext-2">This PP-Module adds IPsec as a new trusted protocol where x.509
 		certificate authentication is used.</con-mod>
-      <con-mod id="md-ftp-itc-ext-1">This PP-Module adds IPsec as a new protocol that is used to implement
+      <con-mod ref="md-ftp-itc-ext-1">This PP-Module adds IPsec as a new protocol that is used to implement
 		trusted channels.</con-mod>
 		
-	  <con-mod id="fcs-ckm-1-vpn">This SFR defines the method of key generation for IKE peer authentication,
+	<con-mod ref="fcs-ckm-1-vpn">This SFR defines the method of key generation for IKE peer authentication,
 		which is a function that does not interfere with the functionality defined in
 		the MDF PP.</con-mod>
-      <con-mod id="fcs-ipsec-ext-1">This SFR defines the VPN client’s IPsec implementation, which is added
+      <con-mod ref="fcs-ipsec-ext-1">This SFR defines the VPN client’s IPsec implementation, which is added
 		functionality that does not interfere with the MDF functions.</con-mod>
-      <con-mod id="fdp-rip-2">The requirement to protect against re-use of residual data is a property of
+      <con-mod ref="fdp-rip-2">The requirement to protect against re-use of residual data is a property of
 		the VPN client behavior and does not impact the MDF functionality.</con-mod>
-      <con-mod id="fmt-smf-1-vpn">The ability to configure the VPN client behavior does not affect whether the
+      <con-mod ref="fmt-smf-1-vpn">The ability to configure the VPN client behavior does not affect whether the
 		MDF as a whole can perform its security functions.</con-mod>
-      <con-mod id="fpt-tst-ext-1-vpn">Self-testing of the VPN client functionality does not impact the ability of the
+      <con-mod ref="fpt-tst-ext-1-vpn">Self-testing of the VPN client functionality does not impact the ability of the
 		MDF to perform its security functions</con-mod>
 		
-      <con-mod id="fau-gen-1-vpn">Audit records generated by the VPN client do not interfere with MDF
+      <con-mod ref="fau-gen-1-vpn">Audit records generated by the VPN client do not interfere with MDF
 		functionality. The possibility of the underlying MDF platform generating
 		audit records is consistent with the MDF PP, which already contains
 		FAU_GEN.1.</con-mod>
-      <con-mod id="fau-sel-1-vpn">The ability to suppress the generation of certain VPN client audit records
+      <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain VPN client audit records
 		does not interfere with MDM functionality. The MDF PP already contains
 		FAU_SEL.1 as an objective SFR which means that this functionality does not
 		conflict with the expected behavior of a mobile device.</con-mod>
-      <con-mod id="fdp-ifc-ext-1-vpn">The ability of the VPN client to prevent split tunneling of IPsec traffic
+      <con-mod ref="fdp-ifc-ext-1-vpn">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level mobile device behavior, but there
 		are no requirements in the MDF PP that would prevent this functionality
 		from being supported.</con-mod>
 		
-      <con-mod id="fia-psk-ext-1">This SFR defines the use of pre-shared keys, which is behavior that only
+      <con-mod ref="fia-psk-ext-1">This SFR defines the use of pre-shared keys, which is behavior that only
 		relates to the establishment of IPsec connections.</con-mod>
     </base-pp>
 
@@ -2084,49 +2084,49 @@
       <con-op-en></con-op-en>
 	  
 	  <!-- 6.3.2 Consistency of the Security Problem Definition -->
-      <con-mod id="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
+      <con-mod ref="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
 		that is transmitted over it is consistent with the T.NETWORK_ATTACK and
 		T.NETWORK_EAVESDROP threats in the App PP.</con-mod>
-      <con-mod id="T.TSF_CONFIGURATION">The threat of a mis-configured VPN client is consistent with the
+      <con-mod ref="T.TSF_CONFIGURATION">The threat of a mis-configured VPN client is consistent with the
 		T.LOCAL_ATTACK threat in the App PP.</con-mod>
-      <con-mod id="T.USER_DATA_REUSE">Inadvertent disclosure of user data to an unauthorized recipient is
+      <con-mod ref="T.USER_DATA_REUSE">Inadvertent disclosure of user data to an unauthorized recipient is
 		consistent with the T.NETWORK_EAVESDROP threat in the App PP.</con-mod>
-      <con-mod id="T.TSF_FAILURE">A failure of TSF functionality could compromise the local system, which is
+      <con-mod ref="T.TSF_FAILURE">A failure of TSF functionality could compromise the local system, which is
 		consistent with the T.LOCAL_ATTACK threat in the App PP.</con-mod>
-      <con-mod id="A.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
+      <con-mod ref="A.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
 		environment is configured in such a manner that the only network route
 		to the protected network is through the TOE. This does not conflict with
 		the App PP because the App PP makes no assumptions about the network
 		architecture in which the TOE is deployed.</con-mod>
-      <con-mod id="A.PHYSICAL">The assumption that physical security is provided by the environment is
+      <con-mod ref="A.PHYSICAL">The assumption that physical security is provided by the environment is
 		not explicitly stated in the App PP but is consistent with the A.PLATFORM
 		assumption defined in the App PP, which expects the computing platform
 		to be trusted.</con-mod>
-      <con-mod id="A.TRUSTED_CONFIG">The assumption that personnel responsible for the TOE’s configuration are
+      <con-mod ref="A.TRUSTED_CONFIG">The assumption that personnel responsible for the TOE’s configuration are
 		trusted to follow the guidance is consistent with the A.PROPER_ADMIN
 		defined in the App PP.</con-mod>
 		
 	  <!-- 6.3.3 Consistency of Objectives -->
-      <con-mod id="O.AUTHENTICATION">This objective is consistent with the O.PROTECTED_COMMS
+      <con-mod ref="O.AUTHENTICATION">This objective is consistent with the O.PROTECTED_COMMS
 		objective of the Base-PP, which also expects that trusted remote
 		channels will enforce authentication of remote endpoints.</con-mod>
-      <con-mod id="O.CRYPTOGRAPHIC_FUNCTIONS">This objective is consistent with the O.PROTECTED_COMMS
+      <con-mod ref="O.CRYPTOGRAPHIC_FUNCTIONS">This objective is consistent with the O.PROTECTED_COMMS
 		objective of the Base-PP, which also expects that secure
 		cryptographic functions are used to implement trusted
 		communications.</con-mod>
-      <con-mod id="O.KNOWN_STATE">This objective is consistent with the O.INTEGRITY objective of the
+      <con-mod ref="O.KNOWN_STATE">This objective is consistent with the O.INTEGRITY objective of the
 		Base-PP, which expects a conformant TOE to implement measures
 		to maintain its own integrity.</con-mod>
-      <con-mod id="O.NONDISCLOSURE">This objective is consistent with the O.PROTECTED_STORAGE
+      <con-mod ref="O.NONDISCLOSURE">This objective is consistent with the O.PROTECTED_STORAGE
 		objective of the Base-PP, which ensures that sensitive data is not
 		disclosed without authorization.</con-mod>
-      <con-mod id="OE.NO_TOE_BYPASS ">This objective addresses behavior that is out of scope of the Base-PP
+      <con-mod ref="OE.NO_TOE_BYPASS ">This objective addresses behavior that is out of scope of the Base-PP
 		and does not define an environment that is globally applicable to all
 		software applications.</con-mod>
-      <con-mod id="OE.PHYSICAL">This is part of satisfying OE.PLATFORM as defined in the App PP
+      <con-mod ref="OE.PHYSICAL">This is part of satisfying OE.PLATFORM as defined in the App PP
 		because physical security is required for the underlying platform to
 		be considered ‘trustworthy’.</con-mod>
-      <con-mod id="OE.TRUSTED_CONFIG ">The expectation of trusted configuration is consistent with
+      <con-mod ref="OE.TRUSTED_CONFIG ">The expectation of trusted configuration is consistent with
 		OE.PROPER_USER and OE.PROPER_ADMIN in the App PP.</con-mod>	  
 	  
 	  <!-- 6.3.4 Consistency of Requirements -->
@@ -2136,57 +2136,57 @@
 		App PP as well as new SFRs that are used entirely to provide VPN client functionality. The rationale for
 		why this does not conflict with SFRs defined by the App PP are as follows: -->
 	  
-      <con-mod id="ap-fcs-ckm-1-1">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="ap-fcs-ckm-1-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.
 		Additionally, this behavior is selection-based in the App PP but is made
 		mandatory since it is required for VPN client functionality.</con-mod>
-      <con-mod id="ap-fcs-ckm-2-1">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="ap-fcs-ckm-2-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements and is modified to include Diffie-Hellman
 		Group 14 as an additional supported method for key establishment.</con-mod>
-      <con-mod id="ap-fcs-ckm-ext-1">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="ap-fcs-ckm-ext-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; specifically, since key generation services
 		are required in some capacity in order to support VPN functionality, the ST
 		author loses the choice of stating that the application does not have any key
 		generation functionality. Additionally, this behavior is selection-based in the
 		App PP but is made mandatory since it is required for VPN client
 		functionality</con-mod>
-      <con-mod id="ap-fcs-cop-1-1">The ST author is given guidance to make specific selections if this selectionbased SFR is claimed in support of IPsec functionality. The SFR behavior itself
+      <con-mod ref="ap-fcs-cop-1-1">The ST author is given guidance to make specific selections if this selectionbased SFR is claimed in support of IPsec functionality. The SFR behavior itself
 		is unmodified.</con-mod>
-      <con-mod id="ap-fia-x509-ext-2">This PP-Module adds IPsec as a new trusted protocol where x.509 certificate
+      <con-mod ref="ap-fia-x509-ext-2">This PP-Module adds IPsec as a new trusted protocol where x.509 certificate
 		authentication is used.</con-mod>
-      <con-mod id="ap-ftp-dit-ext-1">This PP-Module is for the VPN Client application and does not maintain any
+      <con-mod ref="ap-ftp-dit-ext-1">This PP-Module is for the VPN Client application and does not maintain any
 		sensitive data of its own. Therefore, there is no need to protect (through
 		FTP_DIT_EXT.1.1) VPN-client-specific data.</con-mod>
 
-      <con-mod id="ap-fcs-ckm-ext-2">This PP-Module adds a requirement for key storage, which is new
+      <con-mod ref="ap-fcs-ckm-ext-2">This PP-Module adds a requirement for key storage, which is new
 		functionality when compared to the Base-PP but does not interfere with its existing security functions.</con-mod>
-      <con-mod id="ap-fcs-ckm-ext-4">This PP-Module adds a requirement for key destruction, which is new
+      <con-mod ref="ap-fcs-ckm-ext-4">This PP-Module adds a requirement for key destruction, which is new
 		functionality when compared to the Base-PP but does not interfere with its
 		existing security functions.</con-mod>
 
-      <con-mod id="fcs-ckm-1-vpn">This SFR defines the method of key generation for IKE peer authentication,
+      <con-mod ref="fcs-ckm-1-vpn">This SFR defines the method of key generation for IKE peer authentication,
 		which is a function that does not interfere with the functionality defined in the App PP.</con-mod>
-      <con-mod id="fcs-ipsec-ext-1">This SFR defines the VPN client’s IPsec implementation, which is added
+      <con-mod ref="fcs-ipsec-ext-1">This SFR defines the VPN client’s IPsec implementation, which is added
 		functionality that does not interfere with the application functions.</con-mod>
-      <con-mod id="fdp-rip-2">The requirement to protect against re-use of residual data is a property of
+      <con-mod ref="fdp-rip-2">The requirement to protect against re-use of residual data is a property of
 		the VPN client behavior and does not impact the general application functionality. </con-mod>
-      <con-mod id="fmt-smf-1-vpn">The ability to configure the VPN client behavior does not affect whether the
+      <con-mod ref="fmt-smf-1-vpn">The ability to configure the VPN client behavior does not affect whether the
 		application as a whole can perform its security functions.</con-mod>
-      <con-mod id="fpt-tst-ext-1-vpn">Self-testing of the VPN client functionality does not impact the ability of the
+      <con-mod ref="fpt-tst-ext-1-vpn">Self-testing of the VPN client functionality does not impact the ability of the
 		application to perform its security functions</con-mod>
 		
-      <con-mod id="fau-gen-1-vpn">Audit records generated by the VPN client do not interfere with application
+      <con-mod ref="fau-gen-1-vpn">Audit records generated by the VPN client do not interfere with application
 		functionality. For cases where auditing is performed by the TOE platform, a
 		software application is installed on a general purpose operating system or
 		mobile device, both of which can reasonably be expected to provide audit
 		functionality.</con-mod>
-      <con-mod id="fau-sel-1-vpn">The ability to suppress the generation of certain audit records related to VPN
+      <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain audit records related to VPN
 		activity does not interfere with the ability of the application to satisfy its security functionality.</con-mod>
-      <con-mod id="fdp-ifc-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+      <con-mod ref="fdp-ifc-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the App PP that would prevent this functionality from being supported.</con-mod>
 
-      <con-mod id="fia-psk-ext-1">This SFR defines the use of pre-shared keys, which is behavior that only
+      <con-mod ref="fia-psk-ext-1">This SFR defines the use of pre-shared keys, which is behavior that only
 		relates to the establishment of IPsec connections.</con-mod>
 
     </base-pp>
@@ -2617,52 +2617,52 @@
       <con-op-en></con-op-en>
 	  
 	  <!-- 6.4.2 Consistency of Security Problem Definition -->
-      <con-mod id="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
+      <con-mod ref="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
 		that is transmitted over it is consistent with the T.NETWORK_ATTACK and
 		T.NETWORK_EAVESDROP threats in the MDM PP.</con-mod>
-      <con-mod id="T.TSF_CONFIGURATION">The threat of a mis-configured VPN client is consistent with the
+      <con-mod ref="T.TSF_CONFIGURATION">The threat of a mis-configured VPN client is consistent with the
 		T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats in the MDM
 		PP because failure to mitigate against mis-configuration makes these
 		threats more significant. </con-mod>
-      <con-mod id="T.USER_DATA_REUSE">Inadvertent disclosure of user data to an unauthorized recipient is
+      <con-mod ref="T.USER_DATA_REUSE">Inadvertent disclosure of user data to an unauthorized recipient is
 		consistent with the T.NETWORK_EAVESDROP threat in the MDM PP</con-mod>
-      <con-mod id="T.TSF_FAILURE">A failure of TSF functionality could compromise the implementation of the
+      <con-mod ref="T.TSF_FAILURE">A failure of TSF functionality could compromise the implementation of the
 		IPsec channel, which would lead to an exploitation of the T.NETWORK_ATTACK threat.</con-mod>
-      <con-mod id="OE.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
+      <con-mod ref="OE.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
 		environment is configured in such a manner that the only network route
 		to the protected network is through the TOE. This does not conflict with
 		the MDM PP because the MDM PP makes no assumptions about the
 		network architecture in which the TOE is deployed.</con-mod>
-      <con-mod id="A.PHYSICAL">The assumption that physical security is provided by the environment is
+      <con-mod ref="A.PHYSICAL">The assumption that physical security is provided by the environment is
 		not explicitly stated in the MDM PP but is consistent with the A.MDM_SERVER_PLATFORM assumption defined in the MDM PP, which
 		expects the computing platform to be trusted.</con-mod>
-      <con-mod id="A.TRUSTED_CONFIG">The assumption that personnel responsible for the TOE’s configuration are
+      <con-mod ref="A.TRUSTED_CONFIG">The assumption that personnel responsible for the TOE’s configuration are
 		trusted to follow the guidance is consistent with the A.PROPER_ADMIN
 		defined in the MDM PP.</con-mod>
 		
 	  <!-- 6.4.3 Consistency of Objectives -->
-      <con-mod id="O.AUTHENTICATION">This objective is consistent with the O.DATA_PROTECTION_TRANSIT
+      <con-mod ref="O.AUTHENTICATION">This objective is consistent with the O.DATA_PROTECTION_TRANSIT
 		objective of the Base-PP, which also expects that trusted remote
 		channels will enforce authentication of remote endpoints</con-mod>
-      <con-mod id="O.CRYPTOGRAPHIC_FUNCTIONS">This objective is consistent with the O.DATA_PROTECTION_TRANSIT
+      <con-mod ref="O.CRYPTOGRAPHIC_FUNCTIONS">This objective is consistent with the O.DATA_PROTECTION_TRANSIT
 		objective of the Base-PP, which also expects that secure
 		cryptographic functions are used to implement trusted communications.</con-mod>
-      <con-mod id="O.KNOWN_STATE">This objective is consistent with the O.INTEGRITY objective of the
+      <con-mod ref="O.KNOWN_STATE">This objective is consistent with the O.INTEGRITY objective of the
 		Base-PP, which expects a conformant TOE to implement measures
 		to maintain its own integrity.</con-mod>
-      <con-mod id="O.NONDISCLOSURE">There are no objectives in the Base-PP that directly relate to this
+      <con-mod ref="O.NONDISCLOSURE">There are no objectives in the Base-PP that directly relate to this
 		objective, but it could be considered to support both the
 		O.ACCOUNTABILITY and O.MANAGEMENT objectives in the Base-PP
 		by ensuring that stored data cannot be modified through
 		unauthorized mechanisms that may allow for access control and
 		logging functions to be bypassed. </con-mod>
-      <con-mod id="OE.NO_TOE_BYPASS">This objective addresses behavior that is out of scope of the Base-PP
+      <con-mod ref="OE.NO_TOE_BYPASS">This objective addresses behavior that is out of scope of the Base-PP
 		and does not define an environment that an MDM TOE is incapable
 		of existing in.</con-mod>
-      <con-mod id="OE.PHYSICAL ">This is part of satisfying OE.IT_ENTERPRISE as defined in the MDM
+      <con-mod ref="OE.PHYSICAL ">This is part of satisfying OE.IT_ENTERPRISE as defined in the MDM
 		PP because provisioning of physical security is a reasonable
 		expectation for an IT enterprise.</con-mod>
-      <con-mod id="OE.TRUSTED_CONFIG">The expectation of trusted configuration is consistent with
+      <con-mod ref="OE.TRUSTED_CONFIG">The expectation of trusted configuration is consistent with
 		OE.PROPER_USER and OE.PROPER_ADMIN in the MDM PP.</con-mod>
 	  
 	  <!-- 6.4.4 Consistency of Requirements -->
@@ -2672,54 +2672,54 @@
 		MDM PP as well as new SFRs that are used entirely to provide VPN client functionality. The rationale for
 		why this does not conflict with SFRs defined by the MDM PP are as follows:  -->
 
-      <con-mod id="dm-fcs-ckm-1">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="dm-fcs-ckm-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified</con-mod>
-      <con-mod id="dm-fcs-ckm-2">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="dm-fcs-ckm-2">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
-      <con-mod id="dm-fcs-cop-1-1">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="dm-fcs-cop-1-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified</con-mod>
-      <con-mod id="dm-fia-x509-ext-2">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="dm-fia-x509-ext-2">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
-      <con-mod id="dm-fpt-itt-1-1">When this SFR relates to the PP-Module’s functionality, the ST author is
+      <con-mod ref="dm-fpt-itt-1-1">When this SFR relates to the PP-Module’s functionality, the ST author is
 		instructed to make specific selections to implement this behavior using the
 		VPN client. This is done by forcing the ST author to make specific selections
 		that are already present in the Base-PP definition of the SFR; no new
 		behavior is introduced by this.</con-mod>
-      <con-mod id="dm-ftp-itc-1-1">When this SFR relates to the PP-Module’s functionality, the ST author is
+      <con-mod ref="dm-ftp-itc-1-1">When this SFR relates to the PP-Module’s functionality, the ST author is
 		instructed to make specific selections to implement this behavior using the
 		VPN client at minimum. This is done by forcing the ST author to make a
 		specific selection that is already present in the Base-PP definition of the SFR
 		and by removing a selection option; no new behavior is introduced by this.</con-mod>
-      <con-mod id="dm-ftp-trp-1-1">When this SFR relates to the PP-Module’s functionality, the ST author is
+      <con-mod ref="dm-ftp-trp-1-1">When this SFR relates to the PP-Module’s functionality, the ST author is
 		instructed to make specific selections to implement this behavior using the
 		VPN client at minimum. This is done by forcing the ST author to make a
 		specific selection that is already present in the Base-PP definition of the SFR
 		and by removing a selection option; no new behavior is introduced by this.</con-mod>
 
-      <con-mod id="fcs-ckm-1-vpn">This SFR defines the method of key generation for IKE peer authentication,
+      <con-mod ref="fcs-ckm-1-vpn">This SFR defines the method of key generation for IKE peer authentication,
 		which is a function that does not interfere with the functionality defined in
 		the MDM PP</con-mod>
-      <con-mod id="fcs-ipsec-ext-1">This SFR defines the VPN client’s IPsec implementation, which is added
+      <con-mod ref="fcs-ipsec-ext-1">This SFR defines the VPN client’s IPsec implementation, which is added
 		functionality that does not interfere with the MDM functions.</con-mod>
-      <con-mod id="fdp-rip-2">The requirement to protect against re-use of residual data is a property of
+      <con-mod ref="fdp-rip-2">The requirement to protect against re-use of residual data is a property of
 		the VPN client behavior and does not impact the MDM functionality. </con-mod>
-      <con-mod id="fmt-smf-1-vpn">The ability to configure the VPN client behavior does not affect whether the
+      <con-mod ref="fmt-smf-1-vpn">The ability to configure the VPN client behavior does not affect whether the
 		MDM as a whole can perform its security functions. </con-mod>
-      <con-mod id="fpt-tst-ext-1-vpn">Self-testing of the VPN client functionality does not impact the ability of the
+      <con-mod ref="fpt-tst-ext-1-vpn">Self-testing of the VPN client functionality does not impact the ability of the
 		MDM to perform its security functions.</con-mod>
 		
-      <con-mod id="fau-gen-1-vpn">Audit records generated by the VPN client do not interfere with MDM
+      <con-mod ref="fau-gen-1-vpn">Audit records generated by the VPN client do not interfere with MDM
 		functionality. The possibility of the MDM as a whole generating audit
 		records is consistent with the MDM PP, which already contains FAU_GEN.1</con-mod>
-      <con-mod id="fau-sel-1-vpn">The ability to suppress the generation of certain VPN client audit records
+      <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain VPN client audit records
 		does not interfere with MDM functionality. The MDM PP already contains FAU_SEL.1 as an optional SFR which
 		means that this functionality does not conflict with the expected behavior of an MDM.</con-mod>
-      <con-mod id="fdp-ifc-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+      <con-mod ref="fdp-ifc-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the MDM PP that would prevent this functionality from
 		being supported.</con-mod>
 
-      <con-mod id="fia-psk-ext-1">This SFR defines the use of pre-shared keys, which is behavior that only
+      <con-mod ref="fia-psk-ext-1">This SFR defines the use of pre-shared keys, which is behavior that only
 		relates to the establishment of IPsec connections.</con-mod>
 
     </base-pp>
