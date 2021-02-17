@@ -1,7 +1,7 @@
 
 PP-Module for Virtual Private Network (VPN) Clients
 ===============
-[![Build Status](https://travis-ci.com/commoncriteria/vpnclient.svg?branch=master)](https://travis-ci.com/commoncriteria/vpnclient)
+![Build](https://github.com/commoncriteria/vpnclient/workflows/Build/badge.svg)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/vpnclient.svg?maxAge=2592000)](https://github.com/commoncriteria/vpnclient/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
