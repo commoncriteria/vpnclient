@@ -260,7 +260,7 @@
       <usecases>
         <usecase id="usecase1" title="TOE to VPN Gateway">
           <description>A VPN client allows users on the TOE platform to establish an encrypted IPsec tunnel across a
-            less trusted, often unprotected public, network to a private network (see Figure 1). In this case,
+            less trusted, often unprotected public, network to a private network (see <xref to="fig-usecase1"/>). In this case,
             the TOE provides encryption/decryption of network packets as they leave/arrive the VPN client’s
             underlying platform. IP packets crossing from the private network to the public network will be
             encrypted if their destination is a remote access VPN client supporting the same VPN policy as
@@ -269,13 +269,12 @@
             on the private network and then encapsulating these packets in a way that allows the VPN
             gateway to securely receive them and forward them to their final destination.
             <figure entity="images/usecase1.png" title="TOE to VPN Gateway" id="fig-usecase1"/>
-			<xref to="fig-usecase1"/> 
 			</description>
         </usecase>
 
           <usecase id="usecase2" title="TOE to VPN Client">
             <description>A VPN client may additionally or alternatively allow a client computer to connect directly to
-              another computer running a VPN client (see Figure 2). In this case, the functionality of the VPN
+              another computer running a VPN client (see <xref to="fig-usecase2"/>). In this case, the functionality of the VPN
               client is to connect directly to another endpoint system in order to facilitate communications
               directly to that system.<h:p/>
               IPsec transport mode is used for end-to-end communications. In this use case, the content of
@@ -284,7 +283,6 @@
               source/destination of the packets. Users should take into consideration any security risks
               associated with this disclosure when architecting their networks in line with this use case.
               <figure entity="images/usecase2.png" title="TOE to VPN Client" id="fig-usecase2"/>
-			  <xref to="fig-usecase2"/>
             </description>
           </usecase>
 
@@ -292,13 +290,12 @@
           <description>Similar to Use Case 2 above, a VPN client TOE can also be used to establish a secure connection
             to an IPsec-capable network device using IPsec, similar to how SSH can be used. In this case,
             where a network device is being managed remotely over an IPsec connection, the network
-            device itself must contain IPsec functionality to act as the peer for the connection (see Figure 3).
+            device itself must contain IPsec functionality to act as the peer for the connection (see <xref to="fig-usecase3"/>).
             <h:p/>
             While this will behave functionally the same way as the scenario described by Use Case 2, the
             user of the TOE in Use Case 3 is a network administrator who is assumed to have administrative
             access to the network device they are connecting to.
             <figure entity="images/usecase3.png" title="TOE to IPsec-capable Network Device" id="fig-usecase3"/>
-		    <xref to="fig-usecase3"/>
           </description>
         </usecase>
       </usecases>
