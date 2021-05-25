@@ -708,7 +708,7 @@
           <addressed-by>FCS_CKM_EXT.4 (when App PP is Base-PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				or its platform to zeroize key data when no longer needed.</rationale>
-          <addressed-by>FDP_RIP.1</addressed-by><consistency-rationale/>
+          <addressed-by>FDP_RIP.1</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				or its platform to ensure that residual data is purged from the system.</rationale>
           <addressed-by>FDP_IFC_EXT.1 (optional)</addressed-by>
@@ -793,12 +793,17 @@
     written. 
     
     <!-- 5.1 GPOS PP Security Functional Requirements Direction -->
-    <base-pp version="4.2.1" name="General Purpose Operating System" product="General Purpose Operating System" short="OS" url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=442" xmlurl="test">
+    <base-pp id="bpp-gpos">
 
-      In a PP-Configuration that includes the GPOS PP, the VPN client is expected to rely on some of the
-      security functions implemented by the operating system as a whole and evaluated against the Base-PP.
-      In this case, the following sections describe any modifications that the ST author must make to the SFRs
-      defined in the Base-PP in addition to what is mandated by section 5.5.
+		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=442</url>
+		<raw-url>https://github.com/commoncriteria/operatingsystem/raw/master/input/operatingsystem.xml</raw-url>
+
+		<sec-func-req-dir> 
+			In a PP-Configuration that includes the GPOS PP, the VPN client is expected to rely on some of the
+			security functions implemented by the operating system as a whole and evaluated against the Base-PP.
+			In this case, the following sections describe any modifications that the ST author must make to the SFRs
+			defined in the Base-PP in addition to what is mandated by section 5.5.
+		</sec-func-req-dir> 
       
       <!-- 5.1.1 Modified SFRs -->      
       <modified-sfrs>
@@ -1294,7 +1299,9 @@
     </base-pp>
 
     <!-- 5.2 MDF PP Security Functional Requirements Direction -->
-    <base-pp version="3.1" name="Mobile Device Fundamentals" product="Mobile Device" short="MD" url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=417" xmlurl="test">
+    <base-pp id="bpp-mdf">
+		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=417</url>
+		<raw-url>https://github.com/commoncriteria/mobile-device/raw/master/input/mobile-device.xml</raw-url>
 
       In a PP-Configuration that includes the MDF PP, the VPN client is expected to rely on some of the
       security functions implemented by the operating system as a whole and evaluated against the Base-PP.
@@ -1662,7 +1669,10 @@
     </base-pp>
 
     <!-- 5.3 App PP Security Functional requirements Direction -->
-    <base-pp version="3.1" name="Application Software" product="Application Software" short="App" url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=429" xmlurl="test">
+    <base-pp id="bpp-app">
+		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=429"</url>
+		<raw-url>https://github.com/commoncriteria/application/raw/master/input/application.xml</raw-url>
+		
 
       In a PP-Configuration that includes the App PP, the VPN client is expected to rely on some of the security
       functions implemented by the operating system as a whole and evaluated against the Base-PP. In this
@@ -2209,7 +2219,9 @@
     </base-pp>
 
     <!-- 5.4 MDM PP Security Functional Requirements Direction -->
-    <base-pp version="3.1" name="Mobile Device Management" product="Mobile Device Manager" short="MDM" url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=428" xmlurl="test">
+    <base-pp id="bpp-mdm">
+		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=428</url>
+		<raw-url>https://github.com/commoncriteria/mdm/raw/master/input/mdm.xml</raw-url>
 
       In a PP-Configuration that includes the MDM PP, the VPN client is expected to rely on some of the
       security functions implemented by the operating system as a whole and evaluated against the Base-PP.
