@@ -3668,11 +3668,11 @@
         <f-component cc-id="fdp_rip.2" id="fdp-rip-2" name="Full Residual Information Protection">
           <consistency-rationale/>
           <f-element id="fdp-rip-2e1">
-            <title> The 
-				<selectables><h:b>
+            <title> The <h:b>
+				<selectables>
 					<selectable>TOE</selectable>
-					<selectable>TOE platform</selectable></h:b>
-				</selectables>  
+					<selectable>TOE platform</selectable>
+				</selectables></h:b>  
 				shall enforce that any previous information content of a resource is made unavailable upon the 
 				<selectables>
 					<selectable>allocation of the resource to</selectable>
@@ -3905,7 +3905,7 @@
 		
 		<!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
         <f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition" status="sel-based">
-          <selection-depends req="fcs-ipsec-ext-1e11" ids="sel-ipsec-e11-psk"/>
+          <depends on-sel="sel-ipsec-e11-psk"/>
           <consistency-rationale/>
           <comp-lev>defines the use and composition of pre-shared keys used for IPsec</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -4035,7 +4035,7 @@
 	  
 		<!-- A.2.1.1 FAU_GEN.1/VPN Audit Data Generation (VPN Client) -->
         <f-component name="Audit Data Generation" cc-id="fau_gen.1" iteration="VPN" id="fau-gen-1-vpn" status="objective">
-          <consistency-rationale></consistency-rationale>
+          <consistency-rationale/>
           <f-element id="fau-gen-1e1-vpn">
             <title>
 				The TSF <h:b>and 
@@ -4199,7 +4199,7 @@
 		
 	<!-- A.2.1.2 FAU_SEL.1/VPN Selective Audit (VPN Client) -->
         <f-component name="Selective Audit" cc-id="fau_sel.1" iteration="VPN" id="fau-sel-1-vpn" status="objective">
-          <consistency-rationale></consistency-rationale>
+          <consistency-rationale/>
           <f-element>
             <title>
               The <h:b>
@@ -4323,7 +4323,7 @@
         </f-component>
       </section>
     </obj-sfrs>
-  </section>
+  </sec:Security_Requirements>
   
   
   <bibliography>
