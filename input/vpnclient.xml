@@ -1302,7 +1302,7 @@
     <base-pp id="bpp-mdf">
 		<raw-url>https://github.com/commoncriteria/mobile-device/raw/master/input/mobile-device.xml</raw-url>
 		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=417&amp;id=417</url>
-
+		<sec-func-req-dir>
       In a PP-Configuration that includes the MDF PP, the VPN client is expected to rely on some of the
       security functions implemented by the operating system as a whole and evaluated against the Base-PP.
       In this case, the following sections describe any modifications that the ST author must make to the SFRs
@@ -1310,7 +1310,7 @@
       Full EAs are not repeated in the Supporting Document for the requirements in this section that are
       references to the MDF PP; only the additional testing needed to supplement what has already been
       captured in the MDF PP is included.
-      
+		</sec-func-req-dir>	
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="md-m-fcs">
           
@@ -1567,9 +1567,9 @@
       </modified-sfrs>
       
       <!-- 5.2.2 Additional SFRs -->
-      <additional-sfrs>
-        There are no additional SFRs that must be claimed only in cases where the MDF PP is the claimed BasePP.
-      </additional-sfrs>
+      <additional-sfrs/>
+<!--        There are no additional SFRs that must be claimed only in cases where the MDF PP is the claimed BasePP.
+      </additional-sfrs>  -->
 	  
 	  <!-- 6.2 MDF BB Base -->
 	  <!-- 6.2.1 Consistency of TOE Type -->
@@ -1673,12 +1673,12 @@
 		<raw-url>https://github.com/commoncriteria/application/raw/master/input/application.xml</raw-url>
 		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=429&amp;id=429</url>
 		
-
+		<sec-func-req-dir>
       In a PP-Configuration that includes the App PP, the VPN client is expected to rely on some of the security
       functions implemented by the operating system as a whole and evaluated against the Base-PP. In this
       case, the following sections describe any modifications that the ST author must make to the SFRs
       defined in the Base-PP in addition to what is mandated by section 5.5.
-      
+		</sec-func-req-dir>      
       <!-- 5.3.1 Modified SFRs -->
       <modified-sfrs>
 <!--        The SFRs listed in this section are defined in the App PP and relevant to the secure operation of the VPN
@@ -2222,12 +2222,12 @@
     <base-pp id="bpp-mdm">
 		<raw-url>https://github.com/commoncriteria/mdm/raw/master/input/mdm.xml</raw-url>
 		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=428&amp;id=428</url>
-
+		<sec-func-req-dir>
       In a PP-Configuration that includes the MDM PP, the VPN client is expected to rely on some of the
       security functions implemented by the operating system as a whole and evaluated against the Base-PP.
       In this case, the following sections describe any modifications that the ST author must make to the SFRs
       defined in the Base-PP in addition to what is mandated by section 5.5.
-      
+		</sec-func-req-dir>
       <!-- 5.4.1 Modified SFRs -->  
       <modified-sfrs>
 <!--        The SFRs listed in this section are defined in the MDM PP and relevant to the secure operation of the
@@ -2756,9 +2756,9 @@
 
 	<!-- 5.5 TOE Security Functional Requirements -->
     <man-sfrs>
-		The following section describes the SFRs that must be satisfied by any TOE that claims conformance to
+<!--		The following section describes the SFRs that must be satisfied by any TOE that claims conformance to
 		this PP-Module. These SFRs must be claimed regardless of which PP-Configuration is used to define the TOE.
-
+-->
 	  <!-- 5.5.1 Cryptographic Support --> 
       <section title="Cryptographic Support (FCS)" id="m-fcs">
 
