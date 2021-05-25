@@ -2764,6 +2764,14 @@
 <!--		The following section describes the SFRs that must be satisfied by any TOE that claims conformance to
 		this PP-Module. These SFRs must be claimed regardless of which PP-Configuration is used to define the TOE.
 -->
+
+ 	    <section id="ss-audit-table" title="Auditable Events for Mandatory SFRs">
+        	<audit-table table="mandatory">
+  	     		<htm:br/><htm:b><ctr ctr-type="Table" pre="Table " id="atref-mandatory">: Auditable Events for Mandatory SFRs</ctr></htm:b>
+	  	</audit-table>
+	    </section>
+
+
 	  <!-- 5.5.1 Cryptographic Support --> 
       <section title="Cryptographic Support (FCS)" id="m-fcs">
 
@@ -3881,6 +3889,13 @@
 	<!-- I don't understand why these are in a separate section in Modules but not anywhere else. -->
     <sel-sfrs>
 	
+	    <section id="sb-audit-table" title="Auditable Events for Selection-based SFRs">
+        	<audit-table table="sel-based">
+  	     		<htm:br/><htm:b><ctr ctr-type="Table" pre="Table " id="atref-sel-based">: Auditable Events for Selection-based SFRs</ctr></htm:b>
+	  	</audit-table>
+	    </section>
+
+	
 	  <!-- B.1 Identification and Authentication (FIA) -->
       <section title="Identification and Authentication (FIA)" id="s-fia">
 		<description>
@@ -4032,6 +4047,12 @@
 	
 	  <!-- Appendix A.2.1 Security Audit (FAU) -->
       <section title="Security Audit (FAU)" id="ob-fau">
+	  
+   	    <section id="sob-audit-table" title="Auditable Events for Objective SFRs">
+        	<audit-table table="objective">
+  	     		<htm:br/><htm:b><ctr ctr-type="Table" pre="Table " id="atref-objective">: Auditable Events for Objective SFRs</ctr></htm:b>
+	  	</audit-table>
+	    </section>
 	  
 		<!-- A.2.1.1 FAU_GEN.1/VPN Audit Data Generation (VPN Client) -->
         <f-component name="Audit Data Generation" cc-id="fau_gen.1" iteration="VPN" id="fau-gen-1-vpn" status="objective">
@@ -4261,7 +4282,7 @@
         </ext-comp-def>
 		
 		<!-- A.2.2.1 FDP_IFC_EXT.1 Subset Information Flow Control -->
-        <f-component cc-id="fdp_ifc_ext.1" id="fdp-ifc-ext-1" name="Subset Information Flow Control">
+        <f-component cc-id="fdp_ifc_ext.1" id="fdp-ifc-ext-1" name="Subset Information Flow Control" status="objective">
           <consistency-rationale/>
           <comp-lev>requires the TSF to process all IP traffic through its VPN client
             functionality.</comp-lev>
