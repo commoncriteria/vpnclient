@@ -2455,12 +2455,12 @@
 
           <!-- 5.4.1.5 FPT_ITT.1(1) Basic Internal TSF Data Transfer Protection -->
          <f-component cc-id="ftp_itt.1" iteration="1" id="dm-ftp-itt-1-1" name="Basic Internal TSF Data Transfer Protection">
-			<note role="application">
+			<description>
 					When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
 					communications. However, this PP-Module does not specify that any one particular interface must be
 					implemented using IPsec. If the TOE is distributed and uses IPsec to secure communications between its
 					distributed components, FPT_ITT.1(1) is refined as below.<h:p/>
-			</note>
+			</description>
             <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
               implement trusted channels.</consistency-rationale>
             <f-element id="dm-ftp-itt-1e1i1">
@@ -2485,12 +2485,12 @@
 		  
           <!-- 5.4.1.6 FTP_ITC.1(1) Inter-TSF Trusted Channel (Authorized IT Entities) -->
           <f-component cc-id="ftp_itc.1" iteration="1" id="dm-ftp-itc-1-1" name=" Inter-TSF Trusted Channel (Authorized IT Entities)">
-			<note role="application">
+			<description>
 	  			When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
 				communications. However, this PP-Module does not specify that any one particular interface must be
 				implemented using IPsec. If the TOE uses IPsec to secure communications between itself and external
 				trusted IT entities, FTP_ITC.1(1) is refined as below.<h:p/>
-			</note>
+			</description>
             <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
               implement trusted channels.</consistency-rationale>
             <f-element id="dm-ftp-itc-1e1i1">
@@ -2559,20 +2559,14 @@
             <audit-event/>
           </f-component>
 		  
-			<note role="application">
-	  			When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
-				communications. However, this PP-Module does not specify that any one particular interface must be
-				implemented using IPsec. If the TOE uses IPsec to secure communications between itself and trusted
-				remote administrators, FPT_TRP.1(1) is refined as below.<h:p/>
-			</note>
           <!-- 5.4.1.7 FTP_TRP.1(1) Trusted Path (for Remote Administration) -->
           <f-component cc-id="ftp_trp.1" iteration="1" id="dm-ftp-trp-1-1" name="Trusted Path (for Remote Administration)">
-<!--			<note role="application">
+			<description>
 	  			When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
 				communications. However, this PP-Module does not specify that any one particular interface must be
 				implemented using IPsec. If the TOE uses IPsec to secure communications between itself and trusted
 				remote administrators, FPT_TRP.1(1) is refined as below.<h:p/>
-			</note>   -->
+			</ndescription>
             <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
               implement trusted channels.</consistency-rationale>
             <f-element id="dm-ftp-trp-1e1i1">
