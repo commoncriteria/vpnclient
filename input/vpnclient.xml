@@ -2559,14 +2559,20 @@
             <audit-event/>
           </f-component>
 		  
-          <!-- 5.4.1.7 FTP_TRP.1(1) Trusted Path (for Remote Administration) -->
-          <f-component cc-id="ftp_trp.1" iteration="1" id="dm-ftp-trp-1-1" name="Trusted Path (for Remote Administration)">
 			<note role="application">
 	  			When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
 				communications. However, this PP-Module does not specify that any one particular interface must be
 				implemented using IPsec. If the TOE uses IPsec to secure communications between itself and trusted
 				remote administrators, FPT_TRP.1(1) is refined as below.<h:p/>
 			</note>
+          <!-- 5.4.1.7 FTP_TRP.1(1) Trusted Path (for Remote Administration) -->
+          <f-component cc-id="ftp_trp.1" iteration="1" id="dm-ftp-trp-1-1" name="Trusted Path (for Remote Administration)">
+<!--			<note role="application">
+	  			When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
+				communications. However, this PP-Module does not specify that any one particular interface must be
+				implemented using IPsec. If the TOE uses IPsec to secure communications between itself and trusted
+				remote administrators, FPT_TRP.1(1) is refined as below.<h:p/>
+			</note>   -->
             <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
               implement trusted channels.</consistency-rationale>
             <f-element id="dm-ftp-trp-1e1i1">
