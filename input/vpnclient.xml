@@ -3713,12 +3713,10 @@
 
 	<!-- 5.5.3 Security Management (FMT)  -->
     <section title="Security Management (FMT)" id="m-fmt">
-        <description>
-			The TOE is not required to maintain a separate management role. It is, however, required to provide
-			functionality to configure certain aspects of TOE operation that should not be available to the general
-			user population. It is possible for the TOE, TOE Platform, or VPN Gateway to provide this functionality.
-			The client itself has to be configurable - whether it is from the EUD or from a VPN gateway.
-		</description>
+        The TOE is not required to maintain a separate management role. It is, however, required to provide
+	functionality to configure certain aspects of TOE operation that should not be available to the general
+	user population. It is possible for the TOE, TOE Platform, or VPN Gateway to provide this functionality.
+	The client itself has to be configurable - whether it is from the EUD or from a VPN gateway.
 
 		<!-- 5.5.3.1 FMT_SMF.1/VPN Specification of Management Functions (VPN) -->
         <f-component cc-id="fmt_smf.1" id="fmt-smf-1-vpn" name="Specification of Management Functions (VPN)" iteration="VPN">
@@ -3894,7 +3892,6 @@
 	
 	  <!-- B.1 Identification and Authentication (FIA) -->
       <section title="Identification and Authentication (FIA)" id="s-fia">
-		<description>
 			The TOE may support pre-shared keys for use in the IPsec protocol, and may use pre-shared keys in
 			other protocols as well. There are two types of pre-shared keys that must be supported by the TOE, as
 			specified in the requirements below. The first type is referred to as “text-based pre-shared keys,” which
@@ -3906,9 +3903,9 @@
 			form" by an administrator. "Direct form" means that the input is used directly as the key, with no
 			"conditioning" as was the case for text-based pre-shared keys. An example would be a string of hex
 			digits that represent the bits that comprise the key.<h:p/>
-			The requirements below mandate that the TOE support text-based pre-shared keys. Bit-based preshared keys may or may not be supported, and if they are, generation of these keys may be done either
+			The requirements below mandate that the TOE support text-based pre-shared keys. Bit-based preshared keys 
+	      		may or may not be supported, and if they are, generation of these keys may be done either
 			by the TOE or in the operational environment.
-		</description>
 	  
         <ext-comp-def title="Pre-Shared Key Composition" fam-id="FIA_PSK_EXT">
           <fam-behavior>Components in this family describes the requirements for pre-shared keys when implementing IPsec</fam-behavior>
