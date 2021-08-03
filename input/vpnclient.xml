@@ -2453,14 +2453,13 @@
         
         <section title="Trusted Path/Channels (FTP)" id="dm-m-ftp">
 
+		<h:p>When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
+		communications. However, this PP-Module does not specify that any one particular interface must be
+		implemented using IPsec. If the TOE is distributed and uses IPsec to secure communications between its
+		distributed components, FPT_ITT.1(1) is refined as below.</h:p>
+			
           <!-- 5.4.1.5 FPT_ITT.1(1) Basic Internal TSF Data Transfer Protection -->
          <f-component cc-id="ftp_itt.1" iteration="1" id="dm-ftp-itt-1-1" name="Basic Internal TSF Data Transfer Protection">
-			<description>
-					When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
-					communications. However, this PP-Module does not specify that any one particular interface must be
-					implemented using IPsec. If the TOE is distributed and uses IPsec to secure communications between its
-					distributed components, FPT_ITT.1(1) is refined as below.<h:p/>
-			</description>
             <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
               implement trusted channels.</consistency-rationale>
             <f-element id="dm-ftp-itt-1e1i1">
@@ -2483,14 +2482,14 @@
             <audit-event/>
          </f-component>		  
 		  
-          <!-- 5.4.1.6 FTP_ITC.1(1) Inter-TSF Trusted Channel (Authorized IT Entities) -->
+		<h:p>
+			When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
+			communications. However, this PP-Module does not specify that any one particular interface must be
+			implemented using IPsec. If the TOE uses IPsec to secure communications between itself and external
+			trusted IT entities, FTP_ITC.1(1) is refined as below.</h:p>
+
+	<!-- 5.4.1.6 FTP_ITC.1(1) Inter-TSF Trusted Channel (Authorized IT Entities) -->
           <f-component cc-id="ftp_itc.1" iteration="1" id="dm-ftp-itc-1-1" name=" Inter-TSF Trusted Channel (Authorized IT Entities)">
-			<description>
-	  			When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
-				communications. However, this PP-Module does not specify that any one particular interface must be
-				implemented using IPsec. If the TOE uses IPsec to secure communications between itself and external
-				trusted IT entities, FTP_ITC.1(1) is refined as below.<h:p/>
-			</description>
             <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
               implement trusted channels.</consistency-rationale>
             <f-element id="dm-ftp-itc-1e1i1">
@@ -2558,15 +2557,15 @@
             </f-element>
             <audit-event/>
           </f-component>
-		  
+
+		
+	<h:p>When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
+		communications. However, this PP-Module does not specify that any one particular interface must be
+		implemented using IPsec. If the TOE uses IPsec to secure communications between itself and trusted
+		remote administrators, FPT_TRP.1(1) is refined as below.</h:p>
+		
           <!-- 5.4.1.7 FTP_TRP.1(1) Trusted Path (for Remote Administration) -->
           <f-component cc-id="ftp_trp.1" iteration="1" id="dm-ftp-trp-1-1" name="Trusted Path (for Remote Administration)">
-			<description>
-	  			When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
-				communications. However, this PP-Module does not specify that any one particular interface must be
-				implemented using IPsec. If the TOE uses IPsec to secure communications between itself and trusted
-				remote administrators, FPT_TRP.1(1) is refined as below.<h:p/>
-			</ndescription>
             <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
               implement trusted channels.</consistency-rationale>
             <f-element id="dm-ftp-trp-1e1i1">
@@ -2846,27 +2845,26 @@
 		</f-component>
     
 
-		<!-- 5.5.1.2 FCS_IPSEC_EXT.1 IPsec  -->	
-        <f-component name="IPsec" cc-id="fcs_ipsec_ext.1" id="fcs-ipsec-ext-1">
-			<description>
-			In the following elements of the FCS_IPSEC_EXT.1 component, it is allowable for some or all of the
+			<h:p>In the following elements of the FCS_IPSEC_EXT.1 component, it is allowable for some or all of the
 			individual elements to be implemented by the platform on which the VPN client operates. However, this
 			is only the case when the platform is within the TOE boundary, as is the case where this PP-Module is
 			being claimed on top of a general-purpose operating system or a mobile device.<h:p/>
-			When the TOE is a standalone software application, the IPsec functionality must be implemented by the
+			<h:p>When the TOE is a standalone software application, the IPsec functionality must be implemented by the
 			TSF, though it is permissible for the TSF to invoke cryptographic algorithm services from the TOE
 			platform to support the TOE’s implementation of IPsec. The TOE may also rely on the TOE platform for
 			X.509 certificate validation services, though it is the responsibility of the TSF to take the proper action
-			based on the validation response that is returned.<h:p/>
-			It is also permissible for the TSF to rely on low-level capabilities of the platform to perform enforcement
+			based on the validation response that is returned.</h:p>
+			<h:p>It is also permissible for the TSF to rely on low-level capabilities of the platform to perform enforcement
 			and routing functions as a result of the policies the TSF maintains. For example, while the TSF must
 			provide the capability to implement the Security Policy Database abstraction, it is allowed for the TSF to
 			depend on the platform-provided network stack/driver to perform the low-level packet filtering and
-			routing actions once the TSF has set up those rules as defined by the SPD.<h:p/>
-			While enforcement of the IPsec requirements must be implemented by the TSF, it is permissible for the
+			routing actions once the TSF has set up those rules as defined by the SPD.</h:p>
+			<h:p>While enforcement of the IPsec requirements must be implemented by the TSF, it is permissible for the
 			TSF to receive configuration of the IPsec behavior from an environmental source, most notably a VPN
-			gateway. <h:p/>
-			</description>
+			gateway. </h:p>
+
+	      <!-- 5.5.1.2 FCS_IPSEC_EXT.1 IPsec  -->	
+        <f-component name="IPsec" cc-id="fcs_ipsec_ext.1" id="fcs-ipsec-ext-1">
           <consistency-rationale/>
           <comp-lev>requires the TSF to securely implement the IPsec protocol.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul>
