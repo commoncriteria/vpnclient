@@ -567,7 +567,8 @@ expected to enforce.<h:p/>
             TOE’s authentication ability (IPsec) will allow the TSF to establish VPN connectivity with a remote
             VPN gateway or peer and ensure that any such connection attempt is both authenticated and
             authorized.<h:p/>
-			Addressed by: FIA_X509_EXT.3 (when GPOS PP is Base-PP), FIA_X509_EXT.2 (refined from MDF PP),
+			Addressed by: FIA_X509_EXT.3 (when GPOS PP is Base-PP), FDP_IFC_EXT.1 (refined
+			from MDF PP), FIA_X509_EXT.2 (refined from MDF PP),
 			FIA_X509_EXT.2 (refined from App PP), FIA_X509_EXT.2 (refined from MDM PP),
 			FCS_IPSEC_EXT.1, FIA_PSK_EXT.1 (optional).
           </description>
@@ -575,6 +576,9 @@ expected to enforce.<h:p/>
           <addressed-by>FIA_X509_EXT.3 (when GPOS PP is Base-PP)</addressed-by>
 			<rationale>This SFR supports the objective by enforcing the use
 				of X.509 certificate authentication for IPsec.</rationale>
+          <addressed-by>FDP_IFC_EXT.1 (refined from MDF PP)</addressed-by>
+			<rationale>This SFR supports the objective by affirming that the
+				TOE includes a VPN client.</rationale>
           <addressed-by>FIA_X509_EXT.2 (refined from MDF PP)</addressed-by>
 			<rationale>This SFR supports the objective by enforcing the use
 				of X.509 certificate authentication for IPsec.</rationale>
@@ -598,14 +602,14 @@ expected to enforce.<h:p/>
             confidentiality and allow for detection and modification of data that is transmitted outside of the
             TOE.<h:p/>
 			  Addressed by: FCS_CKM.1 (refined from GPOS PP), FCS_CKM.2 (refined from GPOS PP)
-			  FCS_COP.1(1) (refined from GPOS PP), FTP_ITC.1 (when GPOS PP is Base-PP)
-			  FCS_CKM.1 (refined from MDF PP), FCS_CKM.2(1) (refined from MDF PP)
-			  FCS_COP.1(1) (refined from MDF PP), FTP_ITC_EXT.1 (refined from MDF PP)
-			  FCS_CKM.1(1) (refined from App PP), FCS_CKM.2 (refined from App PP)
-			  FCS_CKM_EXT.1 (refined from App PP), FCS_COP.1(1) (refined from App PP)
+			  FCS_COP.1/1 (refined from GPOS PP), FTP_ITC.1 (when GPOS PP is Base-PP)
+			  FCS_CKM.1 (refined from MDF PP), FCS_CKM.2/UNLOCKED (refined from MDF PP)
+			  FCS_COP.1/ENCRYPT (refined from MDF PP), FTP_ITC_EXT.1 (refined from MDF PP)
+			  FCS_CKM.1/1 (refined from App PP), FCS_CKM.2 (refined from App PP)
+			  FCS_CKM_EXT.1 (refined from App PP), FCS_COP.1/1 (refined from App PP)
 			  FCS_CKM.1 (refined from MDM PP), FCS_CKM.2 (refined from MDM PP)
-			  FCS_COP.1(1) (refined from MDM PP), FPT_ITT.1(1) (if applicable, refined from MDM PP)
-			  FTP_ITC.1(1) (if applicable, refined from MDM PP), FTP_TRP.1(1) (if applicable, refined from MDM PP)
+			  FCS_COP.1/1 (refined from MDM PP), FPT_ITT.1/1 (if applicable, refined from MDM PP)
+			  FTP_ITC.1/1 (if applicable, refined from MDM PP), FTP_TRP.1/1 (if applicable, refined from MDM PP)
 			  FCS_CKM.1/VPN, FCS_IPSEC_EXT.1.
 		  </description>
 		  <consistency-rationale>Consistency rationale for O.CRYPTOGRAPHIC_FUNCTIONS.</consistency-rationale>
@@ -615,7 +619,7 @@ expected to enforce.<h:p/>
           <addressed-by>FCS_CKM.2 (refined from GPOS PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring that the
 				TOE implement key establishment using certain methods. </rationale>
-          <addressed-by>FCS_COP.1(1) (refined from GPOS PP)</addressed-by>
+          <addressed-by>FCS_COP.1/1 (refined from GPOS PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring that the
 				TOE implement symmetric encryption and decryption using certain methods.</rationale>
           <addressed-by>FTP_ITC.1 (when GPOS PP is Base-PP)</addressed-by>
@@ -624,16 +628,16 @@ expected to enforce.<h:p/>
           <addressed-by>FCS_CKM.1 (refined from MDF PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring that the
 				TOE implement key generation using certain methods.</rationale>
-          <addressed-by>FCS_CKM.2(1) (refined from MDF PP)</addressed-by>
+          <addressed-by>FCS_CKM.2/UNLOCKED (refined from MDF PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring that the
 				TOE implement key establishment using certain methods.</rationale>
-          <addressed-by>FCS_COP.1(1) (refined from MDF PP)</addressed-by>
+          <addressed-by>FCS_COP.1/ENCRYPT (refined from MDF PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring that the
 				TOE implement symmetric encryption and decryption using certain methods.</rationale>
           <addressed-by>FTP_ITC_EXT.1 (refined from MDF PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to support the use of IPsec as a trusted channel.</rationale>
-          <addressed-by>FCS_CKM.1(1) (refined from App PP)</addressed-by>
+          <addressed-by>FCS_CKM.1/1 (refined from App PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to implement key generation using certain methods or to support invoking this function from its OS
 				platform.</rationale>
@@ -645,7 +649,7 @@ expected to enforce.<h:p/>
 		  <rationale>This SFR supports the objective by requiring the TOE
 			to specify whether it implements its own cryptographic primitives or invokes platform
 			cryptographic services for these functions.</rationale>
-          <addressed-by>FCS_COP.1(1) (refined from App PP)</addressed-by>
+          <addressed-by>FCS_COP.1/1 (refined from App PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring that the
 				TOE implement symmetric encryption and decryption using certain methods.
 				</rationale>
@@ -657,22 +661,22 @@ expected to enforce.<h:p/>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to implement key establishment using certain methods or to support invoking this function from its
 				OS platform.</rationale>
-          <addressed-by>FCS_COP.1(1) (refined from MDM PP)</addressed-by>
+          <addressed-by>FCS_COP.1/1 (refined from MDM PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring that the
 				TOE implement symmetric encryption and decryption using certain methods or invoke platform
 				functionality that provides this capability.</rationale>
-          <addressed-by>FPT_ITT.1(1) (if applicable, refined from MDM PP)</addressed-by>
+          <addressed-by>FPT_ITT.1/1 (if applicable, refined from MDM PP)</addressed-by>
 			<rationale>If the MDM TOE includes a claim of this PP-Module
 				to support protection of communications between distributed TOE components, this SFR supports the
 				objective by requiring the TOE to support the use of IPsec for that interface.</rationale>
-          <addressed-by>FTP_ITC.1(1) (if applicable, refined from MDM PP)</addressed-by>
+          <addressed-by>FTP_ITC.1/1 (if applicable, refined from MDM PP)</addressed-by>
 			<rationale>If the MDM TOE includes a claim of this PP-Module
 				to support protection of communications between the TOE and one or more trusted external IT entities,
 				this SFR supports the objective by requiring the TOE to support the use of IPsec for that 
 				interface.</rationale>
-          <addressed-by>FTP_TRP.1(1) (if applicable, refined from MDM PP)</addressed-by>
+          <addressed-by>FTP_TRP.1/1 (if applicable, refined from MDM PP)</addressed-by>
 			<rationale>If the MDM TOE includes a claim of this PP-Module
-				to support protection of communications between remote administrators and the TOE, this SFR
+				to support protection of communications between remote administrators and the TOE, this	SFR
 				supports the objective by requiring the TOE to support the use of IPsec for that interface.</rationale>
           <addressed-by>FCS_CKM.1/VPN</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
@@ -686,10 +690,14 @@ expected to enforce.<h:p/>
             includes management functionality to allow the security functionality to be configured and self-test
             functionality that allows it to assert its own integrity. It may also include auditing functionality that
             can be used to determine the operational behavior of the TOE.<h:p/>
-			Addressed by: FMT_SMF.1/VPN, FPT_TST_EXT.1/VPN, 
+			Addressed by: FMT_SMF_EXT.1 (refined from MDF PP), FMT_SMF.1/VPN, FPT_TST_EXT.1/VPN, 
 			FAU_GEN.1/VPN (optional), FAU_SEL.1/VPN (optional).
           </description>
 		  <consistency-rationale>Consistency rationale for O.KNOWN_STATE.</consistency-rationale>
+          <addressed-by>FMT_SMF_EXT.1 (refined from MDF PP)</addressed-by>
+			<rationale>This SFR supports the objective by requiring the
+				portion of the TOE described by the Base-PP to
+				include a management capability for the VPN client</rationale>
           <addressed-by>FMT_SMF.1/VPN</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to implement certain administratively-configurable functions.</rationale>
@@ -726,7 +734,7 @@ expected to enforce.<h:p/>
           <addressed-by>FDP_RIP.1</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				or its platform to ensure that residual data is purged from the system.</rationale>
-          <addressed-by>FDP_IFC_EXT.1 (optional)</addressed-by>
+          <addressed-by>FDP_IFC_EXT.1/VPN (optional)</addressed-by>
 			<rationale>This SFR supports the objective by optionally
 				requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
 				established IPsec tunnel.</rationale>
