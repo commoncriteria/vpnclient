@@ -4477,6 +4477,159 @@ expected to enforce.<h:p/>
 	
   </sec:Security_Requirements>
   
+	
+<!-- Appendix D: Implicity Satisfied Requirements -->
+<appendix title="Implicitly Satisfied Requirements" id="satisfiedreqs">
+	<!-- Boilerplate goes here -->
+<!--	This appendix lists requirements that should be considered satisfied by products successfully evaluated
+	against this PP. However, these requirements are not featured explicitly as SFRs and should not be
+	included in the ST. They are not included as standalone SFRs because it would increase the time, cost,
+	and complexity of evaluation. This approach is permitted by [CC] Part 1, 8.2 Dependencies between
+	components.<h:p/>
+	This information benefits systems engineering activities which call for inclusion of particular security
+	controls. Evaluation against the PP-Module provides evidence that these controls are present and have
+	been evaluated.
+-->
+	
+	<h:b><ctr ctr-type="Table" pre="Table " id="imp-sat-reqs-table">: Implicitly Satisfied Requirements</ctr></h:b>
+    <h:table>	
+		<h:tr class="header"><h:td>Requirement</h:td><h:td>Rationale for Satisfaction</h:td></h:tr>
+	<h:tr>
+	<h:td><h:b>FCS_CKM.2 – Cryptographic Key
+		Distribution, or FCS_COP.1 –
+		Cryptographic Operation</h:b></h:td>
+	<h:td>
+	  	FCS_CKM.1 (which is defined in this PP-Module as
+		FCS_CKM.1/VPN) requires one of FCS_CKM.2 or FCS_COP.1 to
+		be claimed so that the generated keys can serve some
+		security-relevant purpose. Each of the Base-PPs for this PPModule 
+		define an iteration of FCS_COP.1 for symmetric
+		cryptography that is expected to use the IKE keys generated
+		by FCS_CKM.1/VPN. Therefore, this dependency is satisfied
+		through requirements defined in the Base-PPs.
+	</h:td>
+	</h:tr>
+	<h:tr>
+		<h:td><h:b>FCS_CKM.4 – Cryptographic Key Destruction</h:b></h:td>
+	<h:td>
+	 	FCS_CKM.1 (which is defined in this PP-Module as
+		FCS_CKM.1/VPN) requires FCS_CKM.4 to be claimed so that
+		the generated keys are not disclosed through improper or
+		nonexistent key destruction methods.<h:p/>
+		Each of the supported Base-PPs except for the App PP define
+		FCS_CKM_EXT.4 as an extended SFR, which defines key
+		destruction functionality consistent with FCS_CKM.4, but with
+		additional details that are specific to the respective
+		technology types of the Base-PP. When the App PP is the
+		Base-PP, this PP-Module defines its own instance of
+		FCS_CKM_EXT.4 to achieve the same purpose. The
+		dependency on FCS_CKM.4 is considered to be satisfied
+		through the fact that a compliant TOE will always claim
+		FCS_CKM_EXT.4, which is intended to satisfy the same
+		purpose.
+	</h:td>
+	</h:tr>
+	<h:tr>
+		<h:td><h:b>FCS_COP.1 – Cryptographic Operation</h:b></h:td>
+	<h:td>
+		FCS_IPSEC_EXT.1 has a dependency on FCS_COP.1 because of
+		the cryptographic operations that are needed in support of
+		implementing the IPsec protocol. FCS_COP.1 is not defined in
+		this PP-Module because each of the supported Base-PPs 
+		define iterations of FCS_COP.1 that support the functions
+		that are relevant to IPsec.
+	</h:td>
+	</h:tr>
+	<h:tr>
+		<h:td><h:b>FMT_MTD.1 – Management of TSF Data</h:b></h:td>
+	<h:td>
+		FAU_SEL.1/VPN has a dependency on FMT_MTD.1 to enforce
+		appropriate access controls on the audit configuration, as this
+		is TSF data. This SFR is not explicitly defined in any of the
+		supported Base-PPs but the dependency is implicitly
+		addressed by each Base-PP in the following manner:<h:ul>
+		<h:li>GPOS PP: The GPOS PP implicitly defines the
+			existence of ‘user’ and ‘administrator’ roles in the
+			extended SFRs FMT_MOF_EXT.1 and
+			FMT_SMF_EXT.1. A TOE that conforms to this BasePP can associate the ability to perform the
+			functionality defined by FAU_SEL.1/VPN to one or
+			both of these roles.</h:li>
+		<h:li>MDF PP: The GPOS PP implicitly defines the existence
+			of ‘user,’ ‘administrator,’ and ‘MDM’ roles in the
+			extended SFRs FMT_MOF_EXT.1 and
+			FMT_SMF_EXT.1. A TOE that conforms to this BasePP can associate the ability to perform the
+			functionality defined by FAU_SEL.1/VPN to one or
+			more of these roles.</h:li>
+		<h:li>App PP: The App PP does not define the existence of
+			a separately authenticated management interface;
+			instead, the App PP assumes that authentication to
+			the underlying OS platform is sufficient authorization
+			to access the application’s management functionality.</h:li>
+		<h:li>MDM PP: The MDM PP defines the existence of
+			management roles in FMT_SMR.1(1). A TOE that
+			conforms to this Base-PP can associate the ability to
+			perform the functionality defined by FAU_SEL.1/VPN
+			to one or more of the roles defined here.</h:li></h:ul>
+	</h:td>
+	</h:tr>
+	<h:tr>
+		<h:td><h:b>FPT_STM.1 – Reliable Time Stamps</h:b></h:td>
+	<h:td>
+	  FAU_GEN.1/VPN has a dependency on FPT_STM.1 because
+		audit records are required to have timestamps that are based
+		on reliable clock data. All of the supported Base-PPs either
+		define this requirement explicitly or provide rationale for why
+		the reader to expect that a reliable clock service is expected
+		to be present. Depending on the claimed Base-PP, the
+		dependency is satisfied in the following manner:<h:ul>
+		<h:li>GPOS PP: The GPOS PP states that FPT_STM.1 is
+			implicitly satisfied by the requirements of FAU_GEN.1 
+			since that requirement could not be satisfied if no
+			clock service was present. Additionally, a clock
+			service is reasonably assumed to be provided by a
+			general-purpose OS.</h:li>
+		<h:li>MDF PP: The MDF PP explicitly defines FPT_STM.1.</h:li>
+		<h:li>App PP: The App PP assumption A.PLATFORM
+			assumes that the general-purpose computing
+			platform on which the TOE is installed is ‘a
+			trustworthy computing platform.’ System time data is
+			not explicitly mentioned but a clock service is
+			reasonably assumed to be provided by a generalpurpose computer.</h:li>
+		<h:li>MDM PP: The MDM PP assumption
+			A.MDM_SERVER_PLATFORM assumes that the
+			platform on which the TOE is installed will provide
+			reliable time services.</h:li></h:ul>
+	</h:td>
+	</h:tr>
+	<h:tr>
+	<h:td>FPT_STM.1 – Reliable Time Stamps</h:td>
+	<h:td>
+	  FAU_GEN.1 has a dependency on FPT_STM.1. While not explicitly stated in the PP, it is assumed
+	  that this will be provided by the underlying hardware platform on which the TOE is installed. 
+	  This is because the TOE is installed as a software or firmware product that runs on general-purpose 
+	  computing hardware so a hardware clock is assumed to be available.
+	</h:td>
+	</h:tr>
+	<h:tr>
+	<h:td>FPT_STM.1 – Reliable Time Stamps</h:td>
+	<h:td>
+ 	  FIA_X509_EXT.1 has a dependency on FPT_STM.1. While not explicitly stated in the PP, it is assumed that
+	  this will be provided by the underlying hardware platform on which the TOE is installed. This is 
+	  because the TOE is installed as a software or firmware product that runs on general-purpose computing
+	  hardware so a hardware clock is assumed to be available.
+	</h:td>
+	</h:tr>
+    </h:table>
+  </appendix>	
+	
+<!-- Appendix E: Entropy Documentation and Assessment -->
+<appendix title="Entropy Documentation and Assessment" id="app-ent">
+							
+	The TOE does not require any additional supplementary information to describe its entropy source(s)
+	beyond the requirements outlined in the Base-PPs. As with other Base-PP requirements, the only
+	additional requirement is that the entropy documentation also applies to the specific VPN client
+	capabilities of the TOE in addition to the functionality required by the claimed Base-PP.		 
+ </appendix>
   
   <bibliography>
     <cc-entry/>
