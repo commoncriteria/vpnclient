@@ -1230,9 +1230,12 @@ expected to enforce.<h:p/>
 	  <!-- 6.1.2 Consistency of Security Problem Description -->
       <con-sec-prob>The threats and assumptions defined by this PP-Module (see sections 3.1 and 3.2) supplement those
 		defined in the GPOS PP as follows:</con-sec-prob>
+	   <!-- 6.1.3 Consistency of Objectives -->
       <con-obj>The security objectives defined by this PP-Module (see sections 4.1 and 4.2) supplement those defined
 		in the GPOS PP as follows:</con-obj>
       <con-op-en></con-op-en>
+	    
+	    <!-- 6.1.2 Consistency Rationale table for GPOS -->
       <con-mod ref="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
         that is transmitted over it is consistent with the T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats in the GPOS PP.</con-mod>
       <con-mod ref="T.TSF_CONFIGURATION">The threat of a misconfigured VPN client is consistent with the
@@ -1312,7 +1315,7 @@ expected to enforce.<h:p/>
       <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain audit records related to
 		VPN activity does not interfere with the ability of the GPOS to satisfy its
 		security functionality.</con-mod>
-      <con-mod ref="fdp-ifc-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+      <con-mod ref="fdp-ifc-ext-1-vpn">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the GPOS PP that would prevent this functionality from
 		being supported.</con-mod>
@@ -1677,10 +1680,13 @@ expected to enforce.<h:p/>
 	  <!-- 6.2.2 Consistency of Security Problem Description -->
       <con-sec-prob>The threats and assumptions defined by this PP-Module (see sections 3.1 and 3.2) supplement those
 		defined in the MDF PP as follows: </con-sec-prob>
+
+	    <!-- 6.2.3 -->
       <con-obj>The security objectives defined by this PP-Module (see sections 4.1 and 4.2) supplement those defined
 		in the MDF PP as follows:</con-obj>		
       <con-op-en></con-op-en>
 
+	  <!-- 6.2.2 Consistency of Security Problem Description -->
       <con-mod ref="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
 		that is transmitted over it is consistent with the T.NETWORK and T.EAVESDROP threats in the MDF PP.</con-mod>
       <con-mod ref="T.TSF_CONFIGURATION">The threat of a mis-configured VPN client is consistent with the
@@ -1689,7 +1695,7 @@ expected to enforce.<h:p/>
 		consistent with the T.EAVESDROP threat in the MDF PP.</con-mod>
       <con-mod ref="T.TSF_FAILURE">A failure of TSF functionality could compromise the local system, which is
 		consistent with the T.FLAWAPP threat in the MDF PP.</con-mod>
-      <con-mod ref="OE.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
+      <con-mod ref="A.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
 		environment is configured in such a manner that the only network route
 		to the protected network is through the TOE. This does not conflict with
 		the MDF PP because the MDF PP makes no assumptions about the
@@ -2305,7 +2311,7 @@ expected to enforce.<h:p/>
 		functionality.</con-mod>
       <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain audit records related to VPN
 		activity does not interfere with the ability of the application to satisfy its security functionality.</con-mod>
-      <con-mod ref="fdp-ifc-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+      <con-mod ref="fdp-ifc-ext-1-vpn">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the App PP that would prevent this functionality from being supported.</con-mod>
 
@@ -2757,7 +2763,7 @@ expected to enforce.<h:p/>
 		consistent with the T.NETWORK_EAVESDROP threat in the MDM PP</con-mod>
       <con-mod ref="T.TSF_FAILURE">A failure of TSF functionality could compromise the implementation of the
 		IPsec channel, which would lead to an exploitation of the T.NETWORK_ATTACK threat.</con-mod>
-      <con-mod ref="OE.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
+      <con-mod ref="A.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
 		environment is configured in such a manner that the only network route
 		to the protected network is through the TOE. This does not conflict with
 		the MDM PP because the MDM PP makes no assumptions about the
@@ -2843,7 +2849,7 @@ expected to enforce.<h:p/>
       <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain VPN client audit records
 		does not interfere with MDM functionality. The MDM PP already contains FAU_SEL.1 as an optional SFR which
 		means that this functionality does not conflict with the expected behavior of an MDM.</con-mod>
-      <con-mod ref="fdp-ifc-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+      <con-mod ref="fdp-ifc-ext-1-vpn">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the MDM PP that would prevent this functionality from
 		being supported.</con-mod>
