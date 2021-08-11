@@ -1327,6 +1327,12 @@ expected to enforce.<h:p/>
       captured in the MDF PP is included.
 		</sec-func-req-dir>	
       <modified-sfrs>
+
+	      <!-- The SFRs listed in this section are defined in the MDF PP and relevant to the secure operation of the VPN
+		client. It is necessary for the ST author to complete selections and/or assignments for these SFRs in a
+		specific manner in order to ensure that the functionality provided by the mobile device is consistent
+		with the functionality required by the VPN client in order for it to conform to this PP-Module. -->
+	      
         <section title="Cryptographic Support (FCS)" id="md-m-fcs">
           
           <!-- 5.2.1.1 FCS_CKM.1 Cryptographic Key Generation -->
@@ -1475,9 +1481,9 @@ expected to enforce.<h:p/>
             </f-element>
             <audit-event/>
           </f-component>
-        </section>
+        </section>   <!-- FCS -->
 
-        <section title="Data Protection (FDP)" id="md-m-fdp">
+        <section title="User Data Protection (FDP)" id="md-m-fdp">
 		
           <!-- 5.2.1.4 FDP_IFC_EXT.1 Subset Information Flow Control -->
           <f-component cc-id="fdp_ifc_ext.1" id="md-fdp-ifc-ext-1-1" name="Subset Information Flow Control">
@@ -1502,7 +1508,7 @@ expected to enforce.<h:p/>
             </f-element>
             <audit-event/>
           </f-component>
-        </section>
+        </section>   <!-- FDP -->
 		
 		
         <section title="Identification and Authentication (FIA)" id="md-m-fia">
@@ -1553,26 +1559,65 @@ expected to enforce.<h:p/>
             </f-element>
             <audit-event/>
           </f-component>
-        </section>
+        </section>   <!-- FIA -->
         
-		<!-- QQQQQQQQQQQQQQQQQQQQQQ  -->
+	<section title="Security Management (FMT)" id="md-m-fmt">
+	      
+         <!-- 5.2.1.6 FMT_SMF_EXT.1 Specification of Management Functions -->
+	 <f-component cc-id="fmt_smf_ext.1" id="md-fmt-smf-ext-1" name="Specification of Management Functions">
+		<f-element id="md-fmt-smf-ext-1-1">
+		 <title>
+			This SFR is not reproduced in its entirety for size purposes. The only change to this SFR is the following
+			change to management function 45:
+			<h:table style="width:100%">
+				<h:tr>
+				<h:td>
+					45. enable/disable the Always On VPN protection:<h:p/>
+						a. across device<h:p/>
+						[<h:p/>
+					<h:i>d. no other method</h:i><h:p/>
+						]
+					</h:td>
+					<h:td><h:b>M</h:b></h:td>
+					<h:td>O</h:td>
+					<h:td>O</h:td>
+					<h:td>O</h:td>
+				</h:tr>
+			 </h:table>
+		 </title>
+               <aactivity> 
+                Refer to the EA for <no-link>FMT_SMF_EXT.1</no-link> in the MDF PP.
+                <no-tests/>
+              </aactivity>
+	</f-element>
+	<audit-event/>
+	</f-component>
 		
+	</section>  <!-- FMT -->
+	      
 		
         <section title="Trusted Path/Channels (FTP)" id="md-m-ftp">
           
-          <!-- 5.2.1.5 FTP_ITC_EXT.1 Trusted Channel Communications -->
+          <!-- 5.2.1.7 FTP_ITC_EXT.1 Trusted Channel Communications -->
           <f-component cc-id="ftp_itc_ext.1" id="md-ftp-itc-ext-1" name="Trusted Channel Communication">
             <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
               implement trusted channels.</consistency-rationale>
             <f-element id="md-ftp-itc-ext-1e1">
-              <title>The TSF shall use 802.11-2012, 802.1X, EAP-TLS, <h:b>IPsec,</h:b> and
+              <title>The TSF shall use<h:ul>
+		      <h:li>802.11-2012 in accordance with the Extended Package for WLAN Clients,</h:li>
+		      <h:li>802.1X in accordance with the Extended Package for WLAN Clients,</h:li>
+		      <h:li>EAP-TLS in accordance with the Extended Package for WLAN Clients,</h:li>
+		      <h:li>mutually authenticated TLS as defined in the Package for Transport Layer
+			      Security,</h:li>
+		      <h:li><h:b>IPsec in accordance with the PP-Module for VPN Client,</h:b></h:li></h:ul>
+		      and
                 <selectables>
-                  <selectable>TLS</selectable>
-                  <selectable>DTLS</selectable>
+                  <selectable>mutually authenticated DTLS as defined in the Package for Transport
+			Layer Security</selectable>
                   <selectable>HTTPS</selectable>
-                  <selectable><h:b>no other protocols</h:b></selectable>
+                  <selectable><h:b>no other</h:b></selectable>
                 </selectables>
-                to provide a communication channel between itself
+                protocols to provide a communication channel between itself
                 and another trusted IT product that is logically distinct from other
                 communication channels, provides assured identification of its end points,
                 protects channel data from disclosure, and detects modification of the channel
@@ -1595,9 +1640,9 @@ expected to enforce.<h:p/>
               </title>
               <note role="application">
                 This SFR is identical to what is defined in the Base-PP except that support for
-                IPsec is mandated. Additionally, since the Base-PP requires ‘at least one of’ the
-                selected protocols which previously included IPsec, ‘no other protocols’ is now
-                available as an option in the selection.
+		IPsec is mandated. Additionally, since the Base-PP requires ‘at least one of’ the
+		selected protocols which previously included IPsec, ‘no other protocols’ is now
+		available as an option in the selection.
               </note>
               <aactivity> 
                 Refer to the EA for <no-link>FTP_ITC_EXT.1</no-link> in the MDF PP.
