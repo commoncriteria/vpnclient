@@ -3988,14 +3988,36 @@ expected to enforce.<h:p/>
 		with the necessary SFRs that are taken from this PP-Module.
 	  </section>
 	  
-	<!-- Appendix A.1: Strictly Optional Requirements -->
+	<!-- Appendix A: Optional Requirements -->
+ 	    <!--
+	    As indicated in the introduction to this PP-Module, the baseline requirements (those that must be
+		performed by the TOE) are contained in the body of this PP-Module. This Appendix contains three other
+		types of optional requirements that may be included in the ST but are not required in order to conform
+		to this PP-Module.
+		The first type (in A.1) are strictly optional requirements that are independent of the TOE implementing
+		any function. If the TOE fulfills any of these requirements or supports a certain functionality, the vendor
+		is encouraged but not required to add the related SFRs.
+		The second type (in A.2) are objective requirements that describe security functionality not yet widely
+		available in commercial technology. The requirements are not currently mandated in the body of this
+		PP-Module, but will be included in the baseline requirements in future versions of this PP-Module.
+		Adoption by vendors is encouraged and expected as soon as possible.
+		The third type (in A.3) are implementation-dependent requirements that are dependent on the TOE
+		implementing a particular function. If the TOE fulfills any of these requirements, the vendor must either
+		add the related SFR or disable the functionality for the evaluated configuration.
+	-->
+
+	  <!-- A.1: Strictly Optional Requirements -->
     <opt-sfrs>
      <!-- No optional SFRs 
 		There are currently no strictly optional requirements defined by this PP-Module.-->
     </opt-sfrs>
 
 	<!-- Appendix B: Selection-Based Requirements -->
-	<!-- I don't understand why these are in a separate section in Modules but not anywhere else. -->
+	<!--	  As indicated in the introduction to this PP-Module, the baseline requirements (those that must be
+		performed by the TOE or its underlying platform) are contained in the body of this PP-Module. There are
+		additional requirements based on selections in the body of the PP-Module: if certain selections are
+		made, then additional requirements below will need to be included.  -->
+	  
     <sel-sfrs>
 	    <section id="sb-audit-table" title="Auditable Events for Selection-based SFRs">
         	<audit-table table="sel-based">
