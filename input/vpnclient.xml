@@ -720,7 +720,7 @@ expected to enforce.<h:p/>
             inadvertently outside of the IPsec tunnel. <h:p/>
 			Addressed by: FCS_CKM_EXT.2 (when GPOS PP is Base-PP), FCS_CKM_EXT.2 (when App PP is BasePP),
 			FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_RIP.1, FDP_IFC_EXT.1/VPN (optional), 
-		  	FDP_IFC_EXT.1/ADL (when MDF PP is BasePP).
+		  	FDP_IFC_EXT.1/ALL (when MDF PP is BasePP).
           </description>
 		  <consistency-rationale>Consistency rationale for O.NONDISCLOSURE.</consistency-rationale>
           <addressed-by>FCS_CKM_EXT.2 (when GPOS PP is Base-PP)</addressed-by>
@@ -739,7 +739,7 @@ expected to enforce.<h:p/>
 			<rationale>This SFR supports the objective by optionally
 				requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
 				established IPsec tunnel.</rationale>
-          <addressed-by>FDP_IFC_EXT.1/ADL (when MDF is BasePP)</addressed-by>
+          <addressed-by>FDP_IFC_EXT.1/ALL (when MDF is BasePP)</addressed-by>
 			<rationale>This SFR supports the objective by 
 				requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
 				established IPsec tunnel.</rationale>
@@ -1688,8 +1688,8 @@ expected to enforce.<h:p/>
 
 	<section title="User Data Protection (FDP)" id="md-a-fdp">
 
-	<!-- 5.2.2.1 FDP_IFC_EXT.1/ADL Subset Information Flow Control -->
-        <f-component cc-id="fdp_ifc_ext.1" id="md-fdp-ifc-ext-1-adl" iteration="ADL" name="Subset Information Flow Control">
+	<!-- 5.2.2.1 FDP_IFC_EXT.1/ALL Subset Information Flow Control -->
+        <f-component cc-id="fdp_ifc_ext.1" id="md-fdp-ifc-ext-1-all" iteration="ALL" name="Subset Information Flow Control">
           <consistency-rationale/>
           <comp-lev>requires the TSF to process all IP traffic through its VPN client
             functionality.</comp-lev>
@@ -4508,7 +4508,7 @@ expected to enforce.<h:p/>
 				the VPN connection) flow through the IPsec VPN client. 
 			</title>
             <note role="application">
-		    		This requirement is mandatory when the MDF is the base PP (see FDP_IFC_EXT.1/ADL). Otherwise it is optional.<h:p/>
+		    		This requirement is mandatory when the MDF is the base PP (see FDP_IFC_EXT.1/ALL). Otherwise it is optional.<h:p/>
 				This requirement is used when the VPN client is able to enforce the requirement
 				through its own components. This generally will have to be done through using
 				hooks provided by the platform such that the TOE is able to ensure that no IP
