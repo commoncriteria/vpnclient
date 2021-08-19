@@ -719,13 +719,13 @@ expected to enforce.<h:p/>
             also enforce split-tunneling prevention to ensure that data in transit cannot be disclosed
             inadvertently outside of the IPsec tunnel. <h:p/>
 			Addressed by: FCS_CKM_EXT.2 (when GPOS PP is Base-PP), FCS_CKM_EXT.2 (when App PP is BasePP),
-			FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_RIP.1, FDP_IFC_EXT.1/VPN (optional), 
-		  	FDP_IFC_EXT.1/ALL (when MDF PP is BasePP).
+			FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_IFC_EXT.1/VPN (optional), 
+		  	FDP_IFC_EXT.1/ALL (when MDF PP is BasePP), FDP_RIP.2.
           </description>
 		  <consistency-rationale>This objective is consistent with the O.PROTECTED_STORAGE objective of
 			the Base-PP, which ensures that sensitive data is not disclosed without
 			authorization.</consistency-rationale>
-	<addressed-by>FCS_CKM_EXT.2 (when GPOS PP is Base-PP)</addressed-by>
+			<addressed-by>FCS_CKM_EXT.2 (when GPOS PP is Base-PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to store sensitive data in the operating system’s key storage.</rationale>
           <addressed-by>FCS_CKM_EXT.2 (when App PP is BasePP)</addressed-by>
@@ -734,9 +734,6 @@ expected to enforce.<h:p/>
           <addressed-by>FCS_CKM_EXT.4 (when App PP is Base-PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				or its platform to zeroize key data when no longer needed.</rationale>
-          <addressed-by>FDP_RIP.1</addressed-by>
-			<rationale>This SFR supports the objective by requiring the TOE
-				or its platform to ensure that residual data is purged from the system.</rationale>
           <addressed-by>FDP_IFC_EXT.1/VPN (optional)</addressed-by>
 			<rationale>This SFR supports the objective by optionally
 				requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
@@ -745,6 +742,9 @@ expected to enforce.<h:p/>
 			<rationale>This SFR supports the objective by 
 				requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
 				established IPsec tunnel.</rationale>
+          <addressed-by>FDP_RIP.2</addressed-by>
+			<rationale>This SFR supports the objective by requiring the TOE or its platform to ensure that
+				residual data is purged from the system.</rationale>
         </SO>
       </SOs>
     </sec:Security_Objectives_for_the_TOE>
@@ -2012,7 +2012,7 @@ expected to enforce.<h:p/>
                   This selection differs from its definition in the App PP by
                   removing the selection for “generate no asymmetric cryptographic keys” for this PP-Module because a VPN Client
                   TOE will either perform its own key generation or interface with the underlying platform to provide this 
-                  service, either of which causes <no-link>FCS_CKM.1</no-link>(1) to be claimed.
+                  service, either of which causes <no-link>FCS_CKM.1(1)</no-link> to be claimed.
                 </note>
                 <aactivity> 
                   This SFR is evaluated in conjunction with <no-link>FCS_CKM.1(1)</no-link> in the App PP.
@@ -2653,7 +2653,7 @@ expected to enforce.<h:p/>
 					When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
 					communications. However, this PP-Module does not specify that any one particular interface must be
 					implemented using IPsec. If the TOE is distributed and uses IPsec to secure communications between its
-					distributed components, FTP_ITT.1/1 is refined as above.<h:p/>
+					distributed components, <no-link>FTP_ITT.1(1)</no-link> is refined as above.<h:p/>
 					This SFR is selection-based in the Base-PP depending on the selections made in the
 					Base-PP requirement FTP_ITC_EXT.1. This is not changed by the PP-Module.<h:p/>
 					This SFR is modified from its definition in the Base-PP by mandating that the TSF
@@ -2661,7 +2661,7 @@ expected to enforce.<h:p/>
 					platform-provided functionality to implement this.
               </note>
               <aactivity>
-                Refer to the EA for <no-link>FTP_ITT.1/1</no-link> in the MDM PP. Note that the PP-Module does not require any separate
+                Refer to the EA for <no-link>FTP_ITT.1(1)</no-link> in the MDM PP. Note that the PP-Module does not require any separate
 		testing for this if IPsec is not used to implement this function.
                 <no-tests/>
               </aactivity>
@@ -2727,7 +2727,7 @@ expected to enforce.<h:p/>
       			When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
 			communications. However, this PP-Module does not specify that any one particular interface must be
 			implemented using IPsec. If the TOE uses IPsec to secure communications between itself and external
-			trusted IT entities, FTP_ITC.1(1) is refined as above.<h:p/>
+			trusted IT entities, <no-link>FTP_ITC.1(1)</no-link> is refined as above.<h:p/>
                 This SFR is refined from its definition in the Base-PP by mandating that the
 				“implement functionality” selection be chosen at minimum for IPsec and by
 				prohibiting the TOE from relying on platform-provided IPsec functionality. Since the
@@ -2799,7 +2799,7 @@ expected to enforce.<h:p/>
 		      	When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
 			communications. However, this PP-Module does not specify that any one particular interface must be
 			implemented using IPsec. If the TOE uses IPsec to secure communications between itself and trusted
-			remote administrators, FPT_TRP.1(1) is refined as below.<h:p/>
+			remote administrators, <no-link>FPT_TRP.1(1)</no-link> is refined as below.<h:p/>
                 This SFR is refined from its definition in the Base-PP by mandating that the
 				“implement functionality” selection be chosen at minimum for IPsec and by
 				prohibiting the TOE from relying on platform-provided IPsec functionality. Since the
@@ -4704,7 +4704,7 @@ expected to enforce.<h:p/>
 	</h:td>
 	</h:tr>
 	<h:tr>
-	<h:td>FPT_STM.1 – Reliable Time Stamps</h:td>
+	<h:td><h:b>FPT_STM.1 – Reliable Time Stamps</h:b></h:td>
 	<h:td>
 	  FAU_GEN.1 has a dependency on FPT_STM.1. While not explicitly stated in the PP, it is assumed
 	  that this will be provided by the underlying hardware platform on which the TOE is installed. 
@@ -4713,7 +4713,7 @@ expected to enforce.<h:p/>
 	</h:td>
 	</h:tr>
 	<h:tr>
-	<h:td>FPT_STM.1 – Reliable Time Stamps</h:td>
+	<h:td><h:b>FPT_STM.1 – Reliable Time Stamps</h:b></h:td>
 	<h:td>
  	  FIA_X509_EXT.1 has a dependency on FPT_STM.1. While not explicitly stated in the PP, it is assumed that
 	  this will be provided by the underlying hardware platform on which the TOE is installed. This is 
