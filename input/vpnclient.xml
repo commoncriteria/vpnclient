@@ -48,7 +48,7 @@
     <!-- 1.1 Overview -->
     <sec:Overview>
       The scope of this PP-Module is to describe the security functionality of a virtual private network (VPN)
-      client in terms of  <xref to="bibCC"/> and to define functional and assurance requirements for such
+      client in terms of  <xref g="CC"/> and to define functional and assurance requirements for such
       products. This PP-Module is intended for use with the following Base-PPs:
 
       <h:ul>
@@ -1697,7 +1697,7 @@ expected to enforce.<h:p/>
           <management>No specific management functions are identified.</management>
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>FCS_IPSEC_EXT.1 IPsec</dependencies>
-          <f-element id="fdp-ifc-ext-1e1">
+          <f-element id="fel-route-all-traffic">
             <title>
 				The TSF shall ensure that all IP traffic (other than IP traffic required to establish
 				the VPN connection) flow through the IPsec VPN client. 
@@ -3620,6 +3620,19 @@ expected to enforce.<h:p/>
 					<selectable>no other method</selectable>
 				</selectables>.
             </title>
+            <ext-comp-def-title>
+              <title>The TSF shall ensure that all IKE protocols perform peer authentication using a 
+				<selectables>
+					<selectable>RSA</selectable>
+					<selectable>ECDSA</selectable>
+				</selectables> 
+				that use X.509v3 certificates that conform to RFC 4945 and 
+				<selectables>
+					<selectable>Pre-shared keys</selectable>
+					<selectable>no other method</selectable>
+				</selectables>.
+            </title>
+            </ext-comp-def-title>
             <note role="application">
 				At least one public-key-based Peer Authentication method is required in order to
 				conform to this PP-Module; one or more of the public key schemes is chosen by
