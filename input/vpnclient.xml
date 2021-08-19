@@ -610,7 +610,7 @@ expected to enforce.<h:p/>
 			  FCS_CKM.1 (refined from MDM PP), FCS_CKM.2 (refined from MDM PP)
 			  FCS_COP.1/1 (refined from MDM PP), FPT_ITT.1/1 (if applicable, refined from MDM PP)
 			  FTP_ITC.1/1 (if applicable, refined from MDM PP), FTP_TRP.1/1 (if applicable, refined from MDM PP)
-			  FCS_CKM.1/VPN, FCS_IPSEC_EXT.1.
+			  FCS_CKM.1/1, FCS_IPSEC_EXT.1.
 		  </description>
 		  <consistency-rationale>Consistency rationale for O.CRYPTOGRAPHIC_FUNCTIONS.</consistency-rationale>
           <addressed-by>FCS_CKM.1 (refined from GPOS PP)</addressed-by>
@@ -678,7 +678,7 @@ expected to enforce.<h:p/>
 			<rationale>If the MDM TOE includes a claim of this PP-Module
 				to support protection of communications between remote administrators and the TOE, this	SFR
 				supports the objective by requiring the TOE to support the use of IPsec for that interface.</rationale>
-          <addressed-by>FCS_CKM.1/VPN</addressed-by>
+          <addressed-by>FCS_CKM.1/1</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to generate keys used for IKE using certain methods.</rationale>
           <addressed-by>FCS_IPSEC_EXT.1</addressed-by>
@@ -719,10 +719,13 @@ expected to enforce.<h:p/>
             also enforce split-tunneling prevention to ensure that data in transit cannot be disclosed
             inadvertently outside of the IPsec tunnel. <h:p/>
 			Addressed by: FCS_CKM_EXT.2 (when GPOS PP is Base-PP), FCS_CKM_EXT.2 (when App PP is BasePP),
-			FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_RIP.1, FDP_IFC_EXT.1 (optional).
+			FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_RIP.1, FDP_IFC_EXT.1/VPN (optional), 
+		  	FDP_IFC_EXT.1/ALL (when MDF PP is BasePP).
           </description>
-		  <consistency-rationale>Consistency rationale for O.NONDISCLOSURE.</consistency-rationale>
-          <addressed-by>FCS_CKM_EXT.2 (when GPOS PP is Base-PP)</addressed-by>
+		  <consistency-rationale>This objective is consistent with the O.PROTECTED_STORAGE objective of
+			the Base-PP, which ensures that sensitive data is not disclosed without
+			authorization.</consistency-rationale>
+	<addressed-by>FCS_CKM_EXT.2 (when GPOS PP is Base-PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to store sensitive data in the operating system’s key storage.</rationale>
           <addressed-by>FCS_CKM_EXT.2 (when App PP is BasePP)</addressed-by>
@@ -736,6 +739,10 @@ expected to enforce.<h:p/>
 				or its platform to ensure that residual data is purged from the system.</rationale>
           <addressed-by>FDP_IFC_EXT.1/VPN (optional)</addressed-by>
 			<rationale>This SFR supports the objective by optionally
+				requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
+				established IPsec tunnel.</rationale>
+          <addressed-by>FDP_IFC_EXT.1/ALL (when MDF is BasePP)</addressed-by>
+			<rationale>This SFR supports the objective by 
 				requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
 				established IPsec tunnel.</rationale>
         </SO>
@@ -1230,9 +1237,12 @@ expected to enforce.<h:p/>
 	  <!-- 6.1.2 Consistency of Security Problem Description -->
       <con-sec-prob>The threats and assumptions defined by this PP-Module (see sections 3.1 and 3.2) supplement those
 		defined in the GPOS PP as follows:</con-sec-prob>
+	   <!-- 6.1.3 Consistency of Objectives -->
       <con-obj>The security objectives defined by this PP-Module (see sections 4.1 and 4.2) supplement those defined
 		in the GPOS PP as follows:</con-obj>
       <con-op-en></con-op-en>
+	    
+	    <!-- 6.1.2 Consistency Rationale table for GPOS -->
       <con-mod ref="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
         that is transmitted over it is consistent with the T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats in the GPOS PP.</con-mod>
       <con-mod ref="T.TSF_CONFIGURATION">The threat of a misconfigured VPN client is consistent with the
@@ -1267,7 +1277,7 @@ expected to enforce.<h:p/>
 		authorization.</con-mod>
       <con-mod ref="OE.NO_TOE_BYPASS">This objective addresses behavior that is out of scope of the Base-PP and
 		does not define an environment that a GPOS TOE is incapable of existing in.</con-mod>
-      <con-mod ref="OE.PHYSICAL ">This is part of satisfying OE.PLATFORM as defined in the GPOS PP because
+      <con-mod ref="OE.PHYSICAL">This is part of satisfying OE.PLATFORM as defined in the GPOS PP because
 		physical security is required for hardware to be considered ‘trusted’</con-mod>
       <con-mod ref="OE.TRUSTED_CONFIG">The expectation of trusted configuration is consistent with OE.PROPER_USER
 		and OE.PROPER_ADMIN in the GPOS PP.</con-mod>
@@ -1312,7 +1322,7 @@ expected to enforce.<h:p/>
       <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain audit records related to
 		VPN activity does not interfere with the ability of the GPOS to satisfy its
 		security functionality.</con-mod>
-      <con-mod ref="fdp-ifc-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+      <con-mod ref="fdp-ifc-ext-1-vpn">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the GPOS PP that would prevent this functionality from
 		being supported.</con-mod>
@@ -1396,7 +1406,9 @@ expected to enforce.<h:p/>
 				VPN client functionality.
 				</note>
               <aactivity>
-                Refer to the EA for <no-link>FCS_CKM.1</no-link> in the MDF PP.
+               Refer to the EAs for FCS_CKM.1 in the MDF PP. The only change to this SFR is that some selections are
+		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
+		changed.
                 <no-tests/>
               </aactivity>
             </f-element>
@@ -1444,9 +1456,9 @@ expected to enforce.<h:p/>
 				its use.
               </note>
               <aactivity> 
-                For all key establishment schemes refer to the AA for <no-link>FCS_CKM.2/UNLOCKED</no-link> in the MDF PP. Note that because a
-		TOE that conforms to this PP-Module must implement IPsec, the tested protocols shall include IPsec at
-		minimum.
+                Refer to the EAs for FCS_CKM.2/UNLOCKED in the MDF PP. The only change to this SFR is that some
+		selections are mandated, therefore the corresponding testing is mandatory. The actual testing for those
+		selections is not changed.
                 <no-tests/>
               </aactivity>
             </f-element>
@@ -1483,7 +1495,9 @@ expected to enforce.<h:p/>
                 address the requirements for FCS_IPSEC_EXT.1.
               </note>
               <aactivity>
-                Refer to the EA for <no-link>FCS_COP.1/ENCRYPT</no-link> in the MDF PP.
+                Refer to the EAs for FCS_COP.1/ENCRYPT in the MDF PP. The only change to this SFR is that some
+		selections are mandated, therefore the corresponding testing is mandatory. The actual testing for those
+		selections is not changed.
                 <no-tests/>
               </aactivity>
             </f-element>
@@ -1510,7 +1524,9 @@ expected to enforce.<h:p/>
 				the TOE’s conformance claim includes this PP-Module
 			  </note>
               <aactivity>
-                Refer to the EA for <no-link>FIA_X509_EXT.2</no-link> in the MDF PP.
+                Refer to the EAs for FDP_IFC_EXT.1 in the MDF PP. The only change to this SFR is that some selections are
+		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
+		changed.
                 <no-tests/>
               </aactivity>
             </f-element>
@@ -1561,7 +1577,9 @@ expected to enforce.<h:p/>
 				the SFR.
               </note>
               <aactivity> 
-                Refer to the EA for <no-link>FIA_X509_EXT.2</no-link> in the MDF PP.
+                Refer to the EAs for FIA_X509_EXT.2 in the MDF PP. The only change to this SFR is that some selections
+		are mandated, therefore the corresponding testing is mandatory. The actual testing for those selections
+		is not changed.
                 <no-tests/>
               </aactivity>
             </f-element>
@@ -1578,14 +1596,14 @@ expected to enforce.<h:p/>
 		 <title>
 			This SFR is not reproduced in its entirety for size purposes. The only change to this SFR is the following
 			change to management function 45:
-			<h:table style="width:100%">
+			<h:table border="1" style="width:100%">
 				<h:tr>
 				<h:td>
 					45. enable/disable the Always On VPN protection:<h:p/>
-						a. across device<h:p/>
-						[<h:p/>
-					<h:i>d. no other method</h:i><h:p/>
-						]
+					<h:indent>a. across device</h:indent><h:p/>
+					<h:indent>	[</h:indent><h:p/>
+					<h:indent><h:i>d. no other method</h:i></h:indent><h:p/>
+					<h:indent>]</h:indent>
 					</h:td>
 					<h:td><h:b>M</h:b></h:td>
 					<h:td>O</h:td>
@@ -1595,7 +1613,8 @@ expected to enforce.<h:p/>
 			 </h:table>
 		 </title>
                <aactivity> 
-                Refer to the EA for <no-link>FMT_SMF_EXT.1</no-link> in the MDF PP.
+                Refer to the EAs for FMT_SMF_EXT.1 in the MDF PP. The only change to this SFR is the change to management function 45. 
+		       Testing of all other functions is not affected.
                 <no-tests/>
               </aactivity>
 	</f-element>
@@ -1654,7 +1673,9 @@ expected to enforce.<h:p/>
 		available as an option in the selection.
               </note>
               <aactivity> 
-                Refer to the EA for <no-link>FTP_ITC_EXT.1</no-link> in the MDF PP.
+                Refer to the EAs for FTP_ITC_EXT.1 in the MDF PP. The only change to this SFR is that some selections are
+		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
+		changed.
                 <no-tests/>
               </aactivity>
             </f-element>
@@ -1664,9 +1685,75 @@ expected to enforce.<h:p/>
       </modified-sfrs>
       
       <!-- 5.2.2 Additional SFRs -->
-      <additional-sfrs/>
-<!--        There are no additional SFRs that must be claimed only in cases where the MDF PP is the claimed BasePP.
-      </additional-sfrs>  -->
+      <additional-sfrs>
+
+	<section title="User Data Protection (FDP)" id="md-a-fdp">
+
+	<!-- 5.2.2.1 FDP_IFC_EXT.1/ALL Subset Information Flow Control -->
+        <f-component cc-id="fdp_ifc_ext.1" id="md-fdp-ifc-ext-1-all" iteration="ALL" name="Subset Information Flow Control">
+          <consistency-rationale/>
+          <comp-lev>requires the TSF to process all IP traffic through its VPN client
+            functionality.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>FCS_IPSEC_EXT.1 IPsec</dependencies>
+          <f-element id="fdp-ifc-ext-1e1">
+            <title>
+				The TSF shall ensure that all IP traffic (other than IP traffic required to establish
+				the VPN connection) flow through the IPsec VPN client. 
+			</title>
+            <note role="application">
+		    This SFR is mandatory when MDF is the base-PP. Otherwise it is optional as FDP_IFC_EXT.1/VPN.<h:p/> 
+				This requirement is used when the VPN client is able to enforce the requirement
+				through its own components. This generally will have to be done through using
+				hooks provided by the platform such that the TOE is able to ensure that no IP
+				traffic can flow through other network interfaces.
+			</note>
+            <aactivity>
+              <TSS>The evaluator shall verify that the TSS section of the ST describes the routing of IP traffic through processes
+		on the TSF when a VPN client is enabled. The evaluator shall ensure that the description indicates which
+		traffic does not go through the VPN and which traffic does and that a configuration exists for each
+		baseband protocol in which only the traffic identified by the ST author is necessary for establishing the
+		VPN connection (IKE traffic and perhaps HTTPS or DNS traffic) is not encapsulated by the VPN protocol 
+		(IPsec). The ST author shall also identify in the TSS section any differences in the routing of IP traffic when
+		using any supported baseband protocols (e.g. WiFi or, LTE).
+		<h:p/>
+              </TSS>
+              <Guidance>The evaluator shall verify that the following is addressed by the documentation:
+                <h:ul>
+                <h:li>The description above indicates that if a VPN client is enabled, all configurations route all IP traffic
+			(other than IP traffic required to establish the VPN connection) through the VPN client.</h:li>
+                <h:li>The AGD guidance describes how the user and/or administrator can configure the TSF to meet
+			this requirement.</h:li>
+                </h:ul><h:p/>
+              </Guidance>
+              <Tests>
+                The evaluator shall perform the following test:<h:p/>
+                Step 1 - The evaluator shall use the platform to enable a network connection without using IPsec. The
+		evaluator shall use a packet sniffing tool between the platform and an Internet-connected network. The
+		evaluator shall turn on the sniffing tool and perform actions with the device such as navigating to
+		websites, using provided applications, accessing other Internet resources (Use Case 1), accessing another
+		VPN client (Use Case 2), or accessing an IPsec-capable network device (Use Case 3). The evaluator shall
+		verify that the sniffing tool captures the traffic generated by these actions, turn off the sniffing tool, and
+		save the session data. <h:p/>
+                Step 2 - The evaluator shall configure an IPsec VPN client that supports the routing specified in this
+		requirement, and if necessary, configure the device to perform the routing specified as described in the
+		AGD guidance. The evaluator shall turn on the sniffing tool, establish the VPN connection, and perform
+		the same actions with the device as performed in the first step. The evaluator shall verify that the sniffing
+		tool captures traffic generated by these actions, turn off the sniffing tool, and save the session data.<h:p/>
+                Step 3 - The evaluator shall examine the traffic from both step one and step two to verify that all IP traffic,
+		aside from and after traffic necessary for establishing the VPN (such as IKE, DNS, and possibly HTTPS), is
+		encapsulated by IPsec.<h:p/>
+                Step 4 - The evaluator shall attempt to send packets to the TOE outside the VPN connection and shall
+		verify that the TOE discards them.
+              </Tests>
+            </aactivity>
+          </f-element>
+	  <audit-event/>
+        </f-component>
+	      </section>
+		
+	   </additional-sfrs>
 	  
 	  <!-- 6.2 MDF BB Base -->
 	  <!-- 6.2.1 Consistency of TOE Type -->
@@ -1677,10 +1764,13 @@ expected to enforce.<h:p/>
 	  <!-- 6.2.2 Consistency of Security Problem Description -->
       <con-sec-prob>The threats and assumptions defined by this PP-Module (see sections 3.1 and 3.2) supplement those
 		defined in the MDF PP as follows: </con-sec-prob>
+
+	    <!-- 6.2.3 -->
       <con-obj>The security objectives defined by this PP-Module (see sections 4.1 and 4.2) supplement those defined
 		in the MDF PP as follows:</con-obj>		
       <con-op-en></con-op-en>
 
+	  <!-- 6.2.2 Consistency of Security Problem Description -->
       <con-mod ref="T.UNAUTHORIZED_ACCESS">The threat of an attacker gaining access to a network interface or data
 		that is transmitted over it is consistent with the T.NETWORK and T.EAVESDROP threats in the MDF PP.</con-mod>
       <con-mod ref="T.TSF_CONFIGURATION">The threat of a mis-configured VPN client is consistent with the
@@ -1689,7 +1779,7 @@ expected to enforce.<h:p/>
 		consistent with the T.EAVESDROP threat in the MDF PP.</con-mod>
       <con-mod ref="T.TSF_FAILURE">A failure of TSF functionality could compromise the local system, which is
 		consistent with the T.FLAWAPP threat in the MDF PP.</con-mod>
-      <con-mod ref="OE.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
+      <con-mod ref="A.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
 		environment is configured in such a manner that the only network route
 		to the protected network is through the TOE. This does not conflict with
 		the MDF PP because the MDF PP makes no assumptions about the
@@ -1710,12 +1800,12 @@ expected to enforce.<h:p/>
 		Base-PP, which expects a conformant TOE to implement measures to maintain its own integrity.</con-mod>
       <con-mod ref="O.NONDISCLOSURE">This objective is consistent with the O.STORAGE objective of the
 		Base-PP, which ensures that sensitive data is not disclosed without authorization.</con-mod>
-      <con-mod ref="OE.NO_TOE_BYPASS ">This objective addresses behavior that is out of scope of the Base-PP
+      <con-mod ref="OE.NO_TOE_BYPASS">This objective addresses behavior that is out of scope of the Base-PP
 		and does not define an environment that an MDF TOE is incapable of existing in.</con-mod>
       <con-mod ref="OE.PHYSICAL">The operational environment of a mobile device cannot guarantee
 		physical security, but the OE.PRECAUTION objective in the MDF PP
 		ensures that an appropriate level of physical security is provided.</con-mod>
-      <con-mod ref="OE.TRUSTED_CONFIG ">The expectation of trusted configuration is consistent with
+      <con-mod ref="OE.TRUSTED_CONFIG">The expectation of trusted configuration is consistent with
 		OE.CONFIG in the MDF PP.</con-mod>
 	  
 	  <!-- 6.2.4 Consistency of Requirements -->
@@ -2243,13 +2333,13 @@ expected to enforce.<h:p/>
       <con-mod ref="O.NONDISCLOSURE">This objective is consistent with the O.PROTECTED_STORAGE
 		objective of the Base-PP, which ensures that sensitive data is not
 		disclosed without authorization.</con-mod>
-      <con-mod ref="OE.NO_TOE_BYPASS ">This objective addresses behavior that is out of scope of the Base-PP
+      <con-mod ref="OE.NO_TOE_BYPASS">This objective addresses behavior that is out of scope of the Base-PP
 		and does not define an environment that is globally applicable to all
 		software applications.</con-mod>
       <con-mod ref="OE.PHYSICAL">This is part of satisfying OE.PLATFORM as defined in the App PP
 		because physical security is required for the underlying platform to
 		be considered ‘trustworthy’.</con-mod>
-      <con-mod ref="OE.TRUSTED_CONFIG ">The expectation of trusted configuration is consistent with
+      <con-mod ref="OE.TRUSTED_CONFIG">The expectation of trusted configuration is consistent with
 		OE.PROPER_USER and OE.PROPER_ADMIN in the App PP.</con-mod>	  
 	  
 	  <!-- 6.3.4 Consistency of Requirements -->
@@ -2305,7 +2395,7 @@ expected to enforce.<h:p/>
 		functionality.</con-mod>
       <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain audit records related to VPN
 		activity does not interfere with the ability of the application to satisfy its security functionality.</con-mod>
-      <con-mod ref="fdp-ifc-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+      <con-mod ref="fdp-ifc-ext-1-vpn">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the App PP that would prevent this functionality from being supported.</con-mod>
 
@@ -2757,7 +2847,7 @@ expected to enforce.<h:p/>
 		consistent with the T.NETWORK_EAVESDROP threat in the MDM PP</con-mod>
       <con-mod ref="T.TSF_FAILURE">A failure of TSF functionality could compromise the implementation of the
 		IPsec channel, which would lead to an exploitation of the T.NETWORK_ATTACK threat.</con-mod>
-      <con-mod ref="OE.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
+      <con-mod ref="A.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the operational
 		environment is configured in such a manner that the only network route
 		to the protected network is through the TOE. This does not conflict with
 		the MDM PP because the MDM PP makes no assumptions about the
@@ -2788,7 +2878,7 @@ expected to enforce.<h:p/>
       <con-mod ref="OE.NO_TOE_BYPASS">This objective addresses behavior that is out of scope of the Base-PP
 		and does not define an environment that an MDM TOE is incapable
 		of existing in.</con-mod>
-      <con-mod ref="OE.PHYSICAL ">This is part of satisfying OE.IT_ENTERPRISE as defined in the MDM
+      <con-mod ref="OE.PHYSICAL">This is part of satisfying OE.IT_ENTERPRISE as defined in the MDM
 		PP because provisioning of physical security is a reasonable
 		expectation for an IT enterprise.</con-mod>
       <con-mod ref="OE.TRUSTED_CONFIG">The expectation of trusted configuration is consistent with
@@ -2843,7 +2933,7 @@ expected to enforce.<h:p/>
       <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain VPN client audit records
 		does not interfere with MDM functionality. The MDM PP already contains FAU_SEL.1 as an optional SFR which
 		means that this functionality does not conflict with the expected behavior of an MDM.</con-mod>
-      <con-mod ref="fdp-ifc-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+      <con-mod ref="fdp-ifc-ext-1-vpn">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the MDM PP that would prevent this functionality from
 		being supported.</con-mod>
@@ -2880,7 +2970,7 @@ expected to enforce.<h:p/>
         </ext-comp-def>
 
 		<!-- 5.5.1.1. FCS_CKM.1/VPN Cryptographic Key Generation (IKE)  -->
-        <f-component name="VPN Cryptographic Key Generation (IKE)" cc-id="fcs_ckm.1" id="fcs-ckm-1-vpn" iteration="1">
+        <f-component name="VPN Cryptographic Key Generation (IKE)" cc-id="fcs_ckm.1" id="fcs-ckm-1-vpn" iteration="VPN">
           <consistency-rationale></consistency-rationale>
 		  <f-element id="fcs-ckm-1e1i1">
 			<title>
@@ -3971,25 +4061,51 @@ expected to enforce.<h:p/>
       </section>   <!-- FPT -->
     </man-sfrs>
 
+    <mod-sars>
      <!-- 5.7 TOE Security Assurance Requirements -->
-	<section title="TOE Security Assurance Requirements" id="s-sar">
-		This PP-Module does not define any SARs beyond those defined within the Base-PPs to which it can
-		claim conformance. It is important to note that a TOE that is evaluated against this PP-Module is
-		inherently evaluated against the GPOS PP, MDF PP, App PP, or MDM PP as well. These PPs include a
-		number of EAs associated with both Security Functional Requirements (SFRs) and SARs. Additionally, this
-		PP-Module includes a number of SFR-based EAs that similarly refine the SARs of the Base-PPs. The
-		evaluation laboratory will evaluate the TOE against the chosen Base-PP and supplement that evaluation
-		with the necessary SFRs that are taken from this PP-Module.
-	  </section>
+<!--	<section title="TOE Security Assurance Requirements" id="s-sar">  -->
+		<description>
+			This PP-Module does not define any SARs beyond those defined within the Base-PPs to which it can
+			claim conformance. It is important to note that a TOE that is evaluated against this PP-Module is
+			inherently evaluated against the GPOS PP, MDF PP, App PP, or MDM PP as well. These PPs include a
+			number of EAs associated with both Security Functional Requirements (SFRs) and SARs. Additionally, this
+			PP-Module includes a number of SFR-based EAs that similarly refine the SARs of the Base-PPs. The
+			evaluation laboratory will evaluate the TOE against the chosen Base-PP and supplement that evaluation
+			with the necessary SFRs that are taken from this PP-Module.
+		</description>
+<!--	</section> -->
+    </mod-sars> 
 	  
-	<!-- Appendix A.1: Strictly Optional Requirements -->
+	<!-- Appendix A: Optional Requirements -->
+ 	    <!--
+	    As indicated in the introduction to this PP-Module, the baseline requirements (those that must be
+		performed by the TOE) are contained in the body of this PP-Module. This Appendix contains three other
+		types of optional requirements that may be included in the ST but are not required in order to conform
+		to this PP-Module.
+		The first type (in A.1) are strictly optional requirements that are independent of the TOE implementing
+		any function. If the TOE fulfills any of these requirements or supports a certain functionality, the vendor
+		is encouraged but not required to add the related SFRs.
+		The second type (in A.2) are objective requirements that describe security functionality not yet widely
+		available in commercial technology. The requirements are not currently mandated in the body of this
+		PP-Module, but will be included in the baseline requirements in future versions of this PP-Module.
+		Adoption by vendors is encouraged and expected as soon as possible.
+		The third type (in A.3) are implementation-dependent requirements that are dependent on the TOE
+		implementing a particular function. If the TOE fulfills any of these requirements, the vendor must either
+		add the related SFR or disable the functionality for the evaluated configuration.
+	-->
+
+	  <!-- A.1: Strictly Optional Requirements -->
     <opt-sfrs>
      <!-- No optional SFRs 
 		There are currently no strictly optional requirements defined by this PP-Module.-->
     </opt-sfrs>
 
 	<!-- Appendix B: Selection-Based Requirements -->
-	<!-- I don't understand why these are in a separate section in Modules but not anywhere else. -->
+	<!--	  As indicated in the introduction to this PP-Module, the baseline requirements (those that must be
+		performed by the TOE or its underlying platform) are contained in the body of this PP-Module. There are
+		additional requirements based on selections in the body of the PP-Module: if certain selections are
+		made, then additional requirements below will need to be included.  -->
+	  
     <sel-sfrs>
 	    <section id="sb-audit-table" title="Auditable Events for Selection-based SFRs">
         	<audit-table table="sel-based">
@@ -4100,17 +4216,17 @@ expected to enforce.<h:p/>
 			FIA_PSK_EXT.1.3.<h:p/>
               </TSS>
               <Guidance>If the TOE supports bit-based pre-shared keys, the evaluator shall confirm the operational guidance
-		contains instructions for either entering bit-based pre- shared keys for each protocol identified in the
-		requirement, or generating a bit-based pre-shared key (or both). The evaluator shall also examine the TSS
-		to ensure it describes the process by which the bit-based pre-shared keys are generated (if the TOE
-		supports this functionality), and confirm that this process uses the RBG specified in FCS_RBG_EXT.1. <h:p/>
+				contains instructions for either entering bit-based pre- shared keys for each protocol identified in the
+				requirement, or generating a bit-based pre-shared key (or both). The evaluator shall also examine the TSS
+				to ensure it describes the process by which the bit-based pre-shared keys are generated (if the TOE
+				supports this functionality), and confirm that this process uses the RBG specified in FCS_RBG_EXT.1. <h:p/>
                 The evaluator shall check that any management functions related to pre-shared keys that are performed
-		by the TOE are specified in the operational guidance.<h:p/>
+				by the TOE are specified in the operational guidance.<h:p/>
                 The evaluator shall examine the operational guidance to determine that it provides guidance on the
-		composition of strong text-based pre-shared keys, and (if the selection indicates keys of various lengths
-		can be entered) that it provides information on the merits of shorter or longer pre-shared keys. The
-		guidance must specify the allowable characters for pre-shared keys, and that list must include, at
-		minimum, the same items contained in FIA_PSK_EXT.1.2.<h:p/>
+				composition of strong text-based pre-shared keys, and (if the selection indicates keys of various lengths
+				can be entered) that it provides information on the merits of shorter or longer pre-shared keys. The
+				guidance must specify the allowable characters for pre-shared keys, and that list must include, at
+				minimum, the same items contained in FIA_PSK_EXT.1.2.<h:p/>
               </Guidance>
               <Tests>The evaluator shall perform the following tests:
               <testlist>
@@ -4381,8 +4497,8 @@ expected to enforce.<h:p/>
             through the VPN client.</fam-behavior>
         </ext-comp-def>
 		
-		<!-- A.2.2.1 FDP_IFC_EXT.1 Subset Information Flow Control -->
-        <f-component cc-id="fdp_ifc_ext.1" id="fdp-ifc-ext-1" name="Subset Information Flow Control">
+		<!-- A.2.2.1 FDP_IFC_EXT.1/VPN Subset Information Flow Control -->
+        <f-component cc-id="fdp_ifc_ext.1" id="fdp-ifc-ext-1-vpn" iteration="VPN" name="Subset Information Flow Control">
           <consistency-rationale/>
           <comp-lev>requires the TSF to process all IP traffic through its VPN client
             functionality.</comp-lev>
@@ -4395,6 +4511,7 @@ expected to enforce.<h:p/>
 				the VPN connection) flow through the IPsec VPN client. 
 			</title>
             <note role="application">
+		    		This requirement is mandatory when the MDF is the base PP (see FDP_IFC_EXT.1/ALL). Otherwise it is optional.<h:p/>
 				This requirement is used when the VPN client is able to enforce the requirement
 				through its own components. This generally will have to be done through using
 				hooks provided by the platform such that the TOE is able to ensure that no IP
@@ -4449,6 +4566,159 @@ expected to enforce.<h:p/>
 	
   </sec:Security_Requirements>
   
+	
+<!-- Appendix D: Implicity Satisfied Requirements -->
+<appendix title="Implicitly Satisfied Requirements" id="satisfiedreqs">
+	<!-- Boilerplate goes here -->
+<!--	This appendix lists requirements that should be considered satisfied by products successfully evaluated
+	against this PP. However, these requirements are not featured explicitly as SFRs and should not be
+	included in the ST. They are not included as standalone SFRs because it would increase the time, cost,
+	and complexity of evaluation. This approach is permitted by [CC] Part 1, 8.2 Dependencies between
+	components.<h:p/>
+	This information benefits systems engineering activities which call for inclusion of particular security
+	controls. Evaluation against the PP-Module provides evidence that these controls are present and have
+	been evaluated.
+-->
+	
+	<h:b><ctr ctr-type="Table" pre="Table " id="imp-sat-reqs-table">: Implicitly Satisfied Requirements</ctr></h:b>
+    <h:table>	
+		<h:tr class="header"><h:td>Requirement</h:td><h:td>Rationale for Satisfaction</h:td></h:tr>
+	<h:tr>
+	<h:td><h:b>FCS_CKM.2 – Cryptographic Key
+		Distribution, or FCS_COP.1 –
+		Cryptographic Operation</h:b></h:td>
+	<h:td>
+	  	FCS_CKM.1 (which is defined in this PP-Module as
+		FCS_CKM.1/VPN) requires one of FCS_CKM.2 or FCS_COP.1 to
+		be claimed so that the generated keys can serve some
+		security-relevant purpose. Each of the Base-PPs for this PPModule 
+		define an iteration of FCS_COP.1 for symmetric
+		cryptography that is expected to use the IKE keys generated
+		by FCS_CKM.1/VPN. Therefore, this dependency is satisfied
+		through requirements defined in the Base-PPs.
+	</h:td>
+	</h:tr>
+	<h:tr>
+		<h:td><h:b>FCS_CKM.4 – Cryptographic Key Destruction</h:b></h:td>
+	<h:td>
+	 	FCS_CKM.1 (which is defined in this PP-Module as
+		FCS_CKM.1/VPN) requires FCS_CKM.4 to be claimed so that
+		the generated keys are not disclosed through improper or
+		nonexistent key destruction methods.<h:p/>
+		Each of the supported Base-PPs except for the App PP define
+		FCS_CKM_EXT.4 as an extended SFR, which defines key
+		destruction functionality consistent with FCS_CKM.4, but with
+		additional details that are specific to the respective
+		technology types of the Base-PP. When the App PP is the
+		Base-PP, this PP-Module defines its own instance of
+		FCS_CKM_EXT.4 to achieve the same purpose. The
+		dependency on FCS_CKM.4 is considered to be satisfied
+		through the fact that a compliant TOE will always claim
+		FCS_CKM_EXT.4, which is intended to satisfy the same
+		purpose.
+	</h:td>
+	</h:tr>
+	<h:tr>
+		<h:td><h:b>FCS_COP.1 – Cryptographic Operation</h:b></h:td>
+	<h:td>
+		FCS_IPSEC_EXT.1 has a dependency on FCS_COP.1 because of
+		the cryptographic operations that are needed in support of
+		implementing the IPsec protocol. FCS_COP.1 is not defined in
+		this PP-Module because each of the supported Base-PPs 
+		define iterations of FCS_COP.1 that support the functions
+		that are relevant to IPsec.
+	</h:td>
+	</h:tr>
+	<h:tr>
+		<h:td><h:b>FMT_MTD.1 – Management of TSF Data</h:b></h:td>
+	<h:td>
+		FAU_SEL.1/VPN has a dependency on FMT_MTD.1 to enforce
+		appropriate access controls on the audit configuration, as this
+		is TSF data. This SFR is not explicitly defined in any of the
+		supported Base-PPs but the dependency is implicitly
+		addressed by each Base-PP in the following manner:<h:ul>
+		<h:li>GPOS PP: The GPOS PP implicitly defines the
+			existence of ‘user’ and ‘administrator’ roles in the
+			extended SFRs FMT_MOF_EXT.1 and
+			FMT_SMF_EXT.1. A TOE that conforms to this BasePP can associate the ability to perform the
+			functionality defined by FAU_SEL.1/VPN to one or
+			both of these roles.</h:li>
+		<h:li>MDF PP: The GPOS PP implicitly defines the existence
+			of ‘user,’ ‘administrator,’ and ‘MDM’ roles in the
+			extended SFRs FMT_MOF_EXT.1 and
+			FMT_SMF_EXT.1. A TOE that conforms to this BasePP can associate the ability to perform the
+			functionality defined by FAU_SEL.1/VPN to one or
+			more of these roles.</h:li>
+		<h:li>App PP: The App PP does not define the existence of
+			a separately authenticated management interface;
+			instead, the App PP assumes that authentication to
+			the underlying OS platform is sufficient authorization
+			to access the application’s management functionality.</h:li>
+		<h:li>MDM PP: The MDM PP defines the existence of
+			management roles in FMT_SMR.1(1). A TOE that
+			conforms to this Base-PP can associate the ability to
+			perform the functionality defined by FAU_SEL.1/VPN
+			to one or more of the roles defined here.</h:li></h:ul>
+	</h:td>
+	</h:tr>
+	<h:tr>
+		<h:td><h:b>FPT_STM.1 – Reliable Time Stamps</h:b></h:td>
+	<h:td>
+	  FAU_GEN.1/VPN has a dependency on FPT_STM.1 because
+		audit records are required to have timestamps that are based
+		on reliable clock data. All of the supported Base-PPs either
+		define this requirement explicitly or provide rationale for why
+		the reader to expect that a reliable clock service is expected
+		to be present. Depending on the claimed Base-PP, the
+		dependency is satisfied in the following manner:<h:ul>
+		<h:li>GPOS PP: The GPOS PP states that FPT_STM.1 is
+			implicitly satisfied by the requirements of FAU_GEN.1 
+			since that requirement could not be satisfied if no
+			clock service was present. Additionally, a clock
+			service is reasonably assumed to be provided by a
+			general-purpose OS.</h:li>
+		<h:li>MDF PP: The MDF PP explicitly defines FPT_STM.1.</h:li>
+		<h:li>App PP: The App PP assumption A.PLATFORM
+			assumes that the general-purpose computing
+			platform on which the TOE is installed is ‘a
+			trustworthy computing platform.’ System time data is
+			not explicitly mentioned but a clock service is
+			reasonably assumed to be provided by a generalpurpose computer.</h:li>
+		<h:li>MDM PP: The MDM PP assumption
+			A.MDM_SERVER_PLATFORM assumes that the
+			platform on which the TOE is installed will provide
+			reliable time services.</h:li></h:ul>
+	</h:td>
+	</h:tr>
+	<h:tr>
+	<h:td>FPT_STM.1 – Reliable Time Stamps</h:td>
+	<h:td>
+	  FAU_GEN.1 has a dependency on FPT_STM.1. While not explicitly stated in the PP, it is assumed
+	  that this will be provided by the underlying hardware platform on which the TOE is installed. 
+	  This is because the TOE is installed as a software or firmware product that runs on general-purpose 
+	  computing hardware so a hardware clock is assumed to be available.
+	</h:td>
+	</h:tr>
+	<h:tr>
+	<h:td>FPT_STM.1 – Reliable Time Stamps</h:td>
+	<h:td>
+ 	  FIA_X509_EXT.1 has a dependency on FPT_STM.1. While not explicitly stated in the PP, it is assumed that
+	  this will be provided by the underlying hardware platform on which the TOE is installed. This is 
+	  because the TOE is installed as a software or firmware product that runs on general-purpose computing
+	  hardware so a hardware clock is assumed to be available.
+	</h:td>
+	</h:tr>
+    </h:table>
+  </appendix>	
+	
+<!-- Appendix E: Entropy Documentation and Assessment -->
+<appendix title="Entropy Documentation and Assessment" id="app-ent">
+							
+	The TOE does not require any additional supplementary information to describe its entropy source(s)
+	beyond the requirements outlined in the Base-PPs. As with other Base-PP requirements, the only
+	additional requirement is that the entropy documentation also applies to the specific VPN client
+	capabilities of the TOE in addition to the functionality required by the claimed Base-PP.		 
+ </appendix>
   
   <bibliography>
     <cc-entry/>
