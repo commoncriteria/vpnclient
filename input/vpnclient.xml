@@ -4453,7 +4453,9 @@ expected to enforce.<h:p/>
         </f-component>
         
         <f-component cc-id="fia_psk_ext.4" id="fia-psk-ext-4" name="HMAC Based One Time Password Pre-shared Keys Support">
-          <depends on-sel="sel-ipsec-e11-psk"/>
+          <depends on-sel="pskhotp"/>
+	  <depends on-sel="pskgenhotp"/>
+	  <depends on-sel="pskpwhotp"/>
           <consistency-rationale/>
           <comp-lev>defines the use and composition of HOTP pre-shared keys used for IPsec</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -4500,20 +4502,22 @@ expected to enforce.<h:p/>
           </f-element>
           <audit-event/>
         </f-component>
-        <f-component cc-id="fia_totp_ext.1" id="fia-totp-ext-1" name="Time Based One Time Password Pre-shared Keys Support">
-          <depends on-sel="sel-ipsec-e11-psk"/>
+        <f-component cc-id="fia_psk_ext.5" id="fia-psk-ext-5" name="Time Based One Time Password Pre-shared Keys Support">
+          <depends on-sel="psktotp"/>
+	  <depends on-sel="pskgentotp"/>
+	  <depends on-sel="pskpwtotp"/>
           <consistency-rationale/>
           <comp-lev>defines the use and composition of TOTP pre-shared keys used for IPsec</comp-lev>
           <management>No specific management functions are identified.</management>
           <audit>No specific audit functions are identified.
           </audit>
           <dependencies>FCS_PSK_EXT.1</dependencies>
-          <f-element id="fia-totp-ext-1e1">
+          <f-element id="fia-psk-ext-5e1">
             <title>
               The TSF shall accept and send a TOTP while initiating a VPN connection.
             </title>
           </f-element>
-          <f-element id="fia-totp-ext-1e2">
+          <f-element id="fia-psk-ext-5e2">
             <title>
               The TSF shall 
               <selectables>
