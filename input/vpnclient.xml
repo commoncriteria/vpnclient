@@ -15,7 +15,7 @@
     <ReferenceTable>
       <PPVersion>2.4-Draft</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2021-09-20</PPPubDate>
+      <PPPubDate>2021-09-27</PPPubDate>
       <Keywords>VPN, VPN Client</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -4132,19 +4132,20 @@ expected to enforce.<h:p/>
         </audit>
         <f-element id="fpf-mfa-ext-1e1">
           <title>
-            The TSF shall filter all traffic except OTP authentication packets until the TSF
+            The TSF shall not forward packets to the internal network until the IKE/IPsec tunnel has been established except those necessary to authenticate the client 
+            until the client is authenticated.</title>
+        </f-element>
+        
+        <f-element id="fpf-mfa-ext-1e1">
+          <title>
+            The TSF shall authenticate the client via PSK and 
             <selectables>
-              <selectable id="blockhotp">verifies the HOTP</selectable>
-              <selectable id="blocktotp">verifies the TOTP</selectable>
-              <selectable>verifies the HOTP with an external authentication server</selectable>
-              <selectable>verifies the TOTP with an external authentication server</selectable>
-            </selectables>
-          </title>
-       
+              <selection><assignable>authorization checks</assignable></selection>
+              <selection>no other</selection>
+            </selectables>.</title>
+          
           <note role="application">
-            If verifies the HOTP is selected then FIA_HOTP_EXT.1 shall be included. 
-            
-            <h:p/>If verifies the TOTP is selected then FIA_TOTP_EXT.1 shall be included. 
+            If FPF_MFA_EXT.1 is included FIA_PSK_EXT.1 shall be included.
             
             
           </note>
@@ -4258,10 +4259,10 @@ expected to enforce.<h:p/>
                 <selectable id="pskpw">Password based</selectable>
                 <selectable id="pskhotp">HMAC based one time password</selectable>
                 <selectable id="psktotp">Time based one time password</selectable>
-                <selectable id="pskgenhotp">Generated bit-based and HMAC based one time password</selectable>
-                <selectable id="pskgentotp">Generated bit-based and time based one time password</selectable>
-                <selectable id="pskpwhotp">Password based and HMAC based one time password</selectable>
-                <selectable id="pskpwtotp">Password based and time based one time password</selectable>
+                <selectable id="pskgenhotp">Combination of a generated bit-based and HMAC based one time password</selectable>
+                <selectable id="pskgentotp">Combination of a generated bit-based and time based one time password</selectable>
+                <selectable id="pskpwhotp">Combination of a password based and HMAC based one time password</selectable>
+                <selectable id="pskpwtotp">Combination of a password based and time based one time password</selectable>
               </selectables> keys.
             </title>
             <note role="application">
@@ -4403,15 +4404,30 @@ expected to enforce.<h:p/>
             <title>
               The TSF shall require the PSK to be entered before every initiated connection.
             </title>
+          </f-element>
+          
+            <f-element id="fia-psk-ext-3e7">
+              <title>
+                The TSF shall 
+                <selectables>
+                  <selection>provide a password strength meter</selection>
+                  <selection>check the password against a blacklist</selection>
+                  <selection>perform no action</selection>
+                </selectables>. 
+              </title>
+            
             
             <note role="application">
-              For FIA_PSK_EXT.3.2, the ST author assigns the maximum size of the PSK it supports; it must support at least 64 characters or a length defined by the platform. 
+              For FIA_PSK_EXT.3.1, the ST author assigns the maximum size of the PSK it supports; it must support at least 64 characters or a length defined by the platform. 
               
-              <h:p/>For FIA_PSK_EXT.3.3, the ST author assigns any other supported characters; if there are no other supported characters, they should select "no other characters". 
+              <h:p/>For FIA_PSK_EXT.3.2, the ST author assigns any other supported characters; if there are no other supported characters, they should select "no other characters". 
               
-              <h:p/>For FIA_PSK_EXT.3.4, the ST author selects the parameters based on the PBKDF used by the TSF. 
+              <h:p/>For FIA_PSK_EXT.3.3, the ST author selects the parameters based on the PBKDF used by the TSF. 
               
-              <h:p/>For FIA_PSK_EXT.3.5 If the minimum length is settable, then ST author chooses "a value settable by the administrator". If the minimum length is not settable, the ST author fills in the assignment with the minimum length the PSK must be. 
+              <h:p/>For FIA_PSK_EXT.3.4 If the minimum length is settable, then ST author chooses "a value settable by the administrator". If the minimum length is not settable, 
+              the ST author fills in the assignment with the minimum length the PSK must be. This requirement is to ensure bounds work properly.
+              
+              <h:p/>For FIA_PSK_EXT.3.7, the ST author may select one, both, or neither of the functions in alignment with NIST SP800-63b.
               
               <h:p/>This requirement is selection dependent on FIA_PSK_EXT.1. 
               </note>
@@ -4431,6 +4447,8 @@ expected to enforce.<h:p/>
                 <h:p/>The evaluator shall confirm that the minimum length is described.
                 
                 <h:p/>The ST author shall provide a description in the TSS regarding the salt generation. The evaluator shall confirm that the salt is generated using an RBG described in FCS_RBG_EXT.1.
+                
+                <h:p/>The evaluator shall examine the TSS to ensure any password checking functionality provided by the TSF is desrcribed and contains details on how the function operates.
               </TSS>
               <Guidance>The evaluator shall confirm the operational guidance contains instructions for entering bit-based pre-shared keys for each 
                 protocol identified in the requirement, or generating a bit-based pre-shared key (or both). The evaluator shall confirm that any 
@@ -4438,13 +4456,17 @@ expected to enforce.<h:p/>
                 
                 <h:p/>The guidance must specify the allowable characters for pre-shared keys, and that list must include, at minimum, the same 
                 items contained in FIA_PSK_EXT.3.2. 
+                
+                <h:p/>The evaluator shall confirm the operational guidance contains any necessary instructions for enabling and configurating password checking functality. 
               </Guidance>
               <Tests>
                 Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a TOE configured according to the Operational Guidance:
                 <testlist>
-                  <test>Test 1: The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance with the FIA_PSK_EXT.1.3 and verify that a successful protocol negotiation can be performed with the key. </test>
-                  <test>Test 2 [conditional]: If the TOE supports pre-shared keys of multiple lengths, the evaluator shall repeat Test 1 using the minimum length and invalid lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should be successful, and the invalid lengths must be rejected by the TOE. </test>
-                  <test>Test 3: [conditional]: If the TOE initiates connections, initiate and establish a remote connection, disconnect from the connection, verify that the PSK is required when initiation the connection a second time.</test>
+                  <test>The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance with the FIA_PSK_EXT.1.3 and verify that a successful protocol negotiation can be performed with the key. </test>
+                  <test>[conditional]: If the TOE supports pre-shared keys of multiple lengths, the evaluator shall repeat Test 1 using the minimum length and invalid lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should be successful, and the invalid lengths must be rejected by the TOE. </test>
+                  <test>[conditional]: If the TOE initiates connections, initiate and establish a remote connection, disconnect from the connection, verify that the PSK is required when initiation the connection a second time.</test>
+                  <test>[conditional]: If the TOE supports a password checker tool, the evaluator shall enter a password and verify the password checker responds per the description in the TSS.</test>
+                  <test>[conditional]: If the TOE supports a password, the evaluator shall enter a blacklisted password and verify that the password is rejected or flagged as such.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -4602,8 +4624,8 @@ expected to enforce.<h:p/>
             <title>
               The TSF shall truncate the HOTP hash per FIA_HOTP_EXT.1.4 to create a HOTP of  
               <selectables>
-                <selectable>administer configurable size of at least 6</selectable>
-                <selectable>preset size of
+                <selectable>administer configurable chracter length of at least 6</selectable>
+                <selectable>preset character length of
                   <selectables>
                     <selectable>6</selectable>
                     <selectable>7</selectable>
@@ -4655,7 +4677,7 @@ expected to enforce.<h:p/>
             
             <note role="application">
               The selection FIA_HOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
-              <h:p/>In FIA_HOTP_EXT.1.5 the ST author may either provide a configurable size of at least 6 or a preset size between 6 and 10.
+              <h:p/>In FIA_HOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
               <h:p/>In FIA_HOTP_EXT.1.6 the ST may select throttle requests, account lockout, or both.
               <h:p/>The HOTP seed and all derived values are considered secret keys for purposes of protection.
               <h:p/>This requirement is selection dependent on FCS_PSK_EXT.4 or FPF_MFA_EXT.1<h:p/>
@@ -4738,8 +4760,8 @@ expected to enforce.<h:p/>
             <title>
               The TSF shall truncate the TOTP hash per FIA_TOTP_EXT.1.4 to create a TOTP of  
               <selectables>
-                <selectable>administer configurable size of at least 6</selectable>
-                <selectable>preset size of
+                <selectable>administer configurable character length of at least 6</selectable>
+                <selectable>preset character length of
                   <selectables> 
                     <selectable>6</selectable>
                     <selectable>7</selectable>
@@ -4804,7 +4826,7 @@ expected to enforce.<h:p/>
             
             <note role="application">
               The selection FIA_HOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
-              <h:p/>In FIA_TOTP_EXT.1.5 the ST author may either provide a configurable size of at least 6 or a preset size between 6 and 10.
+              <h:p/>In FIA_TOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
               <h:p/>In FIA_TOTP_EXT.1.6 the ST may select throttle requests, account lockout, or both.
               <h:p/>The TOTP seed and all derived values are considered secret keys for purposes of protection.
               <h:p/>This requirement is selection dependent on FCS_PSK_EXT.5 or FPF_MFA_EXT.1.<h:p/>
