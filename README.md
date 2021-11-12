@@ -10,7 +10,7 @@ This repository hosts the draft version of the PP-Module for Virtual Private Net
 [Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/vpnclient/vpnclient-esr.html) for this technology class of 
 products. This repository is used to facilitate collaboration and development on the draft document. 
 See the [release](#Release-Version) section if you are looking for the officially released version for evaluations. 
-A list of products that have passed evaluation against this Protection Profile can be found [here](QQQQ).
+A list of products that have passed evaluation against this Protection Profile can be found [here](https://www.niap-ccevs.org/Product/PCL.cfm?ID624=34).
 
 ## Draft Version
 
