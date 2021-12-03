@@ -19,6 +19,9 @@ jobs:
     - name: Install Build Packages
       run: "sudo apt-get update && sudo apt-get install -y xsltproc hunspell"
 
+    - name: Make the ESR
+      run: make esr
+      
     - name: Quick Build
       run: make release 
 

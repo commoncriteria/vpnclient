@@ -54,7 +54,7 @@
       <h:ul>
         <h:li>Protection Profile for General Purpose Operating Systems (OS PP), Version 4.2.1</h:li>
         <h:li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 3.2</h:li>
-        <h:li>Protection Profile for Application Software (App PP), Version 1.3</h:li>
+        <h:li>Protection Profile for Application Software (App PP), Version 1.4</h:li>
         <h:li>Protection Profile for Mobile Device Management (MDM PP), Version 4.0</h:li>
       </h:ul>
 
@@ -4118,10 +4118,10 @@ expected to enforce.<h:p/>
     <opt-sfrs>
       
       <section title="Packet Filtering (FPF)" id="s-fpf">
-        The TOE may multifactor authentication by blocking all other traffic after connection is established until secondary authentication is validated.
+        The TOE may support multifactor authentication by blocking all other traffic after connection is established until secondary authentication is validated.
         
         <ext-comp-def title="Multifactor Authentication Filtering" fam-id="FPF_MFA_EXT">
-          <fam-behavior>Components in this family describes the requirements for multifactor authentication filtering when utilizing the VPN client.</fam-behavior>
+          <fam-behavior>Components in this family describe the requirements for multifactor authentication filtering when utilizing the VPN client.</fam-behavior>
         </ext-comp-def>
       <f-component cc-id="fpf_mfa_ext.1" id="fpf-mfa-ext-1" name="Multifactor Authentication Filtering">
         
@@ -4132,7 +4132,7 @@ expected to enforce.<h:p/>
         </audit>
         <f-element id="fpf-mfa-ext-1e1">
           <title>
-            The TSF shall not forward packets to the internal network until the IKE/IPsec tunnel has been established 
+            The TSF shall not forward packets to the internal network until the IKE/IPsec tunnel has been established, 
             except those necessary to authenticate the client is authenticated according to FIA_PSK_EXT.1.</title>
        
           
@@ -4149,7 +4149,9 @@ expected to enforce.<h:p/>
             
             <Tests>
               <testlist>
-                <test>For each included selection the evaluator shall configure the TOE per the operational guidance.  The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules.  The evaluator shall then provide the selected factor and confirm it is accepted and traffic is no longer blocked.</test>
+                <test>For each included selection the evaluator shall configure the TOE per the operational guidance.  
+                  The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules.  
+                  The evaluator shall then provide the selected factor and confirm it is accepted and traffic is no longer blocked.</test>
               </testlist>
             </Tests>
           </aactivity>
@@ -4163,7 +4165,7 @@ expected to enforce.<h:p/>
       
       
       <section title="Identification and Authentication (FIA)" id="o-fia">
-        The TOE may support leverating the biometric API provided by the platform.
+        The TOE may support leveraging the biometric API provided by the platform.
         
         <ext-comp-def title="Biometric Activation" fam-id="FIA_BMA_EXT">
           <fam-behavior>Components in this family describes the requirements for biometrics when utilizing the VPN client.</fam-behavior>
@@ -4172,9 +4174,9 @@ expected to enforce.<h:p/>
             
         <f-component cc-id="fia_bma_ext.1" id="fia-bma-ext-1" name="Biometric Activation">
           <consistency-rationale/>
-          <comp-lev>defines the use of biometrics when utilizing the VPN clientc</comp-lev>
+          <comp-lev>defines the use of biometrics when utilizing the VPN client</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit funcations are identified.
+          <audit>No specific audit functions are identified.
           </audit>
           <f-element id="fia-bma-ext-1e1">
             <title>
@@ -4431,7 +4433,7 @@ expected to enforce.<h:p/>
               <h:p/>This requirement is selection dependent on FIA_PSK_EXT.1. 
               </note>
             <aactivity>
-              <TSS>The evaluator shall also examine the TSS to ensure it describes the process by which the bit-based pre-shared keys used. If generated is selected the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1. 
+              <TSS>The evaluator shall examine the TSS to ensure it describes the process by which the bit-based pre-shared keys used. If generated is selected the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1. 
                 
                 <h:p/>Support for length: The evaluators shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
                 
@@ -4698,7 +4700,7 @@ expected to enforce.<h:p/>
                 The evaluator shall configure the TOE to use a supported HOTP factor then:
                 <testlist>
                 <test>Attempt to establish a connection using a factor from a different client, the test passes if the client fails to connect.
-                </test><test>Attempt multiple connections outside the bounty set in FIA_HOTP_EXT.1.6 and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
+                </test><test>Attempt multiple connections outside the boundary set in FIA_HOTP_EXT.1.6 and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
                 </test><test>Attempt to use a HOTP that is outside of the value allowed with for resynchronization. The test passes if the client fails to connect.
                 </test><test>Attempt to connect with a valid HOTP, disconnect and attempt to authenticate again with the same HOTP value.  The test passes if the client connects the first time and fails to connect the second time. If the HOTP generated is duplicated the test may be repeated.
                 </test>
@@ -4845,7 +4847,7 @@ expected to enforce.<h:p/>
                 The evaluator shall configure the TOE to use a supported TOTP factor then:
                 <testlist>
                   <test>Attempt to establish a connection using a factor from a different client, the test passes if the client fails to connect.
-                  </test><test>Attempt multiple connections outside the bounty set in FIA_TOTP_EXT.1.6 and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
+                  </test><test>Attempt multiple connections outside the boundary set in FIA_TOTP_EXT.1.6 and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
                   </test><test>Attempt to use a TOTP that is outside of the value allowed with for resynchronization. The test passes if the client fails to connect.
                   </test>Attempt to connect with a valid TOTP, disconnect and attempt to authenticate again with the same TOTP.  The test passes if the client connects the first time and fails to connect the second time. If the TOTP generated is duplicated the test may be repeated.
                 </testlist>
@@ -5430,7 +5432,7 @@ expected to enforce.<h:p/>
       <tag>App PP</tag>
       <description>
         <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=429&amp;id=429/">
-			Protection Profile for Application Software</h:a>, Version 1.3, March 2019
+			Protection Profile for Application Software</h:a>, Version 1.4, October 2021
       </description>
     </entry>
 
