@@ -3619,8 +3619,8 @@ expected to enforce.<h:p/>
 				that use X.509v3 certificates that conform to RFC 4945 and 
 				<selectables>
 					<selectable id="sel-ipsec-e11-psk">Pre-shared keys</selectable>
-				  <selectable id="sel-ipsec-e11-psk">Pre-shared Keys transmitted via EAP-TLS</selectable>
-				  <selectable id="sel-ipsec-e11-psk">Pre-shared Keys transmitted via EAP-TTLS with mutual authentication</selectable>
+				  <selectable id="sel-ipsec-e11-pskeap">Pre-shared Keys transmitted via EAP-TLS</selectable>
+				  <selectable id="sel-ipsec-e11-pskeapma">Pre-shared Keys transmitted via EAP-TTLS with mutual authentication</selectable>
 					<selectable>no other method</selectable>
 				</selectables>.
             </title>
@@ -4491,7 +4491,7 @@ expected to enforce.<h:p/>
           <f-element id="fia-psk-ext-4e2">
             <title>
               The TSF shall <selectables>
-                <selectable id="sel-psk4-ext-e2-verify">verify the HOTP</selectable>
+                <selectable id="sel-verify-hotp">verify the HOTP</selectable>
                 <selectable>verify the HOTP via an external authentication server</selectable>
               </selectables> before establishing an incoming connection.
             </title>
@@ -4574,8 +4574,7 @@ expected to enforce.<h:p/>
         </f-component>
         
         <f-component cc-id="fia_hotp_ext.1" id="fia-hotp-ext-1" name="HMAC-Based One-Time Password Pre-Shared Keys">
-          <depends on-sel="sel-psk4-ext-e2-verify"/>
-          <depends on-sel="blockhotp"/>
+          <depends on-sel="sel-verify-hotp"/>
           <consistency-rationale/>
           <comp-lev>defines the implementation of hotp</comp-lev>
           <management>No specific management functions are identified.</management>
