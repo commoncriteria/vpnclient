@@ -4118,10 +4118,10 @@ expected to enforce.<h:p/>
     <opt-sfrs>
       
       <section title="Packet Filtering (FPF)" id="s-fpf">
-        The TOE may multifactor authentication by blocking all other traffic after connection is established until secondary authentication is validated.
+        The TOE may support multifactor authentication by blocking all other traffic after connection is established until secondary authentication is validated.
         
         <ext-comp-def title="Multifactor Authentication Filtering" fam-id="FPF_MFA_EXT">
-          <fam-behavior>Components in this family describes the requirements for multifactor authentication filtering when utilizing the VPN client.</fam-behavior>
+          <fam-behavior>Components in this family describe the requirements for multifactor authentication filtering when utilizing the VPN client.</fam-behavior>
         </ext-comp-def>
       <f-component cc-id="fpf_mfa_ext.1" id="fpf-mfa-ext-1" name="Multifactor Authentication Filtering">
         
@@ -4132,7 +4132,7 @@ expected to enforce.<h:p/>
         </audit>
         <f-element id="fpf-mfa-ext-1e1">
           <title>
-            The TSF shall not forward packets to the internal network until the IKE/IPsec tunnel has been established 
+            The TSF shall not forward packets to the internal network until the IKE/IPsec tunnel has been established, 
             except those necessary to authenticate the client is authenticated according to FIA_PSK_EXT.1.</title>
        
           
@@ -4149,7 +4149,9 @@ expected to enforce.<h:p/>
             
             <Tests>
               <testlist>
-                <test>For each included selection the evaluator shall configure the TOE per the operational guidance.  The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules.  The evaluator shall then provide the selected factor and confirm it is accepted and traffic is no longer blocked.</test>
+                <test>For each included selection the evaluator shall configure the TOE per the operational guidance.  
+                  The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules.  
+                  The evaluator shall then provide the selected factor and confirm it is accepted and traffic is no longer blocked.</test>
               </testlist>
             </Tests>
           </aactivity>
