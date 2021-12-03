@@ -25,6 +25,9 @@ jobs:
       - name: Debug
         run: echo "The trigger was " ${{ github.event_name }}
 
+      - name: Make ESR
+        run: make esr
+
       - name: Convert XML to HTML
         run: make
 
