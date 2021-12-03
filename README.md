@@ -3,8 +3,10 @@ PP-Module for Virtual Private Network (VPN) Clients
 ===============
 ![Build](https://github.com/commoncriteria/vpnclient/workflows/Build/badge.svg)
 ![Validate](https://github.com/commoncriteria/vpnclient/workflows/Validate/badge.svg)
+[![SanityChecks](https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/master/warnings-badge.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/SanityChecksOutput.md)
+[![SpellCheck](https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/master/spell-badge.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/SpellCheckReport.txt)
+[![QuickBuild](https://github.com/commoncriteria/vpnclient/actions/workflows/quick_build.yml/badge.svg)](https://commoncriteria.github.io/vpnclient/vpnclient-release.html)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/vpnclient.svg?maxAge=2592000)](https://github.com/commoncriteria/vpnclient/issues) 
-![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
 This repository hosts the draft version of the PP-Module for Virtual Private Network (VPN) Clients based on the 
 [Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/vpnclient/vpnclient-esr.html) for this technology class of 
