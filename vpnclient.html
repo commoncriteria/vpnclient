@@ -591,7 +591,8 @@ function showTarget(id){
 
           }
     </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">PP-Module for Virtual Private Network (VPN) Clients</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
-      Version: 2.4-Draft<br/>2021-12-03<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>2.3</td><td>2021-08-10</td><td>Support for MDF, Bluetooth updates</td></tr>
+      Version: 2.4-Draft<br/>2021-12-15<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>2.4-Draft</td><td>2021-12-15</td><td>Incorporation of TC feedback</td></tr>
+<tr><td>2.3</td><td>2021-08-10</td><td>Support for MDF, Bluetooth updates</td></tr>
 <tr><td>2.2</td><td>2021-01-05</td><td>Update release</td></tr>
 <tr><td>2.1</td><td>2019-11-14</td><td>Initial Release</td></tr>
 </table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#rfocus" style="text-indent:10px">1.5<span>Requirements Focus</span></a><a href="#ConformanceClaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Description" style="text-indent:0px">3<span>Security Problem Description</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_TOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-gpos" style="text-indent:10px">5.1<span>General Purpose Operating Systems PP
@@ -642,7 +643,7 @@ function showTarget(id){
     </span></a><a href="#s-fpf" style="text-indent:20px">A.1.1<span>Packet Filtering (FPF)</span></a><a href="#o-fia" style="text-indent:20px">A.1.2<span>Identification and Authentication (FIA)</span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements
     </span></a><a href="#sob-audit-table" style="text-indent:20px">A.2.1<span>Auditable Events for Objective SFRs</span></a><a href="#ob-fau" style="text-indent:20px">A.2.2<span>Security Audit (FAU)</span></a><a href="#ob-fdp" style="text-indent:20px">A.2.3<span>User Data Protection (FDP)</span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-Based Requirements
     </span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-Based Requirements
-    </span></a><a href="#sb-audit-table" style="text-indent:10px">B.1<span>Auditable Events for Selection-based SFRs</span></a><a href="#s-fia" style="text-indent:10px">B.2<span>Identification and Authentication (FIA)</span></a><a href="#s-fcs" style="text-indent:10px">B.3<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_CKM_EXT" style="text-indent:30px">C.2.1.1<span>FCS_CKM_EXT Cryptographic Key Management</span></a><a href="#ext-comp-FCS_IPSEC_EXT" style="text-indent:30px">C.2.1.2<span>FCS_IPSEC_EXT IPsec</span></a><a href="#ext-comp-FCS_EAP_EXT" style="text-indent:30px">C.2.1.3<span>FCS_EAP_EXT EAP-TLS</span></a><a href="#ext-comp-FIA" style="text-indent:20px">C.2.2<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-FIA_X509_EXT" style="text-indent:30px">C.2.2.1<span>FIA_X509_EXT X.509 Certificate Use and Management</span></a><a href="#ext-comp-FIA_BMA_EXT" style="text-indent:30px">C.2.2.2<span>FIA_BMA_EXT Biometric Activation</span></a><a href="#ext-comp-FIA_PSK_EXT" style="text-indent:30px">C.2.2.3<span>FIA_PSK_EXT Pre-Shared Key Composition</span></a><a href="#ext-comp-FPT" style="text-indent:20px">C.2.3<span>Protection of the TSF (FPT)</span></a><a href="#ext-comp-FPT_TST_EXT" style="text-indent:30px">C.2.3.1<span>FPT_TST_EXT TSF Self-Test</span></a><a href="#ext-comp-FPF" style="text-indent:20px">C.2.4<span>Packet Filtering (FPF)</span></a><a href="#ext-comp-FPF_MFA_EXT" style="text-indent:30px">C.2.4.1<span>FPF_MFA_EXT Multifactor Authentication Filtering</span></a><a href="#ext-comp-FDP" style="text-indent:20px">C.2.5<span>User Data Protection (FDP)</span></a><a href="#ext-comp-FDP_IFC_EXT" style="text-indent:30px">C.2.5.1<span>FDP_IFC_EXT Subset Information Flow Control</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#app-ent" style="text-indent:0px">Appendix E - <span>Entropy Documentation and Assessment</span></a><a href="#acronyms" style="text-indent:0px">Appendix F - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix G - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
+    </span></a><a href="#sb-audit-table" style="text-indent:10px">B.1<span>Auditable Events for Selection-based SFRs</span></a><a href="#s-fia" style="text-indent:10px">B.2<span>Identification and Authentication (FIA)</span></a><a href="#s-fcs" style="text-indent:10px">B.3<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_CKM_EXT" style="text-indent:30px">C.2.1.1<span>FCS_CKM_EXT Cryptographic Key Management</span></a><a href="#ext-comp-FCS_IPSEC_EXT" style="text-indent:30px">C.2.1.2<span>FCS_IPSEC_EXT IPsec</span></a><a href="#ext-comp-FCS_EAP_EXT" style="text-indent:30px">C.2.1.3<span>FCS_EAP_EXT EAP-TLS</span></a><a href="#ext-comp-FIA" style="text-indent:20px">C.2.2<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-FIA_X509_EXT" style="text-indent:30px">C.2.2.1<span>FIA_X509_EXT X.509 Certificate Use and Management</span></a><a href="#ext-comp-FIA_BMA_EXT" style="text-indent:30px">C.2.2.2<span>FIA_BMA_EXT Biometric Activation</span></a><a href="#ext-comp-FIA_PSK_EXT" style="text-indent:30px">C.2.2.3<span>FIA_PSK_EXT Pre-Shared Key Composition</span></a><a href="#ext-comp-FIA_HOTP_EXT" style="text-indent:30px">C.2.2.4<span>FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys</span></a><a href="#ext-comp-FIA_TOTP_EXT" style="text-indent:30px">C.2.2.5<span>FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys</span></a><a href="#ext-comp-FPT" style="text-indent:20px">C.2.3<span>Protection of the TSF (FPT)</span></a><a href="#ext-comp-FPT_TST_EXT" style="text-indent:30px">C.2.3.1<span>FPT_TST_EXT TSF Self-Test</span></a><a href="#ext-comp-FPF" style="text-indent:20px">C.2.4<span>Packet Filtering (FPF)</span></a><a href="#ext-comp-FPF_MFA_EXT" style="text-indent:30px">C.2.4.1<span>FPF_MFA_EXT Multifactor Authentication Filtering</span></a><a href="#ext-comp-FDP" style="text-indent:20px">C.2.5<span>User Data Protection (FDP)</span></a><a href="#ext-comp-FDP_IFC_EXT" style="text-indent:30px">C.2.5.1<span>FDP_IFC_EXT Subset Information Flow Control</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#app-ent" style="text-indent:0px">Appendix E - <span>Entropy Documentation and Assessment</span></a><a href="#acronyms" style="text-indent:0px">Appendix F - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix G - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
     
      
     <h2 class="indexable" data-level="2" id="Overview">1.1 Overview</h2>
@@ -4276,6 +4277,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 </ul>
               </div></div></div>
         
+        
         <div class="comp" id="FIA_HOTP_EXT.1"><h4>FIA_HOTP_EXT.1 HMAC-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
            <a href="#FIA_PSK_EXT.4.2">FIA_PSK_EXT.4.2</a>.
            </i></b></div>
@@ -4286,7 +4288,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           <div class="element"><div class="reqid" id="FIA_HOTP_EXT.1.1"><a href="#FIA_HOTP_EXT.1.1" class="abbr">FIA_HOTP_EXT.1.1</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support HMAC-Based One-Time Password authentication in accordance with RFC4226 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support HMAC-Based One-Time Password authentication (HOTP) in accordance with <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4226 
               to authenticate the user before establishing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
             </div></div>
           <div class="element"><div class="reqid" id="FIA_HOTP_EXT.1.2"><a href="#FIA_HOTP_EXT.1.2" class="abbr">FIA_HOTP_EXT.1.2</a></div><div class="reqdesc">
@@ -4312,10 +4314,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
               [<b>selection</b>: <ul><li style=""><i id="_s_324">throttle invalid requests to 
                   [<b>selection</b>: <i id="_s_325">administrator configurable value</i>, <i id="_s_326">[<b>assignment</b>: 
-     <span class="assignable-content">value less than 10</span>]</i>] per minute
-                </i>, </li><li style=""><i id="_s_327">lock the associated account after 
+     <span class="assignable-content">value less than 10</span>]</i>] per minute</i>, </li><li style=""><i id="_s_327">lock the associated account after 
                   [<b>selection</b>: <i id="_s_328">administrator configurable value</i>, <i id="_s_329">[<b>assignment</b>: 
-     <span class="assignable-content">value less than 10</span>]</i>]failed attempts until 
+     <span class="assignable-content">value less than 10</span>]</i>] failed attempts until 
                   [<b>selection</b>: <i id="_s_330">an administrator unlocks the account</i>, <i id="_s_331">a configurable time period</i>]
                 </i></li></ul>].
             </div></div>
@@ -4359,6 +4360,8 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 </li>
                 </ul>
               </div></div></div>
+        
+        
         <div class="comp" id="FIA_TOTP_EXT.1"><h4>FIA_TOTP_EXT.1 Time-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
            <a href="#FIA_PSK_EXT.5.2">FIA_PSK_EXT.5.2</a>.
            </i></b></div>
@@ -4369,7 +4372,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.1"><a href="#FIA_TOTP_EXT.1.1" class="abbr">FIA_TOTP_EXT.1.1</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support Time-Based One-Time Password authentication in accordance with RFC6238 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support Time-Based One-Time Password authentication in accordance with <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 6238 
               to authenticate the user before establishing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.2"><a href="#FIA_TOTP_EXT.1.2" class="abbr">FIA_TOTP_EXT.1.2</a></div><div class="reqdesc">
@@ -4395,10 +4398,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
               [<b>selection</b>: <ul><li style=""><i id="_s_351">throttle invalid requests to 
                   [<b>selection</b>: <i id="_s_352">administrator configurable value</i>, <i id="_s_353">[<b>assignment</b>: 
-     <span class="assignable-content">value less than 10</span>]</i>] per minute
-                </i>, </li><li style=""><i id="_s_354">lock the associated account after 
+     <span class="assignable-content">value less than 10</span>]</i>] per minute</i>, </li><li style=""><i id="_s_354">lock the associated account after 
                   [<b>selection</b>: <i id="_s_355">administrator configurable value</i>, <i id="_s_356">[<b>assignment</b>: 
-     <span class="assignable-content">value less than 10</span>]</i>]failed attempts until 
+     <span class="assignable-content">value less than 10</span>]</i>] failed attempts until 
                   [<b>selection</b>: <i id="_s_357">an administrator unlocks the account</i>, <i id="_s_358">a configurable time period</i>]
                 </i></li></ul>].
             </div></div>
@@ -4512,7 +4514,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 
 	All extended components specified in the  are listed in this table:
 
-<table><caption><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">6</span></span>: Extended Component Definitions</b></caption><tr><th>Functional Class</th><th>Functional Components</th></tr><tr><td>Cryptographic Support (FCS)</td><td>FCS_CKM_EXT Cryptographic Key Management<br/>FCS_EAP_EXT EAP-TLS<br/>FCS_IPSEC_EXT IPsec<br/></td></tr><tr><td>Identification and Authentication (FIA)</td><td>FIA_BMA_EXT Biometric Activation<br/>FIA_PSK_EXT Pre-Shared Key Composition<br/>FIA_X509_EXT X.509 Certificate Use and Management<br/></td></tr><tr><td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (FPT)</td><td>FPT_TST_EXT <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test<br/></td></tr><tr><td>Packet Filtering (FPF)</td><td>FPF_MFA_EXT Multifactor Authentication Filtering<br/></td></tr><tr><td>User Data Protection (FDP)</td><td>FDP_IFC_EXT Subset Information Flow Control<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This  defines the following extended components as part of the
+<table><caption><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">6</span></span>: Extended Component Definitions</b></caption><tr><th>Functional Class</th><th>Functional Components</th></tr><tr><td>Cryptographic Support (FCS)</td><td>FCS_CKM_EXT Cryptographic Key Management<br/>FCS_EAP_EXT EAP-TLS<br/>FCS_IPSEC_EXT IPsec<br/></td></tr><tr><td>Identification and Authentication (FIA)</td><td>FIA_BMA_EXT Biometric Activation<br/>FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys<br/>FIA_PSK_EXT Pre-Shared Key Composition<br/>FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys<br/>FIA_X509_EXT X.509 Certificate Use and Management<br/></td></tr><tr><td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (FPT)</td><td>FPT_TST_EXT <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test<br/></td></tr><tr><td>Packet Filtering (FPF)</td><td>FPF_MFA_EXT Multifactor Authentication Filtering<br/></td></tr><tr><td>User Data Protection (FDP)</td><td>FDP_IFC_EXT Subset Information Flow Control<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This  defines the following extended components as part of the
 	 FCS class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FCS_CKM_EXT" class="indexable" data-level="4">C.2.1.1 FCS_CKM_EXT Cryptographic Key Management</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe requirements for key management functionality such as key
 		storage and destruction.</div><h4>Component Leveling</h4><svg style="max-height: 50px;"><text x="4" fill="black" font-size="15" y="44">FCS_CKM_EXT</text><rect x="2" y="31" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">2</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="17" stroke="black"></line><text x="234" fill="black" font-size="15" y="44">4</text><rect x="232" y="31" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="37" stroke="black"></line></svg><p><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a>,
@@ -4613,7 +4615,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 				connection is greater than or equal to the strength of the symmetric algorithm
 				(in terms of the number of bits in the key) negotiated to protect the 
 				[<b>selection</b>: <i id="_s_261">IKEv1 Phase 2</i>, <i id="_s_262">IKEv2 CHILD_SA</i>] connection.
-            </div></div><h3 id="ext-comp-FCS_EAP_EXT" class="indexable" data-level="4">C.2.1.3 FCS_EAP_EXT EAP-TLS</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describes the requirements for EAP-TLS.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCS_EAP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a>,
+            </div></div><h3 id="ext-comp-FCS_EAP_EXT" class="indexable" data-level="4">C.2.1.3 FCS_EAP_EXT EAP-TLS</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe the requirements for EAP-TLS.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCS_EAP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a>,
              EAP-TLS,
              defines the use of EAP-TLS.</p><h4>Management: FCS_EAP_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FCS_EAP_EXT.1</h4><p>No specific audit functions are identified.
           </p><h4>FCS_EAP_EXT.1 EAP-TLS</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: <a href="#FCS_IPSEC_EXT.1.11">FCS_IPSEC_EXT.1.11</a> IPsec</p><h4 id="ext-comp-FCS_EAP_EXT.1.1">FCS_EAP_EXT.1.1</h4>
@@ -4722,6 +4724,83 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <h4 id="ext-comp-FIA_PSK_EXT.5.2">FIA_PSK_EXT.5.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
               [<b>selection</b>: <i id="sel-psk5-ext-e2-verify">verify the TOTP</i>, <i id="_s_306">verify the TOTP via an external authentication server</i>] before establishing an incoming connection.
+            </div></div><h3 id="ext-comp-FIA_HOTP_EXT" class="indexable" data-level="4">C.2.2.4 FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements the use of HMAC-Based One-Time password authentication, including generation methods and usage restrictions.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FIA_HOTP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a>,
+             HMAC-Based One-Time Password Pre-Shared Keys,
+              defines the implementation of HOTP.</p><h4>Management: FIA_HOTP_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_HOTP_EXT.1</h4><p>No specific audit funcations are identified.
+          </p><h4>FIA_HOTP_EXT.1 HMAC-Based One-Time Password Pre-Shared Keys</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: FCS_PSK_EXT.4 HOTP Support</p><h4 id="ext-comp-FIA_HOTP_EXT.1.1">FIA_HOTP_EXT.1.1</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support HMAC-Based One-Time Password authentication (HOTP) in accordance with <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4226 
+              to authenticate the user before establishing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
+            <h4 id="ext-comp-FIA_HOTP_EXT.1.2">FIA_HOTP_EXT.1.2</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a HOTP seed according to FCS_RBG_EXT.1 of 
+              [<b>selection</b>: <i id="_s_307">128</i>, <i id="_s_308">256</i>] bits.
+            <h4 id="ext-comp-FIA_HOTP_EXT.1.3">FIA_HOTP_EXT.1.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a new HOTP seed value for each client.
+            <h4 id="ext-comp-FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall utilize 
+              [<b>selection</b>: <i id="_s_309"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-1</i>, <i id="_s_310"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-256</i>, <i id="_s_311"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-384</i>, <i id="_s_312"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-512</i>] with key sizes 
+              [<b>assignment</b>: 
+     <span class="assignable-content">key size (in bits) used in HMAC</span>] and message digest sizes 
+              [<b>selection</b>: <i id="_s_313">160</i>, <i id="_s_314">256</i>, <i id="_s_315">384</i>, <i id="_s_316">512</i>] to derive a HOTP hash from the HOTP seed and counter.
+            <h4 id="ext-comp-FIA_HOTP_EXT.1.5">FIA_HOTP_EXT.1.5</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the HOTP hash per <a href="#FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</a> to create a HOTP of  
+              [<b>selection</b>: <ul><li style=""><i id="_s_317">administrator configurable chracter length of at least 6</i>, </li><li style=""><i id="_s_318">preset character length of
+                  [<b>selection</b>: <i id="_s_319">6</i>, <i id="_s_320">7</i>, <i id="_s_321">8</i>, <i id="_s_322">9</i>, <i id="_s_323">10</i>]
+                </i></li></ul>].
+            <h4 id="ext-comp-FIA_HOTP_EXT.1.6">FIA_HOTP_EXT.1.6</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
+              [<b>selection</b>: <ul><li style=""><i id="_s_324">throttle invalid requests to 
+                  [<b>selection</b>: <i id="_s_325">administrator configurable value</i>, <i id="_s_326">[<b>assignment</b>: 
+     <span class="assignable-content">value less than 10</span>]</i>] per minute</i>, </li><li style=""><i id="_s_327">lock the associated account after 
+                  [<b>selection</b>: <i id="_s_328">administrator configurable value</i>, <i id="_s_329">[<b>assignment</b>: 
+     <span class="assignable-content">value less than 10</span>]</i>] failed attempts until 
+                  [<b>selection</b>: <i id="_s_330">an administrator unlocks the account</i>, <i id="_s_331">a configurable time period</i>]
+                </i></li></ul>].
+            <h4 id="ext-comp-FIA_HOTP_EXT.1.7">FIA_HOTP_EXT.1.7</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not verify HOTP attempts outside of the counter look ahead window of 
+              [<b>selection</b>: <i id="_s_332">a configurable value</i>, <i id="_s_333">[<b>assignment</b>: 
+     <span class="assignable-content">a value less than or equal to 3</span>]</i>] for resynchronization.
+            <h4 id="ext-comp-FIA_HOTP_EXT.1.8">FIA_HOTP_EXT.1.8</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall increment the counter after each successful authentation.
+            </div></div><h3 id="ext-comp-FIA_TOTP_EXT" class="indexable" data-level="4">C.2.2.5 FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements the use of Time-Based One-Time password authentication, including generation methods and usage restrictions.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FIA_TOTP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a>,
+             Time-Based One-Time Password Pre-Shared Keys,
+              defines the implementation of TOTP</p><h4>Management: FIA_TOTP_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_TOTP_EXT.1</h4><p>No specific audit funcations are identified.
+          </p><h4>FIA_TOTP_EXT.1 Time-Based One-Time Password Pre-Shared Keys</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components.</p><p>Dependencies to: FCS_TOTP_EXT.1 TOTP Support</p><h4 id="ext-comp-FIA_TOTP_EXT.1.1">FIA_TOTP_EXT.1.1</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support Time-Based One-Time Password authentication in accordance with <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 6238 
+              to authenticate the user before establishing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
+            <h4 id="ext-comp-FIA_TOTP_EXT.1.2">FIA_TOTP_EXT.1.2</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a TOTP seed according to FCS_RBG_EXT.1 of 
+              [<b>selection</b>: <i id="_s_334">128</i>, <i id="_s_335">256</i>] bits.
+            <h4 id="ext-comp-FIA_TOTP_EXT.1.3">FIA_TOTP_EXT.1.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a new TOTP seed for each client.
+            <h4 id="ext-comp-FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall utilize 
+              [<b>selection</b>: <i id="_s_336"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-1</i>, <i id="_s_337"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-256</i>, <i id="_s_338"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-384</i>, <i id="_s_339"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-512</i>] with key sizes 
+              [<b>assignment</b>: 
+     <span class="assignable-content">key size (in bits) used in HMAC</span>] and message digest sizes 
+              [<b>selection</b>: <i id="_s_340">160</i>, <i id="_s_341">256</i>, <i id="_s_342">384</i>, <i id="_s_343">512</i>] to derive a TOTP hash from the TOTP seed and current time provided by NTP.
+            <h4 id="ext-comp-FIA_TOTP_EXT.1.5">FIA_TOTP_EXT.1.5</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the TOTP hash per <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a> to create a TOTP of  
+              [<b>selection</b>: <ul><li style=""><i id="_s_344">administrator configurable character length of at least 6</i>, </li><li style=""><i id="_s_345">preset character length of
+                  [<b>selection</b>: <i id="_s_346">6</i>, <i id="_s_347">7</i>, <i id="_s_348">8</i>, <i id="_s_349">9</i>, <i id="_s_350">10</i>]
+                </i></li></ul>]
+            <h4 id="ext-comp-FIA_TOTP_EXT.1.6">FIA_TOTP_EXT.1.6</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
+              [<b>selection</b>: <ul><li style=""><i id="_s_351">throttle invalid requests to 
+                  [<b>selection</b>: <i id="_s_352">administrator configurable value</i>, <i id="_s_353">[<b>assignment</b>: 
+     <span class="assignable-content">value less than 10</span>]</i>] per minute</i>, </li><li style=""><i id="_s_354">lock the associated account after 
+                  [<b>selection</b>: <i id="_s_355">administrator configurable value</i>, <i id="_s_356">[<b>assignment</b>: 
+     <span class="assignable-content">value less than 10</span>]</i>] failed attempts until 
+                  [<b>selection</b>: <i id="_s_357">an administrator unlocks the account</i>, <i id="_s_358">a configurable time period</i>]
+                </i></li></ul>].
+            <h4 id="ext-comp-FIA_TOTP_EXT.1.7">FIA_TOTP_EXT.1.7</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall set a time-step size of 
+              [<b>selection</b>: <i id="_s_359">a configurable value</i>, <i id="_s_360">[<b>assignment</b>: 
+     <span class="assignable-content">a value less than or equal to 30</span>]</i>] seconds.
+            <h4 id="ext-comp-FIA_TOTP_EXT.1.8">FIA_TOTP_EXT.1.8</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not validate a drift of more than 
+              [<b>selection</b>: <i id="_s_361">a configurable value</i>, <i id="_s_362">[<b>assignment</b>: 
+     <span class="assignable-content">a value less than or equal to 3</span>]</i>] time-steps.            
+            <h4 id="ext-comp-FIA_TOTP_EXT.1.9">FIA_TOTP_EXT.1.9</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
+              [<b>selection</b>: <i id="_s_363">allow resynchronization by recording time drift within the limit of FIA_TOTP_EXT.2.8</i>, <i id="_s_364">not permit resynchronization</i>].           
             </div></div><h3 id="ext-comp-FPT" class="indexable" data-level="3">C.2.3 Protection of the TSF (FPT)</h3>This  defines the following extended components as part of the
 	 FPT class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FPT_TST_EXT" class="indexable" data-level="4">C.2.3.1 FPT_TST_EXT TSF Self-Test</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe requirements for self-test to verify functionality and integrity of the
