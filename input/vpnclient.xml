@@ -15,11 +15,18 @@
     <ReferenceTable>
       <PPVersion>2.4-Draft</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2021-12-03</PPPubDate>
+      <PPPubDate>2021-12-15</PPPubDate>
       <Keywords>VPN, VPN Client</Keywords>
     </ReferenceTable>
   </PPReference>
   
+  <RevisionHistory>
+    <entry>
+      <version>2.4-draft</version>
+      <date>2021-12-15</date>
+      <subject>Incorporation of TC feedback</subject>
+    </entry>
+  </RevisionHistory>
   <RevisionHistory>
     <entry>
       <version>2.3</version>
@@ -4575,17 +4582,20 @@ expected to enforce.<h:p/>
           <audit-event/>
         </f-component>
         
+        <ext-comp-def title="HMAC-Based One-Time Password Pre-Shared Keys" fam-id="FIA_HOTP_EXT">
+          <fam-behavior>Components in this family define requirements the use of HMAC-Based One-Time password authentication, including generation methods and usage restrictions.</fam-behavior>
+        </ext-comp-def>
         <f-component cc-id="fia_hotp_ext.1" id="fia-hotp-ext-1" name="HMAC-Based One-Time Password Pre-Shared Keys">
           <depends on-sel="sel-verify-hotp"/>
           <consistency-rationale/>
-          <comp-lev>defines the implementation of hotp</comp-lev>
+          <comp-lev> defines the implementation of HOTP.</comp-lev>
           <management>No specific management functions are identified.</management>
           <audit>No specific audit funcations are identified.
           </audit>
           <dependencies>FCS_PSK_EXT.4 HOTP Support</dependencies>
           <f-element id="fia-hotp-ext-1e1">
             <title>
-              The TSF shall support HMAC-Based One-Time Password authentication in accordance with RFC4226 
+              The TSF shall support HMAC-Based One-Time Password authentication (HOTP) in accordance with RFC 4226 
               to authenticate the user before establishing VPN connection. 
             </title>
           </f-element>
@@ -4645,13 +4655,12 @@ expected to enforce.<h:p/>
                   <selectables>
                     <selectable>administrator configurable value</selectable>
                     <selectable><assignable>value less than 10</assignable></selectable>
-                  </selectables> per minute
-                </selectable>
+                  </selectables> per minute</selectable>
                 <selectable>lock the associated account after 
                   <selectables>
                     <selectable>administrator configurable value</selectable>
                     <selectable><assignable>value less than 10</assignable></selectable>
-                  </selectables>failed attempts until 
+                  </selectables> failed attempts until 
                   <selectables>
                     <selectable>an administrator unlocks the account</selectable>
                     <selectable>a configurable time period</selectable>
@@ -4710,17 +4719,21 @@ expected to enforce.<h:p/>
           </f-element>
           <audit-event/>
         </f-component>
+        
+        <ext-comp-def title="Time-Based One-Time Password Pre-Shared Keys" fam-id="FIA_TOTP_EXT">
+          <fam-behavior>Components in this family define requirements the use of Time-Based One-Time password authentication, including generation methods and usage restrictions.</fam-behavior>
+        </ext-comp-def>
         <f-component cc-id="fia_totp_ext.1" id="fia-totp-ext-1" name="Time-Based One-Time Password Pre-Shared Keys">
           <depends on-sel="sel-psk5-ext-e2-verify"/>
           <consistency-rationale/>
-          <comp-lev>defines the implementation of totp</comp-lev>
+          <comp-lev> defines the implementation of TOTP</comp-lev>
           <management>No specific management functions are identified.</management>
           <audit>No specific audit funcations are identified.
           </audit>
           <dependencies>FCS_TOTP_EXT.1 TOTP Support</dependencies>
           <f-element id="fia-totp-ext-1e1">
             <title>
-              The TSF shall support Time-Based One-Time Password authentication in accordance with RFC6238 
+              The TSF shall support Time-Based One-Time Password authentication in accordance with RFC 6238 
               to authenticate the user before establishing VPN connection. 
             </title>
           </f-element>
@@ -4780,13 +4793,12 @@ expected to enforce.<h:p/>
                   <selectables>
                     <selectable>administrator configurable value</selectable>
                     <selectable><assignable>value less than 10</assignable></selectable>
-                  </selectables> per minute
-                </selectable>
+                  </selectables> per minute</selectable>
                 <selectable>lock the associated account after 
                   <selectables>
                     <selectable>administrator configurable value</selectable>
                     <selectable><assignable>value less than 10</assignable></selectable>
-                  </selectables>failed attempts until 
+                  </selectables> failed attempts until 
                   <selectables>
                     <selectable>an administrator unlocks the account</selectable>
                     <selectable>a configurable time period</selectable>
@@ -4865,7 +4877,7 @@ expected to enforce.<h:p/>
         
         
         <ext-comp-def title="EAP-TLS" fam-id="FCS_EAP_EXT">
-          <fam-behavior>Components in this family describes the requirements for EAP-TLS.</fam-behavior>
+          <fam-behavior>Components in this family describe the requirements for EAP-TLS.</fam-behavior>
         </ext-comp-def>
 		
 		<!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
