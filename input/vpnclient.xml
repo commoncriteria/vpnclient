@@ -4431,6 +4431,145 @@ expected to enforce.<h:p/>
         The TOE may support pre-shared keys for use in the IPsec protocol, and may use pre-shared keys in other protocols as well.  
         PSK in the context of this document refer to generated values, memorized values subject to conditioning, one time passwords, 
         and combinations of the above as described in FIA_PSK_EXT.1.2.
+        
+        
+        <ext-comp-def title="HMAC-Based One-Time Password Pre-Shared Keys" fam-id="FIA_HOTP_EXT">
+          <fam-behavior>Components in this family define requirements the use of HMAC-Based One-Time password authentication, including generation methods and usage restrictions.</fam-behavior>
+        </ext-comp-def>
+        <f-component cc-id="fia_hotp_ext.1" id="fia-hotp-ext-1" name="HMAC-Based One-Time Password Pre-Shared Keys">
+          <depends on-sel="sel-verify-hotp"/>
+          <consistency-rationale/>
+          <comp-lev> defines the implementation of HOTP.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>No specific audit funcations are identified.
+          </audit>
+          <dependencies>FCS_PSK_EXT.4 HMAC Based One Time Password Pre-shared Keys Support</dependencies>
+          <f-element id="fia-hotp-ext-1e1">
+            <title>
+              The TSF shall support HMAC-Based One-Time Password authentication (HOTP) in accordance with RFC 4226 
+              to authenticate the user before establishing VPN connection. 
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e2">
+            <title>
+              The TSF shall generate a HOTP seed according to FCS_RBG_EXT.1 of 
+              <selectables>
+                <selectable>128</selectable>
+                <selectable>256</selectable>
+              </selectables> bits.
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e3">
+            <title>The TSF shall generate a new HOTP seed value for each client.
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e4">
+            <title>
+              The TSF shall utilize 
+              <selectables>
+                <selectable>SHA-1</selectable>
+                <selectable>SHA-256</selectable>
+                <selectable>SHA-384</selectable>
+                <selectable>SHA-512</selectable>
+              </selectables> with key sizes 
+              <assignable>key size (in bits) used in HMAC</assignable> and message digest sizes 
+              <selectables>
+                <selectable>160</selectable>
+                <selectable>256</selectable>
+                <selectable>384</selectable>
+                <selectable>512</selectable>
+              </selectables> to derive a HOTP hash from the HOTP seed and counter.
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e5">
+            <title>
+              The TSF shall truncate the HOTP hash per FIA_HOTP_EXT.1.4 to create a HOTP of  
+              <selectables>
+                <selectable>administrator configurable chracter length of at least 6</selectable>
+                <selectable>preset character length of
+                  <selectables>
+                    <selectable>6</selectable>
+                    <selectable>7</selectable>
+                    <selectable>8</selectable>
+                    <selectable>9</selectable>
+                    <selectable>10</selectable>
+                  </selectables>
+                </selectable>
+              </selectables>.
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e6">
+            <title>
+              The TSF shall 
+              <selectables>
+                <selectable>throttle invalid requests to 
+                  <selectables>
+                    <selectable>administrator configurable value</selectable>
+                    <selectable><assignable>value less than 10</assignable></selectable>
+                  </selectables> per minute</selectable>
+                <selectable>lock the associated account after 
+                  <selectables>
+                    <selectable>administrator configurable value</selectable>
+                    <selectable><assignable>value less than 10</assignable></selectable>
+                  </selectables> failed attempts until 
+                  <selectables>
+                    <selectable>an administrator unlocks the account</selectable>
+                    <selectable>a configurable time period</selectable>
+                  </selectables>
+                </selectable>
+              </selectables>.
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e7">
+            <title>
+              The TSF shall not verify HOTP attempts outside of the counter look ahead window of 
+              <selectables>
+                <selectable>a configurable value</selectable>
+                <selectable><assignable>a value less than or equal to 3</assignable></selectable>
+              </selectables> for resynchronization.
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e8">
+            <title>
+              The TSF shall increment the counter after each successful authentation.
+            </title>
+            
+            
+            <note role="application">
+              The selection FIA_HOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
+              <h:p/>In FIA_HOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
+              <h:p/>In FIA_HOTP_EXT.1.6 the ST may select throttle requests, account lockout, or both.
+              <h:p/>The HOTP seed and all derived values are considered secret keys for purposes of protection.
+              <h:p/>This requirement is selection dependent on FIA_PSK_EXT.4 or FPF_MFA_EXT.1<h:p/>
+            </note>
+            <aactivity>
+              <TSS>
+                <h:p/>The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
+                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1
+                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the base PP. 
+                <h:p/>The evaluator shall confirm the TSS describes how a new HOTP seed is assigned for each client and how each client is uniquely identified.
+                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is conditioned into a HOTP hash and verify it matches the selection in FIA_HOTP_EXT.1.4.
+                <h:p/>The evaluator shall confirm the TSS describes how the HOTP hash is truncated and verify it matches the selection in FIA_HOTP_EXT.1.5.
+                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles multiple incoming invalid requests and verify it provides anti-hammer mechanism that match the selections FIA_HOTP_EXT.1.6.
+                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles resynchronization and how it rejects attempts outside of the look-ahead window selected in FIA_TOTP_EXT.1.7
+                <h:p/>The evaluator shall confirm the TSS describes how the TOE how the counter is incremented after each successful authentication.
+              </TSS>
+              <Guidance>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the FIA_HOTP_EXT.1 requirements.
+              </Guidance>
+              <Tests>
+                The evaluator shall configure the TOE to use a supported HOTP factor then:
+                <testlist>
+                  <test>Attempt to establish a connection using a factor from a different client, the test passes if the client fails to connect.
+                  </test><test>Attempt multiple connections outside the boundary set in FIA_HOTP_EXT.1.6 and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
+                  </test><test>Attempt to use a HOTP that is outside of the value allowed with for resynchronization. The test passes if the client fails to connect.
+                  </test><test>Attempt to connect with a valid HOTP, disconnect and attempt to authenticate again with the same HOTP value.  The test passes if the client connects the first time and fails to connect the second time. If the HOTP generated is duplicated the test may be repeated.
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <audit-event/>
+        </f-component>
 	  
         <ext-comp-def title="Pre-Shared Key Composition" fam-id="FIA_PSK_EXT">
           <fam-behavior>Components in this family describes the requirements for pre-shared keys when implementing IPsec.</fam-behavior>
@@ -4783,144 +4922,7 @@ expected to enforce.<h:p/>
           </f-element>
           <audit-event/>
         </f-component>
-        
-        <ext-comp-def title="HMAC-Based One-Time Password Pre-Shared Keys" fam-id="FIA_HOTP_EXT">
-          <fam-behavior>Components in this family define requirements the use of HMAC-Based One-Time password authentication, including generation methods and usage restrictions.</fam-behavior>
-        </ext-comp-def>
-        <f-component cc-id="fia_hotp_ext.1" id="fia-hotp-ext-1" name="HMAC-Based One-Time Password Pre-Shared Keys">
-          <depends on-sel="sel-verify-hotp"/>
-          <consistency-rationale/>
-          <comp-lev> defines the implementation of HOTP.</comp-lev>
-          <management>No specific management functions are identified.</management>
-          <audit>No specific audit funcations are identified.
-          </audit>
-          <dependencies>FCS_PSK_EXT.4 HMAC Based One Time Password Pre-shared Keys Support</dependencies>
-          <f-element id="fia-hotp-ext-1e1">
-            <title>
-              The TSF shall support HMAC-Based One-Time Password authentication (HOTP) in accordance with RFC 4226 
-              to authenticate the user before establishing VPN connection. 
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e2">
-            <title>
-              The TSF shall generate a HOTP seed according to FCS_RBG_EXT.1 of 
-              <selectables>
-                <selectable>128</selectable>
-                <selectable>256</selectable>
-              </selectables> bits.
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e3">
-            <title>The TSF shall generate a new HOTP seed value for each client.
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e4">
-            <title>
-              The TSF shall utilize 
-              <selectables>
-                <selectable>SHA-1</selectable>
-                <selectable>SHA-256</selectable>
-                <selectable>SHA-384</selectable>
-                <selectable>SHA-512</selectable>
-              </selectables> with key sizes 
-              <assignable>key size (in bits) used in HMAC</assignable> and message digest sizes 
-              <selectables>
-                <selectable>160</selectable>
-                <selectable>256</selectable>
-                <selectable>384</selectable>
-                <selectable>512</selectable>
-              </selectables> to derive a HOTP hash from the HOTP seed and counter.
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e5">
-            <title>
-              The TSF shall truncate the HOTP hash per FIA_HOTP_EXT.1.4 to create a HOTP of  
-              <selectables>
-                <selectable>administrator configurable chracter length of at least 6</selectable>
-                <selectable>preset character length of
-                  <selectables>
-                    <selectable>6</selectable>
-                    <selectable>7</selectable>
-                    <selectable>8</selectable>
-                    <selectable>9</selectable>
-                    <selectable>10</selectable>
-                  </selectables>
-                </selectable>
-              </selectables>.
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e6">
-            <title>
-              The TSF shall 
-              <selectables>
-                <selectable>throttle invalid requests to 
-                  <selectables>
-                    <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable>
-                  </selectables> per minute</selectable>
-                <selectable>lock the associated account after 
-                  <selectables>
-                    <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable>
-                  </selectables> failed attempts until 
-                  <selectables>
-                    <selectable>an administrator unlocks the account</selectable>
-                    <selectable>a configurable time period</selectable>
-                  </selectables>
-                </selectable>
-              </selectables>.
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e7">
-            <title>
-              The TSF shall not verify HOTP attempts outside of the counter look ahead window of 
-              <selectables>
-                <selectable>a configurable value</selectable>
-                <selectable><assignable>a value less than or equal to 3</assignable></selectable>
-              </selectables> for resynchronization.
-            </title>
-          </f-element>
-          <f-element id="fia-hotp-ext-1e8">
-            <title>
-              The TSF shall increment the counter after each successful authentation.
-            </title>
-          
-            
-            <note role="application">
-              The selection FIA_HOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
-              <h:p/>In FIA_HOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
-              <h:p/>In FIA_HOTP_EXT.1.6 the ST may select throttle requests, account lockout, or both.
-              <h:p/>The HOTP seed and all derived values are considered secret keys for purposes of protection.
-              <h:p/>This requirement is selection dependent on FIA_PSK_EXT.4 or FPF_MFA_EXT.1<h:p/>
-            </note>
-            <aactivity>
-              <TSS>
-                <h:p/>The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
-                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1
-                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the base PP. 
-                <h:p/>The evaluator shall confirm the TSS describes how a new HOTP seed is assigned for each client and how each client is uniquely identified.
-                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is conditioned into a HOTP hash and verify it matches the selection in FIA_HOTP_EXT.1.4.
-                <h:p/>The evaluator shall confirm the TSS describes how the HOTP hash is truncated and verify it matches the selection in FIA_HOTP_EXT.1.5.
-                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles multiple incoming invalid requests and verify it provides anti-hammer mechanism that match the selections FIA_HOTP_EXT.1.6.
-                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles resynchronization and how it rejects attempts outside of the look-ahead window selected in FIA_TOTP_EXT.1.7
-                <h:p/>The evaluator shall confirm the TSS describes how the TOE how the counter is incremented after each successful authentication.
-                </TSS>
-              <Guidance>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the FIA_HOTP_EXT.1 requirements.
-              </Guidance>
-              <Tests>
-                The evaluator shall configure the TOE to use a supported HOTP factor then:
-                <testlist>
-                <test>Attempt to establish a connection using a factor from a different client, the test passes if the client fails to connect.
-                </test><test>Attempt multiple connections outside the boundary set in FIA_HOTP_EXT.1.6 and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
-                </test><test>Attempt to use a HOTP that is outside of the value allowed with for resynchronization. The test passes if the client fails to connect.
-                </test><test>Attempt to connect with a valid HOTP, disconnect and attempt to authenticate again with the same HOTP value.  The test passes if the client connects the first time and fails to connect the second time. If the HOTP generated is duplicated the test may be repeated.
-                </test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-          <audit-event/>
-        </f-component>
+     
         
         <ext-comp-def title="Time-Based One-Time Password Pre-Shared Keys" fam-id="FIA_TOTP_EXT">
           <fam-behavior>Components in this family define requirements the use of Time-Based One-Time password authentication, including generation methods and usage restrictions.</fam-behavior>
