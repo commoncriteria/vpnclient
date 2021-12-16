@@ -615,7 +615,7 @@ expected to enforce.<h:p/>
 			  FCS_CKM.1/1 (refined from App PP), FCS_CKM.2 (refined from App PP)
 			  FCS_CKM_EXT.1 (refined from App PP), FCS_COP.1/1 (refined from App PP)
 			  FCS_CKM.1 (refined from MDM PP), FCS_CKM.2 (refined from MDM PP)
-			  FCS_COP.1/1 (refined from MDM PP), FTP_ITT.1/1 (if applicable, refined from MDM PP)
+			  FCS_COP.1/1 (refined from MDM PP), FPT_ITT.1/1 (if applicable, refined from MDM PP)
 			  FTP_ITC.1/1 (if applicable, refined from MDM PP), FTP_TRP.1/1 (if applicable, refined from MDM PP)
 			  FCS_CKM.1/1, FCS_IPSEC_EXT.1.
 		  </description>
@@ -672,7 +672,7 @@ expected to enforce.<h:p/>
 			<rationale>This SFR supports the objective by requiring that the
 				TOE implement symmetric encryption and decryption using certain methods or invoke platform
 				functionality that provides this capability.</rationale>
-          <addressed-by>FTP_ITT.1/1 (if applicable, refined from MDM PP)</addressed-by>
+          <addressed-by>FPT_ITT.1/1 (if applicable, refined from MDM PP)</addressed-by>
 			<rationale>If the MDM TOE includes a claim of this PP-Module
 				to support protection of communications between distributed TOE components, this SFR supports the
 				objective by requiring the TOE to support the use of IPsec for that interface.</rationale>
@@ -984,6 +984,7 @@ expected to enforce.<h:p/>
                 </selectables>.
               </title>
               <note role="application">
+                This SFR is defined in the GPOS PP as FCS_COP.1(1); the formatting of iteration convention was updated to be consistent with the PP-Module's conventions. <h:p/> 
                 This SFR is identical to what is defined in the GPOS PP except that support for
                 CBC and GCM mode is mandatory in order to address the requirements for
                 FCS_IPSEC_EXT.1. In addition, both 128-bit and 256-bit for key sizes must be
@@ -1926,6 +1927,7 @@ expected to enforce.<h:p/>
                   </selectables>
                 </title>
                 <note role="application">
+                  This SFR is defined in the App PP as FCS_CKM.1(1); the formatting of iteration convention was updated to be consistent with the PP-Module's conventions. <h:p/>
                   This SFR is selection-based in the App PP depending on the selection made in
                   FCS_CKM_EXT.1. Because key generation services (whether implemented by the
                   TOE or invoked from the platform) are required for IPsec, this SFR is mandatory
@@ -2048,6 +2050,7 @@ expected to enforce.<h:p/>
                   and cryptographic key sizes [<h:i>128-bit, 256-bit</h:i>].
                 </title>
                 <note role="application">
+                  This SFR is defined in the App PP as FCS_COP.1(1); the formatting of iteration convention was updated to be consistent with the PP-Module's conventions. <h:p/>
                   This SFR is selection-based in the Base-PP and remains selection-based here because
                   this PP-Module allows for the possibility that the TSF relies on platform-provided
                   cryptographic algorithm services for its own implementation of IPsec. However, if
@@ -2562,6 +2565,7 @@ expected to enforce.<h:p/>
                 and cryptographic key sizes [<h:i>128-bit, 256-bit</h:i>].
               </title>
               <note role="application">
+                This SFR is defined in the MDM PP as FCS_COP.1(1); the formatting of iteration convention was updated to be consistent with the PP-Module's conventions. <h:p/>
                 This SFR is modified from its definition in the Base-PP by mandating support for both
                 128-bit and 256-bit implementations of AES-CBC (which this PP-Module requires for
                 the use of IKE and allows for the use of ESP) and AES-GCM (which this PP-Module
@@ -2644,38 +2648,43 @@ expected to enforce.<h:p/>
             <audit-event/>
           </f-component>
         </section>
-        
-        <section title="Trusted Path/Channels (FTP)" id="dm-m-ftp">
 
-		
-          <!-- 5.4.1.5 FTP_ITT.1(1) Basic Internal TSF Data Transfer Protection -->
-         <f-component cc-id="ftp_itt.1" iteration="1" id="dm-ftp-itt-1-1" name="Basic Internal TSF Data Transfer Protection">
+        <section title="Protection of the TSF (FPT)" id="dm-m-fpt">
+          
+          
+          <!-- 5.4.1.5 FPT_ITT.1(1) Basic Internal TSF Data Transfer Protection -->
+          <f-component cc-id="fpt_itt.1" iteration="1" id="dm-fpt-itt-1-1" name="Basic Internal TSF Data Transfer Protection">
             <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
               implement trusted channels.</consistency-rationale>
-            <f-element id="dm-ftp-itt-1e1i1">
-				<title>The TSF shall [<h:i>implement functionality using [IPsec as defined in the PP-Module for
-					VPN Client]</h:i>].
-                </title>
-				<note role="application">
-					When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
-					communications. However, this PP-Module does not specify that any one particular interface must be
-					implemented using IPsec. If the TOE is distributed and uses IPsec to secure communications between its
-					distributed components, <no-link>FTP_ITT.1(1)</no-link> is refined as above.<h:p/>
-					This SFR is selection-based in the Base-PP depending on the selections made in the
-					Base-PP requirement FTP_ITC_EXT.1. This is not changed by the PP-Module.<h:p/>
-					This SFR is modified from its definition in the Base-PP by mandating that the TSF
-					implement IPsec communications and by prohibiting the TOE from relying on
-					platform-provided functionality to implement this.
+            <f-element id="dm-fpt-itt-1e1i1">
+              <title>The TSF shall [<h:i>implement functionality using [IPsec as defined in the PP-Module for
+                VPN Client]</h:i>].
+              </title>
+              <note role="application">
+                This SFR is defined in the MDM PP as FPT_ITT.1(1); the formatting of iteration convention was updated to be consistent with the PP-Module's conventions. <h:p/>
+                When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
+                communications. However, this PP-Module does not specify that any one particular interface must be
+                implemented using IPsec. If the TOE is distributed and uses IPsec to secure communications between its
+                distributed components, <no-link>FPT_ITT.1(1)</no-link> is refined as above.<h:p/>
+                This SFR is selection-based in the Base-PP depending on the selections made in the
+                Base-PP requirement FTP_ITC_EXT.1. This is not changed by the PP-Module.<h:p/>
+                This SFR is modified from its definition in the Base-PP by mandating that the TSF
+                implement IPsec communications and by prohibiting the TOE from relying on
+                platform-provided functionality to implement this.
               </note>
               <aactivity>
-                Refer to the EA for <no-link>FTP_ITT.1(1)</no-link> in the MDM PP. Note that the PP-Module does not require any separate
-		testing for this if IPsec is not used to implement this function.
+                Refer to the EA for <no-link>FPT_ITT.1(1)</no-link> in the MDM PP. Note that the PP-Module does not require any separate
+                testing for this if IPsec is not used to implement this function.
                 <no-tests/>
               </aactivity>
             </f-element>
             <audit-event/>
-         </f-component>		  
-		  
+          </f-component>		  
+          
+        </section>
+
+        <section title="Trusted Path/Channels (FTP)" id="dm-m-ftp">
+
 
 	<!-- 5.4.1.6 FTP_ITC.1(1) Inter-TSF Trusted Channel (Authorized IT Entities) -->
           <f-component cc-id="ftp_itc.1" iteration="1" id="dm-ftp-itc-1-1" name=" Inter-TSF Trusted Channel (Authorized IT Entities)">
@@ -2731,6 +2740,7 @@ expected to enforce.<h:p/>
 				<assignable>list of services for which the TSF is able to initiate communications</assignable>.
               </title>
               <note role="application">
+                This SFR is defined in the MDM PP as FTP_ITC.1(1); the formatting of iteration convention was updated to be consistent with the PP-Module's conventions. <h:p/>
       			When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
 			communications. However, this PP-Module does not specify that any one particular interface must be
 			implemented using IPsec. If the TOE uses IPsec to secure communications between itself and external
@@ -2803,6 +2813,7 @@ expected to enforce.<h:p/>
 				to require the use of the trusted path for [all remote administration actions].
               </title>
               <note role="application">
+                This SFR is defined in the MDM PP as FTP_TRP.1(1); the formatting of iteration convention was updated to be consistent with the PP-Module's conventions. <h:p/>
 		      	When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
 			communications. However, this PP-Module does not specify that any one particular interface must be
 			implemented using IPsec. If the TOE uses IPsec to secure communications between itself and trusted
