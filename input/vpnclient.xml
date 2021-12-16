@@ -577,7 +577,9 @@ expected to enforce.<h:p/>
 			Addressed by: FIA_X509_EXT.3 (when GPOS PP is Base-PP), FDP_IFC_EXT.1 (refined
 			from MDF PP), FIA_X509_EXT.2 (refined from MDF PP),
 			FIA_X509_EXT.2 (refined from App PP), FIA_X509_EXT.2 (refined from MDM PP),
-			FCS_IPSEC_EXT.1, FIA_PSK_EXT.1 (optional).
+			FCS_IPSEC_EXT.1, FIA_BMA_EXT.1 (optional), FPF_MFA_EXT.1 (optional), FIA_HOTP_EXT.1 (selection-based), FIA_PSK_EXT.1 (selection-based), 
+			FIA_PSK_EXT.2 (selection-based), FIA_PSK_EXT.3 (selection-based), FIA_PSK_EXT.4 (selection-based), FIA_PSK_EXT.5 (selection-based),
+			FIA_TOTP_EXT.1 (selection-based).
           </description>
 		  <consistency-rationale>Consistency rationale for O.AUTHENTICATION.</consistency-rationale>
           <addressed-by>FIA_X509_EXT.3 (when GPOS PP is Base-PP)</addressed-by>
@@ -599,10 +601,32 @@ expected to enforce.<h:p/>
 			<rationale>This SFR supports the objective by requiring the
 				TOE’s implementation of IPsec to include requirements for how the remote VPN gateway or
 				peer is authenticated.</rationale>
-          <addressed-by>FIA_PSK_EXT.1 (optional)</addressed-by>
-			<rationale>This SFR supports the objective by optionally
-				requiring support for pre-shared keys as an alternate authentication method for IPsec.</rationale>
-        </SO>
+          <addressed-by>FIA_BMA_EXT.1 (optional)</addressed-by>
+          <rationale>This SFR supports the objective by optionally defining the TOE's support for a platform-based biometric mechanism to use as an authentication mechanism.</rationale>
+        <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by>
+        <rationale>This SFR supports the objective by optionally enforcing a multi-factor authentication requirement on an IPsec connection.</rationale>
+          
+          <addressed-by>FIA_HOTP_EXT.1 (selection-based)</addressed-by>
+          <rationale>This SFR supports the objective by optionally defining the implementation of HOTP as an authentication mechanism.</rationale>
+          
+          <addressed-by>FIA_PSK_EXT.1 (selection-based)</addressed-by>
+          <rationale>This SFR supports the objective by optionally
+            requiring support for pre-shared keys as an alternate authentication method for IPsec.</rationale>
+          <addressed-by>FIA_PSK_EXT.2 (selection-based)</addressed-by>
+          <rationale>This SFR supports the objective by optionally specifying whether the TOE generates its own pre-shared keys used for authentication or accespt them from an external source.</rationale>
+          <addressed-by>FIA_PSK_EXT.3 (selection-based)</addressed-by>
+          <rationale>This SFR supports the objective by optionally defining the composition and use of password-based pre-shared keys used for authentication.</rationale>
+          <addressed-by>FIA_PSK_EXT.4 (selection-based)</addressed-by>
+          <rationale>This SFR supports the objective by optionally
+            defining HOTP as an authentication mechanism.</rationale>
+          <addressed-by>FIA_PSK_EXT.5 (selection-based)</addressed-by>
+          <rationale>This SFR supports the objective by optionally
+            defining TOTP as an authentication mechanism.</rationale>
+          
+          <addressed-by>FIA_TOTP_EXT.1 (selection-based)</addressed-by>
+          <rationale>This SFR supports the objective by optionally defining the implementation of TOTP as an authentication mechanism.</rationale>
+          
+          </SO>
         <SO name="O.CRYPTOGRAPHIC_FUNCTIONS">
           <description>To address the issues associated with unauthorized disclosure of information in transit, a compliant
             TOE will implement cryptographic capabilities. These capabilities are intended to maintain
@@ -613,11 +637,11 @@ expected to enforce.<h:p/>
 			  FCS_CKM.1 (refined from MDF PP), FCS_CKM.2/UNLOCKED (refined from MDF PP)
 			  FCS_COP.1/ENCRYPT (refined from MDF PP), FTP_ITC_EXT.1 (refined from MDF PP)
 			  FCS_CKM.1/1 (refined from App PP), FCS_CKM.2 (refined from App PP)
-			  FCS_CKM_EXT.1 (refined from App PP), FCS_COP.1/1 (refined from App PP)
+			  FCS_CKM_EXT.1 (refined from App PP), FCS_COP.1/1 (refined from App PP), FTP_DIT_EXT.1 (refined from App PP),
 			  FCS_CKM.1 (refined from MDM PP), FCS_CKM.2 (refined from MDM PP)
 			  FCS_COP.1/1 (refined from MDM PP), FPT_ITT.1/1 (if applicable, refined from MDM PP)
 			  FTP_ITC.1/1 (if applicable, refined from MDM PP), FTP_TRP.1/1 (if applicable, refined from MDM PP)
-			  FCS_CKM.1/1, FCS_IPSEC_EXT.1.
+			  FCS_CKM.1/VPN, FCS_IPSEC_EXT.1, FCS_EAP_EXT.1 (selection-based).
 		  </description>
 		  <consistency-rationale>Consistency rationale for O.CRYPTOGRAPHIC_FUNCTIONS.</consistency-rationale>
           <addressed-by>FCS_CKM.1 (refined from GPOS PP)</addressed-by>
@@ -660,6 +684,10 @@ expected to enforce.<h:p/>
 			<rationale>This SFR supports the objective by requiring that the
 				TOE implement symmetric encryption and decryption using certain methods.
 				</rationale>
+          <addressed-by>FTP_DIT_EXT.1 (refined from App PP)</addressed-by>
+          <rationale>This SFR supports the objective by requiring the TOE
+            to support the use of IPsec as a trusted channel.
+          </rationale>
           <addressed-by>FCS_CKM.1 (refined from MDM PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to implement key generation using certain methods or to support invoking this function from its OS
@@ -685,12 +713,14 @@ expected to enforce.<h:p/>
 			<rationale>If the MDM TOE includes a claim of this PP-Module
 				to support protection of communications between remote administrators and the TOE, this	SFR
 				supports the objective by requiring the TOE to support the use of IPsec for that interface.</rationale>
-          <addressed-by>FCS_CKM.1/1</addressed-by>
+          <addressed-by>FCS_CKM.1/VPN</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to generate keys used for IKE using certain methods.</rationale>
           <addressed-by>FCS_IPSEC_EXT.1</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to implement the IPsec protocol in the specified manner.</rationale>
+          <addressed-by>FCS_EAP_EXT.1</addressed-by>
+          <rationale>This SFR supports the objective by defining the TOE's implementation of EAP-TLS or EAP-TTLS.</rationale>
         </SO>
         <SO name="O.KNOWN_STATE">
           <description>The TOE will provide sufficient measures to ensure it is operating in a known state. At minimum this
@@ -724,10 +754,9 @@ expected to enforce.<h:p/>
             implement measures to protect against the disclosure of stored cryptographic keys and data
             through implementation of protected storage and secure erasure methods. The TOE may optionally
             also enforce split-tunneling prevention to ensure that data in transit cannot be disclosed
-            inadvertently outside of the IPsec tunnel. <h:p/>
-			Addressed by: FCS_CKM_EXT.2 (when GPOS PP is Base-PP), FCS_CKM_EXT.2 (when App PP is BasePP),
-			FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_IFC_EXT.1/VPN (optional), 
-		  	FDP_IFC_EXT.1/ALL (when MDF PP is BasePP), FDP_RIP.2.
+            inadvertently outside of the IPsec tunnel and prohibit transmission of packets through a connection until certain conditions are met. <h:p/>
+            Addressed by: FCS_CKM_EXT.2 (when GPOS PP is Base-PP), FDP_IFC_EXT.1/ALL (when MDF PP is Base-PP), FCS_CKM_EXT.2 (when App PP is Base-PP),
+            FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_RIP.2, FDP_IFC_EXT.1/VPN (optional), FPF_MFA_EXT.1 (optional).
           </description>
 		  <consistency-rationale>This objective is consistent with the O.PROTECTED_STORAGE objective of
 			the Base-PP, which ensures that sensitive data is not disclosed without
@@ -735,23 +764,26 @@ expected to enforce.<h:p/>
 			<addressed-by>FCS_CKM_EXT.2 (when GPOS PP is Base-PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to store sensitive data in the operating system’s key storage.</rationale>
-          <addressed-by>FCS_CKM_EXT.2 (when App PP is BasePP)</addressed-by>
+          <addressed-by>FDP_IFC_EXT.1/ALL (when MDF is Base-PP)</addressed-by>
+          <rationale>This SFR supports the objective by 
+            requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
+            established IPsec tunnel.</rationale>
+          <addressed-by>FCS_CKM_EXT.2 (when App PP is Base-PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				or its platform to store sensitive data in the operating system’s key storage.</rationale>
           <addressed-by>FCS_CKM_EXT.4 (when App PP is Base-PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				or its platform to zeroize key data when no longer needed.</rationale>
-          <addressed-by>FDP_IFC_EXT.1/VPN (optional)</addressed-by>
-			<rationale>This SFR supports the objective by optionally
-				requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
-				established IPsec tunnel.</rationale>
-          <addressed-by>FDP_IFC_EXT.1/ALL (when MDF is BasePP)</addressed-by>
-			<rationale>This SFR supports the objective by 
-				requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
-				established IPsec tunnel.</rationale>
           <addressed-by>FDP_RIP.2</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE or its platform to ensure that
 				residual data is purged from the system.</rationale>
+          <addressed-by>FDP_IFC_EXT.1/VPN (optional)</addressed-by>
+          <rationale>This SFR supports the objective by optionally
+            requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
+            established IPsec tunnel.</rationale>
+          <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by>
+          <rationale>This SFR supports the objective by optionally
+            requiring the TOE to prohibit transmission of packet data aside from those packets needed to perform multi-factor authentication.</rationale>
         </SO>
       </SOs>
     </sec:Security_Objectives_for_the_TOE>
@@ -1334,9 +1366,27 @@ expected to enforce.<h:p/>
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the GPOS PP that would prevent this functionality from
 		being supported.</con-mod>
+      
+      
+      <con-mod ref="fia-bma-ext-1">This SFR relates to biometric authentication, which does not conflict with the Base-PP because it may be a function offered by the 
+        part of the TOE described by the Base-PP.</con-mod>
+      <con-mod ref="fpf-mfa-ext-1">This SFR relates specifically to the handling of traffic that is used for the
+        establishment of IPsec connections.</con-mod>
 
       <con-mod ref="fia-psk-ext-1">This SFR defines the use of pre-shared keys, which is behavior that only
 		relates to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-2">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-3">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-4">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-5">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-hotp-ext-1">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-totp-ext-1">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
     </base-pp>
 
     <!-- 5.2 MDF PP Security Functional Requirements Direction -->
@@ -1800,7 +1850,7 @@ expected to enforce.<h:p/>
 		includes the A.CONFIG assumption which assumes that all security functions are appropriately configured.</con-mod>
 		
 	  <!-- 6.2.3 Consistency of Objectives -->
-      <con-mod ref="O.AUTHENTICATION ">This objective is consistent with the O.AUTH objective of the BasePP, which also expects that trusted remote channels will enforce
+      <con-mod ref="O.AUTHENTICATION ">This objective is consistent with the O.AUTH objective of the Base-PP, which also expects that trusted remote channels will enforce
 		authentication of remote endpoints.</con-mod>
       <con-mod ref="O.CRYPTOGRAPHIC_FUNCTIONS">This objective is consistent with the O.COMMS objective of the
 		Base-PP, which also expects that secure cryptographic functions are used to implement trusted communications.</con-mod>
@@ -1833,6 +1883,12 @@ expected to enforce.<h:p/>
 		certificate authentication is used.</con-mod>
       <con-mod ref="md-ftp-itc-ext-1">This PP-Module adds IPsec as a new protocol that is used to implement
 		trusted channels.</con-mod>
+      
+      <con-mod ref="md-ftp-itc-ext-1-all">The ability of the VPN client to prevent split tunneling of IPsec traffic
+        requires it to have hooks into lower-level mobile device behavior, but there
+        are no requirements in the MDF PP that would prevent this functionality
+        from being supported.</con-mod>
+      
 		
 	<con-mod ref="fcs-ckm-1-vpn">This SFR defines the method of key generation for IKE peer authentication,
 		which is a function that does not interfere with the functionality defined in
@@ -1854,13 +1910,27 @@ expected to enforce.<h:p/>
 		does not interfere with MDM functionality. The MDF PP already contains
 		FAU_SEL.1 as an objective SFR which means that this functionality does not
 		conflict with the expected behavior of a mobile device.</con-mod>
-      <con-mod ref="fdp-ifc-ext-1-vpn">The ability of the VPN client to prevent split tunneling of IPsec traffic
-		requires it to have hooks into lower-level mobile device behavior, but there
-		are no requirements in the MDF PP that would prevent this functionality
-		from being supported.</con-mod>
+      <con-mod ref="fdp-ifc-ext-1-vpn">This SFR will not be claimed when the TOE conforms to the MDF PP because this functionality is covered by the requirement FDP_IFC_EXT.1/ALL.</con-mod>
 		
+      <con-mod ref="fia-bma-ext-1">This SFR relates to biometric authentication, which does not conflict with the Base-PP because it may be a function offered by the 
+        part of the TOE described by the Base-PP.</con-mod>
+      <con-mod ref="fpf-mfa-ext-1">This SFR relates specifically to the handling of traffic that is used for the
+        establishment of IPsec connections.</con-mod>
+      
       <con-mod ref="fia-psk-ext-1">This SFR defines the use of pre-shared keys, which is behavior that only
-		relates to the establishment of IPsec connections.</con-mod>
+        relates to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-2">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-3">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-4">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-5">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-hotp-ext-1">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-totp-ext-1">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
     </base-pp>
 
     <!-- 5.3 App PP Security Functional requirements Direction -->
@@ -2409,8 +2479,25 @@ expected to enforce.<h:p/>
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the App PP that would prevent this functionality from being supported.</con-mod>
 
+      <con-mod ref="fia-bma-ext-1">This SFR relates to biometric authentication, which does not conflict with the Base-PP because it may be a function offered by the 
+        operational environment in which a TOE defined by the Base-PP is deployed.</con-mod>
+      <con-mod ref="fpf-mfa-ext-1">This SFR relates specifically to the handling of traffic that is used for the
+        establishment of IPsec connections.</con-mod>
+      
       <con-mod ref="fia-psk-ext-1">This SFR defines the use of pre-shared keys, which is behavior that only
-		relates to the establishment of IPsec connections.</con-mod>
+        relates to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-2">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-3">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-4">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-5">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-hotp-ext-1">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-totp-ext-1">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
 
     </base-pp>
 
@@ -2838,7 +2925,7 @@ expected to enforce.<h:p/>
       		 
       <!-- 5.4.2 Additional SFRs -->
       <additional-sfrs/>
-<!--        There are no additional SFRs that must be claimed only in cases where the MDM PP is the claimed BasePP.
+<!--        There are no additional SFRs that must be claimed only in cases where the MDM PP is the claimed Base-PP.
       </additional-sfrs>  -->
 	  
 	  <!-- 6.4 MDM Base -->
@@ -2956,8 +3043,26 @@ expected to enforce.<h:p/>
 		requirements in the MDM PP that would prevent this functionality from
 		being supported.</con-mod>
 
+
+      <con-mod ref="fia-bma-ext-1">This SFR relates to biometric authentication, which does not conflict with the Base-PP because it may be a function offered by the 
+        part of the TOE described by the Base-PP.</con-mod>
+      <con-mod ref="fpf-mfa-ext-1">This SFR relates specifically to the handling of traffic that is used for the
+        establishment of IPsec connections.</con-mod>
+      
       <con-mod ref="fia-psk-ext-1">This SFR defines the use of pre-shared keys, which is behavior that only
-		relates to the establishment of IPsec connections.</con-mod>
+        relates to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-2">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-3">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-4">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-psk-ext-5">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-hotp-ext-1">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
+      <con-mod ref="fia-totp-ext-1">This SFR relates to use of pre-shared keys, which is behavior that only
+        applies to the establishment of IPsec connections.</con-mod>
 
     </base-pp>
 
@@ -4135,6 +4240,45 @@ expected to enforce.<h:p/>
 	  <!-- A.1: Strictly Optional Requirements -->
     <opt-sfrs>
       
+      <section title="Identification and Authentication (FIA)" id="o-fia">
+        The TOE may support leveraging the biometric API provided by the platform.
+        
+        <ext-comp-def title="Biometric Activation" fam-id="FIA_BMA_EXT">
+          <fam-behavior>Components in this family describes the requirements for biometrics when utilizing the VPN client.</fam-behavior>
+        </ext-comp-def>
+        
+        
+        <f-component cc-id="fia_bma_ext.1" id="fia-bma-ext-1" name="Biometric Activation">
+          <consistency-rationale/>
+          <comp-lev>defines the use of biometrics when utilizing the VPN client</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>No specific audit functions are identified.
+          </audit>
+          <f-element id="fia-bma-ext-1e1">
+            <title>
+              The TSF shall leverage the platform biometric features to confirm the user before initiating a trusted channel.
+            </title>
+            
+            <note role="application">
+              In this context the platform refers to the OS or device and may be part of the TOE if those Base-PPs are leveraged.<h:p/>
+            </note>
+            <aactivity>
+              <TSS>The evaluator shall confirm that the TSS describes the calls to the platform and verifies they align with platform documentation.
+              </TSS>
+              <Guidance>The evaluator shall ensure that any configuration details needed to enable the biometric prompt are included in the guidance documentation.
+              </Guidance>
+              <Tests>
+                <testlist>
+                  <test>The evaluator shall initiate a connection and verify that a biometric prompt is presented and accepted before the connection can proceed.  The evaluator shall also verify the connection does not proceed if the biometric is not presented or accepted.</test>
+                </testlist>
+              </Tests>
+            </aactivity>
+            
+          </f-element>
+          <audit-event/>
+        </f-component>
+      </section>
+      
       <section title="Packet Filtering (FPF)" id="s-fpf">
         The TOE may support multifactor authentication by blocking all other traffic after connection is established until secondary authentication is validated.
         
@@ -4180,46 +4324,7 @@ expected to enforce.<h:p/>
       </f-component>
       </section>
       
-      
-      
-      <section title="Identification and Authentication (FIA)" id="o-fia">
-        The TOE may support leveraging the biometric API provided by the platform.
-        
-        <ext-comp-def title="Biometric Activation" fam-id="FIA_BMA_EXT">
-          <fam-behavior>Components in this family describes the requirements for biometrics when utilizing the VPN client.</fam-behavior>
-        </ext-comp-def>
-        
-            
-        <f-component cc-id="fia_bma_ext.1" id="fia-bma-ext-1" name="Biometric Activation">
-          <consistency-rationale/>
-          <comp-lev>defines the use of biometrics when utilizing the VPN client</comp-lev>
-          <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.
-          </audit>
-          <f-element id="fia-bma-ext-1e1">
-            <title>
-              The TSF shall leverage the platform biometric features to confirm the user before initiating a trusted channel.
-            </title>
-                 
-          <note role="application">
-            In this context the platform refers to the OS or device and may be part of the TOE if those base PPs are leveraged.<h:p/>
-          </note>
-          <aactivity>
-            <TSS>The evaluator shall confirm that the TSS describes the calls to the platform and verifies they align with platform documentation.
-            </TSS>
-            <Guidance>The evaluator shall ensure that any configuration details needed to enable the biometric prompt are included in the guidance documentation.
-            </Guidance>
-            <Tests>
-              <testlist>
-              <test>The evaluator shall initiate a connection and verify that a biometric prompt is presented and accepted before the connection can proceed.  The evaluator shall also verify the connection does not proceed if the biometric is not presented or accepted.</test>
-              </testlist>
-            </Tests>
-          </aactivity>
-            
-          </f-element>
-          <audit-event/>
-        </f-component>
-      </section>
+    
     </opt-sfrs>
 
 	<!-- Appendix B: Selection-Based Requirements -->
@@ -4917,7 +5022,7 @@ expected to enforce.<h:p/>
                 <selectable>EAP-TLS</selectable>
                 <selectable>EAP-TTLS</selectable>
               </selectables>
-              exchange using the RBGspecified in FCS_RBG_EXT.1.
+              exchange using the RBG specified in FCS_RBG_EXT.1.
             </title>
           </f-element>
           <f-element id="fcs-eap-ext-1e3">
@@ -4928,7 +5033,7 @@ expected to enforce.<h:p/>
                 <selectable>HOTP</selectable>
                 <selectable>TOTP</selectable>
                 <selectable><assignable>other Authentication-verification protocols</assignable></selectable>
-                <selectable>no other authentication></selectable>
+                <selectable>no other authentication</selectable>
               </selectables>
               as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package.
             </title>
@@ -5203,7 +5308,7 @@ expected to enforce.<h:p/>
         </ext-comp-def>
 		
 		<!-- A.2.2.1 FDP_IFC_EXT.1 Subset Information Flow Control -->
-        <f-component cc-id="fdp_ifc_ext.1" id="fdp-ifc-ext-1" name="Subset Information Flow Control">
+        <f-component cc-id="fdp_ifc_ext.1" id="fdp-ifc-ext-1-vpn" iteration="VPN" name="Subset Information Flow Control">
           <consistency-rationale/>
           <comp-lev>requires the TSF to process all IP traffic through its VPN client
             functionality.</comp-lev>
@@ -5345,13 +5450,13 @@ expected to enforce.<h:p/>
 		<h:li>GPOS PP: The GPOS PP implicitly defines the
 			existence of ‘user’ and ‘administrator’ roles in the
 			extended SFRs FMT_MOF_EXT.1 and
-			FMT_SMF_EXT.1. A TOE that conforms to this BasePP can associate the ability to perform the
+			FMT_SMF_EXT.1. A TOE that conforms to this Base-PP can associate the ability to perform the
 			functionality defined by FAU_SEL.1/VPN to one or
 			both of these roles.</h:li>
 		<h:li>MDF PP: The GPOS PP implicitly defines the existence
 			of ‘user,’ ‘administrator,’ and ‘MDM’ roles in the
 			extended SFRs FMT_MOF_EXT.1 and
-			FMT_SMF_EXT.1. A TOE that conforms to this BasePP can associate the ability to perform the
+			FMT_SMF_EXT.1. A TOE that conforms to this Base-PP can associate the ability to perform the
 			functionality defined by FAU_SEL.1/VPN to one or
 			more of these roles.</h:li>
 		<h:li>App PP: The App PP does not define the existence of
