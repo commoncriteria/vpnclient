@@ -577,7 +577,7 @@ expected to enforce.<h:p/>
 			Addressed by: FIA_X509_EXT.3 (when GPOS PP is Base-PP), FDP_IFC_EXT.1 (refined
 			from MDF PP), FIA_X509_EXT.2 (refined from MDF PP),
 			FIA_X509_EXT.2 (refined from App PP), FIA_X509_EXT.2 (refined from MDM PP),
-			FCS_IPSEC_EXT.1, FIA_BMA_EXT.1 (optional), FPF_MFA_EXT.1 (optional), FIA_HOTP_EXT.1 (selection-based), FIA_PSK_EXT.1 (selection-based), 
+			FCS_IPSEC_EXT.1, FIA_BMA_EXT.1 (optional), FPF_MFA_EXT.1 (optional), FCS_EAP_EXT.1 (selection-based), FIA_HOTP_EXT.1 (selection-based), FIA_PSK_EXT.1 (selection-based), 
 			FIA_PSK_EXT.2 (selection-based), FIA_PSK_EXT.3 (selection-based), FIA_PSK_EXT.4 (selection-based), FIA_PSK_EXT.5 (selection-based),
 			FIA_TOTP_EXT.1 (selection-based).
           </description>
@@ -605,6 +605,9 @@ expected to enforce.<h:p/>
           <rationale>This SFR supports the objective by optionally defining the TOE's support for a platform-based biometric mechanism to use as an authentication mechanism.</rationale>
         <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by>
         <rationale>This SFR supports the objective by optionally enforcing a multi-factor authentication requirement on an IPsec connection.</rationale>
+          
+          <addressed-by>FCS_EAP_EXT.1 (selection-based)</addressed-by>
+          <rationale>This SFR supports the objective by optionally implementing EAP-TLS or EAP-TTLS as a mechanism for authentication.</rationale>
           
           <addressed-by>FIA_HOTP_EXT.1 (selection-based)</addressed-by>
           <rationale>This SFR supports the objective by optionally defining the implementation of HOTP as an authentication mechanism.</rationale>
@@ -719,8 +722,8 @@ expected to enforce.<h:p/>
           <addressed-by>FCS_IPSEC_EXT.1</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to implement the IPsec protocol in the specified manner.</rationale>
-          <addressed-by>FCS_EAP_EXT.1</addressed-by>
-          <rationale>This SFR supports the objective by defining the TOE's implementation of EAP-TLS or EAP-TTLS.</rationale>
+          <addressed-by>FCS_EAP_EXT.1 (selection-based)</addressed-by>
+          <rationale>This SFR supports the objective by optionally defining the TOE's implementation of EAP-TLS or EAP-TTLS.</rationale>
         </SO>
         <SO name="O.KNOWN_STATE">
           <description>The TOE will provide sufficient measures to ensure it is operating in a known state. At minimum this
