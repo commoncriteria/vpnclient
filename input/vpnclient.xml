@@ -4360,7 +4360,7 @@ expected to enforce.<h:p/>
         and combinations of the above as described in FIA_PSK_EXT.1.2.
 	  
         <ext-comp-def title="Pre-Shared Key Composition" fam-id="FIA_PSK_EXT">
-          <fam-behavior>Components in this family describes the requirements for pre-shared keys when implementing IPsec</fam-behavior>
+          <fam-behavior>Components in this family describes the requirements for pre-shared keys when implementing IPsec.</fam-behavior>
         </ext-comp-def>
 		
 		<!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
@@ -4371,7 +4371,7 @@ expected to enforce.<h:p/>
           <management>No specific management functions are identified.</management>
           <audit>No specific audit functions are identified.
           </audit>
-          <dependencies>FCS_IPSEC_EXT.1.11 IPsec</dependencies>
+          <dependencies>FCS_IPSEC_EXT.1 IPsec</dependencies>
           <f-element id="fia-psk-ext-1e1">
             <title>
               The TSF shall be able to use pre-shared keys for IPsec and 
@@ -4721,7 +4721,7 @@ expected to enforce.<h:p/>
           <management>No specific management functions are identified.</management>
           <audit>No specific audit funcations are identified.
           </audit>
-          <dependencies>FCS_PSK_EXT.4 HOTP Support</dependencies>
+          <dependencies>FCS_PSK_EXT.4 HMAC Based One Time Password Pre-shared Keys Support</dependencies>
           <f-element id="fia-hotp-ext-1e1">
             <title>
               The TSF shall support HMAC-Based One-Time Password authentication (HOTP) in accordance with RFC 4226 
@@ -4818,7 +4818,7 @@ expected to enforce.<h:p/>
               <h:p/>In FIA_HOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
               <h:p/>In FIA_HOTP_EXT.1.6 the ST may select throttle requests, account lockout, or both.
               <h:p/>The HOTP seed and all derived values are considered secret keys for purposes of protection.
-              <h:p/>This requirement is selection dependent on FCS_PSK_EXT.4 or FPF_MFA_EXT.1<h:p/>
+              <h:p/>This requirement is selection dependent on FIA_PSK_EXT.4 or FPF_MFA_EXT.1<h:p/>
             </note>
             <aactivity>
               <TSS>
@@ -5017,7 +5017,7 @@ expected to enforce.<h:p/>
           <management>No specific management functions are identified.</management>
           <audit>No specific audit functions are identified.
           </audit>
-          <dependencies>FCS_IPSEC_EXT.1.11 IPsec</dependencies>
+          <dependencies>FCS_IPSEC_EXT.1 IPsec</dependencies>
           <f-element id="fcs-eap-ext-1e1">
             <title>
               The TSF shall implement
