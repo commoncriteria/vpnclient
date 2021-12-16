@@ -4235,7 +4235,7 @@ expected to enforce.<h:p/>
         </ext-comp-def>
 		
 		<!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
-        <f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition" status="sel-based">
+        <f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition">
           <depends on-sel="sel-ipsec-e11-psk"/>
           <consistency-rationale/>
           <comp-lev>defines the use and composition of pre-shared keys used for IPsec</comp-lev>
@@ -4507,7 +4507,7 @@ expected to enforce.<h:p/>
           
             
             <note role="application">
-              If verify the HOTP is selected then FIA_HOTP_EXT.1 must be included.
+              If "verify the HOTP..." is selected, then FIA_HOTP_EXT.1 must be included.
               
               <h:p/>This requirement is selection dependent on FIA_PSK_EXT.1
             </note>
@@ -4726,14 +4726,14 @@ expected to enforce.<h:p/>
         <f-component cc-id="fia_totp_ext.1" id="fia-totp-ext-1" name="Time-Based One-Time Password Pre-Shared Keys">
           <depends on-sel="sel-psk5-ext-e2-verify"/>
           <consistency-rationale/>
-          <comp-lev> defines the implementation of TOTP</comp-lev>
+          <comp-lev> defines the implementation of TOTP.</comp-lev>
           <management>No specific management functions are identified.</management>
           <audit>No specific audit funcations are identified.
           </audit>
           <dependencies>FCS_TOTP_EXT.1 TOTP Support</dependencies>
           <f-element id="fia-totp-ext-1e1">
             <title>
-              The TSF shall support Time-Based One-Time Password authentication in accordance with RFC 6238 
+              The TSF shall support Time-Based One-Time Password (TOTP) authentication in accordance with RFC 6238 
               to authenticate the user before establishing VPN connection. 
             </title>
           </f-element>
@@ -4782,7 +4782,7 @@ expected to enforce.<h:p/>
                     <selectable>10</selectable>
                   </selectables>
                 </selectable>
-              </selectables>
+              </selectables>.
             </title>
           </f-element>
           <f-element id="fia-totp-ext-1e6">
@@ -4881,7 +4881,7 @@ expected to enforce.<h:p/>
         </ext-comp-def>
 		
 		<!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
-        <f-component cc-id="fcs_eap_ext.1" id="fia-eap-ext-1" name="EAP-TLS" status="sel-based">
+        <f-component cc-id="fcs_eap_ext.1" id="fia-eap-ext-1" name="EAP-TLS">
           <depends on-sel="sel-ipsec-e11-psk"/>
           <consistency-rationale/>
           <comp-lev>defines the use of EAP-TLS.</comp-lev>
@@ -4965,7 +4965,7 @@ expected to enforce.<h:p/>
       <section title="Security Audit (FAU)" id="ob-fau">
   
 		<!-- A.2.1.1 FAU_GEN.1/VPN Audit Data Generation (VPN Client) -->
-        <f-component name="Audit Data Generation" cc-id="fau_gen.1" iteration="VPN" id="fau-gen-1-vpn" status="objective">
+        <f-component name="Audit Data Generation" cc-id="fau_gen.1" iteration="VPN" id="fau-gen-1-vpn">
           <consistency-rationale/>
           <f-element id="fau-gen-1e1-vpn">
             <title>
@@ -5129,7 +5129,7 @@ expected to enforce.<h:p/>
         </f-component>
 		
 	<!-- A.2.1.2 FAU_SEL.1/VPN Selective Audit (VPN Client) -->
-        <f-component name="Selective Audit" cc-id="fau_sel.1" iteration="VPN" id="fau-sel-1-vpn" status="objective">
+        <f-component name="Selective Audit" cc-id="fau_sel.1" iteration="VPN" id="fau-sel-1-vpn">
           <consistency-rationale/>
           <f-element>
             <title>
@@ -5192,7 +5192,7 @@ expected to enforce.<h:p/>
         </ext-comp-def>
 		
 		<!-- A.2.2.1 FDP_IFC_EXT.1 Subset Information Flow Control -->
-        <f-component cc-id="fdp_ifc_ext.1" id="fdp-ifc-ext-1" name="Subset Information Flow Control" status="objective">
+        <f-component cc-id="fdp_ifc_ext.1" id="fdp-ifc-ext-1" name="Subset Information Flow Control">
           <consistency-rationale/>
           <comp-lev>requires the TSF to process all IP traffic through its VPN client
             functionality.</comp-lev>
