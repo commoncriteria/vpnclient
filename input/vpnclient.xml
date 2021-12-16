@@ -4359,7 +4359,74 @@ expected to enforce.<h:p/>
 	  	</audit-table>
 	    </section>
 	
-	  <!-- B.1 Identification and Authentication (FIA) -->
+	
+      <section title="Cryptographic Support (FCS)" id="s-fcs">
+        
+        
+        <ext-comp-def title="EAP-TLS" fam-id="FCS_EAP_EXT">
+          <fam-behavior>Components in this family describe the requirements for EAP-TLS.</fam-behavior>
+        </ext-comp-def>
+        
+        <!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
+        <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS">
+          <depends on-sel="sel-ipsec-e11-psk"/>
+          <consistency-rationale/>
+          <comp-lev>defines the use of EAP-TLS.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>No specific audit functions are identified.
+          </audit>
+          <dependencies>FCS_IPSEC_EXT.1 IPsec</dependencies>
+          <f-element id="fcs-eap-ext-1e1">
+            <title>
+              The TSF shall implement
+              <selectables>
+                <selectable>EAP-TLS protocol as specified in RFC 5216</selectable>
+                <selectable>EAP-TTLS as specified in RFC 5881</selectable>
+              </selectables>
+              as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package.
+            </title>
+          </f-element>
+          <f-element id="fcs-eap-ext-1e2">
+            <title>
+              The TSF shall generate random values used in the
+              <selectables>
+                <selectable>EAP-TLS</selectable>
+                <selectable>EAP-TTLS</selectable>
+              </selectables>
+              exchange using the RBG specified in FCS_RBG_EXT.1.
+            </title>
+          </f-element>
+          <f-element id="fcs-eap-ext-1e3">
+            <title>
+              The TSF shall support peer authentication using certificates and
+              <selectables>
+                <selectable>PSK</selectable>
+                <selectable>HOTP</selectable>
+                <selectable>TOTP</selectable>
+                <selectable><assignable>other Authentication-verification protocols</assignable></selectable>
+                <selectable>no other authentication</selectable>
+              </selectables>
+              as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package.
+            </title>
+            
+          </f-element>
+          <f-element id="fcs-eap-ext-1e4">
+            <title>
+              The TSF shall not forward a EAP-success response if the client certificate is not valid according to FIA_X509_EXT.1.
+            </title>
+            <aactivity>
+              <TSS>TSS TBD after public review of SRFs.</TSS>
+              <Guidance>Guidance TBD after public review of SRFs.</Guidance>
+              <Tests>Tests TBD after public review of SRFs.</Tests>
+            </aactivity>
+          </f-element>
+          
+          <audit-event/>
+        </f-component>
+       
+      </section>
+	
+	  <!-- B.2 Identification and Authentication (FIA) -->
       <section title="Identification and Authentication (FIA)" id="s-fia">
         The TOE may support pre-shared keys for use in the IPsec protocol, and may use pre-shared keys in other protocols as well.  
         PSK in the context of this document refer to generated values, memorized values subject to conditioning, one time passwords, 
@@ -5008,82 +5075,6 @@ expected to enforce.<h:p/>
       </section>
       
       
-      <section title="Cryptographic Support (FCS)" id="s-fcs">
-        
-        
-        <ext-comp-def title="EAP-TLS" fam-id="FCS_EAP_EXT">
-          <fam-behavior>Components in this family describe the requirements for EAP-TLS.</fam-behavior>
-        </ext-comp-def>
-		
-		<!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
-        <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS">
-          <depends on-sel="sel-ipsec-e11-psk"/>
-          <consistency-rationale/>
-          <comp-lev>defines the use of EAP-TLS.</comp-lev>
-          <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.
-          </audit>
-          <dependencies>FCS_IPSEC_EXT.1 IPsec</dependencies>
-          <f-element id="fcs-eap-ext-1e1">
-            <title>
-              The TSF shall implement
-              <selectables>
-                <selectable>EAP-TLS protocol as specified in RFC 5216</selectable>
-                <selectable>EAP-TTLS as specified in RFC 5881</selectable>
-              </selectables>
-              as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package.
-            </title>
-          </f-element>
-          <f-element id="fcs-eap-ext-1e2">
-            <title>
-              The TSF shall generate random values used in the
-              <selectables>
-                <selectable>EAP-TLS</selectable>
-                <selectable>EAP-TTLS</selectable>
-              </selectables>
-              exchange using the RBG specified in FCS_RBG_EXT.1.
-            </title>
-          </f-element>
-          <f-element id="fcs-eap-ext-1e3">
-            <title>
-              The TSF shall support peer authentication using certificates and
-              <selectables>
-                <selectable>PSK</selectable>
-                <selectable>HOTP</selectable>
-                <selectable>TOTP</selectable>
-                <selectable><assignable>other Authentication-verification protocols</assignable></selectable>
-                <selectable>no other authentication</selectable>
-              </selectables>
-              as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package.
-            </title>
-            
-          </f-element>
-          <f-element id="fcs-eap-ext-1e4">
-            <title>
-              The TSF shall not forward a EAP-success response if the client certificate is not valid according to FIA_X509_EXT.1.
-            </title>
-            <aactivity>
-              <TSS>TSS TBD after public review of SRFs.</TSS>
-              <Guidance>Guidance TBD after public review of SRFs.</Guidance>
-              <Tests>Tests TBD after public review of SRFs.</Tests>
-            </aactivity>
-          </f-element>
-            
-            
-		 <audit-event/>
-        </f-component>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-      </section>
     </sel-sfrs>
 
 
