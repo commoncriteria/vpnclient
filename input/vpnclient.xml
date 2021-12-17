@@ -616,7 +616,7 @@ expected to enforce.<h:p/>
           <rationale>This SFR supports the objective by optionally
             requiring support for pre-shared keys as an alternate authentication method for IPsec.</rationale>
           <addressed-by>FIA_PSK_EXT.2 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally specifying whether the TOE generates its own pre-shared keys used for authentication or accespt them from an external source.</rationale>
+          <rationale>This SFR supports the objective by optionally specifying whether the TOE generates its own pre-shared keys used for authentication or accept them from an external source.</rationale>
           <addressed-by>FIA_PSK_EXT.3 (selection-based)</addressed-by>
           <rationale>This SFR supports the objective by optionally defining the composition and use of password-based pre-shared keys used for authentication.</rationale>
           <addressed-by>FIA_PSK_EXT.4 (selection-based)</addressed-by>
@@ -2452,7 +2452,7 @@ expected to enforce.<h:p/>
 		generation functionality. Additionally, this behavior is selection-based in the
 		App PP but is made mandatory since it is required for VPN client
 		functionality</con-mod>
-      <con-mod ref="ap-fcs-cop-1-1">The ST author is given guidance to make specific selections if this selectionbased SFR is claimed in support of IPsec functionality. The SFR behavior itself
+      <con-mod ref="ap-fcs-cop-1-1">The ST author is given guidance to make specific selections if this selection-based SFR is claimed in support of IPsec functionality. The SFR behavior itself
 		is unmodified.</con-mod>
       <con-mod ref="ap-fia-x509-ext-2">This PP-Module adds IPsec as a new trusted protocol where x.509 certificate
 		authentication is used.</con-mod>
@@ -3629,7 +3629,7 @@ expected to enforce.<h:p/>
 				can be accomplished either by providing Authorized Administrator-configurable
 				lifetimes (with appropriate instructions in documents mandated by AGD_OPE),
 				or by “hard coding” the limits in the implementation. For IKEv2, there are no
-				hardcoded limits, but in this case it is required that an administrator be able to
+				hard-coded limits, but in this case it is required that an administrator be able to
 				configure the values. In general, instructions for setting the parameters of the
 				implementation, including lifetime of the SAs, should be included in the 
 				operational guidance generated for AGD_OPE. It is appropriate to refine the
@@ -4488,7 +4488,7 @@ expected to enforce.<h:p/>
             <title>
               The TSF shall truncate the HOTP hash per FIA_HOTP_EXT.1.4 to create a HOTP of  
               <selectables>
-                <selectable>administrator configurable chracter length of at least 6</selectable>
+                <selectable>administrator configurable character length of at least 6</selectable>
                 <selectable>preset character length of
                   <selectables>
                     <selectable>6</selectable>
@@ -4534,7 +4534,7 @@ expected to enforce.<h:p/>
           </f-element>
           <f-element id="fia-hotp-ext-1e8">
             <title>
-              The TSF shall increment the counter after each successful authentation.
+              The TSF shall increment the counter after each successful authentication.
             </title>
             
             
@@ -4935,7 +4935,7 @@ expected to enforce.<h:p/>
           <consistency-rationale/>
           <comp-lev> defines the implementation of TOTP.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit funcations are identified.
+          <audit>No specific audit functions are identified.
           </audit>
           <dependencies>FIA_PSK_EXT.5 Time Based One Time Password Pre-shared Keys Support</dependencies>
           <f-element id="fia-totp-ext-1e1">
@@ -5509,7 +5509,7 @@ expected to enforce.<h:p/>
 			platform on which the TOE is installed is ‘a
 			trustworthy computing platform.’ System time data is
 			not explicitly mentioned but a clock service is
-			reasonably assumed to be provided by a generalpurpose computer.</h:li>
+			reasonably assumed to be provided by a general-purpose computer.</h:li>
 		<h:li>MDM PP: The MDM PP assumption
 			A.MDM_SERVER_PLATFORM assumes that the
 			platform on which the TOE is installed will provide
