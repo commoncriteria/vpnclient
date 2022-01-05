@@ -894,7 +894,7 @@ expected to enforce.<h:p/>
                 <h:ul><h:i>
                   <h:li>ECC schemes using “NIST curves” P-256, P-384, and <selectables>
                     <selectable>P-521</selectable>
-                    <selectable>no other curves</selectable>
+                    <selectable exclusive="yes">no other curves</selectable>
                   </selectables>
                     that meet the following: FIPS PUB 186-4, “Digital Signature
                     Standard (DSS),” Appendix B.4, and,
@@ -912,7 +912,7 @@ expected to enforce.<h:p/>
                   <selectable>FFC Schemes using safe primes that meet the following: ‘NIST Special
                     Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
                     Establishment Schemes,</selectable>
-                  <selectable><h:b>No other key generation methods</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>No other key generation methods</h:b></selectable>
                 </selectables>
                 <h:s>and specified cryptographic key sizes [assignment: cryptographic key sizes] that
                   meet the following: [assignment: list of standards]</h:s>.
@@ -962,7 +962,7 @@ expected to enforce.<h:p/>
                   </selectable>
                   <selectable>Key establishment scheme using Diffie-Hellman group 14 that meets the
                     following: RFC 3526,</selectable>
-                  <selectable><h:b>No other key establishment schemes</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>No other key establishment schemes</h:b></selectable>
                 </selectables>
                   <h:s>that meets the following [assignment: list of standards]</h:s>.
               </title>
@@ -1006,7 +1006,7 @@ expected to enforce.<h:p/>
                   <selectable>AES-CCM (as defined in NIST SP 800-38C)</selectable>
                   <selectable>AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)</selectable>
                   <selectable>AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)</selectable>
-                  <selectable>No other modes</selectable>
+                  <selectable exclusive="yes">No other modes</selectable>
                 </selectables>
                 and cryptographic key sizes 
                 <selectables>
@@ -1051,7 +1051,7 @@ expected to enforce.<h:p/>
             <audit>There are no auditable events foreseen.</audit>
 	    <dependencies>No dependencies.</dependencies>
             <f-element id="os-fcs-ckm-ext-2e1">
-              <title>The <selectables>
+              <title>The <selectables onlyone="yes">
                 <selectable>VPN client</selectable>
                 <selectable>OS</selectable>
               </selectables> shall store persistent secrets and private keys
@@ -1103,17 +1103,17 @@ expected to enforce.<h:p/>
               authentication for IPsec exchanges, and <selectables>
                 <selectable>digital signatures for FPT_TUD_EXT.1</selectable>
                 <selectable>integrity checks for FPT_TST_EXT.1</selectable>
-                <selectable>no additional uses</selectable>
+                <selectable exclusive="yes">no additional uses</selectable>
               </selectables>.
               </title>
             </f-element>
             <f-element id="os-fia-x509-ext-3e2">
                 <title>
                   When a connection to determine the validity of a certificate cannot be
-                  established, the <selectables>
+                  established, the <selectables onlyone="yes">
                     <selectable>VPN client</selectable>
                     <selectable>OS</selectable>
-                  </selectables> shall <selectables>
+                  </selectables> shall <selectables onlyone="yes">
                     <selectable>allow the administrator to choose whether to accept the certificate in these cases</selectable>
                     <selectable>accept the certificate</selectable>
                     <selectable>not accept the certificate</selectable>
@@ -1135,7 +1135,7 @@ expected to enforce.<h:p/>
             </f-element>
             <f-element id="os-fia-x509-ext-3e3">
               <title>
-                The <selectables>
+                The <selectables onlyone="yes">
                   <selectable>VPN client</selectable>
                   <selectable>OS</selectable>
                 </selectables> shall not establish an SA if a certificate or
@@ -1186,7 +1186,7 @@ expected to enforce.<h:p/>
             </consistency-rationale>
             <f-element id="os-ftp-itc-1e1">
               <title>
-                The <h:b><selectables>
+                The <h:b><selectables onlyone="yes">
                   <selectable>VPN client</selectable>
                   <selectable>OS</selectable>
                 </selectables>
@@ -1205,7 +1205,7 @@ expected to enforce.<h:p/>
             <f-element id="os-ftp-itc-1e2">
               <title>
                 The <h:b>
-                <selectables>
+                <selectables onlyone="yes">
                   <selectable>VPN client</selectable>
                   <selectable>OS</selectable>
                 </selectables></h:b> shall permit [<h:i>the TSF</h:i>] to initiate communication with the trusted channel.
@@ -1214,7 +1214,7 @@ expected to enforce.<h:p/>
             <f-element id="os-ftp-itc-1e3">
               <title>
                 The <h:b>
-                <selectables>
+                <selectables onlyone="yes">
                   <selectable>VPN client</selectable>
                   <selectable>OS</selectable>
                 </selectables></h:b> shall initiate communication via the trusted
@@ -1429,7 +1429,7 @@ expected to enforce.<h:p/>
 						</selectables> and
 						<selectables>
 							<selectable>P-521</selectable>
-							<selectable>no other curves</selectable>
+							<selectable exclusive="yes">no other curves</selectable>
                         </selectables> 
                         that meet the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.4;</h:b>
 					</h:li>
@@ -1450,7 +1450,7 @@ expected to enforce.<h:p/>
                     that meet FIPS PUB 186-4, “Digital Signature Standard (DSS),”
                     Appendix B.3,</selectable>
 				 <selectable><h:b>ECC schemes using Curve25519 schemes that meet the following: RFC 7748</h:b></selectable>
-                  <selectable>No other key generation methods</selectable>
+                  <selectable exclusive="yes">No other key generation methods</selectable>
                 </selectables>.
               </title>
               <note role="application">
@@ -1503,7 +1503,7 @@ expected to enforce.<h:p/>
                         “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.2</selectable>
                     </selectables>
                   </selectable>
-                  <selectable>no other key establishment schemes</selectable>
+                  <selectable exclusive="yes">no other key establishment schemes</selectable>
                 </selectables>.
               </title>
               <note role="application">
@@ -1545,7 +1545,7 @@ expected to enforce.<h:p/>
                   <selectable>AES-XTS (as defined in NIST SP 800-38E)</selectable>
                   <selectable>AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)</selectable>
                   <selectable>AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)</selectable>
-                  <selectable>no other modes</selectable>
+                  <selectable exclusive="yes">no other modes</selectable>
                 </selectables>
                 and cryptographic key sizes 128-bit key sizes and [<h:i>256-bit key sizes</h:i>].
               </title>
@@ -1609,21 +1609,21 @@ expected to enforce.<h:p/>
 					<selectables>
 						<selectable> mutually authenticated DTLS as defined in the Package
 							for Transport Layer Security</selectable>
-						<selectable>no other protocols</selectable>
+						<selectable exclusive="yes">no other protocols</selectable>
 					</selectables>, and
 					<selectables>
                   <selectable>code signing for system software updates</selectable>
                   <selectable>code signing for mobile applications</selectable>
                   <selectable>code signing for integrity verification</selectable>
                   <selectable><assignable>other uses</assignable></selectable>
-                  <selectable>no additional uses</selectable>
+                  <selectable exclusive="yes">no additional uses</selectable>
                 </selectables>.
               </title>
             </f-element>
             <f-element id="md-fia-x509-ext-2e2">
               <title>When the TSF cannot establish a connection to determine the validity of a
                 certificate, the TSF shall 
-                <selectables>
+                <selectables onlyone="yes">
                   <selectable>allow the administrator to choose whether to accept the certificate in these cases</selectable>
                   <selectable>allow the user to choose whether to accept the certificate in these cases</selectable>
                   <selectable>accept the certificate</selectable>
@@ -1703,7 +1703,7 @@ expected to enforce.<h:p/>
                   <selectable>mutually authenticated DTLS as defined in the Package for Transport
 			Layer Security</selectable>
                   <selectable>HTTPS</selectable>
-                  <selectable><h:b>no other</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>no other</h:b></selectable>
                 </selectables>
                 protocols to provide a communication channel between itself
                 and another trusted IT product that is logically distinct from other
@@ -1723,7 +1723,7 @@ expected to enforce.<h:p/>
                 connections, and 
                 <selectables>
                   <selectable>OTA updates</selectable>
-                  <selectable>no other connections</selectable>
+                  <selectable exclusive="yes">no other connections</selectable>
                 </selectables>.
               </title>
               <note role="application">
@@ -1969,7 +1969,7 @@ expected to enforce.<h:p/>
               functionality.</consistency-rationale>
             <f-element id="ap-fcs-ckm-1e1i1">
               <title>The application shall 
-                <selectables linebreak="yes">
+                <selectables linebreak="yes" onlyone="yes">
                   <selectable>invoke platform-provided functionality</selectable>
                   <selectable>implement functionality</selectable>
                 </selectables> to generate asymmetric cryptographic keys in accordance with a specified
@@ -1978,7 +1978,7 @@ expected to enforce.<h:p/>
                     <h:li><h:b>[ECC schemes] using [“NIST curves” P-256, P-384, and 
                       <selectables>
                           <selectable>P-521</selectable>
-                          <selectable>no other curves</selectable>
+                          <selectable exclusive="yes">no other curves</selectable>
                       </selectables>] that meet the following: [FIPS PUB 186-4, “Digital Signature
                     Standard (DSS),” Appendix B.4], and,</h:b>
                     </h:li>
@@ -1999,7 +1999,7 @@ expected to enforce.<h:p/>
                       meet the following: [FIPS PUB 186-4, “Digital Signature Standard (DSS),”
                       Appendix B.3];
                     </selectable>
-                    <selectable>no other key generation methods
+                    <selectable exclusive="yes">no other key generation methods
                     </selectable>
                   </selectables>
                 </title>
@@ -2030,7 +2030,7 @@ expected to enforce.<h:p/>
                 establishment.</consistency-rationale>
               <f-element id="ap-fcs-ckm-2e1">
                 <title>The application shall 
-                  <selectables>
+                  <selectables onlyone="yes">
                     <selectable>invoke platform-provided functionality</selectable>
                     <selectable>implement functionality</selectable>
                   </selectables> to perform cryptographic key
@@ -2061,7 +2061,7 @@ expected to enforce.<h:p/>
                     <selectable>[RSA-based key establishment schemes] that meet the following: [NIST Special
                       Publication 800-56B, “Recommendation for Pair-Wise Key Establishment
                       Schemes Using Integer Factorization Cryptography”]</selectable>
-                    <selectable>No other schemes</selectable>
+                    <selectable exclusive="yes">No other schemes</selectable>
                   </selectables>.
                 </title>
                 <note role="application">
@@ -2089,7 +2089,7 @@ expected to enforce.<h:p/>
                 mandatory since it is required for VPN client functionality.</consistency-rationale>
               <f-element id="ap-fcs-ckm-ext-1e1">
                 <title>The application shall 
-                  <selectables>
+                  <selectables onlyone="yes">
                     <selectable>invoke platform-provided functionality for asymmetric key generation</selectable>
                     <selectable>implement asymmetric key generation</selectable>
                   </selectables>.
@@ -2122,7 +2122,7 @@ expected to enforce.<h:p/>
                   </h:ul>; and </h:b>
                   <selectables linebreak="yes">
                     <selectable>AES-XTS (as defined in NIST SP 800-38E) mode</selectable>
-                    <selectable><h:b>no other modes</h:b></selectable>
+                    <selectable exclusive="yes"><h:b>no other modes</h:b></selectable>
                   </selectables>
                   and cryptographic key sizes [<h:i>128-bit, 256-bit</h:i>].
                 </title>
@@ -2168,7 +2168,7 @@ expected to enforce.<h:p/>
               <f-element id="ap-fia-x509-ext-2e2">
                 <title>When the application cannot establish a connection to determine the validity of a
                   certificate, the TSF shall 
-                  <selectables>
+                  <selectables onlyone="yes">
                     <selectable>allow the administrator to choose whether to accept the certificate in these cases</selectable>
                     <selectable>accept the certificate</selectable>
                     <selectable>not accept the certificate</selectable>
@@ -2233,7 +2233,7 @@ expected to enforce.<h:p/>
             <dependencies>No dependencies</dependencies>
             <f-element id="ap-fcs-ckm-ext-2e1">
               <title>The 
-                <selectables>
+                <selectables onlyone="yes">
                   <selectable>TOE</selectable>
                   <selectable>TOE platform</selectable>
                 </selectables> shall store persistent secrets and private keys
@@ -2282,7 +2282,7 @@ expected to enforce.<h:p/>
             <dependencies>No dependencies</dependencies>
             <f-element id="ap-fcs-ckm-ext-4e1">
               <title>The 
-                <selectables>
+                <selectables onlyone="yes">
                   <selectable>TOE</selectable>
                   <selectable>TOE platform</selectable>
                 </selectables> 
@@ -2537,7 +2537,7 @@ expected to enforce.<h:p/>
               unmodified.</consistency-rationale>
             <f-element id="dm-fcs-ckm-1e1">
               <title>The TSF shall 
-                <selectables>
+                <selectables onlyone="yes">
                   <selectable>invoke platform-provided functionality</selectable>
                   <selectable>implement functionality</selectable>
                 </selectables>
@@ -2547,7 +2547,7 @@ expected to enforce.<h:p/>
                   <h:li><h:b>ECC schemes using “NIST curves” P-256, P-384, and 
                       <selectables>
                         <selectable>P-521</selectable>
-                        <selectable>no other curves</selectable>
+                        <selectable exclusive="yes">no other curves</selectable>
                       </selectables> 
                       that meet the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.4, and</h:b>
                   </h:li>
@@ -2566,7 +2566,7 @@ expected to enforce.<h:p/>
                     </selectables>,</selectable>
                   <selectable><h:b>FFC schemes using Diffie-Hellman group 14 that meets the following: RFC
                     3526, Section 3, </h:b></selectable>
-                  <selectable><h:b>No other key generation schemes</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>No other key generation schemes</h:b></selectable>
                 </selectables>.
               </title>
               <note role="application">
@@ -2591,7 +2591,7 @@ expected to enforce.<h:p/>
               unmodified.</consistency-rationale>
             <f-element id="dm-fcs-ckm-2e1">
               <title>The TSF shall 
-                <selectables>
+                <selectables onlyone="yes">
                   <selectable>invoke platform-provided functionality</selectable>
                   <selectable>implement functionality</selectable>
                 </selectables>
@@ -2619,7 +2619,7 @@ expected to enforce.<h:p/>
                   </selectable>
                   <selectable>Key establishment scheme using Diffie-Hellman group 14 that meets the
                     following: RFC 3526, Section 3</selectable>
-                  <selectable><h:b>No other schemes</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>No other schemes</h:b></selectable>
                 </selectables>.
               </title>
               <note role="application">
@@ -2644,7 +2644,7 @@ expected to enforce.<h:p/>
               unmodified.</consistency-rationale>
             <f-element id="dm-fcs-cop-1e1i1">
               <title>The TSF shall
-                <selectables>
+                <selectables onlyone="yes">
                   <selectable>invoke platform-provided functionality</selectable>
                   <selectable>implement functionality</selectable>
                 </selectables>
@@ -2657,7 +2657,7 @@ expected to enforce.<h:p/>
                   <selectable>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</selectable>
                   <selectable>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</selectable>
                   <selectable>AES-CCM (as defined in NIST SP 800-38C)</selectable>
-                  <selectable>no other modes</selectable>
+                  <selectable exclusive="yes">no other modes</selectable>
                 </selectables>
                 and cryptographic key sizes [<h:i>128-bit, 256-bit</h:i>].
               </title>
@@ -2696,14 +2696,14 @@ expected to enforce.<h:p/>
                       <selectable>TLS</selectable>
                       <selectable>DTLS</selectable>
                       <selectable>SSH</selectable>
-                      <selectable>no protocols</selectable>
+                      <selectable exclusive="yes">no protocols</selectable>
                     </selectables> and 
                     <selectables linebreak="yes">
                       <selectable>code signing for system software updates</selectable>
                       <selectable>code signing for integrity verification</selectable>
                       <selectable>policy signing</selectable>
                       <selectable><assignable>other uses</assignable></selectable>
-                      <selectable>no additional uses</selectable>
+                      <selectable exclusive="yes">no additional uses</selectable>
                     </selectables>
                   </selectable>
                   <selectable>use X.509v3 certificates as defined by RFC 5280 to support
@@ -2716,14 +2716,14 @@ expected to enforce.<h:p/>
                       <selectable>TLS as defined in the Package for Transport Layer Security</selectable>
                       <selectable>DTLS as defined in the Package for Transport Layer Security</selectable>
                       <selectable>SSH as defined in the Extended Package for Secure Shell</selectable>
-                      <selectable>no other protocols</selectable>
+                      <selectable exclusive="yes">no other protocols</selectable>
                     </selectables>, and
                     <selectables linebreak="yes">
                       <selectable>code signing for system software updates</selectable>
                       <selectable>code signing for integrity verification</selectable>
                       <selectable>policy signing</selectable>
                       <selectable><assignable>other uses</assignable></selectable>
-                      <selectable>no additional uses</selectable>
+                      <selectable exclusive="yes">no additional uses</selectable>
                     </selectables>
                   </selectable>
                 </selectables>.
@@ -2795,7 +2795,7 @@ expected to enforce.<h:p/>
                   <selectable>mutually authenticated TLS as defined in the Package for Transport Layer Security</selectable>
                   <selectable>mutually authenticated DTLS as defined in the Package for Transport Layer Security</selectable>
                   <selectable>HTTPS in accordance with FCS_HTTPS_EXT.1</selectable>
-                  <selectable><h:b>no other protocols</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>no other protocols</h:b></selectable>
                 </selectables> and </h:b>
 				<selectables linebreak="yes">
 					<selectable>invoke platform-provided functionality to use
@@ -2805,7 +2805,7 @@ expected to enforce.<h:p/>
 							<selectable>mutually authenticated DTLS</selectable>
 							<selectable>HTTPS</selectable>
 						</selectables></selectable>
-					<selectable><h:b>not invoke any platform-provided functionality</h:b></selectable>
+					<selectable exclusive="yes"><h:b>not invoke any platform-provided functionality</h:b></selectable>
 				</selectables>
 				to provide a trusted communication channel between itself and authorized IT
 				entities supporting the following capabilities: audit server, 
@@ -2819,7 +2819,7 @@ expected to enforce.<h:p/>
             </f-element>
             <f-element id="dm-ftp-itc-1e2i1">
               <title>The TSF shall <h:b>implement functionality and</h:b> 
-				<selectables>
+				<selectables onlyone="yes">
 					<selectable>invoke platform-provided functionality</selectable>
 					<selectable><h:b>not invoke platform-provided functionality</h:b></selectable>
 				</selectables>
@@ -2829,7 +2829,7 @@ expected to enforce.<h:p/>
             </f-element>
             <f-element id="dm-ftp-itc-1e3i1">
               <title>The TSF shall <h:b>implement functionality and</h:b> 
-				<selectables>
+				<selectables onlyone="yes">
 					<selectable>invoke platform-provided functionality</selectable>
 					<selectable><h:b>not invoke platform-provided functionality</h:b></selectable>
 				</selectables>
@@ -2871,7 +2871,7 @@ expected to enforce.<h:p/>
                   <selectable>TLS as defined in the Package for Transport Layer Security</selectable>
                   <selectable>HTTPS in accordance with FCS_HTTPS_EXT.1</selectable>
                   <selectable>SSH as defined in the Extended Package for Secure Shell</selectable>
-                  <selectable><h:b>no other protocols</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>no other protocols</h:b></selectable>
                 </selectables> </h:b> and
 				<selectables linebreak="yes">
 					<selectable>invoke platform-provided functionality to use
@@ -2880,7 +2880,7 @@ expected to enforce.<h:p/>
 							<selectable>HTTPS</selectable>
 							<selectable>SSH</selectable>
 						</selectables></selectable>
-					<selectable><h:b>not invoke any platform-provided functionality</h:b></selectable>
+					<selectable exclusive="yes"><h:b>not invoke any platform-provided functionality</h:b></selectable>
 				</selectables>
 				to provide a trusted communication channel between itself as a 
 				<selectables>
@@ -2894,7 +2894,7 @@ expected to enforce.<h:p/>
             </f-element>
             <f-element id="dm-ftp-trp-1e2i1">
               <title>The TSF shall <h:b>implement functionality and</h:b> 
-				<selectables>
+				<selectables onlyone="yes">
 					<selectable>invoke platform-provided functionality</selectable>
 					<selectable><h:b>not invoke platform-provided functionality</h:b></selectable>
 				</selectables>
@@ -2903,7 +2903,7 @@ expected to enforce.<h:p/>
             </f-element>
             <f-element id="dm-ftp-trp-1e3i1">
               <title>The TSF shall <h:b>implement functionality and</h:b> 
-				<selectables>
+				<selectables onlyone="yes">
 					<selectable>invoke platform-provided functionality</selectable>
 					<selectable><h:b>not invoke platform-provided functionality</h:b></selectable>
 				</selectables>
@@ -3111,7 +3111,7 @@ expected to enforce.<h:p/>
 		  <f-element id="fcs-ckm-1e1i1">
 			<title>
 				The TSF shall <h:b>
-				<selectables>
+				<selectables onlyone="yes">
 					<selectable>invoke platform-provided functionality</selectable>
 					<selectable>implement functionality</selectable>
 				</selectables>
@@ -3123,7 +3123,7 @@ expected to enforce.<h:p/>
 						ECDSA schemes and implementing “NIST curves,” P-256, P-384 and
 						<selectables>
 							<selectable>P-521</selectable>
-							<selectable>no other curves</selectable>
+							<selectable exclusive="yes">no other curves</selectable>
 						</selectables>
 					</selectable>
 				</selectables></h:b>
@@ -3446,7 +3446,7 @@ expected to enforce.<h:p/>
 					<selectable>AES-CBC-128</selectable>
 					<selectable>AES-CBC-256 (both specified by RFC 3602)
 						together with a Secure Hash Algorithm (SHA)-based HMAC</selectable>
-                <selectable>no other algorithms</selectable>
+                <selectable exclusive="yes">no other algorithms</selectable>
               </selectables>].
             </title>
             <note role="application">
@@ -3483,21 +3483,21 @@ expected to enforce.<h:p/>
                 <selectable>IKEv1, using Main Mode for Phase I exchanges, as defined in RFCs 2407,
 					2408, 2409, RFC 4109, 
 					<selectables>
-						<selectable>no other RFCs for extended sequence numbers</selectable>
+						<selectable exclusive="yes">no other RFCs for extended sequence numbers</selectable>
 						<selectable>RFC 4304 for extended sequence numbers</selectable>
 					</selectables>, 
 					<selectables>
-						<selectable>no other RFCs for hash functions</selectable>
+						<selectable exclusive="yes">no other RFCs for hash functions</selectable>
 						<selectable>RFC 4868 for hash functions</selectable>
 					</selectables>, and 
-					<selectables>
+					<selectables onlyone="yes">
 						<selectable>support for XAUTH</selectable>
 						<selectable>no support for XAUTH</selectable>
 					</selectables></selectable>
                 <selectable>IKEv2 as defined in RFC 7296 (with mandatory support for NAT traversal as
 					specified in section 2.23), RFC 8784, RFC 8247, and 
 					<selectables>
-						<selectable>no other RFCs for hash functions</selectable>
+						<selectable exclusive="yes">no other RFCs for hash functions</selectable>
 						<selectable>RFC 4868 for hash functions</selectable>
 					</selectables></selectable>
               </selectables>.
@@ -3543,7 +3543,7 @@ expected to enforce.<h:p/>
 				<selectables>
 					<selectable>AES-GCM-128 as specified in RFC 5282</selectable>
 					<selectable>AES-GCM-256 as specified in RFC 5282</selectable>
-					<selectable>no other algorithm</selectable>
+					<selectable exclusive="yes">no other algorithm</selectable>
 				</selectables>.
             </title>
             <note role="application">
@@ -3678,7 +3678,7 @@ expected to enforce.<h:p/>
 					<selectable>24 (2048-bit MODP with 256-bit POS)</selectable>
 					<selectable>15 (3072-bit MODP)</selectable>
 					<selectable>14 (2048-bit MODP)</selectable>
-					<selectable>no other DH groups</selectable>
+					<selectable exclusive="yes">no other DH groups</selectable>
 				</selectables>].
             </title>
             <note role="application">
@@ -3757,7 +3757,7 @@ expected to enforce.<h:p/>
 					<selectable id="sel-ipsec-e11-psk">Pre-shared keys</selectable>
 				  <selectable id="sel-ipsec-e11-pskeap">Pre-shared Keys transmitted via EAP-TLS</selectable>
 				  <selectable id="sel-ipsec-e11-pskeapma">Pre-shared Keys transmitted via EAP-TTLS with mutual authentication</selectable>
-					<selectable>no other method</selectable>
+					<selectable exclusive="yes">no other method</selectable>
 				</selectables>.
             </title>
             <ext-comp-def-title>
@@ -3771,7 +3771,7 @@ expected to enforce.<h:p/>
 				  <selectable>Pre-shared keys</selectable>
 				  <selectable>Pre-shared Keys transmitted via EAP-TLS</selectable>
 				  <selectable>Pre-shared Keys transmitted via EAP-TTLS with mutual authentication</selectable>
-				  <selectable>no other method</selectable>
+				  <selectable exclusive="yes">no other method</selectable>
 				</selectables>.
             </title>
             </ext-comp-def-title>
@@ -3887,7 +3887,7 @@ expected to enforce.<h:p/>
 				</selectables> 
 				and 
 				<selectables>
-					<selectable>no other reference identifier type</selectable>
+					<selectable exclusive="yes">no other reference identifier type</selectable>
 					<selectable><assignable>other supported reference identifier types</assignable></selectable>
 				</selectables>] contained in a certificate does not match the expected value(s) for the
 				entity attempting to establish a connection.
@@ -4021,7 +4021,7 @@ expected to enforce.<h:p/>
           <consistency-rationale/>
           <f-element id="fdp-rip-2e1">
             <title> The <h:b>
-				<selectables>
+				<selectables onlyone="yes">
 					<selectable>TOE</selectable>
 					<selectable>TOE platform</selectable>
 				</selectables></h:b>  
@@ -4140,7 +4140,7 @@ expected to enforce.<h:p/>
           <f-element id="fpt-tst-ext-1e1-vpn">
             <title>
 				The 
-				<selectables>
+				<selectables onlyone="yes">
 					<selectable>TOE</selectable>
 					<selectable>TOE platform</selectable>
 				</selectables> 
@@ -4151,7 +4151,7 @@ expected to enforce.<h:p/>
           <f-element id="fpt-tst-ext-1e2-vpn">
             <title>
 				The 
-				<selectables>
+				<selectables onlyone="yes">
 					<selectable>TOE</selectable>
 					<selectable>TOE platform</selectable>
 				</selectables> 
@@ -4408,7 +4408,7 @@ expected to enforce.<h:p/>
                 <selectable>HOTP</selectable>
                 <selectable>TOTP</selectable>
                 <selectable><assignable>other Authentication-verification protocols</assignable></selectable>
-                <selectable>no other authentication</selectable>
+                <selectable exclusive="yes">no other authentication</selectable>
               </selectables>
               as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package.
             </title>
@@ -4633,7 +4633,7 @@ expected to enforce.<h:p/>
               The TSF shall be able to use pre-shared keys for IPsec and 
               <selectables>
                 <selectable><assignable>other protocols that use pre-shared keys</assignable></selectable>
-                <selectable>no other protocols</selectable>
+                <selectable exclusive="yes">no other protocols</selectable>
               </selectables>.
             </title>
           </f-element>
@@ -4759,7 +4759,7 @@ expected to enforce.<h:p/>
               lower case characters, numbers, and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and 
               <selectables>
                 <selectable><assignable>other supported special characters</assignable></selectable>
-                <selectable>no other characters</selectable>
+                <selectable exclusive="yes">no other characters</selectable>
               </selectables>
             </title>
           </f-element>
@@ -4884,7 +4884,7 @@ expected to enforce.<h:p/>
           </f-element>
           <f-element id="fia-psk-ext-4e2">
             <title>
-              The TSF shall <selectables>
+              The TSF shall <selectables onlyone="yes">
                 <selectable id="sel-verify-hotp">verify the HOTP</selectable>
                 <selectable>verify the HOTP via an external authentication server</selectable>
               </selectables> before establishing an incoming connection.
@@ -4935,7 +4935,7 @@ expected to enforce.<h:p/>
           <f-element id="fia-psk-ext-5e2">
             <title>
               The TSF shall 
-              <selectables>
+              <selectables onlyone="yes">
                 <selectable id="sel-psk5-ext-e2-verify">verify the TOTP</selectable>
                 <selectable>verify the TOTP via an external authentication server</selectable>
               </selectables> before establishing an incoming connection.
@@ -5058,7 +5058,7 @@ expected to enforce.<h:p/>
           <f-element id="fia-totp-ext-1e7">
             <title>
               The TSF shall set a time-step size of 
-              <selectables>
+              <selectables onlyone="yes">
                 <selectable>a configurable value</selectable>
                 <selectable><assignable>a value less than or equal to 30</assignable></selectable>
               </selectables> seconds.
@@ -5067,7 +5067,7 @@ expected to enforce.<h:p/>
           <f-element id="fia-totp-ext-1e8">
             <title>
               The TSF shall not validate a drift of more than 
-              <selectables>
+              <selectables onlyone="yes">
                 <selectable>a configurable value</selectable>
                 <selectable><assignable>a value less than or equal to 3</assignable></selectable>
               </selectables> time-steps.            
@@ -5076,7 +5076,7 @@ expected to enforce.<h:p/>
           <f-element id="fia-totp-ext-1e9">
             <title>
               The TSF shall 
-              <selectables>
+              <selectables onlyone="yes">
                 <selectable>allow resynchronization by recording time drift within the limit of FIA_TOTP_EXT.2.8</selectable>
                 <selectable>not permit resynchronization</selectable>
               </selectables>.           
@@ -5142,7 +5142,7 @@ expected to enforce.<h:p/>
           <f-element id="fau-gen-1e1-vpn">
             <title>
 				The TSF <h:b>and 
-				<selectables>
+				<selectables onlyone="yes">
 					<selectable>TOE platform</selectable>
 					<selectable>no other component</selectable>
 				</selectables></h:b> 
@@ -5234,7 +5234,7 @@ expected to enforce.<h:p/>
           </f-element>
           <f-element id="fau-gen-1e2-vpn">
             <title>The TSF <h:b>and 
-				<selectables>
+				<selectables onlyone="yes">
 					<selectable>TOE platform</selectable>
 					<selectable>no other component</selectable>
 				</selectables></h:b> 
@@ -5306,7 +5306,7 @@ expected to enforce.<h:p/>
           <f-element>
             <title>
               The <h:b>
-				<selectables>
+				<selectables onlyone="yes">
 					<selectable>TSF</selectable>
 					<selectable>TOE platform</selectable>
 				</selectables></h:b> 
