@@ -3765,8 +3765,6 @@ expected to enforce.<h:p/>
             </ext-comp-def-title>
             
             <note role="application">
-        If any options relating to pre-shared keys are selected, the selection-based SFR FIA_PSK_EXT.1 must be claimed.
-        <h:p/>
 				At least one public-key-based Peer Authentication method is required in order to
 				conform to this PP-Module; one or more of the public key schemes is chosen by
 				the ST author to reflect what is implemented. The ST author also ensures that
@@ -3780,7 +3778,9 @@ expected to enforce.<h:p/>
         optional FPF_MFA_EXT.1 requirement.<h:p/> 
         When pre-shared keys are supported for IKEv2, at least one of ‘Pre-shared Keys transmitted via EAP-TLS’ or  
         ‘Pre-shared Keys transmitted via EAP-TTLS’ is selected to indicate client verification using certificates 
-        in a mutually authenticated TLS handshake, and verification of provided PSK protected under the TLS channel. 
+        in a mutually authenticated TLS handshake, and verification of provided PSK protected under the TLS channel. The selection-based SFR FCS_EAP_EXT.1
+        must also be claimed in this situation.
+        <h:p/>
         When Pre-shared Keys are supported for IKEv1, the first selection is claimed to indicate one of the mechanisms 
         for using PSK described in the RFC. 
         <h:b/> It is acceptable for different use cases to leverage different selections, if this is the case it must be identified.
