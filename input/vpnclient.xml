@@ -186,8 +186,8 @@
       in that PP (e.g., Windows, Mac OS, Linux). This PP-Module extends the MDF PP when the VPN client is
       installed on a self-contained mobile device that is bundled with an OS (e.g. Android,
       BlackBerry OS, iOS, Windows Mobile). This PP-Module extends the App PP when the VPN client is
-      provided by a third party and is a standalone application that is not a bundled part of an operating
-      system or mobile device. This PP-Module extends the MDM PP when the VPN Client is included with
+      provided by a third party and is a standalone application that is not a bundled part of an OS
+      or mobile device. This PP-Module extends the MDM PP when the VPN Client is included with
       MDM Server software that is used for centralized deployment and administration of enterprise mobile
       device policies.  <h:p/>
 
@@ -237,7 +237,7 @@
       platform (generally the ST), while requirements implemented by the TOE may require examination of
       the TSS, examination of the Operational Guidance, or execution of evaluator testing. For
       requirements implemented by the platform, there may also be requirements where the evaluators must
-      examine the interfaces used by the TOE to access these functions on the platform. The ensures that the
+      examine the interfaces used by the TOE to access these functions on the platform. This ensures that the
       functionality being invoked to satisfy the requirements of this PP-Module is the same functionality that
       was evaluated.<h:p/>
 
@@ -388,7 +388,7 @@
         </description>
       </cclaim>
       <cclaim name="PP Claim">
-        <description>This PP-Module does not claim conformance to any Protection Profile.</description>
+        <description>This PP-Module does not claim conformance to any PP.</description>
       </cclaim>
       <cclaim name="Package Claim">
         <description>This PP-Module does not claim conformance to any packages.</description>
@@ -411,8 +411,8 @@ expected to enforce.<h:p/>
     The proper installation and configuration of the VPN client is critical to its correct operation such that
     proper handling of the TOE by an administrator is also addressed.<h:p/>
     Note that as a PP-Module, all threats, assumptions, and organizational security policies (OSPs) defined in the Base-PP will also apply to a
-    TOE unless otherwise specified, depending on which of the Base-PPs it extends. The Security Functional
-    Requirements defined in this PP-Module will mitigate the threats that are defined in the PP-Module but
+    TOE unless otherwise specified, depending on which of the Base-PPs it extends. The SFRs
+    defined in this PP-Module will mitigate the threats that are defined in the PP-Module but
     may also mitigate some threats defined in the Base-PPs in more comprehensive detail due to the
     specific capabilities provided by a VPN client.
     
@@ -639,8 +639,8 @@ expected to enforce.<h:p/>
 			  FCS_COP.1/1 (refined from GPOS PP), FTP_ITC.1 (when GPOS PP is Base-PP)
 			  FCS_CKM.1 (refined from MDF PP), FCS_CKM.2/UNLOCKED (refined from MDF PP)
 			  FCS_COP.1/ENCRYPT (refined from MDF PP), FTP_ITC_EXT.1 (refined from MDF PP)
-			  FCS_CKM.1/1 (refined from App PP), FCS_CKM.2 (refined from App PP)
-			  FCS_CKM_EXT.1 (refined from App PP), FCS_COP.1/1 (refined from App PP), FTP_DIT_EXT.1 (refined from App PP),
+			  FCS_CKM.1/AK (refined from App PP), FCS_CKM.2 (refined from App PP)
+			  FCS_CKM_EXT.1 (refined from App PP), FCS_COP.1/SKC (refined from App PP), FTP_DIT_EXT.1 (refined from App PP),
 			  FCS_CKM.1 (refined from MDM PP), FCS_CKM.2 (refined from MDM PP)
 			  FCS_COP.1/1 (refined from MDM PP), FPT_ITT.1/1 (if applicable, refined from MDM PP)
 			  FTP_ITC.1/1 (if applicable, refined from MDM PP), FTP_TRP.1/1 (if applicable, refined from MDM PP)
@@ -671,7 +671,7 @@ expected to enforce.<h:p/>
           <addressed-by>FTP_ITC_EXT.1 (refined from MDF PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to support the use of IPsec as a trusted channel.</rationale>
-          <addressed-by>FCS_CKM.1/1 (refined from App PP)</addressed-by>
+          <addressed-by>FCS_CKM.1/AK (refined from App PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
 				to implement key generation using certain methods or to support invoking this function from its OS
 				platform.</rationale>
@@ -683,7 +683,7 @@ expected to enforce.<h:p/>
 		  <rationale>This SFR supports the objective by requiring the TOE
 			to specify whether it implements its own cryptographic primitives or invokes platform
 			cryptographic services for these functions.</rationale>
-          <addressed-by>FCS_COP.1/1 (refined from App PP)</addressed-by>
+          <addressed-by>FCS_COP.1/SKC (refined from App PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring that the
 				TOE implement symmetric encryption and decryption using certain methods.
 				</rationale>
@@ -762,7 +762,7 @@ expected to enforce.<h:p/>
             FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_RIP.2, FDP_VPN_EXT.1 (optional), FPF_MFA_EXT.1 (optional).
           </description>
 		  <consistency-rationale>This objective is consistent with the O.PROTECTED_STORAGE objective of
-			the Base-PP, which ensures that sensitive data is not disclosed without
+			the GPOS PP, which ensures that sensitive data is not disclosed without
 			authorization.</consistency-rationale>
 			<addressed-by>FCS_CKM_EXT.2 (when GPOS PP is Base-PP)</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE
@@ -966,7 +966,7 @@ expected to enforce.<h:p/>
                   <h:s>that meets the following [assignment: list of standards]</h:s>.
               </title>
               <note role="application">
-                This SFR is functionally identical to what is defined in the GPOS PP except that ECC key generation with support for P-256 and P-384 has been made mandatory in support of IPsec 
+                This SFR is functionally identical to what is defined in the GPOS PP except that elliptic curve cryptography (ECC) key generation with support for P-256 and P-384 has been made mandatory in support of IPsec 
                 due to the mandated support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8. 
                 <h:p/>
                 The ST author must select all key establishment schemes used for the selected
@@ -2006,7 +2006,7 @@ expected to enforce.<h:p/>
                   FCS_CKM_EXT.1. Because key generation services (whether implemented by the
                   TOE or invoked from the platform) are required for IPsec, this SFR is mandatory
                   for any TOE that claims conformance to this PP-Module.<h:p/>
-                  This SFR is functionally identical to what is defined in the App PP except that elliptic curve cryptography (ECC)
+                  This SFR is functionally identical to what is defined in the App PP except that ECC
                   key generation has been made mandatory in support of IPsec due to the
                   mandated support for DH groups 19, and 20 in FCS_IPSEC_EXT.1.8. RSA remains
                   present as a selection since it may be used by parts of the TOE that are not
@@ -2298,8 +2298,8 @@ expected to enforce.<h:p/>
                 modification of security critical data.<h:p/>
 
                 The zeroization indicated above applies to each intermediate storage area for
-                plaintext key/CSP (i.e., any storage, such as memory buffers, that is included in
-                the path of such data) upon the transfer of the key/CSP to another location.<h:p/>
+                plaintext key or CSP data (i.e., any storage, such as memory buffers, that is included in
+                the path of such data) upon the transfer of the key or CSP to another location.<h:p/>
 
                 In practice, the TOE will not implement all of the functionality associated with
                 the requirement, since if it performs zeroization at all it will be by invoking
@@ -2346,7 +2346,7 @@ expected to enforce.<h:p/>
                 <Tests>
 			For each key clearing situation described in the TSS, the evaluator shall repeat the following test.
                 	<testlist>
-                  		<test>The evaluator shall utilize appropriate combinations of specialized operational environment and
+                  		<test>The evaluator shall utilize appropriate combinations of specialized OE and
 					development tools (debuggers, simulators, etc.) for the TOE and instrumented TOE builds to test that keys
 					are cleared correctly, including all intermediate copies of the key that may have been created internally
 					by the TOE during normal cryptographic processing with that key. <h:p/>
@@ -2557,9 +2557,9 @@ expected to enforce.<h:p/>
                 </h:ul>
                 <selectables linebreak="yes">
                   <selectable>RSA schemes using cryptographic key sizes of 2048-bit or greater that meet
-                    FIPS PUB 186-4, "Digital Signature Standard (DSS),” Appendix B.3,</selectable>
+                    FIPS PUB 186-4, "Digital Signature Standard (DSS),” Appendix B.3</selectable>
                   <selectable>FFC schemes using cryptographic key sizes of 2048-bit or greater that meets
-                    the following: FIPS PUB 186-4, “Digital Signature Standards (DSS),” Appendix B.4,</selectable>
+                    the following: FIPS PUB 186-4, “Digital Signature Standards (DSS),” Appendix B.4</selectable>
                   <selectable>FFC schemes using “safe-prime” groups that meet the following: ‘NIST
                     Special Publication 800-56A Revision 3, “ Recommendation for Pair-Wise Key
                     Establishment Schemes Using Discrete Logarithm Cryptography,” and
@@ -2609,7 +2609,7 @@ expected to enforce.<h:p/>
                     RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, “Public-Key Cryptography Standards
                     (PKCS) #1: RSA Cryptography Specifications Version 2.1"</selectable>
                   <selectable>Finite field-based key establishment schemes that meets the following: NIST
-                    Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
+                    Special Publication 800-56A <h:b>Revision 3</h:b>, “Recommendation for Pair-Wise Key
                     Establishment Schemes Using Discrete Logarithm Cryptography”</selectable>
                   <selectable>FFC schemes using "safe-prime" groups that meet the following: 'NIST
                     Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key
@@ -3092,6 +3092,7 @@ expected to enforce.<h:p/>
 
 	  <!-- 5.5.1 Cryptographic Support --> 
       <section title="Cryptographic Support (FCS)" id="m-fcs">
+        
 
 <!--        <ext-comp-def title="Cryptographic Key Management" fam-id="FCS_CKM_EXT">
             <fam-behavior>Components in this family describe requirements for key management functionality such as key storage
@@ -3203,7 +3204,7 @@ expected to enforce.<h:p/>
 			It is also permissible for the TSF to rely on low-level capabilities of the platform to perform enforcement
 			and routing functions as a result of the policies the TSF maintains. For example, while the TSF must
 			provide the capability to implement the Security Policy Database (SPD) abstraction, it is allowed for the TSF to
-			depend on the platform-provided network stack/driver to perform the low-level packet filtering and
+			depend on the platform-provided network stack to perform the low-level packet filtering and
 			routing actions once the TSF has set up those rules as defined by the SPD.<h:p/>
 			While enforcement of the IPsec requirements must be implemented by the TSF, it is permissible for the
 			TSF to receive configuration of the IPsec behavior from an environmental source, most notably a VPN
@@ -3556,8 +3557,8 @@ expected to enforce.<h:p/>
 		configuration, defined during initial installation, or defined by acquiring configuration settings from an
 		environmental component.  <h:p/>
               </Guidance>
-              <Tests>The evaluator shall use the operational guidance to configure the TOE (or to configure the Operational
-		Environment to have the TOE receive configuration) to perform the following test for each ciphersuite
+              <Tests>The evaluator shall use the operational guidance to configure the TOE (or to configure the OE
+		to have the TOE receive configuration) to perform the following test for each ciphersuite
 		selected:<h:p/>
 		<testlist>
 			<test>
@@ -3621,7 +3622,7 @@ expected to enforce.<h:p/>
 				configure the values. In general, instructions for setting the parameters of the
 				implementation, including lifetime of the SAs, should be included in the 
 				operational guidance generated for AGD_OPE. It is appropriate to refine the
-				requirement in terms of number of MB/KB instead of number of packets, as long
+				requirement in terms of number of MB or KB instead of number of packets, as long
 				as the TOE is capable of setting a limit on the amount of traffic that is protected
 				by the same key (the total volume of all IPsec traffic protected by that key).
 			</note>
@@ -4292,8 +4293,15 @@ expected to enforce.<h:p/>
       </section>
       
       <section title="Packet Filtering (FPF)" id="s-fpf">
-        The TOE may support multifactor authentication by blocking all other traffic after connection is established until secondary authentication is validated.
-        
+        <!-- 
+        <class-description>
+          This class contains families that describe packet filtering behavior. Packet filtering refers to the notion that
+          network traffic that is transmitted “through” the TOE (i.e. the source and destination of the traffic is not
+          the TOE but the TOE is on the routing path between these two entities) can be treated differently by the
+          TSF based on attributes associated with the traffic. As this class is defined solely to contain an extended
+          component defined for this PP-Module, it has one family, FPF_MFA_EXT.
+        </class-description>
+        -->
         <ext-comp-def title="Multifactor Authentication Filtering" fam-id="FPF_MFA_EXT">
           <fam-behavior>Components in this family describe the requirements for multifactor authentication filtering when utilizing the VPN client.</fam-behavior>
         </ext-comp-def>
@@ -4468,7 +4476,7 @@ expected to enforce.<h:p/>
         
         
         <ext-comp-def title="HMAC-Based One-Time Password Pre-Shared Keys" fam-id="FIA_HOTP_EXT">
-          <fam-behavior>Components in this family define requirements the use of HMAC-Based One-Time password authentication, including generation methods and usage restrictions.</fam-behavior>
+          <fam-behavior>Components in this family define requirements for use of HMAC-Based One-Time password authentication, including generation methods and usage restrictions.</fam-behavior>
         </ext-comp-def>
         <f-component cc-id="fia_hotp_ext.1" id="fia-hotp-ext-1" name="HMAC-Based One-Time Password Pre-Shared Keys">
           <depends on-sel="sel-verify-hotp"/>
@@ -4631,14 +4639,14 @@ expected to enforce.<h:p/>
             <title>
               The TSF shall be able to accept the following as pre-shared keys: 
               <selectables>
-                <selectable id="pskgen">Generated bit-based</selectable>
-                <selectable id="pskpw">Password-based</selectable>
+                <selectable id="pskgen">generated bit-based</selectable>
+                <selectable id="pskpw">password-based</selectable>
                 <selectable id="pskhotp">HMAC-based one-time password</selectable>
-                <selectable id="psktotp">Time-based one-time password</selectable>
-                <selectable id="pskgenhotp">Combination of a generated bit-based and HMAC-based one-time password</selectable>
-                <selectable id="pskgentotp">Combination of a generated bit-based and time-based one-time password</selectable>
-                <selectable id="pskpwhotp">Combination of a password-based and HMAC-based one-time password</selectable>
-                <selectable id="pskpwtotp">Combination of a password-based and time-based one-time password</selectable>
+                <selectable id="psktotp">time-based one-time password</selectable>
+                <selectable id="pskgenhotp">combination of a generated bit-based and HMAC-based one-time password</selectable>
+                <selectable id="pskgentotp">combination of a generated bit-based and time-based one-time password</selectable>
+                <selectable id="pskpwhotp">combination of a password-based and HMAC-based one-time password</selectable>
+                <selectable id="pskpwtotp">combination of a password-based and time-based one-time password</selectable>
               </selectables> keys.
             </title>
             <note role="application">
@@ -4712,7 +4720,7 @@ expected to enforce.<h:p/>
               <h:p/>This requirement is selection-dependent on FIA_PSK_EXT.1.<h:p/>
             </note>
             <aactivity>
-              <TSS>If generated is selected the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1 
+              <TSS>If "generate" is selected, the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1 
                 and the output matches the size selected in FIA_PSK_EXT.2.1.<h:p/> 
               </TSS>
               <Guidance>The evaluator shall confirm the operational guidance contains instructions for entering generated pre-shared keys 
@@ -4817,7 +4825,7 @@ expected to enforce.<h:p/>
               <h:p/>This requirement is selection-dependent on FIA_PSK_EXT.1. 
               </note>
             <aactivity>
-              <TSS>The evaluator shall examine the TSS to ensure it describes the process by which the bit-based pre-shared keys used. If generated is selected the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1. 
+              <TSS>The evaluator shall examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are used.  
                 
                 <h:p/>Support for length: The evaluators shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
                 
@@ -5311,7 +5319,7 @@ expected to enforce.<h:p/>
             <note role="application">
 				The intent of this requirement is to identify all criteria that can be selected to
 				trigger an audit event. This can be configured through an interface on the client
-				for a user/administrator to invoke, or it could be an interface that the VPN
+				for a user or administrator to invoke, or it could be an interface that the VPN
 				gateway uses to instruct the client on which events are to be audited. For the ST
 				author, the assignment is used to list any additional criteria or “none”. The
 				auditable event types are listed in the Auditable Events table<h:p/>
@@ -5539,8 +5547,8 @@ expected to enforce.<h:p/>
 		audit records are required to have timestamps that are based
 		on reliable clock data. All of the supported Base-PPs either
 		define this requirement explicitly or provide rationale for why
-		the reader should expect that a reliable clock service is expected
-		to be present. Depending on the claimed Base-PP, the
+		the reader should expect that a reliable clock service should
+		be present. Depending on the claimed Base-PP, the
 		dependency is satisfied in the following manner:<h:ul>
 		<h:li>GPOS PP: The GPOS PP states that FPT_STM.1 is
 			implicitly satisfied by the requirements of FAU_GEN.1 
@@ -5613,7 +5621,7 @@ expected to enforce.<h:p/>
       <tag>MDM PP</tag>
       <description>
         <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=417&amp;id=417">
-			Protection Profile for Mobile Device Management (This needs to be updated) </h:a>, Version 3.1, June 2017
+			Protection Profile for Mobile Device Management</h:a>, Version 4.0, April 2019
       </description>
     </entry>
 
