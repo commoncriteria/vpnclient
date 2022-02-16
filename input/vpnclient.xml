@@ -236,7 +236,7 @@
       implemented by the platform will require that the evaluator examine documents pertaining to the
       platform (generally the ST), while requirements implemented by the TOE may require examination of
       the TSS, examination of the Operational Guidance, or execution of evaluator testing. For
-      requirements implemented by the platform, there may also be requirements where the evaluators must
+      requirements implemented by the platform, there may also be requirements where the evaluator must
       examine the interfaces used by the TOE to access these functions on the platform. This ensures that the
       functionality being invoked to satisfy the requirements of this PP-Module is the same functionality that
       was evaluated.<h:p/>
@@ -1247,7 +1247,7 @@ expected to enforce.<h:p/>
                 <Tests>
                   The evaluator shall perform the following tests:
                   <testlist>
-                    <test>The evaluators shall ensure that the TOE is able to initiate communications with a VPN gateway,
+                    <test>The evaluator shall ensure that the TOE is able to initiate communications with a VPN gateway,
 			VPN client, IPsec-capable network device using the protocols specified in the requirement,
 			setting up the connections as described in the operational guidance and ensuring that communication is
 			successful.</test>
@@ -1256,7 +1256,7 @@ expected to enforce.<h:p/>
                     </test>
                     <test>The evaluator shall ensure, for each communication channel with an IPsec peer, modification of
 			the channel data is detected by the TOE.</test>
-                    <test>The evaluators shall physically interrupt the connection from the TOE to the IPsec peer. The
+                    <test>The evaluator shall physically interrupt the connection from the TOE to the IPsec peer. The
 			evaluators shall ensure that subsequent communications are appropriately protected, at a minimum in
 			the case of any attempts to automatically resume the connection or connect to a new access point.</test>
                   </testlist>
@@ -2346,7 +2346,7 @@ expected to enforce.<h:p/>
                 <Tests>
 			For each key clearing situation described in the TSS, the evaluator shall repeat the following test.
                 	<testlist>
-                  		<test>The evaluator shall utilize appropriate combinations of specialized OE and
+                  		<test>The evaluator shall use appropriate combinations of specialized OE and
 					development tools (debuggers, simulators, etc.) for the TOE and instrumented TOE builds to test that keys
 					are cleared correctly, including all intermediate copies of the key that may have been created internally
 					by the TOE during normal cryptographic processing with that key. <h:p/>
@@ -4257,13 +4257,13 @@ expected to enforce.<h:p/>
         The TOE may support leveraging the biometric API provided by the platform.
         
         <ext-comp-def title="Biometric Activation" fam-id="FIA_BMA_EXT">
-          <fam-behavior>Components in this family describe the requirements for biometrics when utilizing the VPN client.</fam-behavior>
+          <fam-behavior>Components in this family describe the requirements for biometrics when using the VPN client.</fam-behavior>
         </ext-comp-def>
         
         
         <f-component cc-id="fia_bma_ext.1" id="fia-bma-ext-1" name="Biometric Activation">
           <consistency-rationale/>
-          <comp-lev>defines the use of biometrics when utilizing the VPN client.</comp-lev>
+          <comp-lev>defines the use of biometrics when using the VPN client.</comp-lev>
           <management>No specific management functions are identified.</management>
           <audit>No specific audit functions are identified.
           </audit>
@@ -4303,7 +4303,7 @@ expected to enforce.<h:p/>
         </class-description>
         -->
         <ext-comp-def title="Multifactor Authentication Filtering" fam-id="FPF_MFA_EXT">
-          <fam-behavior>Components in this family describe the requirements for multifactor authentication filtering when utilizing the VPN client.</fam-behavior>
+          <fam-behavior>Components in this family describe the requirements for multifactor authentication filtering when using the VPN client.</fam-behavior>
         </ext-comp-def>
       <f-component cc-id="fpf_mfa_ext.1" id="fpf-mfa-ext-1" name="Multifactor Authentication Filtering">
         
@@ -4507,7 +4507,7 @@ expected to enforce.<h:p/>
           </f-element>
           <f-element id="fia-hotp-ext-1e4">
             <title>
-              The TSF shall utilize 
+              The TSF shall use
               <selectables>
                 <selectable>SHA-1</selectable>
                 <selectable>SHA-256</selectable>
@@ -4653,13 +4653,13 @@ expected to enforce.<h:p/>
               This requirement is selection-based because any selection relating to pre-shared keys in FCS_IPSEC_EXT.1.13 will automatically trigger its inclusion.
               However, this requirement must also be claimed if the optional SFR FPF_MFA_EXT.1 is claimed.
               <h:p/>
-              If any selection including "Generated bit-based" is selected, then FIA_PSK_EXT.2 must be included. 
+              If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included. 
               
-              <h:p/>If any selection including Password-based keys is selected, then FIA_PSK_EXT.3 must be included. 
+              <h:p/>If any selection including Password-based keys is chosen, then FIA_PSK_EXT.3 must be included. 
               
-              <h:p/>If any selection including HMAC-based one-time password keys is selected, then FIA_PSK_EXT.4 must be included. 
+              <h:p/>If any selection including HMAC-based one-time password keys is chosen, then FIA_PSK_EXT.4 must be included. 
               
-              <h:p/>If any selection including time-based one-time password is selected, then FIA_PSK_EXT.5 must be included. 
+              <h:p/>If any selection including time-based one-time password is chosen, then FIA_PSK_EXT.5 must be included. 
               
               <h:p/>This requirement is selection-dependent on FCS_IPSEC_EXT.1.11. It must also be claimed if the strictly optional requirement FPF_MFA_EXT.1 is claimed.<h:p/>
             </note>
@@ -4827,7 +4827,7 @@ expected to enforce.<h:p/>
             <aactivity>
               <TSS>The evaluator shall examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are used.  
                 
-                <h:p/>Support for length: The evaluators shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
+                <h:p/>Support for length: The evaluator shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
                 
                 <h:p/>Support for character set: The evaluator shall check to ensure that the TSS describes the allowable character set and that it contains the characters listed in the SFR.
                 
@@ -5000,7 +5000,7 @@ expected to enforce.<h:p/>
           </f-element>
           <f-element id="fia-totp-ext-1e4">
             <title>
-              The TSF shall utilize 
+              The TSF shall use 
               <selectables>
                 <selectable>SHA-1</selectable>
                 <selectable>SHA-256</selectable>
