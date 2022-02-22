@@ -4666,6 +4666,8 @@ expected to enforce.<h:p/>
               <h:p/>If any selection including time-based one-time password is chosen, then FIA_PSK_EXT.5 must be included. 
               
               <h:p/>This requirement is selection-dependent on FCS_IPSEC_EXT.1.11. It must also be claimed if the strictly optional requirement FPF_MFA_EXT.1 is claimed.<h:p/>
+              
+              <h:p/>Authentication options may vary between use cases, the VPN may support different options for peer to peer than for client to gateway.  If this is the case the applicable selections shall be mapped to their use cases.
             </note>
             <aactivity>
               <TSS>The evaluator shall examine the TSS to ensure that it identifies all protocols that allow  pre-shared keys. 
