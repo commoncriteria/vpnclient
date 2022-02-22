@@ -4894,6 +4894,10 @@ expected to enforce.<h:p/>
               If "verify the HOTP..." is selected, then FIA_HOTP_EXT.1 must be included.
               
               <h:p/>This requirement is selection-dependent on FIA_PSK_EXT.1
+              
+              <h:p/>The selection "verify the HOTP via an external authentication server" is intended to cover the case where the TOE is not doing the verifying, 
+              such as if the when the VPN GW or an authentication server fullfills that function.  If a client supports this setup for a peer to peer use case then the "verify the HOTP" selection may be included.
+             
             </note>
             <aactivity>
               <TSS>The evaluator shall verify the TSS describes how the HOTP is input into the client and how that value is sent to the server.
@@ -4945,6 +4949,9 @@ expected to enforce.<h:p/>
               If verify the TOTP is selected then FIA_TOTP_EXT.1 must be included.
               
               <h:p/>This requirement is dependent on FIA_PSK_EXT.1.
+              
+              h:p/>The selection "verify the TOTP via an external authentication server" is intended to cover the case where the TOE is not doing the verifying, 
+              such as if the when the VPN GW or an authentication server fullfills that function.  If a client supports this setup for a peer to peer use case then the "verify the TOTP" selection may be included.
             </note>
             <aactivity>
               <TSS>The evaluator shall verify the TSS describes how the TOTP is input into the client and how that value is sent to the server.
