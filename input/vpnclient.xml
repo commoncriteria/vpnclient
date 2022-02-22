@@ -3662,13 +3662,23 @@ expected to enforce.<h:p/>
             </aactivity>
           </f-element>
           <f-element id="fcs-ipsec-ext-1e8">
-            <title>The TSF shall ensure that all IKE protocols implement DH Groups [<h:i>19 (256-bit Random ECP), 20 (384-bit Random ECP), and </h:i>
-				<selectables>
-					<selectable>24 (2048-bit MODP with 256-bit POS)</selectable>
-					<selectable>15 (3072-bit MODP)</selectable>
-					<selectable>14 (2048-bit MODP)</selectable>
-					<selectable exclusive="yes">no other DH groups</selectable>
-				</selectables>].
+            <title>
+              The TSF shall ensure that IKE protocols implement DH Groups <h:ul>
+                <h:li><h:b>19 (256-bit Random ECP), 20 (384-bit Random ECP) according to RFC 5114 and</h:b></h:li></h:ul> 
+              <selectables linebreak="yes">
+                <selectable><selectables>
+                  <selectable>14 (2048-bit MODP)</selectable>
+                  <selectable>15 (3072-bit MODP)</selectable>
+                  <selectable>16 (4096-bit MODP)</selectable>
+                  <selectable>17 (6144-bit MODP)</selectable>
+                  <selectable>18 (8192-bit MODP)</selectable>
+                </selectables> according to RFC 3526</selectable>
+                <selectable><selectables>
+                  <selectable>21 (521-bit Random ECP)</selectable>
+                  <selectable>24 (2048-bit MODP with 256-bit POS</selectable>
+                  <selectable exclusive="yes"><h:b>no other DH Groups</h:b></selectable>
+                </selectables> according to RFC 5114</selectable>
+              </selectables>.
             </title>
             <note role="application">
 				The selection is used to specify additional DH groups supported. This applies to
