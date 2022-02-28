@@ -1,11 +1,3 @@
-* Error: Detected dangling ref to 'O.NONDISCLOSURE '
-        for a ref.
-	/Module[1]|
-	
-  |/sec:Security_Requirements[1]|
-|/base-pp[1]|
-
-		|/con-mod[11]|This obje|/ref[1]||
 * Error: Detected dangling ref to 'os-fcs-cop-1i1'
         for a ref.
 	/Module[1]|
