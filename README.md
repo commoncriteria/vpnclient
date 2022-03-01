@@ -3,8 +3,8 @@ PP-Module for Virtual Private Network (VPN) Clients
 ===============
 ![Build](https://github.com/commoncriteria/vpnclient/workflows/Build/badge.svg)
 ![Validate](https://github.com/commoncriteria/vpnclient/workflows/Validate/badge.svg)
-[![SanityChecks](https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/master/warnings-badge.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/SanityChecksOutput.md)
-[![SpellCheck](https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/master/spell-badge.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/SpellCheckReport.txt)
+[![SanityChecks](https://github.com/commoncriteria/vpnclient/blob/gh-pages/warnings.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/SanityChecksOutput.md)
+[![SpellCheck](https://github.com/commoncriteria/vpnclient/blob/gh-pages/spell-badge.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/SpellCheckReport.txt)
 [![QuickBuild](https://github.com/commoncriteria/vpnclient/actions/workflows/quick_build.yml/badge.svg)](https://commoncriteria.github.io/vpnclient/vpnclient-release.html)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/vpnclient.svg?maxAge=2592000)](https://github.com/commoncriteria/vpnclient/issues) 
 
