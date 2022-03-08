@@ -209,7 +209,7 @@
 
       The PP-Module contains requirements that must be met by the TOE. Depending on the Base-PP that is
       claimed, there may be some variation in the applicable requirements. This is because a given Base-PP
-      may include one or more requirements that the VPN client can inherit but are not shared amongst each
+      may include one or more requirements that the VPN client can inherit but are not shared between each
       possible Base-PP.<h:p/>
 
       This is somewhat different than other PPs, but addresses most implementations of VPN clients where
@@ -493,7 +493,7 @@ expected to enforce.<h:p/>
           </description>
           <objective-refer ref="O.NONDISCLOSURE">
             <rationale>The TOE mitigates the threat of data reuse by ensuring that persistently stored data is
-              protected from unauthorized access, nonpersistently stored data is appropriately
+              protected from unauthorized access, non-persistently stored data is appropriately
               purged, and potentially to ensure that no network traffic is inadvertently transmitted
               outside of the IPsec tunnel.</rationale>
           </objective-refer>
@@ -1006,8 +1006,8 @@ expected to enforce.<h:p/>
                   <selectable>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</selectable>
                   <selectable>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</selectable>
                   <selectable>AES-CCM (as defined in NIST SP 800-38C)</selectable>
-                  <selectable>AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)</selectable>
-                  <selectable>AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)</selectable>
+                  <selectable>AES-CCMP-256 (as defined in NIST SP 800-38C and IEEE 802.11ac-2013)</selectable>
+                  <selectable>AES-GCMP-256 (as defined in NIST SP 800-38D and IEEE 802.11ac-2013)</selectable>
                   <selectable exclusive="yes">No other modes</selectable>
                 </selectables>
                 and cryptographic key sizes 
@@ -1542,8 +1542,8 @@ expected to enforce.<h:p/>
                   <selectable>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</selectable>
                   <selectable>AES-CCM (as defined in NIST SP 800-38C)</selectable>
                   <selectable>AES-XTS (as defined in NIST SP 800-38E)</selectable>
-                  <selectable>AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)</selectable>
-                  <selectable>AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)</selectable>
+                  <selectable>AES-CCMP-256 (as defined in NIST SP 800-38C and IEEE 802.11ac-2013)</selectable>
+                  <selectable>AES-GCMP-256 (as defined in NIST SP 800-38D and IEEE 802.11ac-2013)</selectable>
                   <selectable exclusive="yes">no other modes</selectable>
                 </selectables>
                 and cryptographic key sizes 128-bit key sizes and [<h:i>256-bit key sizes</h:i>].
@@ -4829,7 +4829,7 @@ expected to enforce.<h:p/>
               <h:p/>For FIA_PSK_EXT.3.4 If the minimum length is settable, then the ST author chooses "a value settable by the administrator." If the minimum length is not settable, 
               the ST author fills in the assignment with the minimum length the PSK must be. This requirement is to ensure bounds work properly.
               
-              <h:p/>For FIA_PSK_EXT.3.7, the ST author may select one, both, or neither of the functions in alignment with NIST SP800-63b.
+              <h:p/>For FIA_PSK_EXT.3.7, the ST author may select one, both, or neither of the functions in alignment with NIST SP 800-63b.
               
               <h:p/>This requirement is selection-dependent on FIA_PSK_EXT.1. 
               </note>
@@ -4906,7 +4906,7 @@ expected to enforce.<h:p/>
               <h:p/>This requirement is selection-dependent on FIA_PSK_EXT.1
               
               <h:p/>The selection "verify the HOTP via an external authentication server" is intended to cover the case where the TOE is not doing the verifying, 
-              such as if the when the VPN GW or an authentication server fullfills that function.  If a client supports this setup for a peer to peer use case then the "verify the HOTP" selection may be included.
+              such as if the when the VPN GW or an authentication server fulfills that function.  If a client supports this setup for a peer to peer use case then the "verify the HOTP" selection may be included.
              
             </note>
             <aactivity>
@@ -4961,7 +4961,7 @@ expected to enforce.<h:p/>
               <h:p/>This requirement is dependent on FIA_PSK_EXT.1.
               
               h:p/>The selection "verify the TOTP via an external authentication server" is intended to cover the case where the TOE is not doing the verifying, 
-              such as if the when the VPN GW or an authentication server fullfills that function.  If a client supports this setup for a peer to peer use case then the "verify the TOTP" selection may be included.
+              such as if the when the VPN GW or an authentication server fulfills that function.  If a client supports this setup for a peer to peer use case then the "verify the TOTP" selection may be included.
             </note>
             <aactivity>
               <TSS>The evaluator shall verify the TSS describes how the TOTP is input into the client and how that value is sent to the server.
