@@ -1960,14 +1960,14 @@ expected to enforce.<h:p/>
 -->        
         <section title="Cryptographic Support (FCS)" id="ap-m-fcs">
             
-          <!-- 5.3.1.1 FCS_CKM.1(1) Cryptographic Asymmetric Key Generation -->
-          <f-component cc-id="fcs_ckm.1" id="ap-fcs-ckm-1-1" name="Cryptographic Asymmetric Key Generation" iteration="AK">
+          <!-- 5.3.1.1 FCS_CKM.1/AK Cryptographic Asymmetric Key Generation -->
+          <f-component cc-id="fcs_ckm.1" id="ap-fcs-ckm-1-ak" name="Cryptographic Asymmetric Key Generation" iteration="AK">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified. Additionally, this behavior is selection-based in the App
               PP but is made mandatory since it is required for VPN client
               functionality.</consistency-rationale>
-            <f-element id="ap-fcs-ckm-1e1i1">
+            <f-element id="ap-fcs-ckm-1-1-ak">
               <title>The application shall 
                 <selectables linebreak="yes" onlyone="yes">
                   <selectable>invoke platform-provided functionality</selectable>
@@ -2073,16 +2073,17 @@ expected to enforce.<h:p/>
               <audit-event/>
             </f-component>
 
-            <!-- 5.3.1.3 FCS_CKM_EXT.1 Cryptographic Key Generation Services -->          
-            <f-component name="Cryptographic Key Generation Services" cc-id="fcs_ckm_ext.1" id="ap-fcs-ckm-ext-1">
+            <!-- 5.3.1.3 FCS_CKM.1 Cryptographic Key Generation Services -->
+			<!-- This is  FCS_CKM.1 in the AppPP though it should be FCS_CKM_EXT.1. -->
+            <f-component name="Cryptographic Key Generation Services" cc-id="fcs_ckm.1" id="ap-fcs-ckm-1">
               <consistency-rationale>The ST author is instructed to make specific selections at minimum to
                 address VPN client requirements; specifically, since key generation
                 services are required in some capacity in order to support VPN
                 functionality, the ST author loses the choice of stating that the
                 application does not have any key generation functionality.
                 Additionally, this behavior is selection-based in the App PP but is made
-                mandatory since it is required for VPN client functionality.</consistency-rationale>
-              <f-element id="ap-fcs-ckm-ext-1e1">
+                mandatory since it is required for VPN client functionality.</consistency-rationale> 
+              <f-element id="ap-fcs-ckm-1e1">
                 <title>The application shall 
                   <selectables onlyone="yes">
                     <selectable>invoke platform-provided functionality for asymmetric key generation</selectable>
@@ -2103,12 +2104,12 @@ expected to enforce.<h:p/>
               <audit-event/>
             </f-component>
 
-            <!-- 5.3.1.4 FCS_COP.1(1) Cryptographic Operation - Encryption/Decryption -->
-            <f-component cc-id="fcs_cop.1" id="ap-fcs-cop-1-1" name="Cryptographic Operation" iteration="SKC">
+            <!-- 5.3.1.4 FCS_COP.1/SKC Cryptographic Operation - Encryption/Decryption -->
+            <f-component cc-id="fcs_cop.1" id="ap-fcs-cop-1-skc" name="Cryptographic Operation" iteration="SKC">
               <consistency-rationale>The ST author is instructed to make specific selections at minimum to
                 address VPN client requirements; the SFR behavior itself is
                 unmodified.</consistency-rationale>
-              <f-element id="ap-fcs-cop-1e1i1">
+              <f-element id="ap-fcs-cop-1-1-skc">
                 <title>The application shall perform encryption/decryption in accordance with
                   a specified cryptographic algorithm <h:b>
                   <h:ul>
@@ -2193,24 +2194,28 @@ expected to enforce.<h:p/>
               <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
                 implement trusted channels.</consistency-rationale>
               <f-element id="ap-ftp-dit-ext-1e1">
-                <title>The application shall [<h:i>encrypt all transmitted [sensitive data] with <h:b>IPsec</h:b> and <selectables>
-                  <selectable>HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client</selectable>
-                  <selectable>HTTPS as a server in accordance with FCS_HTTPS_EXT.1/Server</selectable>
-                  <selectable>HTTPS as a server with mutual authentication in accordance with FCS_HTTPS_EXT.2</selectable>
-                  <selectable>TLS as defined in the TLS package</selectable>
-                  <selectable>DTLS as defined in the TLS package</selectable>
-                  <selectable>SSH as conforming to the Extended Package for Secure Shell</selectable>
-                  <selectable><h:b>no other protocols</h:b></selectable></selectables></h:i>]
-                  between itself and another trusted IT product.
-
+                <title>The application shall encrypt all transmitted [sensitive data] using IPsec as specified
+					in FCS_IPSEC_EXT.1 and 
+					<selectables>
+						<selectable>HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client</selectable>
+						<selectable>HTTPS as a server in accordance with FCS_HTTPS_EXT.1/Server</selectable>
+						<selectable>HTTPS as a server with mutual authentication in accordance with FCS_HTTPS_EXT.2</selectable>
+						<selectable>TLS as defined in the Functional Package for TLS</selectable>
+						<selectable>DTLS as defined in the Functional Package for TLS</selectable>
+						<selectable>SSH as defined in the Functional Package for Secure Shell</selectable>
+					<selectable><h:b>no other protocols</h:b></selectable></selectables></h:i>]
+					between itself and another trusted IT product.
                 </title>
                 <note role="application">
-                  This SFR is identical to what is defined in the App PP except that mandatory support for IPsec is added and the ST author is forced to select the ‘encrypt all transmitted sensitive data’ option. 
-                  However, since it is possible that a conformant TOE may not use any encryption protocols other than IPsec, 
-                  “no other protocols” is provided as a selectable option in the list of supported protocols.              
+                  This SFR is identical to what is defined in the App PP except that mandatory support for IPsec is
+				  added, the ST author is forced to select the ‘encrypt all transmitted sensitive data’ option, and
+				  the options for invoking platform-provided functionality have been removed. 
+                  Since it is possible that a conformant TOE may not use any encryption protocols other than 
+				  IPsec, “no other protocols” is provided as a selectable option in the list of supported protocols.              
                 </note>
                 <aactivity>
-                  For IPsec, refer to the EA for <no-link>FCS_IPSEC_EXT.1</no-link>. If other protocols are selected for FTP_DIT_EXT.1, refer to the EA for FTP_DIT_EXT.1 in the App PP.
+                  For IPsec, refer to the EA for FCS_IPSEC_EXT.1. If other protocols are selected
+				  for FTP_DIT_EXT.1, refer to the EA for FTP_DIT_EXT.1 in the App PP.
                   <no-tests/>
                 </aactivity>
               </f-element>
@@ -2439,21 +2444,22 @@ expected to enforce.<h:p/>
 		App PP as well as new SFRs that are used entirely to provide VPN client functionality. The rationale for
 		why this does not conflict with SFRs defined by the App PP are as follows: -->
 	  
-      <con-mod ref="ap-fcs-ckm-1-1">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="ap-fcs-ckm-1-ak">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.
 		Additionally, this behavior is selection-based in the App PP but is made
 		mandatory since it is required for VPN client functionality.</con-mod>
-      <con-mod ref="ap-fcs-ckm-2-1">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="ap-fcs-ckm-2">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements and is modified to include Diffie-Hellman
 		Group 14 as an additional supported method for key establishment.</con-mod>
-      <con-mod ref="ap-fcs-ckm-ext-1">The ST author is instructed to make specific selections at minimum to
+      <con-mod ref="ap-fcs-ckm-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; specifically, since key generation services
 		are required in some capacity in order to support VPN functionality, the ST
 		author loses the choice of stating that the application does not have any key
 		generation functionality. Additionally, this behavior is selection-based in the
 		App PP but is made mandatory since it is required for VPN client
 		functionality</con-mod>
-      <con-mod ref="ap-fcs-cop-1-1">The ST author is given guidance to make specific selections if this selection-based SFR is claimed in support of IPsec functionality. The SFR behavior itself
+      <con-mod ref="ap-fcs-cop-1-skc">The ST author is given guidance to make specific selections if this
+		selection-based SFR is claimed in support of IPsec functionality. The SFR behavior itself
 		is unmodified.</con-mod>
       <con-mod ref="ap-fia-x509-ext-2">This PP-Module adds IPsec as a new trusted protocol where x.509 certificate
 		authentication is used.</con-mod>
