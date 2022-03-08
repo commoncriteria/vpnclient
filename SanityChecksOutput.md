@@ -6,13 +6,6 @@
 |/base-pp[1]|
 
 		|/con-mod[17]|The SFR i|/ref[1]||
-* Error: Detected dangling ref to 'ap-fcs-ckm-2-1'
-        for a ref.
-	/Module[1]|
-	
-  |/sec:Security_Requirements[1]|
-|/base-pp[3]|
-		|/con-mod[16]|The ST au|/ref[1]||
 * Warning: Detected an empty _p_ element./Module[1]|
 	
   |/sec:Introduction[1]|
