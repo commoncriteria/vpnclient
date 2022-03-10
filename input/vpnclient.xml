@@ -3802,8 +3802,7 @@ expected to enforce.<h:br/><h:br/>
 				(for example, 2409 specifies three authentication methods using public keys;
 				each one supported will be described in the TSS).<h:br/><h:br/>
 				If any selection with “pre-shared keys” is selected, the selection-based requirement FIA_PSK_EXT.1
-				must be claimed. FIA_PSK_EXT.1 includes the options for MFA solutions, it may be brought in via this selection or via the 
-        optional FPF_MFA_EXT.1 requirement.<h:br/><h:br/> 
+				must be claimed.<h:br/><h:br/> 
         When pre-shared keys are supported for IKEv2, at least one of ‘Pre-shared Keys transmitted via EAP-TLS’ or  
         ‘Pre-shared Keys transmitted via EAP-TTLS’ is selected to indicate client verification using certificates 
         in a mutually authenticated TLS handshake, and verification of provided PSK protected under the TLS channel. The selection-based SFR FCS_EAP_EXT.1
@@ -4693,8 +4692,7 @@ expected to enforce.<h:br/><h:br/>
               </selectables> keys.
             </title></ext-comp-def-title>
             <note role="application">
-              This requirement is selection-based because any selection relating to pre-shared keys in FCS_IPSEC_EXT.1.13 will automatically trigger its inclusion.
-              However, this requirement must also be claimed if the optional SFR FPF_MFA_EXT.1 is claimed.
+               FIA_PSK_EXT.1 includes the options for MFA solutions.
               <h:br/><h:br/>
               If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included. 
               
@@ -4704,8 +4702,7 @@ expected to enforce.<h:br/><h:br/>
               
               <h:br/><h:br/>If any selection including time-based one-time password is chosen, then FIA_PSK_EXT.5 must be included. 
               
-              <h:br/><h:br/>This requirement is selection-dependent on FCS_IPSEC_EXT.1.11. It must also be claimed if the strictly optional
-		    requirement FPF_MFA_EXT.1 is claimed.<h:br/><h:br/>
+              <h:br/><h:br/>This requirement is selection dependent on FCS_IPSEC_EXT.1.13 or inclusion of FPF_MFA_EXT.1.<h:br/><h:br/>
               
               <h:br/><h:br/>Authentication options may vary between use cases, the VPN may support different options for peer to peer than for
 		    client to gateway.  If this is the case the applicable selections shall be mapped to their use cases.
