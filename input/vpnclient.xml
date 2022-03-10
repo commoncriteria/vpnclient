@@ -1337,7 +1337,7 @@ expected to enforce.<h:br/><h:br/>
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
       <con-mod ref="os-fcs-ckm-2">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified</con-mod>
-      <con-mod ref="os-fcs-cop-1i1">The SFR is refined to list an additional AES mode that must be supported to
+      <con-mod ref="os-fcs-cop-1-1">The SFR is refined to list an additional AES mode that must be supported to
 		address VPN client requirements; the use of this mode for VPN connectivity
 		does not impact the ability of the GPOS to satisfy any of its other security
 		requirements.</con-mod>
@@ -4403,7 +4403,7 @@ expected to enforce.<h:br/><h:br/>
           <fam-behavior>Components in this family describe the requirements for EAP-TLS.</fam-behavior>
         </ext-comp-def>
         
-        <!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
+        <!-- FCS_EAP_EXT.1 EAP TLS -->
         <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS">
           <depends on-sel="sel-ipsec-e11-psk"/>
           <consistency-rationale/>
@@ -4681,6 +4681,19 @@ expected to enforce.<h:br/><h:br/>
                 <selectable id="pskpwtotp">combination of a password-based and time-based one-time password</selectable>
               </selectables> keys.
             </title>
+		<ext-comp-def-title><title>
+              The TSF shall be able to accept the following as pre-shared keys: 
+              <selectables>
+                <selectable>generated bit-based</selectable>
+                <selectable>password-based</selectable>
+                <selectable>HMAC-based one-time password</selectable>
+                <selectable>time-based one-time password</selectable>
+                <selectable>combination of a generated bit-based and HMAC-based one-time password</selectable>
+                <selectable>combination of a generated bit-based and time-based one-time password</selectable>
+                <selectable>combination of a password-based and HMAC-based one-time password</selectable>
+                <selectable>combination of a password-based and time-based one-time password</selectable>
+              </selectables> keys.
+            </title></ext-comp-def-title>
             <note role="application">
               This requirement is selection-based because any selection relating to pre-shared keys in FCS_IPSEC_EXT.1.13 will automatically trigger its inclusion.
               However, this requirement must also be claimed if the optional SFR FPF_MFA_EXT.1 is claimed.
@@ -4942,7 +4955,12 @@ expected to enforce.<h:br/><h:br/>
                 <selectable>verify the HOTP via an external authentication server</selectable>
               </selectables> before establishing an incoming connection.
             </title>
-          
+            <ext-comp-def-title><title>
+              The TSF shall <selectables onlyone="yes">
+                <selectable>verify the HOTP</selectable>
+                <selectable>verify the HOTP via an external authentication server</selectable>
+              </selectables> before establishing an incoming connection.
+            </title></ext-comp-def-title>
             
             <note role="application">
               If "verify the HOTP..." is selected, then FIA_HOTP_EXT.1 must be included.
@@ -4976,6 +4994,7 @@ expected to enforce.<h:br/><h:br/>
           </f-element>
           <audit-event/>
         </f-component>
+	      
         <f-component cc-id="fia_psk_ext.5" id="fia-psk-ext-5" name="Time-Based One-Time Password Pre-shared Keys Support">
           <depends on-sel="psktotp"/>
 	  <depends on-sel="pskgentotp"/>
@@ -4999,7 +5018,13 @@ expected to enforce.<h:br/><h:br/>
                 <selectable>verify the TOTP via an external authentication server</selectable>
               </selectables> before establishing an incoming connection.
             </title>
-            
+            <ext-comp-def-title><title>
+              The TSF shall 
+              <selectables onlyone="yes">
+                <selectable>verify the TOTP</selectable>
+                <selectable>verify the TOTP via an external authentication server</selectable>
+              </selectables> before establishing an incoming connection.
+            </title></ext-comp-def-title>
             
             <note role="application">
               If verify the TOTP is selected then FIA_TOTP_EXT.1 must be included.
