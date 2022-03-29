@@ -2113,6 +2113,8 @@ expected to enforce.<h:br/><h:br/>
                 address VPN client requirements; the SFR behavior itself is
                 unmodified.</consistency-rationale>
               <f-element id="ap-fcs-cop-1-1-skc">
+			  	<depends on="sel_all_tls"><external-doc ref="bpp-app"/></depends>
+				<depends on="sel-fcs-sto-skc"><external-doc ref="bpp-app"/></depends>
                 <title>The application shall perform encryption/decryption in accordance with
                   a specified cryptographic algorithm <h:b>
                   <h:ul>
@@ -3115,7 +3117,7 @@ expected to enforce.<h:br/><h:br/>
               and destruction.</fam-behavior>
         </ext-comp-def>  -->
 
-        <ext-comp-def title="IPsec" fam-id="FCS_IPSEC_EXT">
+        <ext-comp-def title="IPsec" fam-id="FCS_IPSEC_EXT"> c
           <fam-behavior>Components in this family describe requirements for IPsec implementation.</fam-behavior>
         </ext-comp-def>
 
