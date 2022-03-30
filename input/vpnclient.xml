@@ -4556,8 +4556,8 @@ expected to enforce.<h:br/><h:br/>
               The TSF shall truncate the HOTP hash per FIA_HOTP_EXT.1.4 to create an HOTP of  
               <selectables>
                 <selectable>administrator configurable character length of at least 6</selectable>
-                <selectable>preset character length of
-                  <selectables>
+                <selectable>non-configurable character length of
+                  <selectables onlyone="yes">
                     <selectable>6</selectable>
                     <selectable>7</selectable>
                     <selectable>8</selectable>
@@ -4575,16 +4575,16 @@ expected to enforce.<h:br/><h:br/>
                 <selectable>throttle invalid requests to 
                   <selectables>
                     <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable>
+                    <selectable exclusive="yes"><assignable>value less than 10</assignable></selectable>
                   </selectables> per minute</selectable>
                 <selectable>lock the associated account after 
                   <selectables>
                     <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable>
+                    <selectable exclusive="yes"><assignable>value less than 10</assignable></selectable>
                   </selectables> failed attempts until 
                   <selectables>
                     <selectable>an administrator unlocks the account</selectable>
-                    <selectable>a configurable time period</selectable>
+                    <selectable exclusive="yes">a configurable time period</selectable>
                   </selectables>
                 </selectable>
               </selectables>.
@@ -4595,7 +4595,7 @@ expected to enforce.<h:br/><h:br/>
               The TSF shall not verify HOTP attempts outside of the counter look ahead window of 
               <selectables>
                 <selectable>a configurable value</selectable>
-                <selectable><assignable>a value less than or equal to 3</assignable></selectable>
+                <selectable exclusive="yes"><assignable>a value less than or equal to 3</assignable></selectable>
               </selectables> for resynchronization.
             </title>
           </f-element>
@@ -5108,9 +5108,9 @@ expected to enforce.<h:br/><h:br/>
             <title>
               The TSF shall truncate the TOTP hash per FIA_TOTP_EXT.1.4 to create a TOTP of  
               <selectables>
-                <selectable>administrator configurable character length of at least 6</selectable>
-                <selectable>preset character length of
-                  <selectables> 
+                <selectable exclusive="yes">administrator configurable character length of at least 6</selectable>
+                <selectable>non-configurable character length of
+                  <selectables onlyone="yes"> 
                     <selectable>6</selectable>
                     <selectable>7</selectable>
                     <selectable>8</selectable>
@@ -5128,16 +5128,16 @@ expected to enforce.<h:br/><h:br/>
                 <selectable>throttle invalid requests to 
                   <selectables>
                     <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable>
+                    <selectable exclusive="yes"><assignable>value less than 10</assignable></selectable>
                   </selectables> per minute</selectable>
                 <selectable>lock the associated account after 
                   <selectables>
                     <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable>
+                    <selectable exclusive="yes"><assignable>value less than 10</assignable></selectable>
                   </selectables> failed attempts until 
                   <selectables>
                     <selectable>an administrator unlocks the account</selectable>
-                    <selectable>a configurable time period</selectable>
+                    <selectable exclusive="yes">a configurable time period</selectable>
                   </selectables>
                 </selectable>
               </selectables>.
@@ -5148,7 +5148,7 @@ expected to enforce.<h:br/><h:br/>
               The TSF shall set a time-step size of 
               <selectables onlyone="yes">
                 <selectable>a configurable value</selectable>
-                <selectable><assignable>a value less than or equal to 30</assignable></selectable>
+                <selectable exclusive="yes"><assignable>a value less than or equal to 30</assignable></selectable>
               </selectables> seconds.
             </title>
           </f-element>
@@ -5157,7 +5157,7 @@ expected to enforce.<h:br/><h:br/>
               The TSF shall not validate a drift of more than 
               <selectables onlyone="yes">
                 <selectable>a configurable value</selectable>
-                <selectable><assignable>a value less than or equal to 3</assignable></selectable>
+                <selectable exclusive="yes"><assignable>a value less than or equal to 3</assignable></selectable>
               </selectables> time-steps.            
             </title>
           </f-element>
@@ -5166,7 +5166,7 @@ expected to enforce.<h:br/><h:br/>
               The TSF shall 
               <selectables onlyone="yes">
                 <selectable>allow resynchronization by recording time drift within the limit of FIA_TOTP_EXT.1.8</selectable>
-                <selectable>not permit resynchronization</selectable>
+                <selectable exclusive="yes">not permit resynchronization</selectable>
               </selectables>.           
             </title>
          
