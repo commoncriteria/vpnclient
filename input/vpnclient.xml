@@ -604,7 +604,7 @@ expected to enforce.<h:br/><h:br/>
           <addressed-by>FIA_BMA_EXT.1 (optional)</addressed-by>
           <rationale>This SFR supports the objective by optionally defining the TOE's support for a platform-based biometric mechanism to use as an authentication mechanism.</rationale>
         <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by>
-        <rationale>This SFR supports the objective by optionally enforcing a multi-factor authentication requirement on an IPsec connection.</rationale>
+        <rationale>This SFR supports the objective by optionally enforcing a multifactor authentication requirement on an IPsec connection.</rationale>
           
           <addressed-by>FCS_EAP_EXT.1 (selection-based)</addressed-by>
           <rationale>This SFR supports the objective by optionally implementing EAP-TLS or EAP-TTLS as a mechanism for authentication.</rationale>
@@ -782,7 +782,7 @@ expected to enforce.<h:br/><h:br/>
             established IPsec tunnel.</rationale>
           <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by>
           <rationale>This SFR supports the objective by optionally
-            requiring the TOE to prohibit transmission of packet data aside from those packets needed to perform multi-factor authentication.</rationale>
+            requiring the TOE to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.</rationale>
         </SO>
       </SOs>
     </sec:Security_Objectives_for_the_TOE>
@@ -4708,6 +4708,7 @@ expected to enforce.<h:br/><h:br/>
               
               <h:br/><h:br/>Authentication options may vary between use cases, the VPN may support different options for peer to peer than for
 		    client to gateway.  If this is the case the applicable selections shall be mapped to their use cases.
+	<h:br/><h:br/>The first four selections are for single factor authentication options, the last four selections are for multifactor authentication options.
             </note>
             <aactivity>
               <TSS>The evaluator shall examine the TSS to ensure that it identifies all protocols that allow  pre-shared keys. 
