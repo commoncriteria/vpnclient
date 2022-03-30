@@ -2046,7 +2046,7 @@ expected to enforce.<h:br/><h:br/>
                       Special Publication 800-56A, “Recommendation for Pair-Wise Key Establishment
                       Schemes Using Discrete Logarithm Cryptography”]</selectable>
                     <selectable>Key establishment scheme using Diffie-Hellman group 14] that meets the
-                      following: [RFC 3526, Section 3</selectable>
+                      following: [RFC 3526, Section 3]</selectable>
                     <selectable>[FFC Schemes using “safe-prime” groups]that meet the following: ‘NIST Special
                       Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
                       Establishment Schemes Using Discrete Logarithm Cryptography” and 
@@ -3560,7 +3560,7 @@ expected to enforce.<h:br/><h:br/>
 					<selectable>AES-GCM-128 as specified in RFC 5282</selectable>
 					<selectable>AES-GCM-256 as specified in RFC 5282</selectable>
 					<selectable exclusive="yes">no other algorithm</selectable>
-				</selectables>.
+				</selectables>].
             </title>
             <note role="application">
 				If this functionality is configurable, the TSF may be configured by a VPN Gateway
@@ -4404,7 +4404,7 @@ expected to enforce.<h:br/><h:br/>
         
         <!-- FCS_EAP_EXT.1 EAP TLS -->
         <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS">
-          <depends on-sel="sel-ipsec-e11-psk"/>
+          <depends on-sel="sel-ipsec-e11-psk" also="sel-ipsec-e11-pskeap" and="sel-ipsec-e11-pskeapma"/>
           <consistency-rationale/>
           <comp-lev>defines the use of EAP-TLS.</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -4650,7 +4650,7 @@ expected to enforce.<h:br/><h:br/>
 		
 		<!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
         <f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition">
-          <depends on-sel="sel-ipsec-e11-psk"/>
+          <depends on-sel="sel-ipsec-e11-psk" and="sel-ipsec-e11-pskeap" also="sel-ipsec-e11-pskeapma"/>
           <consistency-rationale/>
           <comp-lev>defines the use and composition of pre-shared keys used for IPsec.</comp-lev>
           <management>No specific management functions are identified.</management>
