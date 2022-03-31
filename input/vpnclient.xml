@@ -3778,6 +3778,15 @@ expected to enforce.<h:br/><h:br/>
 					<selectable exclusive="yes">no other method</selectable>
 				</selectables>.
             </title>
+		  <!-- QQQQ: This element needs to be rewritten to be more clear. According to the AppNote below, the 
+			the "Pre-shared keys" selection applies only to IKEv1 and the other two refer to IKEv2, so they
+			should be conditional on the selection in IPSEC.1.5. The note below also refers to an RFC without
+			identifying it, and says that IKEv1 can use any method specified in the RFC. If it's the RFC 
+			I'm thinking of, it says IKE can use EAP or the native IKE method. But if it's referring to an
+			older RFC, maybe this is not the case. -->
+		  <!-- QQQQ: Comment from Al on IPsec suggests includiong refrence to "as updated by RFC 8603" for CNSA crypto. --? 
+		  <!-- QQQQ: Al also suggests specifying the ECDSA curves allowed. Maybe this seleciton should refer to another 
+			SFR where that stuff is layed out.  -->
             <ext-comp-def-title>
               <title>The TSF shall ensure that all IKE protocols perform peer authentication using a 
 				<selectables>
@@ -4405,6 +4414,11 @@ expected to enforce.<h:br/><h:br/>
         <!-- FCS_EAP_EXT.1 EAP TLS -->
         <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS">
           <depends on-sel="sel-ipsec-e11-psk" also="sel-ipsec-e11-pskeap" and="sel-ipsec-e11-pskeapma"/>
+	  <!-- QQQQ: The latter two dependencies apply to IKEv2 and are correct. The first dependency applies only
+		to IKEv1, and the AppNote in IPSEC.1.11 says you can use one of the mechanisms listed in the RFC, one of which
+		is EAP, but it could use a native IKE method, in which case this SFR should not be included. 
+		Which RFC is this referring to? Is this selection correct? There is no time to find out
+ 		the right answer, so I'm leaving it as is. -->
           <consistency-rationale/>
           <comp-lev>defines the use of EAP-TLS.</comp-lev>
           <management>No specific management functions are identified.</management>
