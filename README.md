@@ -1,6 +1,7 @@
 
 PP-Module for Virtual Private Network (VPN) Clients
 ===============
+
 ![Build](https://github.com/commoncriteria/vpnclient/workflows/Build/badge.svg)
 ![Validate](https://github.com/commoncriteria/vpnclient/workflows/Validate/badge.svg)
 [![SanityChecks](https://github.com/commoncriteria/vpnclient/blob/gh-pages/warnings.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/SanityChecksOutput.md)
