@@ -864,8 +864,10 @@ expected to enforce.<h:br/><h:br/>
     
     <!-- 5.1 GPOS PP Security Functional Requirements Direction -->
     <base-pp id="bpp-gpos">
-
-		<raw-url>https://raw.githubusercontent.com/commoncriteria/operatingsystem/release-4.2.1/input/operatingsystem.xml</raw-url>
+      <git>
+	<url>https://github.com/commoncriteria/operatingsystem</url>
+	<branch>/release-4.2.1</branch>
+      </git>
 		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=442&amp;id=442</url>
 
 		<sec-func-req-dir> 
@@ -1399,8 +1401,11 @@ expected to enforce.<h:br/><h:br/>
 
     <!-- 5.2 MDF PP Security Functional Requirements Direction -->
     <base-pp id="bpp-mdf">
-		<raw-url>https://github.com/commoncriteria/mobile-device/raw/v3.2/input/mobile-device.xml</raw-url>
-		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=417&amp;id=417</url>
+      <git>
+	<url>https://github.com/commoncriteria/mobile-device</url>
+	<branch>v3.2</branch>
+      </git>
+      <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=417&amp;id=417</url>
 		<sec-func-req-dir>
       In a PP-Configuration that includes the MDF PP, the VPN client is expected to rely on some of the
       security functions implemented by the OS as a whole and evaluated against the Base-PP.
@@ -1946,8 +1951,11 @@ expected to enforce.<h:br/><h:br/>
 
     <!-- 5.3 App PP Security Functional requirements Direction -->
     <base-pp id="bpp-app">
-		<raw-url>https://github.com/commoncriteria/application/raw/master/input/application.xml</raw-url>
-		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=429&amp;id=429</url>
+      <git>
+	<url>https://github.com/commoncriteria/application</url>
+	<branch>release-1.4</branch>
+      </git>
+      <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=429&amp;id=429</url>
 		
 		<sec-func-req-dir>
       In a PP-Configuration that includes the App PP, the VPN client is expected to rely on some of the security
@@ -2529,9 +2537,12 @@ expected to enforce.<h:br/><h:br/>
 
     <!-- 5.4 MDM PP Security Functional Requirements Direction -->
     <base-pp id="bpp-mdm">
-		<raw-url>https://raw.githubusercontent.com/commoncriteria/mdm/v4.0/input/mdm.xml</raw-url>
-		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=428&amp;id=428</url>
-		<sec-func-req-dir>
+      <git>
+	<url>https://github.com/commoncriteria/mdm</url>
+	<branch>v4.0</branch>
+      </git>
+	<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=428&amp;id=428</url>
+	<sec-func-req-dir>
       In a PP-Configuration that includes the MDM PP, the VPN client is expected to rely on some of the
       security functions implemented by the OS as a whole and evaluated against the Base-PP.
       In this case, the following sections describe any modifications that the ST author must make to the SFRs
