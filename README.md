@@ -26,7 +26,7 @@ A list of products that have passed evaluation against this Protection Profile c
 * [PP-Module for Virtual Private Network (VPN) Clients](https://commoncriteria.github.io/pp/vpnclient/vpnclient.html) (html)
 
 ## Release Version
-* [PP-Module for Virtual Private Network (VPN) Clients](VPN Module)
+* [PP-Module for Virtual Private Network (VPN) Clients](https://www.niap-ccevs.org/Profile/Info.cfm?PPID=467&id=467)
 
 ## Contributing
 
