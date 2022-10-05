@@ -2,11 +2,22 @@
 PP-Module for Virtual Private Network (VPN) Clients
 ===============
 
+![Master Badges](https://img.shields.io/badge/Build-master-black.svg)
 ![Build](https://github.com/commoncriteria/vpnclient/workflows/Build/badge.svg)
 ![Validate](https://github.com/commoncriteria/vpnclient/workflows/Validate/badge.svg)
-[![SanityChecks](https://github.com/commoncriteria/vpnclient/blob/gh-pages/warnings.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/SanityChecksOutput.md)
-[![SpellCheck](https://github.com/commoncriteria/vpnclient/blob/gh-pages/spell-badge.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/SpellCheckReport.txt)
-[![QuickBuild](https://github.com/commoncriteria/vpnclient/actions/workflows/quick_build.yml/badge.svg)](https://commoncriteria.github.io/vpnclient/vpnclient-release.html)
+
+![Last QuickBuilt Branch](https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/build-branch-badge.svg)
+[![Validation](https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/validation.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/ValidationReport.txt)
+[![SanityChecks](https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/warnings.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/SanityChecksOutput.md)
+[![SpellCheck](https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/spell-badge.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/SpellCheckReport.txt)
+[![TDs](https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/tds.svg)](https://github.com/commoncriteria/vpnclient/blob/gh-pages/TDValidationReport.txt)
+[![QuickBuild](https://github.com/commoncriteria/vpnclient/actions/workflows/quick_build.yml/badge.svg)](https://commoncriteria.github.io/vpnclient)
+
+![Transforms Version](https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/transforms.svg)
+
+
+
+
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/vpnclient.svg?maxAge=2592000)](https://github.com/commoncriteria/vpnclient/issues) 
 
 This repository hosts the draft version of the PP-Module for Virtual Private Network (VPN) Clients based on the 
