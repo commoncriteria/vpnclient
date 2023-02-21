@@ -1,0 +1,112 @@
+== PP-Module for Virtual Private Network (VPN) Clients
+
+
+[cols="1,1,1,1,1,1,1,1"]
+|===
+8+|vpnclient 
+| https://github.com/commoncriteria/vpnclient/tree/master[master] 
+a| https://commoncriteria.github.io/vpnclient/master/vpnclient-release.html[📄]
+a|[link=https://github.com/commoncriteria/vpnclient/blob/gh-pages/master/ValidationReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/master/validation.svg[Validation]
+a|[link=https://github.com/commoncriteria/vpnclient/blob/gh-pages/master/SanityChecksOutput.md]
+image::https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/master/warnings.svg[SanityChecks]
+a|[link=https://github.com/commoncriteria/vpnclient/blob/gh-pages/master/SpellCheckReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/master/spell-badge.svg[SpellCheck]
+a|[link=https://github.com/commoncriteria/vpnclient/blob/gh-pages/master/TDValidationReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/master/tds.svg[TDs]
+a|image::https://raw.githubusercontent.com/commoncriteria/vpnclient/gh-pages/master/transforms.svg[transforms,150]
+a| 
+https://commoncriteria.github.io/vpnclient/master/vpnclient-release-linkable.html[vpnclient-release-linkable.html] +
+https://commoncriteria.github.io/vpnclient/master/vpnclient-release.html[vpnclient-release.html] +
+https://commoncriteria.github.io/vpnclient/master/vpnclient-sd.html[vpnclient-sd.html] +
+https://commoncriteria.github.io/vpnclient/master/vpnclient.html[vpnclient.html] +
+|===
+
+https://github.com/commoncriteria/vpnclient/issues[image:https://img.shields.io/github/issues/commoncriteria/vpnclient.svg?maxAge=2592000[GitHub
+issues Open]]
+
+This repository hosts the draft version of the PP-Module for Virtual
+Private Network (VPN) Clients based on the
+https://commoncriteria.github.io/pp/vpnclient/vpnclient-esr.html[Essential
+Security Requirements (ESR)] for this technology class of products. This
+repository is used to facilitate collaboration and development on the
+draft document. See the link:#Release-Version[release] section if you
+are looking for the officially released version for evaluations. A list
+of products that have passed evaluation against this Protection Profile
+can be found https://www.niap-ccevs.org/Product/PCL.cfm?ID624=34[here].
+
+=== Draft Version
+
+* https://commoncriteria.github.io/pp/vpnclient/vpnclient-release.html[PP-Module
+for Virtual Private Network (VPN) Clients] (html)
+* https://commoncriteria.github.io/pp/vpnclient/vpnclient-release.pdf[PP-Module
+for Virtual Private Network (VPN) Clients] (pdf)
+* https://commoncriteria.github.io/pp/vpnclient/vpnclient-sd.html[Supporting
+Documents for Virtual Private Network (VPN) Clients] (html)
+* https://commoncriteria.github.io/pp/vpnclient/vpnclient-sd.pdf[Supporting
+Documents for Virtual Private Network (VPN) Clients] (pdf)
+
+=== Combined Module/SD Version
+
+* https://commoncriteria.github.io/pp/vpnclient/vpnclient.html[PP-Module
+for Virtual Private Network (VPN) Clients] (html)
+
+=== Release Version
+
+* https://www.niap-ccevs.org/Profile/Info.cfm?PPID=467&id=467[PP-Module
+for Virtual Private Network (VPN) Clients]
+
+=== Contributing
+
+If you are interested in contributing directly to future versions the
+this Protection Profile, please consider joining the NIAP technical
+community. *
+https://www.niap-ccevs.org/NIAP_Evolution/tech_communities.cfm[How to
+join the NIAP Technical Community (Mailing list and updates)]
+
+=== Feedback
+
+Questions, comments, and fixes can be submitted to the
+https://github.com/commoncriteria/QQQQ/issues[repository issue tracker]
+
+=== Quickstart
+
+To clone this project along with its _transforms_ submodule run:
+
+....
+  git clone --recursive git@github.com:commoncriteria/qqqq.git
+....
+
+To pull updates from the upstream _transforms_ submodule and commit them
+run:
+
+....
+ git submodule update --remote transforms
+ git add transforms
+ git commit
+....
+
+==== Development Info
+
+https://github.com/commoncriteria/transforms/wiki/Working-with-Transforms-as-a-Submodule[Help
+working with Transforms Submodule]
+
+=== Repository Content
+
+* input - Contains the `meat' of the project. It’s the input content (in
+XML form) that gets transformed to readable html.
+* output - The output directory where the html is placed after
+transformation.
+* output/images - The directory where images are stored
+* transforms - Points to the transform subproject which is really a
+repository for resources shared amongst many Common Criteria projects.
+
+=== Links
+
+* https://www.niap-ccevs.org/[National Information Assurance Partnership
+(NIAP)]
+* https://www.commoncriteriaportal.org/[Common Criteria Portal]
+
+=== License
+
+See link:./LICENSE[License]
