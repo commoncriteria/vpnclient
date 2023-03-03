@@ -67,10 +67,10 @@ jobs:
 #      run: echo "action_tdate=2002222" >> $GITHUB_ENV
       run: echo "action_tdate=$(cd transforms && git log -1 --format=%cs; cd ->/dev/null)" >> $GITHUB_ENV
 
-    - name: Setup Java JDK
-      uses: actions/setup-java@v3.10.0
-      with:
-        distribution: oracle  
+#    - name: Setup Java JDK
+#      uses: actions/setup-java@v3.10.0
+#      with:
+#        distribution: oracle  
         
     - name: Get DaisyDiff
       run: |
