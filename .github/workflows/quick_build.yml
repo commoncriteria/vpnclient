@@ -199,7 +199,7 @@ jobs:
         echo "image::$rurl/tds.svg[TDs]"
         echo "a|image::$rurl/transforms.svg[transforms,150]"
         echo "a| "
-        for aa in output/*.html; do
+        for aa in output/*.html output/*.pdf; do
            echo "$surl/${aa#*/}[${aa#*/}] +"
         done
         echo '|==='
