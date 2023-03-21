@@ -16,7 +16,7 @@
       <subject>Incorporation of TC feedback</subject>
     </entry>
   </RevisionHistory>
-  <RevisionHistory>
+  <release-notes><h:h3>TDs Applied</h:h3></release-notes><RevisionHistory>
     <entry>
       <version>2.3</version>
       <date>2021-08-10</date>
@@ -38,6 +38,14 @@
     </entry>
   </RevisionHistory>
 
+  <include-pkg id="pkg-tls">
+    <git>
+      <url>https://github.com/commoncriteria/tls</url>
+      <branch>release-2.0</branch>
+    </git>
+    <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=465&amp;id=465</url>
+    <depends on="fcs-eap-ext-1"/>
+  </include-pkg>
   <!-- 1.0 Introduction. -->
   <sec:Introduction>
     
@@ -4572,7 +4580,7 @@ expected to enforce.<h:br/><h:br/>
           <f-element id="fia-hotp-ext-1e5">
             <title>
               The TSF shall truncate the HOTP hash per FIA_HOTP_EXT.1.4 to create an HOTP of  
-              <selectables>
+              <selectables onlyone="yes">
                 <selectable>administrator configurable character length of at least 6</selectable>
                 <selectable>non-configurable character length of
                   <selectables onlyone="yes">
@@ -4666,8 +4674,9 @@ expected to enforce.<h:br/><h:br/>
           <fam-behavior>Components in this family describe the requirements for pre-shared keys when implementing IPsec.</fam-behavior>
         </ext-comp-def>
 		
-		<!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
-        <f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition">
+	<!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
+	<f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition">
+	  <depends on-fcomp="fpf-mfa-ext-1"/>
           <depends on-sel="sel-ipsec-e11-psk" and="sel-ipsec-e11-pskeap" also="sel-ipsec-e11-pskeapma"/>
           <consistency-rationale/>
           <comp-lev>defines the use and composition of pre-shared keys used for IPsec.</comp-lev>
