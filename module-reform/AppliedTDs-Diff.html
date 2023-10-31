@@ -3866,8 +3866,14 @@
                     <p>There are no auditable events foreseen.</p>
                     <h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>Dependencies to: No dependencies.</p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td>No dependencies.</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FCS_CKM_EXT.2.1">FCS_CKM_EXT.2.1</h4>
                         The [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_22"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="_s_23"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span> ] shall store persistent secrets and private keys when not in use in <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>-provided key storage. 
                     </div>
@@ -3877,8 +3883,14 @@
                     <p>There are no auditable events foreseen.</p>
                     <h4>FCS_CKM_EXT.4 Cryptographic Key Destruction</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>Dependencies to: No dependencies</p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td>No dependencies</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FCS_CKM_EXT.4.1">FCS_CKM_EXT.4.1</h4>
                         The [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_124"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_125"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span> ] shall zeroize all plaintext secret and private cryptographic keys and CSPs when no longer required. 
                     </div>
@@ -3929,18 +3941,23 @@
                     </p>
                     <h4>FCS_IPSEC_EXT.1 IPsec</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <span class="no-link">FCS_CKM.1</span> Cryptographic Key Generation
-                            <br>
-                            <br>
-                             <span class="no-link">FCS_CKM.2</span> Cryptographic Key Distribution
-                            <br>
-                            <br>
-                             <span class="no-link">FCS_COP.1</span> Cryptographic Operation
-                            <br>
-                            <br>
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td> <span class="no-link">FCS_CKM.1</span> Cryptographic Key Generation
+                                    <br>
+                                    <br>
+                                     <span class="no-link">FCS_CKM.2</span> Cryptographic Key Distribution
+                                    <br>
+                                    <br>
+                                     <span class="no-link">FCS_COP.1</span> Cryptographic Operation
+                                    <br>
+                                    <br>
+                                </td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FCS_IPSEC_EXT.1.1">FCS_IPSEC_EXT.1.1</h4>
                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the IPsec architecture as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4301. 
                         <h4 id="ext-comp-FCS_IPSEC_EXT.1.2">FCS_IPSEC_EXT.1.2</h4>
@@ -4028,10 +4045,14 @@
                     <p>No specific audit functions are identified. </p>
                     <h4>FCS_EAP_EXT.1 EAP-TLS</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FCS_EAP_EXT.1.1">FCS_EAP_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement [<b>selection</b>: <span class="selectable-content" id="_s_294">EAP-TLS protocol as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5216</span>, <span class="selectable-content" id="_s_295">EAP-TTLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5881</span> ] as updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package. 
                         <h4 id="ext-comp-FCS_EAP_EXT.1.2">FCS_EAP_EXT.1.2</h4>
@@ -4068,16 +4089,20 @@
                     <p>There are no auditable events foreseen.</p>
                     <h4>FIA_X509_EXT.3 X.509 Certificate Use and Management</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: FIA_X509_EXT.1 X.509 Certificate Validation
-                            <br>
-                            <br>
-                             <span class="no-link">FPT_TST_EXT.1</span> <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test
-                            <br>
-                            <br>
-                             FPT_TUD_EXT.1 Trusted Update
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td>FIA_X509_EXT.1 X.509 Certificate Validation
+                                    <br>
+                                    <br>
+                                     <span class="no-link">FPT_TST_EXT.1</span> <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test
+                                    <br>
+                                    <br>
+                                     FPT_TUD_EXT.1 Trusted Update</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FIA_X509_EXT.3.1">FIA_X509_EXT.3.1</h4>
                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use X.509v3 certificates as defined by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5280 to support authentication for IPsec exchanges, and [<b>selection</b>: <span class="selectable-content" id="_s_24">digital signatures for FPT_TUD_EXT.1</span>, <span class="selectable-content" id="_s_25">integrity checks for FPT_TST_EXT.1</span>, <span class="selectable-content" id="_s_26">no additional uses</span> ]. 
                         <h4 id="ext-comp-FIA_X509_EXT.3.2">FIA_X509_EXT.3.2</h4>
@@ -4109,8 +4134,14 @@
                     <p>No specific audit functions are identified. </p>
                     <h4>FIA_BMA_EXT.1 Biometric Activation</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>Dependencies to: No dependencies.</p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td>No dependencies.</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FIA_BMA_EXT.1.1">FIA_BMA_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall leverage the platform biometric features to confirm the user before initiating a trusted channel. 
                     </div>
@@ -4136,10 +4167,14 @@
                     <p>No specific audit functions are identified. </p>
                     <h4>FIA_HOTP_EXT.1 HMAC-Based One-Time Password Pre-Shared Keys</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FIA_PSK_EXT.4">FIA_PSK_EXT.4</a> HMAC-Based One-Time Password Pre-shared Keys Support
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FIA_PSK_EXT.4">FIA_PSK_EXT.4</a> HMAC-Based One-Time Password Pre-shared Keys Support</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.1">FIA_HOTP_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support HMAC-Based One-Time Password authentication (HOTP) in accordance with <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4226 to authenticate the user before establishing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.2">FIA_HOTP_EXT.1.2</h4>
@@ -4221,10 +4256,14 @@
                     <p>No specific audit functions are identified. </p>
                     <h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for IPsec and [<b>selection</b>: <span class="selectable-content" id="_s_332">[<b>assignment</b>: <span class="assignable-content">other protocols that use pre-shared keys</span>]</span>, <span class="selectable-content" id="_s_333">no other protocols</span> ]. 
                         <h4 id="ext-comp-FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</h4>
@@ -4241,10 +4280,14 @@
                     </p>
                     <h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a></td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FIA_PSK_EXT.2.1">FIA_PSK_EXT.2.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: 
                         <ul>
@@ -4268,10 +4311,14 @@
                     </p>
                     <h4>FIA_PSK_EXT.3 Password-Based Pre-Shared Keys</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a></td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support a PSK of up to [<b>assignment</b>: <span class="assignable-content">positive integer of 64 or more</span>] characters. 
                         <h4 id="ext-comp-FIA_PSK_EXT.3.2">FIA_PSK_EXT.3.2</h4>
@@ -4293,10 +4340,14 @@
                     <p>No specific audit functions are identified. </p>
                     <h4>FIA_PSK_EXT.4 HMAC-Based One-Time Password Pre-shared Keys Support</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a></td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FIA_PSK_EXT.4.1">FIA_PSK_EXT.4.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall accept and send an HOTP while initiating a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
                         <h4 id="ext-comp-FIA_PSK_EXT.4.2">FIA_PSK_EXT.4.2</h4>
@@ -4308,10 +4359,14 @@
                     <p>No specific audit functions are identified. </p>
                     <h4>FIA_PSK_EXT.5 Time-Based One-Time Password Pre-shared Keys Support</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a></td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FIA_PSK_EXT.5.1">FIA_PSK_EXT.5.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall accept and send a TOTP while initiating a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
                         <h4 id="ext-comp-FIA_PSK_EXT.5.2">FIA_PSK_EXT.5.2</h4>
@@ -4339,10 +4394,14 @@
                     <p>No specific audit functions are identified. </p>
                     <h4>FIA_TOTP_EXT.1 Time-Based One-Time Password Pre-Shared Keys</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FIA_PSK_EXT.5">FIA_PSK_EXT.5</a> Time-Based One-Time Password Pre-shared Keys Support
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FIA_PSK_EXT.5">FIA_PSK_EXT.5</a> Time-Based One-Time Password Pre-shared Keys Support</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.1">FIA_TOTP_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support Time-Based One-Time Password (TOTP) authentication in accordance with <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 6238 to authenticate the user before establishing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.2">FIA_TOTP_EXT.1.2</h4>
@@ -4407,8 +4466,14 @@
                     <p>No specific audit functions are identified. </p>
                     <h4>FPF_MFA_EXT.1 Multifactor Authentication Filtering</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>Dependencies to: No dependencies.</p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td>No dependencies.</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FPF_MFA_EXT.1.1">FPF_MFA_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not forward packets to the internal network until the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>/IPsec tunnel has been established, except those necessary to ensure that the client is authenticated according to <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>.
                     </div>
@@ -4439,8 +4504,14 @@
                     <p>There are no auditable events foreseen.</p>
                     <h4>FPT_TST_EXT.1/VPN TSF Self-Test</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>Dependencies to: No dependencies.</p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td>No dependencies.</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FPT_TST_EXT.1.1/VPN">FPT_TST_EXT.1.1/VPN</h4>
                          The [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_290"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_291"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span> ] shall run a suite of self tests during initial start-up (on power on) to demonstrate the correct operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. 
                         <h4 id="ext-comp-FPT_TST_EXT.1.2/VPN">FPT_TST_EXT.1.2/VPN</h4>
@@ -4503,10 +4574,14 @@
                     <p>There are no auditable events foreseen.</p>
                     <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
                     </div>
@@ -4516,10 +4591,14 @@
                     <p>There are no auditable events foreseen.</p>
                     <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
                     </div>
@@ -4529,10 +4608,14 @@
                     <p>There are no auditable events foreseen.</p>
                     <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
                     </div>
@@ -4542,10 +4625,14 @@
                     <p>There are no auditable events foreseen.</p>
                     <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
                     </div>
@@ -4555,10 +4642,14 @@
                     <p>There are no auditable events foreseen.</p>
                     <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
                     </div>
@@ -4568,10 +4659,14 @@
                     <p>There are no auditable events foreseen.</p>
                     <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
                     <div style="margin-left: 1em;">
-                        <p>Hierarchical to: No other components.</p>
-                        <p>
-                            Dependencies to: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec
-                        </p>
+                        <table class="ecd_heir_dep" style="width: 100%">
+                            <tr>
+                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
+                            </tr>
+                            <tr style="background-color: inherit">
+                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
+                            </tr>
+                        </table>
                         <h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
                     </div>
