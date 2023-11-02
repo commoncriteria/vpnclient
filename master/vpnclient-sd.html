@@ -170,6 +170,21 @@
        background-color:#F4F4F4;
    }
 
+   table.ecd_heir_dep{
+       width: 100%;
+   }
+   table.ecd_heir_dep tr{
+       background-color: inherit;
+   }
+       
+   table.ecd_heir_dep tr :first-child{
+       white-space: nowrap;
+   }
+   table.ecd_heir_dep tr :last-child{
+       width: 100%;
+   }
+
+       
    .dependent{
        border: 1px solid gray;
        border-radius: 1px
@@ -1348,37 +1363,7 @@ The following sections list Common Criteria and technology terms used in this do
                     a VPN session between the test client and the TSF, and observe that the TSF aborts the session.
                   </li>
                 </ul></span>
-              </div></span></div><h2 class="indexable" data-level="2" id="s-fia">2.7.2 Identification and Authentication (FIA)</h2><div class="comp" id="FIA-HOTP-EXT-1"><h4>FIA_HOTP_EXT.1 HMAC-Based One-Time Password Pre-Shared Keys</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_HOTP_EXT.1</div>
-              
-              
-              
-            <div class="eacategory">TSS</div><div class="ea">
-                The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
-                <br/><br/>The evaluator shall confirm the TSS describes how the HOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1.
-                <br/><br/>The evaluator shall confirm the TSS describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP. 
-                <br/><br/>The evaluator shall confirm the TSS describes how a new HOTP seed is assigned for each client and how each client is uniquely identified.
-                <br/><br/>The evaluator shall confirm the TSS describes how the HOTP seed is conditioned into an HOTP hash and verify it matches the selection in FIA_HOTP_EXT.1.4.
-                <br/><br/>The evaluator shall confirm the TSS describes how the HOTP hash is truncated and verify it matches the selection in FIA_HOTP_EXT.1.5.
-                <br/><br/>The evaluator shall confirm the TSS describes how the TOE handles multiple incoming invalid requests and verify it provides an anti-hammer mechanism that matches the selections made in FIA_HOTP_EXT.1.6.
-                <br/><br/>The evaluator shall confirm the TSS describes how the TOE handles resynchronization and how it rejects attempts outside of the look-ahead window selected in FIA_TOTP_EXT.1.7.
-                <br/><br/>The evaluator shall confirm the TSS describes how the TOE counter is incremented after each successful authentication.<br/><br/>
-              </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the FIA_HOTP_EXT.1 requirements.<br/><br/>
-              </div><div class="eacategory">Tests</div><div class="ea">
-                The evaluator shall configure the TOE to use a supported HOTP factor then:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_45" class="defined" href="#_t_45">Test FIA_HOTP_EXT.1:1</a>:
-      Attempt to establish a connection using a factor from a different client. The test passes if the client fails to connect.
-                  </li><li class="test-"><a id="_t_46" class="defined" href="#_t_46">Test FIA_HOTP_EXT.1:2</a>:
-      Attempt multiple connections outside the boundary set in FIA_HOTP_EXT.1.6 and verify the remediation is triggered. 
-			The test passes if remediation is triggered as defined in the selections and assignments.
-                  </li><li class="test-"><a id="_t_47" class="defined" href="#_t_47">Test FIA_HOTP_EXT.1:3</a>:
-      Attempt to use an HOTP that is outside of the value allowed for resynchronization. The test passes if the client fails to connect.
-                  </li><li class="test-"><a id="_t_48" class="defined" href="#_t_48">Test FIA_HOTP_EXT.1:4</a>:
-      Attempt to connect with a valid HOTP, disconnect and attempt to authenticate again with the same HOTP value.  The test passes
-			if the client connects the first time and fails to connect the second time. If the HOTP generated is duplicated the test may be repeated.
-                  </li>
-                </ul></span>
-              </div></span></div><div class="comp" id="FIA-PSK-EXT-1"><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.1</div>
+              </div></span></div><h2 class="indexable" data-level="2" id="s-fia">2.7.2 Identification and Authentication (FIA)</h2><div class="comp" id="FIA-PSK-EXT-1"><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.1</div>
               
               
               
@@ -1392,7 +1377,7 @@ The following sections list Common Criteria and technology terms used in this do
                 The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, 
                 if performed by a different implementation on the TOE). 
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_49" class="defined" href="#_t_49">Test FIA_PSK_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_45" class="defined" href="#_t_45">Test FIA_PSK_EXT.1:1</a>:
       For each mechanism selected in FIA_PSK_EXT.1.2, the evaluator shall attempt to establish a connection 
                     and confirm that the connection requires the selected factors in the PSK to establish the connection. </li>
                 </ul></span>
@@ -1406,7 +1391,7 @@ The following sections list Common Criteria and technology terms used in this do
                 for each protocol identified in the FIA_PSK_EXT.1.1. <br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_50" class="defined" href="#_t_50">Test FIA_PSK_EXT.2:1</a>:
+                  <li class="test-"><a id="_t_46" class="defined" href="#_t_46">Test FIA_PSK_EXT.2:1</a>:
       [conditional] If generate was selected the evaluator shall generate a pre-shared key and confirm the output matches
 			  the size selected in FIA_PSK_EXT.2.1.
                   </li>
@@ -1453,20 +1438,20 @@ The following sections list Common Criteria and technology terms used in this do
                 Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a TOE
 		      configured according to the Operational Guidance:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_51" class="defined" href="#_t_51">Test FIA_PSK_EXT.3:1</a>:
+                  <li class="test-"><a id="_t_47" class="defined" href="#_t_47">Test FIA_PSK_EXT.3:1</a>:
       The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance
 			  with the FIA_PSK_EXT.1.3 and verify that a successful protocol negotiation can be performed with the key. </li>
-                  <li class="test-"><a id="_t_52" class="defined" href="#_t_52">Test FIA_PSK_EXT.3:2</a>:
+                  <li class="test-"><a id="_t_48" class="defined" href="#_t_48">Test FIA_PSK_EXT.3:2</a>:
       [conditional]: If the TOE supports pre-shared keys of multiple lengths, the evaluator shall repeat Test 1 using the minimum length and invalid 
 			  lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should 
 			  be successful, and the invalid lengths must be rejected by the TOE. </li>
-                  <li class="test-"><a id="_t_53" class="defined" href="#_t_53">Test FIA_PSK_EXT.3:3</a>:
+                  <li class="test-"><a id="_t_49" class="defined" href="#_t_49">Test FIA_PSK_EXT.3:3</a>:
       [conditional]: If the TOE initiates connections, initiate and establish a remote connection, disconnect from the connection, verify
 			  that the PSK is required when initiating the connection a second time.</li>
-                  <li class="test-"><a id="_t_54" class="defined" href="#_t_54">Test FIA_PSK_EXT.3:4</a>:
+                  <li class="test-"><a id="_t_50" class="defined" href="#_t_50">Test FIA_PSK_EXT.3:4</a>:
       [conditional]: If the TOE supports a password meter, the evaluator shall enter a password and verify the password checker
 			  responds per the description in the TSS.</li>
-                  <li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FIA_PSK_EXT.3:5</a>:
+                  <li class="test-"><a id="_t_51" class="defined" href="#_t_51">Test FIA_PSK_EXT.3:5</a>:
       [conditional]: If the TOE supports a password denylist, the evaluator shall enter a denylisted password and verify that the
 			  password is rejected or flagged as such.</li>
                 </ul></span>
@@ -1475,13 +1460,12 @@ The following sections list Common Criteria and technology terms used in this do
               
               
             <div class="eacategory">TSS</div><div class="ea">The evaluator shall verify the TSS describes how the HOTP is input into the client and how that value is sent to the server.
-                <br/><br/>The evaluator shall verify the TSS describes how the HOTP is accepted from an incoming connection and how that value is verified, 
-		      either by the TOE or by an external authentication server.<br/><br/>
+              
               </div><div class="eacategory">Guidance</div><div class="ea">
                 The evaluator shall verify the operational guidance contains any configuration necessary to enable HOTP.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_56" class="defined" href="#_t_56">Test FIA_PSK_EXT.4:1</a>:
+                  <li class="test-"><a id="_t_52" class="defined" href="#_t_52">Test FIA_PSK_EXT.4:1</a>:
       
                     The evaluator shall configure the TOE to use a supported HOTP factor, then attempt to establish a connection using that factor.  
                     The evaluator shall verify the client prompts the user for the HOTP before initiating the connection.  
@@ -1494,49 +1478,16 @@ The following sections list Common Criteria and technology terms used in this do
               
               
             <div class="eacategory">TSS</div><div class="ea">The evaluator shall verify the TSS describes how the TOTP is input into the client and how that value is sent to the server.
-                <br/><br/>The evaluator shall verify the TSS describes how the TOTP is accepted from an incoming connection and how that value is verified, 
-		      either by the TOE or by an external authentication server.<br/><br/></div><div class="eacategory">Guidance</div><div class="ea">
+              </div><div class="eacategory">Guidance</div><div class="ea">
                 The evaluator shall verify the operational guidance contains any configuration necessary to enable TOTP.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_57" class="defined" href="#_t_57">Test FIA_PSK_EXT.5:1</a>:
+                  <li class="test-"><a id="_t_53" class="defined" href="#_t_53">Test FIA_PSK_EXT.5:1</a>:
       
                     The evaluator shall configure the TOE to use a supported TOTP factor, then attempt to establish a connection using that factor.  
                     The evaluator shall verify the client prompts the user for the TOTP before initiating the connection.  
                     The evaluator shall verify the server validates the TOTP or receives confirmation from an authentication server before establishing the channel.</li>
                   
-                </ul></span>
-              </div></span></div><div class="comp" id="FIA-TOTP-EXT-1"><h4>FIA_TOTP_EXT.1 Time-Based One-Time Password Pre-Shared Keys</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_TOTP_EXT.1</div>
-              
-              
-              
-            <div class="eacategory">TSS</div><div class="ea">
-                The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
-                <br/><br/>The evaluator shall confirm the TSS describes how the TOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1.
-                <br/><br/>The evaluator shall confirm the TSS describes how the TOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP. 
-                <br/><br/>The evaluator shall confirm the TSS describes how a new TOTP seed is assigned for each client and how each client is uniquely identified.
-                <br/><br/>The evaluator shall confirm the TSS describes how the TOTP seed is conditioned into a TOTP hash and verify it matches the 
-		      selection in FIA_TOTP_EXT.1.4.
-                <br/><br/>The evaluator shall confirm the TSS describes how the TOTP hash is truncated and verify it matches the selection in FIA_TOTP_EXT.1.5.
-                <br/><br/>The evaluator shall confirm the TSS describes how the TOE handles multiple incoming requests and verify it provides an anti-hammer
-		      mechanism that matches the selections made in FIA_TOTP_EXT.1.6.
-                <br/><br/>The evaluator shall confirm the TSS describes how the TOE sets a time-step value and verify it matches the selections in the ST.
-                <br/><br/>The evaluator shall confirm the TSS describes how the TOE handles drift and resynchronization and verify it matches the 
-		      selections.  The evaluator shall ensure the TSS describes how time is kept and whether drift is calculated and recorded.  
-                If drift is recorded, the evaluator shall ensure that the TSS describes how this is done.<br/><br/>
-                </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is
-		      configurable in the FIA_TOTP_EXT.1 requirements.<br/><br/></div><div class="eacategory">Tests</div><div class="ea">
-                The evaluator shall configure the TOE to use a supported TOTP factor then:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_58" class="defined" href="#_t_58">Test FIA_TOTP_EXT.1:1</a>:
-      Attempt to establish a connection using a factor from a different client. The test passes if the client fails to connect.
-                  </li><li class="test-"><a id="_t_59" class="defined" href="#_t_59">Test FIA_TOTP_EXT.1:2</a>:
-      Attempt multiple connections outside the boundary set in FIA_TOTP_EXT.1.6 and verify the remediation is triggered. 
-			The test passes if remediation is triggered as defined in the selections and assignments.
-                  </li><li class="test-"><a id="_t_60" class="defined" href="#_t_60">Test FIA_TOTP_EXT.1:3</a>:
-      Attempt to use a TOTP that is outside of the value allowed for resynchronization. The test passes if the client fails to connect.
-                  </li>Attempt to connect with a valid TOTP, disconnect and attempt to authenticate again with the same TOTP.  The test passes if the
-			client connects the first time and fails to connect the second time. If the TOTP generated is duplicated the test may be repeated.
                 </ul></span>
               </div></span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.8 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="ob-fau">2.8.1 Security Audit (FAU)</h2><div class="comp" id="FAU-GEN-1-VPN"><h4>FAU_GEN.1/VPN Audit Data Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_GEN.1/VPN</div>
               
@@ -1597,12 +1548,12 @@ The following sections list Common Criteria and technology terms used in this do
 		explain the syntax (if present) for multi-value pre-selection. The administrative guidance shall also identify
 		those audit records that are always recorded, regardless of the selection criteria currently being enforced.<br/><br/></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following tests:
               <span class="testlist-"><ul>
-                <li class="test-"><a id="_t_61" class="defined" href="#_t_61">Test FAU_SEL.1/VPN:1</a>:
+                <li class="test-"><a id="_t_54" class="defined" href="#_t_54">Test FAU_SEL.1/VPN:1</a>:
       For each attribute listed in the requirement, the evaluator shall devise a test to show that selecting
 			the attribute causes only audit events with that attribute (or those that are always recorded, as identified
 			in the administrative guidance) to be recorded.
                 </li>
-                <li class="test-"><a id="_t_62" class="defined" href="#_t_62">Test FAU_SEL.1/VPN:2</a>:
+                <li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FAU_SEL.1/VPN:2</a>:
       [conditional] If the TSF supports specification of more complex audit pre-selection criteria (e.g.,
 			multiple attributes, logical expressions using attributes) then the evaluator shall devise tests showing that
 			this capability is correctly implemented. The evaluator shall also, in the test plan, provide a short narrative
