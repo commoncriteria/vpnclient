@@ -52,7 +52,7 @@
         </h3>
         <h2>Contents</h2>
         <div class="toc" id="toc">
-            <a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#rfocus" style="text-indent:10px">1.5<span>Requirements Focus</span></a><a href="#ConformanceClaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Description" style="text-indent:0px">3<span>Security Problem Description</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_TOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-gpos" style="text-indent:10px">5.1<span>VPN Clients PP Security Functional Requirements DirectionX </span></a><a href="#modsfr-bpp-gpos" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#os-m-fcs" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#addsfr-bpp-gpos" style="text-indent:20px">5.1.2<span> Additional SFRs</span></a><a href="#os-a-fcs" style="text-indent:30px">5.1.2.1<span>Cryptographic Support (FCS)</span></a><a href="#os-a-fia" style="text-indent:30px">5.1.2.2<span>Identification and Authentication (FIA)</span></a><a href="#os-a-ftp" style="text-indent:30px">5.1.2.3<span>Trusted Path/Channels (FTP)</span></a><a href="#secreq-bpp-mdf" style="text-indent:10px">5.2<span>VPN Clients PP Security Functional Requirements DirectionX </span></a><a href="#modsfr-bpp-mdf" style="text-indent:20px">5.2.1<span> Modified SFRs </span></a><a href="#md-m-fcs" style="text-indent:30px">5.2.1.1<span>Cryptographic Support (FCS)</span></a><a href="#md-m-fdp" style="text-indent:30px">5.2.1.2<span>User Data Protection (FDP)</span></a><a href="#md-m-fia" style="text-indent:30px">5.2.1.3<span>Identification and Authentication (FIA)</span></a><a href="#md-m-fmt" style="text-indent:30px">5.2.1.4<span>Security Management (FMT)</span></a><a href="#md-m-ftp" style="text-indent:30px">5.2.1.5<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-mdf" style="text-indent:20px">5.2.2<span> Additional SFRs</span></a><a href="#md-a-fdp" style="text-indent:30px">5.2.2.1<span>User Data Protection (FDP)</span></a><a href="#secreq-bpp-app" style="text-indent:10px">5.3<span>App PP Security Functional Requirements DirectionX </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#ap-m-fcs" style="text-indent:30px">5.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#ap-m-fia" style="text-indent:30px">5.3.1.2<span>Identification and Authentication (FIA)</span></a><a href="#ap-m-ftp" style="text-indent:30px">5.3.1.3<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-app" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#ap-a-fcs" style="text-indent:30px">5.3.2.1<span>Cryptographic Support (FCS)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.4<span>MDM PP Security Functional Requirements DirectionX </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.4.1<span> Modified SFRs </span></a><a href="#dm-m-fcs" style="text-indent:30px">5.4.1.1<span>Cryptographic Support (FCS)</span></a><a href="#dm-m-fia" style="text-indent:30px">5.4.1.2<span>Identification and Authentication (FIA)</span></a><a href="#dm-m-fpt" style="text-indent:30px">5.4.1.3<span>Protection of the TSF (FPT)</span></a><a href="#dm-m-ftp" style="text-indent:30px">5.4.1.4<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.4.2<span> Additional SFRs</span></a><a href="#man-sfrs" style="text-indent:10px">5.5<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.5.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fcs" style="text-indent:20px">5.5.2<span>Cryptographic Support (FCS)</span></a><a href="#m-fdp" style="text-indent:20px">5.5.3<span>User Data Protection (FDP)</span></a><a href="#m-fmt" style="text-indent:20px">5.5.4<span>Security Management (FMT)</span></a><a href="#m-fpt" style="text-indent:20px">5.5.5<span>Protection of the TSF (FPT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.6<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-gpos" style="text-indent:10px">6.1<span> Protection Profile for VPN Clients</span></a><a href="#contoe-bpp-gpos" style="text-indent:20px">6.1.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-gpos" style="text-indent:20px">6.1.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-gpos" style="text-indent:20px">6.1.3<span> Consistency of Objectives </span></a><a href="#conreq-bpp-gpos" style="text-indent:20px">6.1.4<span> Consistency of Requirements </span></a><a href="#conrat-bpp-mdf" style="text-indent:10px">6.2<span> Protection Profile for VPN Clients</span></a><a href="#contoe-bpp-mdf" style="text-indent:20px">6.2.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-mdf" style="text-indent:20px">6.2.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-mdf" style="text-indent:20px">6.2.3<span> Consistency of Objectives </span></a><a href="#conreq-bpp-mdf" style="text-indent:20px">6.2.4<span> Consistency of Requirements </span></a><a href="#conrat-bpp-app" style="text-indent:10px">6.3<span> Protection Profile for VPN Clients</span></a><a href="#contoe-bpp-app" style="text-indent:20px">6.3.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-app" style="text-indent:20px">6.3.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-app" style="text-indent:20px">6.3.3<span> Consistency of Objectives </span></a><a href="#conreq-bpp-app" style="text-indent:20px">6.3.4<span> Consistency of Requirements </span></a><a href="#conrat-bpp-mdm" style="text-indent:10px">6.4<span> Protection Profile for VPN Clients</span></a><a href="#contoe-bpp-mdm" style="text-indent:20px">6.4.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-mdm" style="text-indent:20px">6.4.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-mdm" style="text-indent:20px">6.4.3<span> Consistency of Objectives </span></a><a href="#conreq-bpp-mdm" style="text-indent:20px">6.4.4<span> Consistency of Requirements </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements </span></a><a href="#sop-audit-table" style="text-indent:20px">A.1.1<span>Auditable Events for Strictly Optional SFRs</span></a><a href="#o-fia" style="text-indent:20px">A.1.2<span>Identification and Authentication (FIA)</span></a><a href="#s-fpf" style="text-indent:20px">A.1.3<span>Packet Filtering (FPF)</span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements </span></a><a href="#sob-audit-table" style="text-indent:20px">A.2.1<span>Auditable Events for Objective SFRs</span></a><a href="#ob-fau" style="text-indent:20px">A.2.2<span>Security Audit (FAU)</span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-based Requirements </span></a><a href="#sib-audit-table" style="text-indent:20px">A.3.1<span>Auditable Events for Implementation-Dependent SFRs</span></a><a href="#ib-fdp" style="text-indent:20px">A.3.2<span>User Data Protection (FDP)</span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements </span></a><a href="#sb-audit-table" style="text-indent:10px">B.1<span>Auditable Events for Selection-based SFRs</span></a><a href="#s-fcs" style="text-indent:10px">B.2<span>Cryptographic Support (FCS)</span></a><a href="#s-fia" style="text-indent:10px">B.3<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_CKM_EXT" style="text-indent:30px">C.2.1.1<span>FCS_CKM_EXT Cryptographic Key Management</span></a><a href="#ext-comp-FCS_IPSEC_EXT" style="text-indent:30px">C.2.1.2<span>FCS_IPSEC_EXT IPsec</span></a><a href="#ext-comp-FCS_EAP_EXT" style="text-indent:30px">C.2.1.3<span>FCS_EAP_EXT EAP-TLS</span></a><a href="#ext-comp-FIA" style="text-indent:20px">C.2.2<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-FIA_X509_EXT" style="text-indent:30px">C.2.2.1<span>FIA_X509_EXT X.509 Certificate Use and Management</span></a><a href="#ext-comp-FIA_BMA_EXT" style="text-indent:30px">C.2.2.2<span>FIA_BMA_EXT Biometric Activation</span></a><a href="#ext-comp-FIA_HOTP_EXT" style="text-indent:30px">C.2.2.3<span>FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys</span></a><a href="#ext-comp-FIA_PSK_EXT" style="text-indent:30px">C.2.2.4<span>FIA_PSK_EXT Pre-Shared Key Composition</span></a><a href="#ext-comp-FIA_TOTP_EXT" style="text-indent:30px">C.2.2.5<span>FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys</span></a><a href="#ext-comp-FPF" style="text-indent:20px">C.2.3<span>Packet Filtering (FPF)</span></a><a href="#ext-comp-FPF_MFA_EXT" style="text-indent:30px">C.2.3.1<span>FPF_MFA_EXT Multifactor Authentication Filtering</span></a><a href="#ext-comp-FPT" style="text-indent:20px">C.2.4<span>Protection of the TSF (FPT)</span></a><a href="#ext-comp-FPT_TST_EXT" style="text-indent:30px">C.2.4.1<span>FPT_TST_EXT TSF Self-Test</span></a><a href="#ext-comp-FDP" style="text-indent:20px">C.2.5<span>User Data Protection (FDP)</span></a><a href="#ext-comp-FDP_VPN_EXT" style="text-indent:30px">C.2.5.1<span>FDP_VPN_EXT Subset Information Flow Control</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#app-ent" style="text-indent:0px">Appendix E - <span>Entropy Documentation and Assessment</span></a><a href="#acronyms" style="text-indent:0px">Appendix F - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix G - <span>Bibliography</span></a>
+            <a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#rfocus" style="text-indent:10px">1.5<span>Requirements Focus</span></a><a href="#ConformanceClaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Description" style="text-indent:0px">3<span>Security Problem Description</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_TOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-gpos" style="text-indent:10px">5.1<span>VPN Clients PP Security Functional Requirements Direction </span></a><a href="#modsfr-bpp-gpos" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#os-m-fcs" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#addsfr-bpp-gpos" style="text-indent:20px">5.1.2<span> Additional SFRs</span></a><a href="#os-a-fcs" style="text-indent:30px">5.1.2.1<span>Cryptographic Support (FCS)</span></a><a href="#os-a-fia" style="text-indent:30px">5.1.2.2<span>Identification and Authentication (FIA)</span></a><a href="#os-a-ftp" style="text-indent:30px">5.1.2.3<span>Trusted Path/Channels (FTP)</span></a><a href="#secreq-bpp-mdf" style="text-indent:10px">5.2<span>VPN Clients PP Security Functional Requirements Direction </span></a><a href="#modsfr-bpp-mdf" style="text-indent:20px">5.2.1<span> Modified SFRs </span></a><a href="#md-m-fcs" style="text-indent:30px">5.2.1.1<span>Cryptographic Support (FCS)</span></a><a href="#md-m-fdp" style="text-indent:30px">5.2.1.2<span>User Data Protection (FDP)</span></a><a href="#md-m-fia" style="text-indent:30px">5.2.1.3<span>Identification and Authentication (FIA)</span></a><a href="#md-m-fmt" style="text-indent:30px">5.2.1.4<span>Security Management (FMT)</span></a><a href="#md-m-ftp" style="text-indent:30px">5.2.1.5<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-mdf" style="text-indent:20px">5.2.2<span> Additional SFRs</span></a><a href="#md-a-fdp" style="text-indent:30px">5.2.2.1<span>User Data Protection (FDP)</span></a><a href="#secreq-bpp-app" style="text-indent:10px">5.3<span>App PP Security Functional Requirements Direction </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#ap-m-fcs" style="text-indent:30px">5.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#ap-m-fia" style="text-indent:30px">5.3.1.2<span>Identification and Authentication (FIA)</span></a><a href="#ap-m-ftp" style="text-indent:30px">5.3.1.3<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-app" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#ap-a-fcs" style="text-indent:30px">5.3.2.1<span>Cryptographic Support (FCS)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.4<span>MDM PP Security Functional Requirements Direction </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.4.1<span> Modified SFRs </span></a><a href="#dm-m-fcs" style="text-indent:30px">5.4.1.1<span>Cryptographic Support (FCS)</span></a><a href="#dm-m-fia" style="text-indent:30px">5.4.1.2<span>Identification and Authentication (FIA)</span></a><a href="#dm-m-fpt" style="text-indent:30px">5.4.1.3<span>Protection of the TSF (FPT)</span></a><a href="#dm-m-ftp" style="text-indent:30px">5.4.1.4<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.4.2<span> Additional SFRs</span></a><a href="#man-sfrs" style="text-indent:10px">5.5<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.5.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fcs" style="text-indent:20px">5.5.2<span>Cryptographic Support (FCS)</span></a><a href="#m-fdp" style="text-indent:20px">5.5.3<span>User Data Protection (FDP)</span></a><a href="#m-fmt" style="text-indent:20px">5.5.4<span>Security Management (FMT)</span></a><a href="#m-fpt" style="text-indent:20px">5.5.5<span>Protection of the TSF (FPT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.6<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-gpos" style="text-indent:10px">6.1<span> Protection Profile for VPN Clients</span></a><a href="#contoe-bpp-gpos" style="text-indent:20px">6.1.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-gpos" style="text-indent:20px">6.1.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-gpos" style="text-indent:20px">6.1.3<span> Consistency of Objectives </span></a><a href="#conreq-bpp-gpos" style="text-indent:20px">6.1.4<span> Consistency of Requirements </span></a><a href="#conrat-bpp-mdf" style="text-indent:10px">6.2<span> Protection Profile for VPN Clients</span></a><a href="#contoe-bpp-mdf" style="text-indent:20px">6.2.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-mdf" style="text-indent:20px">6.2.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-mdf" style="text-indent:20px">6.2.3<span> Consistency of Objectives </span></a><a href="#conreq-bpp-mdf" style="text-indent:20px">6.2.4<span> Consistency of Requirements </span></a><a href="#conrat-bpp-app" style="text-indent:10px">6.3<span> Protection Profile for VPN Clients</span></a><a href="#contoe-bpp-app" style="text-indent:20px">6.3.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-app" style="text-indent:20px">6.3.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-app" style="text-indent:20px">6.3.3<span> Consistency of Objectives </span></a><a href="#conreq-bpp-app" style="text-indent:20px">6.3.4<span> Consistency of Requirements </span></a><a href="#conrat-bpp-mdm" style="text-indent:10px">6.4<span> Protection Profile for VPN Clients</span></a><a href="#contoe-bpp-mdm" style="text-indent:20px">6.4.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-mdm" style="text-indent:20px">6.4.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-mdm" style="text-indent:20px">6.4.3<span> Consistency of Objectives </span></a><a href="#conreq-bpp-mdm" style="text-indent:20px">6.4.4<span> Consistency of Requirements </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements </span></a><a href="#sop-audit-table" style="text-indent:20px">A.1.1<span>Auditable Events for Strictly Optional SFRs</span></a><a href="#o-fia" style="text-indent:20px">A.1.2<span>Identification and Authentication (FIA)</span></a><a href="#s-fpf" style="text-indent:20px">A.1.3<span>Packet Filtering (FPF)</span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements </span></a><a href="#sob-audit-table" style="text-indent:20px">A.2.1<span>Auditable Events for Objective SFRs</span></a><a href="#ob-fau" style="text-indent:20px">A.2.2<span>Security Audit (FAU)</span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-based Requirements </span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements </span></a><a href="#sb-audit-table" style="text-indent:10px">B.1<span>Auditable Events for Selection-based SFRs</span></a><a href="#s-fcs" style="text-indent:10px">B.2<span>Cryptographic Support (FCS)</span></a><a href="#s-fia" style="text-indent:10px">B.3<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_CKM_EXT" style="text-indent:30px">C.2.1.1<span>FCS_CKM_EXT Cryptographic Key Management</span></a><a href="#ext-comp-FCS_IPSEC_EXT" style="text-indent:30px">C.2.1.2<span>FCS_IPSEC_EXT IPsec</span></a><a href="#ext-comp-FCS_EAP_EXT" style="text-indent:30px">C.2.1.3<span>FCS_EAP_EXT EAP-TLS</span></a><a href="#ext-comp-FIA" style="text-indent:20px">C.2.2<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-FIA_X509_EXT" style="text-indent:30px">C.2.2.1<span>FIA_X509_EXT X.509 Certificate Use and Management</span></a><a href="#ext-comp-FIA_BMA_EXT" style="text-indent:30px">C.2.2.2<span>FIA_BMA_EXT Biometric Activation</span></a><a href="#ext-comp-FIA_HOTP_EXT" style="text-indent:30px">C.2.2.3<span>FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys</span></a><a href="#ext-comp-FIA_PSK_EXT" style="text-indent:30px">C.2.2.4<span>FIA_PSK_EXT Pre-Shared Key Composition</span></a><a href="#ext-comp-FIA_TOTP_EXT" style="text-indent:30px">C.2.2.5<span>FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys</span></a><a href="#ext-comp-FPF" style="text-indent:20px">C.2.3<span>Packet Filtering (FPF)</span></a><a href="#ext-comp-FPF_MFA_EXT" style="text-indent:30px">C.2.3.1<span>FPF_MFA_EXT Multifactor Authentication Filtering</span></a><a href="#ext-comp-FPT" style="text-indent:20px">C.2.4<span>Protection of the TSF (FPT)</span></a><a href="#ext-comp-FPT_TST_EXT" style="text-indent:30px">C.2.4.1<span>FPT_TST_EXT TSF Self-Test</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#app-ent" style="text-indent:0px">Appendix E - <span>Entropy Documentation and Assessment</span></a><a href="#acronyms" style="text-indent:0px">Appendix F - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix G - <span>Bibliography</span></a>
         </div>
         <h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
         <h2 class="indexable" data-level="2" id="Overview">1.1 Overview</h2>
@@ -588,7 +588,7 @@
                  <b>Iteration</b> operation: Is indicated by appending the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> name with a slash and unique identifier suggesting the purpose of the operation, e.g. "/EXAMPLE1." 
             </li>
         </ul>
-        <h2 id="secreq-bpp-gpos" class="indexable" data-level="2">5.1 VPN Clients PP Security Functional Requirements DirectionX </h2>
+        <h2 id="secreq-bpp-gpos" class="indexable" data-level="2">5.1 VPN Clients PP Security Functional Requirements Direction </h2>
          In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is expected to rely on some of the security functions implemented by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> as a whole and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. In this case, the following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in addition to what is mandated by section 5.5. 
         <h3 id="modsfr-bpp-gpos" class="indexable" data-level="3">5.1.1 Modified SFRs </h3>
          The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
@@ -824,7 +824,7 @@
                 </div>
             </div>
         </div>
-        <h2 id="secreq-bpp-mdf" class="indexable" data-level="2">5.2 VPN Clients PP Security Functional Requirements DirectionX </h2>
+        <h2 id="secreq-bpp-mdf" class="indexable" data-level="2">5.2 VPN Clients PP Security Functional Requirements Direction </h2>
          In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is expected to rely on some of the security functions implemented by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> as a whole and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. In this case, the following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in addition to what is mandated by section 5.5. 
         <h3 id="modsfr-bpp-mdf" class="indexable" data-level="3">5.2.1 Modified SFRs </h3>
          The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
@@ -1099,7 +1099,7 @@
                 </div>
             </div>
         </div>
-        <h2 id="secreq-bpp-app" class="indexable" data-level="2">5.3 App PP Security Functional Requirements DirectionX </h2>
+        <h2 id="secreq-bpp-app" class="indexable" data-level="2">5.3 App PP Security Functional Requirements Direction </h2>
          In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is expected to rely on some of the security functions implemented by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> as a whole and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. In this case, the following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in addition to what is mandated by section 5.5. 
         <h3 id="modsfr-bpp-app" class="indexable" data-level="3">5.3.1 Modified SFRs </h3>
          The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
@@ -1325,7 +1325,7 @@
                 </div>
             </div>
         </div>
-        <h2 id="secreq-bpp-mdm" class="indexable" data-level="2">5.4 MDM PP Security Functional Requirements DirectionX </h2>
+        <h2 id="secreq-bpp-mdm" class="indexable" data-level="2">5.4 MDM PP Security Functional Requirements Direction </h2>
          In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is expected to rely on some of the security functions implemented by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> as a whole and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. In this case, the following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in addition to what is mandated by section 5.5. 
         <h3 id="modsfr-bpp-mdm" class="indexable" data-level="3">5.4.1 Modified SFRs </h3>
          The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
@@ -2459,7 +2459,7 @@
                 <th colspan="2"> Implementation-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
             </tr>
             <tr>
-                <td><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></td><td>The ability of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client to prevent split tunneling of IPsec traffic requires it to have hooks into lower-level <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> behavior, but there are no requirements in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that would prevent this functionality from being supported.</td>
+                <td colspan="2" style="text-align:center"> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-based requirements. </td>
             </tr>
             <tr>
                 <th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
@@ -2634,7 +2634,7 @@
                 <th colspan="2"> Implementation-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
             </tr>
             <tr>
-                <td><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></td><td>The ability of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client to prevent split tunneling of IPsec traffic requires it to have hooks into lower-level mobile device behavior, but there are no requirements in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that would prevent this functionality from being supported.</td>
+                <td colspan="2" style="text-align:center"> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-based requirements. </td>
             </tr>
             <tr>
                 <th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
@@ -2812,7 +2812,7 @@
                 <th colspan="2"> Implementation-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
             </tr>
             <tr>
-                <td><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></td><td>The ability of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client to prevent split tunneling of IPsec traffic requires it to have hooks into lower-level <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> behavior, but there are no requirements in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that would prevent this functionality from being supported.</td>
+                <td colspan="2" style="text-align:center"> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-based requirements. </td>
             </tr>
             <tr>
                 <th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
@@ -2987,7 +2987,7 @@
                 <th colspan="2"> Implementation-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
             </tr>
             <tr>
-                <td><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></td><td>The ability of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client to prevent split tunneling of IPsec traffic requires it to have hooks into lower-level <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> behavior, but there are no requirements in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that would prevent this functionality from being supported.</td>
+                <td colspan="2" style="text-align:center"> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-based requirements. </td>
             </tr>
             <tr>
                 <th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
@@ -3174,50 +3174,14 @@
             </div>
         </div>
         <h2 id="impl-dep-sfrs" class="indexable" data-level="2">A.3 Implementation-based Requirements </h2>
-        <h3 class="indexable" data-level="3" id="sib-audit-table">A.3.1 Auditable Events for Implementation-Dependent SFRs</h3>
-        <table class="sort_kids_" border="1">
-            <caption data-sortkey="#0">
-                <span class="ctr" data-myid="at-feat-based" data-counter-type="ct-Table" id="at-feat-based">Table <span class="counter">6</span></span>: Auditable Events for Implementation-based Requirements
-            </caption>
-            <tr data-sortkey="#1">
-                <th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th>
-            </tr>
-            <tr data-sortkey="FDP_VPN_EXT.1">
-                <td rowspan="2"><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></td><td style="display:none"></td>
-            </tr>
-            <tr style="display:none;" data-sortkey="FDP_VPN_EXT.1#">
-                <td></td>
-            </tr>
-            <tr data-sortkey="FDP_VPN_EXT.1.1">
-                <td>No events specified</td><td>N/A</td>
-            </tr>
-        </table>
-        <h3 id="ib-fdp" class="indexable" data-level="3">A.3.2 User Data Protection (FDP)</h3>
-        <div class="comp" id="FDP_VPN_EXT.1">
-            <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
-            <div class="element">
-                <div class="reqid" id="FDP_VPN_EXT.1.1">
-                    <a href="#FDP_VPN_EXT.1.1" class="abbr">FDP_VPN_EXT.1.1</a>
-                </div>
-                <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
-                    <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note"> This requirement is implementation-based on the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> being the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> claimed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. In this case, this requirement must be claimed.
-                            <br>
-                            <br>
-                             For all other <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>, this requirement is strictly optional.
-                            <br>
-                            <br>
-                             This requirement is used when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is able to enforce the requirement through its own components. This generally will have to be done through using hooks provided by the platform such that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is able to ensure that no <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic can flow through other network interfaces. </span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <p>
+            This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
+        </p>
         <h1 id="sel-sfrs" class="indexable" data-level="1">Appendix B - Selection-based Requirements </h1>
         <h2 class="indexable" data-level="2" id="sb-audit-table">B.1 Auditable Events for Selection-based SFRs</h2>
         <table class="sort_kids_" border="1">
             <caption data-sortkey="#0">
-                <span class="ctr" data-myid="at-selbased" data-counter-type="ct-Table" id="at-selbased">Table <span class="counter">7</span></span>: Auditable Events for Selection-based Requirements
+                <span class="ctr" data-myid="at-selbased" data-counter-type="ct-Table" id="at-selbased">Table <span class="counter">6</span></span>: Auditable Events for Selection-based Requirements
             </caption>
             <tr data-sortkey="#1">
                 <th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th>
@@ -3792,7 +3756,7 @@
          All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are listed in this table: 
         <table class="sort_kids_">
             <caption data-sortkey="#0">
-                <b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">8</span></span>: Extended Component Definitions</b>
+                <b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">7</span></span>: Extended Component Definitions</b>
             </caption>
             <tr data-sortkey="#1">
                 <th>Functional Class</th><th>Functional Components</th>
@@ -3826,11 +3790,6 @@
             </tr>
             <tr data-sortkey="Protection of the TSF (FPT)">
                 <td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (FPT)</td><td>FPT_TST_EXT <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test
-                    <br>
-                </td>
-            </tr>
-            <tr data-sortkey="User Data Protection (FDP)">
-                <td>User Data Protection (FDP)</td><td>FDP_VPN_EXT Subset Information Flow Control
                     <br>
                 </td>
             </tr>
@@ -4518,159 +4477,6 @@
                          The [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_292"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_293"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span> ] shall provide the capability to verify the integrity of stored <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable code when it is loaded for execution through the use of the [<b>assignment</b>: <span class="assignable-content">cryptographic services provided either by the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> described by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> or by the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr></span>]. 
                     </div>
                 </div>
-            </span><span data-sortkey="User Data Protection (FDP)">
-                <h3 id="ext-comp-FDP" class="indexable" data-level="3">C.2.5 User Data Protection (FDP)</h3>
-                This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the FDP class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2: 
-                <h3 id="ext-comp-FDP_VPN_EXT" class="indexable" data-level="4">C.2.5.1 FDP_VPN_EXT Subset Information Flow Control</h3>
-                <div style="margin-left: 1em;">
-                    <h4>Family Behavior</h4>
-                    <div>
-                        Components in this family describe the requirements that pertain to <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic and information flow through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client.
-                    </div>
-                    <h4>Component Leveling</h4>
-                    <svg style="max-height: 130px;">
-                        <text x="4" fill="black" font-size="15" y="84">FDP_VPN_EXT</text>
-                        <rect x="2" y="71" width="150" height="16" fill="none" stroke="black"></rect>
-                        <text x="234" fill="black" font-size="15" y="24">1</text>
-                        <rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect>
-                        <line x1="152" y1="77" x2="231" y2="17" stroke="black"></line>
-                        <text x="234" fill="black" font-size="15" y="44">1</text>
-                        <rect x="232" y="31" width="12" height="16" fill="none" stroke="black"></rect>
-                        <line x1="152" y1="77" x2="231" y2="37" stroke="black"></line>
-                        <text x="234" fill="black" font-size="15" y="64">1</text>
-                        <rect x="232" y="51" width="12" height="16" fill="none" stroke="black"></rect>
-                        <line x1="152" y1="77" x2="231" y2="57" stroke="black"></line>
-                        <text x="234" fill="black" font-size="15" y="84">1</text>
-                        <rect x="232" y="71" width="12" height="16" fill="none" stroke="black"></rect>
-                        <line x1="152" y1="77" x2="231" y2="77" stroke="black"></line>
-                        <text x="234" fill="black" font-size="15" y="104">1</text>
-                        <rect x="232" y="91" width="12" height="16" fill="none" stroke="black"></rect>
-                        <line x1="152" y1="77" x2="231" y2="97" stroke="black"></line>
-                        <text x="234" fill="black" font-size="15" y="124">1</text>
-                        <rect x="232" y="111" width="12" height="16" fill="none" stroke="black"></rect>
-                        <line x1="152" y1="77" x2="231" y2="117" stroke="black"></line>
-                    </svg>
-                    <p>
-                        <a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a>, Split Tunnel Prevention, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to process all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through its <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality.
-                    </p>
-                    <p>
-                        <a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a>, Split Tunnel Prevention, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to process all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through its <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality.
-                    </p>
-                    <p>
-                        <a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a>, Split Tunnel Prevention, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to process all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through its <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality.
-                    </p>
-                    <p>
-                        <a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a>, Split Tunnel Prevention, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to process all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through its <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality.
-                    </p>
-                    <p>
-                        <a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a>, Split Tunnel Prevention, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to process all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through its <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality.
-                    </p>
-                    <p>
-                        <a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a>, Split Tunnel Prevention, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to process all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through its <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality.
-                    </p>
-                    <h4>Management: FDP_VPN_EXT.1</h4>
-                    <p>No specific management functions are identified.</p>
-                    <h4>Audit: FDP_VPN_EXT.1</h4>
-                    <p>There are no auditable events foreseen.</p>
-                    <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
-                    <div style="margin-left: 1em;">
-                        <table class="ecd_heir_dep" style="width: 100%">
-                            <tr>
-                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
-                            </tr>
-                            <tr style="background-color: inherit">
-                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
-                            </tr>
-                        </table>
-                        <h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
-                    </div>
-                    <h4>Management: FDP_VPN_EXT.1</h4>
-                    <p>No specific management functions are identified.</p>
-                    <h4>Audit: FDP_VPN_EXT.1</h4>
-                    <p>There are no auditable events foreseen.</p>
-                    <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
-                    <div style="margin-left: 1em;">
-                        <table class="ecd_heir_dep" style="width: 100%">
-                            <tr>
-                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
-                            </tr>
-                            <tr style="background-color: inherit">
-                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
-                            </tr>
-                        </table>
-                        <h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
-                    </div>
-                    <h4>Management: FDP_VPN_EXT.1</h4>
-                    <p>No specific management functions are identified.</p>
-                    <h4>Audit: FDP_VPN_EXT.1</h4>
-                    <p>There are no auditable events foreseen.</p>
-                    <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
-                    <div style="margin-left: 1em;">
-                        <table class="ecd_heir_dep" style="width: 100%">
-                            <tr>
-                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
-                            </tr>
-                            <tr style="background-color: inherit">
-                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
-                            </tr>
-                        </table>
-                        <h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
-                    </div>
-                    <h4>Management: FDP_VPN_EXT.1</h4>
-                    <p>No specific management functions are identified.</p>
-                    <h4>Audit: FDP_VPN_EXT.1</h4>
-                    <p>There are no auditable events foreseen.</p>
-                    <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
-                    <div style="margin-left: 1em;">
-                        <table class="ecd_heir_dep" style="width: 100%">
-                            <tr>
-                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
-                            </tr>
-                            <tr style="background-color: inherit">
-                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
-                            </tr>
-                        </table>
-                        <h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
-                    </div>
-                    <h4>Management: FDP_VPN_EXT.1</h4>
-                    <p>No specific management functions are identified.</p>
-                    <h4>Audit: FDP_VPN_EXT.1</h4>
-                    <p>There are no auditable events foreseen.</p>
-                    <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
-                    <div style="margin-left: 1em;">
-                        <table class="ecd_heir_dep" style="width: 100%">
-                            <tr>
-                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
-                            </tr>
-                            <tr style="background-color: inherit">
-                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
-                            </tr>
-                        </table>
-                        <h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
-                    </div>
-                    <h4>Management: FDP_VPN_EXT.1</h4>
-                    <p>No specific management functions are identified.</p>
-                    <h4>Audit: FDP_VPN_EXT.1</h4>
-                    <p>There are no auditable events foreseen.</p>
-                    <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
-                    <div style="margin-left: 1em;">
-                        <table class="ecd_heir_dep" style="width: 100%">
-                            <tr>
-                                <td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td>
-                            </tr>
-                            <tr style="background-color: inherit">
-                                <td>Dependencies to:</td><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec</td>
-                            </tr>
-                        </table>
-                        <h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
-                    </div>
-                </div>
             </span></span>
         <h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D - Implicitly Satisfied Requirements</h1>
         <p>
@@ -4679,7 +4485,7 @@
         <p>
             This information benefits systems engineering activities which call for inclusion of particular security controls. Evaluation against the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> provides evidence that these controls are present and have been evaluated.
         </p>
-         <b><span class="ctr" data-myid="imp-sat-reqs-table" data-counter-type="ct-Table" id="imp-sat-reqs-table">Table <span class="counter">9</span>: Implicitly Satisfied Requirements</span></b> 
+         <b><span class="ctr" data-myid="imp-sat-reqs-table" data-counter-type="ct-Table" id="imp-sat-reqs-table">Table <span class="counter">8</span>: Implicitly Satisfied Requirements</span></b> 
         <table>
             <tr class="header">
                 <td>Requirement</td><td>Rationale for Satisfaction</td>
