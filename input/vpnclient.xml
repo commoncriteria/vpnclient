@@ -1429,6 +1429,10 @@ expected to enforce.<h:br/><h:br/>
 
       <con-mod ref="os-fcs-ckm-ext-2">Storage of key data related to VPN functionality can be accomplished using
 		the same mechanism defined by FCS_STO_EXT.1 in the GPOS PP.</con-mod>
+      <con-mod ref="os-fdp-vpn-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+        requires it to have hooks into lower-level OS behavior, but there
+        are no requirements in the GPOS PP that would prevent this functionality
+        from being supported.</con-mod>
       <con-mod ref="os-fia-x509-ext-3">This SFR defines additional uses for X.509 certificate functionality that do
 		not conflict with those defined in the GPOS PP.</con-mod>
       <con-mod ref="os-ftp-itc-1">This SFR defines a trusted channel for IPsec, which is added functionality
@@ -1451,10 +1455,10 @@ expected to enforce.<h:br/><h:br/>
       <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain audit records related to
 		VPN activity does not interfere with the ability of the GPOS to satisfy its
 		security functionality.</con-mod>
-      <con-mod ref="fdp-vpn-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+<!--      <con-mod ref="fdp-vpn-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the GPOS PP that would prevent this functionality from
-		being supported.</con-mod>
+		being supported.</con-mod>   -->
       
       
       <con-mod ref="fia-bma-ext-1">This SFR relates to biometric authentication, which does not conflict with the GPOS PP because it may be a function offered by the 
@@ -2047,12 +2051,16 @@ expected to enforce.<h:br/><h:br/>
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
       <con-mod ref="md-fcs-cop-1-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
+
+      <con-mod ref="md-fdp-vpn-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+        requires it to have hooks into lower-level mobile device behavior, but there
+        are no requirements in the MDF PP that would prevent this functionality
+        from being supported.</con-mod>
+
       <con-mod ref="md-fia-x509-ext-2">This PP-Module adds IPsec as a new trusted protocol where x.509
 		certificate authentication is used.</con-mod>
       <con-mod ref="md-ftp-itc-ext-1">This PP-Module adds IPsec as a new protocol that is used to implement
 		trusted channels.</con-mod>
-
-      
 		
 	<con-mod ref="fcs-ckm-1-vpn">This SFR defines the method of key generation for IKE peer authentication,
 		which is a function that does not interfere with the functionality defined in
@@ -2074,10 +2082,10 @@ expected to enforce.<h:br/><h:br/>
 		does not interfere with MDM functionality. The MDF PP already contains
 		FAU_SEL.1 as an objective SFR which means that this functionality does not
 		conflict with the expected behavior of a mobile device.</con-mod>
-      <con-mod ref="fdp-vpn-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+<!--      <con-mod ref="fdp-vpn-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
         requires it to have hooks into lower-level mobile device behavior, but there
         are no requirements in the MDF PP that would prevent this functionality
-        from being supported.</con-mod>
+        from being supported.</con-mod>  -->
 		
       <con-mod ref="fia-bma-ext-1">This SFR relates to biometric authentication, which does not conflict with the MDF PP because it may be a function offered by the 
         part of the TOE described by the MDF PP.</con-mod>
@@ -2706,6 +2714,10 @@ expected to enforce.<h:br/><h:br/>
       <con-mod ref="ap-fcs-cop-1-skc">The ST author is given guidance to make specific selections if this
 		selection-based SFR is claimed in support of IPsec functionality. The SFR behavior itself
 		is unmodified.</con-mod>
+      <con-mod ref="ap-fdp-vpn-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+        requires it to have hooks into lower-level OS behavior, but there
+        are no requirements in the Application PP that would prevent this functionality
+        from being supported.</con-mod>
       <con-mod ref="ap-fia-x509-ext-2">This PP-Module adds IPsec as a new trusted protocol where x.509 certificate
 		authentication is used.</con-mod>
       <con-mod ref="ap-ftp-dit-ext-1">This PP-Module is for the VPN Client application and does not maintain any
@@ -2736,9 +2748,9 @@ expected to enforce.<h:br/><h:br/>
 		functionality.</con-mod>
       <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain audit records related to VPN
 		activity does not interfere with the ability of the application to satisfy its security functionality.</con-mod>
-      <con-mod ref="fdp-vpn-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+<!--      <con-mod ref="fdp-vpn-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level OS behavior, but there are no
-		requirements in the App PP that would prevent this functionality from being supported.</con-mod>
+		requirements in the App PP that would prevent this functionality from being supported.</con-mod>  -->
 
       <con-mod ref="fia-bma-ext-1">This SFR relates to biometric authentication, which does not conflict with the App PP because it may be a function offered by the 
         OE in which a TOE defined by the App PP is deployed.</con-mod>
@@ -3343,6 +3355,10 @@ expected to enforce.<h:br/><h:br/>
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
       <con-mod ref="dm-fcs-cop-1-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified</con-mod>
+      <con-mod ref="dm-fdp-vpn-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+        requires it to have hooks into lower-level OS behavior, but there
+        are no requirements in the MDM PP that would prevent this functionality
+        from being supported.</con-mod>
       <con-mod ref="dm-fia-x509-ext-2">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
       <con-mod ref="dm-fpt-itt-1-1">When this SFR relates to the PP-Module’s functionality, the ST author is
@@ -3379,10 +3395,10 @@ expected to enforce.<h:br/><h:br/>
       <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain VPN client audit records
 		does not interfere with MDM functionality. The MDM PP already contains FAU_SEL.1 as an optional SFR which
 		means that this functionality does not conflict with the expected behavior of an MDM.</con-mod>
-      <con-mod ref="fdp-vpn-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
+<!--      <con-mod ref="fdp-vpn-ext-1">The ability of the VPN client to prevent split tunneling of IPsec traffic
 		requires it to have hooks into lower-level OS behavior, but there are no
 		requirements in the MDM PP that would prevent this functionality from
-		being supported.</con-mod>
+		being supported.</con-mod>   -->
 
 
       <con-mod ref="fia-bma-ext-1">This SFR relates to biometric authentication, which does not conflict with the MDM PP
