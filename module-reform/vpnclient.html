@@ -5031,6 +5031,71 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	            verify that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> discards them.
 	          </div></div></div></div>
 	  
+	    
+	    
+    
+	    
+	    <div class="comp" id="FDP_VPX_EXT.1"><h4>FDP_VPX_EXT.1 Split Tunnel Prevention</h4>
+	      
+	      
+	      
+	      
+	      
+	      
+	      <div class="element"><div class="reqid" id="FDP_VPX_EXT.1.1"><a href="#FDP_VPX_EXT.1.1" class="abbr">FDP_VPX_EXT.1.1</a></div><div class="reqdesc">
+	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish
+	          the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
+	        <div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+	          This requirement is implementation-based on the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> being the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> claimed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. In this case, this requirement must be claimed.<br/><br/>
+	          For all other <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>, this requirement is strictly optional.<br/><br/>
+	          This requirement is used when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is able to enforce the requirement
+	          through its own components. This generally will have to be done through using
+	          hooks provided by the platform such that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is able to ensure that no <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr>
+	          traffic can flow through other network interfaces.
+	        </span></div></div></div>
+	  
+	    <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_VPX_EXT.1">FDP_VPX_EXT.1</a></div>
+	          
+	          
+	          
+	        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section of the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> describes the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through processes
+	            on the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> when a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled. The evaluator shall ensure that the description indicates which
+	            traffic does not go through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> and which traffic does and that a configuration exists for each
+	            baseband protocol in which only the traffic identified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is necessary for establishing the
+	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection (<abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> traffic and perhaps HTTPS or DNS traffic) is not encapsulated by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> protocol 
+	            (IPsec). The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall also identify in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section any differences in the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic when
+	            using any supported baseband protocols (e.g. Wi-Fi, LTE).
+	            <br/><br/>
+	          </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the following is addressed by the documentation:
+	            <ul>
+	              <li>The description above indicates that if a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled, all configurations route all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic
+	                (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client.</li>
+	              <li>The guidance describes how the user or administrator can configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to meet
+	                this requirement.</li>
+	            </ul><br/><br/>
+	          </div><div class="eacategory">Tests</div><div class="ea">
+	            The evaluator shall perform the following test:<br/><br/>
+	            Step 1 - The evaluator shall use the platform to enable a network connection without using IPsec. The
+	            evaluator shall use a packet sniffing tool between the platform and an internet-connected network. The
+	            evaluator shall turn on the sniffing tool and perform actions with the device such as navigating to
+	            websites, using provided applications, accessing other internet resources (Use Case 1), accessing another
+	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client (Use Case 2), or accessing an IPsec-capable network device (Use Case 3). The evaluator shall
+	            verify that the sniffing tool captures the traffic generated by these actions, turn off the sniffing tool, and
+	            save the session data. <br/><br/>
+	            Step 2 - The evaluator shall configure an IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client that supports the routing specified in this
+	            requirement, and if necessary, configure the device to perform the routing specified as described in the
+	            AGD guidance. The evaluator shall turn on the sniffing tool, establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection, and perform
+	            the same actions with the device as performed in the first step. The evaluator shall verify that the sniffing
+	            tool captures traffic generated by these actions, turn off the sniffing tool, and save the session data.<br/><br/>
+	            Step 3 - The evaluator shall examine the traffic from both step one and step two to verify that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic,
+	            aside from and after traffic necessary for establishing the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> (such as <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>, DNS, and possibly HTTPS), is
+	            encapsulated by IPsec.<br/><br/>
+	            Step 4 - The evaluator shall attempt to send packets to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> outside the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection and shall
+	            verify that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> discards them.
+	          </div></div></div></div>
+	  
 	
 	<h1 id="sel-sfrs" class="indexable" data-level="1">Appendix B -  Selection-based Requirements
     </h1>
