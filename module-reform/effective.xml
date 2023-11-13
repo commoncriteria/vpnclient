@@ -2431,13 +2431,14 @@ expected to enforce.<h:br/><h:br/>
         functionality in any PP-Configuration where the App PP is claimed as the Base-PP.
 -->
 
+		<!-- Audit is not supported by App PP -->
   		<!-- Audit table for Additional SFRs -->
- 	    <section id="sec-at-ap-addnl" title="Auditable Events for Additional SFRs">
+<!-- 	    <section id="sec-at-ap-addnl" title="Auditable Events for Additional SFRs">
         	<audit-table id="at-ap-addnl" table="tab-at-ap-addnl">
   	     		<h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-ap-addnl">: Auditable Events for Additional SFRs</ctr></h:b>
 			</audit-table>
 	    </section>	
-
+-->
         <section title="Cryptographic Support (FCS)" id="ap-a-fcs">
           
           <!-- 5.3.2.1 FCS_CKM_EXT.2 Cryptographic Key Storage -->
@@ -2486,7 +2487,7 @@ expected to enforce.<h:br/><h:br/>
                 <Tests>There are no test EAs for this requirement.</Tests>
               </aactivity>
             </f-element>
-            <audit-event table="tab-at-ap-addnl"/>
+            <audit-event/>
           </f-component>
 
           <!-- 5.3.2.2 FCS_CKM_EXT.4 Cryptographic Key Destruction -->
@@ -2585,7 +2586,7 @@ expected to enforce.<h:br/><h:br/>
                 </Tests>
               </aactivity>
             </f-element>
-            <audit-event table="tab-at-ap-addnl"/>
+            <audit-event/>
           </f-component>
         </section>
 		
@@ -2658,7 +2659,7 @@ expected to enforce.<h:br/><h:br/>
 	          </Tests>
 	        </aactivity>
 	      </f-element>
-	  <audit-event table="tab-at-ap-addnl">
+	  <audit-event>
 		  <audit-event-descr>Every time the thing happens.</audit-event-descr> 
 	    <audit-event-info>No additional information.</audit-event-info>
 	  </audit-event>
