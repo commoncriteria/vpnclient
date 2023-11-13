@@ -1185,10 +1185,10 @@ expected to enforce.<h:br/><h:br/>
 	          </Tests>
 	        </aactivity>
 	      </f-element>
-	  <audit-event table="tab-at-os-addnl">
-		  <audit-event-descr>Every time the thing happens.</audit-event-descr> 
-	    <audit-event-info>No additional information.</audit-event-info>
-	  </audit-event>
+			<audit-event table="tab-at-os-addnl">
+				<audit-event-descr>Every time the thing happens.</audit-event-descr> 
+				<audit-event-info>No additional information.</audit-event-info>
+			</audit-event>
 	    </f-component>
 	    </section>
 
@@ -1866,6 +1866,13 @@ expected to enforce.<h:br/><h:br/>
       <!-- 5.2.2 Additional SFRs -->
       <additional-sfrs>
 	  
+  		<!-- Audit table for Additional SFRs -->
+ 	    <section id="sec-at-md-addnl" title="Auditable Events for Additional SFRs">
+        	<audit-table id="at-md-addnl" table="tab-at-md-addnl">
+  	     		<h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-md-addnl">: Auditable Events for Additional SFRs</ctr></h:b>
+			</audit-table>
+	    </section>	
+	  
 	  <section title="User Data Protection (FDP)" id="md-a-fdp">
  
  	    <ext-comp-def title="Subset Information Flow Control" fam-id="FDP_VPN_EXT">
@@ -1934,7 +1941,7 @@ expected to enforce.<h:br/><h:br/>
 	          </Tests>
 	        </aactivity>
 	      </f-element>
-	  <audit-event>
+	  <audit-event table="tab-at-md-addnl">
 		  <audit-event-descr>Every time the thing happens.</audit-event-descr> 
 	    <audit-event-info>No additional information.</audit-event-info>
 	  </audit-event>
@@ -2433,6 +2440,14 @@ expected to enforce.<h:br/><h:br/>
 <!--        This section lists additional SFRs that must be added to the TOE boundary in order to implement the
         functionality in any PP-Configuration where the App PP is claimed as the Base-PP.
 -->
+
+  		<!-- Audit table for Additional SFRs -->
+ 	    <section id="sec-at-ap-addnl" title="Auditable Events for Additional SFRs">
+        	<audit-table id="at-ap-addnl" table="tab-at-ap-addnl">
+  	     		<h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-ap-addnl">: Auditable Events for Additional SFRs</ctr></h:b>
+			</audit-table>
+	    </section>	
+
         <section title="Cryptographic Support (FCS)" id="ap-a-fcs">
           
           <!-- 5.3.2.1 FCS_CKM_EXT.2 Cryptographic Key Storage -->
@@ -2481,7 +2496,7 @@ expected to enforce.<h:br/><h:br/>
                 <Tests>There are no test EAs for this requirement.</Tests>
               </aactivity>
             </f-element>
-            <audit-event/>
+            <audit-event table="tab-at-ap-addnl"/>
           </f-component>
 
           <!-- 5.3.2.2 FCS_CKM_EXT.4 Cryptographic Key Destruction -->
@@ -2580,7 +2595,7 @@ expected to enforce.<h:br/><h:br/>
                 </Tests>
               </aactivity>
             </f-element>
-            <audit-event/>
+            <audit-event table="tab-at-ap-addnl"/>
           </f-component>
         </section>
 		
@@ -2653,7 +2668,7 @@ expected to enforce.<h:br/><h:br/>
 	          </Tests>
 	        </aactivity>
 	      </f-element>
-	  <audit-event>
+	  <audit-event table="tab-at-ap-addnl">
 		  <audit-event-descr>Every time the thing happens.</audit-event-descr> 
 	    <audit-event-info>No additional information.</audit-event-info>
 	  </audit-event>
@@ -3235,6 +3250,14 @@ expected to enforce.<h:br/><h:br/>
       <!-- 5.4.2 Additional SFRs -->
       <additional-sfrs>
 	 
+  		<!-- Audit table for Additional SFRs -->
+ 	    <section id="sec-at-dm-addnl" title="Auditable Events for Additional SFRs">
+        	<audit-table id="at-dm-addnl" table="tab-at-dm-addnl">
+  	     		<h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-dm-addnl">: Auditable Events for Additional SFRs</ctr></h:b>
+			</audit-table>
+	    </section>	
+ 
+	 
 	  <section title="User Data Protection (FDP)" id="dm-a-fdp">
  
  	    <ext-comp-def title="Subset Information Flow Control" fam-id="FDP_VPN_EXT">
@@ -3303,7 +3326,7 @@ expected to enforce.<h:br/><h:br/>
 	          </Tests>
 	        </aactivity>
 	      </f-element>
-	  <audit-event>
+	  <audit-event table="tab-at-dm-addnl">
 		  <audit-event-descr>Every time the thing happens.</audit-event-descr> 
 	    <audit-event-info>No additional information.</audit-event-info>
 	  </audit-event>
