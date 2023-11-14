@@ -771,7 +771,7 @@ expected to enforce.<h:br/><h:br/>
             also enforce split-tunneling prevention to ensure that data in transit cannot be disclosed
             inadvertently outside of the IPsec tunnel and prohibit transmission of packets through a connection until certain conditions are met. <h:br/><h:br/>
             Addressed by: FCS_CKM_EXT.2 (when GPOS PP is Base-PP), FCS_CKM_EXT.2 (when App PP is Base-PP),
-            FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_RIP.2, FDP_VPN_EXT.1 (optional), FPF_MFA_EXT.1 (optional).
+            FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_RIP.2, FDP_VPX_EXT.1 (implementation-dependent), FPF_MFA_EXT.1 (optional).
           </description>
 		  <consistency-rationale>This objective is consistent with the O.PROTECTED_STORAGE objective of
 			the GPOS PP, which ensures that sensitive data is not disclosed without
@@ -874,7 +874,7 @@ expected to enforce.<h:br/><h:br/>
     written. 
     
     <!-- 5.1 GPOS PP Security Functional Requirements Direction -->
-    <base-pp id="bpp-gpos">
+    <base-pp id="bpp-gpos" name="General-Purpose Operating Systems" short="GP">
       <git>
 	<url>https://github.com/commoncriteria/operatingsystem</url>
 	<branch>release-4.3</branch>
@@ -1500,7 +1500,7 @@ expected to enforce.<h:br/><h:br/>
     </base-pp>
 
     <!-- 5.2 MDF PP Security Functional Requirements Direction -->
-    <base-pp id="bpp-mdf">
+    <base-pp id="bpp-mdf" name="Mobile Device Fundamentals" short="MDF">
       <git>
 	<url>https://github.com/commoncriteria/mobile-device</url>
 	<branch>release-3.3</branch>
@@ -2137,7 +2137,7 @@ expected to enforce.<h:br/><h:br/>
     </base-pp>
 
     <!-- 5.3 App PP Security Functional requirements Direction -->
-    <base-pp id="bpp-app">
+    <base-pp id="bpp-app" name="Application Software" short="App">
       <git>
 	<url>https://github.com/commoncriteria/application</url>
 	<branch>release-1.4</branch>
@@ -2815,7 +2815,7 @@ expected to enforce.<h:br/><h:br/>
     </base-pp>
 
     <!-- 5.4 MDM PP Security Functional Requirements Direction -->
-    <base-pp id="bpp-mdm">
+    <base-pp id="bpp-mdm" name="Mobile Device Management" short="MDM">
       <git>
 	<url>https://github.com/commoncriteria/mdm</url>
 	<branch>v4.0</branch>
