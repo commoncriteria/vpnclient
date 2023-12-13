@@ -4432,7 +4432,7 @@ expected to enforce.<h:br/><h:br/>
         
         <!-- FCS_EAP_EXT.1 EAP TLS -->
         <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS">
-          <depends also="sel-ipsec-e11-pskeap" and="sel-ipsec-e11-pskeapma"/>
+          <depends also="sel-ipsec-e11-eaptls" and="sel-ipsec-e11-eapttls"/>
 	  <!-- QQQQ: The latter two dependencies apply to IKEv2 and are correct. The first dependency applies only
 		to IKEv1, and the AppNote in IPSEC.1.11 says you can use one of the mechanisms listed in the RFC, one of which
 		is EAP, but it could use a native IKE method, in which case this SFR should not be included. 
@@ -4529,7 +4529,7 @@ expected to enforce.<h:br/><h:br/>
 	<!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
 	<f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition">
 	  <depends on-fcomp="fpf-mfa-ext-1"/>
-          <depends on-sel="sel-ipsec-e11-psk" and="sel-ipsec-e11-pskeap" also="sel-ipsec-e11-pskeapma"/>
+          <depends on-sel="sel-ipsec-e11-psk" and="sel-ipsec-e11-eaptls" also="sel-ipsec-e11-eapttls"/>
           <consistency-rationale/>
           <comp-lev>defines the use and composition of pre-shared keys used for IPsec.</comp-lev>
           <management>No specific management functions are identified.</management>
