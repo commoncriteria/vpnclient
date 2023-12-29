@@ -1358,35 +1358,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           
           
           
-          <div class="comp" id="FCS_CKM_EXT.2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4>
-            
-            
-            
-            
-	    
-            <div class="element"><div class="reqid" id="FCS_CKM_EXT.2.1"><a href="#FCS_CKM_EXT.2.1" class="abbr">FCS_CKM_EXT.2.1</a></div><div class="reqdesc">The [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_22"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>,  <span class="selectable-content" id="_s_23"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span> ] shall store persistent secrets and private keys
-                when not in use in <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>-provided key storage.
-              <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-                This requirement ensures that persistent secrets (credentials, secret keys) and
-                private keys are stored securely when not in use. If some secrets or keys are
-                manipulated by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client and others are manipulated by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, then both
-                of the selections can be specified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author.
-              </span></div></div></div>
-            
-          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a></div>
-                
-                
-                
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">Regardless of whether this requirement is met by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client or the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, the evaluator will check the
-			<abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it lists each persistent secret (credential, secret key) and private key needed to meet
-			the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. For each of these items, the evaluator will confirm that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists for what
-			purpose it is used, and how it is stored. <br/><br/>
-                  	The evaluator shall review the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> for to determine that it makes a case that, for each item listed as being
-			manipulated, it is not written unencrypted to persistent memory, and that the item is
-			stored by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>.<br/><br/>
-                </div><div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div><div class="eacategory">Tests</div><div class="ea">There are no test EAs for this component.</div></div></div></div>
+          
         
           
           
@@ -1426,66 +1398,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 		
 	    
  
-	  	<div class="comp" id="FDP_VPN_EXT.1"><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4><div class="statustag"><b><i>This component must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements any of the following features:</i></b><br/><ul><li><b><i><a href="#feat-two">Feature Two</a></i></b></li></ul></div>
-	      
-	      
-	      
-	      
-	      
-	      
-	      <div class="element"><div class="reqid" id="FDP_VPN_EXT.1.1"><a href="#FDP_VPN_EXT.1.1" class="abbr">FDP_VPN_EXT.1.1</a></div><div class="reqdesc">
-	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish
-	          the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
-	        <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-	          This requirement is implementation-based on the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> being the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> claimed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. In this case, this requirement must be claimed.<br/><br/>
-	          For all other <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>, this requirement is strictly optional.<br/><br/>
-	          This requirement is used when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is able to enforce the requirement
-	          through its own components. This generally will have to be done through using
-	          hooks provided by the platform such that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is able to ensure that no <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr>
-	          traffic can flow through other network interfaces.
-	        </span></div></div></div>
-			
-	    <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></div>
-	          
-	          
-	          
-	        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section of the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> describes the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through processes
-	            on the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> when a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled. The evaluator shall ensure that the description indicates which
-	            traffic does not go through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> and which traffic does and that a configuration exists for each
-	            baseband protocol in which only the traffic identified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is necessary for establishing the
-	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection (<abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> traffic and perhaps HTTPS or DNS traffic) is not encapsulated by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> protocol 
-	            (IPsec). The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall also identify in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section any differences in the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic when
-	            using any supported baseband protocols (e.g. Wi-Fi, LTE).
-	            <br/><br/>
-	          </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the following is addressed by the documentation:
-	            <ul>
-	              <li>The description above indicates that if a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled, all configurations route all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic
-	                (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client.</li>
-	              <li>The guidance describes how the user or administrator can configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to meet
-	                this requirement.</li>
-	            </ul><br/><br/>
-	          </div><div class="eacategory">Tests</div><div class="ea">
-	            The evaluator shall perform the following test:<br/><br/>
-	            Step 1 - The evaluator shall use the platform to enable a network connection without using IPsec. The
-	            evaluator shall use a packet sniffing tool between the platform and an internet-connected network. The
-	            evaluator shall turn on the sniffing tool and perform actions with the device such as navigating to
-	            websites, using provided applications, accessing other internet resources (Use Case 1), accessing another
-	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client (Use Case 2), or accessing an IPsec-capable network device (Use Case 3). The evaluator shall
-	            verify that the sniffing tool captures the traffic generated by these actions, turn off the sniffing tool, and
-	            save the session data. <br/><br/>
-	            Step 2 - The evaluator shall configure an IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client that supports the routing specified in this
-	            requirement, and if necessary, configure the device to perform the routing specified as described in the
-	            AGD guidance. The evaluator shall turn on the sniffing tool, establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection, and perform
-	            the same actions with the device as performed in the first step. The evaluator shall verify that the sniffing
-	            tool captures traffic generated by these actions, turn off the sniffing tool, and save the session data.<br/><br/>
-	            Step 3 - The evaluator shall examine the traffic from both step one and step two to verify that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic,
-	            aside from and after traffic necessary for establishing the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> (such as <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>, DNS, and possibly HTTPS), is
-	            encapsulated by IPsec.<br/><br/>
-	            Step 4 - The evaluator shall attempt to send packets to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> outside the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection and shall
-	            verify that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> discards them.
-	          </div></div></div></div>
+	  	
 	    
 		
 	    
@@ -1557,70 +1470,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           
           
           
-          <div class="comp" id="FIA_X509_EXT.3"><h4>FIA_X509_EXT.3 X.509 Certificate Use and Management</h4>
-            
-            
-            
-            
-            
-            <div class="element"><div class="reqid" id="FIA_X509_EXT.3.1"><a href="#FIA_X509_EXT.3.1" class="abbr">FIA_X509_EXT.3.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use X.509v3 certificates as defined by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5280 to support
-              authentication for IPsec exchanges, and [<b>selection</b>: <span class="selectable-content" id="_s_24">digital signatures for FPT_TUD_EXT.1</span>,  <span class="selectable-content" id="_s_25">integrity checks for FPT_TST_EXT.1</span>,  <span class="selectable-content" id="_s_26">no additional uses</span> ].
-              </div></div>
-            <div class="element"><div class="reqid" id="FIA_X509_EXT.3.2"><a href="#FIA_X509_EXT.3.2" class="abbr">FIA_X509_EXT.3.2</a></div><div class="reqdesc">
-                  When a connection to determine the validity of a certificate cannot be
-                  established, the [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_27"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>,  <span class="selectable-content" id="_s_28"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span> ] shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_29">allow the administrator to choose whether to accept the certificate in these cases</span>,  <span class="selectable-content" id="_s_30">accept the certificate</span>,  <span class="selectable-content" id="_s_31">not accept the certificate</span> ].
-                <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-                    Oftentimes a connection must be established to perform a verification of the
-                    revocation status of a certificate - either to download a certificate revocation list (<abbr class="dyn-abbr"><a href="#abbr_CRL">CRL</a></abbr>)
-			or to use the online certificate status protocol (<abbr class="dyn-abbr"><a href="#abbr_OCSP">OCSP</a></abbr>) to check revocation status.
-                    The selection is used to describe the behavior in the event that such a connection
-                    cannot be established (for example, due to a network error). The behavior of the
-                    <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in these cases is described by the second selection. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> has
-                    determined the certificate is valid according to all other rules in FIA_X509_EXT.1,
-                    the behavior indicated in the second selection will determine the validity. The
-                    <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must not accept the certificate if it fails any of the other validation rules in
-                    FIA_X509_EXT.1. If the administrator-configured option is selected by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>
-                    Author, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must also make the appropriate selection in
-                    <a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a>.
-                </span></div></div></div>
-            <div class="element"><div class="reqid" id="FIA_X509_EXT.3.3"><a href="#FIA_X509_EXT.3.3" class="abbr">FIA_X509_EXT.3.3</a></div><div class="reqdesc">
-                The [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_32"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>,  <span class="selectable-content" id="_s_33"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span> ] shall not establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> if a certificate or
-                certificate path is deemed invalid.
-              </div></div>
-            
-          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FIA_X509_EXT.3">FIA_X509_EXT.3</a></div>
-                The EAs below apply to <a href="#FIA_X509_EXT.3.2">FIA_X509_EXT.3.2</a>. <a href="#FIA_X509_EXT.3.1">FIA_X509_EXT.3.1</a> is evaluated as part of <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> (and
-		conditionally as part of FPT_TUD_EXT.1 or FPT_TST_EXT.1) and <a href="#FIA_X509_EXT.3.3">FIA_X509_EXT.3.3</a> is evaluated as part
-		of <a href="#FCS_IPSEC_EXT.1.11">FCS_IPSEC_EXT.1.11</a>.<br/><br/>
-                
-                
-                
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall check the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it describes whether the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client or the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> implements
-			the certificate validation functionality, how the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client/<abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> chooses which certificates to use, and any
-			necessary instructions in the administrative guidance for configuring the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> so that desired certificates
-			can be used.<br/><br/>
-                  	The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to confirm that it describes the behavior of the client/<abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> when a
-			connection cannot be established during the validity check of a certificate used in establishing a trusted
-			channel.<br/><br/>
-                </div><div class="eacategory">Guidance</div><div class="ea">If the requirement indicates that the administrator is able to specify the default action, then the evaluator
-			shall ensure that the operational guidance contains instructions on how this configuration action is
-			performed.<br/><br/>
-		</div><div class="eacategory">Tests</div><div class="ea">
-                 	The evaluator shall perform the following test regardless of whether the certificate validation functionality
-			is implemented by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client or by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>:
-                  <span class="testlist-"><ul>
-                  	<li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FIA_X509_EXT.3:1</a>:
-      The evaluator shall demonstrate that using a valid certificate that requires certificate validation
-				checking to be performed in at least some part by communicating with a non-TOE <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entity. The evaluator
-				shall then manipulate the environment so that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is unable to verify the validity of the certificate,
-				and observe that the action selected in <a href="#FIA_X509_EXT.3.2">FIA_X509_EXT.3.2</a> is performed. If the selected action is
-				administrator-configurable, then the evaluator shall follow the operational guidance to determine that all
-				supported administrator-configurable options behave in their documented manner.
-			  </li>
-                  </ul></span>
-                </div></div></div></div>
+          
         
           
           
@@ -1694,73 +1544,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         <h4 id="os-a-ftp" class="indexable" data-level="4">5.1.2.5 Trusted Path/Channels (FTP)</h4>
           
           
-          <div class="comp" id="FTP_ITC.1"><h4>FTP_ITC.1 Inter-TSF Trusted Channel</h4>
-            
-            <div class="element"><div class="reqid" id="FTP_ITC.1.1"><a href="#FTP_ITC.1.1" class="abbr">FTP_ITC.1.1</a></div><div class="reqdesc">
-                The <b>[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_34"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>,  <span class="selectable-content" id="_s_35"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span> ]
-                shall use IPsec to provide</b> a <b>trusted</b>
-                communication channel between itself and <b>
-                  [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_36">a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span></li><li style=""><span class="selectable-content" id="_s_37">a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span></li><li style=""><span class="selectable-content" id="_s_38">a remote IPsec-capable network device</span></li></ul>]</b> that is logically
-                distinct from other communication channels and provides assured identification
-                of its end points and protection of the channel data <b>from disclosure and
-                detection of modification of the channel data</b>.
-              </div></div>
-            <div class="element"><div class="reqid" id="FTP_ITC.1.2"><a href="#FTP_ITC.1.2" class="abbr">FTP_ITC.1.2</a></div><div class="reqdesc">
-                The <b>
-                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_39"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>,  <span class="selectable-content" id="_s_40"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span> ]</b> shall permit [<i>the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></i>] to initiate communication with the trusted channel.
-              </div></div>
-            <div class="element"><div class="reqid" id="FTP_ITC.1.3"><a href="#FTP_ITC.1.3" class="abbr">FTP_ITC.1.3</a></div><div class="reqdesc">
-                The <b>
-                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_41"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>,  <span class="selectable-content" id="_s_42"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span> ]</b> shall initiate communication via the trusted
-                channel [<i>for all traffic traversing that connection</i>].
-              <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-                The intent of the above requirement is to demonstrate that IPsec can be used to
-                establish remote communications in transport mode, tunnel mode, or both.<br/><br/>
-                The requirement implies that not only are communications protected when they
-                are initially established, but also on resumption after an outage. It may be the
-                case that some part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> setup involves manually setting up tunnels to
-                protect other communication, and if after an outage the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> attempts to reestablish 
-                the communication automatically with (the necessary) manual
-                intervention, there may be a window created where an attacker might be able to
-                gain critical information or compromise a connection.
-              </span></div></div></div>
-            
-          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_ITC.1">FTP_ITC.1</a></div>
-                
-                
-                
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that it describes the details of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> connecting to a
-			<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway, <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client, or IPsec-capable network device in terms of the cryptographic
-			protocols specified in the requirement, along with <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>-specific options or procedures that might not be
-			reflected in the specification. The evaluator shall also confirm that all protocols listed in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> are
-			specified and included in the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
-                </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall confirm that the operational guidance contains instructions for establishing the
-			connection to a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway, <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client, or IPsec-capable network device, and that it contains
-			recovery instructions should a connection be unintentionally broken.<br/><br/>
-                </div><div class="eacategory">Tests</div><div class="ea">
-                  The evaluator shall perform the following tests:
-                  <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FTP_ITC.1:1</a>:
-      The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is able to initiate communications with a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway,
-			<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client, IPsec-capable network device using the protocols specified in the requirement,
-			setting up the connections as described in the operational guidance and ensuring that communication is
-			successful.</li>
-                    <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FTP_ITC.1:2</a>:
-      The evaluator shall ensure, for each communication channel with an IPsec peer, the channel data
-			is not sent in plaintext.
-                    </li>
-                    <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FTP_ITC.1:3</a>:
-      The evaluator shall ensure, for each communication channel with an IPsec peer, modification of
-			the channel data is detected by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</li>
-                    <li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FTP_ITC.1:4</a>:
-      The evaluator shall physically interrupt the connection from the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to the IPsec peer. The
-			evaluators shall ensure that subsequent communications are appropriately protected, at a minimum in
-			the case of any attempts to automatically resume the connection or connect to a new access point.</li>
-                  </ul></span>
-		  Further EAs are associated with requirements for <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a>.
-                </div></div></div></div>
+          
         
           
           
@@ -2107,66 +1891,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	  
 	  <h4 id="md-a-fdp" class="indexable" data-level="4">5.2.2.2 User Data Protection (FDP)</h4>
  
-	  	<div class="comp" id="FDP_VPN_EXT.1"><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
-	      
-	      
-	      
-	      
-	      
-	      <div class="element"><div class="reqid" id="FDP_VPN_EXT.1.1"><a href="#FDP_VPN_EXT.1.1" class="abbr">FDP_VPN_EXT.1.1</a></div><div class="reqdesc">
-	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish
-	          the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
-	        <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-	          This requirement is implementation-based on the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> being the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> claimed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
-			  In this case, this requirement must be claimed.<br/><br/>
-	          For all other <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>, this requirement is strictly optional.<br/><br/>
-	          This requirement is used when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is able to enforce the requirement
-	          through its own components. This generally will have to be done through using
-	          hooks provided by the platform such that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is able to ensure that no <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr>
-	          traffic can flow through other network interfaces.
-	        </span></div></div></div>
-	  
-	    <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></div>
-	          
-	          
-	          
-	        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section of the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> describes the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through processes
-	            on the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> when a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled. The evaluator shall ensure that the description indicates which
-	            traffic does not go through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> and which traffic does and that a configuration exists for each
-	            baseband protocol in which only the traffic identified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is necessary for establishing the
-	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection (<abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> traffic and perhaps HTTPS or DNS traffic) is not encapsulated by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> protocol 
-	            (IPsec). The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall also identify in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section any differences in the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic when
-	            using any supported baseband protocols (e.g. Wi-Fi, LTE).
-	            <br/><br/>
-	          </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the following is addressed by the documentation:
-	            <ul>
-	              <li>The description above indicates that if a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled, all configurations route all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic
-	                (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client.</li>
-	              <li>The guidance describes how the user or administrator can configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to meet
-	                this requirement.</li>
-	            </ul><br/><br/>
-	          </div><div class="eacategory">Tests</div><div class="ea">
-	            The evaluator shall perform the following test:<br/><br/>
-	            Step 1 - The evaluator shall use the platform to enable a network connection without using IPsec. The
-	            evaluator shall use a packet sniffing tool between the platform and an internet-connected network. The
-	            evaluator shall turn on the sniffing tool and perform actions with the device such as navigating to
-	            websites, using provided applications, accessing other internet resources (Use Case 1), accessing another
-	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client (Use Case 2), or accessing an IPsec-capable network device (Use Case 3). The evaluator shall
-	            verify that the sniffing tool captures the traffic generated by these actions, turn off the sniffing tool, and
-	            save the session data. <br/><br/>
-	            Step 2 - The evaluator shall configure an IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client that supports the routing specified in this
-	            requirement, and if necessary, configure the device to perform the routing specified as described in the
-	            AGD guidance. The evaluator shall turn on the sniffing tool, establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection, and perform
-	            the same actions with the device as performed in the first step. The evaluator shall verify that the sniffing
-	            tool captures traffic generated by these actions, turn off the sniffing tool, and save the session data.<br/><br/>
-	            Step 3 - The evaluator shall examine the traffic from both step one and step two to verify that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic,
-	            aside from and after traffic necessary for establishing the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> (such as <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>, DNS, and possibly HTTPS), is
-	            encapsulated by IPsec.<br/><br/>
-	            Step 4 - The evaluator shall attempt to send packets to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> outside the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection and shall
-	            verify that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> discards them.
-	          </div></div></div></div>
+	  	
 	    
  
 	  	<div class="comp" id="FDP_VPN_EXT.1"><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
@@ -2445,139 +2170,10 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         <h4 id="ap-a-fcs" class="indexable" data-level="4">5.3.2.1 Cryptographic Support (FCS)</h4>
           
           
-          <div class="comp" id="FCS_CKM_EXT.2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4>
-            
-            
-            
-            
-            
-            <div class="element"><div class="reqid" id="FCS_CKM_EXT.2.1"><a href="#FCS_CKM_EXT.2.1" class="abbr">FCS_CKM_EXT.2.1</a></div><div class="reqdesc">The 
-                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_122"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>,  <span class="selectable-content" id="_s_123"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span> ] shall store persistent secrets and private keys
-                when not in use in platform-provided key storage.
-              <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-                This requirement ensures that persistent secrets and private keys are stored
-                securely when not in use. This differs from FCS_STO_EXT.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, which
-                only applies to secure storage of administrative credentials. If some secrets or keys
-                are manipulated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and others are manipulated by the platform, then
-                both of the selections can be specified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author.
-              </span></div></div></div>
-            
-          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a></div> 
-                
-                
-                
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">Regardless of whether this requirement is met by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform, the evaluator will check
-			the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it lists each persistent secret (credential, secret key) and private key needed to
-			meet the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. For each of these items, the evaluator will confirm that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists for
-			what purpose it is used, and how it is stored. The evaluator then performs the following actions: <br/><br/>
-
-                  	<b>Persistent secrets and private keys manipulated by the platform:</b><br/><br/>
-
-               	 	For each platform listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> of the platform to ensure that the
-			persistent secrets and private keys listed as being stored by the platform in the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> are identified
-			as being protected in that platform's <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><br/><br/>
-
-                  	<b>Persistent secrets and private keys manipulated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>:</b><br/><br/>
-
-                  	The evaluator reviews the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> for to determine that it makes a case that, for each item listed as being
-			manipulated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, it is not written unencrypted to persistent memory, and that the item is stored
-			by the platform.<br/><br/>
-                </div><div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div><div class="eacategory">Tests</div><div class="ea">There are no test EAs for this requirement.</div></div></div></div>
+          
 
           
-          <div class="comp" id="FCS_CKM_EXT.4"><h4>FCS_CKM_EXT.4 Cryptographic Key Destruction</h4>
-            
-            
-            
-            
-            
-            <div class="element"><div class="reqid" id="FCS_CKM_EXT.4.1"><a href="#FCS_CKM_EXT.4.1" class="abbr">FCS_CKM_EXT.4.1</a></div><div class="reqdesc">The 
-                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_124"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>,  <span class="selectable-content" id="_s_125"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span> ] 
-                shall zeroize all plaintext secret and private cryptographic keys and CSPs when no longer required.
-              <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-                Any security related information (such as keys, authentication data, and
-                passwords) must be zeroized when no longer in use to prevent the disclosure or
-                modification of security critical data.<br/><br/>
-
-                The zeroization indicated above applies to each intermediate storage area for
-                plaintext key or <abbr class="dyn-abbr"><a href="#abbr_CSP">CSP</a></abbr> data (i.e., any storage, such as memory buffers, that is included in
-                the path of such data) upon the transfer of the key or <abbr class="dyn-abbr"><a href="#abbr_CSP">CSP</a></abbr> to another location.<br/><br/>
-
-                In practice, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will not implement all of the functionality associated with
-                the requirement, since if it performs zeroization at all it will be by invoking
-                platform interfaces to perform the storage location clear or overwrite function. The
-                <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author should select "<abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>" when, for at least one of the keys needed to meet
-                the requirements of this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> manipulates (reads, writes) the data
-                identified in the requirement and thus needs to ensure that those data are
-                cleared. In these cases, it is sufficient for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to invoke the correct
-                underlying functions of the host to perform the zeroization—it does not imply
-                that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> has to include a kernel-mode memory driver to ensure the data are
-                zeroized.<br/><br/>
-
-                In the likely event that some of the data are manipulated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and other
-                data are manipulated entirely by the platform, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must select both
-                options.
-              </span></div></div></div>
-            
-          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCS_CKM_EXT.4">FCS_CKM_EXT.4</a></div> 
-                
-                
-                
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall ensure that all plaintext secret and private cryptographic keys and CSPs (whether
-			manipulated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or exclusively by the platform) are identified in the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>, and that
-			they are accounted for by the EAs in this section. <br/><br/>
-
-                  	<b>Requirement met by the platform:</b><br/><br/>
-
-                  	The evaluator shall check to ensure the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes each of the secret keys (keys used for
-                  	symmetric encryption), private keys, and CSPs used to generate key that are not otherwise covered
-                  	by the <a href="#FCS_CKM_EXT.4">FCS_CKM_EXT.4</a> requirement levied on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.<br/><br/>
-                  	For each platform listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> of the platform to
-                  	ensure that each of the secret keys, private keys, and CSPs used to generate key listed above are
-                  	covered. <br/><br/>
-
-                  	<b>Requirement met by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>:</b><br/><br/>
-
-                  	The evaluator shall check to ensure the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes when each of the plaintext keys are cleared (e.g.,
-			system power off, disconnection of an IPsec connection, when no longer needed by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> channel per
-			the protocol); and the type of clearing procedure that is performed (cryptographic erase, overwrite with
-			zeros, overwrite three or more times by a different alternating pattern, overwrite with random pattern,
-			or block erase). If different types of memory are used to store the materials to be protected, the evaluator
-			shall check to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the clearing procedure in terms of the memory in which the
-			data are stored (for example, "secret keys stored on flash are cleared by overwriting once with zeros,
-			while secret keys stored on the internal persistent storage device are cleared by overwriting three times
-			with a random pattern that is changed before each write").<br/><br/>
-		</div><div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div><div class="eacategory">Tests</div><div class="ea">
-			For each key clearing situation described in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>, the evaluator shall repeat the following test.
-                	<span class="testlist-"><ul>
-                  		<li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FCS_CKM_EXT.4:1</a>:
-      The evaluator shall use appropriate combinations of specialized <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> and
-					development tools (debuggers, simulators, etc.) for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and instrumented <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> builds to test that keys
-					are cleared correctly, including all intermediate copies of the key that may have been created internally
-					by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> during normal cryptographic processing with that key. <br/><br/>
-                    			Cryptographic <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implementations in software shall be loaded and exercised under a debugger to
-					perform such tests. The evaluator shall perform the following test for each key subject to clearing,
-					including intermediate copies of keys that are persisted encrypted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>:<br/><br/>
-					<ol type="1">
-						<li>Load the instrumented <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> build in a debugger.</li>
-					        <li>Record the value of the key in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> subject to clearing.</li>
-                    				<li>Cause the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to perform a normal cryptographic processing with the key from #1.</li>
-                    				<li>Cause the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to clear the key.</li>
-				                <li>Cause the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to stop the execution but not exit.</li>
-                    				<li>Cause the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to dump the entire memory footprint of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> into a binary file.</li>
-                    				<li>Search the content of the binary file created in #4 for instances of the known key value from
-  					                  #1.</li>
-					</ol>
-		                    	The test succeeds if no copies of the key from #1 are found in step #7 above and fails otherwise.<br/><br/>
- 		                   	The evaluator shall perform this test on all keys, including those persisted in encrypted form, to ensure
-					intermediate copies are cleared.
-				</li>
-    	            </ul></span>
-                </div></div></div></div>
+          
         
           
           
@@ -2721,68 +2317,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
  
  
  
-	  	<div class="comp" id="FDP_VPN_EXT.1"><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4><div class="statustag"><i><b>
-					This is an objective component. In the future it will become mandatory. 
-				</b></i></div>
-	      
-	      
-	      
-	      
-	      
-	      
-	      <div class="element"><div class="reqid" id="FDP_VPN_EXT.1.1"><a href="#FDP_VPN_EXT.1.1" class="abbr">FDP_VPN_EXT.1.1</a></div><div class="reqdesc">
-	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish
-	          the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
-	        <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-	          This requirement is implementation-based on the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> being the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> claimed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. In this case, this requirement must be claimed.<br/><br/>
-	          For all other <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>, this requirement is strictly optional.<br/><br/>
-	          This requirement is used when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is able to enforce the requirement
-	          through its own components. This generally will have to be done through using
-	          hooks provided by the platform such that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is able to ensure that no <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr>
-	          traffic can flow through other network interfaces.
-	        </span></div></div></div>
-	  
-	    <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></div>
-	          
-	          
-	          
-	        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section of the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> describes the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through processes
-	            on the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> when a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled. The evaluator shall ensure that the description indicates which
-	            traffic does not go through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> and which traffic does and that a configuration exists for each
-	            baseband protocol in which only the traffic identified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is necessary for establishing the
-	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection (<abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> traffic and perhaps HTTPS or DNS traffic) is not encapsulated by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> protocol 
-	            (IPsec). The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall also identify in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section any differences in the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic when
-	            using any supported baseband protocols (e.g. Wi-Fi, LTE).
-	            <br/><br/>
-	          </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the following is addressed by the documentation:
-	            <ul>
-	              <li>The description above indicates that if a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled, all configurations route all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic
-	                (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client.</li>
-	              <li>The guidance describes how the user or administrator can configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to meet
-	                this requirement.</li>
-	            </ul><br/><br/>
-	          </div><div class="eacategory">Tests</div><div class="ea">
-	            The evaluator shall perform the following test:<br/><br/>
-	            Step 1 - The evaluator shall use the platform to enable a network connection without using IPsec. The
-	            evaluator shall use a packet sniffing tool between the platform and an internet-connected network. The
-	            evaluator shall turn on the sniffing tool and perform actions with the device such as navigating to
-	            websites, using provided applications, accessing other internet resources (Use Case 1), accessing another
-	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client (Use Case 2), or accessing an IPsec-capable network device (Use Case 3). The evaluator shall
-	            verify that the sniffing tool captures the traffic generated by these actions, turn off the sniffing tool, and
-	            save the session data. <br/><br/>
-	            Step 2 - The evaluator shall configure an IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client that supports the routing specified in this
-	            requirement, and if necessary, configure the device to perform the routing specified as described in the
-	            AGD guidance. The evaluator shall turn on the sniffing tool, establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection, and perform
-	            the same actions with the device as performed in the first step. The evaluator shall verify that the sniffing
-	            tool captures traffic generated by these actions, turn off the sniffing tool, and save the session data.<br/><br/>
-	            Step 3 - The evaluator shall examine the traffic from both step one and step two to verify that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic,
-	            aside from and after traffic necessary for establishing the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> (such as <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>, DNS, and possibly HTTPS), is
-	            encapsulated by IPsec.<br/><br/>
-	            Step 4 - The evaluator shall attempt to send packets to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> outside the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection and shall
-	            verify that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> discards them.
-	          </div></div></div></div>
+	  	
 	    
  
  
@@ -3150,66 +2685,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	  <h4 id="dm-a-fdp" class="indexable" data-level="4">5.4.2.2 User Data Protection (FDP)</h4>
  
  
-	  	<div class="comp" id="FDP_VPN_EXT.1"><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4><div class="statustag"><b><i>This component is optional and may be claimed at the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>-Author's discretion.</i></b></div>
-	      
-	      
-	      
-	      
-	      
-	      
-	      <div class="element"><div class="reqid" id="FDP_VPN_EXT.1.1"><a href="#FDP_VPN_EXT.1.1" class="abbr">FDP_VPN_EXT.1.1</a></div><div class="reqdesc">
-	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish
-	          the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
-	        <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-	          This requirement is implementation-based on the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> being the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> claimed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. In this case, this requirement must be claimed.<br/><br/>
-	          For all other <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>, this requirement is strictly optional.<br/><br/>
-	          This requirement is used when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is able to enforce the requirement
-	          through its own components. This generally will have to be done through using
-	          hooks provided by the platform such that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is able to ensure that no <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr>
-	          traffic can flow through other network interfaces.
-	        </span></div></div></div>
-	  
-	    <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></div>
-	          
-	          
-	          
-	        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section of the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> describes the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through processes
-	            on the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> when a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled. The evaluator shall ensure that the description indicates which
-	            traffic does not go through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> and which traffic does and that a configuration exists for each
-	            baseband protocol in which only the traffic identified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is necessary for establishing the
-	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection (<abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> traffic and perhaps HTTPS or DNS traffic) is not encapsulated by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> protocol 
-	            (IPsec). The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall also identify in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section any differences in the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic when
-	            using any supported baseband protocols (e.g. Wi-Fi, LTE).
-	            <br/><br/>
-	          </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the following is addressed by the documentation:
-	            <ul>
-	              <li>The description above indicates that if a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled, all configurations route all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic
-	                (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client.</li>
-	              <li>The guidance describes how the user or administrator can configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to meet
-	                this requirement.</li>
-	            </ul><br/><br/>
-	          </div><div class="eacategory">Tests</div><div class="ea">
-	            The evaluator shall perform the following test:<br/><br/>
-	            Step 1 - The evaluator shall use the platform to enable a network connection without using IPsec. The
-	            evaluator shall use a packet sniffing tool between the platform and an internet-connected network. The
-	            evaluator shall turn on the sniffing tool and perform actions with the device such as navigating to
-	            websites, using provided applications, accessing other internet resources (Use Case 1), accessing another
-	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client (Use Case 2), or accessing an IPsec-capable network device (Use Case 3). The evaluator shall
-	            verify that the sniffing tool captures the traffic generated by these actions, turn off the sniffing tool, and
-	            save the session data. <br/><br/>
-	            Step 2 - The evaluator shall configure an IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client that supports the routing specified in this
-	            requirement, and if necessary, configure the device to perform the routing specified as described in the
-	            AGD guidance. The evaluator shall turn on the sniffing tool, establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection, and perform
-	            the same actions with the device as performed in the first step. The evaluator shall verify that the sniffing
-	            tool captures traffic generated by these actions, turn off the sniffing tool, and save the session data.<br/><br/>
-	            Step 3 - The evaluator shall examine the traffic from both step one and step two to verify that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic,
-	            aside from and after traffic necessary for establishing the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> (such as <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>, DNS, and possibly HTTPS), is
-	            encapsulated by IPsec.<br/><br/>
-	            Step 4 - The evaluator shall attempt to send packets to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> outside the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection and shall
-	            verify that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> discards them.
-	          </div></div></div></div>
+	  	
 	    
  
  
@@ -5014,66 +4490,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	    
     
 	    
-	    <div class="comp" id="FDP_VPX_EXT.1"><h4>FDP_VPX_EXT.1 Split Tunnel Prevention</h4><div class="statustag"><b><i>This component must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements any of the following features:</i></b><br/><ul><li><b><i><a href="#feat-one">Feature One</a></i></b></li></ul></div>
-	      
-	      
-	      
-	      
-	      
-	      
-	      <div class="element"><div class="reqid" id="FDP_VPX_EXT.1.1"><a href="#FDP_VPX_EXT.1.1" class="abbr">FDP_VPX_EXT.1.1</a></div><div class="reqdesc">
-	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish
-	          the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. 
-	        <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-	          This requirement is implementation-based on the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> being the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> claimed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. In this case, this requirement must be claimed.<br/><br/>
-	          For all other <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>, this requirement is strictly optional.<br/><br/>
-	          This requirement is used when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is able to enforce the requirement
-	          through its own components. This generally will have to be done through using
-	          hooks provided by the platform such that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is able to ensure that no <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr>
-	          traffic can flow through other network interfaces.
-	        </span></div></div></div>
-	  
-	    <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_VPX_EXT.1">FDP_VPX_EXT.1</a></div>
-	          
-	          
-	          
-	        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section of the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> describes the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through processes
-	            on the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> when a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled. The evaluator shall ensure that the description indicates which
-	            traffic does not go through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> and which traffic does and that a configuration exists for each
-	            baseband protocol in which only the traffic identified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is necessary for establishing the
-	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection (<abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> traffic and perhaps HTTPS or DNS traffic) is not encapsulated by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> protocol 
-	            (IPsec). The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall also identify in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section any differences in the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic when
-	            using any supported baseband protocols (e.g. Wi-Fi, LTE).
-	            <br/><br/>
-	          </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the following is addressed by the documentation:
-	            <ul>
-	              <li>The description above indicates that if a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled, all configurations route all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic
-	                (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client.</li>
-	              <li>The guidance describes how the user or administrator can configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to meet
-	                this requirement.</li>
-	            </ul><br/><br/>
-	          </div><div class="eacategory">Tests</div><div class="ea">
-	            The evaluator shall perform the following test:<br/><br/>
-	            Step 1 - The evaluator shall use the platform to enable a network connection without using IPsec. The
-	            evaluator shall use a packet sniffing tool between the platform and an internet-connected network. The
-	            evaluator shall turn on the sniffing tool and perform actions with the device such as navigating to
-	            websites, using provided applications, accessing other internet resources (Use Case 1), accessing another
-	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client (Use Case 2), or accessing an IPsec-capable network device (Use Case 3). The evaluator shall
-	            verify that the sniffing tool captures the traffic generated by these actions, turn off the sniffing tool, and
-	            save the session data. <br/><br/>
-	            Step 2 - The evaluator shall configure an IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client that supports the routing specified in this
-	            requirement, and if necessary, configure the device to perform the routing specified as described in the
-	            AGD guidance. The evaluator shall turn on the sniffing tool, establish the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection, and perform
-	            the same actions with the device as performed in the first step. The evaluator shall verify that the sniffing
-	            tool captures traffic generated by these actions, turn off the sniffing tool, and save the session data.<br/><br/>
-	            Step 3 - The evaluator shall examine the traffic from both step one and step two to verify that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic,
-	            aside from and after traffic necessary for establishing the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> (such as <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>, DNS, and possibly HTTPS), is
-	            encapsulated by IPsec.<br/><br/>
-	            Step 4 - The evaluator shall attempt to send packets to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> outside the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection and shall
-	            verify that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> discards them.
-	          </div></div></div></div>
+	    
 	  
 	    
 	    
@@ -6292,7 +5709,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 <tr><td><span class="term" id="abbr_TSFI" data-plural="TSFIs"><abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFI</a></abbr></span></td><td><span id="long_abbr_TSFI"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Interface</span></td></tr>
 <tr><td><span class="term" id="abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></span></td><td><span id="long_abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Summary Specification</span></td></tr>
 <tr><td><span class="term" id="abbr_VPN"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr></span></td><td><span id="long_abbr_VPN">Virtual Private Network</span></td></tr>
-</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix G -  Bibliography</h1><table><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
+</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix G -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">30</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
             <li><a href="https://www.commoncriteriaportal.org/files/ccfiles/CC2022PART1R1.pdf">Part 1: 
 				Introduction and general model</a>, CCMB-2022-11-001, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART2R1.pdf">Part 2: 
