@@ -4638,18 +4638,32 @@ expected to enforce.<h:br/><h:br/>
 
     <mod-sars>
      <!-- 5.7 TOE Security Assurance Requirements -->
-	<section title="TOE Security Assurance Requirements" id="s-sar">  
-     
-		<description>
-			This PP-Module does not define any SARs beyond those defined within the Base-PPs to which it can
-			claim conformance. It is important to note that a TOE that is evaluated against this PP-Module is
-			inherently evaluated against the GPOS PP, MDF PP, App PP, or MDM PP as well. These PPs include a
-			number of EAs associated with both SFRs and SARs. Additionally, this
-			PP-Module includes a number of SFR-based EAs that similarly refine the SARs of the Base-PPs. The
-			evaluation laboratory will evaluate the TOE against the chosen Base-PP and supplement that evaluation
-			with the necessary SFRs that are taken from this PP-Module.
-		</description>
-</section> 
+       <a-component cc-id="alc_flr.3" name="Systematic flaw remediation (ALC_FLR.3)" status="optional">
+                In order for the developer to be able to act appropriately upon security flaw reports from TOE
+                users, and to know to whom to send corrective fixes, TOE users need to understand how to submit
+                security flaw reports to the developer, and how to register themselves with the developer so that
+                they may receive these corrective fixes. Flaw remediation guidance from the developer to the TOE
+                user ensures that TOE users are aware of this important information.
+		<a-element type="D">
+ 			<title>The developer shall document and provide flaw remediation procedures addressed to TOE
+                               developers.
+                        </title>
+		</a-element>
+		<a-element type="D">
+ 			<title>The developer shall establish a procedure for accepting and acting upon all reports of security
+                               flaws and requests for corrections to those flaws.
+                        </title>
+		</a-element>
+		<a-element type="D">
+ 			<title>The developer shall provide flaw remediation guidance addressed to TOE users.
+                        </title>
+		</a-element>
+		<a-element type="C">
+ 			<title>The flaw remediation procedures documentation shall describe the procedures used to track all
+                               reported security flaws in each release of the TOE.
+                        </title>
+		</a-element>
+    </a-component>		
 </mod-sars>
 	  
 	<!-- Appendix A: Optional Requirements -->

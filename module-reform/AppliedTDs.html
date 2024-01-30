@@ -2851,8 +2851,29 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 <tr><td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally
             requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.</td></tr>
 </table></p><h2 id="mod-sars" class="indexable" data-level="2">5.7 TOE Security Assurance Requirements</h2>
-			This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Security Assurance requirements. The <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> must be satisfied.
-	      <h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-bpp-gpos" class="indexable" data-level="2">6.1 
+			The following section describes the <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> that must be satisfied by any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
+			These <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> must be claimed regardless of which <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> is used to define the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+        		
+     
+       <div class="comp" id="ALC_FLR.3"><h4>ALC_FLR.3 Systematic flaw remediation (ALC_FLR.3)</h4>
+                In order for the developer to be able to act appropriately upon security flaw reports from <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+                users, and to know to whom to send corrective fixes, <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> users need to understand how to submit
+                security flaw reports to the developer, and how to register themselves with the developer so that
+                they may receive these corrective fixes. Flaw remediation guidance from the developer to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+                user ensures that <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> users are aware of this important information.
+		
+		
+		
+		
+    <h4>Developer action elements: </h4><div class="element"><div class="reqid" id="ALC_FLR.3.1D"><a href="#ALC_FLR.3.1D" class="abbr">ALC_FLR.3.1D</a></div><div class="reqdesc">The developer shall document and provide flaw remediation procedures addressed to <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+                               developers.
+                        </div></div><div class="element"><div class="reqid" id="ALC_FLR.3.2D"><a href="#ALC_FLR.3.2D" class="abbr">ALC_FLR.3.2D</a></div><div class="reqdesc">The developer shall establish a procedure for accepting and acting upon all reports of security
+                               flaws and requests for corrections to those flaws.
+                        </div></div><div class="element"><div class="reqid" id="ALC_FLR.3.3D"><a href="#ALC_FLR.3.3D" class="abbr">ALC_FLR.3.3D</a></div><div class="reqdesc">The developer shall provide flaw remediation guidance addressed to <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> users.
+                        </div></div><h4>Content and presentation elements: </h4><div class="element"><div class="reqid" id="ALC_FLR.3.1C"><a href="#ALC_FLR.3.1C" class="abbr">ALC_FLR.3.1C</a></div><div class="reqdesc">The flaw remediation procedures documentation shall describe the procedures used to track all
+                               reported security flaws in each release of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+                        </div></div><h4>Evaluator action elements: </h4></div>		
+<h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-bpp-gpos" class="indexable" data-level="2">6.1 
     Protection Profile for General-Purpose Operating Systems</h2><h3 id="contoe-bpp-gpos" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type
       </h3>If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a 
