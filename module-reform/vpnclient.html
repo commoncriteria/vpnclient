@@ -682,7 +682,7 @@ function showTarget(id){
 	Consistency of Objectives
       </span></a><a href="#conreq-bpp-mdm" style="text-indent:20px">6.4.4<span>
 	Consistency of Requirements
-      </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements
+      </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional Requirements</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements
     </span></a><a href="#sop-audit-table" style="text-indent:20px">A.1.1<span>Auditable Events for Strictly Optional SFRs</span></a><a href="#o-fia" style="text-indent:20px">A.1.2<span>Identification and Authentication (FIA)</span></a><a href="#s-fpf" style="text-indent:20px">A.1.3<span>Packet Filtering (FPF)</span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements
     </span></a><a href="#sob-audit-table" style="text-indent:20px">A.2.1<span>Auditable Events for Objective SFRs</span></a><a href="#ob-fau" style="text-indent:20px">A.2.2<span>Security Audit (FAU)</span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements
     </span></a><a href="#sib-audit-table" style="text-indent:20px">A.3.1<span>Auditable Events for Implementation-Dependent SFRs</span></a><a href="#ib-fdp" style="text-indent:20px">A.3.2<span>User Data Protection (FDP)</span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements
@@ -3873,28 +3873,53 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 <tr><td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally
             requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.</td></tr>
 </table></p><h2 id="mod-sars" class="indexable" data-level="2">5.7 TOE Security Assurance Requirements</h2>
-			The following section describes the <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> that must be satisfied by any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
-			These <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> must be claimed regardless of which <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> is used to define the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+				The following section describes the <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> that must be satisfied by any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims 
+				conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> must be claimed regardless of which <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> 
+				is used to define the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. Optional <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr>, if any, can be found in <appref linkend="optional"></appref>. 
         		
-     
-       <div class="comp" id="ALC_FLR.3"><h4>ALC_FLR.3 Systematic flaw remediation (ALC_FLR.3)</h4>
+
+	       <div class="comp" id="ALC_FLR.2"><h4>ALC_FLR.2 Flaw reporting procedures (ALC_FLR.2)</h4>
                 In order for the developer to be able to act appropriately upon security flaw reports from <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
                 users, and to know to whom to send corrective fixes, <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> users need to understand how to submit
-                security flaw reports to the developer, and how to register themselves with the developer so that
-                they may receive these corrective fixes. Flaw remediation guidance from the developer to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+                security flaw reports to the developer. Flaw remediation guidance from the developer to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
                 user ensures that <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> users are aware of this important information.
 		
 		
 		
 		
-    <h4>Developer action elements: </h4><div class="element"><div class="reqid" id="ALC_FLR.3.1D"><a href="#ALC_FLR.3.1D" class="abbr">ALC_FLR.3.1D</a></div><div class="reqdesc">The developer shall document and provide flaw remediation procedures addressed to <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-                               developers.
-                        </div></div><div class="element"><div class="reqid" id="ALC_FLR.3.2D"><a href="#ALC_FLR.3.2D" class="abbr">ALC_FLR.3.2D</a></div><div class="reqdesc">The developer shall establish a procedure for accepting and acting upon all reports of security
-                               flaws and requests for corrections to those flaws.
-                        </div></div><div class="element"><div class="reqid" id="ALC_FLR.3.3D"><a href="#ALC_FLR.3.3D" class="abbr">ALC_FLR.3.3D</a></div><div class="reqdesc">The developer shall provide flaw remediation guidance addressed to <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> users.
-                        </div></div><h4>Content and presentation elements: </h4><div class="element"><div class="reqid" id="ALC_FLR.3.1C"><a href="#ALC_FLR.3.1C" class="abbr">ALC_FLR.3.1C</a></div><div class="reqdesc">The flaw remediation procedures documentation shall describe the procedures used to track all
+		
+		
+		
+		
+		
+		
+		
+		
+        <h4>Developer action elements: </h4><div class="element"><div class="reqid" id="ALC_FLR.2.1D"><a href="#ALC_FLR.2.1D" class="abbr">ALC_FLR.2.1D</a></div><div class="reqdesc">The developer shall document and provide flaw remediation procedures addressed to <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+                               developers.</div></div><div class="element"><div class="reqid" id="ALC_FLR.2.2D"><a href="#ALC_FLR.2.2D" class="abbr">ALC_FLR.2.2D</a></div><div class="reqdesc">The developer shall establish a procedure for accepting and acting upon all reports of
+                               security flaws and requests for corrections to those flaws.
+                        </div></div><div class="element"><div class="reqid" id="ALC_FLR.2.3D"><a href="#ALC_FLR.2.3D" class="abbr">ALC_FLR.2.3D</a></div><div class="reqdesc">The developer shall provide flaw remediation guidance addressed to <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> users.</div></div><h4>Content and presentation elements: </h4><div class="element"><div class="reqid" id="ALC_FLR.2.1C"><a href="#ALC_FLR.2.1C" class="abbr">ALC_FLR.2.1C</a></div><div class="reqdesc">The flaw remediation procedures documentation shall describe the procedures used to track all
                                reported security flaws in each release of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-                        </div></div><h4>Evaluator action elements: </h4></div>		
+                        </div></div><div class="element"><div class="reqid" id="ALC_FLR.2.2C"><a href="#ALC_FLR.2.2C" class="abbr">ALC_FLR.2.2C</a></div><div class="reqdesc">The flaw remediation procedures shall require that a description of the nature and effect of each
+                               security flaw be provided, as well as the status of finding a correction to that flaw.
+                        </div></div><div class="element"><div class="reqid" id="ALC_FLR.2.3C"><a href="#ALC_FLR.2.3C" class="abbr">ALC_FLR.2.3C</a></div><div class="reqdesc">The flaw remediation procedures shall require that corrective actions be identified for each of the
+                               security flaws.
+                        </div></div><div class="element"><div class="reqid" id="ALC_FLR.2.4C"><a href="#ALC_FLR.2.4C" class="abbr">ALC_FLR.2.4C</a></div><div class="reqdesc">The flaw remediation procedures documentation shall describe the methods used to provide flaw
+                               information, corrections and guidance on corrective actions to <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> users.
+                        </div></div><div class="element"><div class="reqid" id="ALC_FLR.2.5C"><a href="#ALC_FLR.2.5C" class="abbr">ALC_FLR.2.5C</a></div><div class="reqdesc">The flaw remediation procedures shall describe a means by which the developer receives
+                               from <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> users reports and enquiries of suspected security flaws in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+                        </div></div><div class="element"><div class="reqid" id="ALC_FLR.2.6C"><a href="#ALC_FLR.2.6C" class="abbr">ALC_FLR.2.6C</a></div><div class="reqdesc">The procedures for processing reported security flaws shall ensure that any reported
+                               flaws are remediated and the remediation procedures issued to <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> users.
+                        </div></div><div class="element"><div class="reqid" id="ALC_FLR.2.7C"><a href="#ALC_FLR.2.7C" class="abbr">ALC_FLR.2.7C</a></div><div class="reqdesc">The procedures for processing reported security flaws shall provide safeguards that any
+                               corrections to these security flaws do not introduce any new flaws.
+                        </div></div><div class="element"><div class="reqid" id="ALC_FLR.2.8C"><a href="#ALC_FLR.2.8C" class="abbr">ALC_FLR.2.8C</a></div><div class="reqdesc">The flaw remediation guidance shall describe a means by which <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> users report to the
+                               developer any suspected security flaws in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+                        </div></div><h4>Evaluator action elements: </h4><div class="element"><div class="reqid" id="ALC_FLR.2.1E"><a href="#ALC_FLR.2.1E" class="abbr">ALC_FLR.2.1E</a></div><div class="reqdesc">The evaluator shall confirm that the information provided meets all requirements for content and
+                               presentation of evidence.
+                        </div></div></div>
+	
+     
+       		
 <h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-bpp-gpos" class="indexable" data-level="2">6.1 
     Protection Profile for General-Purpose Operating Systems</h2><h3 id="contoe-bpp-gpos" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type
@@ -4294,8 +4319,10 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         applies to the establishment of IPsec connections.</td></tr><tr><td><a href="#FIA_PSK_EXT.4">FIA_PSK_EXT.4</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to use of pre-shared keys, which is behavior that only
         applies to the establishment of IPsec connections.</td></tr><tr><td><a href="#FIA_PSK_EXT.5">FIA_PSK_EXT.5</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to use of pre-shared keys, which is behavior that only
         applies to the establishment of IPsec connections.</td></tr><tr><td><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to use of pre-shared keys, which is behavior that only
-        applies to the establishment of IPsec connections.</td></tr></tr></table><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements
+        applies to the establishment of IPsec connections.</td></tr></tr></table><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional Requirements</h1><h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements
     </h2>
+	    There are optional <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr>.
+	
       
       <h3 class="indexable" data-level="3" id="sop-audit-table">A.1.1 Auditable Events for Strictly Optional SFRs</h3>
         <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-optional" data-counter-type="ct-Table" id="at-optional">Table <span class="counter">23</span></span>: Auditable Events for Strictly Optional Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FIA_BMA_EXT.1"><td rowspan="2"><a href="#FIA_BMA_EXT.1">FIA_BMA_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_BMA_EXT.1#"><td></td></tr><tr data-sortkey="FIA_BMA_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FPF_MFA_EXT.1"><td rowspan="2"><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPF_MFA_EXT.1#"><td></td></tr><tr data-sortkey="FPF_MFA_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
