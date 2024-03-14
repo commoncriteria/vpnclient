@@ -438,93 +438,17 @@
                     <br>
                      Even though the communication path is protected, there is a possibility that the IPsec peer could be tricked into thinking that a malicious third-party user or system is the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. For instance, a middleman could intercept a connection request to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, and respond to the request as if it were the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. In a similar manner, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> could also be tricked into thinking that it is establishing communications with a legitimate IPsec peer when in fact it is not. An attacker could also mount a malicious man-in-the-middle-type of attack, in which an intermediate system is compromised, and the traffic is proxied, examined, and modified by this system. This attack can even be mounted via encrypted communication channels if appropriate countermeasures are not applied. These attacks are, in part, enabled by a malicious attacker capturing network traffic (for instance, an authentication session) and &ldquo;playing back&rdquo; that traffic in order to fool an endpoint into thinking it was communicating with a legitimate remote entity.</span>
             </dd>
-            <p></p>
-            <dd>
-                <b>Addressed by these <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>:</b>
-            </dd>
-            <dd>
-                <a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a> (when GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>&rsquo; key storage.
-            </dd>
-            <dd>
-                <a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a> (when App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>' key storage.
-            </dd>
-            <dd>
-                <a href="#FCS_CKM_EXT.4">FCS_CKM_EXT.4</a> (when App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to zeroize key data when no longer needed.
-            </dd>
-            <dd>
-                <a href="#FDP_RIP.2">FDP_RIP.2</a>: This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to ensure that residual data is purged from the system.
-            </dd>
-            <dd>
-                <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.
-            </dd>
             <dt class="threat defined" id="T.TSF_CONFIGURATION">T.TSF_CONFIGURATION</dt>
             <dd>
                 <span class="description"> Configuring <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> tunnels is a complex and time-consuming process, and prone to errors if the interface for doing so is not well-specified or well-behaved. The inability or failure of an ignorant or careless administrator to configure certain aspects of the interface may also lead to the mis-specification of the desired communications policy or use of cryptography that may be desired or required for a particular site. This may result in unintended weak or plaintext communications while the user thinks that their data are being protected. Other aspects of configuring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or using its security mechanisms (for example, the update process) may also result in a reduction in the trustworthiness of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client.</span>
-            </dd>
-            <p></p>
-            <dd>
-                <b>Addressed by these <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>:</b>
-            </dd>
-            <dd>
-                <a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a> (when GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>&rsquo; key storage.
-            </dd>
-            <dd>
-                <a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a> (when App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>' key storage.
-            </dd>
-            <dd>
-                <a href="#FDP_RIP.2">FDP_RIP.2</a>: This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to ensure that residual data is purged from the system.
-            </dd>
-            <dd>
-                <a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a> (optional): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit split-tunneling so that network traffic cannot be transmitted outside of an established IPsec tunnel.
-            </dd>
-            <dd>
-                <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.
             </dd>
             <dt class="threat defined" id="T.USER_DATA_REUSE">T.USER_DATA_REUSE</dt>
             <dd>
                 <span class="description">Data traversing the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> could inadvertently be sent to a different user as a consequence of a poorly-designed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>; since these data may be sensitive, this may cause a compromise that is unacceptable. The specific threat that must be addressed concerns user data that is retained by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in the course of processing network traffic that could be inadvertently re-used in sending network traffic to a user other than that intended by the sender of the original network traffic. </span>
             </dd>
-            <p></p>
-            <dd>
-                <b>Addressed by these <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>:</b>
-            </dd>
-            <dd>
-                <a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a> (when GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>&rsquo; key storage.
-            </dd>
-            <dd>
-                <a href="#FCS_CKM_EXT.4">FCS_CKM_EXT.4</a> (when App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to zeroize key data when no longer needed.
-            </dd>
-            <dd>
-                <a href="#FDP_RIP.2">FDP_RIP.2</a>: This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to ensure that residual data is purged from the system.
-            </dd>
-            <dd>
-                <a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a> (optional): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit split-tunneling so that network traffic cannot be transmitted outside of an established IPsec tunnel.
-            </dd>
-            <dd>
-                <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.
-            </dd>
             <dt class="threat defined" id="T.TSF_FAILURE">T.TSF_FAILURE</dt>
             <dd>
                 <span class="description"> Security mechanisms of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generally build up from a primitive set of mechanisms (e.g., memory management, privileged modes of process execution) to more complex sets of mechanisms. Failure of the primitive mechanisms could lead to a compromise in more complex mechanisms, resulting in a compromise of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. </span>
-            </dd>
-            <p></p>
-            <dd>
-                <b>Addressed by these <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>:</b>
-            </dd>
-            <dd>
-                <a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a> (when App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>' key storage.
-            </dd>
-            <dd>
-                <a href="#FCS_CKM_EXT.4">FCS_CKM_EXT.4</a> (when App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to zeroize key data when no longer needed.
-            </dd>
-            <dd>
-                <a href="#FDP_RIP.2">FDP_RIP.2</a>: This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to ensure that residual data is purged from the system.
-            </dd>
-            <dd>
-                <a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a> (optional): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit split-tunneling so that network traffic cannot be transmitted outside of an established IPsec tunnel.
-            </dd>
-            <dd>
-                <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional): This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.
             </dd>
         </dl>
          
