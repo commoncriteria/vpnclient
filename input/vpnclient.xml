@@ -3858,21 +3858,29 @@ expected to enforce.<h:br/><h:br/>
           
           <f-element id="fcs-ipsec-ext-1e11">
             <title>The TSF shall ensure that 
-              <h:b><selectables>
-                <selectable>IKEv1</selectable>
-                <selectable>IKEv2</selectable></selectables></h:b>
-              protocols perform peer authentication using  
               <selectables>
-                <selectable>RSA</selectable>
-                <selectable>ECDSA</selectable>
-              </selectables> 
-              that use X.509v3 certificates that conform to RFC 4945 and 
-              <selectables>
-                <selectable id="sel-ipsec-e11-psk">Pre-shared Keys that conform to RFC 8784</selectable>
-                <selectable id="sel-ipsec-e11-eapttls"><h:b>Pre-shared Keys transmitted via EAP-TTLS</h:b></selectable>
-                <selectable id="sel-ipsec-e11-eaptls"><h:b>EAP-TLS</h:b></selectable>
-                <selectable exclusive="yes">no other method</selectable>
-              </selectables>.
+                <selectable>IKEv1 performs peer authentication using  
+                  <selectables>
+                    <selectable>RSA</selectable>
+                    <selectable>ECDSA</selectable>
+                  </selectables> 
+                  that use X.509v3 certificates that conform to RFC 4945.
+                </selectable>
+                <selectable>IKEv2 performs peer authentication using  
+                  <selectables>
+                    <selectable>RSA</selectable>
+                    <selectable>ECDSA</selectable>
+                  </selectables> 
+                  that use X.509v3 certificates that conform to RFC 4945 and 
+                  <selectables>
+                    <selectable id="sel-ipsec-e11-psk">Pre-shared Keys that conform to RFC 8784</selectable>
+                    <selectable id="sel-ipsec-e11-eapttls"><h:b>Pre-shared Keys transmitted via EAP-TTLS</h:b></selectable>
+                    <selectable id="sel-ipsec-e11-eaptls"><h:b>EAP-TLS</h:b></selectable>
+                    <selectable exclusive="yes">no other method</selectable>
+                  </selectables>.
+                </selectable>
+              </selectables>
+              
             </title>
 		  <!-- QQQQ: This element needs to be rewritten to be more clear. According to the AppNote below, the 
 			the "Pre-shared keys" selection applies only to IKEv1 and the other two refer to IKEv2, so they
@@ -3907,8 +3915,6 @@ expected to enforce.<h:br/><h:br/>
               appropriate FCS requirements reflecting the algorithms used (and key
               generation capabilities, if provided) are listed to support those methods. Note
               that the TSS will elaborate on the way in which these algorithms are to be used.
-              <h:br/><h:br/>
-              If “IKEv1” is selected, “no other method” must be chosen in the third selection.
               <h:br/><h:br/>
               If a selection with “EAP-TLS” or “EAP-TTLS” is chosen, the selection-based requirement FCS_EAP_EXT.1 must be claimed. 
               When an EAP method is used, verification occurs via an external authentication server. 
