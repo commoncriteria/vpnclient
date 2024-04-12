@@ -2190,7 +2190,11 @@ expected to enforce.<h:br/><h:br/>
                 address VPN client requirements; the SFR behavior itself is
                 unmodified.</consistency-rationale>
               <f-element id="ap-fcs-cop-1-1-skc">
-                <title>The application shall perform encryption/decryption in accordance with
+                <title>The application shall
+                  <selectables>
+                    <selectable>perform encryption/decryption</selectable>
+                    <selectable>invoke the platform to perform encryption/decryption</selectable>
+                  </selectables>in accordance with
                   a specified cryptographic algorithm <h:b>
                   <h:ul>
                     <h:li>AES-CBC (as defined in NIST SP 800-38A) mode,</h:li>
@@ -2218,6 +2222,7 @@ expected to enforce.<h:br/><h:br/>
 				If the TSF implements AES cryptography in support of both credential encryption (per FCS_STO_EXT.1)
 				and IPsec, the evaluator shall examine the TSS to ensure that it clearly identifies the modes and key sizes
 				that are supported for each usage of AES.<h:br/><h:br/>
+			  For platform-provided functionality, the evaluator shall verify the TSS contains the calls to the platform that the TOE is leveraging to invoke the functionality.
 			</TSS>
 			<Guidance>
 			  There are no operational  beyond what is required by the EA for <no-link>FCS_COP.1/SKC</no-link> in the App PP.<h:br/><h:br/>
