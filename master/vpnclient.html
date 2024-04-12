@@ -4103,15 +4103,14 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             
             
           <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes how authentication packets are identified and how all
-		    other traffic is blocked until secondary authentication is successful.<br/><br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it provides instructions to the administrator on how
-		    to configure the secondary HOTP or TOTP 
-              factors and any additional details necessary for filtering all other traffic.<br/><br/> 
+		    other traffic is blocked until secondary authentication is successful.<br/><br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it provides any necessary instructions to the administrator on how
+		    to enable and configure filtering..<br/><br/> 
             </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
               <span class="testlist-"><ul>
                 <li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FPF_MFA_EXT.1:1</a>:
-      For each included selection the evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> per the operational guidance.  
+       
                   The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules.  
-                  The evaluator shall then provide the selected factor and confirm it is accepted and traffic is no longer blocked.</li>
+                  The evaluator shall then provide the supported PSKs and confirm it is accepted and traffic is no longer blocked.</li>
               </ul></span>
             </div></div></div></div></div>
       

@@ -1411,15 +1411,14 @@ The following sections list Common Criteria and technology terms used in this do
             
             
           <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to verify that it describes how authentication packets are identified and how all
-		    other traffic is blocked until secondary authentication is successful.<br/><br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it provides instructions to the administrator on how
-		    to configure the secondary HOTP or TOTP 
-              factors and any additional details necessary for filtering all other traffic.<br/><br/> 
+		    other traffic is blocked until secondary authentication is successful.<br/><br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it provides any necessary instructions to the administrator on how
+		    to enable and configure filtering..<br/><br/> 
             </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
               <span class="testlist-"><ul>
                 <li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FPF_MFA_EXT.1:1</a>:
-      For each included selection the evaluator shall configure the TOE per the operational guidance.  
+       
                   The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules.  
-                  The evaluator shall then provide the selected factor and confirm it is accepted and traffic is no longer blocked.</li>
+                  The evaluator shall then provide the supported PSKs and confirm it is accepted and traffic is no longer blocked.</li>
               </ul></span>
             </div></div></span></div><h2 class="indexable" data-level="1" id="sel-sfrs">2.7 Evaluation Activities for Selection-Based SFRs</h2><h2 class="indexable" data-level="2" id="s-fcs">2.7.1 Cryptographic Support (FCS)</h2><div class="comp" id="FCS-EAP-EXT-1"><h4>FCS_EAP_EXT.1 EAP-TLS</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_EAP_EXT.1</div>
               
