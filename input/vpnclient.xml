@@ -4475,16 +4475,15 @@ expected to enforce.<h:br/><h:br/>
             <TSS>The evaluator shall examine the TSS to verify that it describes how authentication packets are identified and how all
 		    other traffic is blocked until secondary authentication is successful.<h:br/><h:br/></TSS>
             
-            <Guidance>The evaluator shall examine the operational guidance to verify that it provides instructions to the administrator on how
-		    to configure the secondary HOTP or TOTP 
-              factors and any additional details necessary for filtering all other traffic.<h:br/><h:br/> 
+            <Guidance>The evaluator shall examine the operational guidance to verify that it provides any necessary instructions to the administrator on how
+		    to enable and configure filtering..<h:br/><h:br/> 
             </Guidance>
             
             <Tests>
               <testlist>
-                <test>For each included selection the evaluator shall configure the TOE per the operational guidance.  
+                <test> 
                   The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules.  
-                  The evaluator shall then provide the selected factor and confirm it is accepted and traffic is no longer blocked.</test>
+                  The evaluator shall then provide the supported PSKs and confirm it is accepted and traffic is no longer blocked.</test>
               </testlist>
             </Tests>
           </aactivity>
