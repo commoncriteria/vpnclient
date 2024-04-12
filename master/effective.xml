@@ -3674,19 +3674,28 @@ expected to enforce.<h:br/><h:br/>
 						<selectables>
 							<selectable>number of packets/number of bytes</selectable>
 							<selectable>length of time</selectable></selectables></selectable>
-					<selectable>IKEv1 SA lifetimes can be configured by 
-						<selectables>
-							<selectable>an Administrator</selectable>
-							<selectable>a VPN Gateway</selectable>
-						</selectables> 
-						based on 
-						<selectables>
-							<selectable>number of packets/number of bytes</selectable>
-							<selectable>length of time</selectable></selectables></selectable>
-					<selectable>IKEv1 SA lifetimes are fixed based on 
-						<selectables>
-							<selectable>number of packets/number of bytes</selectable>
-							<selectable>length of time</selectable></selectables></selectable>
+					
+				  <selectable>IKEv1 SA lifetimes
+				  <selectables>
+  				  <selectable exclusive="yes"> can be configured by
+  						<selectables>
+  							<selectable>an Administrator</selectable>
+  							<selectable>a VPN Gateway</selectable>
+  						</selectables> 
+  						based on 
+  						<selectables>
+  							<selectable>number of packets/number of bytes</selectable>
+  							<selectable>length of time</selectable></selectables>
+  				  </selectable>
+  				  
+  					<selectable exclusive="yes">are fixed based on 
+  						<selectables>
+  							<selectable>number of packets/number of bytes</selectable>
+  							<selectable>length of time</selectable>
+  						</selectables>
+  					</selectable>
+				  </selectables>
+				  </selectable>
 				</selectables>. 
 				If length of time is used, it must include at least one option that
 				is 24 hours or less for Phase 1 SAs and 8 hours or less for Phase 2 SAs.
