@@ -1036,6 +1036,12 @@ expected to enforce.<h:br/><h:br/>
 <!--        This section lists additional SFRs that must be added to the TOE boundary in order to implement the
         functionality in any PP-Configuration where the GPOS PP is claimed as the Base-PP.
 -->
+        <section id="gpos-audit-table" title="Auditable Events for GPOS PP Additional SFRs">
+          <audit-table id="at-feat-based" table="feat-based">
+            <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="gpos-implbased">: Auditable Events for GPOS PP Additional SFRs</ctr></h:b>
+          </audit-table>
+        </section>
+        
         <section title="Cryptographic Support (FCS)" id="os-a-fcs">
           <ext-comp-def title="Cryptographic Key Management" fam-id="FCS_CKM_EXT">
             <fam-behavior>Components in this family describe requirements for key management functionality such as key
@@ -1076,7 +1082,10 @@ expected to enforce.<h:br/><h:br/>
                 <Tests>There are no test EAs for this component.</Tests>
               </aactivity>
             </f-element>
-            <audit-event/>
+            <audit-event>
+              <audit-event-descr>QQQQ</audit-event-descr> 
+              <audit-event-info>QQQQ</audit-event-info>
+            </audit-event>
           </f-component>
         </section>
 
@@ -1173,7 +1182,10 @@ expected to enforce.<h:br/><h:br/>
                 </Tests>
               </aactivity>
             </f-element>
-            <audit-event/>
+            <audit-event>
+                <audit-event-descr>QQQQ</audit-event-descr> 
+                <audit-event-info>QQQQ</audit-event-info>             
+            </audit-event>
           </f-component>
         </section>
 
@@ -1263,7 +1275,18 @@ expected to enforce.<h:br/><h:br/>
                 </Tests>
               </aactivity>
             </f-element>
-            <audit-event/>
+            <audit-event>
+              <audit-event-descr>Initiation of the trusted channel.</audit-event-descr> 
+              <audit-event-info>Identification of the initiator and target.</audit-event-info>
+            </audit-event>
+            <audit-event>
+              <audit-event-descr>Termination of the trusted channel.</audit-event-descr> 
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event>
+              <audit-event-descr>Failure of the trusted channel functions.</audit-event-descr> 
+              <audit-event-info>Identification of the initiator and target, reason for failure.</audit-event-info>  
+            </audit-event>
           </f-component>
         </section>
       </additional-sfrs>
@@ -1744,10 +1767,10 @@ expected to enforce.<h:br/><h:br/>
       
       <!-- 5.2.2 Additional SFRs -->
       <additional-sfrs>
-        <!-- A.2.2 User Data Protection (FDP) -->
-        <section id="sib-audit-table" title="Auditable Events for Implementation-Dependent SFRs">
+
+        <section id="mdf-audit-table" title="Auditable Events for MDF PP Additional SFRs">
           <audit-table id="at-feat-based" table="feat-based">
-            <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-implbased">: Auditable Events for Implementation-Dependent SFRs</ctr></h:b>
+            <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="mdf-implbased">: Auditable Events for MDF PP Additional SFRs</ctr></h:b>
           </audit-table>
         </section>
         
@@ -1820,7 +1843,10 @@ expected to enforce.<h:br/><h:br/>
                 </Tests>
               </aactivity>
             </f-element>
-            <audit-event/>
+            <audit-event>
+              <audit-event-descr>QQQQ</audit-event-descr> 
+              <audit-event-info>QQQQ</audit-event-info>
+            </audit-event>
           </f-component>
         </section>
         
@@ -2314,6 +2340,13 @@ expected to enforce.<h:br/><h:br/>
 <!--        This section lists additional SFRs that must be added to the TOE boundary in order to implement the
         functionality in any PP-Configuration where the App PP is claimed as the Base-PP.
 -->
+        
+        <section id="app-audit-table" title="Auditable Events for App PP Additional SFRs">
+          <audit-table id="at-feat-based" table="feat-based">
+            <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="app-implbased">: Auditable Events for App PP Additional SFRs</ctr></h:b>
+          </audit-table>
+        </section>
+        
         <section title="Cryptographic Support (FCS)" id="ap-a-fcs">
           
           <!-- 5.3.2.1 FCS_CKM_EXT.2 Cryptographic Key Storage -->
@@ -2362,7 +2395,10 @@ expected to enforce.<h:br/><h:br/>
                 <Tests>There are no test EAs for this requirement.</Tests>
               </aactivity>
             </f-element>
-            <audit-event/>
+            <audit-event>
+              <audit-event-descr>QQQQ</audit-event-descr> 
+              <audit-event-info>QQQQ</audit-event-info>
+            </audit-event>
           </f-component>
 
           <!-- 5.3.2.2 FCS_CKM_EXT.4 Cryptographic Key Destruction -->
@@ -2461,7 +2497,10 @@ expected to enforce.<h:br/><h:br/>
                 </Tests>
               </aactivity>
             </f-element>
-            <audit-event/>
+            <audit-event>
+              <audit-event-descr>Destruction of cryptographic key.</audit-event-descr> 
+              <audit-event-info>Identification of key.</audit-event-info>
+            </audit-event>
           </f-component>
         </section>
       </additional-sfrs>
