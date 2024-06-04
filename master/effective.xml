@@ -927,7 +927,7 @@ expected to enforce.<h:br/><h:br/>
                 If the OS acts only as a receiver in the RSA key establishment scheme, the OS
                 does not need to implement RSA key generation.
               </note>
-              <aactivity>
+              <aactivity level="element">
                 Refer to the evaluation activity for <no-link>FCS_CKM.1</no-link> in the GPOS PP for evaluating this SFR.
                 <no-tests/>
               </aactivity>
@@ -973,7 +973,7 @@ expected to enforce.<h:br/><h:br/>
                 field-based key establishment scheme are specified by the key generation
                 according to FCS_CKM.1.1.
               </note>
-              <aactivity> 
+              <aactivity level="element">
 	  	Refer to the Assurance Activity for <no-link>FCS_CKM.2.1</no-link> in the GPOS PP for evaluating this SFR. Note that
 		because a TOE that conforms to this PP-Module must implement IPsec, the tested protocols shall
 		include IPsec at minimum.    
@@ -1021,7 +1021,7 @@ expected to enforce.<h:br/><h:br/>
                 FCS_IPSEC_EXT.1. In addition, both 128-bit and 256-bit for key sizes must be
                 selected in order to meet the requirements for FCS_IPSEC_EXT.1.
               </note>
-              <aactivity>
+              <aactivity level="element">
                 Refer to the EA for <no-link>FCS_COP.1(1)</no-link> in the GPOS PP for evaluating this SFR.
                 <no-tests/>
               </aactivity>
@@ -1037,8 +1037,8 @@ expected to enforce.<h:br/><h:br/>
         functionality in any PP-Configuration where the GPOS PP is claimed as the Base-PP.
 -->
         <section id="gpos-audit-table" title="Auditable Events for GPOS PP Additional SFRs">
-          <audit-table id="gpos-feat-based" table="feat-based">
-            <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="gpos-implbased">: Auditable Events for GPOS PP Additional SFRs</ctr></h:b>
+          <audit-table id="gpos-additional" table="tab-gpos-additional">
+            <h:br/><h:b><ctr ctr-type="Table" pre="Table ">: Auditable Events for GPOS PP Additional SFRs</ctr></h:b>
           </audit-table>
         </section>
         
@@ -1069,7 +1069,7 @@ expected to enforce.<h:br/><h:br/>
                 manipulated by the VPN client and others are manipulated by the OS, then both
                 of the selections can be specified by the ST author.
               </note>
-              <aactivity>
+              <aactivity level="element">
                 <TSS>Regardless of whether this requirement is met by the VPN client or the OS, the evaluator will check the
 			TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to meet
 			the requirements in the ST. For each of these items, the evaluator will confirm that the TSS lists for what
@@ -1082,7 +1082,7 @@ expected to enforce.<h:br/><h:br/>
                 <Tests>There are no test EAs for this component.</Tests>
               </aactivity>
             </f-element>
-            <audit-event table="gpos-feat-based">
+            <audit-event table="tab-gpos-additional">
               <audit-event-descr>QQQQ</audit-event-descr> 
               <audit-event-info>QQQQ</audit-event-info>
             </audit-event>
@@ -1115,6 +1115,11 @@ expected to enforce.<h:br/><h:br/>
                 <selectable exclusive="yes">no additional uses</selectable>
               </selectables>.
               </title>
+              <aactivity level="element">
+                FIA_X509_EXT.3.1 is evaluated as part of FCS_IPSEC_EXT.1 (and
+                conditionally as part of FPT_TUD_EXT.1 or FPT_TST_EXT.1).
+               <no-tests/>
+              </aactivity>
             </f-element>
             <f-element id="os-fia-x509-ext-3e2">
                 <title>
@@ -1142,6 +1147,36 @@ expected to enforce.<h:br/><h:br/>
                     Author, the ST author must also make the appropriate selection in
                     FMT_SMF.1/VPN.
                 </note>
+              <aactivity level="element">
+                The EAs below apply to FIA_X509_EXT.3.2. FIA_X509_EXT.3.1 is evaluated as part of FCS_IPSEC_EXT.1 (and
+                conditionally as part of FPT_TUD_EXT.1 or FPT_TST_EXT.1) and FIA_X509_EXT.3.3 is evaluated as part
+                of FCS_IPSEC_EXT.1.11.<h:br/><h:br/>
+                <TSS>The evaluator shall check the TSS to ensure that it describes whether the VPN client or the OS implements
+                  the certificate validation functionality, how the VPN client/OS chooses which certificates to use, and any
+                  necessary instructions in the administrative guidance for configuring the OS so that desired certificates
+                  can be used.<h:br/><h:br/>
+                  The evaluator shall examine the TSS to confirm that it describes the behavior of the client/OS when a
+                  connection cannot be established during the validity check of a certificate used in establishing a trusted
+                  channel.<h:br/><h:br/>
+                </TSS>
+                <Guidance>If the requirement indicates that the administrator is able to specify the default action, then the evaluator
+                  shall ensure that the operational guidance contains instructions on how this configuration action is
+                  performed.<h:br/><h:br/>
+                </Guidance>
+                <Tests>
+                  The evaluator shall perform the following test regardless of whether the certificate validation functionality
+                  is implemented by the VPN client or by the OS:
+                  <testlist>
+                    <test>The evaluator shall demonstrate that using a valid certificate that requires certificate validation
+                      checking to be performed in at least some part by communicating with a non-TOE IT entity. The evaluator
+                      shall then manipulate the environment so that the TOE is unable to verify the validity of the certificate,
+                      and observe that the action selected in FIA_X509_EXT.3.2 is performed. If the selected action is
+                      administrator-configurable, then the evaluator shall follow the operational guidance to determine that all
+                      supported administrator-configurable options behave in their documented manner.
+                    </test>
+                  </testlist>
+                </Tests>
+              </aactivity>
             </f-element>
             <f-element id="os-fia-x509-ext-3e3">
               <title>
@@ -1151,38 +1186,12 @@ expected to enforce.<h:br/><h:br/>
                 </selectables> shall not establish an SA if a certificate or
                 certificate path is deemed invalid.
               </title>
-              <aactivity>
-                The EAs below apply to FIA_X509_EXT.3.2. FIA_X509_EXT.3.1 is evaluated as part of FCS_IPSEC_EXT.1 (and
-		conditionally as part of FPT_TUD_EXT.1 or FPT_TST_EXT.1) and FIA_X509_EXT.3.3 is evaluated as part
-		of FCS_IPSEC_EXT.1.11.<h:br/><h:br/>
-                <TSS>The evaluator shall check the TSS to ensure that it describes whether the VPN client or the OS implements
-			the certificate validation functionality, how the VPN client/OS chooses which certificates to use, and any
-			necessary instructions in the administrative guidance for configuring the OS so that desired certificates
-			can be used.<h:br/><h:br/>
-                  	The evaluator shall examine the TSS to confirm that it describes the behavior of the client/OS when a
-			connection cannot be established during the validity check of a certificate used in establishing a trusted
-			channel.<h:br/><h:br/>
-                </TSS>
-                <Guidance>If the requirement indicates that the administrator is able to specify the default action, then the evaluator
-			shall ensure that the operational guidance contains instructions on how this configuration action is
-			performed.<h:br/><h:br/>
-		</Guidance>
-                <Tests>
-                 	The evaluator shall perform the following test regardless of whether the certificate validation functionality
-			is implemented by the VPN client or by the OS:
-                  <testlist>
-                  	<test>The evaluator shall demonstrate that using a valid certificate that requires certificate validation
-				checking to be performed in at least some part by communicating with a non-TOE IT entity. The evaluator
-				shall then manipulate the environment so that the TOE is unable to verify the validity of the certificate,
-				and observe that the action selected in FIA_X509_EXT.3.2 is performed. If the selected action is
-				administrator-configurable, then the evaluator shall follow the operational guidance to determine that all
-				supported administrator-configurable options behave in their documented manner.
-			  </test>
-                  </testlist>
-                </Tests>
+              <aactivity level="element">
+                FIA_X509_EXT.3.3 is evaluated as part of FCS_IPSEC_EXT.1.11.
+                <no-tests/>
               </aactivity>
             </f-element>
-            <audit-event>
+            <audit-event table="tab-gpos-additional">
                 <audit-event-descr>QQQQ</audit-event-descr> 
                 <audit-event-info>QQQQ</audit-event-info>             
             </audit-event>
@@ -1244,7 +1253,7 @@ expected to enforce.<h:br/><h:br/>
                 intervention, there may be a window created where an attacker might be able to
                 gain critical information or compromise a connection.
               </note>
-              <aactivity>
+              <aactivity level="component">
                 <TSS>The evaluator shall examine the TSS to determine that it describes the details of the TOE connecting to a
 			VPN gateway, VPN client, or IPsec-capable network device in terms of the cryptographic
 			protocols specified in the requirement, along with TOE-specific options or procedures that might not be
@@ -1275,15 +1284,15 @@ expected to enforce.<h:br/><h:br/>
                 </Tests>
               </aactivity>
             </f-element>
-            <audit-event>
+            <audit-event table="tab-gpos-additional">
               <audit-event-descr>Initiation of the trusted channel.</audit-event-descr> 
               <audit-event-info>Identification of the initiator and target.</audit-event-info>
             </audit-event>
-            <audit-event>
+            <audit-event table="tab-gpos-additional">
               <audit-event-descr>Termination of the trusted channel.</audit-event-descr> 
               <audit-event-info>No additional information.</audit-event-info>
             </audit-event>
-            <audit-event>
+            <audit-event table="tab-gpos-additional">
               <audit-event-descr>Failure of the trusted channel functions.</audit-event-descr> 
               <audit-event-info>Identification of the initiator and target, reason for failure.</audit-event-info>  
             </audit-event>
@@ -1488,7 +1497,7 @@ expected to enforce.<h:br/><h:br/>
 				since they may be used by parts of the TOE that are not specifically related to
 				VPN client functionality.
 				</note>
-              <aactivity>
+              <aactivity level="element">
                Refer to the EAs for FCS_CKM.1 in the MDF PP. The only change to this SFR is that some selections are
 		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
 		changed.
@@ -1536,7 +1545,7 @@ expected to enforce.<h:br/><h:br/>
 				function but it is present in the selection in case other MDF PP functions require
 				its use.
               </note>
-              <aactivity> 
+              <aactivity level="element"> 
                 Refer to the EAs for FCS_CKM.2/UNLOCKED in the MDF PP. The only change to this SFR is that some
 		selections are mandated, therefore the corresponding testing is mandatory. The actual testing for those
 		selections is not changed.
@@ -1575,7 +1584,7 @@ expected to enforce.<h:br/><h:br/>
                 GCM mode and support for 256-bit key sizes are both mandatory in order to
                 address the requirements for FCS_IPSEC_EXT.1.
               </note>
-              <aactivity>
+              <aactivity level="element">
                 Refer to the EAs for FCS_COP.1/ENCRYPT in the MDF PP. The only change to this SFR is that some
 		selections are mandated, therefore the corresponding testing is mandatory. The actual testing for those
 		selections is not changed.
@@ -1606,7 +1615,7 @@ expected to enforce.<h:br/><h:br/>
 				that requires the TOE to implement its own VPN client is always selected when
 				the TOE’s conformance claim includes this PP-Module
 			  </note>
-              <aactivity>
+              <aactivity level="element">
                 Refer to the EAs for FDP_IFC_EXT.1 in the MDF PP. The only change to this SFR is that some selections are
 		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
 		changed.
@@ -1659,7 +1668,7 @@ expected to enforce.<h:br/><h:br/>
 				case where the TOE only claims support for the protocols that are mandated by
 				the SFR.
               </note>
-              <aactivity> 
+              <aactivity level="component">
                 Refer to the EAs for FIA_X509_EXT.2 in the MDF PP. The only change to this SFR is that some selections
 		are mandated, therefore the corresponding testing is mandatory. The actual testing for those selections
 		is not changed.
@@ -1693,7 +1702,7 @@ expected to enforce.<h:br/><h:br/>
 				</h:tr>
 			 </h:table>
 		 </title>
-               <aactivity> 
+		  <aactivity level="element">
                 Refer to the EAs for FMT_SMF_EXT.1 in the MDF PP. The only change to this SFR is the change to management function 45. 
 		       Testing of all other functions is not affected.
                 <no-tests/>
@@ -1753,7 +1762,7 @@ expected to enforce.<h:br/><h:br/>
 		selected protocols which previously included IPsec, ‘no other protocols’ is now
 		available as an option in the selection.
               </note>
-              <aactivity> 
+              <aactivity level="component"> 
                 Refer to the EAs for FTP_ITC_EXT.1 in the MDF PP. The only change to this SFR is that some selections are
 		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
 		changed.
@@ -1769,7 +1778,7 @@ expected to enforce.<h:br/><h:br/>
       <additional-sfrs>
 
         <section id="mdf-audit-table" title="Auditable Events for MDF PP Additional SFRs">
-          <audit-table id="at-feat-based" table="feat-based">
+          <audit-table id="mdf-feat-based" table="feat-based">
             <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="mdf-implbased">: Auditable Events for MDF PP Additional SFRs</ctr></h:b>
           </audit-table>
         </section>
@@ -1803,7 +1812,7 @@ expected to enforce.<h:br/><h:br/>
                 hooks provided by the platform such that the TOE is able to ensure that no IP
                 traffic can flow through other network interfaces.
               </note>
-              <aactivity>
+              <aactivity level="element">
                 <TSS>The evaluator shall verify that the TSS section of the ST describes the routing of IP traffic through processes
                   on the TSF when a VPN client is enabled. The evaluator shall ensure that the description indicates which
                   traffic does not go through the VPN and which traffic does and that a configuration exists for each
@@ -2116,7 +2125,7 @@ expected to enforce.<h:br/><h:br/>
                   present as a selection since it may be used by parts of the TOE that are not
                   specifically related to VPN client functionality.
                 </note>
-                <aactivity> 
+              <aactivity level="element">
                   Refer to the EA for <no-link>FCS_CKM.1/AK</no-link> in the App PP.
                   <no-tests/>
                 </aactivity>
@@ -2169,7 +2178,7 @@ expected to enforce.<h:br/><h:br/>
                   support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8). It also provides the
                   ability to claim at least one of NIST SP 800-56A, RFC 3526, or NIST SP 800-56A
                   rev. 3 “safe-prime” groups for key establishment using finite field cryptography.</note>
-                <aactivity>
+                <aactivity level="element">
                   For all key establishment schemes refer to the EA for <no-link>FCS_CKM.2</no-link> in the App PP.
                   <no-tests/>
                 </aactivity>
@@ -2200,7 +2209,7 @@ expected to enforce.<h:br/><h:br/>
                   TOE will either perform its own key generation or interface with the underlying platform to provide this 
                   service, either of which causes <no-link>FCS_CKM.1/AK</no-link> to be claimed.
                 </note>
-                <aactivity> 
+                <aactivity level="element">
                   This SFR is evaluated in conjunction with <no-link>FCS_CKM.1/AK</no-link> in the App PP.
                   <no-tests/>
                 </aactivity>
@@ -2243,7 +2252,7 @@ expected to enforce.<h:br/><h:br/>
                   with the relevant IPsec claims (FCS_IPSEC_EXT.1.4 requires both 128-bit and 256-bit
                   AES-GCM and FCS_IPSEC_EXT.1.6 requires both 128-bit and 256-bit AES-CBC).
                 </note>
-                <aactivity>
+                <aactivity level="element">
 			<TSS>
 				If the TSF implements AES cryptography in support of both credential encryption (per FCS_STO_EXT.1)
 				and IPsec, the evaluator shall examine the TSS to ensure that it clearly identifies the modes and key sizes
@@ -2289,7 +2298,7 @@ expected to enforce.<h:br/><h:br/>
                   selection item has been added since it is expected that IPsec is the TOE’s only use
                   of certificates.
                 </note>
-                <aactivity>
+                <aactivity level="component">
                   Refer to the EA for <no-link>FIA_X509_EXT.2</no-link> in the App PP.
                   <no-tests/>
                 </aactivity>
@@ -2324,7 +2333,7 @@ expected to enforce.<h:br/><h:br/>
                   Since it is possible that a conformant TOE may not use any encryption protocols other than 
 				  IPsec, “no other protocols” is provided as a selectable option in the list of supported protocols.              
                 </note>
-                <aactivity>
+                <aactivity level="element">
                   For IPsec, refer to the EA for FCS_IPSEC_EXT.1. If other protocols are selected
 				  for FTP_DIT_EXT.1, refer to the EA for FTP_DIT_EXT.1 in the App PP.
                   <no-tests/>
@@ -2342,7 +2351,7 @@ expected to enforce.<h:br/><h:br/>
 -->
         
         <section id="app-audit-table" title="Auditable Events for App PP Additional SFRs">
-          <audit-table id="at-feat-based" table="feat-based">
+          <audit-table id="app-feat-based" table="feat-based">
             <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="app-implbased">: Auditable Events for App PP Additional SFRs</ctr></h:b>
           </audit-table>
         </section>
@@ -2373,7 +2382,7 @@ expected to enforce.<h:br/><h:br/>
                 are manipulated by the TOE and others are manipulated by the platform, then
                 both of the selections can be specified by the ST author.
               </note>
-              <aactivity> 
+              <aactivity level="element">
                 <TSS>Regardless of whether this requirement is met by the TOE or the TOE platform, the evaluator will check
 			the TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to
 			meet the requirements in the ST. For each of these items, the evaluator will confirm that the TSS lists for
@@ -2442,7 +2451,7 @@ expected to enforce.<h:br/><h:br/>
                 data are manipulated entirely by the platform, the ST author must select both
                 options.
               </note>
-              <aactivity> 
+              <aactivity level="element">
                 <TSS>The evaluator shall ensure that all plaintext secret and private cryptographic keys and CSPs (whether
 			manipulated by the TOE or exclusively by the platform) are identified in the VPN Client ST's TSS, and that
 			they are accounted for by the EAs in this section. <h:br/><h:br/>
@@ -2709,7 +2718,7 @@ expected to enforce.<h:br/><h:br/>
                 selections may be chosen by the ST author as needed for parts of the TOE that are
                 not specifically related to VPN client functionality.
               </note>
-              <aactivity>
+              <aactivity level="element">
                 Refer to the EA for <no-link>FCS_CKM.1</no-link> in the MDM PP.
                 <no-tests/>
               </aactivity>
@@ -2760,7 +2769,7 @@ expected to enforce.<h:br/><h:br/>
                 selections may be chosen by the ST author as needed for parts of the TOE that are
                 not specifically related to VPN client functionality.
               </note>
-              <aactivity>
+              <aactivity level="element">
                 Refer to the EA for <no-link>FCS_CKM.2</no-link> in the MDM PP.
                 <no-tests/>
               </aactivity>
@@ -2801,7 +2810,7 @@ expected to enforce.<h:br/><h:br/>
                 requires for the use of ESP and allows for the use of IKE). Other AES modes may be
                 selected by the ST author as needed to address functions not required by this PP-Module.
               </note>
-              <aactivity>
+              <aactivity level="element">
                 Refer to the EA for <no-link>FCS_COP.1(1)</no-link> in the MDM PP.
                 <no-tests/>
               </aactivity>
@@ -2867,7 +2876,7 @@ expected to enforce.<h:br/><h:br/>
                 specified in the original SFR. FIA_X509_EXT.2.2 has not been included here as the PP-Module 
                 does not modify this element.
               </note>
-              <aactivity>
+              <aactivity level="element">
                 Refer to the EA for <no-link>FIA_X509_EXT.2</no-link> in the MDM PP.
                 <no-tests/>
               </aactivity>
@@ -2900,7 +2909,7 @@ expected to enforce.<h:br/><h:br/>
                 implement IPsec communications and by prohibiting the TOE from relying on
                 platform-provided functionality to implement this.
               </note>
-              <aactivity>
+              <aactivity level="element">
                 Refer to the EA for <no-link>FPT_ITT.1(1)</no-link> in the MDM PP. Note that the PP-Module does not require any separate
                 testing for this if IPsec is not used to implement this function.
                 <no-tests/>
@@ -2981,7 +2990,7 @@ expected to enforce.<h:br/><h:br/>
 				option to select other protocols (SSH, TLS, DTLS, HTTPS) either as being implemented
 				by the TSF or invoked from the platform.
               </note>
-              <aactivity>
+              <aactivity level="component">
                 Refer to the EA for <no-link>FTP_ITC.1(1)</no-link> in the MDM PP. Note that the PP-Module does not require any separate
 			testing for this if IPsec is not used to implement this function.
                 <no-tests/>
@@ -3055,7 +3064,7 @@ expected to enforce.<h:br/><h:br/>
 				the option to select other protocols (SSH, TLS, HTTPS) either as being implemented
 				by the TSF or invoked from the platform.
               </note>
-              <aactivity> 
+              <aactivity level="component">
                 	Refer to the EA for <no-link>FTP_TRP.1(1)</no-link> in the MDM PP. Note that the PP-Module does not require any
 			separate testing for this if IPsec is not used to implement this function.
                 <no-tests/>
@@ -3273,7 +3282,7 @@ expected to enforce.<h:br/><h:br/>
 				See NIST Special Publication 800-57, “Recommendation for Key Management”
 				for information about equivalent key strengths.
 			</note>
-			<aactivity>
+		    <aactivity level="element">
 				<TSS>
 					The evaluator shall examine the TSS to verify that it describes how the key generation functionality is
 					invoked.<h:br/><h:br/>
@@ -4205,7 +4214,7 @@ expected to enforce.<h:br/><h:br/>
 				author uses the selection to specify when previous information is made
 				unavailable.
 			</note>
-            <aactivity>
+            <aactivity level="element">
               <TSS><h:b>Requirement met by the platform</h:b><h:br/><h:br/>
                 The evaluator shall examine the TSS to verify that it describes (for each supported platform) the extent to
 		which the client processes network packets and addresses the FDP_RIP.2 requirement.<h:br/><h:br/>
@@ -4265,7 +4274,7 @@ expected to enforce.<h:br/><h:br/>
               If there are additional management functions performed by the TOE (including
               those specified in FCS_IPSEC_EXT.1), they should be added in the assignment.
             </note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator shall check to ensure the TSS describes the client credentials and how they are used by the
 		TOE.<h:br/><h:br/>
               </TSS>
@@ -4343,7 +4352,7 @@ expected to enforce.<h:br/><h:br/>
 				cryptographic services used to verify updates, all relevant FCS_COP requirements
 				will be identified in the assignment by the ST author.
             </note>
-            <aactivity>
+            <aactivity level="component">
               Except for where it is explicitly noted, the evaluator is expected to check the following information
 		regardless of whether the functionality is implemented by the TOE or by the TOE platform.<h:br/><h:br/>
               <TSS>The evaluator shall examine the TSS to ensure that it details the self-tests that are run by the TSF on
@@ -4456,7 +4465,7 @@ expected to enforce.<h:br/><h:br/>
             <note role="application">
               In this context the platform refers to the OS or device and may be part of the TOE if those Base-PPs are leveraged.<h:br/><h:br/>
             </note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator shall confirm that the TSS describes the calls to the platform and verifies they align with platform documentation.<h:br/><h:br/>
               </TSS>
               <Guidance>The evaluator shall ensure that any configuration details needed to enable the biometric prompt are included in the
@@ -4505,7 +4514,7 @@ expected to enforce.<h:br/><h:br/>
             
             
           </note>
-          <aactivity>
+          <aactivity level="element">
             <TSS>The evaluator shall examine the TSS to verify that it describes how authentication packets are identified and how all
 		    other traffic is blocked until secondary authentication is successful.<h:br/><h:br/></TSS>
             
@@ -4596,8 +4605,8 @@ expected to enforce.<h:br/><h:br/>
                 <selectable>EAP-TTLS</selectable>
               </selectables> response as the IKEv2 shared secret in the authentication payload.
             </title>
-            <aactivity>
-              <TSS>The evaluator shall verify that the TS describes the use of EAP options for each of the selected peer authentication 
+            <aactivity level="component">
+              <TSS>The evaluator shall verify that the TSS describes the use of EAP options for each of the selected peer authentication 
                 mechanisms, that TLS with mutual authentication is used, that the random values are from an appropriate source, 
                 and that the EAP MSK is derived from the TLS master key and is used as the IKEv2 shared key.<h:br/><h:br/></TSS>
               <Guidance>The evaluator shall verify that the guidance documents describe any configurable features of the EAP or TLS 
@@ -4707,7 +4716,7 @@ expected to enforce.<h:br/><h:br/>
               
               <h:br/><h:br/>This requirement is selection dependent on FCS_IPSEC_EXT.1.11 or inclusion of FPF_MFA_EXT.1. 
             </note>
-            <aactivity>
+            <aactivity level="component">
               <TSS>The evaluator shall examine the TSS to ensure that it identifies all protocols that allow  pre-shared keys. 
                 For each protocol identified by the requirement, the evaluator shall confirm that the TSS states which pre-shared key 
                 selections are supported.<h:br/><h:br/></TSS>
@@ -4763,7 +4772,7 @@ expected to enforce.<h:br/><h:br/>
               
               <h:br/><h:br/>This requirement is selection-dependent on FIA_PSK_EXT.1.<h:br/><h:br/>
             </note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>If "generate" is selected, the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1 
                 and the output matches the size selected in FIA_PSK_EXT.2.1.<h:br/><h:br/>
               </TSS>
@@ -4869,7 +4878,7 @@ expected to enforce.<h:br/><h:br/>
               
               <h:br/><h:br/>This requirement is selection-dependent on FIA_PSK_EXT.1. 
               </note>
-            <aactivity>
+              <aactivity level="component">
               <TSS>The evaluator shall examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are used.  
                 
                 <h:br/><h:br/>Support for length: The evaluator shall check to ensure that the TSS describes the allowable ranges for PSK lengths,
@@ -4955,7 +4964,7 @@ expected to enforce.<h:br/><h:br/>
               
          
             </note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator shall verify the TSS describes how the HOTP is input into the client and how that value is sent to the server.
               
               </TSS>
@@ -5004,7 +5013,7 @@ expected to enforce.<h:br/><h:br/>
             <note role="application">
           This requirement is dependent on FIA_PSK_EXT.1.
             </note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>The evaluator shall verify the TSS describes how the TOTP is input into the client and how that value is sent to the server.
               </TSS>
               <Guidance>
@@ -5158,7 +5167,7 @@ expected to enforce.<h:br/><h:br/>
 						specified in column three of  Auditable Events table</h:i>].</h:li>
 				</h:ol>
             </title>
-            <aactivity>
+            <aactivity level="component">
               <TSS>The evaluator shall examine the TSS to determine that it describes the auditable events and the
 		component that is responsible for each type of auditable event.<h:br/><h:br/></TSS>
               <Guidance>The evaluator shall check the operational guidance and ensure that it lists all of the auditable events and
@@ -5237,7 +5246,7 @@ expected to enforce.<h:br/><h:br/>
 				The intent of the first selection is to allow for the case where the underlying
 				platform is responsible for some audit log generation functionality.
             </note>
-            <aactivity>
+            <aactivity level="element">
               <TSS>There are no TSS EAs for this SFR.<h:br/><h:br/></TSS>
               <Guidance>The evaluator shall review the administrative guidance to ensure that the guidance itemizes all event
 		types, as well as describes all attributes that are to be selectable in accordance with the requirement, to

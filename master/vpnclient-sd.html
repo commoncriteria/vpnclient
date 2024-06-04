@@ -455,73 +455,79 @@ The following sections list Common Criteria and technology terms used in this do
      <h3 class="indexable" data-level="2" id="qq-sfrs-bpp-gpos-Modified">2.1.1 Modified SFRs
         </h3>
         
-        <h4 class="indexable" data-level="4" id="os-m-fcs">2.1.1.0.1 Cryptographic Support (FCS)</h4><div class="comp" id="OS-FCS-CKM-1"><h4>FCS_CKM.1 Cryptographic Key Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.1</div>
-                Refer to the evaluation activity for <span class="no-link">FCS_CKM.1</span> in the GPOS PP for evaluating this SFR.
+        <h4 class="indexable" data-level="4" id="os-m-fcs">2.1.1.0.1 Cryptographic Support (FCS)</h4><div class="comp" id="OS-FCS-CKM-1"><h4>FCS_CKM.1 Cryptographic Key Generation</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.1.1</div>
+                Refer to the evaluation activity for FCS_CKM.1 in the GPOS PP for evaluating this SFR.
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-              </span></div><div class="comp" id="OS-FCS-CKM-2"><h4>FCS_CKM.2 Cryptographic Key Establishment</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.2</div> 
-	  	Refer to the Assurance Activity for <span class="no-link">FCS_CKM.2.1</span> in the GPOS PP for evaluating this SFR. Note that
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+              </span></div><div class="comp" id="OS-FCS-CKM-2"><h4>FCS_CKM.2 Cryptographic Key Establishment</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.2.1</div>
+	  	Refer to the Assurance Activity for FCS_CKM.2.1 in the GPOS PP for evaluating this SFR. Note that
 		because a TOE that conforms to this PP-Module must implement IPsec, the tested protocols shall
 		include IPsec at minimum.    
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-              </span></div><div class="comp" id="OS-FCS-COP-1-1"><h4>FCS_COP.1/1 Cryptographic Operation (Encryption and Decryption)</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_COP.1/1</div>
-                Refer to the EA for <span class="no-link">FCS_COP.1(1)</span> in the GPOS PP for evaluating this SFR.
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+              </span></div><div class="comp" id="OS-FCS-COP-1-1"><h4>FCS_COP.1/1 Cryptographic Operation (Encryption and Decryption)</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_COP.1.1/1</div>
+                Refer to the EA for FCS_COP.1(1) in the GPOS PP for evaluating this SFR.
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
               </span></div>
       <h3 class="indexable" data-level="2" id="qq-sfrs-bpp-gpos-Additional">2.1.2 Additional SFRs
         </h3>
 
         <h4 class="indexable" data-level="4" id="gpos-audit-table">2.1.2.0.2 Auditable Events for GPOS PP Additional SFRs</h4>
         
-        <h4 class="indexable" data-level="4" id="os-a-fcs">2.1.2.0.3 Cryptographic Support (FCS)</h4><div class="comp" id="OS-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM_EXT.2</div>
-                
-                
-                
-              <div class="eacategory">TSS</div><div class="ea"><div class="ea">Regardless of whether this requirement is met by the VPN client or the OS, the evaluator will check the
+        <h4 class="indexable" data-level="4" id="os-a-fcs">2.1.2.0.3 Cryptographic Support (FCS)</h4><div class="comp" id="OS-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.2.1</div>
+                <div class="eacategory">TSS</div><div class="ea">Regardless of whether this requirement is met by the VPN client or the OS, the evaluator will check the
 			TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to meet
 			the requirements in the ST. For each of these items, the evaluator will confirm that the TSS lists for what
 			purpose it is used, and how it is stored. <br/><br/>
                   	The evaluator shall review the TSS for to determine that it makes a case that, for each item listed as being
 			manipulated, it is not written unencrypted to persistent memory, and that the item is
 			stored by the OS.<br/><br/>
-                </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">There are no test EAs for this component.</div></div></span></div>
+                </div>
+                <div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div>
+                <div class="eacategory">Tests</div><div class="ea">There are no test EAs for this component.</div>
+              </span></div>
 
-        <h4 class="indexable" data-level="4" id="os-a-fia">2.1.2.0.4 Identification and Authentication (FIA)</h4><div class="comp" id="OS-FIA-X509-EXT-3"><h4>FIA_X509_EXT.3 X.509 Certificate Use and Management</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_X509_EXT.3</div>
+        <h4 class="indexable" data-level="4" id="os-a-fia">2.1.2.0.4 Identification and Authentication (FIA)</h4><div class="comp" id="OS-FIA-X509-EXT-3"><h4>FIA_X509_EXT.3 X.509 Certificate Use and Management</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_X509_EXT.3.1</div>
+                FIA_X509_EXT.3.1 is evaluated as part of FCS_IPSEC_EXT.1 (and
+                conditionally as part of FPT_TUD_EXT.1 or FPT_TST_EXT.1).
+               
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+              <div class="element-activity-header">FIA_X509_EXT.3.2</div>
                 The EAs below apply to FIA_X509_EXT.3.2. FIA_X509_EXT.3.1 is evaluated as part of FCS_IPSEC_EXT.1 (and
-		conditionally as part of FPT_TUD_EXT.1 or FPT_TST_EXT.1) and FIA_X509_EXT.3.3 is evaluated as part
-		of FCS_IPSEC_EXT.1.11.<br/><br/>
-                
-                
-                
-              <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall check the TSS to ensure that it describes whether the VPN client or the OS implements
-			the certificate validation functionality, how the VPN client/OS chooses which certificates to use, and any
-			necessary instructions in the administrative guidance for configuring the OS so that desired certificates
-			can be used.<br/><br/>
-                  	The evaluator shall examine the TSS to confirm that it describes the behavior of the client/OS when a
-			connection cannot be established during the validity check of a certificate used in establishing a trusted
-			channel.<br/><br/>
-                </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">If the requirement indicates that the administrator is able to specify the default action, then the evaluator
-			shall ensure that the operational guidance contains instructions on how this configuration action is
-			performed.<br/><br/>
-		</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                 	The evaluator shall perform the following test regardless of whether the certificate validation functionality
-			is implemented by the VPN client or by the OS:
+                conditionally as part of FPT_TUD_EXT.1 or FPT_TST_EXT.1) and FIA_X509_EXT.3.3 is evaluated as part
+                of FCS_IPSEC_EXT.1.11.
+                <div class="eacategory">TSS</div><div class="ea">The evaluator shall check the TSS to ensure that it describes whether the VPN client or the OS implements
+                  the certificate validation functionality, how the VPN client/OS chooses which certificates to use, and any
+                  necessary instructions in the administrative guidance for configuring the OS so that desired certificates
+                  can be used.<br/><br/>
+                  The evaluator shall examine the TSS to confirm that it describes the behavior of the client/OS when a
+                  connection cannot be established during the validity check of a certificate used in establishing a trusted
+                  channel.<br/><br/>
+                </div>
+                <div class="eacategory">Guidance</div><div class="ea">If the requirement indicates that the administrator is able to specify the default action, then the evaluator
+                  shall ensure that the operational guidance contains instructions on how this configuration action is
+                  performed.<br/><br/>
+                </div>
+                <div class="eacategory">Tests</div><div class="ea">
+                  The evaluator shall perform the following test regardless of whether the certificate validation functionality
+                  is implemented by the VPN client or by the OS:
                   <span class="testlist-"><ul>
-                  	<li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FIA_X509_EXT.3:1</a>:
+                    <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FIA_X509_EXT.3.2:1</a>:
       The evaluator shall demonstrate that using a valid certificate that requires certificate validation
-				checking to be performed in at least some part by communicating with a non-TOE IT entity. The evaluator
-				shall then manipulate the environment so that the TOE is unable to verify the validity of the certificate,
-				and observe that the action selected in FIA_X509_EXT.3.2 is performed. If the selected action is
-				administrator-configurable, then the evaluator shall follow the operational guidance to determine that all
-				supported administrator-configurable options behave in their documented manner.
-			  </li>
+                      checking to be performed in at least some part by communicating with a non-TOE IT entity. The evaluator
+                      shall then manipulate the environment so that the TOE is unable to verify the validity of the certificate,
+                      and observe that the action selected in FIA_X509_EXT.3.2 is performed. If the selected action is
+                      administrator-configurable, then the evaluator shall follow the operational guidance to determine that all
+                      supported administrator-configurable options behave in their documented manner.
+                    </li>
                   </ul></span>
-                </div></div></span></div>
+                </div>
+              <div class="element-activity-header">FIA_X509_EXT.3.3</div>
+                FIA_X509_EXT.3.3 is evaluated as part of FCS_IPSEC_EXT.1.11.
+                
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+              </span></div>
 
         <h4 class="indexable" data-level="4" id="os-a-ftp">2.1.2.0.5 Trusted Path/Channels (FTP)</h4><div class="comp" id="OS-FTP-ITC-1"><h4>FTP_ITC.1 Inter-TSF Trusted Channel</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC.1</div>
                 
@@ -566,40 +572,36 @@ The following sections list Common Criteria and technology terms used in this do
 
 	      
 	      
-        <h4 class="indexable" data-level="4" id="md-m-fcs">2.2.1.0.6 Cryptographic Support (FCS)</h4><div class="comp" id="MD-FCS-CKM-1"><h4>FCS_CKM.1 Cryptographic Key Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.1</div>
+        <h4 class="indexable" data-level="4" id="md-m-fcs">2.2.1.0.6 Cryptographic Support (FCS)</h4><div class="comp" id="MD-FCS-CKM-1"><h4>FCS_CKM.1 Cryptographic Key Generation</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.1.1</div>
                Refer to the EAs for FCS_CKM.1 in the MDF PP. The only change to this SFR is that some selections are
 		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
 		changed.
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-              </span></div><div class="comp" id="MD-FCS-CKM-2-1"><h4>FCS_CKM.2/UNLOCKED Cryptographic Key Establishment</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.2/UNLOCKED</div> 
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+              </span></div><div class="comp" id="MD-FCS-CKM-2-1"><h4>FCS_CKM.2/UNLOCKED Cryptographic Key Establishment</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.2.1/UNLOCKED</div> 
                 Refer to the EAs for FCS_CKM.2/UNLOCKED in the MDF PP. The only change to this SFR is that some
 		selections are mandated, therefore the corresponding testing is mandatory. The actual testing for those
 		selections is not changed.
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-              </span></div><div class="comp" id="MD-FCS-COP-1-1"><h4>FCS_COP.1/ENCRYPT Cryptographic Operation</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_COP.1/ENCRYPT</div>
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+              </span></div><div class="comp" id="MD-FCS-COP-1-1"><h4>FCS_COP.1/ENCRYPT Cryptographic Operation</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_COP.1.1/ENCRYPT</div>
                 Refer to the EAs for FCS_COP.1/ENCRYPT in the MDF PP. The only change to this SFR is that some
 		selections are mandated, therefore the corresponding testing is mandatory. The actual testing for those
 		selections is not changed.
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
               </span></div>   
 
-        <h4 class="indexable" data-level="4" id="md-m-fdp">2.2.1.0.7 User Data Protection (FDP)</h4><div class="comp" id="MD-FDP-IFC-EXT-1-1"><h4>FDP_IFC_EXT.1 Subset Information Flow Control</h4><span class="activity_pane_body"><div class="component-activity-header">FDP_IFC_EXT.1</div>
+        <h4 class="indexable" data-level="4" id="md-m-fdp">2.2.1.0.7 User Data Protection (FDP)</h4><div class="comp" id="MD-FDP-IFC-EXT-1-1"><h4>FDP_IFC_EXT.1 Subset Information Flow Control</h4><span class="activity_pane_body"><div class="element-activity-header">FDP_IFC_EXT.1.1</div>
                 Refer to the EAs for FDP_IFC_EXT.1 in the MDF PP. The only change to this SFR is that some selections are
 		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
 		changed.
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
               </span></div>   
 		
 		
-        <h4 class="indexable" data-level="4" id="md-m-fia">2.2.1.0.8 Identification and Authentication (FIA)</h4><div class="comp" id="MD-FIA-X509-EXT-2"><h4>FIA_X509_EXT.2 X.509 Certificate Authentication</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_X509_EXT.2</div> 
+        <h4 class="indexable" data-level="4" id="md-m-fia">2.2.1.0.8 Identification and Authentication (FIA)</h4><div class="comp" id="MD-FIA-X509-EXT-2"><h4>FIA_X509_EXT.2 X.509 Certificate Authentication</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_X509_EXT.2</div>
                 Refer to the EAs for FIA_X509_EXT.2 in the MDF PP. The only change to this SFR is that some selections
 		are mandated, therefore the corresponding testing is mandatory. The actual testing for those selections
 		is not changed.
@@ -608,12 +610,11 @@ The following sections list Common Criteria and technology terms used in this do
 	
               </span></div>   
         
-	<h4 class="indexable" data-level="4" id="md-m-fmt">2.2.1.0.9 Security Management (FMT)</h4><div class="comp" id="MD-FMT-SMF-EXT-1"><h4>FMT_SMF_EXT.1 Specification of Management Functions</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF_EXT.1</div> 
+	<h4 class="indexable" data-level="4" id="md-m-fmt">2.2.1.0.9 Security Management (FMT)</h4><div class="comp" id="MD-FMT-SMF-EXT-1"><h4>FMT_SMF_EXT.1 Specification of Management Functions</h4><span class="activity_pane_body"><div class="element-activity-header">FMT_SMF_EXT.1.1</div>
                 Refer to the EAs for FMT_SMF_EXT.1 in the MDF PP. The only change to this SFR is the change to management function 45. 
 		       Testing of all other functions is not affected.
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
               </span></div>  
 	      
 		
@@ -630,11 +631,8 @@ The following sections list Common Criteria and technology terms used in this do
 
         <h4 class="indexable" data-level="4" id="mdf-audit-table">2.2.2.0.11 Auditable Events for MDF PP Additional SFRs</h4>
         
-        <h4 class="indexable" data-level="4" id="ib-fdp">2.2.2.0.12 User Data Protection (FDP)</h4><div class="comp" id="FDP-VPN-EXT-1"><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4><span class="activity_pane_body"><div class="component-activity-header">FDP_VPN_EXT.1</div>
-                
-                
-                
-              <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify that the TSS section of the ST describes the routing of IP traffic through processes
+        <h4 class="indexable" data-level="4" id="ib-fdp">2.2.2.0.12 User Data Protection (FDP)</h4><div class="comp" id="FDP-VPN-EXT-1"><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4><span class="activity_pane_body"><div class="element-activity-header">FDP_VPN_EXT.1.1</div>
+                <div class="eacategory">TSS</div><div class="ea">The evaluator shall verify that the TSS section of the ST describes the routing of IP traffic through processes
                   on the TSF when a VPN client is enabled. The evaluator shall ensure that the description indicates which
                   traffic does not go through the VPN and which traffic does and that a configuration exists for each
                   baseband protocol in which only the traffic identified by the ST author is necessary for establishing the
@@ -642,14 +640,16 @@ The following sections list Common Criteria and technology terms used in this do
                   (IPsec). The ST author shall also identify in the TSS section any differences in the routing of IP traffic when
                   using any supported baseband protocols (e.g. Wi-Fi, LTE).
                   <br/><br/>
-                </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that the following is addressed by the documentation:
+                </div>
+                <div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the following is addressed by the documentation:
                   <ul>
                     <li>The description above indicates that if a VPN client is enabled, all configurations route all IP traffic
                       (other than IP traffic required to establish the VPN connection) through the VPN client.</li>
                     <li>The guidance describes how the user or administrator can configure the TSF to meet
                       this requirement.</li>
                   </ul><br/><br/>
-                </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                </div>
+                <div class="eacategory">Tests</div><div class="ea">
                   The evaluator shall perform the following test:<br/><br/>
                   Step 1 - The evaluator shall use the platform to enable a network connection without using IPsec. The
                   evaluator shall use a packet sniffing tool between the platform and an internet-connected network. The
@@ -668,7 +668,8 @@ The following sections list Common Criteria and technology terms used in this do
                   encapsulated by IPsec.<br/><br/>
                   Step 4 - The evaluator shall attempt to send packets to the TOE outside the VPN connection and shall
                   verify that the TOE discards them.
-                </div></div></span></div>
+                </div>
+              </span></div>
         
       <h2 class="indexable" data-level="1" id="aa-bpp-app">2.3 
     Protection Profile for Protection Profile for Application Software</h2>
@@ -677,35 +678,32 @@ The following sections list Common Criteria and technology terms used in this do
      <h3 class="indexable" data-level="2" id="qq-sfrs-bpp-app-Modified">2.3.1 Modified SFRs
         </h3>
         
-        <h4 class="indexable" data-level="4" id="ap-m-fcs">2.3.1.0.13 Cryptographic Support (FCS)</h4><div class="comp" id="AP-FCS-CKM-1-AK"><h4>FCS_CKM.1/AK Cryptographic Asymmetric Key Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.1/AK</div> 
-                  Refer to the EA for <span class="no-link">FCS_CKM.1/AK</span> in the App PP.
+        <h4 class="indexable" data-level="4" id="ap-m-fcs">2.3.1.0.13 Cryptographic Support (FCS)</h4><div class="comp" id="AP-FCS-CKM-1-AK"><h4>FCS_CKM.1/AK Cryptographic Asymmetric Key Generation</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.1.1/AK</div>
+                  Refer to the EA for FCS_CKM.1/AK in the App PP.
                   
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-                </span></div><div class="comp" id="AP-FCS-CKM-2"><h4>FCS_CKM.2 Cryptographic Key Establishment</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.2</div>
-                  For all key establishment schemes refer to the EA for <span class="no-link">FCS_CKM.2</span> in the App PP.
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+                </span></div><div class="comp" id="AP-FCS-CKM-2"><h4>FCS_CKM.2 Cryptographic Key Establishment</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.2.1</div>
+                  For all key establishment schemes refer to the EA for FCS_CKM.2 in the App PP.
                   
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-                </span></div><div class="comp" id="AP-FCS-CKM-1"><h4>FCS_CKM.1 Cryptographic Key Generation Services</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.1</div> 
-                  This SFR is evaluated in conjunction with <span class="no-link">FCS_CKM.1/AK</span> in the App PP.
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+                </span></div><div class="comp" id="AP-FCS-CKM-1"><h4>FCS_CKM.1 Cryptographic Key Generation Services</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.1.1</div>
+                  This SFR is evaluated in conjunction with FCS_CKM.1/AK in the App PP.
                   
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-                </span></div><div class="comp" id="AP-FCS-COP-1-SKC"><h4>FCS_COP.1/SKC Cryptographic Operation</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_COP.1/SKC</div>
-			
-			
-			
-                <div class="eacategory">TSS</div><div class="ea"><div class="ea">
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+                </span></div><div class="comp" id="AP-FCS-COP-1-SKC"><h4>FCS_COP.1/SKC Cryptographic Operation</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_COP.1.1/SKC</div>
+			<div class="eacategory">TSS</div><div class="ea">
 				If the TSF implements AES cryptography in support of both credential encryption (per FCS_STO_EXT.1)
 				and IPsec, the evaluator shall examine the TSS to ensure that it clearly identifies the modes and key sizes
 				that are supported for each usage of AES.<br/><br/>
 			  For platform-provided functionality, the evaluator shall verify the TSS contains the calls to the platform that the TOE is leveraging to invoke the functionality.
-			</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+			</div>
+			<div class="eacategory">Guidance</div><div class="ea">
 			  There are no operational  beyond what is required by the EA for <span class="no-link">FCS_COP.1/SKC</span> in the App PP.<br/><br/>
-			</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+			</div>
+			<div class="eacategory">Tests</div><div class="ea">
 				There are no test EAs beyond what is required by the EA for <span class="no-link">FCS_COP.1/SKC</span> in the App PP.
-			</div></div></span></div>
+			</div>
+                </span></div>
         
           <h4 class="indexable" data-level="4" id="ap-m-fia">2.3.1.0.14 Identification and Authentication (FIA)</h4><div class="comp" id="AP-FIA-X509-EXT-2"><h4>FIA_X509_EXT.2 X.509 Certificate Authentication</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_X509_EXT.2</div>
                   Refer to the EA for <span class="no-link">FIA_X509_EXT.2</span> in the App PP.
@@ -714,12 +712,11 @@ The following sections list Common Criteria and technology terms used in this do
 	
                 </span></div>
         
-          <h4 class="indexable" data-level="4" id="ap-m-ftp">2.3.1.0.15 Trusted Path/Channels (FTP)</h4><div class="comp" id="AP-FTP-DIT-EXT-1"><h4>FTP_DIT_EXT.1 Protection of Data in Transit</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_DIT_EXT.1</div>
+          <h4 class="indexable" data-level="4" id="ap-m-ftp">2.3.1.0.15 Trusted Path/Channels (FTP)</h4><div class="comp" id="AP-FTP-DIT-EXT-1"><h4>FTP_DIT_EXT.1 Protection of Data in Transit</h4><span class="activity_pane_body"><div class="element-activity-header">FTP_DIT_EXT.1.1</div>
                   For IPsec, refer to the EA for FCS_IPSEC_EXT.1. If other protocols are selected
 				  for FTP_DIT_EXT.1, refer to the EA for FTP_DIT_EXT.1 in the App PP.
                   
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
                 </span></div>
       <h3 class="indexable" data-level="2" id="qq-sfrs-bpp-app-Additional">2.3.2 Additional SFRs
         </h3>
@@ -727,11 +724,8 @@ The following sections list Common Criteria and technology terms used in this do
         
         <h4 class="indexable" data-level="4" id="app-audit-table">2.3.2.0.16 Auditable Events for App PP Additional SFRs</h4>
         
-        <h4 class="indexable" data-level="4" id="ap-a-fcs">2.3.2.0.17 Cryptographic Support (FCS)</h4><div class="comp" id="AP-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM_EXT.2</div> 
-                
-                
-                
-              <div class="eacategory">TSS</div><div class="ea"><div class="ea">Regardless of whether this requirement is met by the TOE or the TOE platform, the evaluator will check
+        <h4 class="indexable" data-level="4" id="ap-a-fcs">2.3.2.0.17 Cryptographic Support (FCS)</h4><div class="comp" id="AP-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.2.1</div>
+                <div class="eacategory">TSS</div><div class="ea">Regardless of whether this requirement is met by the TOE or the TOE platform, the evaluator will check
 			the TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to
 			meet the requirements in the ST. For each of these items, the evaluator will confirm that the TSS lists for
 			what purpose it is used, and how it is stored. The evaluator then performs the following actions: <br/><br/>
@@ -747,11 +741,11 @@ The following sections list Common Criteria and technology terms used in this do
                   	The evaluator reviews the TSS for to determine that it makes a case that, for each item listed as being
 			manipulated by the TOE, it is not written unencrypted to persistent memory, and that the item is stored
 			by the platform.<br/><br/>
-                </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">There are no test EAs for this requirement.</div></div></span></div><div class="comp" id="AP-FCS-CKM-EXT-4"><h4>FCS_CKM_EXT.4 Cryptographic Key Destruction</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM_EXT.4</div> 
-                
-                
-                
-              <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall ensure that all plaintext secret and private cryptographic keys and CSPs (whether
+                </div>
+                <div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div>
+                <div class="eacategory">Tests</div><div class="ea">There are no test EAs for this requirement.</div>
+              </span></div><div class="comp" id="AP-FCS-CKM-EXT-4"><h4>FCS_CKM_EXT.4 Cryptographic Key Destruction</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.4.1</div>
+                <div class="eacategory">TSS</div><div class="ea">The evaluator shall ensure that all plaintext secret and private cryptographic keys and CSPs (whether
 			manipulated by the TOE or exclusively by the platform) are identified in the VPN Client ST's TSS, and that
 			they are accounted for by the EAs in this section. <br/><br/>
 
@@ -775,10 +769,12 @@ The following sections list Common Criteria and technology terms used in this do
 			data are stored (for example, "secret keys stored on flash are cleared by overwriting once with zeros,
 			while secret keys stored on the internal persistent storage device are cleared by overwriting three times
 			with a random pattern that is changed before each write").<br/><br/>
-		</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+		</div>
+                <div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div>
+                <div class="eacategory">Tests</div><div class="ea">
 			For each key clearing situation described in the TSS, the evaluator shall repeat the following test.
                 	<span class="testlist-"><ul>
-                  		<li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FCS_CKM_EXT.4:1</a>:
+                  		<li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FCS_CKM_EXT.4.1:1</a>:
       The evaluator shall use appropriate combinations of specialized OE and
 					development tools (debuggers, simulators, etc.) for the TOE and instrumented TOE builds to test that keys
 					are cleared correctly, including all intermediate copies of the key that may have been created internally
@@ -801,7 +797,8 @@ The following sections list Common Criteria and technology terms used in this do
 					intermediate copies are cleared.
 				</li>
     	            </ul></span>
-                </div></div></span></div>
+                </div>
+              </span></div>
       <h2 class="indexable" data-level="1" id="aa-bpp-mdm">2.4 
     Protection Profile for Protection Profile for Mobile Device Management</h2>
       The EAs defined in this section are only applicable in cases where the TOE claims conformance
@@ -809,36 +806,31 @@ The following sections list Common Criteria and technology terms used in this do
      <h3 class="indexable" data-level="2" id="qq-sfrs-bpp-mdm-Modified">2.4.1 Modified SFRs
         </h3>
         
-        <h4 class="indexable" data-level="4" id="dm-m-fcs">2.4.1.0.18 Cryptographic Support (FCS)</h4><div class="comp" id="DM-FCS-CKM-1"><h4>FCS_CKM.1 Cryptographic Key Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.1</div>
-                Refer to the EA for <span class="no-link">FCS_CKM.1</span> in the MDM PP.
+        <h4 class="indexable" data-level="4" id="dm-m-fcs">2.4.1.0.18 Cryptographic Support (FCS)</h4><div class="comp" id="DM-FCS-CKM-1"><h4>FCS_CKM.1 Cryptographic Key Generation</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.1.1</div>
+                Refer to the EA for FCS_CKM.1 in the MDM PP.
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-              </span></div><div class="comp" id="DM-FCS-CKM-2"><h4>FCS_CKM.2 Cryptographic Key Establishment</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.2</div>
-                Refer to the EA for <span class="no-link">FCS_CKM.2</span> in the MDM PP.
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+              </span></div><div class="comp" id="DM-FCS-CKM-2"><h4>FCS_CKM.2 Cryptographic Key Establishment</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.2.1</div>
+                Refer to the EA for FCS_CKM.2 in the MDM PP.
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-              </span></div><div class="comp" id="DM-FCS-COP-1-1"><h4>FCS_COP.1/1 Cryptographic Operation</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_COP.1/1</div>
-                Refer to the EA for <span class="no-link">FCS_COP.1(1)</span> in the MDM PP.
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+              </span></div><div class="comp" id="DM-FCS-COP-1-1"><h4>FCS_COP.1/1 Cryptographic Operation</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_COP.1.1/1</div>
+                Refer to the EA for FCS_COP.1(1) in the MDM PP.
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
               </span></div>
         
-        <h4 class="indexable" data-level="4" id="dm-m-fia">2.4.1.0.19 Identification and Authentication (FIA)</h4><div class="comp" id="DM-FIA-X509-EXT-2"><h4>FIA_X509_EXT.2 X.509 Certificate Authentication</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_X509_EXT.2</div>
-                Refer to the EA for <span class="no-link">FIA_X509_EXT.2</span> in the MDM PP.
+        <h4 class="indexable" data-level="4" id="dm-m-fia">2.4.1.0.19 Identification and Authentication (FIA)</h4><div class="comp" id="DM-FIA-X509-EXT-2"><h4>FIA_X509_EXT.2 X.509 Certificate Authentication</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_X509_EXT.2.1</div>
+                Refer to the EA for FIA_X509_EXT.2 in the MDM PP.
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
               </span></div>
 
-        <h4 class="indexable" data-level="4" id="dm-m-fpt">2.4.1.0.20 Protection of the TSF (FPT)</h4><div class="comp" id="DM-FPT-ITT-1-1"><h4>FPT_ITT.1/1 Basic Internal TSF Data Transfer Protection</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_ITT.1/1</div>
-                Refer to the EA for <span class="no-link">FPT_ITT.1(1)</span> in the MDM PP. Note that the PP-Module does not require any separate
+        <h4 class="indexable" data-level="4" id="dm-m-fpt">2.4.1.0.20 Protection of the TSF (FPT)</h4><div class="comp" id="DM-FPT-ITT-1-1"><h4>FPT_ITT.1/1 Basic Internal TSF Data Transfer Protection</h4><span class="activity_pane_body"><div class="element-activity-header">FPT_ITT.1.1/1</div>
+                Refer to the EA for FPT_ITT.1(1) in the MDM PP. Note that the PP-Module does not require any separate
                 testing for this if IPsec is not used to implement this function.
                 
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
               </span></div>
 
         <h4 class="indexable" data-level="4" id="dm-m-ftp">2.4.1.0.21 Trusted Path/Channels (FTP)</h4><div class="comp" id="DM-FTP-ITC-1-1"><h4>FTP_ITC.1/1  Inter-TSF Trusted Channel (Authorized IT Entities)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC.1/1</div>
@@ -847,23 +839,22 @@ The following sections list Common Criteria and technology terms used in this do
                 
 		TODO: You need to explain the lack of EAs for this component!!!!
 	
-              </span></div><div class="comp" id="DM-FTP-TRP-1-1"><h4>FTP_TRP.1/1 Trusted Path (for Remote Administration)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_TRP.1/1</div> 
+              </span></div><div class="comp" id="DM-FTP-TRP-1-1"><h4>FTP_TRP.1/1 Trusted Path (for Remote Administration)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_TRP.1/1</div>
                 	Refer to the EA for <span class="no-link">FTP_TRP.1(1)</span> in the MDM PP. Note that the PP-Module does not require any
 			separate testing for this if IPsec is not used to implement this function.
                 
 		TODO: You need to explain the lack of EAs for this component!!!!
 	
               </span></div>
-      <h2 class="indexable" data-level="1" id="man-sfrs">2.5 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="m-fcs">2.5.1 Cryptographic Support (FCS)</h2><div class="comp" id="FCS-CKM-1-VPN"><h4>FCS_CKM.1/VPN VPN Cryptographic Key Generation (IKE)</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.1/VPN</div>
-				
-				
-				
-			<div class="eacategory">TSS</div><div class="ea"><div class="ea">
+      <h2 class="indexable" data-level="1" id="man-sfrs">2.5 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="m-fcs">2.5.1 Cryptographic Support (FCS)</h2><div class="comp" id="FCS-CKM-1-VPN"><h4>FCS_CKM.1/VPN VPN Cryptographic Key Generation (IKE)</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.1.1/VPN</div>
+				<div class="eacategory">TSS</div><div class="ea">
 					The evaluator shall examine the TSS to verify that it describes how the key generation functionality is
 					invoked.<br/><br/>
-				</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+				</div>
+				<div class="eacategory">Guidance</div><div class="ea">
 				  There are no guidance EAs for this requirement.<br/><br/>
-				</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+				</div>
+				<div class="eacategory">Tests</div><div class="ea">
 					If this functionality is implemented by the TSF, refer to the following EAs, depending on the TOE’s
 					claimed Base-PP:<br/><br/>
 					<ul>
@@ -872,7 +863,8 @@ The following sections list Common Criteria and technology terms used in this do
 						<li>App PP: <span class="no-link">FCS_CKM.1/AK</span></li>
 						<li>MDM PP: <span class="no-link">FCS_CKM.1</span></li>
 					</ul>
-				</div></div></span></div><div class="comp" id="FCS-IPSEC-EXT-1"><h4>FCS_IPSEC_EXT.1 IPsec</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_IPSEC_EXT.1</div>
+				</div>
+			</span></div><div class="comp" id="FCS-IPSEC-EXT-1"><h4>FCS_IPSEC_EXT.1 IPsec</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_IPSEC_EXT.1</div>
 		
 		
 		
@@ -1324,11 +1316,8 @@ The following sections list Common Criteria and technology terms used in this do
                 </li>
               </ul></span>
 		</div>
-            </span></div><h2 class="indexable" data-level="2" id="m-fdp">2.5.2 User Data Protection (FDP)</h2><div class="comp" id="FDP-RIP-2"><h4>FDP_RIP.2 Full Residual Information Protection</h4><span class="activity_pane_body"><div class="component-activity-header">FDP_RIP.2</div>
-              
-              
-              
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea"><b>Requirement met by the platform</b><br/><br/>
+            </span></div><h2 class="indexable" data-level="2" id="m-fdp">2.5.2 User Data Protection (FDP)</h2><div class="comp" id="FDP-RIP-2"><h4>FDP_RIP.2 Full Residual Information Protection</h4><span class="activity_pane_body"><div class="element-activity-header">FDP_RIP.2.1</div>
+              <div class="eacategory">TSS</div><div class="ea"><b>Requirement met by the platform</b><br/><br/>
                 The evaluator shall examine the TSS to verify that it describes (for each supported platform) the extent to
 		which the client processes network packets and addresses the FDP_RIP.2 requirement.<br/><br/>
                 <b>Requirement met by the TOE</b><br/><br/>
@@ -1340,22 +1329,25 @@ The following sections list Common Criteria and technology terms used in this do
 		determine that no data will be reused when processing network packets. The evaluator shall ensure that
 		this description at a minimum describes how the previous data are zeroized/overwritten, and at what
 		point in the buffer processing this occurs.<br/><br/>
-              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">There are no test EAs for this requirement.<br/><br/></div></div></span></div><h2 class="indexable" data-level="2" id="m-fmt">2.5.3 Security Management (FMT)</h2><div class="comp" id="FMT-SMF-1-VPN"><h4>FMT_SMF.1/VPN Specification of Management Functions (VPN)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF.1/VPN</div>
-              
-              
-              
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall check to ensure the TSS describes the client credentials and how they are used by the
+              </div>
+              <div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div>
+              <div class="eacategory">Tests</div><div class="ea">There are no test EAs for this requirement.<br/><br/></div>
+            </span></div><h2 class="indexable" data-level="2" id="m-fmt">2.5.3 Security Management (FMT)</h2><div class="comp" id="FMT-SMF-1-VPN"><h4>FMT_SMF.1/VPN Specification of Management Functions (VPN)</h4><span class="activity_pane_body"><div class="element-activity-header">FMT_SMF.1.1/VPN</div>
+              <div class="eacategory">TSS</div><div class="ea">The evaluator shall check to ensure the TSS describes the client credentials and how they are used by the
 		TOE.<br/><br/>
-              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall check to make sure that every management function mandated in the ST for this
+              </div>
+              <div class="eacategory">Guidance</div><div class="ea">The evaluator shall check to make sure that every management function mandated in the ST for this
 		requirement is described in the operational guidance and that the description contains the information
 		required to perform the management duties associated with each management function. <br/><br/>
-              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+              </div>
+              <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall test the TOE’s ability to provide the management functions by configuring the TOE
 		according to the operational guidance and testing each management activity listed in the ST.<br/><br/>
                 The evaluator shall ensure that all management functions claimed in the ST can be performed by
 		completing activities described in the AGD. Note that this may be performed in the course of completing
 		other testing.
-              </div></div></span></div><h2 class="indexable" data-level="2" id="m-fpt">2.5.4 Protection of the TSF (FPT)</h2><div class="comp" id="FPT-TST-EXT-1-VPN"><h4>FPT_TST_EXT.1/VPN TSF Self-Test</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_TST_EXT.1/VPN</div>
+              </div>
+            </span></div><h2 class="indexable" data-level="2" id="m-fpt">2.5.4 Protection of the TSF (FPT)</h2><div class="comp" id="FPT-TST-EXT-1-VPN"><h4>FPT_TST_EXT.1/VPN TSF Self-Test</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_TST_EXT.1/VPN</div>
               Except for where it is explicitly noted, the evaluator is expected to check the following information
 		regardless of whether the functionality is implemented by the TOE or by the TOE platform.<br/><br/>
               
@@ -1397,40 +1389,40 @@ The following sections list Common Criteria and technology terms used in this do
       The evaluator modifies the TSF executable, performs the integrity check on the modified TSF
 			executable and verifies that the check fails.</li>
                 </ul></span>
-              </div></div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.6 Evaluation Activities for Optional SFRs</h2><h2 class="indexable" data-level="2" id="o-fia">2.6.1 Identification and Authentication (FIA)</h2><div class="comp" id="FIA-BMA-EXT-1"><h4>FIA_BMA_EXT.1 Biometric Activation</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_BMA_EXT.1</div>
-              
-              
-              
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall confirm that the TSS describes the calls to the platform and verifies they align with platform documentation.<br/><br/>
-              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall ensure that any configuration details needed to enable the biometric prompt are included in the
+              </div></div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.6 Evaluation Activities for Optional SFRs</h2><h2 class="indexable" data-level="2" id="o-fia">2.6.1 Identification and Authentication (FIA)</h2><div class="comp" id="FIA-BMA-EXT-1"><h4>FIA_BMA_EXT.1 Biometric Activation</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_BMA_EXT.1.1</div>
+              <div class="eacategory">TSS</div><div class="ea">The evaluator shall confirm that the TSS describes the calls to the platform and verifies they align with platform documentation.<br/><br/>
+              </div>
+              <div class="eacategory">Guidance</div><div class="ea">The evaluator shall ensure that any configuration details needed to enable the biometric prompt are included in the
 		      guidance documentation.<br/><br/>
-              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+              </div>
+              <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FIA_BMA_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FIA_BMA_EXT.1.1:1</a>:
       The evaluator shall initiate a connection and verify that a biometric prompt is presented and accepted before the
 			  connection can proceed.  The evaluator shall also verify the connection does not proceed if the biometric is not presented or accepted.</li>
                 </ul></span>
-              </div></div></span></div><h2 class="indexable" data-level="2" id="s-fpf">2.6.2 Packet Filtering (FPF)</h2><div class="comp" id="FPF-MFA-EXT-1"><h4>FPF_MFA_EXT.1 Multifactor Authentication Filtering</h4><span class="activity_pane_body"><div class="component-activity-header">FPF_MFA_EXT.1</div>
+              </div>
+            </span></div><h2 class="indexable" data-level="2" id="s-fpf">2.6.2 Packet Filtering (FPF)</h2><div class="comp" id="FPF-MFA-EXT-1"><h4>FPF_MFA_EXT.1 Multifactor Authentication Filtering</h4><span class="activity_pane_body"><div class="element-activity-header">FPF_MFA_EXT.1.1</div>
+            <div class="eacategory">TSS</div><div class="ea">The evaluator shall examine the TSS to verify that it describes how authentication packets are identified and how all
+		    other traffic is blocked until secondary authentication is successful.<br/><br/></div>
             
-            
-            
-            
-            
-          <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to verify that it describes how authentication packets are identified and how all
-		    other traffic is blocked until secondary authentication is successful.<br/><br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it provides any necessary instructions to the administrator on how
+            <div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to verify that it provides any necessary instructions to the administrator on how
 		    to enable and configure filtering..<br/><br/> 
-            </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+            </div>
+            
+            <div class="eacategory">Tests</div><div class="ea">
               <span class="testlist-"><ul>
-                <li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FPF_MFA_EXT.1:1</a>:
+                <li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FPF_MFA_EXT.1.1:1</a>:
        
                   The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules.  
                   The evaluator shall then provide the supported PSKs and confirm it is accepted and traffic is no longer blocked.</li>
               </ul></span>
-            </div></div></span></div><h2 class="indexable" data-level="1" id="sel-sfrs">2.7 Evaluation Activities for Selection-Based SFRs</h2><h2 class="indexable" data-level="2" id="s-fcs">2.7.1 Cryptographic Support (FCS)</h2><div class="comp" id="FCS-EAP-EXT-1"><h4>FCS_EAP_EXT.1 EAP-TLS</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_EAP_EXT.1</div>
+            </div>
+          </span></div><h2 class="indexable" data-level="1" id="sel-sfrs">2.7 Evaluation Activities for Selection-Based SFRs</h2><h2 class="indexable" data-level="2" id="s-fcs">2.7.1 Cryptographic Support (FCS)</h2><div class="comp" id="FCS-EAP-EXT-1"><h4>FCS_EAP_EXT.1 EAP-TLS</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_EAP_EXT.1</div>
               
               
               
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify that the TS describes the use of EAP options for each of the selected peer authentication 
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify that the TSS describes the use of EAP options for each of the selected peer authentication 
                 mechanisms, that TLS with mutual authentication is used, that the random values are from an appropriate source, 
                 and that the EAP MSK is derived from the TLS master key and is used as the IKEv2 shared key.<br/><br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that the guidance documents describe any configurable features of the EAP or TLS 
                 functionality, including instructions for configuration of the authenticators and registration processes for clients.<br/><br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">Testing for TLS functionality is in accordance with the TLS package.
@@ -1480,22 +1472,22 @@ The following sections list Common Criteria and technology terms used in this do
       For each mechanism selected in FIA_PSK_EXT.1.2, the evaluator shall attempt to establish a connection 
                     and confirm that the connection requires the selected factors in the PSK to establish the connection. </li>
                 </ul></span>
-              </div></div></span></div><div class="comp" id="FIA-PSK-EXT-2"><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.2</div>
-              
-              
-              
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">If "generate" is selected, the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1 
+              </div></div></span></div><div class="comp" id="FIA-PSK-EXT-2"><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_PSK_EXT.2.1</div>
+              <div class="eacategory">TSS</div><div class="ea">If "generate" is selected, the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1 
                 and the output matches the size selected in FIA_PSK_EXT.2.1.<br/><br/>
-              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm the operational guidance contains instructions for entering generated pre-shared keys 
+              </div>
+              <div class="eacategory">Guidance</div><div class="ea">The evaluator shall confirm the operational guidance contains instructions for entering generated pre-shared keys 
                 for each protocol identified in the FIA_PSK_EXT.1.1. <br/><br/>
-              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+              </div>
+              <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_46" class="defined" href="#_t_46">Test FIA_PSK_EXT.2:1</a>:
+                  <li class="test-"><a id="_t_46" class="defined" href="#_t_46">Test FIA_PSK_EXT.2.1:1</a>:
       [conditional] If generate was selected the evaluator shall generate a pre-shared key and confirm the output matches
 			  the size selected in FIA_PSK_EXT.2.1.
                   </li>
                 </ul></span>
-              </div></div></span></div><div class="comp" id="FIA-PSK-EXT-3"><h4>FIA_PSK_EXT.3 Password-Based Pre-Shared Keys</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.3</div>
+              </div>
+            </span></div><div class="comp" id="FIA-PSK-EXT-3"><h4>FIA_PSK_EXT.3 Password-Based Pre-Shared Keys</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.3</div>
               
               
               
@@ -1554,17 +1546,16 @@ The following sections list Common Criteria and technology terms used in this do
       [conditional]: If the TOE supports a password denylist, the evaluator shall enter a denylisted password and verify that the
 			  password is rejected or flagged as such.</li>
                 </ul></span>
-              </div></div></span></div><div class="comp" id="FIA-PSK-EXT-4"><h4>FIA_PSK_EXT.4 HMAC-Based One-Time Password Pre-shared Keys Support</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.4</div>
+              </div></div></span></div><div class="comp" id="FIA-PSK-EXT-4"><h4>FIA_PSK_EXT.4 HMAC-Based One-Time Password Pre-shared Keys Support</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_PSK_EXT.4.1</div>
+              <div class="eacategory">TSS</div><div class="ea">The evaluator shall verify the TSS describes how the HOTP is input into the client and how that value is sent to the server.
               
-              
-              
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS describes how the HOTP is input into the client and how that value is sent to the server.
-              
-              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+              </div>
+              <div class="eacategory">Guidance</div><div class="ea">
                 The evaluator shall verify the operational guidance contains any configuration necessary to enable HOTP.<br/><br/>
-              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+              </div>
+              <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_52" class="defined" href="#_t_52">Test FIA_PSK_EXT.4:1</a>:
+                  <li class="test-"><a id="_t_52" class="defined" href="#_t_52">Test FIA_PSK_EXT.4.1:1</a>:
       
                     The evaluator shall configure the TOE to use a supported HOTP factor, then attempt to establish a connection using that factor.  
                     The evaluator shall verify the client prompts the user for the HOTP before initiating the connection.  
@@ -1572,23 +1563,24 @@ The following sections list Common Criteria and technology terms used in this do
                   </li>
                   
                 </ul></span>
-              </div></div></span></div><div class="comp" id="FIA-PSK-EXT-5"><h4>FIA_PSK_EXT.5 Time-Based One-Time Password Pre-shared Keys Support</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.5</div>
-              
-              
-              
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS describes how the TOTP is input into the client and how that value is sent to the server.
-              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+              </div>
+            </span></div><div class="comp" id="FIA-PSK-EXT-5"><h4>FIA_PSK_EXT.5 Time-Based One-Time Password Pre-shared Keys Support</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_PSK_EXT.5.1</div>
+              <div class="eacategory">TSS</div><div class="ea">The evaluator shall verify the TSS describes how the TOTP is input into the client and how that value is sent to the server.
+              </div>
+              <div class="eacategory">Guidance</div><div class="ea">
                 The evaluator shall verify the operational guidance contains any configuration necessary to enable TOTP.<br/><br/>
-              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+              </div>
+              <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_53" class="defined" href="#_t_53">Test FIA_PSK_EXT.5:1</a>:
+                  <li class="test-"><a id="_t_53" class="defined" href="#_t_53">Test FIA_PSK_EXT.5.1:1</a>:
       
                     The evaluator shall configure the TOE to use a supported TOTP factor, then attempt to establish a connection using that factor.  
                     The evaluator shall verify the client prompts the user for the TOTP before initiating the connection.  
                     The evaluator shall verify the server validates the TOTP or receives confirmation from an authentication server before establishing the channel.</li>
                   
                 </ul></span>
-              </div></div></span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.8 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="ob-fau">2.8.1 Security Audit (FAU)</h2><div class="comp" id="FAU-GEN-1-VPN"><h4>FAU_GEN.1/VPN Audit Data Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_GEN.1/VPN</div>
+              </div>
+            </span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.8 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="ob-fau">2.8.1 Security Audit (FAU)</h2><div class="comp" id="FAU-GEN-1-VPN"><h4>FAU_GEN.1/VPN Audit Data Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_GEN.1/VPN</div>
               
               
               
@@ -1636,30 +1628,30 @@ The following sections list Common Criteria and technology terms used in this do
 		directly. For example, testing performed to ensure that the administrative guidance provided is correct
 		verifies that AGD_OPE.1 is satisfied and should address the invocation of the administrative actions that
 		are needed to verify the audit records are generated as expected.
-              </div></div></span></div><div class="comp" id="FAU-SEL-1-VPN"><h4>FAU_SEL.1/VPN Selective Audit</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_SEL.1/VPN</div>
-              
-              
-              
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">There are no TSS EAs for this SFR.<br/><br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall review the administrative guidance to ensure that the guidance itemizes all event
+              </div></div></span></div><div class="comp" id="FAU-SEL-1-VPN"><h4>FAU_SEL.1/VPN Selective Audit</h4><span class="activity_pane_body"><div class="element-activity-header">FAU_SEL.1.1/VPN</div>
+              <div class="eacategory">TSS</div><div class="ea">There are no TSS EAs for this SFR.<br/><br/></div>
+              <div class="eacategory">Guidance</div><div class="ea">The evaluator shall review the administrative guidance to ensure that the guidance itemizes all event
 		types, as well as describes all attributes that are to be selectable in accordance with the requirement, to
 		include those attributes listed in the assignment. The administrative guidance shall also contain
 		instructions on how to set the pre-selection, or how the VPN gateway will configure the client, as well as
 		explain the syntax (if present) for multi-value pre-selection. The administrative guidance shall also identify
-		those audit records that are always recorded, regardless of the selection criteria currently being enforced.<br/><br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests:
+		those audit records that are always recorded, regardless of the selection criteria currently being enforced.<br/><br/></div>
+              <div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following tests:
               <span class="testlist-"><ul>
-                <li class="test-"><a id="_t_54" class="defined" href="#_t_54">Test FAU_SEL.1/VPN:1</a>:
+                <li class="test-"><a id="_t_54" class="defined" href="#_t_54">Test FAU_SEL.1.1/VPN:1</a>:
       For each attribute listed in the requirement, the evaluator shall devise a test to show that selecting
 			the attribute causes only audit events with that attribute (or those that are always recorded, as identified
 			in the administrative guidance) to be recorded.
                 </li>
-                <li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FAU_SEL.1/VPN:2</a>:
+                <li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FAU_SEL.1.1/VPN:2</a>:
       [conditional] If the TSF supports specification of more complex audit pre-selection criteria (e.g.,
 			multiple attributes, logical expressions using attributes) then the evaluator shall devise tests showing that
 			this capability is correctly implemented. The evaluator shall also, in the test plan, provide a short narrative
 			justifying the set of tests as representative and sufficient to exercise the capability.
                 </li>
               </ul></span>
-              </div></div></span></div><h2 class="indexable" data-level="1" id="impl-sfrs-">2.9 Evaluation Activities for Implementation-dependent SFRs</h2>The PP-Module does not define any implementation-dependent requirements.<h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
+              </div>
+            </span></div><h2 class="indexable" data-level="1" id="impl-sfrs-">2.9 Evaluation Activities for Implementation-dependent SFRs</h2>The PP-Module does not define any implementation-dependent requirements.<h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
     
 	base-PP to which it must claim conformance.
 	It is important to note that a TOE that is evaluated against the PP-Module is
