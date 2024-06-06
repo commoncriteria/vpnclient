@@ -938,7 +938,7 @@ expected to enforce.<h:br/><h:br/>
                 does not need to implement RSA key generation.
               </note>
               <aactivity level="element">
-                                <no-tests>Refer to the evaluation activity for <no-link>FCS_CKM.1</no-link> in the GPOS PP for evaluating this SFR.</no-tests>
+            <no-tests>Refer to the evaluation activity for <no-link>FCS_CKM.1</no-link> in the GPOS PP for evaluating this SFR.</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -983,10 +983,10 @@ expected to enforce.<h:br/><h:br/>
                 according to FCS_CKM.1.1.
               </note>
               <aactivity level="element">
-	  	Refer to the Assurance Activity for <no-link>FCS_CKM.2.1</no-link> in the GPOS PP for evaluating this SFR. Note that
+	  	<no-tests>Refer to the Assurance Activity for <no-link>FCS_CKM.2.1</no-link> in the GPOS PP for evaluating this SFR. Note that
 		because a TOE that conforms to this PP-Module must implement IPsec, the tested protocols shall
 		include IPsec at minimum.    
-                <no-tests/>
+	  	</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -1031,8 +1031,8 @@ expected to enforce.<h:br/><h:br/>
                 selected in order to meet the requirements for FCS_IPSEC_EXT.1.
               </note>
               <aactivity level="element">
-                Refer to the EA for <no-link>FCS_COP.1(1)</no-link> in the GPOS PP for evaluating this SFR.
-                <no-tests/>
+                <no-tests>Refer to the EA for <no-link>FCS_COP.1(1)</no-link> in the GPOS PP for evaluating this SFR.
+                </no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -1121,9 +1121,9 @@ expected to enforce.<h:br/><h:br/>
               </selectables>.
               </title>
               <aactivity level="element">
-                FIA_X509_EXT.3.1 is evaluated as part of FCS_IPSEC_EXT.1 (and
+                <no-tests>FIA_X509_EXT.3.1 is evaluated as part of FCS_IPSEC_EXT.1 (and
                 conditionally as part of FPT_TUD_EXT.1 or FPT_TST_EXT.1).
-               <no-tests/>
+                </no-tests>
               </aactivity>
             </f-element>
             <f-element id="os-fia-x509-ext-3e2">
@@ -1192,8 +1192,8 @@ expected to enforce.<h:br/><h:br/>
                 certificate path is deemed invalid.
               </title>
               <aactivity level="element">
-                FIA_X509_EXT.3.3 is evaluated as part of FCS_IPSEC_EXT.1.11.
-                <no-tests/>
+                <no-tests>FIA_X509_EXT.3.3 is evaluated as part of FCS_IPSEC_EXT.1.11.
+                </no-tests>
               </aactivity>
             </f-element>
             <audit-event table="tab-gpos-additional"/>
@@ -1500,10 +1500,9 @@ expected to enforce.<h:br/><h:br/>
 				VPN client functionality.
 				</note>
               <aactivity level="element">
-               Refer to the EAs for FCS_CKM.1 in the MDF PP. The only change to this SFR is that some selections are
+                <no-tests>Refer to the EAs for FCS_CKM.1 in the MDF PP. The only change to this SFR is that some selections are
 		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
-		changed.
-                <no-tests/>
+		changed.</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -1548,10 +1547,10 @@ expected to enforce.<h:br/><h:br/>
 				its use.
               </note>
               <aactivity level="element"> 
-                Refer to the EAs for FCS_CKM.2/UNLOCKED in the MDF PP. The only change to this SFR is that some
+                <no-tests>Refer to the EAs for FCS_CKM.2/UNLOCKED in the MDF PP. The only change to this SFR is that some
 		selections are mandated, therefore the corresponding testing is mandatory. The actual testing for those
-		selections is not changed.
-                <no-tests/>
+		selections is not changed.</no-tests>
+                
               </aactivity>
             </f-element>
             <audit-event/>
@@ -1587,10 +1586,9 @@ expected to enforce.<h:br/><h:br/>
                 address the requirements for FCS_IPSEC_EXT.1.
               </note>
               <aactivity level="element">
-                Refer to the EAs for FCS_COP.1/ENCRYPT in the MDF PP. The only change to this SFR is that some
+                <no-tests>Refer to the EAs for FCS_COP.1/ENCRYPT in the MDF PP. The only change to this SFR is that some
 		selections are mandated, therefore the corresponding testing is mandatory. The actual testing for those
-		selections is not changed.
-                <no-tests/>
+		selections is not changed.</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -1618,10 +1616,9 @@ expected to enforce.<h:br/><h:br/>
 				the TOE’s conformance claim includes this PP-Module
 			  </note>
               <aactivity level="element">
-                Refer to the EAs for FDP_IFC_EXT.1 in the MDF PP. The only change to this SFR is that some selections are
+              <no-tests>Refer to the EAs for FDP_IFC_EXT.1 in the MDF PP. The only change to this SFR is that some selections are
 		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
-		changed.
-                <no-tests/>
+		changed.</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -1671,10 +1668,9 @@ expected to enforce.<h:br/><h:br/>
 				the SFR.
               </note>
               <aactivity level="component">
-                Refer to the EAs for FIA_X509_EXT.2 in the MDF PP. The only change to this SFR is that some selections
+                <no-tests>Refer to the EAs for FIA_X509_EXT.2 in the MDF PP. The only change to this SFR is that some selections
 		are mandated, therefore the corresponding testing is mandatory. The actual testing for those selections
-		is not changed.
-                <no-tests/>
+		is not changed.</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -1705,9 +1701,8 @@ expected to enforce.<h:br/><h:br/>
 			 </h:table>
 		 </title>
 		  <aactivity level="element">
-                Refer to the EAs for FMT_SMF_EXT.1 in the MDF PP. The only change to this SFR is the change to management function 45. 
-		       Testing of all other functions is not affected.
-                <no-tests/>
+		    <no-tests>Refer to the EAs for FMT_SMF_EXT.1 in the MDF PP. The only change to this SFR is the change to management function 45. 
+		      Testing of all other functions is not affected.</no-tests>
               </aactivity>
 	</f-element>
 	<audit-event/>
@@ -1765,10 +1760,9 @@ expected to enforce.<h:br/><h:br/>
 		available as an option in the selection.
               </note>
               <aactivity level="component"> 
-                Refer to the EAs for FTP_ITC_EXT.1 in the MDF PP. The only change to this SFR is that some selections are
+                <no-tests>Refer to the EAs for FTP_ITC_EXT.1 in the MDF PP. The only change to this SFR is that some selections are
 		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
-		changed.
-                <no-tests/>
+		changed.</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -2124,8 +2118,7 @@ expected to enforce.<h:br/><h:br/>
                   specifically related to VPN client functionality.
                 </note>
               <aactivity level="element">
-                  Refer to the EA for <no-link>FCS_CKM.1/AK</no-link> in the App PP.
-                  <no-tests/>
+                <no-tests>Refer to the EA for <no-link>FCS_CKM.1/AK</no-link> in the App PP.</no-tests>
                 </aactivity>
               </f-element>
               <audit-event/>
@@ -2177,8 +2170,7 @@ expected to enforce.<h:br/><h:br/>
                   ability to claim at least one of NIST SP 800-56A, RFC 3526, or NIST SP 800-56A
                   rev. 3 “safe-prime” groups for key establishment using finite field cryptography.</note>
                 <aactivity level="element">
-                  For all key establishment schemes refer to the EA for <no-link>FCS_CKM.2</no-link> in the App PP.
-                  <no-tests/>
+                  <no-tests>For all key establishment schemes refer to the EA for <no-link>FCS_CKM.2</no-link> in the App PP.</no-tests>
                 </aactivity>
               </f-element>
               <audit-event/>
@@ -2208,8 +2200,7 @@ expected to enforce.<h:br/><h:br/>
                   service, either of which causes <no-link>FCS_CKM.1/AK</no-link> to be claimed.
                 </note>
                 <aactivity level="element">
-                  This SFR is evaluated in conjunction with <no-link>FCS_CKM.1/AK</no-link> in the App PP.
-                  <no-tests/>
+                  <no-tests>This SFR is evaluated in conjunction with <no-link>FCS_CKM.1/AK</no-link> in the App PP.</no-tests>
                 </aactivity>
               </f-element>
               <audit-event/>
@@ -2297,8 +2288,7 @@ expected to enforce.<h:br/><h:br/>
                   of certificates.
                 </note>
                 <aactivity level="component">
-                  Refer to the EA for <no-link>FIA_X509_EXT.2</no-link> in the App PP.
-                  <no-tests/>
+                  <no-tests>Refer to the EA for <no-link>FIA_X509_EXT.2</no-link> in the App PP.</no-tests>
                 </aactivity>
               </f-element>
               <audit-event/>
@@ -2332,9 +2322,8 @@ expected to enforce.<h:br/><h:br/>
 				  IPsec, “no other protocols” is provided as a selectable option in the list of supported protocols.              
                 </note>
                 <aactivity level="element">
-                  For IPsec, refer to the EA for FCS_IPSEC_EXT.1. If other protocols are selected
-				  for FTP_DIT_EXT.1, refer to the EA for FTP_DIT_EXT.1 in the App PP.
-                  <no-tests/>
+                  <no-tests>For IPsec, refer to the EA for FCS_IPSEC_EXT.1. If other protocols are selected
+                    for FTP_DIT_EXT.1, refer to the EA for FTP_DIT_EXT.1 in the App PP.</no-tests>
                 </aactivity>
               </f-element>
               <audit-event/>
@@ -2713,8 +2702,7 @@ expected to enforce.<h:br/><h:br/>
                 not specifically related to VPN client functionality.
               </note>
               <aactivity level="element">
-                Refer to the EA for <no-link>FCS_CKM.1</no-link> in the MDM PP.
-                <no-tests/>
+                <no-tests>Refer to the EA for <no-link>FCS_CKM.1</no-link> in the MDM PP.</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -2764,8 +2752,7 @@ expected to enforce.<h:br/><h:br/>
                 not specifically related to VPN client functionality.
               </note>
               <aactivity level="element">
-                Refer to the EA for <no-link>FCS_CKM.2</no-link> in the MDM PP.
-                <no-tests/>
+                <no-tests>Refer to the EA for <no-link>FCS_CKM.2</no-link> in the MDM PP.</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -2805,8 +2792,7 @@ expected to enforce.<h:br/><h:br/>
                 selected by the ST author as needed to address functions not required by this PP-Module.
               </note>
               <aactivity level="element">
-                Refer to the EA for <no-link>FCS_COP.1(1)</no-link> in the MDM PP.
-                <no-tests/>
+                <no-tests>Refer to the EA for <no-link>FCS_COP.1(1)</no-link> in the MDM PP.</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -2871,8 +2857,7 @@ expected to enforce.<h:br/><h:br/>
                 does not modify this element.
               </note>
               <aactivity level="element">
-                Refer to the EA for <no-link>FIA_X509_EXT.2</no-link> in the MDM PP.
-                <no-tests/>
+                <no-tests>Refer to the EA for <no-link>FIA_X509_EXT.2</no-link> in the MDM PP.</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -2904,9 +2889,8 @@ expected to enforce.<h:br/><h:br/>
                 platform-provided functionality to implement this.
               </note>
               <aactivity level="element">
-                Refer to the EA for <no-link>FPT_ITT.1(1)</no-link> in the MDM PP. Note that the PP-Module does not require any separate
-                testing for this if IPsec is not used to implement this function.
-                <no-tests/>
+                <no-tests>Refer to the EA for <no-link>FPT_ITT.1(1)</no-link> in the MDM PP. Note that the PP-Module does not require any separate
+                  testing for this if IPsec is not used to implement this function.</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -2985,9 +2969,8 @@ expected to enforce.<h:br/><h:br/>
 				by the TSF or invoked from the platform.
               </note>
               <aactivity level="component">
-                Refer to the EA for <no-link>FTP_ITC.1(1)</no-link> in the MDM PP. Note that the PP-Module does not require any separate
-			testing for this if IPsec is not used to implement this function.
-                <no-tests/>
+                <no-tests>Refer to the EA for <no-link>FTP_ITC.1(1)</no-link> in the MDM PP. Note that the PP-Module does not require any separate
+                  testing for this if IPsec is not used to implement this function.</no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -3059,9 +3042,9 @@ expected to enforce.<h:br/><h:br/>
 				by the TSF or invoked from the platform.
               </note>
               <aactivity level="component">
-                	Refer to the EA for <no-link>FTP_TRP.1(1)</no-link> in the MDM PP. Note that the PP-Module does not require any
+                <no-tests>Refer to the EA for <no-link>FTP_TRP.1(1)</no-link> in the MDM PP. Note that the PP-Module does not require any
 			separate testing for this if IPsec is not used to implement this function.
-                <no-tests/>
+                </no-tests>
               </aactivity>
             </f-element>
             <audit-event/>
@@ -3885,8 +3868,7 @@ expected to enforce.<h:br/><h:br/>
 				SP 800-57, Recommendation for Key Management – Part 1: General</assignable>.
             </title>
             <aactivity level="element">
-              EAs for this element are tested through EAs for FCS_IPSEC_EXT.1.9.
-              <no-tests/>
+              <no-tests>EAs for this element are tested through EAs for FCS_IPSEC_EXT.1.9.</no-tests>
             </aactivity>
           </f-element>
           
@@ -4072,8 +4054,7 @@ expected to enforce.<h:br/><h:br/>
 				supported identifier types in the second selection.
 			</note>
             <aactivity level="element">
-              EAs for this element are tested through EAs for FCS_IPSEC_EXT.1.11.
-              <no-tests/>
+              <no-tests>EAs for this element are tested through EAs for FCS_IPSEC_EXT.1.11.</no-tests>
             </aactivity>
           </f-element>
           <f-element id="fcs-ipsec-ext-1e13">
@@ -4103,8 +4084,7 @@ expected to enforce.<h:br/><h:br/>
 				FMT_SMF.1.1/VPN.
 			</note>
             <aactivity level="element">
-              EAs for this element are tested through EAs for FCS_IPSEC_EXT.1.11.
-              <no-tests/>
+            <no-tests>EAs for this element are tested through EAs for FCS_IPSEC_EXT.1.11.</no-tests>              
             </aactivity>
           </f-element>
           <f-element id="fcs-ipsec-ext-1e14">
