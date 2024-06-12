@@ -3225,9 +3225,8 @@ expected to enforce.<h:br/><h:br/>
  	    <section id="ss-audit-table" title="Auditable Events for Mandatory SFRs">
  	      <xref to="atref-mandatory"/> must be included as part of FAU_GEN.1/VPN
  	      for OS, MDF, and MDM base-PPs. When App PP is the base-PP, it should be included only if implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
-        	<audit-table id="at-mandatory" table="mandatory">
-  	     		<h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-mandatory">: Auditable Events for Mandatory SFRs</ctr></h:b>
-	  	</audit-table>
+ 	      <audit-table id="at-mandatory" table="atref-mandatory" title="Auditable Events for Mandatory SFRs">
+ 	      </audit-table>
 	    </section>
 
 
@@ -4460,8 +4459,7 @@ expected to enforce.<h:br/><h:br/>
       
       <section id="sop-audit-table" title="Auditable Events for Strictly Optional SFRs">
         Entries from <xref to="atref-optional"/> must be included for OS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any strictly optional SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
-        <audit-table id="at-optional" table="optional">
-          <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-optional">: Auditable Events for Strictly Optional SFRs</ctr></h:b>
+        <audit-table id="at-optional" table="atref-optional" title="Auditable Events for Strictly Optional SFRs">
         </audit-table>
       </section>
       
@@ -4571,9 +4569,8 @@ expected to enforce.<h:br/><h:br/>
 	  
     <sel-sfrs>
 	    <section id="sb-audit-table" title="Auditable Events for Selection-based SFRs">
-        	<audit-table id="at-selbased" table="sel-based">
-  	     		<h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-sel-based">: Auditable Events for Selection-based SFRs</ctr></h:b>
-	  	</audit-table>
+	      <audit-table id="at-selbased" table="sel-based" title="Auditable Events for Selection-Based SFRs">
+	      </audit-table>
 	    </section>
 	
 	
@@ -5069,9 +5066,8 @@ expected to enforce.<h:br/><h:br/>
 
    	    <section id="sob-audit-table" title="Auditable Events for Objective SFRs">
    	        Entries from <xref to="atref-objective"/> must be included for OS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any objective SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
-        	<audit-table id="at-obj" table="objective">
-  	     		<h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-objective">: Auditable Events for Objective SFRs</ctr></h:b>
-	  	</audit-table>
+   	      <audit-table id="at-obj" table="objective" title="Auditable Events for Objective SFRs">
+   	      </audit-table>
 	    </section>
 	
 	  <!-- Appendix A.2.1 Security Audit (FAU) -->
@@ -5143,7 +5139,7 @@ expected to enforce.<h:br/><h:br/>
 	  <section id="impl-audit-table" title="Auditable Events for Implementation-dependent SFRs">
 	    Entries from <xref to="atref-impl-dep"/> must be included for OS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any strictly optional SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
 	    
-	    <audit-table id="atref-impl-dep" table="tab-impl-dep" title="Auditable Events for Implementation-based SFRs">
+	    <audit-table id="atref-impl-dep" table="tab-impl-dep" title="Auditable Events for Implementation-dependent SFRs">
 	    </audit-table>
 	  </section>
 	  
@@ -5264,7 +5260,7 @@ expected to enforce.<h:br/><h:br/>
 	        </Tests>
 	      </aactivity>
 	    </f-element>
-	    <audit-event/>
+	    <audit-event table="tab-impl-dep"/>
 	  </f-component>
 	  
 	  </section>
