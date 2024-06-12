@@ -3311,7 +3311,7 @@ expected to enforce.<h:br/><h:br/>
 				</Tests>
 			</aactivity>
 		  </f-element>
-		  <audit-event/>
+		  <audit-event table="atref-mandatory"/>
 		</f-component>
     
 	      <!-- 5.5.1.2 FCS_IPSEC_EXT.1 IPsec  -->	
@@ -4202,17 +4202,17 @@ expected to enforce.<h:br/><h:br/>
 		</Tests>
             </aactivity>
           </f-element>
-	  <audit-event>
+          <audit-event table="atref-mandatory">
 		  <audit-event-descr>Decisions to DISCARD or BYPASS network packets processed by the TOE.</audit-event-descr>
 		  <audit-event-info>Presumed identity of source subject.</audit-event-info>
 		  <audit-event-info>The entry in the SPD that applied to the decision.</audit-event-info>
 	  </audit-event>
-	  <audit-event>
+          <audit-event table="atref-mandatory">
 		  <audit-event-descr>Failure to establish an IPsec SA.</audit-event-descr>
 		  <audit-event-info>Identity of destination subject.</audit-event-info>
 		  <audit-event-info>Reason for failure.</audit-event-info>
 	  </audit-event>
-	  <audit-event>
+          <audit-event table="atref-mandatory">
 		  <audit-event-descr>Establishment/Termination of an IPsec SA.</audit-event-descr>
 		  <audit-event-info>Identity of destination subject.</audit-event-info>
 		  <audit-event-info>Transport layer protocol, if applicable.</audit-event-info>
@@ -4263,7 +4263,7 @@ expected to enforce.<h:br/><h:br/>
               <Tests>There are no test EAs for this requirement.<h:br/><h:br/></Tests>
             </aactivity>
           </f-element>
-		  <audit-event/>
+          <audit-event table="atref-mandatory"/>
         </f-component>
       </section>  <!-- FDP -->
 
@@ -4322,7 +4322,7 @@ expected to enforce.<h:br/><h:br/>
               </Tests>
             </aactivity>
           </f-element>
-	  <audit-event>
+          <audit-event table="atref-mandatory">
 		  <audit-event-descr>Success or failure of management function.</audit-event-descr>
 	    <audit-event-info>No additional information.</audit-event-info>
  	  </audit-event>
@@ -4425,7 +4425,7 @@ expected to enforce.<h:br/><h:br/>
               </Tests>
             </aactivity>
           </f-element>
-		  <audit-event/>
+          <audit-event table="atref-mandatory"/>
         </f-component>
       </section>   <!-- FPT -->
     </man-sfrs>
@@ -4511,7 +4511,7 @@ expected to enforce.<h:br/><h:br/>
             </aactivity>
             
           </f-element>
-          <audit-event/>
+          <audit-event table="atref-optional"/>
         </f-component>
       </section>
       
@@ -5149,7 +5149,7 @@ expected to enforce.<h:br/><h:br/>
 	  <section id="impl-audit-table" title="Auditable Events for Implementation-dependent SFRs">
 	    Entries from <xref to="atref-impl-dep"/> must be included for OS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any strictly optional SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
 	    
-	    <audit-table id="atref-impl-dep" table="tab-impl-dep" title="Auditable Events for Implementation-dependent SFRs">
+	    <audit-table id="at-impl-dep" table="atref-impl-dep" title="Auditable Events for Implementation-dependent SFRs">
 	    </audit-table>
 	  </section>
 	  
@@ -5270,7 +5270,7 @@ expected to enforce.<h:br/><h:br/>
 	        </Tests>
 	      </aactivity>
 	    </f-element>
-	    <audit-event table="tab-impl-dep"/>
+	    <audit-event table="atref-impl-dep"/>
 	  </f-component>
 	  
 	  </section>
