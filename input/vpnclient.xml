@@ -4468,7 +4468,7 @@ expected to enforce.<h:br/><h:br/>
     <opt-sfrs>
       
       <section id="sop-audit-table" title="Auditable Events for Strictly Optional SFRs">
-        Entries from <xref to="atref-optional"/> must be included for OS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any strictly optional SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
+        Entries from <xref to="at-optional"/> must be included for OS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any strictly optional SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
         <audit-table id="at-optional" table="atref-optional" title="Auditable Events for Strictly Optional SFRs">
         </audit-table>
       </section>
@@ -5075,8 +5075,8 @@ expected to enforce.<h:br/><h:br/>
     <obj-sfrs>
 
    	    <section id="sob-audit-table" title="Auditable Events for Objective SFRs">
-   	        Entries from <xref to="atref-objective"/> must be included for OS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any objective SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
-   	      <audit-table id="at-obj" table="objective" title="Auditable Events for Objective SFRs">
+   	        Entries from <xref to="at-objective"/> must be included for OS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any objective SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
+   	      <audit-table id="at-objective" table="objective" title="Auditable Events for Objective SFRs">
    	      </audit-table>
 	    </section>
 	
@@ -5147,7 +5147,7 @@ expected to enforce.<h:br/><h:br/>
 	<impl-dep-sfrs>
 	  
 	  <section id="impl-audit-table" title="Auditable Events for Implementation-dependent SFRs">
-	    Entries from <xref to="atref-impl-dep"/> must be included for OS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any strictly optional SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
+	    Entries from <xref to="at-impl-dep"/> must be included for OS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any strictly optional SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
 	    
 	    <audit-table id="at-impl-dep" table="atref-impl-dep" title="Auditable Events for Implementation-dependent SFRs">
 	    </audit-table>
@@ -5196,8 +5196,8 @@ expected to enforce.<h:br/><h:br/>
 	        functionality provided by the TOE). <h:br/><h:br/>
 	        The auditable events defined in the Auditable Events table are for the SFRs that
 	        are explicitly defined in this PP-Module. For any SFRs that are included as part of
-	        the TOE based on the claimed Base-PP (<xref to="atref-mandatory"/>, <xref to="atref-optional"/>, <xref to="atref-sel-based"/>,
-	        <xref to="atref-objective"/>, <xref to="atref-impl-dep"/>)
+	        the TOE based on the claimed Base-PP (<xref to="at-mandatory"/>, <xref to="at-optional"/>, <xref to="at-sel-based"/>,
+	        <xref to="at-objective"/>, <xref to="at-impl-dep"/>)
 	        it is expected that any applicable
 	        auditable events defined for those SFRs in the Base-PP are also claimed as part
 	        of the TSF. These auditable events only apply if the client actually performs these
