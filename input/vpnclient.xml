@@ -4,7 +4,8 @@
 <?xml-model href="../transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
 <Module boilerplate="yes" 
-	target-product="VPN Client" 
+	target-product="VPN Client"
+	target-products="VPN clients" 
 	name="Virtual Private Network (VPN) Clients" 
 	xmlns="https://niap-ccevs.org/cc/v1" 
 	xmlns:sec="https://niap-ccevs.org/cc/v1/section"
@@ -279,7 +280,7 @@
       traversal as specified in section 2.23 of RFC 7296. 
         <h:br/><h:br/>
 
-      To show that the TSF implements the RFCs correctly, the evaluator will perform the EAs
+      To show that the TSF implements the RFCs correctly, the evaluator shall perform the EAs
       documented in the SD that accompanies this PP-Module. In future versions of this
       PP-Module, EAs may be modified or new ones may be introduced that cover more aspects of RFC compliance
       than what is currently described in this publication.<h:br/><h:br/>
@@ -595,7 +596,7 @@ expected to enforce.<h:br/><h:br/>
             TOE’s authentication ability (IPsec) will allow the TSF to establish VPN connectivity with a remote
             VPN gateway or peer and ensure that any such connection attempt is both authenticated and
             authorized.<h:br/><h:br/>
-			Addressed by: FIA_X509_EXT.3 (when GPOS PP is Base-PP), FDP_IFC_EXT.1 (refined
+			Addressed by: FIA_X509_EXT.3 (when GPOS PP is Base-PP), FDP_IFC_EXT.1 (modified
 			from MDF PP), FIA_X509_EXT.2 (modified from MDF PP),
 			FIA_X509_EXT.2 (modified from App PP), FIA_X509_EXT.2 (modified from MDM PP),
 			FCS_IPSEC_EXT.1, FIA_BMA_EXT.1 (optional), FPF_MFA_EXT.1 (optional), FCS_EAP_EXT.1 (selection-based), FIA_PSK_EXT.1 (selection-based), 
@@ -658,8 +659,8 @@ expected to enforce.<h:br/><h:br/>
 			  FCS_CKM.1/AK (modified from App PP), FCS_CKM.2 (modified from App PP)
 			  FCS_CKM_EXT.1 (modified from App PP), FCS_COP.1/SKC (modified from App PP), FTP_DIT_EXT.1 (modified from App PP),
 			  FCS_CKM.1 (modified from MDM PP), FCS_CKM.2 (modified from MDM PP)
-			  FCS_COP.1/1 (modified from MDM PP), FPT_ITT.1/1 (if applicable, refined from MDM PP)
-			  FTP_ITC.1/1 (if applicable, refined from MDM PP), FTP_TRP.1/1 (if applicable, refined from MDM PP)
+			  FCS_COP.1/1 (modified from MDM PP), FPT_ITT.1/1 (if applicable, modified from MDM PP)
+			  FTP_ITC.1/1 (if applicable, modified from MDM PP), FTP_TRP.1/1 (if applicable, modified from MDM PP)
 			  FCS_CKM.1/VPN, FCS_IPSEC_EXT.1, FCS_EAP_EXT.1 (selection-based).
 		  </description>
 		  <consistency-rationale>Consistency rationale for O.CRYPTOGRAPHIC_FUNCTIONS.</consistency-rationale>
@@ -719,16 +720,16 @@ expected to enforce.<h:br/><h:br/>
 			<rationale>This SFR supports the objective by requiring that the
 				TOE implement symmetric encryption and decryption using certain methods or invoke platform
 				functionality that provides this capability.</rationale>
-          <addressed-by>FPT_ITT.1/1 (if applicable, refined from MDM PP)</addressed-by>
+          <addressed-by>FPT_ITT.1/1 (if applicable, modified from MDM PP)</addressed-by>
 			<rationale>If the MDM TOE includes a claim of this PP-Module
 				to support protection of communications between distributed TOE components, this SFR supports the
 				objective by requiring the TOE to support the use of IPsec for that interface.</rationale>
-          <addressed-by>FTP_ITC.1/1 (if applicable, refined from MDM PP)</addressed-by>
+          <addressed-by>FTP_ITC.1/1 (if applicable, modified from MDM PP)</addressed-by>
 			<rationale>If the MDM TOE includes a claim of this PP-Module
 				to support protection of communications between the TOE and one or more trusted external IT entities,
 				this SFR supports the objective by requiring the TOE to support the use of IPsec for that 
 				interface.</rationale>
-          <addressed-by>FTP_TRP.1/1 (if applicable, refined from MDM PP)</addressed-by>
+          <addressed-by>FTP_TRP.1/1 (if applicable, modified from MDM PP)</addressed-by>
 			<rationale>If the MDM TOE includes a claim of this PP-Module
 				to support protection of communications between remote administrators and the TOE, this	SFR
 				supports the objective by requiring the TOE to support the use of IPsec for that interface.</rationale>
@@ -1077,9 +1078,9 @@ expected to enforce.<h:br/><h:br/>
                 of the selections can be specified by the ST author.
               </note>
               <aactivity level="element">
-                <TSS>Regardless of whether this requirement is met by the VPN client or the OS, the evaluator will check the
+                <TSS>Regardless of whether this requirement is met by the VPN client or the OS, the evaluator shall check the
 			TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to meet
-			the requirements in the ST. For each of these items, the evaluator will confirm that the TSS lists for what
+			the requirements in the ST. For each of these items, the evaluator shall confirm that the TSS lists for what
 			purpose it is used, and how it is stored. <h:br/><h:br/>
                   	The evaluator shall review the TSS for to determine that it makes a case that, for each item listed as being
 			manipulated, it is not written unencrypted to persistent memory, and that the item is
@@ -1269,7 +1270,7 @@ expected to enforce.<h:br/><h:br/>
                   The evaluator shall perform the following tests:
                   <testlist>
                     <test>The evaluator shall ensure that the TOE is able to initiate communications with a VPN gateway,
-			VPN client, IPsec-capable network device using the protocols specified in the requirement,
+			VPN client, or IPsec-capable network device using the protocols specified in the requirement,
 			setting up the connections as described in the operational guidance and ensuring that communication is
 			successful.</test>
                     <test>The evaluator shall ensure, for each communication channel with an IPsec peer, the channel data
@@ -1278,7 +1279,7 @@ expected to enforce.<h:br/><h:br/>
                     <test>The evaluator shall ensure, for each communication channel with an IPsec peer, modification of
 			the channel data is detected by the TOE.</test>
                     <test>The evaluator shall physically interrupt the connection from the TOE to the IPsec peer. The
-			evaluators shall ensure that subsequent communications are appropriately protected, at a minimum in
+			evaluator shall ensure that subsequent communications are appropriately protected, at a minimum in
 			the case of any attempts to automatically resume the connection or connect to a new access point.</test>
                   </testlist>
 		  Further EAs are associated with requirements for FCS_IPSEC_EXT.1.
@@ -1351,7 +1352,7 @@ expected to enforce.<h:br/><h:br/>
       <con-mod ref="OE.NO_TOE_BYPASS">This objective addresses behavior that is out of scope of the GPOS PP and
 		does not define an environment that a GPOS TOE is incapable of existing in.</con-mod>
       <con-mod ref="OE.PHYSICAL">This is part of satisfying OE.PLATFORM as defined in the GPOS PP because
-		physical security is required for hardware to be considered ‘trusted’</con-mod>
+		physical security is required for hardware to be considered ‘trusted’.</con-mod>
       <con-mod ref="OE.TRUSTED_CONFIG">The expectation of trusted configuration is consistent with OE.PROPER_USER
 		and OE.PROPER_ADMIN in the GPOS PP.</con-mod>
 	  
@@ -1365,7 +1366,7 @@ expected to enforce.<h:br/><h:br/>
       <con-mod ref="os-fcs-ckm-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
       <con-mod ref="os-fcs-ckm-2">The ST author is instructed to make specific selections at minimum to
-		address VPN client requirements; the SFR behavior itself is unmodified</con-mod>
+		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
       <con-mod ref="os-fcs-cop-1-1">The SFR is refined to list an additional AES mode that must be supported to
 		address VPN client requirements; the use of this mode for VPN connectivity
 		does not impact the ability of the GPOS to satisfy any of its other security
@@ -2006,7 +2007,7 @@ expected to enforce.<h:br/><h:br/>
       <con-mod ref="fmt-smf-1-vpn">The ability to configure the VPN client behavior does not affect whether the
 		MDF as a whole can perform its security functions.</con-mod>
       <con-mod ref="fpt-tst-ext-1-vpn">Self-testing of the VPN client functionality does not impact the ability of the
-		MDF to perform its security functions</con-mod>
+		MDF to perform its security functions.</con-mod>
 		
       <con-mod ref="fau-gen-1-vpn">Audit records generated by the VPN client do not interfere with MDF
 		functionality. The possibility of the underlying MDF platform generating
@@ -2066,7 +2067,7 @@ expected to enforce.<h:br/><h:br/>
         <section title="Cryptographic Support (FCS)" id="ap-m-fcs">
             
           <!-- 5.3.1.1 FCS_CKM.1/AK Cryptographic Asymmetric Key Generation -->
-          <f-component cc-id="fcs_ckm.1" id="ap-fcs-ckm-1-ak" name="Cryptographic Asymmetric Key Generation" iteration="AK">
+          <f-component cc-id="fcs_ckm_ext.1" id="ap-fcs-ckm-1-ak" name="Cryptographic Asymmetric Key Generation" iteration="AK">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified. Additionally, this behavior is selection-based in the App
@@ -2388,9 +2389,9 @@ expected to enforce.<h:br/><h:br/>
                 both of the selections can be specified by the ST author.
               </note>
               <aactivity level="element">
-                <TSS>Regardless of whether this requirement is met by the TOE or the TOE platform, the evaluator will check
+                <TSS>Regardless of whether this requirement is met by the TOE or the TOE platform, the evaluator shall check
 			the TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to
-			meet the requirements in the ST. For each of these items, the evaluator will confirm that the TSS lists for
+			meet the requirements in the ST. For each of these items, the evaluator shall confirm that the TSS lists for
 			what purpose it is used, and how it is stored. The evaluator then performs the following actions: <h:br/><h:br/>
 
                   	<h:b>Persistent secrets and private keys manipulated by the platform:</h:b><h:br/><h:br/>
@@ -2617,7 +2618,7 @@ expected to enforce.<h:br/><h:br/>
       <con-mod ref="fmt-smf-1-vpn">The ability to configure the VPN client behavior does not affect whether the
 		application as a whole can perform its security functions.</con-mod>
       <con-mod ref="fpt-tst-ext-1-vpn">Self-testing of the VPN client functionality does not impact the ability of the
-		application to perform its security functions</con-mod>
+		application to perform its security functions.</con-mod>
 		
       <con-mod ref="fau-gen-1-vpn">Audit records generated by the VPN client do not interfere with application
 		functionality. For cases where auditing is performed by the TOE platform, a
@@ -3097,7 +3098,7 @@ expected to enforce.<h:br/><h:br/>
 		PP because failure to mitigate against misconfiguration makes these
 		threats more significant. </con-mod>
       <con-mod ref="T.USER_DATA_REUSE">Inadvertent disclosure of user data to an unauthorized recipient is
-		consistent with the T.NETWORK_EAVESDROP threat in the MDM PP</con-mod>
+		consistent with the T.NETWORK_EAVESDROP threat in the MDM PP.</con-mod>
       <con-mod ref="T.TSF_FAILURE">A failure of TSF functionality could compromise the implementation of the
 		IPsec channel, which would lead to an exploitation of the T.NETWORK_ATTACK threat.</con-mod>
       <con-mod ref="A.NO_TOE_BYPASS">The A.NO_TOE_BYPASS assumption assumes that the OE is configured in such a manner that the only network route
@@ -3144,11 +3145,11 @@ expected to enforce.<h:br/><h:br/>
 		why this does not conflict with SFRs defined by the MDM PP are as follows:  -->
 
       <con-mod ref="dm-fcs-ckm-1">The ST author is instructed to make specific selections at minimum to
-		address VPN client requirements; the SFR behavior itself is unmodified</con-mod>
+		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
       <con-mod ref="dm-fcs-ckm-2">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
       <con-mod ref="dm-fcs-cop-1-1">The ST author is instructed to make specific selections at minimum to
-		address VPN client requirements; the SFR behavior itself is unmodified</con-mod>
+		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
       <con-mod ref="dm-fia-x509-ext-2">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; the SFR behavior itself is unmodified.</con-mod>
       <con-mod ref="dm-fpt-itt-1-1">When this SFR relates to the PP-Module’s functionality, the ST author is
@@ -3169,7 +3170,7 @@ expected to enforce.<h:br/><h:br/>
 
       <con-mod ref="fcs-ckm-1-vpn">This SFR defines the method of key generation for IKE peer authentication,
 		which is a function that does not interfere with the functionality defined in
-		the MDM PP</con-mod>
+		the MDM PP.</con-mod>
       <con-mod ref="fcs-ipsec-ext-1">This SFR defines the VPN client’s IPsec implementation, which is added
 		functionality that does not interfere with the MDM functions.</con-mod>
       <con-mod ref="fdp-rip-2">The requirement to protect against reuse of residual data is a property of
@@ -3181,7 +3182,7 @@ expected to enforce.<h:br/><h:br/>
 		
       <con-mod ref="fau-gen-1-vpn">Audit records generated by the VPN client do not interfere with MDM
 		functionality. The possibility of the MDM as a whole generating audit
-		records is consistent with the MDM PP, which already contains FAU_GEN.1</con-mod>
+		records is consistent with the MDM PP, which already contains FAU_GEN.1.</con-mod>
       <con-mod ref="fau-sel-1-vpn">The ability to suppress the generation of certain VPN client audit records
 		does not interfere with MDM functionality. The MDM PP already contains FAU_SEL.1 as an optional SFR which
 		means that this functionality does not conflict with the expected behavior of an MDM.</con-mod>
@@ -3464,7 +3465,7 @@ expected to enforce.<h:br/><h:br/>
 		application, how ordering of entries may be expressed, as well as the impacts that ordering of entries may
 		have on the packet processing.<h:br/><h:br/>
 
-               	In either case, the evaluator ensures the description provided In the TSS is consistent with the capabilities
+               	In either case, the evaluator shall ensure the description provided In the TSS is consistent with the capabilities
 		and description provided in the operational guidance.<h:br/><h:br/>
               </Guidance>
               <Tests>
@@ -3592,7 +3593,7 @@ expected to enforce.<h:br/><h:br/>
             <aactivity level="element">
               <TSS>The evaluator shall examine the TSS to verify that the algorithms AES-GCM-128 and AES-GCM-256 are
 		implemented. If the ST author has selected either AES-CBC-128 or AES-CBC-256 in the requirement, then
-		the evaluator verifies the TSS describes these as well. In addition, the evaluator ensures that the SHA-
+		the evaluator verifies the TSS describes these as well. In addition, the evaluator shall ensure that the SHA-
 		based HMAC algorithm conforms to the algorithms specified in the relevant iteration of FCS_COP.1 from
 		the Base-PP that applies to keyed-hash message authentication.<h:br/><h:br/></TSS>
               <Guidance>The evaluator checks the operational guidance to ensure it provides instructions on how the TOE is
@@ -3727,8 +3728,8 @@ expected to enforce.<h:br/><h:br/>
 			<test>
                			The evaluator shall configure the TOE to use the ciphersuite under test to encrypt the IKE payload for each 
 				supported IKE version and establish a connection with a peer device, which is configured to only accept the
-				payload encrypted using the indicated ciphersuite. The evaluator will confirm the algorithm was that used
-				in the negotiation. The evaluator will confirm that the connection is successful by confirming that data
+				payload encrypted using the indicated ciphersuite. The evaluator shall confirm the algorithm was that used
+				in the negotiation. The evaluator shall confirm that the connection is successful by confirming that data
 				can be passed through the connection once it is established. For example, the evaluator may connect to
 				a webpage on the remote network and verify that it can be reached.
 			</test>
@@ -4011,7 +4012,7 @@ expected to enforce.<h:br/><h:br/>
 		      describes any configuration necessary to enable any selected authentication mechanisms.   <h:br/><h:br/>
 		If any method other than no other method is selected, the evaluator shall check that the operational guidance describes any
 		      configuration necessary to enable any selected authentication mechanisms.<h:br/><h:br/>
-                The evaluator ensures the operational guidance describes how to set up the TOE to use the cryptographic
+                The evaluator shall ensure that the operational guidance describes how to set up the TOE to use the cryptographic
 		algorithms RSA, ECDSA, or either, depending which is claimed in the ST.<h:br/><h:br/>
                In order to construct the environment and configure the TOE for the following tests, the evaluator will
 		ensure that the operational guidance also describes how to configure the TOE to connect to a trusted CA,
@@ -4391,12 +4392,12 @@ expected to enforce.<h:br/><h:br/>
 
                 The evaluator also ensures that the TSS (or the operational guidance) describes the actions that take place
 		for successful (e.g. hash verified) and unsuccessful (e.g., hash not verified) cases. For checks implemented
-		entirely by the platform, the evaluator ensures that the operational guidance for the TOE references or
+		entirely by the platform, the evaluator shall ensure that the operational guidance for the TOE references or
 		includes the platform-specific guidance for each platform listed in the ST.<h:br/><h:br/>
               </TSS>
-              <Guidance>If not present in the TSS, the evaluator ensures that the operational guidance describes the actions that
+              <Guidance>If not present in the TSS, the evaluator shall ensure that the operational guidance describes the actions that
 		take place for successful (e.g. hash verified) and unsuccessful (e.g., hash not verified) cases. For checks
-		implemented entirely by the platform, the evaluator ensures that the operational guidance for the TOE
+		implemented entirely by the platform, the evaluator shall ensure that the operational guidance for the TOE
 		references or includes the platform-specific guidance for each platform listed in the ST.<h:br/><h:br/>
               </Guidance>
               <Tests>
@@ -4414,8 +4415,7 @@ expected to enforce.<h:br/><h:br/>
           <audit-event table="atref-mandatory"/>
         </f-component>
         
-        
-        
+                
         <f-component cc-id="fpt_tst_ext.1" id="fpt-tst-ext-1" name="TSF Self-Test" status="invisible">
           <consistency-rationale/>
           <comp-lev>requires the TOE to perform power on self-tests to verify its functionality and
