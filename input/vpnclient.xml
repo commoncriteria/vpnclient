@@ -4331,11 +4331,6 @@ expected to enforce.<h:br/><h:br/>
 		<!-- 5.5.4.1 FPT_TST_EXT.1/VPN TSF Self-Test (VPN Client)  -->
         <f-component cc-id="fpt_tst_ext.1" id="fpt-tst-ext-1-vpn" name="TSF Self-Test" iteration="VPN">
           <consistency-rationale/>
-          <comp-lev>requires the TOE to perform power on self-tests to verify its functionality and
-            the integrity of its stored executable code.</comp-lev>
-          <management>No specific management functions are identified.</management>
-          <audit>There are no auditable events foreseen.</audit>
-          <dependencies>No dependencies.</dependencies>
           <f-element id="fpt-tst-ext-1e1-vpn">
             <title>
 				The 
@@ -4417,6 +4412,45 @@ expected to enforce.<h:br/><h:br/>
             </aactivity>
           </f-element>
           <audit-event table="atref-mandatory"/>
+        </f-component>
+        
+        
+        
+        <f-component cc-id="fpt_tst_ext.1" id="fpt-tst-ext-1" name="TSF Self-Test" status="invisible">
+          <consistency-rationale/>
+          <comp-lev>requires the TOE to perform power on self-tests to verify its functionality and
+            the integrity of its stored executable code.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>No dependencies.</dependencies>
+          <f-element id="fpt-tst-ext-1e1">
+            <title>
+              The 
+              <selectables onlyone="yes">
+                <selectable>TOE</selectable>
+                <selectable>TOE platform</selectable>
+              </selectables> 
+              shall run a suite of self tests during initial start-up (on power on) to demonstrate the correct 
+              operation of the TSF.
+            </title>
+          </f-element>
+          <f-element id="fpt-tst-ext-1e2">
+            <title>
+              The 
+              <selectables onlyone="yes">
+                <selectable>TOE</selectable>
+                <selectable>TOE platform</selectable>
+              </selectables> 
+              shall provide the capability to verify the integrity of stored TSF executable code when it is loaded 
+              for execution through the use of the 
+              <assignable>cryptographic services provided either by the portion
+                of the TOE described by the Base-PP or by the OE</assignable>.
+            </title>
+            <aactivity level="component">
+       <no-tests/>
+            </aactivity>
+          </f-element>
+          <audit-event/>
         </f-component>
       </section>   <!-- FPT -->
     </man-sfrs>
@@ -4532,7 +4566,7 @@ expected to enforce.<h:br/><h:br/>
        
           
           <note role="application">
-            If FPF_MFA_EXT.1 is included FIA_PSK_EXT.1 must be included.
+            If FPF_MFA_EXT.1 is included, FIA_PSK_EXT.1 must be included.
             
             
           </note>
@@ -4695,7 +4729,7 @@ expected to enforce.<h:br/><h:br/>
               The TSF shall be able to use pre-shared keys for 
               <selectables>
                 <selectable>IKEv2</selectable>
-                <selectable>multifactor authentication filtering]</selectable>
+                <selectable>multifactor authentication filtering</selectable>
               </selectables>.
             </title>
           </f-element>
@@ -4731,13 +4765,13 @@ expected to enforce.<h:br/><h:br/>
               
               <h:br/><h:br/>If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included. 
               
-              <h:br/><h:br/>If any selection including Password-based keys is chosen, then FIA_PSK_EXT.3 must be included. 
+              <h:br/><h:br/>If any selection including password-based keys is chosen, then FIA_PSK_EXT.3 must be included. 
               
               <h:br/><h:br/>If any selection including HMAC-based one-time password keys is chosen, then FIA_PSK_EXT.4 must be included. 
               
               <h:br/><h:br/>If any selection including time-based one-time password is chosen, then FIA_PSK_EXT.5 must be included.  
               
-              <h:br/><h:br/>This requirement is selection dependent on FCS_IPSEC_EXT.1.11 or inclusion of FPF_MFA_EXT.1. 
+              <h:br/><h:br/>This requirement is selection-based on FCS_IPSEC_EXT.1.11 or inclusion of FPF_MFA_EXT.1. 
             </note>
             <aactivity level="component">
               <TSS>The evaluator shall examine the TSS to ensure that it identifies all protocols that allow  pre-shared keys. 
@@ -4791,9 +4825,9 @@ expected to enforce.<h:br/><h:br/>
               </selectables>.
             </title>
             <note role="application">
-              Generated PSKs are expected to be shared between components via an out of band mechanism. 
+              Generated PSKs are expected to be shared between components via an out-of-band mechanism. 
               
-              <h:br/><h:br/>This requirement is selection-dependent on FIA_PSK_EXT.1.<h:br/><h:br/>
+              <h:br/><h:br/>This requirement is selection-based on FIA_PSK_EXT.1.<h:br/><h:br/>
             </note>
             <aactivity level="element">
               <TSS>If "generate" is selected, the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1 
@@ -4894,12 +4928,12 @@ expected to enforce.<h:br/><h:br/>
               
               <h:br/><h:br/>For FIA_PSK_EXT.3.3, the ST author selects the parameters based on the PBKDF used by the TSF. 
               
-              <h:br/><h:br/>For FIA_PSK_EXT.3.4 If the minimum length is settable, then the ST author chooses "a value settable by the administrator." If the minimum length is not settable, 
+              <h:br/><h:br/>For FIA_PSK_EXT.3.4, if the minimum length is settable, then the ST author chooses "a value settable by the administrator." If the minimum length is not settable, 
               the ST author fills in the assignment with the minimum length the PSK must be. This requirement is to ensure bounds work properly.
               
               <h:br/><h:br/>For FIA_PSK_EXT.3.7, the ST author may select one, both, or neither of the functions in alignment with NIST SP 800-63b.
               
-              <h:br/><h:br/>This requirement is selection-dependent on FIA_PSK_EXT.1. 
+              <h:br/><h:br/>This requirement is selection-based on FIA_PSK_EXT.1. 
               </note>
               <aactivity level="component">
               <TSS>The evaluator shall examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are used.  
@@ -4974,16 +5008,16 @@ expected to enforce.<h:br/><h:br/>
             <title>
               The TSF shall accept and send an HOTP while initiating a VPN connection.
             </title>
-          
+          <!-- 
             <ext-comp-def-title><title>
               The TSF shall <selectables onlyone="yes">
                 <selectable>verify the HOTP</selectable>
                 <selectable>verify the HOTP via an external authentication server</selectable>
               </selectables> before establishing an incoming connection.
             </title></ext-comp-def-title>
-            
+            -->
             <note role="application">
-              This requirement is selection-dependent on FIA_PSK_EXT.1
+              This requirement is selection-based on FIA_PSK_EXT.1
               
          
             </note>
@@ -5025,6 +5059,7 @@ expected to enforce.<h:br/><h:br/>
             <title>
               The TSF shall accept and send a TOTP while initiating a VPN connection.
             </title>
+            <!-- 
             <ext-comp-def-title><title>
               The TSF shall 
               <selectables onlyone="yes">
@@ -5032,9 +5067,9 @@ expected to enforce.<h:br/><h:br/>
                 <selectable>verify the TOTP via an external authentication server</selectable>
               </selectables> before establishing an incoming connection.
             </title></ext-comp-def-title>
-            
+            -->
             <note role="application">
-          This requirement is dependent on FIA_PSK_EXT.1.
+          This requirement is selection-based on FIA_PSK_EXT.1.
             </note>
             <aactivity level="element">
               <TSS>The evaluator shall verify the TSS describes how the TOTP is input into the client and how that value is sent to the server.
@@ -5462,15 +5497,15 @@ expected to enforce.<h:br/><h:br/>
 			Protection Profile for Application Software</h:a>, Version 1.4, October 2021
       </description>
     </entry>
-
-    <entry id="bibSD"> <!-- TODO: Not sure if this is even necessary or if the 'combined' document is going to be the primary one used -->
+<!--
+    <entry id="bibSD"> 
       <tag>SD</tag>
       <description>
         Supporting Document Mandatory Technical Document, PP-Module for Virtual Private Network (VPN) Clients, 
         Version 2.5, June 10, 2024
       </description>
     </entry>
-
+-->
 	</bibliography>
 
 	<!-- Appendix G: Acronyms -->
