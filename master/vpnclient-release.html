@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html><head><meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta><meta content="utf-8" http-equiv="encoding"></meta><title>PP-Module for VPN Clients</title><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><script type="text/x-mathjax-config">
+<html><head><meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta><meta content="utf-8" http-equiv="encoding"></meta><title>PP-Module for VPN Client</title><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><script type="text/x-mathjax-config">
             MathJax.Hub.Config({
             extensions: ["tex2jax.js"],
             jax: ["input/TeX", "output/HTML-CSS"],
@@ -629,7 +629,7 @@ function showTarget(id){
 	            img[src="images/collapsed.png"] { display:none;}
 
           }
-    </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">PP-Module for VPN Clients</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
+    </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">PP-Module for VPN Client</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 2.5-Draft<br/>2024-06-10<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>2.5</td><td>2024-06-10</td><td>Incorporation of TC feedback: <ul>
         <li>Incorporation of TDs: 0662, 0672, 0690, 0697, 0711, 0725, 0753, 0788</li>
         <li>Corrections to <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> references</li>
@@ -896,7 +896,7 @@ The following sections list Common Criteria and technology terms used in this do
       traversal as specified in section 2.23 of <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7296. 
         <br/><br/>
 
-      To show that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> implements the RFCs correctly, the evaluator will perform the EAs
+      To show that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> implements the RFCs correctly, the evaluator shall perform the EAs
       documented in the <abbr class="dyn-abbr"><a href="#abbr_SD">SD</a></abbr> that accompanies this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. In future versions of this
       <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, EAs may be modified or new ones may be introduced that cover more aspects of <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> compliance
       than what is currently described in this publication.<br/><br/>
@@ -1115,7 +1115,7 @@ provide all of its security functionality.
             <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s authentication ability (IPsec) will allow the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to establish <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connectivity with a remote
             <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway or peer and ensure that any such connection attempt is both authenticated and
             authorized.<br/><br/>
-			Addressed by: <a href="#FIA_X509_EXT.3">FIA_X509_EXT.3</a> (when GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FDP_IFC_EXT.1">FDP_IFC_EXT.1</a> (refined
+			Addressed by: <a href="#FIA_X509_EXT.3">FIA_X509_EXT.3</a> (when GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FDP_IFC_EXT.1">FDP_IFC_EXT.1</a> (modified
 			from MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a> (modified from MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>),
 			<a href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a> (modified from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a> (modified from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>),
 			<a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a>, <a href="#FIA_BMA_EXT.1">FIA_BMA_EXT.1</a> (optional), <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional), <a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a> (selection-based), <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based), 
@@ -1128,11 +1128,11 @@ provide all of its security functionality.
 			  <a href="#FCS_COP.1/ENCRYPT">FCS_COP.1/ENCRYPT</a> (modified from GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FTP_ITC.1">FTP_ITC.1</a> (when GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)
 			  <a href="#FCS_CKM.1">FCS_CKM.1</a> (modified from MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FCS_CKM.2/UNLOCKED">FCS_CKM.2/UNLOCKED</a> (modified from MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
 			  <a href="#FCS_COP.1/ENCRYPT">FCS_COP.1/ENCRYPT</a> (modified from MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> (modified from MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
-			  <a href="#FCS_CKM.1/AK">FCS_CKM.1/AK</a> (modified from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FCS_CKM.2">FCS_CKM.2</a> (modified from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
+			  <a href="#FCS_CKM.1">FCS_CKM.1</a>/AK (modified from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FCS_CKM.2">FCS_CKM.2</a> (modified from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
 			  FCS_CKM_EXT.1 (modified from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FCS_COP.1/SKC">FCS_COP.1/SKC</a> (modified from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a> (modified from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>),
 			  <a href="#FCS_CKM.1">FCS_CKM.1</a> (modified from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FCS_CKM.2">FCS_CKM.2</a> (modified from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
-			  <a href="#FCS_COP.1/1">FCS_COP.1/1</a> (modified from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FPT_ITT.1/1">FPT_ITT.1/1</a> (if applicable, refined from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
-			  <a href="#FTP_ITC.1/1">FTP_ITC.1/1</a> (if applicable, refined from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FTP_TRP.1/1">FTP_TRP.1/1</a> (if applicable, refined from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
+			  <a href="#FCS_COP.1/1">FCS_COP.1/1</a> (modified from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FPT_ITT.1/1">FPT_ITT.1/1</a> (if applicable, modified from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
+			  <a href="#FTP_ITC.1/1">FTP_ITC.1/1</a> (if applicable, modified from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), <a href="#FTP_TRP.1/1">FTP_TRP.1/1</a> (if applicable, modified from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)
 			  <a href="#FCS_CKM.1/VPN">FCS_CKM.1/VPN</a>, <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a>, <a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a> (selection-based).
 		  </span></dd><dt class="SO defined" id="O.KNOWN_STATE">O.KNOWN_STATE</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will provide sufficient measures to ensure it is operating in a known state. At minimum this
             includes management functionality to allow the security functionality to be configured and self-test
@@ -1715,9 +1715,9 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         <h4 id="ap-m-fcs" class="indexable" data-level="4">5.3.1.1 Cryptographic Support (FCS)</h4>
             
           
-          <div class="comp" id="FCS_CKM.1/AK"><h4>FCS_CKM.1/AK Cryptographic Asymmetric Key Generation</h4>
+          <div class="comp" id="FCS_CKM_EXT.1/AK"><h4>FCS_CKM_EXT.1/AK Cryptographic Asymmetric Key Generation</h4>
             
-            <div class="element"><div class="reqid" id="FCS_CKM.1.1/AK"><a href="#FCS_CKM.1.1/AK" class="abbr">FCS_CKM.1.1/AK</a></div><div class="reqdesc">The application shall 
+            <div class="element"><div class="reqid" id="FCS_CKM_EXT.1.1/AK"><a href="#FCS_CKM_EXT.1.1/AK" class="abbr">FCS_CKM_EXT.1.1/AK</a></div><div class="reqdesc">The application shall 
                 [<b>selection</b><b>, choose one of</b>: <ul><li style=""><span class="selectable-content" id="_s_82">invoke platform-provided functionality</span></li><li style=""><span class="selectable-content" id="_s_83">implement functionality</span></li></ul>] to generate asymmetric cryptographic keys in accordance with a specified
                 cryptographic key generation algorithm
                   <ul>
@@ -2665,8 +2665,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
         </div>
         
-        
-        
+                
         
          
     <h2 id="obj-req-map" class="indexable" data-level="2">5.6 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each security objective for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
@@ -2710,7 +2709,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 				<abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implement symmetric encryption and decryption using certain methods.</td></tr>
 <tr><td><a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> (modified from MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
 				to support the use of IPsec as a trusted channel.</td></tr>
-<tr><td><a href="#FCS_CKM.1/AK">FCS_CKM.1/AK</a> (modified from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+<tr><td><a href="#FCS_CKM.1">FCS_CKM.1</a>/AK (modified from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
 				to implement key generation using certain methods or to support invoking this function from its <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>
 				platform.</td></tr>
 <tr><td><a href="#FCS_CKM.2">FCS_CKM.2</a> (modified from App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
@@ -2734,14 +2733,14 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 <tr><td><a href="#FCS_COP.1/1">FCS_COP.1/1</a> (modified from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring that the
 				<abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implement symmetric encryption and decryption using certain methods or invoke platform
 				functionality that provides this capability.</td></tr>
-<tr><td><a href="#FPT_ITT.1/1">FPT_ITT.1/1</a> (if applicable, refined from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>If the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes a claim of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
+<tr><td><a href="#FPT_ITT.1/1">FPT_ITT.1/1</a> (if applicable, modified from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>If the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes a claim of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
 				to support protection of communications between distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components, this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the
 				objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to support the use of IPsec for that interface.</td></tr>
-<tr><td><a href="#FTP_ITC.1/1">FTP_ITC.1/1</a> (if applicable, refined from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>If the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes a claim of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
+<tr><td><a href="#FTP_ITC.1/1">FTP_ITC.1/1</a> (if applicable, modified from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>If the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes a claim of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
 				to support protection of communications between the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and one or more trusted external <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entities,
 				this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to support the use of IPsec for that 
 				interface.</td></tr>
-<tr><td><a href="#FTP_TRP.1/1">FTP_TRP.1/1</a> (if applicable, refined from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>If the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes a claim of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
+<tr><td><a href="#FTP_TRP.1/1">FTP_TRP.1/1</a> (if applicable, modified from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>If the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes a claim of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
 				to support protection of communications between remote administrators and the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, this	<abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
 				supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to support the use of IPsec for that interface.</td></tr>
 <tr><td><a href="#FCS_CKM.1/VPN">FCS_CKM.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
@@ -2813,7 +2812,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       <table><caption><span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">9</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#OE.NO_TOE_BYPASS">OE.NO_TOE_BYPASS</a></td><td>This objective addresses behavior that is out of scope of the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and
 		does not define an environment that a GPOS <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is incapable of existing in.</td></tr><tr><td><a href="#OE.PHYSICAL">OE.PHYSICAL</a></td><td>This is part of satisfying <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PLATFORM as defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because
-		physical security is required for hardware to be considered ‘trusted’</td></tr><tr><td><a href="#OE.TRUSTED_CONFIG">OE.TRUSTED_CONFIG</a></td><td>The expectation of trusted configuration is consistent with <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_USER
+		physical security is required for hardware to be considered ‘trusted’.</td></tr><tr><td><a href="#OE.TRUSTED_CONFIG">OE.TRUSTED_CONFIG</a></td><td>The expectation of trusted configuration is consistent with <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_USER
 		and <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_ADMIN in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr></table></p><h3 id="conreq-bpp-gpos" class="indexable" data-level="3">6.1.4 
 	Consistency of Requirements
       </h3>
@@ -2828,7 +2827,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             as well as new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> 
           
           that are used entirely to provide functionality for
-	  <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients.
+	  <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client.
         
           The rationale for why this does not conflict with the claims
       defined by the
@@ -2836,7 +2835,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">10</span></span>: Consistency of Requirements (GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM.1">FCS_CKM.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
 		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.</td></tr><tr><td><a href="#FCS_CKM.2">FCS_CKM.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
-		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified</td></tr><tr><td><a href="#FCS_COP.1/ENCRYPT">FCS_COP.1/ENCRYPT</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is refined to list an additional <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> mode that must be supported to
+		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.</td></tr><tr><td><a href="#FCS_COP.1/ENCRYPT">FCS_COP.1/ENCRYPT</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is refined to list an additional <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> mode that must be supported to
 		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the use of this mode for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connectivity
 		does not impact the ability of the GPOS to satisfy any of its other security
 		requirements.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a></td><td>Storage of key data related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> functionality can be accomplished using
@@ -2910,7 +2909,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             as well as new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> 
           
           that are used entirely to provide functionality for
-	  <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients.
+	  <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client.
         
           The rationale for why this does not conflict with the claims
       defined by the
@@ -2932,7 +2931,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		functionality that does not interfere with the MDF functions.</td></tr><tr><td><a href="#FDP_RIP.2">FDP_RIP.2</a></td><td>The requirement to protect against reuse of residual data is a property of
 		the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client behavior and does not impact the MDF functionality.</td></tr><tr><td><a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a></td><td>The ability to configure the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client behavior does not affect whether the
 		MDF as a whole can perform its security functions.</td></tr><tr><td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>Self-testing of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality does not impact the ability of the
-		MDF to perform its security functions</td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FIA_BMA_EXT.1">FIA_BMA_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to biometric authentication, which does not conflict with the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because it may be a function offered by the 
+		MDF to perform its security functions.</td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FIA_BMA_EXT.1">FIA_BMA_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to biometric authentication, which does not conflict with the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because it may be a function offered by the 
         part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> described by the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr><tr><td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates specifically to the handling of traffic that is used for the
         establishment of IPsec connections.</td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_SEL.1/VPN">FAU_SEL.1/VPN</a></td><td>The ability to suppress the generation of certain <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client audit records
 		does not interfere with MDM functionality. The MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> already contains
@@ -3006,13 +3005,13 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             as well as new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> 
           
           that are used entirely to provide functionality for
-	  <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients.
+	  <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client.
         
           The rationale for why this does not conflict with the claims
       defined by the
       App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">18</span></span>: Consistency of Requirements (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM.1/AK">FCS_CKM.1/AK</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM_EXT.1/AK">FCS_CKM_EXT.1/AK</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
 		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.
 		Additionally, this behavior is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but is made
 		mandatory since it is required for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality.</td></tr><tr><td><a href="#FCS_CKM.2">FCS_CKM.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
@@ -3036,7 +3035,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		functionality that does not interfere with the application functions.</td></tr><tr><td><a href="#FDP_RIP.2">FDP_RIP.2</a></td><td>The requirement to protect against reuse of residual data is a property of
 		the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client behavior and does not impact the general application functionality. </td></tr><tr><td><a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a></td><td>The ability to configure the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client behavior does not affect whether the
 		application as a whole can perform its security functions.</td></tr><tr><td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>Self-testing of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality does not impact the ability of the
-		application to perform its security functions</td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FIA_BMA_EXT.1">FIA_BMA_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to biometric authentication, which does not conflict with the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because it may be a function offered by the 
+		application to perform its security functions.</td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FIA_BMA_EXT.1">FIA_BMA_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to biometric authentication, which does not conflict with the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because it may be a function offered by the 
         <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> in which a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> defined by the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is deployed.</td></tr><tr><td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates specifically to the handling of traffic that is used for the
         establishment of IPsec connections.</td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_SEL.1/VPN">FAU_SEL.1/VPN</a></td><td>The ability to suppress the generation of certain audit records related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>
 		activity does not interfere with the ability of the application to satisfy its security functionality.</td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a></td><td>Audit records generated by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client do not interfere with application
@@ -3066,7 +3065,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats in the MDM
 		<abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because failure to mitigate against misconfiguration makes these
 		threats more significant. </td></tr><tr><td><a href="#T.USER_DATA_REUSE">T.USER_DATA_REUSE</a></td><td>Inadvertent disclosure of user data to an unauthorized recipient is
-		consistent with the T.NETWORK_EAVESDROP threat in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></td></tr><tr><td><a href="#T.TSF_FAILURE">T.TSF_FAILURE</a></td><td>A failure of <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> functionality could compromise the implementation of the
+		consistent with the T.NETWORK_EAVESDROP threat in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr><tr><td><a href="#T.TSF_FAILURE">T.TSF_FAILURE</a></td><td>A failure of <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> functionality could compromise the implementation of the
 		IPsec channel, which would lead to an exploitation of the T.NETWORK_ATTACK threat.</td></tr><tr><td><a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a></td><td>The <a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a> assumption assumes that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> is configured in such a manner that the only network route
 		to the protected network is through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. This does not conflict with
 		the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> makes no assumptions about the
@@ -3111,16 +3110,16 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> also identifies a number of modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
           MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
           that are used entirely to provide functionality for
-	  <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients.
+	  <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client.
         
           The rationale for why this does not conflict with the claims
       defined by the
       MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">22</span></span>: Consistency of Requirements (MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM.1">FCS_CKM.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
-		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified</td></tr><tr><td><a href="#FCS_CKM.2">FCS_CKM.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
+		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.</td></tr><tr><td><a href="#FCS_CKM.2">FCS_CKM.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
 		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.</td></tr><tr><td><a href="#FCS_COP.1/1">FCS_COP.1/1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
-		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified</td></tr><tr><td><a href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
+		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.</td></tr><tr><td><a href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
 		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.</td></tr><tr><td><a href="#FPT_ITT.1/1">FPT_ITT.1/1</a></td><td>When this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>’s functionality, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is
 		instructed to make specific selections to implement this behavior using the
 		<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. This is done by forcing the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to make specific selections
@@ -3138,7 +3137,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 	      MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base.
 	    </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FCS_CKM.1/VPN">FCS_CKM.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the method of key generation for <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> peer authentication,
 		which is a function that does not interfere with the functionality defined in
-		the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></td></tr><tr><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client’s IPsec implementation, which is added
+		the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr><tr><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client’s IPsec implementation, which is added
 		functionality that does not interfere with the MDM functions.</td></tr><tr><td><a href="#FDP_RIP.2">FDP_RIP.2</a></td><td>The requirement to protect against reuse of residual data is a property of
 		the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client behavior and does not impact the MDM functionality. </td></tr><tr><td><a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a></td><td>The ability to configure the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client behavior does not affect whether the
 		MDM as a whole can perform its security functions. </td></tr><tr><td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>Self-testing of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality does not impact the ability of the
@@ -3149,7 +3148,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		does not interfere with MDM functionality. The MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> already contains FAU_SEL.1 as an optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> which
 		means that this functionality does not conflict with the expected behavior of an MDM.</td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a></td><td>Audit records generated by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client do not interfere with MDM
 		functionality. The possibility of the MDM as a whole generating audit
-		records is consistent with the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, which already contains FAU_GEN.1</td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines an additional cryptographic protocol that is beyond the scope of those defined
+		records is consistent with the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, which already contains FAU_GEN.1.</td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines an additional cryptographic protocol that is beyond the scope of those defined
 	      in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but does not prevent any MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functionality
         from being implemented.</td></tr><tr><td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the use of pre-shared keys, which is behavior that only
         relates to the establishment of IPsec connections.</td></tr><tr><td><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to use of pre-shared keys, which is behavior that only

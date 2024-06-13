@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html><head><title>Supporting Document - 
-    PP-Module for VPN Clients</title><style type="text/css">
+    PP-Module for VPN Client</title><style type="text/css">
     #toc a{
         display: block;
     }
@@ -273,7 +273,7 @@
    
    </style></head><body><div style="text-align: center; margin-left: auto; margin-right: auto;"><h1 class="title" style="page-break-before:auto;">Supporting Document<br/>
         Mandatory Technical Document</h1><img src="images/niaplogo.png" alt="NIAP"></img><hr width="50%"></hr><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><br/>
-    PP-Module for VPN Clients<br/>
+    PP-Module for VPN Client<br/>
       Version: 2.5-Draft<br/>2024-06-10<br/><b>National Information Assurance Partnership</b></div><div class="foreword"><h1 style="text-align: center">Foreword</h1><p>This is a Supporting Document (SD), intended to complement the Common Criteria version 3
       and the associated Common Evaluation Methodology for
       Information Technology Security Evaluation.</p><p>SDs may be “Guidance Documents”, that highlight specific approaches 
@@ -295,7 +295,7 @@
       products.
       </p><p><b>Acknowledgments:</b><br/>
       This SD was developed with support from NIAP 
-      VPN Clients
+      VPN Client
       Technical Community members, with representatives from industry, government 
       agencies, Common Criteria Test Laboratories, and members of academia.
       </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#aa-bpp-gpos" style="text-indent:10px">2.1<span>
@@ -310,9 +310,9 @@
         </span></a><a href="#app-audit-table" style="text-indent:40px">2.3.2.0.16<span>Auditable Events for App PP Additional SFRs</span></a><a href="#ap-a-fcs" style="text-indent:40px">2.3.2.0.17<span>Cryptographic Support (FCS)</span></a><a href="#aa-bpp-mdm" style="text-indent:10px">2.4<span>
     Protection Profile for Protection Profile for Mobile Device Management</span></a><a href="#qq-sfrs-bpp-mdm-Modified" style="text-indent:20px">2.4.1<span>Modified SFRs
         </span></a><a href="#dm-m-fcs" style="text-indent:40px">2.4.1.0.18<span>Cryptographic Support (FCS)</span></a><a href="#dm-m-fia" style="text-indent:40px">2.4.1.0.19<span>Identification and Authentication (FIA)</span></a><a href="#dm-m-fpt" style="text-indent:40px">2.4.1.0.20<span>Protection of the TSF (FPT)</span></a><a href="#dm-m-ftp" style="text-indent:40px">2.4.1.0.21<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">2.5<span>TOE SFR Evaluation Activities</span></a><a href="#m-fcs" style="text-indent:20px">2.5.1<span>Cryptographic Support (FCS)</span></a><a href="#m-fdp" style="text-indent:20px">2.5.2<span>User Data Protection (FDP)</span></a><a href="#m-fmt" style="text-indent:20px">2.5.3<span>Security Management (FMT)</span></a><a href="#m-fpt" style="text-indent:20px">2.5.4<span>Protection of the TSF (FPT)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.6<span>Evaluation Activities for Optional SFRs</span></a><a href="#o-fia" style="text-indent:20px">2.6.1<span>Identification and Authentication (FIA)</span></a><a href="#s-fpf" style="text-indent:20px">2.6.2<span>Packet Filtering (FPF)</span></a><a href="#sel-sfrs" style="text-indent:10px">2.7<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#s-fcs" style="text-indent:20px">2.7.1<span>Cryptographic Support (FCS)</span></a><a href="#s-fia" style="text-indent:20px">2.7.2<span>Identification and Authentication (FIA)</span></a><a href="#obj-sfrs" style="text-indent:10px">2.8<span>Evaluation Activities for Objective SFRs</span></a><a href="#ob-fau" style="text-indent:20px">2.8.1<span>Security Audit (FAU)</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.9<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#impl-dep-fau" style="text-indent:20px">2.9.1<span>Security Audit (FAU)</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
-    PP-Module for VPN Clients is
+    PP-Module for VPN Client is
     to describe the security functionality of 
-    VPN Clients
+    VPN Client
     products in terms of 
     [CC] and to define functional and assurance requirements for them.
 
@@ -328,7 +328,7 @@
         version 
         </a></li></ul><br/>
     This SD is mandatory for evaluations of TOEs that claim conformance to a PP-Configuration that includes the PP-Module for :
-    <ul><li>VPN Clients, Version 2.5-Draft</li></ul>
+    <ul><li>VPN Client, Version 2.5-Draft</li></ul>
     As such it defines Evaluation Activities for the functionality described in the PP-Module as well as any impacts to the Evaluation Activities to the Base-PP(s) it modifies.
     </p><p> 
 Although Evaluation Activities are defined mainly for the evaluators to follow, in general they also help developers to prepare for evaluation by identifying specific requirements for their TOE.
@@ -477,9 +477,9 @@ The following sections list Common Criteria and technology terms used in this do
         <h4 class="indexable" data-level="4" id="gpos-audit-table">2.1.2.0.2 Auditable Events for GPOS PP Additional SFRs</h4>
         
         <h4 class="indexable" data-level="4" id="os-a-fcs">2.1.2.0.3 Cryptographic Support (FCS)</h4><div class="comp" id="OS-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.2.1</div>
-                <div class="eacategory">TSS</div><div class="ea">Regardless of whether this requirement is met by the VPN client or the OS, the evaluator will check the
+                <div class="eacategory">TSS</div><div class="ea">Regardless of whether this requirement is met by the VPN client or the OS, the evaluator shall check the
 			TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to meet
-			the requirements in the ST. For each of these items, the evaluator will confirm that the TSS lists for what
+			the requirements in the ST. For each of these items, the evaluator shall confirm that the TSS lists for what
 			purpose it is used, and how it is stored. <br/><br/>
                   	The evaluator shall review the TSS for to determine that it makes a case that, for each item listed as being
 			manipulated, it is not written unencrypted to persistent memory, and that the item is
@@ -545,7 +545,7 @@ The following sections list Common Criteria and technology terms used in this do
                   <span class="testlist-"><ul>
                     <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FTP_ITC.1:1</a>:
       The evaluator shall ensure that the TOE is able to initiate communications with a VPN gateway,
-			VPN client, IPsec-capable network device using the protocols specified in the requirement,
+			VPN client, or IPsec-capable network device using the protocols specified in the requirement,
 			setting up the connections as described in the operational guidance and ensuring that communication is
 			successful.</li>
                     <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FTP_ITC.1:2</a>:
@@ -557,7 +557,7 @@ The following sections list Common Criteria and technology terms used in this do
 			the channel data is detected by the TOE.</li>
                     <li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FTP_ITC.1:4</a>:
       The evaluator shall physically interrupt the connection from the TOE to the IPsec peer. The
-			evaluators shall ensure that subsequent communications are appropriately protected, at a minimum in
+			evaluator shall ensure that subsequent communications are appropriately protected, at a minimum in
 			the case of any attempts to automatically resume the connection or connect to a new access point.</li>
                   </ul></span>
 		  Further EAs are associated with requirements for FCS_IPSEC_EXT.1.
@@ -662,7 +662,7 @@ The following sections list Common Criteria and technology terms used in this do
      <h3 class="indexable" data-level="2" id="qq-sfrs-bpp-app-Modified">2.3.1 Modified SFRs
         </h3>
         
-        <h4 class="indexable" data-level="4" id="ap-m-fcs">2.3.1.0.13 Cryptographic Support (FCS)</h4><div class="comp" id="AP-FCS-CKM-1-AK"><h4>FCS_CKM.1/AK Cryptographic Asymmetric Key Generation</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.1.1/AK</div>
+        <h4 class="indexable" data-level="4" id="ap-m-fcs">2.3.1.0.13 Cryptographic Support (FCS)</h4><div class="comp" id="AP-FCS-CKM-1-AK"><h4>FCS_CKM_EXT.1/AK Cryptographic Asymmetric Key Generation</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.1.1/AK</div>
                 Refer to the EA for <span class="no-link">FCS_CKM.1/AK</span> in the App PP.<br/><br/>
                 </span></div><div class="comp" id="AP-FCS-CKM-2"><h4>FCS_CKM.2 Cryptographic Key Establishment</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.2.1</div>
                   For all key establishment schemes refer to the EA for <span class="no-link">FCS_CKM.2</span> in the App PP.<br/><br/>
@@ -698,9 +698,9 @@ The following sections list Common Criteria and technology terms used in this do
         <h4 class="indexable" data-level="4" id="app-audit-table">2.3.2.0.16 Auditable Events for App PP Additional SFRs</h4>
         
         <h4 class="indexable" data-level="4" id="ap-a-fcs">2.3.2.0.17 Cryptographic Support (FCS)</h4><div class="comp" id="AP-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.2.1</div>
-                <div class="eacategory">TSS</div><div class="ea">Regardless of whether this requirement is met by the TOE or the TOE platform, the evaluator will check
+                <div class="eacategory">TSS</div><div class="ea">Regardless of whether this requirement is met by the TOE or the TOE platform, the evaluator shall check
 			the TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to
-			meet the requirements in the ST. For each of these items, the evaluator will confirm that the TSS lists for
+			meet the requirements in the ST. For each of these items, the evaluator shall confirm that the TSS lists for
 			what purpose it is used, and how it is stored. The evaluator then performs the following actions: <br/><br/>
 
                   	<b>Persistent secrets and private keys manipulated by the platform:</b><br/><br/>
@@ -913,7 +913,7 @@ The following sections list Common Criteria and technology terms used in this do
 		application, how ordering of entries may be expressed, as well as the impacts that ordering of entries may
 		have on the packet processing.<br/><br/>
 
-               	In either case, the evaluator ensures the description provided In the TSS is consistent with the capabilities
+               	In either case, the evaluator shall ensure the description provided In the TSS is consistent with the capabilities
 		and description provided in the operational guidance.<br/><br/>
               </div>
               <div class="eacategory">Tests</div><div class="ea">
@@ -1008,7 +1008,7 @@ The following sections list Common Criteria and technology terms used in this do
             <div class="element-activity-header">FCS_IPSEC_EXT.1.4</div>
               <div class="eacategory">TSS</div><div class="ea">The evaluator shall examine the TSS to verify that the algorithms AES-GCM-128 and AES-GCM-256 are
 		implemented. If the ST author has selected either AES-CBC-128 or AES-CBC-256 in the requirement, then
-		the evaluator verifies the TSS describes these as well. In addition, the evaluator ensures that the SHA-
+		the evaluator verifies the TSS describes these as well. In addition, the evaluator shall ensure that the SHA-
 		based HMAC algorithm conforms to the algorithms specified in the relevant iteration of FCS_COP.1 from
 		the Base-PP that applies to keyed-hash message authentication.<br/><br/></div>
               <div class="eacategory">Guidance</div><div class="ea">The evaluator checks the operational guidance to ensure it provides instructions on how the TOE is
@@ -1101,8 +1101,8 @@ The following sections list Common Criteria and technology terms used in this do
       
                			The evaluator shall configure the TOE to use the ciphersuite under test to encrypt the IKE payload for each 
 				supported IKE version and establish a connection with a peer device, which is configured to only accept the
-				payload encrypted using the indicated ciphersuite. The evaluator will confirm the algorithm was that used
-				in the negotiation. The evaluator will confirm that the connection is successful by confirming that data
+				payload encrypted using the indicated ciphersuite. The evaluator shall confirm the algorithm was that used
+				in the negotiation. The evaluator shall confirm that the connection is successful by confirming that data
 				can be passed through the connection once it is established. For example, the evaluator may connect to
 				a webpage on the remote network and verify that it can be reached.
 			</li>
@@ -1182,7 +1182,7 @@ The following sections list Common Criteria and technology terms used in this do
 		      describes any configuration necessary to enable any selected authentication mechanisms.   <br/><br/>
 		If any method other than no other method is selected, the evaluator shall check that the operational guidance describes any
 		      configuration necessary to enable any selected authentication mechanisms.<br/><br/>
-                The evaluator ensures the operational guidance describes how to set up the TOE to use the cryptographic
+                The evaluator shall ensure that the operational guidance describes how to set up the TOE to use the cryptographic
 		algorithms RSA, ECDSA, or either, depending which is claimed in the ST.<br/><br/>
                In order to construct the environment and configure the TOE for the following tests, the evaluator will
 		ensure that the operational guidance also describes how to configure the TOE to connect to a trusted CA,
@@ -1349,11 +1349,11 @@ The following sections list Common Criteria and technology terms used in this do
 
                 The evaluator also ensures that the TSS (or the operational guidance) describes the actions that take place
 		for successful (e.g. hash verified) and unsuccessful (e.g., hash not verified) cases. For checks implemented
-		entirely by the platform, the evaluator ensures that the operational guidance for the TOE references or
+		entirely by the platform, the evaluator shall ensure that the operational guidance for the TOE references or
 		includes the platform-specific guidance for each platform listed in the ST.<br/><br/>
-              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">If not present in the TSS, the evaluator ensures that the operational guidance describes the actions that
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">If not present in the TSS, the evaluator shall ensure that the operational guidance describes the actions that
 		take place for successful (e.g. hash verified) and unsuccessful (e.g., hash not verified) cases. For checks
-		implemented entirely by the platform, the evaluator ensures that the operational guidance for the TOE
+		implemented entirely by the platform, the evaluator shall ensure that the operational guidance for the TOE
 		references or includes the platform-specific guidance for each platform listed in the ST.<br/><br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following tests:
