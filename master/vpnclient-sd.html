@@ -384,10 +384,10 @@ The following sections list Common Criteria and technology terms used in this do
         A user that has administrative privilege to configure the TOE in privileged
         mode. </td></tr>
 <tr><td><div id="Authorized">Authorized</div></td><td>
-        An entity granted access privileges to an object, system or system entity.
+        An entity granted access privileges to an object, system, or system entity.
       </td></tr>
 <tr><td><div id="Critical_Security_Parameter">Critical Security Parameter (CSP)</div></td><td>
-        Security related information, e.g. secret and private cryptographic keys, and
+        Security related information such as secret and private cryptographic keys, and
         authentication data such as passwords and PINs, whose disclosure or
         modification can compromise the security of a cryptographic module. </td></tr>
 <tr><td><div id="Entropy_Source">Entropy Source</div></td><td>
@@ -405,7 +405,7 @@ The following sections list Common Criteria and technology terms used in this do
       </td></tr>
 <tr><td><div id="Privileged_Mode">Privileged Mode</div></td><td>
         A TOE operational mode that allows a user to perform functions that require
-        IT Environment administrator privileges.
+        IT environment administrator privileges.
       </td></tr>
 <tr><td><div id="Public_Network">Public Network</div></td><td>
         A network that is visible to all users and entities and does not protect against
@@ -415,12 +415,12 @@ The following sections list Common Criteria and technology terms used in this do
         An entity that tries to harm an information system through destruction,
         disclosure, modification of data, or denial of service.</td></tr>
 <tr><td><div id="Unauthorized_User">Unauthorized User</div></td><td>
-        An entity (device or user) who has not been authorized by an authorized
+        An entity (device or user) that has not been authorized by an authorized
         administrator to access the TOE or private network.
       </td></tr>
 <tr><td><div id="Unprivileged_Mode">Unprivileged Mode</div></td><td>
         A TOE operational mode that only provides VPN client functions for the VPN
-        Client user. </td></tr>
+        client user. </td></tr>
 <tr><td><div id="VPN_Client">VPN Client</div></td><td>
         The TOE; allows remote users to use client computers to establish an
         encrypted IPsec tunnel across an unprotected public network to a private
@@ -463,12 +463,12 @@ The following sections list Common Criteria and technology terms used in this do
         <h4 class="indexable" data-level="4" id="os-m-fcs">2.1.1.0.1 Cryptographic Support (FCS)</h4><div class="comp" id="OS-FCS-CKM-1"><h4>FCS_CKM.1 Cryptographic Key Generation</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.1.1</div>
             Refer to the evaluation activity for <span class="no-link">FCS_CKM.1</span> in the GPOS PP for evaluating this SFR.<br/><br/>
               </span></div><div class="comp" id="OS-FCS-CKM-2"><h4>FCS_CKM.2 Cryptographic Key Establishment</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.2.1</div>
-	  	Refer to the Assurance Activity for <span class="no-link">FCS_CKM.2.1</span> in the GPOS PP for evaluating this SFR. Note that
+	  	Refer to the EA for <span class="no-link">FCS_CKM.2.1</span> in the GPOS PP for evaluating this SFR. Note that
 		because a TOE that conforms to this PP-Module must implement IPsec, the tested protocols shall
 		include IPsec at minimum.    
 	  	<br/><br/>
-              </span></div><div class="comp" id="OS-FCS-COP-1-1"><h4>FCS_COP.1/1 Cryptographic Operation (Encryption and Decryption)</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_COP.1.1/1</div>
-                Refer to the EA for <span class="no-link">FCS_COP.1(1)</span> in the GPOS PP for evaluating this SFR.
+              </span></div><div class="comp" id="OS-FCS-COP-1-1"><h4>FCS_COP.1/ENCRYPT Cryptographic Operation (Encryption/Decryption)</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_COP.1.1/ENCRYPT</div>
+                Refer to the EA for <span class="no-link">FCS_COP.1/ENCRYPT</span> in the GPOS PP for evaluating this SFR.
                 <br/><br/>
               </span></div>
       <h3 class="indexable" data-level="2" id="qq-sfrs-bpp-gpos-Additional">2.1.2 Additional SFRs
@@ -719,7 +719,7 @@ The following sections list Common Criteria and technology terms used in this do
                 <div class="eacategory">Tests</div><div class="ea">There are no test EAs for this requirement.</div>
               </span></div><div class="comp" id="AP-FCS-CKM-EXT-4"><h4>FCS_CKM_EXT.4 Cryptographic Key Destruction</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.4.1</div>
                 <div class="eacategory">TSS</div><div class="ea">The evaluator shall ensure that all plaintext secret and private cryptographic keys and CSPs (whether
-			manipulated by the TOE or exclusively by the platform) are identified in the VPN Client ST's TSS, and that
+			manipulated by the TOE or exclusively by the platform) are identified in the VPN client ST's TSS, and that
 			they are accounted for by the EAs in this section. <br/><br/>
 
                   	<b>Requirement met by the platform:</b><br/><br/>
@@ -921,7 +921,7 @@ The following sections list Common Criteria and technology terms used in this do
 		application to configure the client. For Test 2, the evaluator is required to choose an application that
 		allows for the configuration of the full set of capabilities of the VPN client (in conjunction with the
 		platform). For example, if the client provides a robust interface that allows for specification of wildcards,
-		subnets, etc., it is unacceptable for the evaluator to choose a VPN Gateway that only allows for specifying
+		subnets, etc., it is unacceptable for the evaluator to choose a VPN gateway that only allows for specifying
 		a single fully qualified IP addresses in the rule.<br/><br/>
 
                 The evaluator shall perform the following tests:
@@ -1071,7 +1071,7 @@ The following sections list Common Criteria and technology terms used in this do
                   
                      <br/><br/> In the case that the VPN gateway enforces the TOE's configuration, the following steps should be performed to meet the objective of Test 2:
                     <ol type="1">
-                      <li>Configure the gateway and TOE client in the appropriate manner per the guidance documentation. (Gateway rejects Aggressive mode, Client rejects aggressive mode)</li>
+                      <li>Configure the gateway and TOE client in the appropriate manner per the guidance documentation (i.e., gateway rejects aggressive mode, client rejects aggressive mode).</li>
                       <li>Connect the TOE client to the gateway to obtain the configuration settings.</li>
                       <li>Observe the main mode connection is successful.</li>
                       <li>Disconnect the TOE from the gateway.</li>
@@ -1113,7 +1113,7 @@ The following sections list Common Criteria and technology terms used in this do
               <div class="eacategory">TSS</div><div class="ea">There are no TSS EAs for this requirement.<br/><br/></div>
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall check the operational guidance to ensure it provides instructions on how the TOE
 		configures the values for SA lifetimes. In addition, the evaluator shall check that the guidance has the
-		option for either the Administrator or VPN Gateway to configure Phase 1 SAs if time-based limits are
+		option for either the Administrator or VPN gateway to configure Phase 1 SAs if time-based limits are
 		supported. Currently there are no values mandated for the number of packets or number of bytes, the
 		evaluator shall simply check the operational guidance to ensure that this can be configured if selected in
 		the requirement.<br/><br/></div>
@@ -1301,7 +1301,7 @@ The following sections list Common Criteria and technology terms used in this do
                “Resources” in the context of this requirement are network packets being sent through (as opposed to
 		“to”, as is the case when a security administrator connects to the TOE) the TOE. The concern is that once
 		a network packet is sent, the buffer or memory area used by the packet still contains data from that
-		packet, and that if that buffer is re-used, those data might remain and make their way into a new packet.
+		packet, and that if that buffer is reused, those data might remain and make their way into a new packet.
 		The evaluator shall check to ensure that the TSS describes packet processing to the extent that they can
 		determine that no data will be reused when processing network packets. The evaluator shall ensure that
 		this description at a minimum describes how the previous data are zeroized/overwritten, and at what
@@ -1338,7 +1338,7 @@ The following sections list Common Criteria and technology terms used in this do
 		correctly. If some of the tests are performed by the TOE platform, the evaluator shall check the TSS to
 		ensure that those tests are identified, and that the ST for each platform contains a description of those
 		tests. Note that the tests that are required by this component are those that support security functionality
-		in the VPN Client PP-Module, which may not correspond to the set of all self-tests contained in the
+		in this PP-Module, which may not correspond to the set of all self-tests contained in the
 		platform STs.<br/><br/>
 
                 The evaluator shall examine the TSS to ensure that it describes how the integrity of stored TSF executable
@@ -1384,7 +1384,7 @@ The following sections list Common Criteria and technology terms used in this do
 		    other traffic is blocked until secondary authentication is successful.<br/><br/></div>
             
             <div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to verify that it provides any necessary instructions to the administrator on how
-		    to enable and configure filtering..<br/><br/> 
+		    to enable and configure filtering.<br/><br/> 
             </div>
             
             <div class="eacategory">Tests</div><div class="ea">
@@ -1588,13 +1588,13 @@ The following sections list Common Criteria and technology terms used in this do
 	          component that is responsible for each type of auditable event.<br/><br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall check the operational guidance and ensure that it lists all of the auditable events and
 	          provides a format for audit records. Each audit record format type must be covered, along with a brief
 	          description of each field. The evaluator shall check to make sure that every audit event type mandated by
-	          the VPN Client PP-Module is described and that the description of the fields contains the information
+	          the PP-Module for VPN Clients is described and that the description of the fields contains the information
 	          required in FAU_GEN.1.2/VPN, and the additional information specified in the Auditable Events table of
-	          the VPN Client PP-PP-Module.
+	          the PP-Module for VPN Clients.
 	          <br/><br/>
 	          
 	          In particular, the evaluator shall ensure that the operational guidance is clear in relation to the contents
-	          for failed cryptographic events. In the Auditable Events table of the VPN Client PP-Module, information
+	          for failed cryptographic events. In the Auditable Events table of the PP-Module for VPN Clients, information
 	          detailing the cryptographic mode of operation and a name or identifier for the object being encrypted is
 	          required. The evaluator shall ensure that name or identifier is sufficient to allow an administrator
 	          reviewing the audit log to determine the context of the cryptographic operation (for example, performed
@@ -1602,14 +1602,14 @@ The following sections list Common Criteria and technology terms used in this do
 	          endpoint of the connection for cryptographic failures relating to communications with other IT systems.<br/><br/>
 	          
 	          The evaluator shall also make a determination of the administrative actions that are relevant in the
-	          context of the VPN Client PP-Module. The TOE may contain functionality that is not evaluated in the
-	          context of the VPN Client PP-Module because the functionality is not specified in an SFR. This functionality
+	          context of the PP-Module for VPN Clients. The TOE may contain functionality that is not evaluated in the
+	          context of the PP-Module for VPN Clients because the functionality is not specified in an SFR. This functionality
 	          may have administrative aspects that are described in the operational guidance. Since such administrative
 	          actions will not be performed in an evaluated configuration of the TOE, the evaluator shall examine the
 	          operational guidance and make a determination of which administrative commands, including
 	          subcommands, scripts, and configuration files, are related to the configuration (including enabling or
 	          disabling) of the mechanisms implemented in the TOE that are necessary to enforce the requirements
-	          specified in the VPN Client PP-Module, which thus form the set of “all administrative actions”. The
+	          specified in the PP-Module for VPN Clients, which thus form the set of “all administrative actions”. The
 	          evaluator may perform this activity as part of the activities associated with ensuring the AGD_OPE
 	          guidance satisfies the requirements.<br/><br/>
 	          
@@ -1617,9 +1617,9 @@ The following sections list Common Criteria and technology terms used in this do
 	          that it is clear to the reader where each event is generated (e.g. the TSF may generate its own audit logs
 	          in one location while the platform-provided auditable events are generated elsewhere).<br/><br/>
 	        </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the TOE’s ability to correctly generate audit records by having the TOE generate
-	          audit records in accordance with the EAs associated with the functional requirements in the VPN Client 
-	          PP-Module. Additionally, the evaluator shall test that each administrative action applicable in the context
-	          of the VPN Client PP-Module is auditable. When verifying the test results, the evaluator shall ensure the
+	          audit records in accordance with the EAs associated with the functional requirements in the PP-Module for VPN Clients. 
+	          Additionally, the evaluator shall test that each administrative action applicable in the context
+	          of the PP-Module for VPN Clients is auditable. When verifying the test results, the evaluator shall ensure the
 	          audit records generated during testing match the format specified in the administrative guide, and that
 	          the fields in each audit record have the proper entries.
 	          <br/><br/>
