@@ -1394,7 +1394,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             
             
             <div class="element"><div class="reqid" id="FIA_X509_EXT.3.1"><a href="#FIA_X509_EXT.3.1" class="abbr">FIA_X509_EXT.3.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use X.509v3 certificates as defined by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5280 to support
-              authentication for IPsec exchanges, and [<b>selection</b>: <span class="selectable-content" id="_s_21">digital signatures for FPT_TUD_EXT.1</span>, <span class="selectable-content" id="_s_22">integrity checks for FPT_TST_EXT.1</span>, <span class="selectable-content" id="_s_23">no additional uses</span>].
+              authentication for IPsec exchanges, and [<b>selection</b>: <span class="selectable-content" id="_s_21">digital signatures for FPT_TUD_EXT.1</span>, <span class="selectable-content" id="_s_22">integrity checks for <a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a></span>, <span class="selectable-content" id="_s_23">no additional uses</span>].
               </div></div>
             <div class="element"><div class="reqid" id="FIA_X509_EXT.3.2"><a href="#FIA_X509_EXT.3.2" class="abbr">FIA_X509_EXT.3.2</a></div><div class="reqdesc">
                   When a connection to determine the validity of a certificate cannot be
@@ -1422,11 +1422,11 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             
           <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="element-activity-header"><a href="#FIA_X509_EXT.3.1">FIA_X509_EXT.3.1</a></div>
                 <a href="#FIA_X509_EXT.3.1">FIA_X509_EXT.3.1</a> is evaluated as part of <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> (and
-                conditionally as part of FPT_TUD_EXT.1 or FPT_TST_EXT.1).
+                conditionally as part of FPT_TUD_EXT.1 or <a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a>).
                 <br/><br/>
               <div class="element-activity-header"><a href="#FIA_X509_EXT.3.2">FIA_X509_EXT.3.2</a></div>
                 The EAs below apply to <a href="#FIA_X509_EXT.3.2">FIA_X509_EXT.3.2</a>. <a href="#FIA_X509_EXT.3.1">FIA_X509_EXT.3.1</a> is evaluated as part of <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> (and
-                conditionally as part of FPT_TUD_EXT.1 or FPT_TST_EXT.1) and <a href="#FIA_X509_EXT.3.3">FIA_X509_EXT.3.3</a> is evaluated as part
+                conditionally as part of FPT_TUD_EXT.1 or <a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a>) and <a href="#FIA_X509_EXT.3.3">FIA_X509_EXT.3.3</a> is evaluated as part
                 of <a href="#FCS_IPSEC_EXT.1.11">FCS_IPSEC_EXT.1.11</a>.
                 <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall check the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it describes whether the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client or the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> implements
                   the certificate validation functionality, how the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client/<abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> chooses which certificates to use, and any
@@ -3453,10 +3453,6 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		
         <div class="comp" id="FPT_TST_EXT.1/VPN"><h4>FPT_TST_EXT.1/VPN TSF Self-Test</h4>
           
-          
-          
-          
-          
           <div class="element"><div class="reqid" id="FPT_TST_EXT.1.1/VPN"><a href="#FPT_TST_EXT.1.1/VPN" class="abbr">FPT_TST_EXT.1.1/VPN</a></div><div class="reqdesc">
 				The 
 				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_295"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_296"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
@@ -3532,6 +3528,36 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			executable and verifies that the check fails.</li>
                 </ul></span>
               </div></div></div></div></div>
+        
+        
+        
+        <div class="comp" id="FPT_TST_EXT.1"><h4>FPT_TST_EXT.1 TSF Self-Test</h4>
+          
+          
+          
+          
+          
+          <div class="element"><div class="reqid" id="FPT_TST_EXT.1.1"><a href="#FPT_TST_EXT.1.1" class="abbr">FPT_TST_EXT.1.1</a></div><div class="reqdesc">
+              The 
+              [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_299"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_300"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
+              shall run a suite of self tests during initial start-up (on power on) to demonstrate the correct 
+              operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.
+            </div></div>
+          <div class="element"><div class="reqid" id="FPT_TST_EXT.1.2"><a href="#FPT_TST_EXT.1.2" class="abbr">FPT_TST_EXT.1.2</a></div><div class="reqdesc">
+              The 
+              [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_301"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_302"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
+              shall provide the capability to verify the integrity of stored <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable code when it is loaded 
+              for execution through the use of the 
+              [<b>assignment</b>: 
+     <span class="assignable-content">cryptographic services provided either by the portion
+                of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> described by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> or by the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr></span>].
+            </div></div>
+          
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a></div>
+       
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div>
          
     <h2 id="obj-req-map" class="indexable" data-level="2">5.6 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each security objective for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
     showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to meet and achieve the security objectives:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">6</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Objective</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="14"><a href="#O.AUTHENTICATION">O.AUTHENTICATION</a><br/></td><td><a href="#FIA_X509_EXT.3">FIA_X509_EXT.3</a> (when GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by enforcing the use
@@ -4079,7 +4105,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             except those necessary to ensure that the client is authenticated according to <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-            If <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> is included <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> must be included.
+            If <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> is included, <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> must be included.
             
             
           </span></div></div></div>
@@ -4325,18 +4351,18 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           <div class="element"><div class="reqid" id="FCS_EAP_EXT.1.1"><a href="#FCS_EAP_EXT.1.1" class="abbr">FCS_EAP_EXT.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support
-              [<b>selection</b>: <span class="selectable-content" id="_s_299">EAP-TLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5216 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>, <span class="selectable-content" id="_s_300">EAP-TTLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5281 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>]
+              [<b>selection</b>: <span class="selectable-content" id="_s_303">EAP-TLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5216 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>, <span class="selectable-content" id="_s_304">EAP-TTLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5281 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>]
               over a protected channel per <a href="#FTP_ITC.1">FTP_ITC.1</a> from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> with an authentication server. 
             </div></div>
           <div class="element"><div class="reqid" id="FCS_EAP_EXT.1.2"><a href="#FCS_EAP_EXT.1.2" class="abbr">FCS_EAP_EXT.1.2</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement 
-              [<b>selection</b>: <span class="selectable-content" id="_s_301">EAP-TLS</span>, <span class="selectable-content" id="_s_302">EAP-TTLS</span>]
+              [<b>selection</b>: <span class="selectable-content" id="_s_305">EAP-TLS</span>, <span class="selectable-content" id="_s_306">EAP-TTLS</span>]
               with the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> as the EAP client, an external authentication server as the EAP server and the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer as the supplicant. 
             </div></div>
       
           <div class="element"><div class="reqid" id="FCS_EAP_EXT.1.3"><a href="#FCS_EAP_EXT.1.3" class="abbr">FCS_EAP_EXT.1.3</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the MSK from the 
-              [<b>selection</b>: <span class="selectable-content" id="_s_303">EAP-TLS</span>, <span class="selectable-content" id="_s_304">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload.
+              [<b>selection</b>: <span class="selectable-content" id="_s_307">EAP-TLS</span>, <span class="selectable-content" id="_s_308">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload.
             </div></div>
           
           
@@ -4403,7 +4429,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 	  
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.1.1"><a href="#FIA_PSK_EXT.1.1" class="abbr">FIA_PSK_EXT.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for 
-              [<b>selection</b>: <span class="selectable-content" id="_s_305">IKEv2</span>, <span class="selectable-content" id="_s_306">multifactor authentication filtering]</span>].
+              [<b>selection</b>: <span class="selectable-content" id="_s_309">IKEv2</span>, <span class="selectable-content" id="_s_310">multifactor authentication filtering</span>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.1.2"><a href="#FIA_PSK_EXT.1.2" class="abbr">FIA_PSK_EXT.1.2</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept the following as pre-shared keys: 
@@ -4415,13 +4441,13 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               
               <br/><br/>If any selection including "generated bit-based" is chosen, then <a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> must be included. 
               
-              <br/><br/>If any selection including Password-based keys is chosen, then <a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a> must be included. 
+              <br/><br/>If any selection including password-based keys is chosen, then <a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a> must be included. 
               
               <br/><br/>If any selection including HMAC-based one-time password keys is chosen, then <a href="#FIA_PSK_EXT.4">FIA_PSK_EXT.4</a> must be included. 
               
               <br/><br/>If any selection including time-based one-time password is chosen, then <a href="#FIA_PSK_EXT.5">FIA_PSK_EXT.5</a> must be included.  
               
-              <br/><br/>This requirement is selection dependent on <a href="#FCS_IPSEC_EXT.1.11">FCS_IPSEC_EXT.1.11</a> or inclusion of <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a>. 
+              <br/><br/>This requirement is selection-based on <a href="#FCS_IPSEC_EXT.1.11">FCS_IPSEC_EXT.1.11</a> or inclusion of <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a>. 
             </span></div></div></div>
             
             
@@ -4458,17 +4484,17 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.2.1"><a href="#FIA_PSK_EXT.2.1" class="abbr">FIA_PSK_EXT.2.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_323">accept externally generated pre-shared keys</span></li><li style=""><span class="selectable-content" id="_s_324">
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_327">accept externally generated pre-shared keys</span></li><li style=""><span class="selectable-content" id="_s_328">
                   generate 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_325">128</span>, <span class="selectable-content" id="_s_326">256</span>] bit-based pre-shared keys via FCS_RBG_EXT.1. 
+                  [<b>selection</b>: <span class="selectable-content" id="_s_329">128</span>, <span class="selectable-content" id="_s_330">256</span>] bit-based pre-shared keys via FCS_RBG_EXT.1. 
                   
                 </span></li></ul>].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-              Generated PSKs are expected to be shared between components via an out of band mechanism. 
+              Generated PSKs are expected to be shared between components via an out-of-band mechanism. 
               
-              <br/><br/>This requirement is selection-dependent on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>.<br/><br/>
+              <br/><br/>This requirement is selection-based on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>.<br/><br/>
             </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="element-activity-header"><a href="#FIA_PSK_EXT.2.1">FIA_PSK_EXT.2.1</a></div>
@@ -4505,18 +4531,18 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.2"><a href="#FIA_PSK_EXT.3.2" class="abbr">FIA_PSK_EXT.3.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow PSKs to be composed of any combination of upper case characters, 
               lower case characters, numbers, and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and 
-              [<b>selection</b>: <span class="selectable-content" id="_s_327">[<b>assignment</b>: 
-     <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_328">no other characters</span>]
+              [<b>selection</b>: <span class="selectable-content" id="_s_331">[<b>assignment</b>: 
+     <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_332">no other characters</span>]
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.3"><a href="#FIA_PSK_EXT.3.3" class="abbr">FIA_PSK_EXT.3.3</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-[<b>selection</b>: <span class="selectable-content" id="_s_329"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-256</span>, <span class="selectable-content" id="_s_330"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-384</span>, <span class="selectable-content" id="_s_331"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-512</span>], with 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-[<b>selection</b>: <span class="selectable-content" id="_s_333"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-256</span>, <span class="selectable-content" id="_s_334"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-384</span>, <span class="selectable-content" id="_s_335"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-512</span>], with 
               [<b>assignment</b>: 
      <span class="assignable-content">positive integer of 4096 or more</span>] iterations, and output cryptographic key sizes 
-              [<b>selection</b>: <span class="selectable-content" id="_s_332">128</span>, <span class="selectable-content" id="_s_333">256</span>] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-132].
+              [<b>selection</b>: <span class="selectable-content" id="_s_336">128</span>, <span class="selectable-content" id="_s_337">256</span>] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-132].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.4"><a href="#FIA_PSK_EXT.3.4" class="abbr">FIA_PSK_EXT.3.4</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not accept PSKs less than 
-              [<b>selection</b>: <span class="selectable-content" id="_s_334">a value settable by the administrator</span>, <span class="selectable-content" id="_s_335">[<b>assignment</b>: 
+              [<b>selection</b>: <span class="selectable-content" id="_s_338">a value settable by the administrator</span>, <span class="selectable-content" id="_s_339">[<b>assignment</b>: 
      <span class="assignable-content">minimum PSK length accepted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, must be &gt;= 6</span>]</span>] and greater than the maximum PSK length defined in <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>.
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.5"><a href="#FIA_PSK_EXT.3.5" class="abbr">FIA_PSK_EXT.3.5</a></div><div class="reqdesc">
@@ -4529,7 +4555,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
             <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.7"><a href="#FIA_PSK_EXT.3.7" class="abbr">FIA_PSK_EXT.3.7</a></div><div class="reqdesc">
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-                [<b>selection</b>: <span class="selectable-content" id="_s_336">provide a password strength meter</span>, <span class="selectable-content" id="_s_337">check the password against a denylist</span>, <span class="selectable-content" id="_s_338">perform no action to assist the user in choosing a strong password</span>]. 
+                [<b>selection</b>: <span class="selectable-content" id="_s_340">provide a password strength meter</span>, <span class="selectable-content" id="_s_341">check the password against a denylist</span>, <span class="selectable-content" id="_s_342">perform no action to assist the user in choosing a strong password</span>]. 
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -4540,12 +4566,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               
               <br/><br/>For <a href="#FIA_PSK_EXT.3.3">FIA_PSK_EXT.3.3</a>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects the parameters based on the PBKDF used by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. 
               
-              <br/><br/>For <a href="#FIA_PSK_EXT.3.4">FIA_PSK_EXT.3.4</a> If the minimum length is settable, then the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author chooses "a value settable by the administrator." If the minimum length is not settable, 
+              <br/><br/>For <a href="#FIA_PSK_EXT.3.4">FIA_PSK_EXT.3.4</a>, if the minimum length is settable, then the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author chooses "a value settable by the administrator." If the minimum length is not settable, 
               the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author fills in the assignment with the minimum length the PSK must be. This requirement is to ensure bounds work properly.
               
               <br/><br/>For <a href="#FIA_PSK_EXT.3.7">FIA_PSK_EXT.3.7</a>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may select one, both, or neither of the functions in alignment with <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-63b.
               
-              <br/><br/>This requirement is selection-dependent on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>. 
+              <br/><br/>This requirement is selection-based on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>. 
               </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a></div>
@@ -4625,7 +4651,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-              This requirement is selection-dependent on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>
+              This requirement is selection-based on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>
               
          
             </span></div></div></div>
@@ -4668,7 +4694,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-          This requirement is dependent on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>.
+          This requirement is selection-based on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>.
             </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="element-activity-header"><a href="#FIA_PSK_EXT.5.1">FIA_PSK_EXT.5.1</a></div>
@@ -4814,15 +4840,15 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
              defines the use of EAP-TLS.</p><h4>Management: FCS_EAP_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FCS_EAP_EXT.1</h4><p>No specific audit functions are identified.
           </p><h4>FCS_EAP_EXT.1 EAP-TLS</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FCS_IPSEC_EXT.1</span> IPsec</td></tr></table><h4 id="ext-comp-FCS_EAP_EXT.1.1">FCS_EAP_EXT.1.1</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support
-              [<b>selection</b>: <span class="selectable-content" id="_s_299">EAP-TLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5216 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>, <span class="selectable-content" id="_s_300">EAP-TTLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5281 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>]
+              [<b>selection</b>: <span class="selectable-content" id="_s_303">EAP-TLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5216 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>, <span class="selectable-content" id="_s_304">EAP-TTLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5281 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>]
               over a protected channel per <a href="#FTP_ITC.1">FTP_ITC.1</a> from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> with an authentication server. 
             <h4 id="ext-comp-FCS_EAP_EXT.1.2">FCS_EAP_EXT.1.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement 
-              [<b>selection</b>: <span class="selectable-content" id="_s_301">EAP-TLS</span>, <span class="selectable-content" id="_s_302">EAP-TTLS</span>]
+              [<b>selection</b>: <span class="selectable-content" id="_s_305">EAP-TLS</span>, <span class="selectable-content" id="_s_306">EAP-TTLS</span>]
               with the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> as the EAP client, an external authentication server as the EAP server and the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer as the supplicant. 
             <h4 id="ext-comp-FCS_EAP_EXT.1.3">FCS_EAP_EXT.1.3</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the MSK from the 
-              [<b>selection</b>: <span class="selectable-content" id="_s_303">EAP-TLS</span>, <span class="selectable-content" id="_s_304">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload.
+              [<b>selection</b>: <span class="selectable-content" id="_s_307">EAP-TLS</span>, <span class="selectable-content" id="_s_308">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload.
             </div></div></span><span data-sortkey="Identification and Authentication (FIA)"><h3 id="ext-comp-FIA" class="indexable" data-level="3">C.2.2 Identification and Authentication (FIA)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FIA class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FIA_X509_EXT" class="indexable" data-level="4">C.2.2.1 FIA_X509_EXT X.509 Certificate Use and Management</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe the requirements that pertain to <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic and information flow
@@ -4833,7 +4859,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               invalid.</p><h4>Management: FIA_X509_EXT.3</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_X509_EXT.3</h4><p>There are no auditable events foreseen.</p><h4>FIA_X509_EXT.3 X.509 Certificate Use and Management</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FIA_X509_EXT.1 X.509 Certificate Validation<br/><br/>
               <span class="no-link">FPT_TST_EXT.1</span> <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test<br/><br/>
             FPT_TUD_EXT.1 Trusted Update</td></tr></table><h4 id="ext-comp-FIA_X509_EXT.3.1">FIA_X509_EXT.3.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use X.509v3 certificates as defined by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5280 to support
-              authentication for IPsec exchanges, and [<b>selection</b>: <span class="selectable-content" id="_s_21">digital signatures for FPT_TUD_EXT.1</span>, <span class="selectable-content" id="_s_22">integrity checks for FPT_TST_EXT.1</span>, <span class="selectable-content" id="_s_23">no additional uses</span>].
+              authentication for IPsec exchanges, and [<b>selection</b>: <span class="selectable-content" id="_s_21">digital signatures for FPT_TUD_EXT.1</span>, <span class="selectable-content" id="_s_22">integrity checks for <a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a></span>, <span class="selectable-content" id="_s_23">no additional uses</span>].
               <h4 id="ext-comp-FIA_X509_EXT.3.2">FIA_X509_EXT.3.2</h4>
                   When a connection to determine the validity of a certificate cannot be
                   established, the [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_24"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="_s_25"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>] shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_26">allow the administrator to choose whether to accept the certificate in these cases</span>, <span class="selectable-content" id="_s_27">accept the certificate</span>, <span class="selectable-content" id="_s_28">not accept the certificate</span>].
@@ -4858,19 +4884,19 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
              defines the use and composition of TOTP pre-shared keys used for IPsec.</p><h4>Management: FIA_PSK_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.1</h4><p>No specific audit functions are identified.
           </p><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FCS_IPSEC_EXT.1</span> IPsec</td></tr></table><h4 id="ext-comp-FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for 
-              [<b>selection</b>: <span class="selectable-content" id="_s_305">IKEv2</span>, <span class="selectable-content" id="_s_306">multifactor authentication filtering]</span>].
+              [<b>selection</b>: <span class="selectable-content" id="_s_309">IKEv2</span>, <span class="selectable-content" id="_s_310">multifactor authentication filtering</span>].
             <h4 id="ext-comp-FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept the following as pre-shared keys: 
-              [<b>selection</b>: <span class="selectable-content" id="_s_315">generated bit-based</span>, <span class="selectable-content" id="_s_316">password-based</span>, <span class="selectable-content" id="_s_317">HMAC-based one-time password</span>, <span class="selectable-content" id="_s_318">time-based one-time password</span>, <span class="selectable-content" id="_s_319">combination of a generated bit-based and HMAC-based one-time password</span>, <span class="selectable-content" id="_s_320">combination of a generated bit-based and time-based one-time password</span>, <span class="selectable-content" id="_s_321">combination of a password-based and HMAC-based one-time password</span>, <span class="selectable-content" id="_s_322">combination of a password-based and time-based one-time password</span>] keys.
+              [<b>selection</b>: <span class="selectable-content" id="_s_319">generated bit-based</span>, <span class="selectable-content" id="_s_320">password-based</span>, <span class="selectable-content" id="_s_321">HMAC-based one-time password</span>, <span class="selectable-content" id="_s_322">time-based one-time password</span>, <span class="selectable-content" id="_s_323">combination of a generated bit-based and HMAC-based one-time password</span>, <span class="selectable-content" id="_s_324">combination of a generated bit-based and time-based one-time password</span>, <span class="selectable-content" id="_s_325">combination of a password-based and HMAC-based one-time password</span>, <span class="selectable-content" id="_s_326">combination of a password-based and time-based one-time password</span>] keys.
             </div><h4>Management: FIA_PSK_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.2</h4><p>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the
             <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:<ul>
               <li>Failure of the randomization process</li>
             </ul>
           </p><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FIA_PSK_EXT.1</span> Pre-Shared Key Composition</td></tr></table><h4 id="ext-comp-FIA_PSK_EXT.2.1">FIA_PSK_EXT.2.1</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_323">accept externally generated pre-shared keys</span></li><li style=""><span class="selectable-content" id="_s_324">
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_327">accept externally generated pre-shared keys</span></li><li style=""><span class="selectable-content" id="_s_328">
                   generate 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_325">128</span>, <span class="selectable-content" id="_s_326">256</span>] bit-based pre-shared keys via FCS_RBG_EXT.1. 
+                  [<b>selection</b>: <span class="selectable-content" id="_s_329">128</span>, <span class="selectable-content" id="_s_330">256</span>] bit-based pre-shared keys via FCS_RBG_EXT.1. 
                   
                 </span></li></ul>].
             </div><h4>Management: FIA_PSK_EXT.3</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.3</h4><p>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the
@@ -4882,16 +4908,16 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
      <span class="assignable-content">positive integer of 64 or more</span>] characters. 
             <h4 id="ext-comp-FIA_PSK_EXT.3.2">FIA_PSK_EXT.3.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow PSKs to be composed of any combination of upper case characters, 
               lower case characters, numbers, and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and 
-              [<b>selection</b>: <span class="selectable-content" id="_s_327">[<b>assignment</b>: 
-     <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_328">no other characters</span>]
+              [<b>selection</b>: <span class="selectable-content" id="_s_331">[<b>assignment</b>: 
+     <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_332">no other characters</span>]
             <h4 id="ext-comp-FIA_PSK_EXT.3.3">FIA_PSK_EXT.3.3</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-[<b>selection</b>: <span class="selectable-content" id="_s_329"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-256</span>, <span class="selectable-content" id="_s_330"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-384</span>, <span class="selectable-content" id="_s_331"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-512</span>], with 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-[<b>selection</b>: <span class="selectable-content" id="_s_333"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-256</span>, <span class="selectable-content" id="_s_334"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-384</span>, <span class="selectable-content" id="_s_335"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-512</span>], with 
               [<b>assignment</b>: 
      <span class="assignable-content">positive integer of 4096 or more</span>] iterations, and output cryptographic key sizes 
-              [<b>selection</b>: <span class="selectable-content" id="_s_332">128</span>, <span class="selectable-content" id="_s_333">256</span>] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-132].
+              [<b>selection</b>: <span class="selectable-content" id="_s_336">128</span>, <span class="selectable-content" id="_s_337">256</span>] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-132].
             <h4 id="ext-comp-FIA_PSK_EXT.3.4">FIA_PSK_EXT.3.4</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not accept PSKs less than 
-              [<b>selection</b>: <span class="selectable-content" id="_s_334">a value settable by the administrator</span>, <span class="selectable-content" id="_s_335">[<b>assignment</b>: 
+              [<b>selection</b>: <span class="selectable-content" id="_s_338">a value settable by the administrator</span>, <span class="selectable-content" id="_s_339">[<b>assignment</b>: 
      <span class="assignable-content">minimum PSK length accepted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, must be &gt;= 6</span>]</span>] and greater than the maximum PSK length defined in <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>.
             <h4 id="ext-comp-FIA_PSK_EXT.3.5">FIA_PSK_EXT.3.5</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate all salts using an <abbr class="dyn-abbr"><a href="#abbr_RBG">RBG</a></abbr> that meets FCS_RBG_EXT.1 and with entropy of [<b>assignment</b>: 
@@ -4900,14 +4926,13 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the PSK to be entered before every initiated connection.
             <h4 id="ext-comp-FIA_PSK_EXT.3.7">FIA_PSK_EXT.3.7</h4>
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-                [<b>selection</b>: <span class="selectable-content" id="_s_336">provide a password strength meter</span>, <span class="selectable-content" id="_s_337">check the password against a denylist</span>, <span class="selectable-content" id="_s_338">perform no action to assist the user in choosing a strong password</span>]. 
+                [<b>selection</b>: <span class="selectable-content" id="_s_340">provide a password strength meter</span>, <span class="selectable-content" id="_s_341">check the password against a denylist</span>, <span class="selectable-content" id="_s_342">perform no action to assist the user in choosing a strong password</span>]. 
               </div><h4>Management: FIA_PSK_EXT.4</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.4</h4><p>No specific audit functions are identified.
           </p><h4>FIA_PSK_EXT.4 HMAC-Based One-Time Password Pre-shared Keys Support</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FIA_PSK_EXT.1</span> Pre-Shared Key Composition</td></tr></table><h4 id="ext-comp-FIA_PSK_EXT.4.1">FIA_PSK_EXT.4.1</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_339">verify the HOTP</span>, <span class="selectable-content" id="_s_340">verify the HOTP via an external authentication server</span>] before establishing an incoming connection.
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall accept and send an HOTP while initiating a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection.
             </div><h4>Management: FIA_PSK_EXT.5</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.5</h4><p>No specific audit functions are identified.
           </p><h4>FIA_PSK_EXT.5 Time-Based One-Time Password Pre-shared Keys Support</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FIA_PSK_EXT.1</span> Pre-Shared Key Composition</td></tr></table><h4 id="ext-comp-FIA_PSK_EXT.5.1">FIA_PSK_EXT.5.1</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-              [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_341">verify the TOTP</span>, <span class="selectable-content" id="_s_342">verify the TOTP via an external authentication server</span>] before establishing an incoming connection.
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall accept and send a TOTP while initiating a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection.
             </div></div></span><span data-sortkey="Packet Filtering (FPF)"><h3 id="ext-comp-FPF" class="indexable" data-level="3">C.2.3 Packet Filtering (FPF)</h3>
           This class contains families that describe packet filtering behavior. Packet filtering refers to the notion that
           network traffic that is transmitted “through” the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (i.e. the source and destination of the traffic is not
@@ -4922,20 +4947,20 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             except those necessary to ensure that the client is authenticated according to <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>.</div></div></span><span data-sortkey="Protection of the TSF (FPT)"><h3 id="ext-comp-FPT" class="indexable" data-level="3">C.2.4 Protection of the TSF (FPT)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FPT class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FPT_TST_EXT" class="indexable" data-level="4">C.2.4.1 FPT_TST_EXT TSF Self-Test</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe requirements for self-test to verify functionality and integrity of the
-            <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FPT_TST_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1/VPN</text><rect x="232" y="11" width="60" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a>,
+            <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FPT_TST_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a>,
              <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test,
              requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to perform power on self-tests to verify its functionality and
-            the integrity of its stored executable code.</p><h4>Management: FPT_TST_EXT.1/VPN</h4><p>No specific management functions are identified.</p><h4>Audit: FPT_TST_EXT.1/VPN</h4><p>There are no auditable events foreseen.</p><h4>FPT_TST_EXT.1/VPN TSF Self-Test</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies.</td></tr></table><h4 id="ext-comp-FPT_TST_EXT.1.1/VPN">FPT_TST_EXT.1.1/VPN</h4>
-				The 
-				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_295"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_296"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
-				shall run a suite of self tests during initial start-up (on power on) to demonstrate the correct 
-				operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.
-            <h4 id="ext-comp-FPT_TST_EXT.1.2/VPN">FPT_TST_EXT.1.2/VPN</h4>
-				The 
-				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_297"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_298"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
-				shall provide the capability to verify the integrity of stored <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable code when it is loaded 
-				for execution through the use of the 
-				[<b>assignment</b>: 
+            the integrity of its stored executable code.</p><h4>Management: FPT_TST_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FPT_TST_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FPT_TST_EXT.1 TSF Self-Test</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies.</td></tr></table><h4 id="ext-comp-FPT_TST_EXT.1.1">FPT_TST_EXT.1.1</h4>
+              The 
+              [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_299"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_300"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
+              shall run a suite of self tests during initial start-up (on power on) to demonstrate the correct 
+              operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.
+            <h4 id="ext-comp-FPT_TST_EXT.1.2">FPT_TST_EXT.1.2</h4>
+              The 
+              [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_301"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_302"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
+              shall provide the capability to verify the integrity of stored <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable code when it is loaded 
+              for execution through the use of the 
+              [<b>assignment</b>: 
      <span class="assignable-content">cryptographic services provided either by the portion
                 of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> described by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> or by the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr></span>].
             </div></div></span><span data-sortkey="User Data Protection (FDP)"><h3 id="ext-comp-FDP" class="indexable" data-level="3">C.2.5 User Data Protection (FDP)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
@@ -5159,7 +5184,4 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       </span></td></tr><tr><td><span id="bibMDMPP">[MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description">
         <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=417&amp;id=417">
 			Protection Profile for Mobile Device Management</a>, Version 4.0, April 2019
-      </span></td></tr><tr><td><span id="bibSD">[<abbr class="dyn-abbr"><a href="#abbr_SD">SD</a></abbr>]</span></td><td><span class="description">
-        Supporting Document Mandatory Technical Document, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Virtual Private Network (<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>) Clients, 
-        Version 2.5, June 10, 2024
       </span></td></tr></table></body></html>
