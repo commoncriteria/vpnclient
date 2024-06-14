@@ -1824,7 +1824,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                   the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> does claim this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to support IPsec, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must select at minimum
                   both <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC and <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM with both 128-bit and 256-bit key sizes for consistency
                   with the relevant IPsec claims (<a href="#FCS_IPSEC_EXT.1.4">FCS_IPSEC_EXT.1.4</a> requires both 128-bit and 256-bit
-                  <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM and <a href="#FCS_IPSEC_EXT.1.6">FCS_IPSEC_EXT.1.6</a> requires both 128-bit and 256-bit <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC).
+                  <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM and <a href="#FCS_IPSEC_EXT.1.6">FCS_IPSEC_EXT.1.6</a> requires both 128-bit and 256-bit <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC). The "no other modes" selection is added
+                  for the case where no <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> claims need to be made beyond what is mandated for IPsec.
                 </span></div></div></div>
               
             </div>
@@ -2065,7 +2066,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 128-bit and 256-bit implementations of <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC (which this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires for
                 the use of <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> and allows for the use of <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr>) and <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM (which this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
                 requires for the use of <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr> and allows for the use of <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>). Other <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> modes may be
-                selected by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author as needed to address functions not required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
+                selected by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author as needed to address functions not required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. The "no other modes" selection is added
+                for the case where no <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> claims need to be made beyond what is mandated for IPsec.
               </span></div></div></div>
             
           </div>
@@ -2080,7 +2082,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_156">
                     invoke platform-provided functionality to use X.509v3 certificates as defined by
                     <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5280 to support authentication for 
-                    [<b>selection</b>: <span class="selectable-content" id="_s_157"><s>IPsec</s></span>, <span class="selectable-content" id="_s_158">HTTPS</span>, <span class="selectable-content" id="_s_159">TLS</span>, <span class="selectable-content" id="_s_160">DTLS</span>, <span class="selectable-content" id="_s_161">SSH</span>, <span class="selectable-content" id="_s_162">no protocols</span>] and 
+                    [<b>selection</b>: <span class="selectable-content" id="_s_157"><s>IPsec</s></span>, <span class="selectable-content" id="_s_158">HTTPS</span>, <span class="selectable-content" id="_s_159">TLS</span>, <span class="selectable-content" id="_s_160">DTLS</span>, <span class="selectable-content" id="_s_161">SSH</span>, <span class="selectable-content" id="_s_162">no protocols</span>], and 
                     [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_163">code signing for system software updates</span></li><li style=""><span class="selectable-content" id="_s_164">code signing for integrity verification</span></li><li style=""><span class="selectable-content" id="_s_165">policy signing</span></li><li style=""><span class="selectable-content" id="_s_166">[<b>assignment</b>: 
      <span class="assignable-content">other uses</span>]</span></li><li style=""><span class="selectable-content" id="_s_167">no additional uses</span></li></ul>]</span></li><li style=""><span class="selectable-content" id="_s_168">implement functionality to use X.509v3 certificates as defined by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5280 to support
                     authentication for 

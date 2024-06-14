@@ -2216,7 +2216,8 @@ expected to enforce.<h:br/><h:br/>
                   the TSF does claim this SFR to support IPsec, the ST author must select at minimum
                   both AES-CBC and AES-GCM with both 128-bit and 256-bit key sizes for consistency
                   with the relevant IPsec claims (FCS_IPSEC_EXT.1.4 requires both 128-bit and 256-bit
-                  AES-GCM and FCS_IPSEC_EXT.1.6 requires both 128-bit and 256-bit AES-CBC).
+                  AES-GCM and FCS_IPSEC_EXT.1.6 requires both 128-bit and 256-bit AES-CBC). The "no other modes" selection is added
+                  for the case where no AES claims need to be made beyond what is mandated for IPsec.
                 </note>
                 <aactivity level="element">
                   The following shall be performed in addition to the EAs specified by the Base-PP:
@@ -2789,7 +2790,8 @@ expected to enforce.<h:br/><h:br/>
                 128-bit and 256-bit implementations of AES-CBC (which this PP-Module requires for
                 the use of IKE and allows for the use of ESP) and AES-GCM (which this PP-Module
                 requires for the use of ESP and allows for the use of IKE). Other AES modes may be
-                selected by the ST author as needed to address functions not required by this PP-Module.
+                selected by the ST author as needed to address functions not required by this PP-Module. The "no other modes" selection is added
+                for the case where no AES claims need to be made beyond what is mandated for IPsec.
               </note>
               <aactivity level="element">
                 <no-tests>Refer to the EA for <no-link>FCS_COP.1(1)</no-link> in the MDM PP.</no-tests>
@@ -2818,7 +2820,7 @@ expected to enforce.<h:br/><h:br/>
                       <selectable>DTLS</selectable>
                       <selectable>SSH</selectable>
                       <selectable exclusive="yes">no protocols</selectable>
-                    </selectables> and 
+                    </selectables>, and 
                     <selectables linebreak="yes">
                       <selectable>code signing for system software updates</selectable>
                       <selectable>code signing for integrity verification</selectable>
