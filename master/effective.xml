@@ -952,13 +952,13 @@ expected to enforce.<h:br/><h:br/>
               <title>The OS shall implement functionality to perform cryptographic key
                 establishment in accordance with a specified cryptographic key establishment method:
                 <h:ul>
-                  <h:li><h:b><h:i>Elliptic curve-based key establishment schemes that meets the following:
+                  <h:li><h:b><h:i>Elliptic curve-based key establishment schemes that meet the following:
                     NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
                     Establishment Schemes Using Discrete Logarithm Cryptography,” and</h:i></h:b>
                   </h:li>
                 </h:ul>
                 <selectables linebreak="yes">
-                  <selectable>RSA-based key establishment schemes that meets the following: RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, “Public-Key
+                  <selectable>RSA-based key establishment schemes that meet the following: RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, “Public-Key
                     Cryptography Standards (PKCS) #1: RSA Cryptography Specifications
                     Version 2.2"</selectable>
                   <selectable>Finite field-based key establishment schemes that meets NIST
@@ -1110,8 +1110,8 @@ expected to enforce.<h:br/><h:br/>
               </selectables>.
               </title>
               <aactivity level="element">
-                <no-tests>FIA_X509_EXT.3.1 is evaluated as part of FCS_IPSEC_EXT.1 (and
-                conditionally as part of FPT_TUD_EXT.1 or FPT_TST_EXT.1).
+                <no-tests><no-link>FIA_X509_EXT.3.1</no-link> is evaluated as part of <no-link>FCS_IPSEC_EXT.1</no-link> (and
+                  conditionally as part of <no-link>FPT_TUD_EXT.1</no-link> or <no-link>FPT_TST_EXT.1</no-link>).
                 </no-tests>
               </aactivity>
             </f-element>
@@ -1212,7 +1212,7 @@ expected to enforce.<h:br/><h:br/>
                   <selectable>a remote IPsec-capable network device</selectable>
                 </selectables></h:b> that is logically
                 distinct from other communication channels and provides assured identification
-                of its end points and protection of the channel data <h:b>from disclosure and
+                of its end points and protection of the channel data from <h:b>disclosure and
                 detection of modification of the channel data</h:b>.
               </title>
             </f-element>
@@ -1453,7 +1453,7 @@ expected to enforce.<h:br/><h:br/>
 							<selectable>P-521</selectable>
 							<selectable exclusive="yes">no other curves</selectable>
                         </selectables> 
-                        that meet the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.4;</h:b>
+                        that meet the following: [FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.4];</h:b>
 					</h:li>
                 </h:ul>
                 <selectables linebreak="yes">
@@ -1513,9 +1513,9 @@ expected to enforce.<h:br/><h:br/>
                   <selectable>[RSA-based key establishment schemes] that meet the following: 
                     <selectables linebreak="yes">
                       <selectable>NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key
-                        Establishment Schemes using Integer Factorization Cryptography”</selectable>
+                        Establishment Schemes Using Integer Factorization Cryptography”</selectable>
                       <selectable>RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017,
-                        “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.2</selectable></selectables></selectable>
+                        “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.2"</selectable></selectables></selectable>
                   <selectable exclusive="yes"><h:b>no other key establishment schemes</h:b></selectable>
                 </selectables>.
               </title>
@@ -1545,7 +1545,7 @@ expected to enforce.<h:br/><h:br/>
               <title>The TSF shall perform [encryption/decryption] in accordance with
                 a specified cryptographic algorithm [<h:i>
                 <h:ul>
-                  <h:li>AES-CBC (as defined in FIPS PUB 197, NIST SP 800-38A) mode,</h:li>
+                  <h:li>AES-CBC (as defined in FIPS PUB 197, and NIST SP 800-38A) mode,</h:li>
                   <h:li>AES-CCMP (as defined in FIPS PUB 197, NIST SP 800-38C and IEEE 802.11-2012),</h:li>
                   <h:li><h:b>AES-GCM (as defined in NIST SP 800-38D),</h:b></h:li>
                 </h:ul> and </h:i>
@@ -1615,14 +1615,14 @@ expected to enforce.<h:br/><h:br/>
             <f-element id="md-fia-x509-ext-2e1">
               <title>
                 The TSF shall use X.509v3 certificates as defined by RFC 5280 to support
-              authentication for [mutually authenticated TLS as defined in the Functional
+              authentication for [<h:i>mutually authenticated TLS as defined in the Functional
               Package for Transport Layer Security (TLS), version 1.1, HTTPS, 
               <h:b>IPsec in accordance with the PP-Module for VPN Clients</h:b>,
               <selectables>
                 <selectable>mutually authenticated DTLS as defined in the Functional
                   Package for Transport Layer Security (TLS), version 1.1</selectable> 
                 <selectable>no other protocol</selectable>
-              </selectables> and
+              </selectables></h:i>] and
                 <selectables>
                   <selectable>code signing for system software updates</selectable> 
                   <selectable>code signing for mobile applications</selectable> 
@@ -1705,11 +1705,11 @@ expected to enforce.<h:br/><h:br/>
 		      <h:li>802.11-2012 in accordance with the [PP-Module for Wireless LAN Clients, version 1.0]</h:li>
                 <h:li>802.1X in accordance with the [PP-Module for Wireless LAN Clients, version 1.0]</h:li>
                 <h:li>EAP-TLS in accordance with the [PP-Module for Wireless LAN Clients, version 1.0]</h:li>
-		      <h:li>mutually authenticated TLS in accordance with [the Functional Package for Transport Layer Security (TLS), version 1.1]</h:li>
+		      <h:li>Mutually authenticated TLS in accordance with [the Functional Package for Transport Layer Security (TLS), version 1.1]</h:li>
 		      <h:li><h:b>IPsec in accordance with the PP-Module for VPN Clients</h:b></h:li></h:ul>
 		      and
                 <selectables>
-                  <selectable>mutually authenticated DTLS as defined in the Functional Package Package for Transport
+                  <selectable>mutually authenticated DTLS as defined in the Functional Package for Transport
 			Layer Security, version 1.1</selectable>
                   <selectable>HTTPS</selectable>
                   <selectable exclusive="yes"><h:b>no other</h:b></selectable>
@@ -2097,7 +2097,8 @@ expected to enforce.<h:br/><h:br/>
                   key generation with P-256 and P-384 has been made mandatory in support of IPsec due to the
                   mandated support for DH groups 19, and 20 in FCS_IPSEC_EXT.1.8. RSA remains
                   present as a selection since it may be used by parts of the TOE that are not
-                  specifically related to VPN client functionality.
+                  specifically related to VPN client functionality. The selection for "no other key generation methods"
+                  was added in case the algorithms that IPsec requires are the TSF's only use of key generation.
                 </note>
               <aactivity level="element">
                 <no-tests>Refer to the EA for <no-link>FCS_CKM.1/AK</no-link> in the App PP.</no-tests>
@@ -2119,19 +2120,19 @@ expected to enforce.<h:br/><h:br/>
                   </selectables> to perform cryptographic key
                   establishment in accordance with a specified cryptographic key establishment method:
                   <h:ul>
-                    <h:li><h:b>[Elliptic curve-based key establishment schemes] that meets the following: [NIST
+                    <h:li><h:b>[Elliptic curve-based key establishment schemes] that meet the following: [NIST
                       Special Publication 800-56A, “Recommendation for Pair-Wise Key Establishment
                       Schemes Using Discrete Logarithm Cryptography”]; and</h:b>
                     </h:li>
                   </h:ul>
                   <selectables linebreak="yes">
-                    <selectable>[RSA-based key establishment schemes] that meets the following: [NIST Special
+                    <selectable>[RSA-based key establishment schemes] that meet the following: [NIST Special
                       Publication 800-56B, “Recommendation for Pair-Wise Key Establishment
                       Schemes Using Integer Factorization Cryptography”]</selectable>
                     <selectable> [RSA-based key establishment schemes] that meet the following: RSAES-PKCS1-v1_5 as specified
                       in Section 7.2 of RFC 8017, “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications
                       Version 2.1"</selectable>
-                    <selectable>[Finite field-based key establishment schemes] that meets the following: [NIST
+                    <selectable>[Finite field-based key establishment schemes] that meet the following: [NIST
                       Special Publication 800-56A, “Recommendation for Pair-Wise Key Establishment
                       Schemes Using Discrete Logarithm Cryptography”]</selectable>
                     <selectable>[Key establishment scheme using Diffie-Hellman group 14] that meets the
@@ -2142,14 +2143,14 @@ expected to enforce.<h:br/><h:br/>
                       <selectables>
                         <selectable>RFC 3526</selectable>
                         <selectable>RFC 7919</selectable></selectables></selectable>
-                    <selectable exclusive="yes">No other schemes</selectable></selectables>.
+                    <selectable exclusive="yes">no other schemes</selectable></selectables>.
                 </title>
                 <note role="application">
                   This SFR differs from its definition in the App PP by moving elliptic curve-based
-                  key establishment schemes from selectable to mandatory (due to the mandated
-                  support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8). It also provides the
-                  ability to claim at least one of NIST SP 800-56A, RFC 3526, or NIST SP 800-56A
-                  rev. 3 “safe-prime” groups for key establishment using finite field cryptography.</note>
+                  key establishment schemes from selectable to mandatory due to the mandated
+                  support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8. 
+                  The selection for "no other schemes"
+                  was added in case the algorithms that IPsec requires are the TSF's only use of key establishment.</note>
                 <aactivity level="element">
                   <no-tests>For all key establishment schemes refer to the EA for <no-link>FCS_CKM.2</no-link> in the App PP.</no-tests>
                 </aactivity>
@@ -2564,7 +2565,7 @@ expected to enforce.<h:br/><h:br/>
 		mandatory since it is required for VPN client functionality.</con-mod>
       <con-mod ref="ap-fcs-ckm-2">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements and is modified to include Diffie-Hellman
-		Group 14 as an additional supported method for key establishment.</con-mod>
+		group 14 as an additional supported method for key establishment.</con-mod>
       <con-mod ref="ap-fcs-ckm-1">The ST author is instructed to make specific selections at minimum to
 		address VPN client requirements; specifically, since key generation services
 		are required in some capacity in order to support VPN functionality, the ST
@@ -2668,27 +2669,26 @@ expected to enforce.<h:br/><h:br/>
                 to generate asymmetric cryptographic keys in accordance with a specified cryptographic key
                 generation algorithm: 
                 <h:ul>
-                  <h:li><h:b>ECC schemes using “NIST curves” P-256, P-384, and 
+                  <h:li><h:b>ECC schemes using “NIST curves” <h:b>P-256,</h:b> P-384, and 
                       <selectables>
                         <selectable>P-521</selectable>
                         <selectable exclusive="yes">no other curves</selectable>
                       </selectables> 
-                      that meets the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.4, and</h:b>
+                      that meet the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.4, and</h:b>
                   </h:li>
                 </h:ul>
                 <selectables linebreak="yes">
                   <selectable>RSA schemes using cryptographic key sizes of 2048-bit or greater that meet
                     FIPS PUB 186-4, "Digital Signature Standard (DSS),” Appendix B.3</selectable>
                   <selectable>FFC schemes using cryptographic key sizes of 2048-bit or greater that meets
-                    the following: FIPS PUB 186-4, “Digital Signature Standards (DSS),” Appendix B.4</selectable>
-                  <selectable>FFC schemes using “safe-prime” groups that meet the following: ‘NIST
-                    Special Publication 800-56A Revision 3, “ Recommendation for Pair-Wise Key
+                    the following: FIPS PUB 186-4, “Digital Signature Standards (DSS),” Appendix B.1</selectable>
+                  <selectable>FFC schemes using Diffie-Hellman group 14 that meets the following: RFC 3526, Section 3</selectable>
+                  <selectable>FFC schemes using “safe-prime” groups that meet the following: NIST
+                    Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
                     Establishment Schemes Using Discrete Logarithm Cryptography,” and
                     <selectables>
                       <selectable>RFC 3526</selectable>
                       <selectable>RFC 7919</selectable></selectables></selectable>
-                  <selectable><h:b>FFC schemes using Diffie-Hellman group 14 that meets the following: RFC
-                    3526, Section 3</h:b></selectable>
                   <selectable exclusive="yes"><h:b>No other key generation schemes</h:b></selectable>
                 </selectables>.
               </title>
@@ -2713,13 +2713,13 @@ expected to enforce.<h:br/><h:br/>
               unmodified.</consistency-rationale>
             <f-element id="dm-fcs-ckm-2e1">
               <title>The TSF shall 
-                <selectables onlyone="yes">
+                <selectables>
                   <selectable>invoke platform-provided functionality</selectable>
                   <selectable>implement functionality</selectable>
                 </selectables>
                 to perform cryptographic key establishment in accordance with a specified key establishment method:
                 <h:ul>
-                  <h:li><h:b>Elliptic curve-based key establishment schemes that meets the following:
+                  <h:li><h:b>Elliptic curve-based key establishment schemes that meet the following:
                     NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
                     Establishment Schemes Using Discrete Logarithm Cryptography”</h:b>
                   </h:li>
@@ -2728,7 +2728,7 @@ expected to enforce.<h:br/><h:br/>
                   <selectable>RSA-based key establishment schemes that meet the following: 
                     RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, “Public-Key Cryptography Standards
                     (PKCS) #1: RSA Cryptography Specifications Version 2.1"</selectable>
-                  <selectable>Finite field-based key establishment schemes that meets the following: NIST
+                  <selectable>Finite field-based key establishment schemes that meet the following: NIST
                     Special Publication 800-56A <h:b>Revision 3</h:b>, “Recommendation for Pair-Wise Key
                     Establishment Schemes Using Discrete Logarithm Cryptography”</selectable>
                   <selectable>FFC schemes using "safe-prime" groups that meet the following: 'NIST
