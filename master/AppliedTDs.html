@@ -882,7 +882,7 @@ The following sections list Common Criteria and technology terms used in this do
       argument may be made in lieu of testing on each version. The argument would have to demonstrate
       that the client interacts in exactly the same way with the versions of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> (i.e., the same APIs are used
       with the same parameters, the network stack is modified with exactly the same kernel modules). The
-      evaluator uses the operational guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and underlying platform.<br/><br/>
+      evaluator shall use the operational guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and underlying platform.<br/><br/>
 
       A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> will implement the Internet Engineering Task Force (IETF)
       IPsec Security Architecture for the Internet Protocol, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4301, as well as
@@ -1601,9 +1601,10 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 			<table border="1" style="width:100%">
 				<tr>
 				<td>
-					45. enable/disable the Always On <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> protection:<br/>
-					-   a. across device<br/>
-					-   [<i>d. no other method</i>]
+					45. enable/disable the Always On <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> protection:<ul>
+					  <li>across device</li>
+					  <li>[<i>no other method</i>]</li>
+					</ul>
 					</td>
 					<td><b>M</b></td>
 					<td>O</td>
@@ -2301,7 +2302,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			based on the validation response that is returned.<br/><br/>
 			It is also permissible for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to rely on low-level capabilities of the platform to perform enforcement
 			and routing functions as a result of the policies the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> maintains. For example, while the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must
-			provide the capability to implement the Security Policy Database (<abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr>) abstraction, it is allowed for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to
+			provide the capability to implement the Security Policy Database (<abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr>) abstraction, it is permissible for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to
 			depend on the platform-provided network stack to perform the low-level packet filtering and
 			routing actions once the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> has set up those rules as defined by the <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr>.<br/><br/>
 			While enforcement of the IPsec requirements must be implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>, it is permissible for the
@@ -2356,7 +2357,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       Note:
     </span><span class="note">
 				If this functionality is configurable, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> may be configured by a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway
-				or by an Administrator of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself.
+				or by an administrator of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself.
 			</span></div></div></div>
           <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.5"><a href="#FCS_IPSEC_EXT.1.5" class="abbr">FCS_IPSEC_EXT.1.5</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the protocol:
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_220">IKEv1, using Main Mode for Phase I exchanges, as defined in RFCs 2407,
@@ -2375,7 +2376,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       Note:
     </span><span class="note">
 				If this functionality is configurable, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> may be configured by a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway
-				or by an Administrator of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself.
+				or by an administrator of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself.
 			</span></div></div></div>
           <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.7"><a href="#FCS_IPSEC_EXT.1.7" class="abbr">FCS_IPSEC_EXT.1.7</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that 
 				[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_235">IKEv2 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes can be configured by 
@@ -2391,7 +2392,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
   					</span></li></ul>]
 				  </span></li></ul>]. 
 				If length of time is used, it must include at least one option that
-				is 24 hours or less for Phase 1 SAs and 8 hours or less for Phase 2 SAs.
+				is 24 hours or less for Phase 1 SAs and eight hours or less for Phase 2 SAs.
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2408,7 +2409,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 
 				The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author chooses either the IKEv1 requirements or IKEv2 requirements (or
 				both, depending on the selection in <a href="#FCS_IPSEC_EXT.1.5">FCS_IPSEC_EXT.1.5</a>. The IKEv1 requirement
-				can be accomplished either by providing Authorized Administrator-configurable
+				can be accomplished either by providing authorized administrator-configurable
 				lifetimes (with appropriate instructions in documents mandated by AGD_OPE),
 				or by “hard coding” the limits in the implementation. For IKEv2, there are no
 				hard-coded limits, but in this case it is required that an administrator be able to
@@ -2422,7 +2423,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.8"><a href="#FCS_IPSEC_EXT.1.8" class="abbr">FCS_IPSEC_EXT.1.8</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> protocols implement <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> Groups <ul>
                 <li>19 (256-bit Random ECP), 20 (384-bit Random ECP) according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5114 and</li></ul> 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_249">[<b>selection</b>: <span class="selectable-content" id="_s_250">14 (2048-bit MODP)</span>, <span class="selectable-content" id="_s_251">15 (3072-bit MODP)</span>, <span class="selectable-content" id="_s_252">16 (4096-bit MODP)</span>, <span class="selectable-content" id="_s_253">17 (6144-bit MODP)</span>, <span class="selectable-content" id="_s_254">18 (8192-bit MODP)</span>] according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526</span></li><li style=""><span class="selectable-content" id="_s_255">[<b>selection</b>: <span class="selectable-content" id="_s_256">21 (521-bit Random ECP)</span>, <span class="selectable-content" id="_s_257">24 (2048-bit MODP with 256-bit POS</span>, <span class="selectable-content" id="_s_258"><b>no other <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> Groups</b></span>] according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5114</span></li></ul>].
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_249">[<b>selection</b>: <span class="selectable-content" id="_s_250">14 (2048-bit MODP)</span>, <span class="selectable-content" id="_s_251">15 (3072-bit MODP)</span>, <span class="selectable-content" id="_s_252">16 (4096-bit MODP)</span>, <span class="selectable-content" id="_s_253">17 (6144-bit MODP)</span>, <span class="selectable-content" id="_s_254">18 (8192-bit MODP)</span>] according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526</span></li><li style=""><span class="selectable-content" id="_s_255">[<b>selection</b>: <span class="selectable-content" id="_s_256">21 (521-bit Random ECP)</span>, <span class="selectable-content" id="_s_257">24 (2048-bit MODP with 256-bit POS</span>, <span class="selectable-content" id="_s_258">no other <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> Groups</span>] according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5114</span></li></ul>].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2477,7 +2478,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-              At least one public-key-based Peer Authentication method is required in order to
+              At least one public-key-based peer authentication method is required in order to
               conform to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>; one or more of the public key schemes is chosen by
               the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to reflect what is implemented. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author also ensures that
               appropriate FCS requirements reflecting the algorithms used (and key
@@ -2522,11 +2523,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 				certificate and the peer’s reference identifier is mandated by the testing below.
 				However, in the future, this requirement will address two aspects of the peer
 				certificate validation: 1) comparison of the peer’s ID payload to the peer’s
-				certificate which are both presented identifiers, as required by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4945 and 2)
+				certificate, which are both presented identifiers, as required by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4945 and 2)
 				verification that the peer identified by the ID payload and the certificate is the
 				peer expected by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (per the reference identifier). At that time, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will
 				be required to demonstrate both aspects (i.e. that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> enforces that the
-				peer’s ID payload matches the peer’s certificate which both match configured
+				peer’s ID payload matches the peer’s certificate, which both match configured
 				peer reference identifiers).<br/><br/>
 				Excluding the <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> identifier type (which is necessarily the Subject <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> in the peer
 				certificate), the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may support the identifier in either the Common Name or
@@ -2550,9 +2551,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       Note:
     </span><span class="note">
 				If this functionality is configurable, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> may be configured by a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway
-				or by an Administrator of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself<br/><br/>
+				or by an administrator of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself<br/><br/>
 				The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author chooses either or both of the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> selections based on what is
-				implemented by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. Obviously, the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> versions chosen should be
+				implemented by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> versions chosen should be
 				consistent not only in this element, but with other choices for other elements in
 				this component. While it is acceptable for this capability to be configurable, the
 				default configuration in the evaluated configuration (either "out of the box" or
@@ -3159,7 +3160,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       
       <h3 class="indexable" data-level="3" id="sop-audit-table">A.1.1 Auditable Events for Strictly Optional SFRs</h3>
         Entries from <a onclick="showTarget('at-optional')" href="#at-optional" class="at-optional-ref">Table  <span class="counter">23</span></a> must be included for GPOS, MDF, and MDM <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> if the strictly optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. When the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, if any strictly optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, corresponding auditable event entries must be included only if the implementation-dependent requirement <a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a> is included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
-        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-optional" data-counter-type="ct-Table" id="at-optional">Table <span class="counter">23</span></span>: Auditable Events for Strictly Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FIA_BMA_EXT.1"><td rowspan="2"><a href="#FIA_BMA_EXT.1">FIA_BMA_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_BMA_EXT.1#"><td></td></tr><tr data-sortkey="FIA_BMA_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
+        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-optional" data-counter-type="ct-Table" id="at-optional">Table <span class="counter">23</span></span>: Auditable Events for Strictly Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FIA_BMA_EXT.1"><td rowspan="2"><a href="#FIA_BMA_EXT.1">FIA_BMA_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_BMA_EXT.1#"><td></td></tr><tr data-sortkey="FIA_BMA_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FPF_MFA_EXT.1"><td rowspan="2"><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPF_MFA_EXT.1#"><td></td></tr><tr data-sortkey="FPF_MFA_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
       
       
       <h3 id="o-fia" class="indexable" data-level="3">A.1.2 Identification and Authentication (FIA)</h3>
@@ -3633,11 +3634,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
   					</span></li></ul>]
 				  </span></li></ul>]. 
 				If length of time is used, it must include at least one option that
-				is 24 hours or less for Phase 1 SAs and 8 hours or less for Phase 2 SAs.
+				is 24 hours or less for Phase 1 SAs and eight hours or less for Phase 2 SAs.
             <h4 id="ext-comp-FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> protocols implement <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> Groups <ul>
                 <li>19 (256-bit Random ECP), 20 (384-bit Random ECP) according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5114 and</li></ul> 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_249">[<b>selection</b>: <span class="selectable-content" id="_s_250">14 (2048-bit MODP)</span>, <span class="selectable-content" id="_s_251">15 (3072-bit MODP)</span>, <span class="selectable-content" id="_s_252">16 (4096-bit MODP)</span>, <span class="selectable-content" id="_s_253">17 (6144-bit MODP)</span>, <span class="selectable-content" id="_s_254">18 (8192-bit MODP)</span>] according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526</span></li><li style=""><span class="selectable-content" id="_s_255">[<b>selection</b>: <span class="selectable-content" id="_s_256">21 (521-bit Random ECP)</span>, <span class="selectable-content" id="_s_257">24 (2048-bit MODP with 256-bit POS</span>, <span class="selectable-content" id="_s_258"><b>no other <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> Groups</b></span>] according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5114</span></li></ul>].
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_249">[<b>selection</b>: <span class="selectable-content" id="_s_250">14 (2048-bit MODP)</span>, <span class="selectable-content" id="_s_251">15 (3072-bit MODP)</span>, <span class="selectable-content" id="_s_252">16 (4096-bit MODP)</span>, <span class="selectable-content" id="_s_253">17 (6144-bit MODP)</span>, <span class="selectable-content" id="_s_254">18 (8192-bit MODP)</span>] according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526</span></li><li style=""><span class="selectable-content" id="_s_255">[<b>selection</b>: <span class="selectable-content" id="_s_256">21 (521-bit Random ECP)</span>, <span class="selectable-content" id="_s_257">24 (2048-bit MODP with 256-bit POS</span>, <span class="selectable-content" id="_s_258">no other <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> Groups</span>] according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5114</span></li></ul>].
             <h4 id="ext-comp-FCS_IPSEC_EXT.1.9">FCS_IPSEC_EXT.1.9</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate the secret value x used in the
               <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> key exchange (“x” in g^x mod p) using the random bit
               generator specified in FCS_RBG_EXT.1, and having a length of at least

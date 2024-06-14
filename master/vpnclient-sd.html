@@ -700,7 +700,7 @@ The following sections list Common Criteria and technology terms used in this do
                 <div class="eacategory">TSS</div><div class="ea">Regardless of whether this requirement is met by the TOE or the TOE platform, the evaluator shall check
 			the TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to
 			meet the requirements in the ST. For each of these items, the evaluator shall confirm that the TSS lists for
-			what purpose it is used, and how it is stored. The evaluator then performs the following actions: <br/><br/>
+			what purpose it is used, and how it is stored. The evaluator shall then perform the following actions: <br/><br/>
 
                   	<b>Persistent secrets and private keys manipulated by the platform:</b><br/><br/>
 
@@ -710,7 +710,7 @@ The following sections list Common Criteria and technology terms used in this do
 
                   	<b>Persistent secrets and private keys manipulated by the TOE:</b><br/><br/>
 
-                  	The evaluator reviews the TSS to determine that it makes a case that, for each item listed as being
+                  	The evaluator shall review the TSS to determine that it makes a case that, for each item listed as being
 			manipulated by the TOE, it is not written unencrypted to persistent memory, and that the item is stored
 			by the platform.<br/><br/>
                 </div>
@@ -930,8 +930,8 @@ The following sections list Common Criteria and technology terms used in this do
 			packet, encrypting a packet, and allowing a packet to flow in plaintext. The selectors used in the
 			construction of the rule shall be different such that the evaluator can generate a packet and send packets
 			to the client with the appropriate fields (fields that are used by the rule - e.g., the IP addresses, TCP/UDP
-			ports) in the packet header. The evaluator performs both positive and negative test cases for each type
-			of rule. The evaluator observes via the audit trail and packet captures that the TOE exhibited the expected
+			ports) in the packet header. The evaluator shall perform both positive and negative test cases for each type
+			of rule. The evaluator shall observe via the audit trail and packet captures that the TOE exhibited the expected
 			behavior: appropriate packets were dropped, allowed through without modification, was encrypted by
 			the IPsec implementation.</li>
                   <li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FCS_IPSEC_EXT.1.1:2</a>:
@@ -956,20 +956,20 @@ The following sections list Common Criteria and technology terms used in this do
               <div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following tests based on the selections chosen:
               <span class="testlist-"><ul>
                 <li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FCS_IPSEC_EXT.1.2:1</a>:
-       [conditional]: If tunnel mode is selected, the evaluator uses the operational guidance to configure
+       [conditional]: If tunnel mode is selected, the evaluator shall use the operational guidance to configure
 			the TOE and a VPN gateway to operate in tunnel mode. The
-			evaluator configures the TOE and the VPN gateway to use any of the allowable cryptographic algorithms, 
+			evaluator shall configure the TOE and the VPN gateway to use any of the allowable cryptographic algorithms, 
 			authentication methods, etc. to ensure an allowable SA can be negotiated. The evaluator shall then
-			initiate a connection from the client to connect to the VPN gateway peer. The evaluator observes (for example,
+			initiate a connection from the client to connect to the VPN gateway peer. The evaluator shall observe (for example,
 			in the audit trail and the captured packets) that a successful connection was established using the tunnel
 			mode.</li>
                 <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FCS_IPSEC_EXT.1.2:2</a>:
-      [conditional]: If transport mode is selected, the evaluator uses the operational guidance to
+      [conditional]: If transport mode is selected, the evaluator shall use the operational guidance to
 			configure the TOE to operate in transport mode and also configures an IPsec peer to accept IPsec
-			connections using transport mode. The evaluator configures the TOE and the endpoint device to use any
+			connections using transport mode. The evaluator shall configure the TOE and the endpoint device to use any
 			of the allowed cryptographic algorithms, authentication methods, etc. to ensure an allowable SA can be
-			negotiated. The evaluator then initiates a connection from the TOE to connect to the remote endpoint.
-			The evaluator observes (for example, in the audit trail and the captured packets) that a successful
+			negotiated. The evaluator shall then initiate a connection from the TOE to connect to the remote endpoint.
+			The evaluator shall observe (for example, in the audit trail and the captured packets) that a successful
 			connection was established using the transport mode.
 		</li>
                 <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FCS_IPSEC_EXT.1.2:3</a>:
@@ -1007,10 +1007,10 @@ The following sections list Common Criteria and technology terms used in this do
             <div class="element-activity-header">FCS_IPSEC_EXT.1.4</div>
               <div class="eacategory">TSS</div><div class="ea">The evaluator shall examine the TSS to verify that the algorithms AES-GCM-128 and AES-GCM-256 are
 		implemented. If the ST author has selected either AES-CBC-128 or AES-CBC-256 in the requirement, then
-		the evaluator verifies the TSS describes these as well. In addition, the evaluator shall ensure that the SHA-based HMAC 
+		the evaluator shall verify that the TSS describes these as well. In addition, the evaluator shall ensure that the SHA-based HMAC 
 		algorithm conforms to the algorithms specified in the relevant iteration of FCS_COP.1 from
 		the Base-PP that applies to keyed-hash message authentication.<br/><br/></div>
-              <div class="eacategory">Guidance</div><div class="ea">The evaluator checks the operational guidance to ensure it provides instructions on how the TOE is
+              <div class="eacategory">Guidance</div><div class="ea">The evaluator shall check the operational guidance to ensure it provides instructions on how the TOE is
 		configured to use the algorithms selected in this component and whether this is performed through direct
 		configuration, defined during initial installation, or defined by acquiring configuration settings from an
 		environmental component.<br/><br/>
@@ -1022,7 +1022,7 @@ The following sections list Common Criteria and technology terms used in this do
 				      The evaluator shall configure the TOE as indicated in the operational guidance, configuring the TOE
 					to using each of the AES-GCM-128, and AES-GCM-256 algorithms, and attempt to establish a connection
 					using ESP. If the ST author has selected either AES-CBC-128 or AES-CBC-256, the TOE is configured to use
-					those algorithms, and the evaluator attempts to establish a connection using ESP for those algorithms
+					those algorithms, and the evaluator shall attempt to establish a connection using ESP for those algorithms
 					selected.
 			      </li>
 		      </ul></span>
@@ -1087,7 +1087,7 @@ The following sections list Common Criteria and technology terms used in this do
               <div class="eacategory">TSS</div><div class="ea">The evaluator shall ensure the TSS identifies the algorithms used for encrypting the IKE
 		payload for each supported IKE version and that the algorithms AES-CBC-128 and AES-CBC-256 are specified, and if others are chosen in the
 		selection of the requirement, those are included in the TSS discussion.<br/><br/></div>
-              <div class="eacategory">Guidance</div><div class="ea">The evaluator checks the operational guidance to ensure it provides instructions on how the TOE is
+              <div class="eacategory">Guidance</div><div class="ea">The evaluator shall check the operational guidance to ensure it provides instructions on how the TOE is
 		configured to use the algorithms selected in this component and whether this is performed through direct
 		configuration, defined during initial installation, or defined by acquiring configuration settings from an
 		environmental component. <br/><br/>
@@ -1147,7 +1147,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div>
             <div class="element-activity-header">FCS_IPSEC_EXT.1.8</div>
               <div class="eacategory">TSS</div><div class="ea">The evaluator shall check to ensure that the DH groups specified in the requirement are listed as being
-		supported in the TSS. If there is more than one DH group supported, the evaluator checks to ensure the
+		supported in the TSS. If there is more than one DH group supported, the evaluator shall check to ensure the
 		TSS describes how a particular DH group is specified/negotiated with a peer.<br/><br/></div>
               <div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following test: 
@@ -1209,7 +1209,7 @@ The following sections list Common Criteria and technology terms used in this do
 			whether CRL or OCSP is selected; if both are selected, then a test is performed for each method. For
 			this current version of the PP-Module, the evaluator has to only test one up in the trust chain (future
 			drafts may require to ensure the validation is done up the entire chain). The evaluator shall ensure that a
-			valid certificate is used and that the SA is established. The evaluator then attempts the test with a
+			valid certificate is used and that the SA is established. The evaluator shall then attempt the test with a
 			certificate that will be revoked (for each method chosen in the selection) to ensure when the certificate
 			is no longer valid that the TOE will not establish an SA.
                 </li>
@@ -1269,7 +1269,7 @@ The following sections list Common Criteria and technology terms used in this do
 		algorithm is less than or equal to that of the IKE SA that is protecting the negotiation.
 		<br/><br/></div>
               <div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div>
-              <div class="eacategory">Tests</div><div class="ea">The evaluator follows the guidance to configure the TOE to perform the following tests:
+              <div class="eacategory">Tests</div><div class="ea">The evaluator shall follow the guidance to configure the TOE to perform the following tests:
               <span class="testlist-"><ul>
                 <li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FCS_IPSEC_EXT.1.14:1</a>:
       This test shall be performed for each version of IKE supported. The evaluator shall successfully
@@ -1353,11 +1353,11 @@ The following sections list Common Criteria and technology terms used in this do
                 The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FPT_TST_EXT.1/VPN:1</a>:
-      The evaluator performs the integrity check on a known good TSF executable and verifies that the
+      The evaluator shall perform the integrity check on a known good TSF executable and verifies that the
 			check is successful.
                   </li>
                   <li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FPT_TST_EXT.1/VPN:2</a>:
-      The evaluator modifies the TSF executable, performs the integrity check on the modified TSF
+      The evaluator shall modify the TSF executable, performs the integrity check on the modified TSF
 			executable, and verifies that the check fails.</li>
                 </ul></span>
               </div></div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.6 Evaluation Activities for Optional SFRs</h2><h2 class="indexable" data-level="2" id="o-fia">2.6.1 Identification and Authentication (FIA)</h2><div class="comp" id="FIA-BMA-EXT-1"><h4>FIA_BMA_EXT.1 Biometric Activation</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_BMA_EXT.1.1</div>
