@@ -1,4 +1,4 @@
-<Module xmlns="https://niap-ccevs.org/cc/v1" xmlns:sec="https://niap-ccevs.org/cc/v1/section" xmlns:h="http://www.w3.org/1999/xhtml" boilerplate="yes" target-product="VPN Client" target-products="VPN clients" name="Virtual Private Network (VPN) Clients">
+<Module xmlns="https://niap-ccevs.org/cc/v1" xmlns:sec="https://niap-ccevs.org/cc/v1/section" xmlns:h="http://www.w3.org/1999/xhtml" boilerplate="yes" target-product="VPN client" target-products="VPN clients" name="Virtual Private Network (VPN) Clients">
 	
   <PPReference>
    <ReferenceTable>
@@ -238,8 +238,8 @@
       satisfies this requirement. However, the ST author should make it clear, for each of these components,
       which are implemented by the VPN client portion of the TOE versus the platform portion.<h:br/><h:br/>
 
-      Within this PP-Module, there is guidance, expressed as Evaluation Activities (EAs), on how to evaluate the
-      defined requirements. EAs will differ
+A Supporting Document (SD) accompanies this PP-Module and contains guidance for how to evaluate the
+requirements defined by the PP-Module, expressed as Evaluation Activities (EAs). EAs will differ
       based on where the function that meets the requirement is implemented. In most cases, requirements
       implemented by the platform will require that the evaluator examine documents pertaining to the
       platform (generally the ST), while requirements implemented by the TOE may require examination of
@@ -1342,7 +1342,7 @@ expected to enforce.<h:br/><h:br/>
       <con-mod ref="OE.NO_TOE_BYPASS">This objective addresses behavior that is out of scope of the GPOS PP and
 		does not define an environment that a GPOS TOE is incapable of existing in.</con-mod>
       <con-mod ref="OE.PHYSICAL">This is part of satisfying OE.PLATFORM as defined in the GPOS PP because
-		physical security is required for hardware to be considered ‘trusted’.</con-mod>
+		physical security is required for hardware to be considered ‘trusted.’</con-mod>
       <con-mod ref="OE.TRUSTED_CONFIG">The expectation of trusted configuration is consistent with OE.PROPER_USER
 		and OE.PROPER_ADMIN in the GPOS PP.</con-mod>
 	  
@@ -2049,7 +2049,7 @@ expected to enforce.<h:br/><h:br/>
         <section title="Cryptographic Support (FCS)" id="ap-m-fcs">
             
           <!-- 5.3.1.1 FCS_CKM.1/AK Cryptographic Asymmetric Key Generation -->
-          <f-component cc-id="fcs_ckm_ext.1" id="ap-fcs-ckm-1-ak" name="Cryptographic Asymmetric Key Generation" iteration="AK">
+          <f-component cc-id="fcs_ckm.1" id="ap-fcs-ckm-1-ak" name="Cryptographic Asymmetric Key Generation" iteration="AK">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified. Additionally, this behavior is selection-based in the App
@@ -2057,35 +2057,33 @@ expected to enforce.<h:br/><h:br/>
               functionality.</consistency-rationale>
             <f-element id="ap-fcs-ckm-1-1-ak">
               <title>The application shall 
-                <selectables linebreak="yes" onlyone="yes">
+                <selectables linebreak="yes">
                   <selectable>invoke platform-provided functionality</selectable>
                   <selectable>implement functionality</selectable>
                 </selectables> to generate asymmetric cryptographic keys in accordance with a specified
-                cryptographic key generation algorithm
+                cryptographic key generation algorithm <h:b>
                   <h:ul>
-                    <h:li><h:b>[ECC schemes] using [“NIST curves” P-384 and 
+                    <h:li><h:b>[ECC schemes] using [“NIST curves” P-256, P-384 and 
                       <selectables>
-                          <selectable>P-256</selectable>
                           <selectable>P-521</selectable>
                           <selectable exclusive="yes">no other curves</selectable>
                       </selectables>] that meet the following: [FIPS PUB 186-4, “Digital Signature
                     Standard (DSS),” Appendix B.4], and,</h:b>
                     </h:li>
-                  </h:ul> 
+                  </h:ul> </h:b>
                   <selectables linebreak="yes">
+                    <selectable>[RSA schemes] using cryptographic key sizes of [2048-bit or greater] that
+                      meet the following: [FIPS PUB 186-4, “Digital Signature Standard (DSS)”,
+                      Appendix B.3]</selectable>
                     <selectable>[FFC schemes] using cryptographic key sizes of [2048-bit or greater] that meet
-                      the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.1</selectable>
-                    <selectable>[FFC schemes] using Diffie-Hellman group 14 that meet the following: RFC 3526, Section 3</selectable>
-                    <selectable>[FFC Schemes using “safe-prime” groups] that meet the following: ‘NIST Special Publication 800-56A 
+                      the following: [FIPS PUB 186-4, “Digital Signature Standard (DSS)", Appendix B.1]</selectable>
+                    <selectable>[FFC schemes] using [Diffie-Hellman group 14] that meet the following: [RFC 3526, Section 3]</selectable>
+                    <selectable>[FFC Schemes] using [“safe-prime” groups] that meet the following: [NIST Special Publication 800-56A 
                       Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm
                       Cryptography” and 
                       <selectables>
                         <selectable>RFC 3526</selectable>
-                        <selectable>RFC 7919</selectable>
-                      </selectables></selectable>
-                    <selectable>[RSA schemes] using cryptographic key sizes of [2048-bit or greater] that
-                      meet the following: [FIPS PUB 186-4, “Digital Signature Standard (DSS),”
-                      Appendix B.3]</selectable>
+                        <selectable>RFC 7919</selectable></selectables>]</selectable>
                     <selectable exclusive="yes"><h:b>no other key generation methods</h:b>
                     </selectable>
                   </selectables>
@@ -2096,7 +2094,7 @@ expected to enforce.<h:br/><h:br/>
                   TOE or invoked from the platform) are required for IPsec, this SFR is mandatory
                   for any TOE that claims conformance to this PP-Module.<h:br/><h:br/>
                   This SFR is functionally identical to what is defined in the App PP except that ECC
-                  key generation has been made mandatory in support of IPsec due to the
+                  key generation with P-256 and P-384 has been made mandatory in support of IPsec due to the
                   mandated support for DH groups 19, and 20 in FCS_IPSEC_EXT.1.8. RSA remains
                   present as a selection since it may be used by parts of the TOE that are not
                   specifically related to VPN client functionality.
@@ -2115,37 +2113,36 @@ expected to enforce.<h:br/><h:br/>
                 establishment.</consistency-rationale>
               <f-element id="ap-fcs-ckm-2e1">
                 <title>The application shall 
-                  <selectables onlyone="yes">
+                  <selectables>
                     <selectable>invoke platform-provided functionality</selectable>
                     <selectable>implement functionality</selectable>
                   </selectables> to perform cryptographic key
-                  establishment in accordance with a specified key establishment method:
+                  establishment in accordance with a specified cryptographic key establishment method:
                   <h:ul>
-                    <h:li><h:b>[<h:i>Elliptic curve-based key establishment schemes</h:i>] that meets the following: [<h:i>NIST
+                    <h:li><h:b>[Elliptic curve-based key establishment schemes] that meets the following: [NIST
                       Special Publication 800-56A, “Recommendation for Pair-Wise Key Establishment
-                      Schemes Using Discrete Logarithm Cryptography”</h:i>]; and</h:b>
+                      Schemes Using Discrete Logarithm Cryptography”]; and</h:b>
                     </h:li>
                   </h:ul>
                   <selectables linebreak="yes">
+                    <selectable>[RSA-based key establishment schemes] that meets the following: [NIST Special
+                      Publication 800-56B, “Recommendation for Pair-Wise Key Establishment
+                      Schemes Using Integer Factorization Cryptography”]</selectable>
+                    <selectable> [RSA-based key establishment schemes] that meet the following: RSAES-PKCS1-v1_5 as specified
+                      in Section 7.2 of RFC 8017, “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications
+                      Version 2.1"</selectable>
                     <selectable>[Finite field-based key establishment schemes] that meets the following: [NIST
                       Special Publication 800-56A, “Recommendation for Pair-Wise Key Establishment
                       Schemes Using Discrete Logarithm Cryptography”]</selectable>
-                    <selectable>Key establishment scheme using Diffie-Hellman group 14] that meets the
-                      following: [RFC 3526, Section 3]</selectable>
-                    <selectable>[FFC Schemes using “safe-prime” groups]that meet the following: ‘NIST Special
+                    <selectable>[Key establishment scheme using Diffie-Hellman group 14] that meets the
+                      following: RFC 3526, Section 3</selectable>
+                    <selectable>[FFC Schemes using “safe-prime” groups] that meet the following: NIST Special
                       Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
                       Establishment Schemes Using Discrete Logarithm Cryptography” and 
                       <selectables>
                         <selectable>RFC 3526</selectable>
                         <selectable>RFC 7919</selectable></selectables></selectable>
-                    <selectable> [RSA-based key establishment schemes] that meets the following: RSAES-PKCS1-v1_5 as specified
-                      in Section 7.2 of RFC 8017, “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications
-                      Version 2.1</selectable>
-                    <selectable>[RSA-based key establishment schemes] that meet the following: [NIST Special
-                      Publication 800-56B, “Recommendation for Pair-Wise Key Establishment
-                      Schemes Using Integer Factorization Cryptography”]</selectable>
-                    <selectable exclusive="yes">No other schemes</selectable>
-                  </selectables>.
+                    <selectable exclusive="yes">No other schemes</selectable></selectables>.
                 </title>
                 <note role="application">
                   This SFR differs from its definition in the App PP by moving elliptic curve-based
@@ -2162,7 +2159,7 @@ expected to enforce.<h:br/><h:br/>
 
             <!-- 5.3.1.3 FCS_CKM.1 Cryptographic Key Generation Services -->
 			<!-- This is  FCS_CKM.1 in the AppPP though it should be FCS_CKM_EXT.1. -->
-            <f-component name="Cryptographic Key Generation Services" cc-id="fcs_ckm.1" id="ap-fcs-ckm-1">
+            <f-component name="Cryptographic Key Generation Services" cc-id="fcs_ckm_ext.1" id="ap-fcs-ckm-1">
               <consistency-rationale>The ST author is instructed to make specific selections at minimum to
                 address VPN client requirements; specifically, since key generation
                 services are required in some capacity in order to support VPN
@@ -2172,10 +2169,9 @@ expected to enforce.<h:br/><h:br/>
                 mandatory since it is required for VPN client functionality.</consistency-rationale> 
               <f-element id="ap-fcs-ckm-1e1">
                 <title>The application shall 
-                  <selectables onlyone="yes">
+                  <selectables linebreak="yes">
                     <selectable>invoke platform-provided functionality for asymmetric key generation</selectable>
-                    <selectable>implement asymmetric key generation</selectable>
-                  </selectables>.
+                    <selectable>implement asymmetric key generation</selectable></selectables>.
                 </title>
                 <note role="application">
                   This selection differs from its definition in the App PP by
@@ -2198,11 +2194,7 @@ expected to enforce.<h:br/><h:br/>
                 address VPN client requirements; the SFR behavior itself is
                 unmodified.</consistency-rationale>
               <f-element id="ap-fcs-cop-1-1-skc">
-                <title>The application shall
-                  <selectables>
-                    <selectable>perform encryption/decryption</selectable>
-                    <selectable>invoke the platform to perform encryption/decryption</selectable>
-                  </selectables>in accordance with
+                <title>The application shall perform [encryption/decryption] in accordance with
                   a specified cryptographic algorithm <h:b>
                   <h:ul>
                     <h:li>AES-CBC (as defined in NIST SP 800-38A) mode,</h:li>
@@ -2253,7 +2245,13 @@ expected to enforce.<h:br/><h:br/>
                 certificate authentication is used.</consistency-rationale>
               <f-element id="ap-fia-x509-ext-2e1">
                 <title>The application shall use X.509v3 certificates as defined by RFC 5280 to support
-                  authentication for <h:b>IPsec</h:b> and [<h:b>no other protocols</h:b>].
+                  authentication for <h:b>IPsec</h:b> and <selectables>
+                    <selectable>HTTPS</selectable>
+                    <selectable>TLS</selectable>
+                    <selectable>DTLS</selectable>
+                    <selectable>SSH</selectable>
+                    <selectable><h:b>no other protocols</h:b></selectable>
+                  </selectables> 
                 </title>
               </f-element>
               <f-element id="ap-fia-x509-ext-2e2">
@@ -2262,15 +2260,11 @@ expected to enforce.<h:br/><h:br/>
                   <selectables onlyone="yes">
                     <selectable>allow the administrator to choose whether to accept the certificate in these cases</selectable>
                     <selectable>accept the certificate</selectable>
-                    <selectable>not accept the certificate</selectable>
-                  </selectables>.
+                    <selectable>not accept the certificate</selectable></selectables>.
                 </title>
                 <note role="application">
                   This SFR is identical to what is defined in the App PP except that mandatory
-                  support for IPsec is added. Additionally, because this SFR is selection-based in
-                  the App PP but is mandatory for VPN client usage, the ‘no other protocols’
-                  selection item has been added since it is expected that IPsec is the TOE’s only use
-                  of certificates.
+                  support for IPsec is added. 
                 </note>
                 <aactivity level="component">
                   <no-tests>Refer to the EA for <no-link>FIA_X509_EXT.2</no-link> in the App PP.</no-tests>
@@ -2287,8 +2281,8 @@ expected to enforce.<h:br/><h:br/>
               <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
                 implement trusted channels.</consistency-rationale>
               <f-element id="ap-ftp-dit-ext-1e1">
-                <title>The application shall encrypt all transmitted [sensitive data] using IPsec as specified
-                  in FCS_IPSEC_EXT.1 for <assignable>functions</assignable> and 
+                <title>The application shall [<h:i>encrypt all transmitted [sensitive data] with <h:b>IPsec as specified
+                  in the PP-Module for VPN Client <assignable>functions</assignable> and </h:b>
                   <selectables>
                     <selectable>HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client for <assignable>functions</assignable></selectable>
                     <selectable>HTTPS as a server in accordance with FCS_HTTPS_EXT.1/Server for <assignable>functions</assignable></selectable>
@@ -2314,8 +2308,8 @@ expected to enforce.<h:br/><h:br/>
                     </selectable>
                     <selectable>DTLS as a client as defined in the Functional Package for TLS for <assignable>functions</assignable></selectable>
                     <selectable>SSH as defined in the Functional Package for Secure Shell for <assignable>functions</assignable></selectable>
-                    <selectable>no other protocols</selectable></selectables>
-                  between itself and another trusted IT product.
+                    <selectable><h:b>no other protocols</h:b></selectable></selectables>
+                </h:i>] between itself and another trusted IT product.
                 </title>
                 <note role="application">
                   This SFR is identical to what is defined in the App PP except that mandatory support for IPsec is
@@ -2359,8 +2353,8 @@ expected to enforce.<h:br/><h:br/>
             <f-element id="ap-fcs-ckm-ext-2e1">
               <title>The 
                 <selectables>
-                  <selectable>TOE</selectable>
-                  <selectable>TOE platform</selectable>
+                  <selectable>VPN client</selectable>
+                  <selectable>OS</selectable>
                 </selectables> shall store persistent secrets and private keys
                 when not in use in platform-provided key storage.
               </title>
@@ -2426,12 +2420,13 @@ expected to enforce.<h:br/><h:br/>
                 the requirement, since if it performs zeroization at all it will be by invoking
                 platform interfaces to perform the storage location clear or overwrite function. The
                 ST author should select "TOE" when, for at least one of the keys needed to meet
-                the requirements of this PP, the TOE manipulates (reads, writes) the data
+                the requirements of this PP-Module, the TOE manipulates (reads, writes) the data
                 identified in the requirement and thus needs to ensure that those data are
                 cleared. In these cases, it is sufficient for the TOE to invoke the correct
                 underlying functions of the host to perform the zeroization—it does not imply
                 that the TOE has to include a kernel-mode memory driver to ensure the data are
-                zeroized.<h:br/><h:br/>
+                zeroized. The ST author should select "TOE platform" when native OS functionality is used to perform the key destruction. 
+                <h:br/><h:br/>
 
                 In the likely event that some of the data are manipulated by the TOE and other
                 data are manipulated entirely by the platform, the ST author must select both
@@ -3789,10 +3784,10 @@ expected to enforce.<h:br/><h:br/>
               <Guidance>The evaluator shall check the operational guidance to ensure it provides instructions on how the TOE
 		configures the values for SA lifetimes. In addition, the evaluator shall check that the guidance has the
 		option for either the administrator or VPN gateway to configure Phase 1 SAs if time-based limits are
-		supported. Currently there are no values mandated for the number of packets or number of bytes; the
+		supported. Currently, there are no values mandated for the number of packets or number of bytes; the
 		evaluator shall simply check the operational guidance to ensure that this can be configured if selected in
 		the requirement.<h:br/><h:br/></Guidance>
-              <Tests>When testing this functionality, the evaluator needs to ensure that both sides are configured
+              <Tests>When testing this functionality, the evaluator shall ensure that both sides are configured
 		appropriately. From the RFC “A difference between IKEv1 and IKEv2 is that in IKEv1 SA lifetimes were
 		negotiated. In IKEv2, each end of the SA is responsible for enforcing its own lifetime policy on the SA and
 		rekeying the SA when necessary. If the two ends have different lifetime policies, the end with the shorter
@@ -4659,7 +4654,7 @@ expected to enforce.<h:br/><h:br/>
                   <test>(conditional for EAP-TTLS support): The evaluator shall cause the test client with a valid certificate to send 
                     an invalid authenticator for the claimed authentication method.
                     <h:b/>For HOTP, replay the HOTP value sent previously. 
-                    <h:b/>For TOTP or PSK, modify a byte of the properly constructed value and observe that the TSF aborts the session </test>
+                    <h:b/>For TOTP or PSK, modify a byte of the properly constructed value and observe that the TSF aborts the session.</test>
                   <test>The evaluator shall establish a new, valid certificate for a test client using an identifier not 
                     corresponding to a registered user. For EAP-TTLS, the evaluator shall cause the test client using this 
                     certificate to send a correct authenticator value for the registered user. The evaluator shall initiate a 
@@ -5475,7 +5470,7 @@ expected to enforce.<h:br/><h:br/>
 			Protection Profile for Application Software</h:a>, Version 1.4, October 2021
       </description>
     </entry>
-<!--
+
     <entry id="bibSD"> 
       <tag>SD</tag>
       <description>
@@ -5483,7 +5478,7 @@ expected to enforce.<h:br/><h:br/>
         Version 2.5, June 10, 2024
       </description>
     </entry>
--->
+
 	</bibliography>
 
 	<!-- Appendix G: Acronyms -->
