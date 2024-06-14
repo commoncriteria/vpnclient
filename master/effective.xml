@@ -910,7 +910,7 @@ expected to enforce.<h:br/><h:br/>
                   </h:li></h:i>
                 </h:ul></h:b>
                 <selectables linebreak="yes">
-                  <selectable>RSA schemes using cryptographic key sizes of 2048-bit or greater that meet
+                  <selectable>RSA schemes using cryptographic key sizes of 3072-bit or greater that meet
                     the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),”
                     Appendix B.3</selectable>
                   <selectable>FFC schemes using <selectables>
@@ -950,7 +950,7 @@ expected to enforce.<h:br/><h:br/>
               unmodified.</consistency-rationale>
             <f-element id="os-fcs-ckm-2e1">
               <title>The OS shall implement functionality to perform cryptographic key
-                establishment in accordance with a specified key establishment method:
+                establishment in accordance with a specified cryptographic key establishment method:
                 <h:ul>
                   <h:li><h:b><h:i>Elliptic curve-based key establishment schemes that meets the following:
                     NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
@@ -989,7 +989,7 @@ expected to enforce.<h:br/><h:br/>
           </f-component>
 
           <!-- 5.1.1.3 FCS_COP.1(1) Cryptographic Operation (Encryption/Decryption)  -->
-          <f-component cc-id="fcs_cop.1" id="os-fcs-cop-1-1" name="Cryptographic Operation (Encryption/Decryption)" iteration="ENCRYPT">
+          <f-component cc-id="fcs_cop.1" id="os-fcs-cop-1-1" name="Cryptographic Operation - Encryption/Decryption" iteration="ENCRYPT">
             <consistency-rationale>The SFR is refined to list an additional AES mode that must be
               supported to address VPN client requirements; the use of this mode
               for VPN connectivity does not impact the ability of the OS to satisfy
@@ -1071,7 +1071,7 @@ expected to enforce.<h:br/><h:br/>
 			TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to meet
 			the requirements in the ST. For each of these items, the evaluator shall confirm that the TSS lists for what
 			purpose it is used, and how it is stored. <h:br/><h:br/>
-                  	The evaluator shall review the TSS for to determine that it makes a case that, for each item listed as being
+                  	The evaluator shall review the TSS to determine that it makes a case that, for each item listed as being
 			manipulated, it is not written unencrypted to persistent memory, and that the item is
 			stored by the OS.<h:br/><h:br/>
                 </TSS>
@@ -1142,9 +1142,10 @@ expected to enforce.<h:br/><h:br/>
                     FMT_SMF.1/VPN.
                 </note>
               <aactivity level="element">
-                The EAs below apply to FIA_X509_EXT.3.2. FIA_X509_EXT.3.1 is evaluated as part of FCS_IPSEC_EXT.1 (and
-                conditionally as part of FPT_TUD_EXT.1 or FPT_TST_EXT.1) and FIA_X509_EXT.3.3 is evaluated as part
-                of FCS_IPSEC_EXT.1.11.<h:br/><h:br/>
+                <!-- 
+                The EAs below apply to <no-link>FIA_X509_EXT.3.2</no-link>. <no-link>FIA_X509_EXT.3.1</no-link> is evaluated as part of <no-link>FCS_IPSEC_EXT.1</no-link> (and
+                conditionally as part of <no-link>FPT_TUD_EXT.1</no-link> or <no-link>FPT_TST_EXT.1</no-link>) and <no-link>FIA_X509_EXT.3.3</no-link> is evaluated as part
+                of <no-link>FCS_IPSEC_EXT.1.11</no-link>.<h:br/><h:br/>  -->
                 <TSS>The evaluator shall check the TSS to ensure that it describes whether the VPN client or the OS implements
                   the certificate validation functionality, how the VPN client/OS chooses which certificates to use, and any
                   necessary instructions in the administrative guidance for configuring the OS so that desired certificates
@@ -1203,7 +1204,7 @@ expected to enforce.<h:br/><h:br/>
                   <selectable>VPN client</selectable>
                   <selectable>OS</selectable>
                 </selectables>
-                shall use IPsec to provide</h:b> a <h:b>trusted</h:b>
+                shall use IPsec to</h:b> provide a <h:b>trusted</h:b>
                 communication channel between itself and <h:b>
                   <selectables linebreak="yes">
                   <selectable>a remote VPN gateway</selectable>
@@ -1221,7 +1222,7 @@ expected to enforce.<h:br/><h:br/>
                 <selectables onlyone="yes">
                   <selectable>VPN client</selectable>
                   <selectable>OS</selectable>
-                </selectables></h:b> shall permit [<h:i>the TSF</h:i>] to initiate communication with the trusted channel.
+                </selectables></h:b> shall permit [<h:i>the TSF</h:i>] to initiate communication via the trusted channel.
               </title>
             </f-element>
             <f-element id="os-ftp-itc-1e3">
@@ -1231,7 +1232,7 @@ expected to enforce.<h:br/><h:br/>
                   <selectable>VPN client</selectable>
                   <selectable>OS</selectable>
                 </selectables></h:b> shall initiate communication via the trusted
-                channel [<h:i>for all traffic traversing that connection</h:i>].
+                channel for [<h:i>all traffic traversing that connection</h:i>].
               </title>
               <note role="application">
                 The intent of the above requirement is to demonstrate that IPsec can be used to
@@ -2233,6 +2234,7 @@ expected to enforce.<h:br/><h:br/>
                   AES-GCM and FCS_IPSEC_EXT.1.6 requires both 128-bit and 256-bit AES-CBC).
                 </note>
                 <aactivity level="element">
+                  The following shall be performed in addition to the EAs specified by the Base-PP:
 			<TSS>
 				If the TSF implements AES cryptography in support of both credential encryption (per FCS_STO_EXT.1)
 				and IPsec, the evaluator shall examine the TSS to ensure that it clearly identifies the modes and key sizes
@@ -2240,7 +2242,7 @@ expected to enforce.<h:br/><h:br/>
 			  For platform-provided functionality, the evaluator shall verify the TSS contains the calls to the platform that the TOE is leveraging to invoke the functionality.
 			</TSS>
 			<Guidance>
-			  There are no operational  beyond what is required by the EA for <no-link>FCS_COP.1/SKC</no-link> in the App PP.<h:br/><h:br/>
+			  There are no guidance EAs beyond what is required by the EA for <no-link>FCS_COP.1/SKC</no-link> in the App PP.<h:br/><h:br/>
 			</Guidance>
 			<Tests>
 				There are no test EAs beyond what is required by the EA for <no-link>FCS_COP.1/SKC</no-link> in the App PP.
@@ -2391,7 +2393,7 @@ expected to enforce.<h:br/><h:br/>
 
                   	<h:b>Persistent secrets and private keys manipulated by the TOE:</h:b><h:br/><h:br/>
 
-                  	The evaluator reviews the TSS for to determine that it makes a case that, for each item listed as being
+                  	The evaluator reviews the TSS to determine that it makes a case that, for each item listed as being
 			manipulated by the TOE, it is not written unencrypted to persistent memory, and that the item is stored
 			by the platform.<h:br/><h:br/>
                 </TSS>
@@ -2451,10 +2453,10 @@ expected to enforce.<h:br/><h:br/>
                   	<h:b>Requirement met by the platform:</h:b><h:br/><h:br/>
 
                   	The evaluator shall check to ensure the TSS describes each of the secret keys (keys used for
-                  	symmetric encryption), private keys, and CSPs used to generate key that are not otherwise covered
+                  	symmetric encryption), private keys, and CSPs used to generate keys that are not otherwise covered
                   	by the FCS_CKM_EXT.4 requirement levied on the TOE.<h:br/><h:br/>
                   	For each platform listed in the ST, the evaluator shall examine the TSS of the ST of the platform to
-                  	ensure that each of the secret keys, private keys, and CSPs used to generate key listed above are
+                  	ensure that each of the secret keys, private keys, and CSPs used to generate the keys listed above are
                   	covered. <h:br/><h:br/>
 
                   	<h:b>Requirement met by the TOE:</h:b><h:br/><h:br/>
@@ -2487,10 +2489,10 @@ expected to enforce.<h:br/><h:br/>
                     				<h:li>Cause the TOE to clear the key.</h:li>
 				                <h:li>Cause the TOE to stop the execution but not exit.</h:li>
                     				<h:li>Cause the TOE to dump the entire memory footprint of the TOE into a binary file.</h:li>
-                    				<h:li>Search the content of the binary file created in #4 for instances of the known key value from
+                    				<h:li>Search the content of the binary file created in #6 for instances of the known key value from
   					                  #1.</h:li>
 					</h:ol>
-		                    	The test succeeds if no copies of the key from #1 are found in step #7 above and fails otherwise.<h:br/><h:br/>
+		                    	<h:br/>The test succeeds if no copies of the key from #1 are found in step #7 above and fails otherwise.<h:br/><h:br/>
  		                   	The evaluator shall perform this test on all keys, including those persisted in encrypted form, to ensure
 					intermediate copies are cleared.
 				</test>
@@ -3368,21 +3370,21 @@ expected to enforce.<h:br/><h:br/>
 			the following:<h:br/><h:br/>
 			If the TOE boundary includes a general-purpose OS or mobile device, the evaluator shall
 			examine the TSS to ensure that it describes whether the VPN client capability is architecturally integrated
-			with the platform itself or whether it is a separate executable that is bundled with the platform.<h:br/><h:br/>
+			with the platform itself or it is a separate executable that is bundled with the platform.<h:br/><h:br/>
 		</TSS>
 		<Guidance>
-			In addition to the Operational  for the individual FCS_IPSEC_EXT.1 elements below, the
+			In addition to the guidance EAs for the individual FCS_IPSEC_EXT.1 elements below, the
 			evaluator shall perform the following:<h:br/><h:br/>
 			If the configuration of the IPsec behavior is from an environmental source, most notably a VPN gateway
 			(e.g through receipt of required connection parameters from a VPN gateway), the evaluator shall ensure
 			that the operational guidance contains any appropriate information for ensuring that this configuration
 			can be properly applied.<h:br/><h:br/>
-			Note in this case that the implementation of the IPsec protocol must be enforced entirely within the TOE
+			Note, in this case, that the implementation of the IPsec protocol must be enforced entirely within the TOE
 			boundary; i.e. it is not permissible for a software application TOE to be a graphical front-end for IPsec
 			functionality implemented totally or in part by the underlying OS platform. The behavior referenced here
 			is for the possibility that the configuration of the IPsec connection is initiated from outside the TOE, which
 			is permissible so long as the TSF is solely responsible for enforcing the configured behavior. However, it is
-			allowable for the TSF to rely on low-level platform-provided networking functions to implement the SPD
+			allowable for the TSF to rely on low-level, platform-provided networking functions to implement the SPD
 			from the client (e.g., enforcement of packet routing decisions).<h:br/><h:br/>
 		</Guidance>
 		<Tests>
@@ -3390,7 +3392,7 @@ expected to enforce.<h:br/><h:br/>
 			evaluator shall do the following:<h:br/><h:br/>
 			The evaluator shall minimally create a test environment equivalent to the test environment illustrated
 			below. It is expected that the traffic generator is used to construct network packets and will provide the
-			evaluator with the ability manipulate fields in the ICMP, IPv4, IPv6, UDP, and TCP packet headers. The
+			evaluator with the ability to manipulate fields in the ICMP, IPv4, IPv6, UDP, and TCP packet headers. The
 			evaluator shall provide justification for any differences in the test environment.<h:br/><h:br/>
 
    			<figure entity="images/network.png" title="Test Environment" id="fig-testenv"/>
@@ -3407,7 +3409,7 @@ expected to enforce.<h:br/><h:br/>
 
                 If the TOE is a standalone software application, the evaluator shall ensure that the TSS asserts that all
 				IPsec functionality is implemented by the TSF. The evaluator shall also ensure that the TSS identifies what
-				platform functionality the TSF relies upon to support its IPsec implementation, if any (e.g. does it invoke
+				platform functionality the TSF relies on to support its IPsec implementation, if any (e.g. does it invoke
 				cryptographic primitive functions from the platform’s cryptographic library, enforcement of packet
 				routing decisions by low-level network drivers).<h:br/><h:br/>
 
@@ -3425,10 +3427,10 @@ expected to enforce.<h:br/><h:br/>
 				The evaluator shall ensure that the TSS describes how the SPD is implemented and the rules for processing
 				both inbound and outbound packets in terms of the IPsec policy. The TSS describes the rules that are
 				available and the resulting actions available after matching a rule. The TSS describes how the available
-				rules and actions form the SPD using terms defined in RFC 4301 such as BYPASS (e.g., no encryption),
-				DISCARD (e.g., drop the packet), and PROTECT (e.g., encrypt the packet) actions defined in RFC 4301.
+				rules and actions form the SPD using terms defined in RFC 4301, such as BYPASS (e.g., no encryption),
+				DISCARD (e.g., drop the packet), and PROTECT (e.g., encrypt the packet).<h:br/><h:br/>
 			  
-				As noted in section 4.4.1 of RFC 4301, the processing of entries in the SPD is non-trivial and the evaluator
+				As noted in section 4.4.1 of RFC 4301, the processing of entries in the SPD is non-trivial, and the evaluator
 				shall determine that the description in the TSS is sufficient to determine which rules will be applied given
 				the rule structure implemented by the TOE. For example, if the TOE allows specification of ranges,
 				conditional rules, etc., the evaluator shall determine that the description of rule processing (for both
@@ -3454,7 +3456,7 @@ expected to enforce.<h:br/><h:br/>
 		application, how ordering of entries may be expressed, as well as the impacts that ordering of entries may
 		have on the packet processing.<h:br/><h:br/>
 
-               	In either case, the evaluator shall ensure the description provided In the TSS is consistent with the capabilities
+               	In either case, the evaluator shall ensure the description provided in the TSS is consistent with the capabilities
 		and description provided in the operational guidance.<h:br/><h:br/>
               </Guidance>
               <Tests>
@@ -3472,7 +3474,7 @@ expected to enforce.<h:br/><h:br/>
 			construction of the rule shall be different such that the evaluator can generate a packet and send packets
 			to the client with the appropriate fields (fields that are used by the rule - e.g., the IP addresses, TCP/UDP
 			ports) in the packet header. The evaluator performs both positive and negative test cases for each type
-			of rule. The evaluator observes via the audit trail, and packet captures that the TOE exhibited the expected
+			of rule. The evaluator observes via the audit trail and packet captures that the TOE exhibited the expected
 			behavior: appropriate packets were dropped, allowed through without modification, was encrypted by
 			the IPsec implementation.</test>
                   <test>The evaluator shall devise several tests that cover a variety of scenarios for packet processing.
@@ -3505,19 +3507,19 @@ expected to enforce.<h:br/><h:br/>
 			</note>
             <aactivity level="element">
               <TSS>The evaluator shall check the TSS to ensure it states that the VPN can be established to operate in tunnel
-			mode, transport mode, or either mode (as selected). <h:br/><h:br/></TSS>
+			mode, transport mode, or both (as selected). <h:br/><h:br/></TSS>
               <Guidance>The evaluator shall confirm that the operational guidance contains instructions on how to configure the
 			connection in each mode selected.<h:br/><h:br/>
-		      If both transport mode and tunnel mode are implemented, the evaluator shall review the operational
+		      If both transport and tunnel modes are implemented, the evaluator shall review the operational
 			guidance to determine how the use of a given mode is specified.<h:br/><h:br/>
               </Guidance>
               <Tests>The evaluator shall perform the following tests based on the selections chosen:
               <testlist>
                 <test> [conditional]: If tunnel mode is selected, the evaluator uses the operational guidance to configure
-			the TOE to operate in tunnel mode and also configures a VPN gateway to operate in tunnel mode. The
+			the TOE and a VPN gateway to operate in tunnel mode. The
 			evaluator configures the TOE and the VPN gateway to use any of the allowable cryptographic algorithms, 
 			authentication methods, etc. to ensure an allowable SA can be negotiated. The evaluator shall then
-			initiate a connection from the client to connect to the VPN GW peer. The evaluator observes (for example,
+			initiate a connection from the client to connect to the VPN gateway peer. The evaluator observes (for example,
 			in the audit trail and the captured packets) that a successful connection was established using the tunnel
 			mode.</test>
                 <test>[conditional]: If transport mode is selected, the evaluator uses the operational guidance to
@@ -3528,9 +3530,9 @@ expected to enforce.<h:br/><h:br/>
 			The evaluator observes (for example, in the audit trail and the captured packets) that a successful
 			connection was established using the transport mode.
 		</test>
-                <test> [conditional]: If both tunnel mode and transport mode are selected, the evaluator shall perform
+                <test> [conditional]: If both tunnel and transport modes are selected, the evaluator shall perform
 			both Test 1 and Test 2 above, demonstrating that the TOE can be configured to support both modes.</test>
-                <test> [conditional]: If both tunnel mode and transport mode are selected, the evaluator shall modify the
+                <test> [conditional]: If both tunnel and transport modes are selected, the evaluator shall modify the
 			testing for FCS_IPSEC_EXT.1 to include the supported mode for SPD PROTECT entries to show that they
 			only apply to traffic that is transmitted or received using the indicated mode.
                 </test>
@@ -3582,8 +3584,8 @@ expected to enforce.<h:br/><h:br/>
             <aactivity level="element">
               <TSS>The evaluator shall examine the TSS to verify that the algorithms AES-GCM-128 and AES-GCM-256 are
 		implemented. If the ST author has selected either AES-CBC-128 or AES-CBC-256 in the requirement, then
-		the evaluator verifies the TSS describes these as well. In addition, the evaluator shall ensure that the SHA-
-		based HMAC algorithm conforms to the algorithms specified in the relevant iteration of FCS_COP.1 from
+		the evaluator verifies the TSS describes these as well. In addition, the evaluator shall ensure that the SHA-based HMAC 
+		algorithm conforms to the algorithms specified in the relevant iteration of FCS_COP.1 from
 		the Base-PP that applies to keyed-hash message authentication.<h:br/><h:br/></TSS>
               <Guidance>The evaluator checks the operational guidance to ensure it provides instructions on how the TOE is
 		configured to use the algorithms selected in this component and whether this is performed through direct
@@ -3593,10 +3595,10 @@ expected to enforce.<h:br/><h:br/>
               <Tests>
 		      <testlist>
 			      <test>
-				      The evaluator shall configure the TOE as indicated in the operational guidance configuring the TOE
+				      The evaluator shall configure the TOE as indicated in the operational guidance, configuring the TOE
 					to using each of the AES-GCM-128, and AES-GCM-256 algorithms, and attempt to establish a connection
-					using ESP. If the ST Author has selected either AES-CBC-128 or AES-CBC-256, the TOE is configured to use
-					those algorithms and the evaluator attempts to establish a connection using ESP for those algorithms
+					using ESP. If the ST author has selected either AES-CBC-128 or AES-CBC-256, the TOE is configured to use
+					those algorithms, and the evaluator attempts to establish a connection using ESP for those algorithms
 					selected.
 			      </test>
 		      </testlist>
@@ -3629,17 +3631,17 @@ expected to enforce.<h:br/><h:br/>
               </selectables>.
             </title>
             <aactivity level="element">
-              <TSS>The evaluator shall examine the TSS to verify that IKEv1, IKEv2, or both IKEv1 and IKEv2 are implemented. If IKEv1 is
-		implemented, the evaluator shall verify that the TSS indicates whether or not XAUTH is supported, and
+              <TSS>The evaluator shall examine the TSS to verify that IKEv1, IKEv2, or both are implemented. If IKEv1 is
+		implemented, the evaluator shall verify that the TSS indicates whether XAUTH is supported, and
 		that aggressive mode is not used for IKEv1 Phase 1 exchanges (i.e. only main mode is used). It may be that
 		these are configurable options.<h:br/><h:br/>
               </TSS>
               <Guidance>The evaluator shall check the operational guidance to ensure it instructs the administrator how to
 		configure the TOE to use IKEv1, IKEv2, or both (as selected), and uses the guidance to configure the TOE to
-		perform NAT traversal for the test below. If XAUTH is implemented, the evaluator shall verify that the
+		perform NAT traversal for the tests below. If XAUTH is implemented, the evaluator shall verify that the
 		operational guidance provides instructions on how it is enabled or disabled. <h:br/><h:br/>
                 If the TOE supports IKEv1, the evaluator shall verify that the operational guidance either asserts that only
-		main mode is used for Phase 1 exchanges, or provides instructions for disabling aggressive mode.<h:br/><h:br/>
+		main mode is used for Phase 1 exchanges or provides instructions for disabling aggressive mode.<h:br/><h:br/>
 		</Guidance>
               <Tests>
                 <testlist>
@@ -3703,7 +3705,7 @@ expected to enforce.<h:br/><h:br/>
 			</note>
             <aactivity level="element">
               <TSS>The evaluator shall ensure the TSS identifies the algorithms used for encrypting the IKE
-		payload for each supported IKE version, and that the algorithms AES-CBC-128, AES-CBC-256 are specified, and if others are chosen in the
+		payload for each supported IKE version and that the algorithms AES-CBC-128 and AES-CBC-256 are specified, and if others are chosen in the
 		selection of the requirement, those are included in the TSS discussion.<h:br/><h:br/></TSS>
               <Guidance>The evaluator checks the operational guidance to ensure it provides instructions on how the TOE is
 		configured to use the algorithms selected in this component and whether this is performed through direct
@@ -3794,8 +3796,8 @@ expected to enforce.<h:br/><h:br/>
               <TSS>There are no TSS EAs for this requirement.<h:br/><h:br/></TSS>
               <Guidance>The evaluator shall check the operational guidance to ensure it provides instructions on how the TOE
 		configures the values for SA lifetimes. In addition, the evaluator shall check that the guidance has the
-		option for either the Administrator or VPN gateway to configure Phase 1 SAs if time-based limits are
-		supported. Currently there are no values mandated for the number of packets or number of bytes, the
+		option for either the administrator or VPN gateway to configure Phase 1 SAs if time-based limits are
+		supported. Currently there are no values mandated for the number of packets or number of bytes; the
 		evaluator shall simply check the operational guidance to ensure that this can be configured if selected in
 		the requirement.<h:br/><h:br/></Guidance>
               <Tests>When testing this functionality, the evaluator needs to ensure that both sides are configured
@@ -3855,7 +3857,7 @@ expected to enforce.<h:br/><h:br/>
 				and FCS_IPSEC_EXT.1.10 may contain multiple values. For each DH group
 				supported, the ST author consults Table 2 in 800-57 to determine the “bits of
 				security” associated with the DH group. Each unique value is then used to fill in
-				the assignment (for 1.9 they are doubled; for 1.10 they are inserted directly into
+				the assignment (for 1.9 they are doubled; for  they are inserted directly into
 				the assignment). For example, suppose the implementation supports DH group
 				14 (2048-bit MODP) and group 20 (ECDH using NIST curve P-384). From Table 2,
 				the bits of security value for group 14 is 112, and for group 20 it is 192. For
@@ -3994,7 +3996,7 @@ expected to enforce.<h:br/><h:br/>
 		             The evaluator shall ensure that the TSS describes how the TOE compares the peer’s presented identifier
 		to the reference identifier. This description shall include whether the certificate presented identifier is
 		compared to the ID payload presented identifier, which fields of the certificate are used as the presented
-		identifier (DN, Common Name, or SAN) and, if multiple fields are supported, the logical order comparison.
+		identifier (DN, Common Name, or SAN), and if multiple fields are supported, the logical order comparison.
 		If the ST author assigned an additional identifier type, the TSS description shall also include a description
 		of that type and the method by which that type is compared to the peer’s presented certificate.<h:br/><h:br/></TSS>
               <Guidance>If any selection with “Pre-shared Keys” is selected, the evaluator shall check that the operational guidance
@@ -4002,18 +4004,18 @@ expected to enforce.<h:br/><h:br/>
 		If any method other than no other method is selected, the evaluator shall check that the operational guidance describes any
 		      configuration necessary to enable any selected authentication mechanisms.<h:br/><h:br/>
                 The evaluator shall ensure that the operational guidance describes how to set up the TOE to use the cryptographic
-		algorithms RSA, ECDSA, or either, depending which is claimed in the ST.<h:br/><h:br/>
-               In order to construct the environment and configure the TOE for the following tests, the evaluator will
+		algorithms RSA, ECDSA, or either, depending on which is claimed in the ST.<h:br/><h:br/>
+               In order to construct the environment and configure the TOE for the following tests, the evaluator shall
 		ensure that the operational guidance also describes how to configure the TOE to connect to a trusted CA,
 		and ensure a valid certificate for that CA is loaded into the TOE as a trusted CA.<h:br/><h:br/>
 		The evaluator shall also ensure that the operational guidance includes the configuration of the reference
 		identifiers for the peer.<h:br/><h:br/></Guidance>
               <Tests>For efficiency’s sake, the testing that is performed here has been combined with the testing for
-		      <h:b>FIA_X509_EXT.2</h:b> and <h:b>FIA_X509_EXT.3</h:b> (for IPsec connections and depending on the Base-PP),
-		      <h:b>FCS_IPSEC_EXT.1.12</h:b>, and <h:b>FCS_IPSEC_EXT.1.13</h:b>. The following tests shall be repeated for each peer
-		      authentication protocol selected in the <h:b>FCS_IPSEC_EXT.1.11</h:b> selection above:
+		      <no-link>FIA_X509_EXT.2</no-link> and <no-link>FIA_X509_EXT.3</no-link> (for IPsec connections and depending on the Base-PP),
+                <no-link>FCS_IPSEC_EXT.1.12</no-link>, and <no-link>FCS_IPSEC_EXT.1.13</no-link>. The following tests shall be repeated for each peer
+                authentication protocol selected in the <no-link>FCS_IPSEC_EXT.1.11</no-link> selection above:
               <testlist>
-                <test>The evaluator shall have the TOE generate a public-private key pair, and submit a CSR (Certificate
+                <test>The evaluator shall have the TOE generate a public-private key pair and submit a CSR (Certificate
 			Signing Request) to a CA (trusted by both the TOE and the peer VPN used to establish a connection) for
 			its signature. The values for the DN (Common Name, Organization, Organizational Unit, and Country) will
 			also be passed in the request. Alternatively, the evaluator may import to the TOE a previously generated
@@ -4023,12 +4025,12 @@ expected to enforce.<h:br/><h:br/>
 			trusted CA and shall establish an IPsec connection with the peer.                
 		</test>
                 <test> The evaluator shall test that the TOE can properly handle revoked certificates – conditional on
-			whether CRL or OCSP is selected; if both are selected, and then a test is performed for each method. For
+			whether CRL or OCSP is selected; if both are selected, then a test is performed for each method. For
 			this current version of the PP-Module, the evaluator has to only test one up in the trust chain (future
 			drafts may require to ensure the validation is done up the entire chain). The evaluator shall ensure that a
-			valid certificate is used, and that the SA is established. The evaluator then attempts the test with a
+			valid certificate is used and that the SA is established. The evaluator then attempts the test with a
 			certificate that will be revoked (for each method chosen in the selection) to ensure when the certificate
-			is no longer valid that the TOE will not establish an SA
+			is no longer valid that the TOE will not establish an SA.
                 </test>
                 <test> [conditional]: For each selection made, the evaluator shall verify factors are required, as indicated in the
 			operational guidance, to establish an IPsec connection with the server. </test>
@@ -4039,23 +4041,23 @@ expected to enforce.<h:br/><h:br/>
                 <test>For each field of the certificate support for comparison, the evaluator shall configure the peer’s
 			reference identifier on the TOE (per the administrative guidance) to not match the field in the peer’s
 			presented certificate and shall verify that the IKE authentication fails.</test>
-                The following tests are conditional:
+                
                 <test> [conditional]: If, according to the TSS, the TOE supports both Common Name and SAN certificate
 			fields and uses the preferred logic outlined in the Application Note, the tests above with the Common
 			Name field shall be performed using peer certificates with no SAN extension. Additionally, the evaluator
 			shall configure the peer’s reference identifier on the TOE to not match the SAN in the peer’s presented
-			certificate but to match the Common Name in the peer’s presented certificate, and verify that the IKE
+			certificate, but to match the Common Name in the peer’s presented certificate and verify that the IKE
 			authentication fails.
 		</test>
                 <test> [conditional]: If the TOE supports DN identifier types, the evaluator shall configure the peer's
 			reference identifier on the TOE (per the administrative guidance) to match the subject DN in the peer's
 			presented certificate and shall verify that the IKE authentication succeeds. To demonstrate a bit-wise
 			comparison of the DN, the evaluator shall change a single bit in the DN (preferably, in an Object Identifier
-			(OID) in the DN) and verify that the IKE authentication fails. <h:b>To demonstrate a comparison of DN values,
-			the evaluator shall change any one of the four DN values and verify that the IKE authentication fails.</h:b>
+			(OID) in the DN) and verify that the IKE authentication fails. To demonstrate a comparison of DN values,
+			the evaluator shall change any one of the four DN values and verify that the IKE authentication fails.
                 </test>
                 <test> [conditional]: If the TOE supports both IPv4 and IPv6 and supports IP address identifier types, the
-			evaluator must repeat test 1 and 2 with both IPv4 address identifiers and IPv6 identifiers. Additionally,
+			evaluator must repeat tests 1 and 2 with both IPv4 address identifiers and IPv6 identifiers. Additionally,
 			the evaluator shall verify that the TOE verifies that the IP header matches the identifiers by setting the
 			presented identifiers and the reference identifier with the same IP address that differs from the actual IP
 			address of the peer in the IP headers and verifying that the IKE authentication fails.
@@ -4159,7 +4161,7 @@ expected to enforce.<h:br/><h:br/>
 		the symmetric key) of the algorithms that are allowed for the IKE and ESP exchanges. The TSS shall also
 		describe the checks that are done when negotiating IKEv1 Phase 2 or IKEv2 CHILD_SA suites (depending on the supported IKE versions) to ensure
 		that the strength (in terms of the number of bits of key in the symmetric algorithm) of the negotiated
-		algorithm is less than or equal to that of the IKE SA this is protecting the negotiation.
+		algorithm is less than or equal to that of the IKE SA that is protecting the negotiation.
 		<h:br/><h:br/></TSS>
               <Guidance>There are no guidance EAs for this requirement.<h:br/><h:br/></Guidance>
               <Tests>The evaluator follows the guidance to configure the TOE to perform the following tests:
@@ -4237,7 +4239,7 @@ expected to enforce.<h:br/><h:br/>
 		packet, and that if that buffer is reused, those data might remain and make their way into a new packet.
 		The evaluator shall check to ensure that the TSS describes packet processing to the extent that they can
 		determine that no data will be reused when processing network packets. The evaluator shall ensure that
-		this description at a minimum describes how the previous data are zeroized/overwritten, and at what
+		this description at a minimum describes how the previous data are zeroized/overwritten and at what
 		point in the buffer processing this occurs.<h:br/><h:br/>
               </TSS>
               <Guidance>There are no guidance EAs for this requirement.<h:br/><h:br/></Guidance>
@@ -4296,7 +4298,7 @@ expected to enforce.<h:br/><h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall test the TOE’s ability to provide the management functions by configuring the TOE
-		according to the operational guidance and testing each management activity listed in the ST.<h:br/><h:br/>
+		according to the operational guidance and testing of each management activity listed in the ST.<h:br/><h:br/>
                 The evaluator shall ensure that all management functions claimed in the ST can be performed by
 		completing activities described in the AGD. Note that this may be performed in the course of completing
 		other testing.
@@ -4368,7 +4370,7 @@ expected to enforce.<h:br/><h:br/>
 		and reading it back to ensure it is identical to what was written" shall be used). The evaluator shall ensure
 		that the TSS makes an argument that the tests are sufficient to demonstrate that the TSF is operating
 		correctly. If some of the tests are performed by the TOE platform, the evaluator shall check the TSS to
-		ensure that those tests are identified, and that the ST for each platform contains a description of those
+		ensure that those tests are identified and that the ST for each platform contains a description of those
 		tests. Note that the tests that are required by this component are those that support security functionality
 		in this PP-Module, which may not correspond to the set of all self-tests contained in the
 		platform STs.<h:br/><h:br/>
@@ -4378,11 +4380,6 @@ expected to enforce.<h:br/><h:br/>
 		makes an argument that the tests are sufficient to demonstrate that the integrity of stored TSF executable
 		code has not been compromised. The evaluator shall check to ensure that the cryptographic requirements
 		listed are consistent with the description of the integrity verification process.<h:br/><h:br/>
-
-                The evaluator also ensures that the TSS (or the operational guidance) describes the actions that take place
-		for successful (e.g. hash verified) and unsuccessful (e.g., hash not verified) cases. For checks implemented
-		entirely by the platform, the evaluator shall ensure that the operational guidance for the TOE references or
-		includes the platform-specific guidance for each platform listed in the ST.<h:br/><h:br/>
               </TSS>
               <Guidance>If not present in the TSS, the evaluator shall ensure that the operational guidance describes the actions that
 		take place for successful (e.g. hash verified) and unsuccessful (e.g., hash not verified) cases. For checks
@@ -4396,7 +4393,7 @@ expected to enforce.<h:br/><h:br/>
 			check is successful.
                   </test>
                   <test>The evaluator modifies the TSF executable, performs the integrity check on the modified TSF
-			executable and verifies that the check fails.</test>
+			executable, and verifies that the check fails.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -4662,15 +4659,15 @@ expected to enforce.<h:br/><h:br/>
                 FCS_EAP_TLS_EXT.1.3, the evaluator shall perform the following tests:
                 <testlist>
                   <test>The evaluator shall follow AGD guidance to configure the TSF to use the EAP method claimed. 
-                    The evaluator shall follow AGD guidance to configure the TSF to use the authentication method claimed and, 
+                    The evaluator shall follow AGD guidance to configure the TSF to use the authentication method claimed, and 
                     for EAP-TTLS, register a client with the appropriate key material required for the authentication method. 
-                    The evaluator shall establish an VPN session using a test client with a valid certificate and, for EAP-TTLS, 
+                    The evaluator shall establish a VPN session using a test client with a valid certificate, and for EAP-TTLS, 
                     configured to provide a correct value for the configured authenticator. The evaluator shall  observe the the 
                     VPN session is successful.</test>
                   <test>(conditional for EAP-TTLS support): The evaluator shall cause the test client with a valid certificate to send 
-                    an invalid authenticator for the claimed authentication method:
-                    <h:b/>For HOTP, replay the HOTP value sent previously, 
-                    <h:b/>For TOTP or PSK, modify a byte of the properly constructed value,and observe that the TSF aborts the session</test>
+                    an invalid authenticator for the claimed authentication method.
+                    <h:b/>For HOTP, replay the HOTP value sent previously. 
+                    <h:b/>For TOTP or PSK, modify a byte of the properly constructed value and observe that the TSF aborts the session </test>
                   <test>The evaluator shall establish a new, valid certificate for a test client using an identifier not 
                     corresponding to a registered user. For EAP-TTLS, the evaluator shall cause the test client using this 
                     certificate to send a correct authenticator value for the registered user. The evaluator shall initiate a 
@@ -4827,7 +4824,7 @@ expected to enforce.<h:br/><h:br/>
               </Guidance>
               <Tests>
                 <testlist>
-                  <test>[conditional] If generate was selected the evaluator shall generate a pre-shared key and confirm the output matches
+                  <test>[conditional] If "generate" was selected, the evaluator shall generate a pre-shared key and confirm the output matches
 			  the size selected in FIA_PSK_EXT.2.1.
                   </test>
                 </testlist>
@@ -4948,11 +4945,11 @@ expected to enforce.<h:br/><h:br/>
                 <h:br/><h:br/>The ST author shall provide a description in the TSS regarding the salt generation. The evaluator shall confirm
 		      that the salt is generated using an RBG described in FCS_RBG_EXT.1.
                 
-                <h:br/><h:br/>[conditional] If password strength meter or password denylist is selected, the evaluator shall examine the TSS to 
+                <h:br/><h:br/>[conditional] If "password strength meter" or "check the password against a denylist" is selected, the evaluator shall examine the TSS to 
 		      ensure any password checking functionality provided by the TSF is described and contains details on how the function operates.<h:br/><h:br/>
               </TSS>
               <Guidance>The evaluator shall confirm the operational guidance contains instructions for entering bit-based pre-shared keys for each 
-                protocol identified in the requirement, or generating a bit-based pre-shared key (or both). The evaluator shall confirm that any 
+                protocol identified in the requirement, is generating a bit-based pre-shared key, or both. The evaluator shall confirm that any 
                 management functions related to pre-shared keys that are performed by the TOE are specified in the operational guidance.  
                 
                 <h:br/><h:br/>The guidance must specify the allowable characters for pre-shared keys, and that list must include, at minimum, the same 
@@ -4963,14 +4960,14 @@ expected to enforce.<h:br/><h:br/>
               </Guidance>
               <Tests>
                 Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a TOE
-		      configured according to the Operational Guidance:
+		      configured according to the operational guidance:
                 <testlist>
                   <test>The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance
 			  with the FIA_PSK_EXT.1.3 and verify that a successful protocol negotiation can be performed with the key. </test>
                   <test>[conditional]: If the TOE supports pre-shared keys of multiple lengths, the evaluator shall repeat Test 1 using the minimum length and invalid 
 			  lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should 
 			  be successful, and the invalid lengths must be rejected by the TOE. </test>
-                  <test>[conditional]: If the TOE initiates connections, initiate and establish a remote connection, disconnect from the connection, verify
+                  <test>[conditional]: If the TOE initiates connections, initiate and establish a remote connection, disconnect from the connection, and verify
 			  that the PSK is required when initiating the connection a second time.</test>
                   <test>[conditional]: If the TOE supports a password meter, the evaluator shall enter a password and verify the password checker
 			  responds per the description in the TSS.</test>
@@ -5133,7 +5130,7 @@ expected to enforce.<h:br/><h:br/>
               <Guidance>The evaluator shall review the administrative guidance to ensure that the guidance itemizes all event
 		types, as well as describes all attributes that are to be selectable in accordance with the requirement, to
 		include those attributes listed in the assignment. The administrative guidance shall also contain
-		instructions on how to set the pre-selection, or how the VPN gateway will configure the client, as well as
+		instructions on how to set the pre-selection or how the VPN gateway will configure the client, as well as
 		explain the syntax (if present) for multi-value pre-selection. The administrative guidance shall also identify
 		those audit records that are always recorded, regardless of the selection criteria currently being enforced.<h:br/><h:br/></Guidance>
               <Tests>The evaluator shall perform the following tests:
@@ -5143,7 +5140,7 @@ expected to enforce.<h:br/><h:br/>
 			in the administrative guidance) to be recorded.
                 </test>
                 <test>[conditional] If the TSF supports specification of more complex audit pre-selection criteria (e.g.,
-			multiple attributes, logical expressions using attributes) then the evaluator shall devise tests showing that
+			multiple attributes, logical expressions using attributes), then the evaluator shall devise tests showing that
 			this capability is correctly implemented. The evaluator shall also, in the test plan, provide a short narrative
 			justifying the set of tests as representative and sufficient to exercise the capability.
                 </test>
@@ -5276,7 +5273,7 @@ expected to enforce.<h:br/><h:br/>
 	          audit records in accordance with the EAs associated with the functional requirements in the PP-Module for VPN Clients. 
 	          Additionally, the evaluator shall test that each administrative action applicable in the context
 	          of the PP-Module for VPN Clients is auditable. When verifying the test results, the evaluator shall ensure the
-	          audit records generated during testing match the format specified in the administrative guide, and that
+	          audit records generated during testing match the format specified in the guidance and that
 	          the fields in each audit record have the proper entries.
 	          <h:br/><h:br/>
 	          

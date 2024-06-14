@@ -1239,7 +1239,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                     Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix B.4, and,
                   </li></i>
                 </ul></b>
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_3">RSA schemes using cryptographic key sizes of 2048-bit or greater that meet
+                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_3">RSA schemes using cryptographic key sizes of 3072-bit or greater that meet
                     the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),”
                     Appendix B.3</span></li><li style=""><span class="selectable-content" id="_s_4"><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using [<b>selection</b>: <span class="selectable-content" id="_s_5">cryptographic key sizes of 3072-bit or
                       greater that meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, "Digital Signature
@@ -1268,7 +1268,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           <div class="comp" id="FCS_CKM.2"><h4>FCS_CKM.2 Cryptographic Key Establishment</h4>
             
             <div class="element"><div class="reqid" id="FCS_CKM.2.1"><a href="#FCS_CKM.2.1" class="abbr">FCS_CKM.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall implement functionality to perform cryptographic key
-                establishment in accordance with a specified key establishment method:
+                establishment in accordance with a specified cryptographic key establishment method:
                 <ul>
                   <li><b><i>Elliptic curve-based key establishment schemes that meets the following:
                     <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
@@ -1297,7 +1297,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           </div>
 
           
-          <div class="comp" id="FCS_COP.1/ENCRYPT"><h4>FCS_COP.1/ENCRYPT Cryptographic Operation (Encryption/Decryption)</h4>
+          <div class="comp" id="FCS_COP.1/ENCRYPT"><h4>FCS_COP.1/ENCRYPT Cryptographic Operation - Encryption/Decryption</h4>
             
             <div class="element"><div class="reqid" id="FCS_COP.1.1/ENCRYPT"><a href="#FCS_COP.1.1/ENCRYPT" class="abbr">FCS_COP.1.1/ENCRYPT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall perform [encryption/decryption services for data] in accordance with
                 a specified cryptographic algorithm
@@ -1399,7 +1399,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             
             <div class="element"><div class="reqid" id="FTP_ITC.1.1"><a href="#FTP_ITC.1.1" class="abbr">FTP_ITC.1.1</a></div><div class="reqdesc">
                 The <b>[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_31"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="_s_32"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>]
-                shall use IPsec to provide</b> a <b>trusted</b>
+                shall use IPsec to</b> provide a <b>trusted</b>
                 communication channel between itself and <b>
                   [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_33">a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span></li><li style=""><span class="selectable-content" id="_s_34">a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span></li><li style=""><span class="selectable-content" id="_s_35">a remote IPsec-capable network device</span></li></ul>]</b> that is logically
                 distinct from other communication channels and provides assured identification
@@ -1408,12 +1408,12 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               </div></div>
             <div class="element"><div class="reqid" id="FTP_ITC.1.2"><a href="#FTP_ITC.1.2" class="abbr">FTP_ITC.1.2</a></div><div class="reqdesc">
                 The <b>
-                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_36"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="_s_37"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>]</b> shall permit [<i>the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></i>] to initiate communication with the trusted channel.
+                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_36"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="_s_37"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>]</b> shall permit [<i>the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></i>] to initiate communication via the trusted channel.
               </div></div>
             <div class="element"><div class="reqid" id="FTP_ITC.1.3"><a href="#FTP_ITC.1.3" class="abbr">FTP_ITC.1.3</a></div><div class="reqdesc">
                 The <b>
                 [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_38"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="_s_39"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>]</b> shall initiate communication via the trusted
-                channel [<i>for all traffic traversing that connection</i>].
+                channel for [<i>all traffic traversing that connection</i>].
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2437,7 +2437,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 				and <a href="#FCS_IPSEC_EXT.1.10">FCS_IPSEC_EXT.1.10</a> may contain multiple values. For each <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group
 				supported, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author consults Table 2 in 800-57 to determine the “bits of
 				security” associated with the <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group. Each unique value is then used to fill in
-				the assignment (for 1.9 they are doubled; for 1.10 they are inserted directly into
+				the assignment (for 1.9 they are doubled; for  they are inserted directly into
 				the assignment). For example, suppose the implementation supports <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group
 				14 (2048-bit MODP) and group 20 (ECDH using <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curve P-384). From Table 2,
 				the bits of security value for group 14 is 112, and for group 20 it is 192. For

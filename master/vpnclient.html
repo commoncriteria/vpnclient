@@ -1239,7 +1239,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                     Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix B.4, and,
                   </li></i>
                 </ul></b>
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_3">RSA schemes using cryptographic key sizes of 2048-bit or greater that meet
+                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_3">RSA schemes using cryptographic key sizes of 3072-bit or greater that meet
                     the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),”
                     Appendix B.3</span></li><li style=""><span class="selectable-content" id="_s_4"><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using [<b>selection</b>: <span class="selectable-content" id="_s_5">cryptographic key sizes of 3072-bit or
                       greater that meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, "Digital Signature
@@ -1270,7 +1270,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           <div class="comp" id="FCS_CKM.2"><h4>FCS_CKM.2 Cryptographic Key Establishment</h4>
             
             <div class="element"><div class="reqid" id="FCS_CKM.2.1"><a href="#FCS_CKM.2.1" class="abbr">FCS_CKM.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall implement functionality to perform cryptographic key
-                establishment in accordance with a specified key establishment method:
+                establishment in accordance with a specified cryptographic key establishment method:
                 <ul>
                   <li><b><i>Elliptic curve-based key establishment schemes that meets the following:
                     <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
@@ -1304,7 +1304,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               </div></div></div>
 
           
-          <div class="comp" id="FCS_COP.1/ENCRYPT"><h4>FCS_COP.1/ENCRYPT Cryptographic Operation (Encryption/Decryption)</h4>
+          <div class="comp" id="FCS_COP.1/ENCRYPT"><h4>FCS_COP.1/ENCRYPT Cryptographic Operation - Encryption/Decryption</h4>
             
             <div class="element"><div class="reqid" id="FCS_COP.1.1/ENCRYPT"><a href="#FCS_COP.1.1/ENCRYPT" class="abbr">FCS_COP.1.1/ENCRYPT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall perform [encryption/decryption services for data] in accordance with
                 a specified cryptographic algorithm
@@ -1369,7 +1369,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 			<abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it lists each persistent secret (credential, secret key) and private key needed to meet
 			the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. For each of these items, the evaluator shall confirm that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists for what
 			purpose it is used, and how it is stored. <br/><br/>
-                  	The evaluator shall review the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> for to determine that it makes a case that, for each item listed as being
+                  	The evaluator shall review the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that it makes a case that, for each item listed as being
 			manipulated, it is not written unencrypted to persistent memory, and that the item is
 			stored by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>.<br/><br/>
                 </div>
@@ -1425,9 +1425,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 conditionally as part of FPT_TUD_EXT.1 or <a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a>).
                 <br/><br/>
               <div class="element-activity-header"><a href="#FIA_X509_EXT.3.2">FIA_X509_EXT.3.2</a></div>
-                The EAs below apply to <a href="#FIA_X509_EXT.3.2">FIA_X509_EXT.3.2</a>. <a href="#FIA_X509_EXT.3.1">FIA_X509_EXT.3.1</a> is evaluated as part of <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> (and
-                conditionally as part of FPT_TUD_EXT.1 or <a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a>) and <a href="#FIA_X509_EXT.3.3">FIA_X509_EXT.3.3</a> is evaluated as part
-                of <a href="#FCS_IPSEC_EXT.1.11">FCS_IPSEC_EXT.1.11</a>.
+                
                 <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall check the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it describes whether the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client or the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> implements
                   the certificate validation functionality, how the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client/<abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> chooses which certificates to use, and any
                   necessary instructions in the administrative guidance for configuring the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> so that desired certificates
@@ -1471,7 +1469,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             
             <div class="element"><div class="reqid" id="FTP_ITC.1.1"><a href="#FTP_ITC.1.1" class="abbr">FTP_ITC.1.1</a></div><div class="reqdesc">
                 The <b>[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_31"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="_s_32"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>]
-                shall use IPsec to provide</b> a <b>trusted</b>
+                shall use IPsec to</b> provide a <b>trusted</b>
                 communication channel between itself and <b>
                   [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_33">a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span></li><li style=""><span class="selectable-content" id="_s_34">a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span></li><li style=""><span class="selectable-content" id="_s_35">a remote IPsec-capable network device</span></li></ul>]</b> that is logically
                 distinct from other communication channels and provides assured identification
@@ -1480,12 +1478,12 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               </div></div>
             <div class="element"><div class="reqid" id="FTP_ITC.1.2"><a href="#FTP_ITC.1.2" class="abbr">FTP_ITC.1.2</a></div><div class="reqdesc">
                 The <b>
-                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_36"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="_s_37"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>]</b> shall permit [<i>the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></i>] to initiate communication with the trusted channel.
+                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_36"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="_s_37"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>]</b> shall permit [<i>the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></i>] to initiate communication via the trusted channel.
               </div></div>
             <div class="element"><div class="reqid" id="FTP_ITC.1.3"><a href="#FTP_ITC.1.3" class="abbr">FTP_ITC.1.3</a></div><div class="reqdesc">
                 The <b>
                 [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_38"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="_s_39"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>]</b> shall initiate communication via the trusted
-                channel [<i>for all traffic traversing that connection</i>].
+                channel for [<i>all traffic traversing that connection</i>].
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2012,6 +2010,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 </span></div></div></div>
               
             <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="element-activity-header"><a href="#FCS_COP.1.1/SKC">FCS_COP.1.1/SKC</a></div>
+                  The following shall be performed in addition to the EAs specified by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>:
 			<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">
 				If the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> implements <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> cryptography in support of both credential encryption (per FCS_STO_EXT.1)
 				and IPsec, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it clearly identifies the modes and key sizes
@@ -2019,7 +2018,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 			  For platform-provided functionality, the evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> contains the calls to the platform that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is leveraging to invoke the functionality.
 			</div>
 			<div class="eacategory">Guidance</div><div class="ea">
-			  There are no operational  beyond what is required by the EA for <span class="no-link">FCS_COP.1/SKC</span> in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.<br/><br/>
+			  There are no guidance EAs beyond what is required by the EA for <span class="no-link">FCS_COP.1/SKC</span> in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.<br/><br/>
 			</div>
 			<div class="eacategory">Tests</div><div class="ea">
 				There are no test EAs beyond what is required by the EA for <span class="no-link">FCS_COP.1/SKC</span> in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
@@ -2148,7 +2147,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 
                   	<b>Persistent secrets and private keys manipulated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>:</b><br/><br/>
 
-                  	The evaluator reviews the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> for to determine that it makes a case that, for each item listed as being
+                  	The evaluator reviews the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that it makes a case that, for each item listed as being
 			manipulated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, it is not written unencrypted to persistent memory, and that the item is stored
 			by the platform.<br/><br/>
                 </div>
@@ -2201,10 +2200,10 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                   	<b>Requirement met by the platform:</b><br/><br/>
 
                   	The evaluator shall check to ensure the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes each of the secret keys (keys used for
-                  	symmetric encryption), private keys, and CSPs used to generate key that are not otherwise covered
+                  	symmetric encryption), private keys, and CSPs used to generate keys that are not otherwise covered
                   	by the <a href="#FCS_CKM_EXT.4">FCS_CKM_EXT.4</a> requirement levied on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.<br/><br/>
                   	For each platform listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> of the platform to
-                  	ensure that each of the secret keys, private keys, and CSPs used to generate key listed above are
+                  	ensure that each of the secret keys, private keys, and CSPs used to generate the keys listed above are
                   	covered. <br/><br/>
 
                   	<b>Requirement met by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>:</b><br/><br/>
@@ -2238,10 +2237,10 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                     				<li>Cause the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to clear the key.</li>
 				                <li>Cause the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to stop the execution but not exit.</li>
                     				<li>Cause the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to dump the entire memory footprint of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> into a binary file.</li>
-                    				<li>Search the content of the binary file created in #4 for instances of the known key value from
+                    				<li>Search the content of the binary file created in #6 for instances of the known key value from
   					                  #1.</li>
 					</ol>
-		                    	The test succeeds if no copies of the key from #1 are found in step #7 above and fails otherwise.<br/><br/>
+		                    	<br/>The test succeeds if no copies of the key from #1 are found in step #7 above and fails otherwise.<br/><br/>
  		                   	The evaluator shall perform this test on all keys, including those persisted in encrypted form, to ensure
 					intermediate copies are cleared.
 				</li>
@@ -2756,7 +2755,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 				and <a href="#FCS_IPSEC_EXT.1.10">FCS_IPSEC_EXT.1.10</a> may contain multiple values. For each <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group
 				supported, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author consults Table 2 in 800-57 to determine the “bits of
 				security” associated with the <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group. Each unique value is then used to fill in
-				the assignment (for 1.9 they are doubled; for 1.10 they are inserted directly into
+				the assignment (for 1.9 they are doubled; for  they are inserted directly into
 				the assignment). For example, suppose the implementation supports <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group
 				14 (2048-bit MODP) and group 20 (ECDH using <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curve P-384). From Table 2,
 				the bits of security value for group 14 is 112, and for group 20 it is 192. For
@@ -2892,27 +2891,27 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			the following:<br/><br/>
 			If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary includes a general-purpose <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> or mobile device, the evaluator shall
 			examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it describes whether the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client capability is architecturally integrated
-			with the platform itself or whether it is a separate executable that is bundled with the platform.<br/><br/>
+			with the platform itself or it is a separate executable that is bundled with the platform.<br/><br/>
 		</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
-			In addition to the Operational  for the individual <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> elements below, the
+			In addition to the guidance EAs for the individual <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> elements below, the
 			evaluator shall perform the following:<br/><br/>
 			If the configuration of the IPsec behavior is from an environmental source, most notably a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway
 			(e.g through receipt of required connection parameters from a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway), the evaluator shall ensure
 			that the operational guidance contains any appropriate information for ensuring that this configuration
 			can be properly applied.<br/><br/>
-			Note in this case that the implementation of the IPsec protocol must be enforced entirely within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+			Note, in this case, that the implementation of the IPsec protocol must be enforced entirely within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
 			boundary; i.e. it is not permissible for a software application <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to be a graphical front-end for IPsec
 			functionality implemented totally or in part by the underlying <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> platform. The behavior referenced here
 			is for the possibility that the configuration of the IPsec connection is initiated from outside the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, which
 			is permissible so long as the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is solely responsible for enforcing the configured behavior. However, it is
-			allowable for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to rely on low-level platform-provided networking functions to implement the <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr>
+			allowable for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to rely on low-level, platform-provided networking functions to implement the <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr>
 			from the client (e.g., enforcement of packet routing decisions).<br/><br/>
 		</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
 			As a prerequisite for performing the Test EAs for the individual <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> elements below, the
 			evaluator shall do the following:<br/><br/>
 			The evaluator shall minimally create a test environment equivalent to the test environment illustrated
 			below. It is expected that the traffic generator is used to construct network packets and will provide the
-			evaluator with the ability manipulate fields in the ICMP, IPv4, IPv6, UDP, and TCP packet headers. The
+			evaluator with the ability to manipulate fields in the ICMP, IPv4, IPv6, UDP, and TCP packet headers. The
 			evaluator shall provide justification for any differences in the test environment.<br/><br/>
 
    			<div class="figure" id="figure-fig-testenv"><img id="fig-testenv" src="images/network.png" width="" height=""></img><br/><span class="ctr" data-myid="fig-testenv" data-counter-type="ct-figure">Figure <span class="counter">4</span></span>:
@@ -2927,7 +2926,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 
                 If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a standalone software application, the evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> asserts that all
 				IPsec functionality is implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. The evaluator shall also ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> identifies what
-				platform functionality the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> relies upon to support its IPsec implementation, if any (e.g. does it invoke
+				platform functionality the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> relies on to support its IPsec implementation, if any (e.g. does it invoke
 				cryptographic primitive functions from the platform’s cryptographic library, enforcement of packet
 				routing decisions by low-level network drivers).<br/><br/>
 
@@ -2945,10 +2944,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 				The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr> is implemented and the rules for processing
 				both inbound and outbound packets in terms of the IPsec policy. The <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the rules that are
 				available and the resulting actions available after matching a rule. The <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the available
-				rules and actions form the <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr> using terms defined in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4301 such as BYPASS (e.g., no encryption),
-				DISCARD (e.g., drop the packet), and PROTECT (e.g., encrypt the packet) actions defined in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4301.
+				rules and actions form the <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr> using terms defined in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4301, such as BYPASS (e.g., no encryption),
+				DISCARD (e.g., drop the packet), and PROTECT (e.g., encrypt the packet).<br/><br/>
 			  
-				As noted in section 4.4.1 of <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4301, the processing of entries in the <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr> is non-trivial and the evaluator
+				As noted in section 4.4.1 of <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4301, the processing of entries in the <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr> is non-trivial, and the evaluator
 				shall determine that the description in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> is sufficient to determine which rules will be applied given
 				the rule structure implemented by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. For example, if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> allows specification of ranges,
 				conditional rules, etc., the evaluator shall determine that the description of rule processing (for both
@@ -2974,7 +2973,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		application, how ordering of entries may be expressed, as well as the impacts that ordering of entries may
 		have on the packet processing.<br/><br/>
 
-               	In either case, the evaluator shall ensure the description provided In the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> is consistent with the capabilities
+               	In either case, the evaluator shall ensure the description provided in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> is consistent with the capabilities
 		and description provided in the operational guidance.<br/><br/>
               </div>
               <div class="eacategory">Tests</div><div class="ea">
@@ -2993,7 +2992,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			construction of the rule shall be different such that the evaluator can generate a packet and send packets
 			to the client with the appropriate fields (fields that are used by the rule - e.g., the <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> addresses, TCP/UDP
 			ports) in the packet header. The evaluator performs both positive and negative test cases for each type
-			of rule. The evaluator observes via the audit trail, and packet captures that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> exhibited the expected
+			of rule. The evaluator observes via the audit trail and packet captures that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> exhibited the expected
 			behavior: appropriate packets were dropped, allowed through without modification, was encrypted by
 			the IPsec implementation.</li>
                   <li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FCS_IPSEC_EXT.1.1:2</a>:
@@ -3009,20 +3008,20 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               </div>
             <div class="element-activity-header"><a href="#FCS_IPSEC_EXT.1.2">FCS_IPSEC_EXT.1.2</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall check the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure it states that the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> can be established to operate in tunnel
-			mode, transport mode, or either mode (as selected). <br/><br/></div>
+			mode, transport mode, or both (as selected). <br/><br/></div>
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall confirm that the operational guidance contains instructions on how to configure the
 			connection in each mode selected.<br/><br/>
-		      If both transport mode and tunnel mode are implemented, the evaluator shall review the operational
+		      If both transport and tunnel modes are implemented, the evaluator shall review the operational
 			guidance to determine how the use of a given mode is specified.<br/><br/>
               </div>
               <div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following tests based on the selections chosen:
               <span class="testlist-"><ul>
                 <li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FCS_IPSEC_EXT.1.2:1</a>:
        [conditional]: If tunnel mode is selected, the evaluator uses the operational guidance to configure
-			the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to operate in tunnel mode and also configures a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway to operate in tunnel mode. The
+			the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway to operate in tunnel mode. The
 			evaluator configures the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway to use any of the allowable cryptographic algorithms, 
 			authentication methods, etc. to ensure an allowable <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> can be negotiated. The evaluator shall then
-			initiate a connection from the client to connect to the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> GW peer. The evaluator observes (for example,
+			initiate a connection from the client to connect to the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway peer. The evaluator observes (for example,
 			in the audit trail and the captured packets) that a successful connection was established using the tunnel
 			mode.</li>
                 <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FCS_IPSEC_EXT.1.2:2</a>:
@@ -3035,10 +3034,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			connection was established using the transport mode.
 		</li>
                 <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FCS_IPSEC_EXT.1.2:3</a>:
-       [conditional]: If both tunnel mode and transport mode are selected, the evaluator shall perform
+       [conditional]: If both tunnel and transport modes are selected, the evaluator shall perform
 			both Test 1 and Test 2 above, demonstrating that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> can be configured to support both modes.</li>
                 <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FCS_IPSEC_EXT.1.2:4</a>:
-       [conditional]: If both tunnel mode and transport mode are selected, the evaluator shall modify the
+       [conditional]: If both tunnel and transport modes are selected, the evaluator shall modify the
 			testing for <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> to include the supported mode for <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr> PROTECT entries to show that they
 			only apply to traffic that is transmitted or received using the indicated mode.
                 </li>
@@ -3069,8 +3068,8 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <div class="element-activity-header"><a href="#FCS_IPSEC_EXT.1.4">FCS_IPSEC_EXT.1.4</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that the algorithms <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM-128 and <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM-256 are
 		implemented. If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author has selected either <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-128 or <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-256 in the requirement, then
-		the evaluator verifies the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes these as well. In addition, the evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-
-		based HMAC algorithm conforms to the algorithms specified in the relevant iteration of FCS_COP.1 from
+		the evaluator verifies the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes these as well. In addition, the evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>-based HMAC 
+		algorithm conforms to the algorithms specified in the relevant iteration of FCS_COP.1 from
 		the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> that applies to keyed-hash message authentication.<br/><br/></div>
               <div class="eacategory">Guidance</div><div class="ea">The evaluator checks the operational guidance to ensure it provides instructions on how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is
 		configured to use the algorithms selected in this component and whether this is performed through direct
@@ -3081,26 +3080,26 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		      <span class="testlist-"><ul>
 			      <li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FCS_IPSEC_EXT.1.4:1</a>:
       
-				      The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as indicated in the operational guidance configuring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+				      The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as indicated in the operational guidance, configuring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
 					to using each of the <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM-128, and <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM-256 algorithms, and attempt to establish a connection
-					using <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr>. If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> Author has selected either <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-128 or <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-256, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is configured to use
-					those algorithms and the evaluator attempts to establish a connection using <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr> for those algorithms
+					using <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr>. If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author has selected either <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-128 or <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-256, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is configured to use
+					those algorithms, and the evaluator attempts to establish a connection using <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr> for those algorithms
 					selected.
 			      </li>
 		      </ul></span>
               </div>
             <div class="element-activity-header"><a href="#FCS_IPSEC_EXT.1.5">FCS_IPSEC_EXT.1.5</a></div>
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that IKEv1, IKEv2, or both IKEv1 and IKEv2 are implemented. If IKEv1 is
-		implemented, the evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> indicates whether or not XAUTH is supported, and
+              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that IKEv1, IKEv2, or both are implemented. If IKEv1 is
+		implemented, the evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> indicates whether XAUTH is supported, and
 		that aggressive mode is not used for IKEv1 Phase 1 exchanges (i.e. only main mode is used). It may be that
 		these are configurable options.<br/><br/>
               </div>
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall check the operational guidance to ensure it instructs the administrator how to
 		configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use IKEv1, IKEv2, or both (as selected), and uses the guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to
-		perform <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> traversal for the test below. If XAUTH is implemented, the evaluator shall verify that the
+		perform <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> traversal for the tests below. If XAUTH is implemented, the evaluator shall verify that the
 		operational guidance provides instructions on how it is enabled or disabled. <br/><br/>
                 If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports IKEv1, the evaluator shall verify that the operational guidance either asserts that only
-		main mode is used for Phase 1 exchanges, or provides instructions for disabling aggressive mode.<br/><br/>
+		main mode is used for Phase 1 exchanges or provides instructions for disabling aggressive mode.<br/><br/>
 		</div>
               <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
@@ -3147,7 +3146,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               </div>
             <div class="element-activity-header"><a href="#FCS_IPSEC_EXT.1.6">FCS_IPSEC_EXT.1.6</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall ensure the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> identifies the algorithms used for encrypting the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>
-		payload for each supported <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> version, and that the algorithms <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-128, <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-256 are specified, and if others are chosen in the
+		payload for each supported <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> version and that the algorithms <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-128 and <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-256 are specified, and if others are chosen in the
 		selection of the requirement, those are included in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> discussion.<br/><br/></div>
               <div class="eacategory">Guidance</div><div class="ea">The evaluator checks the operational guidance to ensure it provides instructions on how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is
 		configured to use the algorithms selected in this component and whether this is performed through direct
@@ -3174,8 +3173,8 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">There are no <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> EAs for this requirement.<br/><br/></div>
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall check the operational guidance to ensure it provides instructions on how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
 		configures the values for <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes. In addition, the evaluator shall check that the guidance has the
-		option for either the Administrator or <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway to configure Phase 1 SAs if time-based limits are
-		supported. Currently there are no values mandated for the number of packets or number of bytes, the
+		option for either the administrator or <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway to configure Phase 1 SAs if time-based limits are
+		supported. Currently there are no values mandated for the number of packets or number of bytes; the
 		evaluator shall simply check the operational guidance to ensure that this can be configured if selected in
 		the requirement.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">When testing this functionality, the evaluator needs to ensure that both sides are configured
@@ -3236,7 +3235,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		             The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> compares the peer’s presented identifier
 		to the reference identifier. This description shall include whether the certificate presented identifier is
 		compared to the ID payload presented identifier, which fields of the certificate are used as the presented
-		identifier (<abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>, Common Name, or SAN) and, if multiple fields are supported, the logical order comparison.
+		identifier (<abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>, Common Name, or SAN), and if multiple fields are supported, the logical order comparison.
 		If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author assigned an additional identifier type, the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> description shall also include a description
 		of that type and the method by which that type is compared to the peer’s presented certificate.<br/><br/></div>
               <div class="eacategory">Guidance</div><div class="ea">If any selection with “Pre-shared Keys” is selected, the evaluator shall check that the operational guidance
@@ -3244,19 +3243,19 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		If any method other than no other method is selected, the evaluator shall check that the operational guidance describes any
 		      configuration necessary to enable any selected authentication mechanisms.<br/><br/>
                 The evaluator shall ensure that the operational guidance describes how to set up the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use the cryptographic
-		algorithms RSA, ECDSA, or either, depending which is claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
-               In order to construct the environment and configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> for the following tests, the evaluator will
+		algorithms RSA, ECDSA, or either, depending on which is claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
+               In order to construct the environment and configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> for the following tests, the evaluator shall
 		ensure that the operational guidance also describes how to configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to connect to a trusted CA,
 		and ensure a valid certificate for that CA is loaded into the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as a trusted CA.<br/><br/>
 		The evaluator shall also ensure that the operational guidance includes the configuration of the reference
 		identifiers for the peer.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">For efficiency’s sake, the testing that is performed here has been combined with the testing for
-		      <b><a href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a></b> and <b><a href="#FIA_X509_EXT.3">FIA_X509_EXT.3</a></b> (for IPsec connections and depending on the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>),
-		      <b><a href="#FCS_IPSEC_EXT.1.12">FCS_IPSEC_EXT.1.12</a></b>, and <b><a href="#FCS_IPSEC_EXT.1.13">FCS_IPSEC_EXT.1.13</a></b>. The following tests shall be repeated for each peer
-		      authentication protocol selected in the <b><a href="#FCS_IPSEC_EXT.1.11">FCS_IPSEC_EXT.1.11</a></b> selection above:
+		      <span class="no-link">FIA_X509_EXT.2</span> and <span class="no-link">FIA_X509_EXT.3</span> (for IPsec connections and depending on the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>),
+                <span class="no-link">FCS_IPSEC_EXT.1.12</span>, and <span class="no-link">FCS_IPSEC_EXT.1.13</span>. The following tests shall be repeated for each peer
+                authentication protocol selected in the <span class="no-link">FCS_IPSEC_EXT.1.11</span> selection above:
               <span class="testlist-"><ul>
                 <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FCS_IPSEC_EXT.1.11:1</a>:
-      The evaluator shall have the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generate a public-private key pair, and submit a CSR (Certificate
+      The evaluator shall have the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generate a public-private key pair and submit a CSR (Certificate
 			Signing Request) to a CA (trusted by both the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the peer <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> used to establish a connection) for
 			its signature. The values for the <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> (Common Name, Organization, Organizational Unit, and Country) will
 			also be passed in the request. Alternatively, the evaluator may import to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> a previously generated
@@ -3268,12 +3267,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		</li>
                 <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FCS_IPSEC_EXT.1.11:3</a>:
        The evaluator shall test that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> can properly handle revoked certificates – conditional on
-			whether <abbr class="dyn-abbr"><a href="#abbr_CRL">CRL</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_OCSP">OCSP</a></abbr> is selected; if both are selected, and then a test is performed for each method. For
+			whether <abbr class="dyn-abbr"><a href="#abbr_CRL">CRL</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_OCSP">OCSP</a></abbr> is selected; if both are selected, then a test is performed for each method. For
 			this current version of the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, the evaluator has to only test one up in the trust chain (future
 			drafts may require to ensure the validation is done up the entire chain). The evaluator shall ensure that a
-			valid certificate is used, and that the <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> is established. The evaluator then attempts the test with a
+			valid certificate is used and that the <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> is established. The evaluator then attempts the test with a
 			certificate that will be revoked (for each method chosen in the selection) to ensure when the certificate
-			is no longer valid that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will not establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr>
+			is no longer valid that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will not establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr>.
                 </li>
                 <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FCS_IPSEC_EXT.1.11:4</a>:
        [conditional]: For each selection made, the evaluator shall verify factors are required, as indicated in the
@@ -3287,13 +3286,13 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       For each field of the certificate support for comparison, the evaluator shall configure the peer’s
 			reference identifier on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (per the administrative guidance) to not match the field in the peer’s
 			presented certificate and shall verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication fails.</li>
-                The following tests are conditional:
+                
                 <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FCS_IPSEC_EXT.1.11:7</a>:
        [conditional]: If, according to the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports both Common Name and SAN certificate
 			fields and uses the preferred logic outlined in the Application Note, the tests above with the Common
 			Name field shall be performed using peer certificates with no SAN extension. Additionally, the evaluator
 			shall configure the peer’s reference identifier on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to not match the SAN in the peer’s presented
-			certificate but to match the Common Name in the peer’s presented certificate, and verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>
+			certificate, but to match the Common Name in the peer’s presented certificate and verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>
 			authentication fails.
 		</li>
                 <li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FCS_IPSEC_EXT.1.11:8</a>:
@@ -3301,12 +3300,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			reference identifier on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (per the administrative guidance) to match the subject <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> in the peer's
 			presented certificate and shall verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication succeeds. To demonstrate a bit-wise
 			comparison of the <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>, the evaluator shall change a single bit in the <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> (preferably, in an Object Identifier
-			(OID) in the <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>) and verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication fails. <b>To demonstrate a comparison of <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> values,
-			the evaluator shall change any one of the four <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> values and verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication fails.</b>
+			(OID) in the <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>) and verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication fails. To demonstrate a comparison of <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> values,
+			the evaluator shall change any one of the four <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> values and verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication fails.
                 </li>
                 <li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FCS_IPSEC_EXT.1.11:9</a>:
        [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports both IPv4 and IPv6 and supports <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> address identifier types, the
-			evaluator must repeat test 1 and 2 with both IPv4 address identifiers and IPv6 identifiers. Additionally,
+			evaluator must repeat tests 1 and 2 with both IPv4 address identifiers and IPv6 identifiers. Additionally,
 			the evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> verifies that the <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> header matches the identifiers by setting the
 			presented identifiers and the reference identifier with the same <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> address that differs from the actual <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr>
 			address of the peer in the <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> headers and verifying that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication fails.
@@ -3328,7 +3327,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		the symmetric key) of the algorithms that are allowed for the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr> exchanges. The <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> shall also
 		describe the checks that are done when negotiating IKEv1 Phase 2 or IKEv2 CHILD_SA suites (depending on the supported <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> versions) to ensure
 		that the strength (in terms of the number of bits of key in the symmetric algorithm) of the negotiated
-		algorithm is less than or equal to that of the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> this is protecting the negotiation.
+		algorithm is less than or equal to that of the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> that is protecting the negotiation.
 		<br/><br/></div>
               <div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">The evaluator follows the guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to perform the following tests:
@@ -3386,7 +3385,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		packet, and that if that buffer is reused, those data might remain and make their way into a new packet.
 		The evaluator shall check to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes packet processing to the extent that they can
 		determine that no data will be reused when processing network packets. The evaluator shall ensure that
-		this description at a minimum describes how the previous data are zeroized/overwritten, and at what
+		this description at a minimum describes how the previous data are zeroized/overwritten and at what
 		point in the buffer processing this occurs.<br/><br/>
               </div>
               <div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div>
@@ -3437,7 +3436,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               </div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall test the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s ability to provide the management functions by configuring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-		according to the operational guidance and testing each management activity listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
+		according to the operational guidance and testing of each management activity listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
                 The evaluator shall ensure that all management functions claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> can be performed by
 		completing activities described in the AGD. Note that this may be performed in the course of completing
 		other testing.
@@ -3497,7 +3496,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		and reading it back to ensure it is identical to what was written" shall be used). The evaluator shall ensure
 		that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> makes an argument that the tests are sufficient to demonstrate that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is operating
 		correctly. If some of the tests are performed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform, the evaluator shall check the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to
-		ensure that those tests are identified, and that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> for each platform contains a description of those
+		ensure that those tests are identified and that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> for each platform contains a description of those
 		tests. Note that the tests that are required by this component are those that support security functionality
 		in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, which may not correspond to the set of all self-tests contained in the
 		platform <abbr class="dyn-abbr"><a href="#abbr_ST">STs</a></abbr>.<br/><br/>
@@ -3507,11 +3506,6 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		makes an argument that the tests are sufficient to demonstrate that the integrity of stored <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable
 		code has not been compromised. The evaluator shall check to ensure that the cryptographic requirements
 		listed are consistent with the description of the integrity verification process.<br/><br/>
-
-                The evaluator also ensures that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> (or the operational guidance) describes the actions that take place
-		for successful (e.g. hash verified) and unsuccessful (e.g., hash not verified) cases. For checks implemented
-		entirely by the platform, the evaluator shall ensure that the operational guidance for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> references or
-		includes the platform-specific guidance for each platform listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">If not present in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>, the evaluator shall ensure that the operational guidance describes the actions that
 		take place for successful (e.g. hash verified) and unsuccessful (e.g., hash not verified) cases. For checks
 		implemented entirely by the platform, the evaluator shall ensure that the operational guidance for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
@@ -3525,7 +3519,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                   </li>
                   <li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FPT_TST_EXT.1/VPN:2</a>:
       The evaluator modifies the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable, performs the integrity check on the modified <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>
-			executable and verifies that the check fails.</li>
+			executable, and verifies that the check fails.</li>
                 </ul></span>
               </div></div></div></div></div>
         
@@ -4175,7 +4169,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall review the administrative guidance to ensure that the guidance itemizes all event
 		types, as well as describes all attributes that are to be selectable in accordance with the requirement, to
 		include those attributes listed in the assignment. The administrative guidance shall also contain
-		instructions on how to set the pre-selection, or how the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway will configure the client, as well as
+		instructions on how to set the pre-selection or how the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway will configure the client, as well as
 		explain the syntax (if present) for multi-value pre-selection. The administrative guidance shall also identify
 		those audit records that are always recorded, regardless of the selection criteria currently being enforced.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following tests:
@@ -4187,7 +4181,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 </li>
                 <li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FAU_SEL.1.1/VPN:2</a>:
       [conditional] If the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> supports specification of more complex audit pre-selection criteria (e.g.,
-			multiple attributes, logical expressions using attributes) then the evaluator shall devise tests showing that
+			multiple attributes, logical expressions using attributes), then the evaluator shall devise tests showing that
 			this capability is correctly implemented. The evaluator shall also, in the test plan, provide a short narrative
 			justifying the set of tests as representative and sufficient to exercise the capability.
                 </li>
@@ -4310,7 +4304,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 	          audit records in accordance with the EAs associated with the functional requirements in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients. 
 	          Additionally, the evaluator shall test that each administrative action applicable in the context
 	          of the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients is auditable. When verifying the test results, the evaluator shall ensure the
-	          audit records generated during testing match the format specified in the administrative guide, and that
+	          audit records generated during testing match the format specified in the guidance and that
 	          the fields in each audit record have the proper entries.
 	          <br/><br/>
 	          
@@ -4378,16 +4372,16 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FCS_EAP_EXT.1:1</a>:
       The evaluator shall follow AGD guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use the EAP method claimed. 
-                    The evaluator shall follow AGD guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use the authentication method claimed and, 
+                    The evaluator shall follow AGD guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use the authentication method claimed, and 
                     for EAP-TTLS, register a client with the appropriate key material required for the authentication method. 
-                    The evaluator shall establish an <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> session using a test client with a valid certificate and, for EAP-TTLS, 
+                    The evaluator shall establish a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> session using a test client with a valid certificate, and for EAP-TTLS, 
                     configured to provide a correct value for the configured authenticator. The evaluator shall  observe the the 
                     <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> session is successful.</li>
                   <li class="test-"><a id="_t_42" class="defined" href="#_t_42">Test FCS_EAP_EXT.1:2</a>:
       (conditional for EAP-TTLS support): The evaluator shall cause the test client with a valid certificate to send 
-                    an invalid authenticator for the claimed authentication method:
-                    <b></b>For HOTP, replay the HOTP value sent previously, 
-                    <b></b>For TOTP or PSK, modify a byte of the properly constructed value,and observe that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> aborts the session</li>
+                    an invalid authenticator for the claimed authentication method.
+                    <b></b>For HOTP, replay the HOTP value sent previously. 
+                    <b></b>For TOTP or PSK, modify a byte of the properly constructed value and observe that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> aborts the session </li>
                   <li class="test-"><a id="_t_43" class="defined" href="#_t_43">Test FCS_EAP_EXT.1:3</a>:
       The evaluator shall establish a new, valid certificate for a test client using an identifier not 
                     corresponding to a registered user. For EAP-TTLS, the evaluator shall cause the test client using this 
@@ -4506,7 +4500,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_46" class="defined" href="#_t_46">Test FIA_PSK_EXT.2.1:1</a>:
-      [conditional] If generate was selected the evaluator shall generate a pre-shared key and confirm the output matches
+      [conditional] If "generate" was selected, the evaluator shall generate a pre-shared key and confirm the output matches
 			  the size selected in <a href="#FIA_PSK_EXT.2.1">FIA_PSK_EXT.2.1</a>.
                   </li>
                 </ul></span>
@@ -4600,10 +4594,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 <br/><br/>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall provide a description in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> regarding the salt generation. The evaluator shall confirm
 		      that the salt is generated using an <abbr class="dyn-abbr"><a href="#abbr_RBG">RBG</a></abbr> described in FCS_RBG_EXT.1.
                 
-                <br/><br/>[conditional] If password strength meter or password denylist is selected, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to 
+                <br/><br/>[conditional] If "password strength meter" or "check the password against a denylist" is selected, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to 
 		      ensure any password checking functionality provided by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is described and contains details on how the function operates.<br/><br/>
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm the operational guidance contains instructions for entering bit-based pre-shared keys for each 
-                protocol identified in the requirement, or generating a bit-based pre-shared key (or both). The evaluator shall confirm that any 
+                protocol identified in the requirement, is generating a bit-based pre-shared key, or both. The evaluator shall confirm that any 
                 management functions related to pre-shared keys that are performed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are specified in the operational guidance.  
                 
                 <br/><br/>The guidance must specify the allowable characters for pre-shared keys, and that list must include, at minimum, the same 
@@ -4613,7 +4607,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		      password checking functionality. <br/><br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-		      configured according to the Operational Guidance:
+		      configured according to the operational guidance:
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_47" class="defined" href="#_t_47">Test FIA_PSK_EXT.3:1</a>:
       The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance
@@ -4623,7 +4617,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			  lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should 
 			  be successful, and the invalid lengths must be rejected by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. </li>
                   <li class="test-"><a id="_t_49" class="defined" href="#_t_49">Test FIA_PSK_EXT.3:3</a>:
-      [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> initiates connections, initiate and establish a remote connection, disconnect from the connection, verify
+      [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> initiates connections, initiate and establish a remote connection, disconnect from the connection, and verify
 			  that the PSK is required when initiating the connection a second time.</li>
                   <li class="test-"><a id="_t_50" class="defined" href="#_t_50">Test FIA_PSK_EXT.3:4</a>:
       [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports a password meter, the evaluator shall enter a password and verify the password checker
