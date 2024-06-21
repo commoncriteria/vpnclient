@@ -3948,34 +3948,6 @@ expected to enforce.<h:br/><h:br/>
               </selectables>
               
             </title>
-		  <!-- QQQQ: This element needs to be rewritten to be more clear. According to the AppNote below, the 
-			the "Pre-shared keys" selection applies only to IKEv1 and the other two refer to IKEv2, so they
-			should be conditional on the selection in IPSEC.1.5. The note below also refers to an RFC without
-			identifying it, and says that IKEv1 can use any method specified in the RFC. If it's the RFC 
-			I'm thinking of, it says IKE can use EAP or the native IKE method. But if it's referring to an
-			older RFC, maybe this is not the case. -->
-		  <!-- QQQQ: Comment from Al on IPsec suggests includiong refrence to "as updated by RFC 8603" for CNSA crypto. --> 
-		  <!-- QQQQ: Al also suggests specifying the ECDSA curves allowed. Maybe this seleciton should refer to another 
-			SFR where that stuff is layed out.  -->
-            <!--QQQQ: I updated to mirror the VPN GW, are other changes needed? -->
-            <!-- JF 6/12/24: updating in this manner breaks ACE_ECD.1 because the element in the body no longer bears resemblance to the element in the ECD. PPs don't "know about" each other so the inconsistency with VPN GW isn't necessarily an issue on its own. Commented this back out in the meantime since there seem to be open questions about the SFR itself. -->
-            
-            <!-- 
-            <ext-comp-def-title>
-              <title>The TSF shall ensure that all IKE protocols perform peer authentication using a 
-				<selectables>
-					<selectable>RSA</selectable>
-					<selectable>ECDSA</selectable>
-				</selectables> 
-				that use X.509v3 certificates that conform to RFC 4945 and 
-				<selectables>
-				  <selectable>Pre-shared keys</selectable>
-				  <selectable>Pre-shared Keys transmitted via EAP-TLS</selectable>
-				  <selectable>Pre-shared Keys transmitted via EAP-TTLS with mutual authentication</selectable>
-				  <selectable>no other method</selectable>
-				</selectables>.
-            </title>
-            </ext-comp-def-title> -->
             
             <note role="application">
               At least one public-key-based peer authentication method is required in order to
@@ -4000,7 +3972,7 @@ expected to enforce.<h:br/><h:br/>
               This SFR is modified from its definition in the Base-PP by adding new selections for IKE versions and authentication methods.      
             </note>
             <aactivity level="element">
-              <TSS>The evaluator shall ensure that the TSS describes whether peer authentication is performed using RSA, ECDSA, or both.<h:br/><h:br/>
+              <TSS>The evaluator shall F that the TSS describes whether peer authentication is performed using RSA, ECDSA, or both.<h:br/><h:br/>
                 If any selection with pre-shared keys is chosen in the selection, the evaluator shall check to ensure that the TSS describes
 		how those selections work in conjunction with authentication of IPsec connections.<h:br/><h:br/>
 		             The evaluator shall ensure that the TSS describes how the TOE compares the peer’s presented identifier
@@ -4775,7 +4747,10 @@ expected to enforce.<h:br/><h:br/>
                 selections are supported.<h:br/><h:br/></TSS>
               
               <Guidance>The evaluator shall examine the operational guidance to determine that it provides guidance to 
-                administrators on how to configure all selected pre-shared key options if any configuration is required.<h:br/><h:br/>
+                administrators on how to configure all selected pre-shared key options if any configuration is required.
+                
+                <h:br/><h:br/>The evaluator shall examine the operational guidance to determine that it provides guidance to administrators on
+                how to configure the mandatory_or_not flag per RFC 8784.
               </Guidance>
               
               <Tests>
@@ -4783,7 +4758,7 @@ expected to enforce.<h:br/><h:br/>
                 if performed by a different implementation on the TOE). 
                 <testlist>
                   <test>For each mechanism selected in FIA_PSK_EXT.1.2, the evaluator shall attempt to establish a connection 
-                    and confirm that the connection requires the selected factors in the PSK to establish the connection. </test>
+                    and confirm that the connection requires the selected factors in the PSK to establish the connection in alignment with table 1 from RFC 87874. </test>
                 </testlist>
               </Tests>
             </aactivity>
