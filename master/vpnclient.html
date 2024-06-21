@@ -3239,7 +3239,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <div class="element-activity-header"><a href="#FCS_IPSEC_EXT.1.10">FCS_IPSEC_EXT.1.10</a></div>
               EAs for this element are tested through EAs for <a href="#FCS_IPSEC_EXT.1.9">FCS_IPSEC_EXT.1.9</a>.<br/><br/>
             <div class="element-activity-header"><a href="#FCS_IPSEC_EXT.1.11">FCS_IPSEC_EXT.1.11</a></div>
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes whether peer authentication is performed using RSA, ECDSA, or both.<br/><br/>
+              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall F that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes whether peer authentication is performed using RSA, ECDSA, or both.<br/><br/>
                 If any selection with pre-shared keys is chosen in the selection, the evaluator shall check to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes
 		how those selections work in conjunction with authentication of IPsec connections.<br/><br/>
 		             The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> compares the peer’s presented identifier
@@ -4464,14 +4464,17 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it identifies all protocols that allow  pre-shared keys. 
                 For each protocol identified by the requirement, the evaluator shall confirm that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> states which pre-shared key 
                 selections are supported.<br/><br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to determine that it provides guidance to 
-                administrators on how to configure all selected pre-shared key options if any configuration is required.<br/><br/>
+                administrators on how to configure all selected pre-shared key options if any configuration is required.
+                
+                <br/><br/>The evaluator shall examine the operational guidance to determine that it provides guidance to administrators on
+                how to configure the mandatory_or_not flag per <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8784.
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, 
                 if performed by a different implementation on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>). 
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_45" class="defined" href="#_t_45">Test FIA_PSK_EXT.1:1</a>:
       For each mechanism selected in <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>, the evaluator shall attempt to establish a connection 
-                    and confirm that the connection requires the selected factors in the PSK to establish the connection. </li>
+                    and confirm that the connection requires the selected factors in the PSK to establish the connection in alignment with table 1 from <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 87874. </li>
                 </ul></span>
               </div></div></div></div></div>
         <div class="comp" id="FIA_PSK_EXT.2"><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in

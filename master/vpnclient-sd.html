@@ -1168,7 +1168,7 @@ The following sections list Common Criteria and technology terms used in this do
             <div class="element-activity-header">FCS_IPSEC_EXT.1.10</div>
               EAs for this element are tested through EAs for FCS_IPSEC_EXT.1.9.<br/><br/>
             <div class="element-activity-header">FCS_IPSEC_EXT.1.11</div>
-              <div class="eacategory">TSS</div><div class="ea">The evaluator shall ensure that the TSS describes whether peer authentication is performed using RSA, ECDSA, or both.<br/><br/>
+              <div class="eacategory">TSS</div><div class="ea">The evaluator shall F that the TSS describes whether peer authentication is performed using RSA, ECDSA, or both.<br/><br/>
                 If any selection with pre-shared keys is chosen in the selection, the evaluator shall check to ensure that the TSS describes
 		how those selections work in conjunction with authentication of IPsec connections.<br/><br/>
 		             The evaluator shall ensure that the TSS describes how the TOE compares the peer’s presented identifier
@@ -1434,14 +1434,17 @@ The following sections list Common Criteria and technology terms used in this do
             <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to ensure that it identifies all protocols that allow  pre-shared keys. 
                 For each protocol identified by the requirement, the evaluator shall confirm that the TSS states which pre-shared key 
                 selections are supported.<br/><br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to determine that it provides guidance to 
-                administrators on how to configure all selected pre-shared key options if any configuration is required.<br/><br/>
+                administrators on how to configure all selected pre-shared key options if any configuration is required.
+                
+                <br/><br/>The evaluator shall examine the operational guidance to determine that it provides guidance to administrators on
+                how to configure the mandatory_or_not flag per RFC 8784.
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, 
                 if performed by a different implementation on the TOE). 
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_45" class="defined" href="#_t_45">Test FIA_PSK_EXT.1:1</a>:
       For each mechanism selected in FIA_PSK_EXT.1.2, the evaluator shall attempt to establish a connection 
-                    and confirm that the connection requires the selected factors in the PSK to establish the connection. </li>
+                    and confirm that the connection requires the selected factors in the PSK to establish the connection in alignment with table 1 from RFC 87874. </li>
                 </ul></span>
               </div></div></span></div><div class="comp" id="FIA-PSK-EXT-2"><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_PSK_EXT.2.1</div>
               <div class="eacategory">TSS</div><div class="ea">If "generate" is selected, the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1 
