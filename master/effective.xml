@@ -765,7 +765,7 @@ expected to enforce.<h:br/><h:br/>
             also enforce split-tunneling prevention to ensure that data in transit cannot be disclosed
             inadvertently outside of the IPsec tunnel and prohibit transmission of packets through a connection until certain conditions are met. <h:br/><h:br/>
             Addressed by: FCS_CKM_EXT.2 (when GPOS PP is Base-PP), FCS_CKM_EXT.2 (when App PP is Base-PP),
-            FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_RIP.2, FDP_VPN_EXT.1 (optional), FPF_MFA_EXT.1 (optional).
+            FCS_CKM_EXT.4 (when App PP is Base-PP), FDP_RIP.2, FDP_VPN_EXT.1, FPF_MFA_EXT.1 (optional).
           </description>
 		  <consistency-rationale>This objective is consistent with the O.PROTECTED_STORAGE objective of
 			the GPOS PP, which ensures that sensitive data is not disclosed without
@@ -782,7 +782,7 @@ expected to enforce.<h:br/><h:br/>
           <addressed-by>FDP_RIP.2</addressed-by>
 			<rationale>This SFR supports the objective by requiring the TOE or its platform to ensure that
 				residual data is purged from the system.</rationale>
-          <addressed-by>FDP_VPN_EXT.1 (optional)</addressed-by>
+          <addressed-by>FDP_VPN_EXT.1</addressed-by>
           <rationale>This SFR supports the objective by optionally
             requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
             established IPsec tunnel.</rationale>
