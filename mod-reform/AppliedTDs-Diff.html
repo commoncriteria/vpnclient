@@ -590,70 +590,7 @@
         <h2 id="secreq-bpp-gpos" class="indexable" data-level="2">5.1 Protection Profile for Protection Profile for General Purpose Operating System Security Functional Requirements Direction </h2>
          In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is expected to rely on some of the security functions implemented by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> as a whole and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. In this case, the following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in addition to what is mandated by section 5.5. 
         <h3 id="modsfr-bpp-gpos" class="indexable" data-level="3">5.1.1 Modified SFRs </h3>
-         The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. <span class="description"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that <abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> key generation with support for P-256 and P-384 has been made mandatory in support of IPsec due to the mandated support for Diffie-Hellman (<abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr>) groups 19 and 20 in <a href="#FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</a>.
-            <p></p>
-             In other words:
-            <br>
-            <br>
-             The <b><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></b> shall generate <b>asymmetric</b> cryptographic keys in accordance with a specified cryptographic key generation algorithm <b>[selection:</b>
-            <br>
-            <i>
-                <ul>
-                    <li>
-                        RSA schemes using cryptographic key sizes of 3072-bit or greater that meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix B.3 
-                    </li>
-                    <li>
-                        <abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> schemes using "<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curves" P-384 and <b>[selection:</b>P-521, no other curves<b>]</b> that meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix B.4
-                    </li>
-                    <li>
-                        <abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using 
-                        <br>
-                         <b>[selection:</b>
-                        <ul>
-                            <li>
-                                cryptographic key sizes of 3072-bit or greater that meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix B.1
-                            </li>
-                            <li>
-                                safe primes that meet the following: <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, &ldquo;Recommendation for Pair-Wise Key Establishment Schemes" 
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <b>]</b></i>. 
-            <p></p>
-             Is replaced by:
-            <br>
-            <br>
-             The <b><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></b> shall generate <b>asymmetric</b> cryptographic keys in accordance with a specified cryptographic key generation algorithm <b>
-                <ul>
-                    <i></i>
-                    <li>
-                        <i><abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> schemes using &ldquo;<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curves&rdquo; P-256, P-384, and <b>selection:</b>P-521, no other curves<b>]</b> that meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, &ldquo;Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),&rdquo; Appendix B.4, and, </i>
-                    </li>
-                </ul>
-            </b> <b>[selection: </b><i>
-                <ul>
-                    <li>
-                        RSA schemes using cryptographic key sizes of 3072-bit or greater that meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix B.3 
-                    </li>
-                    <li>
-                        <abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using 
-                        <br>
-                         <b>[selection:</b>
-                        <ul>
-                            <li>
-                                cryptographic key sizes of 3072-bit or greater that meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix B.1
-                            </li>
-                            <li>
-                                safe primes that meet the following: <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, &ldquo;Recommendation for Pair-Wise Key Establishment Schemes" 
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <b>No other key generation methods</b>
-                    </li>
-                </ul>
-            </i><b>]</b>. </span> 
+         This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify any <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined by the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. 
         <h3 id="addsfr-bpp-gpos" class="indexable" data-level="3">5.1.2 Additional SFRs</h3>
          This section defines additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be added to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary in order to implement the functionality in any <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> where the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is claimed as the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. 
         <h4 class="indexable" data-level="4" id="gpos-audit-table">5.1.2.1 Auditable Events for GPOS PP Additional SFRs</h4>
@@ -1615,7 +1552,7 @@
             </table>
         </p>
         <h3 id="conreq-bpp-gpos" class="indexable" data-level="3">6.1.4 Consistency of Requirements </h3>
-         This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality. This is considered to be consistent because the functionality provided by the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose. The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are used entirely to provide functionality for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. The rationale for why this does not conflict with the claims defined by the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows: 
+         This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality. This is considered to be consistent because the functionality provided by the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose. The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> also identifies a number of modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> as well as new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are used entirely to provide functionality for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. The rationale for why this does not conflict with the claims defined by the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows: 
         <table>
             <caption>
                 <span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">10</span></span>: Consistency of Requirements (GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
@@ -3295,6 +3232,12 @@
                 </div>
             </span></span>
         <h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D - Implicitly Satisfied Requirements</h1>
+        <p>
+            This appendix lists requirements that should be considered satisfied by products successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These requirements are not featured explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. They are not included as standalone <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> because it would increase the time, cost, and complexity of evaluation. This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.2 Dependencies between components.
+        </p>
+        <p>
+            This information benefits systems engineering activities which call for inclusion of particular security controls. Evaluation against the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> provides evidence that these controls are present and have been evaluated.
+        </p>
          <b><span class="ctr" data-myid="imp-sat-reqs-table" data-counter-type="ct-Table" id="imp-sat-reqs-table">Table <span class="counter">28</span>: Implicitly Satisfied Requirements</span></b> 
         <table>
             <tr class="header">
