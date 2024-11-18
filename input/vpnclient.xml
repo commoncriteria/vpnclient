@@ -913,61 +913,56 @@ expected to enforce.<h:br/><h:br/>
 				
 				In other words:<h:br/><h:br/>
 
-            <title> The <h:b>OS</h:b> shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a
+            The <h:b>OS</h:b> shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a
 				specified cryptographic key generation algorithm 
-				<selectables linebreak="yes">
-					<selectable id="s-keygen-rsa"><snip>RSA schemes</snip> using cryptographic key sizes of 3072-bit or greater that
+				<h:b>[selection:</h:b><h:br/><h:i><h:ul>
+					<h:li>RSA schemes using cryptographic key sizes of 3072-bit or greater that
 						meet the following: FIPS PUB 186-4, "Digital Signature Standard (DSS)", Appendix B.3
-					</selectable>
-					<selectable id="s-keygen-ecc"><snip>ECC schemes using "NIST curves"</snip> P-384 and
-						<selectables>
-							<selectable>P-521</selectable>
-							<selectable exclusive="yes"> no other curves</selectable>
-						</selectables> that meet the following: FIPS PUB 186-4, "Digital Signature Standard (DSS)",
-									Appendix B.4
-					</selectable>
-					<selectable id="s-keygen-ffc"><snip>FFC schemes</snip> using 
-						<selectables>
-							<selectable id="s-keygen-ffc-fips">cryptographic key sizes of 3072-bit
-								or greater that meet the following: <snip>FIPS PUB 186-4</snip>, "Digital Signature
-								Standard (DSS)", Appendix B.1</selectable>
-							<selectable id="s-keygen-ffc-safeprime"><snip>safe primes</snip> that meet the following: 
+					</h:li>
+					<h:li>ECC schemes using "NIST curves" P-384 and
+						<h:b>[selection:</h:b>P-521, no other curves<h:b>]</h:b>
+						that meet the following: FIPS PUB 186-4, "Digital Signature Standard (DSS)",
+									Appendix B.4</h:li>
+					<h:li>FFC schemes using <h:br/>
+						<h:b>[selection:</h:b><h:ul>
+							<h:li>cryptographic key sizes of 3072-bit
+								or greater that meet the following: FIPS PUB 186-4, "Digital Signature
+								Standard (DSS)", Appendix B.1</h:li>
+							<h:li>safe primes that meet the following: 
 								NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes"
-							</selectable>
-						</selectables>
-					</selectable>
-				</selectables>.
-			</title>
-				<h:p/>
+							</h:li>
+						</h:ul>
+					</h:li>
+				</h:ul><h:b>]</h:b></h:i>.
+			<h:p/>
 				
 				Is replaced by:<h:br/><h:br/>
 				
-            <title> The <h:b>OS</h:b> shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a
+            The <h:b>OS</h:b> shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a
 				specified cryptographic key generation algorithm 
-			    <h:ul><h:i>
+			    <h:b><h:ul><h:i>
 					<h:li>ECC schemes using “NIST curves” P-256, P-384, and 
-						<selectables>
-							<selectable>P-521</selectable>
-							<selectable exclusive="yes">no other curves</selectable>
-						</selectables>
+						<h:b>selection:</h:b>P-521, no other curves<h:b>]</h:b>
 						that meet the following: FIPS PUB 186-4, “Digital Signature
 						Standard (DSS),” Appendix B.4, and,
 					</h:li></h:i>
                 </h:ul></h:b>
-				<selectables linebreak="yes">
-					<selectable>RSA schemes using cryptographic key sizes of 3072-bit or greater that meet
-						the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),”
-						Appendix B.3</selectable>
-					<selectable>FFC schemes using <selectables>
-					<selectable>cryptographic key sizes of 3072-bit or
-						greater that meet the following: FIPS PUB 186-4, "Digital Signature
-						Standard (DSS), Appendix B.1"</selectable>
-					<selectable>safe primes that meet the following: NIST
-						Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise
-						Key Establishment Schemes</selectable></selectables></selectable> 
-					<selectable exclusive="yes"><h:b>No other key generation methods</h:b></selectable>
-                </selectables>.
-				</title>
+				<h:b>[selection: </h:b><h:i><h:ul>
+					<h:li>RSA schemes using cryptographic key sizes of 3072-bit or greater that
+						meet the following: FIPS PUB 186-4, "Digital Signature Standard (DSS)", Appendix B.3
+					</h:li>
+					<h:li>FFC schemes using <h:br/>
+						<h:b>[selection:</h:b><h:ul>
+							<h:li>cryptographic key sizes of 3072-bit
+								or greater that meet the following: FIPS PUB 186-4, "Digital Signature
+								Standard (DSS)", Appendix B.1</h:li>
+							<h:li>safe primes that meet the following: 
+								NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes"
+							</h:li>
+						</h:ul>
+					</h:li>
+					<h:li><h:b>No other key generation methods</h:b></h:li>
+                </h:ul></h:i><h:b>]</h:b>.
 			</description>
 			
 			<replace>
