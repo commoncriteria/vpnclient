@@ -985,6 +985,10 @@ expected to enforce.<h:br/><h:br/>
 				</xpath-specified>			
 			</replace>
 		</base-sfr-modification>
+		
+		
+		
+		
 <?ignore <section title="Cryptographic Support (FCS)" id="os-m-fcs">
           
           <!-- 5.1.1.1 FCS_CKM.1 Cryptographic Key Generation -->
@@ -1037,8 +1041,47 @@ expected to enforce.<h:br/><h:br/>
             </f-element>
             <audit-event/>
           </f-component>
+?>
 
-          <!-- 5.1.1.2 FCS_CKM.2 Cryptographic Key Establishment -->
+		<base-sfr-modification cc-id="fcs_ckm.2">
+
+			<description>
+				words
+			</description>
+			<replace>
+				<xpath-specified xpath="*//cc:f-element[@id='fel-asym-gen']//cc:title">
+					<title> The <h:b>OS</h:b> shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a
+						specified cryptographic key generation algorithm 
+						<h:b><h:ul><h:i>
+							<h:li>ECC schemes using “NIST curves” P-256, P-384, and 
+								<selectables>
+									<selectable>P-521</selectable>
+									<selectable exclusive="yes">no other curves</selectable>
+								</selectables>
+								that meet the following: FIPS PUB 186-4, “Digital Signature
+								Standard (DSS),” Appendix B.4, and,
+							</h:li></h:i>
+						</h:ul></h:b>
+						<selectables linebreak="yes">
+							<selectable>RSA schemes using cryptographic key sizes of 3072-bit or greater that meet
+								the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),”
+								Appendix B.3</selectable>
+							<selectable>FFC schemes using <selectables>
+							<selectable>cryptographic key sizes of 3072-bit or
+								greater that meet the following: FIPS PUB 186-4, "Digital Signature
+								Standard (DSS), Appendix B.1"</selectable>
+							<selectable>safe primes that meet the following: NIST
+								Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise
+								Key Establishment Schemes</selectable></selectables></selectable> 
+							<selectable exclusive="yes"><h:b>No other key generation methods</h:b></selectable>
+						</selectables>.
+					</title>
+				</xpath-specified>			
+			</replace>
+
+		</base-sfr-modification>
+			
+<?ignore <!-- 5.1.1.2 FCS_CKM.2 Cryptographic Key Establishment -->
           <f-component cc-id="fcs_ckm.2" id="os-fcs-ckm-2" name="Cryptographic Key Establishment">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
