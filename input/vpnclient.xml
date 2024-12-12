@@ -907,6 +907,10 @@ expected to enforce.<h:br/><h:br/>
 		<!-- FCS_CKM.1 Crytographic Key Generation -->
 		
 		<base-sfr-spec cc-id="fcs_ckm.1" title="Cryptographic Key Generation" id="modsfr-os-fcs-ckm-1">
+		    <consistency-rationale>
+				The ST author is instructed to make specific selections at minimum to address VPN client
+				requirements; the SFR behavior itself is unmodified.
+			</consistency-rationale>
 			<description>
                 This SFR is functionally identical to what is defined in the GPOS PP except that
                 ECC key generation with support for P-256 and P-384 has been made mandatory
@@ -1008,6 +1012,10 @@ expected to enforce.<h:br/><h:br/>
 		<!-- FCS_CKM.2 Cryptographic Key Establishment -->
 
 		<base-sfr-spec cc-id="fcs_ckm.2" title="Cryptographic Key Establishment" id="modsfr-os-fcs-ckm-2">
+		    <consistency-rationale>
+				The ST author is instructed to make specific selections at minimum to address VPN client
+				requirements; the SFR behavior itself is unmodified.
+			</consistency-rationale>
 			<description>
 				This SFR is functionally identical to what is defined in the GPOS PP except that elliptic 
 				curve cryptography (ECC) key generation with support for P-256 and P-384 has been made 
@@ -1066,6 +1074,11 @@ expected to enforce.<h:br/><h:br/>
 
 		<base-sfr-spec cc-id="fcs_cop.1" iteration="ENCRYPT" 
 			title="Cryptographic Operation - Encryption/Descryption" id="modsfr-os-fcs-cop-1-encrypt">
+			<consistency-rationale>
+				The SFR is refined to list an additional AES mode that must be supported to address VPN 
+				client requirements; the use of this mode for VPN connectivity does not impact the ability 
+				of the GPOS to satisfy any of its other security requirements.
+			</consistency-rationale>
 			<description>
 				This SFR is identical to what is defined in the GPOS PP except that support for CBC and 
 				GCM mode is mandatory in order to address the requirements for FCS_IPSEC_EXT.1. 
