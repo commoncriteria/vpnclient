@@ -1225,9 +1225,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 		<h3 id="modsfr-bpp-gpos" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_CKM.1: Cryptographic Key GenerationIs this working?
-
-						</h4><span class="description">
+		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_CKM.1: Cryptographic Key Generation</h4><span class="description">
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that
                 <abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> key generation with support for P-256 and P-384 has been made mandatory
                 in support of IPsec due to the mandated support for Diffie-Hellman (<abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr>) groups 19 and 20 in
@@ -1288,9 +1286,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 				
 				<p>Additionally, this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is changed from mandatory to optional.</p>
 				
-			</span></div><div class="comp" id="@id"><h4>FCS_CKM.2: Cryptographic Key EstablishmentIs this working?
-
-						
+			</span></div><div class="comp" id="@id"><h4>FCS_CKM.2: Cryptographic Key Establishmentism
+						   Test 
 							(from TLS FP)
 						</h4><span class="description">
 				This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that elliptic 
@@ -1317,9 +1314,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 					</li>
 					<li><b>No other key generation methods</b></li>
 				</ul></i><b>]</b>.
-			</span></div><div class="comp" id="@id"><h4>FCS_COP.1/ENCRYPT: Cryptographic Operation - Encryption/DescryptionIs this working?
-
-						</h4><span class="description">
+			</span></div><div class="comp" id="@id"><h4>FCS_COP.1/ENCRYPT: Cryptographic Operation - Encryption/Descryption</h4><span class="description">
 				This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is identical to what is defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that support for CBC and 
 				GCM mode is mandatory in order to address the requirements for <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a>. 
 				In addition, both 128-bit and 256-bit for key sizes must be selected in order to meet
