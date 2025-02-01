@@ -2007,9 +2007,9 @@ expected to enforce.<h:br/><h:br/>
               <xpath-specified xpath="*//cc:f-element[@id='fel-asym-key-gen-impl']//cc:title">
                 
                   <title>            
-                    The <h:b>application</h:b> shall <h:b><selectables linebreak="yes">
-                      <selectable>invoke platform-provided functionality</selectable>
-                      <selectable>implement functionality</selectable></selectables></h:b>
+                    The <h:b>application</h:b> shall <h:b>[selection:<h:i><h:ul>
+                      <h:li>invoke platform-provided functionality</h:li>
+                      <h:li>implement functionality</h:li></h:ul></h:i>]</h:b>
                     to generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
                     <h:ul>
                     <h:li><h:b>[ECC schemes] using [<h:i>“NIST curves” P-384 and <selectables>
@@ -2118,8 +2118,8 @@ expected to enforce.<h:br/><h:br/>
                   <h:li><h:b>[RSA-based key establishment schemes]</h:b> that meet the following: <h:b>[NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography”]</h:b></h:li>
                   <h:li><h:b>[FFC Schemes using “safe-prime” groups]</h:b> that meet the following: <h:b>‘NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”</h:b> and [<h:b>selection:</h:b> RFC 3526, RFC 7919]</h:li>
                   <h:li>Module-Lattice-Based Key-Encapsulation Mechanism Standard using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Latice-Based Key-Encapsulation Mechanism Standard]</h:li>
-                  <h:li><h:b>no other key establishment schemes.</h:b></h:li>
-                </h:ul></h:i>
+                  <h:li><h:b>no other key establishment schemes</h:b></h:li>
+                </h:ul></h:i>].
               
             </description>
             <replace>
@@ -2228,13 +2228,13 @@ expected to enforce.<h:br/><h:br/>
                 <h:li>AES-GCM (as defined in NIST SP 800-38D) mode</h:li>
               </h:ul> and </h:b>
               
-              [<h:b>selection:</h:b><h:ul>
+              [<h:b>selection:</h:b><h:i><h:ul>
 
                 <h:li>AES-XTS (as defined in NIST SP 800-38E) mode</h:li>
                 <h:li>AES-CCM (as defined in NIST SP 800-38C) mode</h:li>
                 <h:li>AES-CTR (as defined in NIST SP 800-38A) mode</h:li>
                 <h:li><h:b>no other modes</h:b></h:li>
-              ] </h:ul> and cryptographic key size of [<h:i>256-bits</h:i>].
+                ] </h:ul></h:i> and cryptographic key size of [<h:i>256-bits</h:i>].
               
             </description>
             <replace>
@@ -2289,7 +2289,7 @@ expected to enforce.<h:br/><h:br/>
                 <h:li>DTLS as a server as defined in the Functional Package for TLS and also supports functionality for [<h:b>selection:</h:b> mutual authentication, none]</h:li>
                 <h:li>DTLS as a client as defined in the Functional Package for TLS</h:li>
                 <h:li>SSH as defined in the Functional Package for Secure Shell</h:li>
-                <h:li>no other functions</h:li></h:ul>  
+                  <h:li><h:b>no other functions</h:b></h:li></h:ul>  
                 ] for [<h:b>assignment:</h:b> function(s)] using certificates as defined in the Functional Package for X.509</h:li>
               
                 <h:li>invoke platform-provided functionality to encrypt all transmitted sensitive data with [<h:b>selection:</h:b> HTTPS, TLS, DTLS, SSH] for [<h:b>assignment: function(s</h:b>)] using certificates as defined in the Functional Package for X.509</h:li>
