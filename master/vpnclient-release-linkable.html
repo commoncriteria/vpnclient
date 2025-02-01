@@ -1146,26 +1146,16 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate <b>asymmetric</b> cryptographic keys in accordance with a
               specified cryptographic key generation algorithm 
               <b><ul><i>
-                <li><abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> schemes using &#8220;<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curves&#8221; P-256, P-384, and 
-                  <b>selection:</b>P-521, no other curves<b>]</b>
-                  that meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, &#8220;Digital Signature
-                  Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),&#8221; Appendix B.4, and,
+                <li><abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> schemes using &#8220;<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curve&#8221; P-384
+                  that meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, &#8220;Digital Signature
+                  Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),&#8221; Appendix A.2, and,
                 </li></i>
               </ul></b>
               <b>[selection: </b><i><ul>
                 <li>RSA schemes using cryptographic key sizes of 3072-bit or greater that
-                  meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix B.3
+                  meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix A.1
                 </li>
-                <li><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using <br>
-                  <b>[selection:</b><ul>
-                    <li>cryptographic key sizes of 3072-bit
-                      or greater that meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, "Digital Signature
-                      Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix B.1</li>
-                    <li>safe primes that meet the following: 
-                      <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, &#8220;Recommendation for Pair-Wise Key Establishment Schemes"
-                    </li>
-                  </ul><b>]</b>
-                </li>
+                <li><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using "safe-prime" groups that meet the following: '<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [<b>selection:</b> <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919]</li>               
                 <li><b>No other key generation methods</b></li>
               </ul></i><b>]</b><a id="period_196" href="#period_196">. </a>       
               
@@ -1344,24 +1334,23 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                       <li><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using "safe-prime" groups that meet the following: '<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [<b>selection:</b> <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919]</li>
                       <li>No other key generation methods</li>
                     </ul></i>
-                    ]<a id="period_232" href="#period_232">. </a>                  </span></div><div class="comp" id="@id"><h4>FCS_CKM.2/UNLOCKED: Cryptographic Key Establishment (When Locked)</h4><span class="description">
+                    ]<a id="period_232" href="#period_232">. </a>                  </span></div><div class="comp" id="@id"><h4>FCS_CKM.2/UNLOCKED: Cryptographic Key Establishment (When Unlocked)</h4><span class="description">
                     <p>
-                      This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> differs from its definition in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by moving elliptic curve-based key establishment schemes from selectable to mandatory, due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> groups 19 and 20 in <a href="#FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</a><a id="period_233" href="#period_233">. </a>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not require the use of RSA for any function but it is present in the selection in case other MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functions require its use<a id="period_234" href="#period_234">. </a>                    </p>
+                      This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> differs from its definition in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by moving elliptic curve-based key establishment schemes from selectable to mandatory, due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in <a href="#FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</a><a id="period_233" href="#period_233">. </a>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not require the use of RSA for any function but it is present in the selection in case other MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functions require its use<a id="period_234" href="#period_234">. </a>                    </p>
                     The text of the requirement is replaced with:<br><br>
                     
                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform <b>cryptographic key establishment</b> in accordance with a specified cryptographic key establishment method:
                     <ul>
                       <li><b>[Elliptic curve-based key establishment schemes] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, &#8220;Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography&#8221;]</b></li>
                     </ul>
-                    [<b>selection:</b>
+                    [<b>selection:</b> <i>
                     <ul>
                       <li>[RSA-based key establishment schemes] that meet the following: [<b>selection:</b>
                         <ul>
                           <li><abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56B, &#8220;Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography&#8221;</li>
                         <li>RSAES-PKCS1-v1_5 as specified in Section 7.2 of <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8017, &#8220;Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.2"</li></ul></li>
-                      <li></li>
                       <li><b>no other key establishment schemes<a id="period_235" href="#period_235">. </a></b></li>
-                    </ul>
+                    </ul></i>
                    
                     
                   </span></div><div class="comp" id="@id"><h4>FCS_COP.1/ENCRYPT: Cryptographic Operation</h4><span class="description">
@@ -1392,7 +1381,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               The text of the requirement is replaced with:<br><br>
               
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<ul>
-                <li>provide a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client which can protect all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic using IPsec as defined in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client</li></ul>
+                <li><i>provide a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client which can protect all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic using IPsec as defined in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client</i></li></ul>
               ] with the exception of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic needed to manage the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection, and [<b>selection:</b> <i>[<b>assignment:</b> traffic needed for correct functioning of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>], no other traffic</i>] when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> is enabled<a id="period_239" href="#period_239">. </a>              
             </span></div><h4 id="@id" class="indexable" data-level="4">5.2.1.3 Security Management (FMT)</h4><div class="comp" id="@id"><h4>FMT_SMF_EXT.1: Specification of Management Functions</h4><span class="description">
               <p>
@@ -1423,13 +1412,13 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                 <li>802.11-2012 in accordance with the [<i><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Wireless LAN Clients, version 1.1</i>],</li>
                 <li>802.1X in accordance with the [<i><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Wireless LAN Clients, version 1.1</i>],</li>
                 <li>EAP-TLS in accordance with the [<i><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Wireless LAN Clients, version 1.1</i>],</li>
-                <li>Mutually authenticated TLS in accordance with the [<i>Functional Package for TLS, version 2.1</i>]</li>
+                <li>Mutually authenticated TLS in accordance with the [<i>Functional Package for TLS, version 2.1</i>],</li>
                 <li><b>IPsec in accordance with the [<i><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients, version 2.6</i>],</b></li>
-              </ul> and <ul>
+              </ul> and [<b>selection:</b><i><ul>
                 <li>mutually authenticated DTLS as defined in the Functional Package for TLS, version 2.1</li>
                 <li>HTTPS</li>
                 <li><b>no other</b></li>
-              </ul> protocols to provide a communication channel between itself and another trusted <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> product using certificates as defined in [<i>Functional Package for X.509, version 1.0</i>] that is logically distinct from other communication channels, 
+              </ul></i> protocols to provide a communication channel between itself and another trusted <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> product using certificates as defined in [<i>Functional Package for X.509, version 1.0</i>] that is logically distinct from other communication channels, 
               provides assured identification of its end points, protects channel data from disclosure, and detects modification of the channel data<a id="period_245" href="#period_245">. </a>              
               <br><br>FTP_ITC_EXT.1.2 and FTP_ITC_EXT.1.3 are unchanged<a id="period_246" href="#period_246">. </a>              
             </span></div><h3 id="addsfr-bpp-mdf" class="indexable" data-level="3">5.2.2  Additional SFRs</h3>
