@@ -12,9 +12,21 @@
 * Error: Detected dangling ref to 'os-fcs-cop-1-1'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[13]"The SFR i"/ref[1]""
+* Error: Detected dangling ref to 'md-fcs-ckm-1'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/con-mod[11]"The ST au"/ref[1]""
+* Error: Detected dangling ref to 'md-fcs-ckm-2-1'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/con-mod[12]"The ST au"/ref[1]""
+* Error: Detected dangling ref to 'md-fcs-cop-1-1'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/con-mod[13]"The ST au"/ref[1]""
 * Error: Detected dangling ref to 'md-fia-x509-ext-2'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/con-mod[14]"This PP-M"/ref[1]""
+* Error: Detected dangling ref to 'md-ftp-itc-ext-1'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/con-mod[15]"This PP-M"/ref[1]""
 * Error: Detected dangling ref to 'ap-fia-x509-ext-2'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/con-mod[15]"This PP-M"/ref[1]""
