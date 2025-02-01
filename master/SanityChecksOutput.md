@@ -27,9 +27,24 @@
 * Error: Detected dangling ref to 'md-ftp-itc-ext-1'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/con-mod[15]"This PP-M"/ref[1]""
+* Error: Detected dangling ref to 'ap-fcs-ckm-1-ak'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/con-mod[11]"The ST au"/ref[1]""
+* Error: Detected dangling ref to 'ap-fcs-ckm-2'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/con-mod[12]"The ST au"/ref[1]""
+* Error: Detected dangling ref to 'ap-fcs-ckm-1'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/con-mod[13]"The ST au"/ref[1]""
+* Error: Detected dangling ref to 'ap-fcs-cop-1-skc'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/con-mod[14]"The ST au"/ref[1]""
 * Error: Detected dangling ref to 'ap-fia-x509-ext-2'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/con-mod[15]"This PP-M"/ref[1]""
+* Error: Detected dangling ref to 'ap-ftp-dit-ext-1'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/con-mod[16]"This PP-M"/ref[1]""
 * Error: Detected dangling ref to 'dm-fia-x509-ext-2'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/con-mod[14]"The ST au"/ref[1]""

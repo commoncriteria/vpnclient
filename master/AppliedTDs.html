@@ -651,7 +651,7 @@ function showTarget(id){
     </span></a><a href="#modsfr-bpp-mdf" style="text-indent:20px">5.2.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.2.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.2.1.2<span>User Data Protection (FDP)</span></a><a href="#@id" style="text-indent:30px">5.2.1.3<span>Security Management (FMT)</span></a><a href="#@id" style="text-indent:30px">5.2.1.4<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-mdf" style="text-indent:20px">5.2.2<span> Additional SFRs</span></a><a href="#mdf-audit-table" style="text-indent:30px">5.2.2.1<span>Auditable Events for MDF PP Additional SFRs</span></a><a href="#ib-fdp" style="text-indent:30px">5.2.2.2<span>User Data Protection (FDP)</span></a><a href="#secreq-bpp-app" style="text-indent:10px">5.3<span>
     Protection Profile for Protection Profile for Application Software
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#ap-m-fcs" style="text-indent:30px">5.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#ap-m-ftp" style="text-indent:30px">5.3.1.2<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-app" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#app-audit-table" style="text-indent:30px">5.3.2.1<span>Auditable Events for App PP Additional SFRs</span></a><a href="#ap-a-fcs" style="text-indent:30px">5.3.2.2<span>Cryptographic Support (FCS)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.4<span>
+    </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.3.1.2<span>Trusted Path/Channels</span></a><a href="#addsfr-bpp-app" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#app-audit-table" style="text-indent:30px">5.3.2.1<span>Auditable Events for App PP Additional SFRs</span></a><a href="#ap-a-fcs" style="text-indent:30px">5.3.2.2<span>Cryptographic Support (FCS)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.4<span>
     Protection Profile for Protection Profile for Mobile Device Management
        Security Functional Requirements Direction
     </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.4.1<span> Modified SFRs </span></a><a href="#dm-m-fcs" style="text-indent:30px">5.4.1.1<span>Cryptographic Support (FCS)</span></a><a href="#dm-m-fpt" style="text-indent:30px">5.4.1.2<span>Protection of the TSF (FPT)</span></a><a href="#dm-m-ftp" style="text-indent:30px">5.4.1.3<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.4.2<span> Additional SFRs</span></a><a href="#man-sfrs" style="text-indent:10px">5.5<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.5.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fcs" style="text-indent:20px">5.5.2<span>Cryptographic Support (FCS)</span></a><a href="#m-fdp" style="text-indent:20px">5.5.3<span>User Data Protection (FDP)</span></a><a href="#m-fmt" style="text-indent:20px">5.5.4<span>Security Management (FMT)</span></a><a href="#m-fpt" style="text-indent:20px">5.5.5<span>Protection of the TSF (FPT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.6<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-gpos" style="text-indent:10px">6.1<span>
@@ -1551,179 +1551,187 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       case, the following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
       defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in addition to what is mandated by section 5.5.
 		<h3 id="modsfr-bpp-app" class="indexable" data-level="3">5.3.1  Modified SFRs </h3>
+		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and 
-		relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-		
-        
-        <h4 id="ap-m-fcs" class="indexable" data-level="4">5.3.1.1 Cryptographic Support (FCS)</h4>
-            
-          
-          <div class="comp" id="FCS_CKM.1/AK"><h4>FCS_CKM.1/AK Cryptographic Asymmetric Key Generation</h4>
-            
-            <div class="element"><div class="reqid" id="FCS_CKM.1.1/AK"><a href="#FCS_CKM.1.1/AK" class="abbr">FCS_CKM.1.1/AK</a></div><div class="reqdesc">The application shall 
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_65">invoke platform-provided functionality</span></li><li style=""><span class="selectable-content" id="_s_66">implement functionality</span></li></ul>] to generate asymmetric cryptographic keys in accordance with a specified
-                cryptographic key generation algorithm <b>
-                  <ul>
-                    <li><b>[<abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> schemes] using [“<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curves” P-256, P-384 and 
-                      [<b>selection</b>: <span class="selectable-content" id="_s_67">P-521</span>, <span class="selectable-content" id="_s_68">no other curves</span>]] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, “Digital Signature
-                    Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix B.4], and,</b>
-                    </li>
-                  </ul> </b>
-                  [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_69">[RSA schemes] using cryptographic key sizes of [2048-bit or greater] that
-                      meet the following: [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)”,
-                      Appendix B.3]</span></li><li style=""><span class="selectable-content" id="_s_70">[<abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes] using cryptographic key sizes of [2048-bit or greater] that meet
-                      the following: [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix B.1]</span></li><li style=""><span class="selectable-content" id="_s_71">[<abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes] using [Diffie-Hellman group 14] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, Section 3]</span></li><li style=""><span class="selectable-content" id="_s_72">[<abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> Schemes] using [“safe-prime” groups] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A 
-                      Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm
-                      Cryptography” and 
-                      [<b>selection</b>: <span class="selectable-content" id="_s_73"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526</span>, <span class="selectable-content" id="_s_74"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919</span>]]</span></li><li style=""><span class="selectable-content" id="_s_75"><b>no other key generation methods</b>
-                    </span></li></ul>]
-                <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-                  This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> depending on the selection made in
-                  <a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a>. Because key generation services (whether implemented by the
-                  <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or invoked from the platform) are required for IPsec, this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is mandatory
-                  for any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.<br/><br/>
-                  This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that <abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr>
-                  key generation with P-256 and P-384 has been made mandatory in support of IPsec due to the
-                  mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> groups 19, and 20 in <a href="#FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</a>. RSA remains
-                  present as a selection since it may be used by parts of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are not
-                  specifically related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality. The selection for "no other key generation methods"
-                  was added in case the algorithms that IPsec requires are the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s only use of key generation.
-                </span></div></div></div>
+		<h4 id="@id" class="indexable" data-level="4">5.3.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_CKM.1/AK: Cryptographic Asymmetric Key Generation</h4><span class="description">
+              <p>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> depending on the selection made in
+                FCS_CKM_EXT.1. Because key generation services (whether implemented by the
+                <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or invoked from the platform) are required for IPsec, this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is mandatory
+                for any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.<br/><br/>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that <abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr>
+                key generation with P-384 has been made mandatory in support of IPsec due to the
+                mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in <a href="#FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</a>. RSA remains
+                present as a selection since it may be used by parts of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are not
+                specifically related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality. The selection for "no other key generation methods"
+                was added in case the algorithms that IPsec requires are the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s only use of key generation.
+              </p>
+              The text of the requirement is replaced with:<br/><br/>
               
-            </div>
+              The <b>application</b> shall <b><ul>
+                <li>invoke platform-provided functionality</li>
+                <li>implement functionality</li></ul></b>
+              to generate <b>asymmetric</b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
+              
+              <b><ul><li>[<abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> schemes] using [<i>“<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curves” P-384 and [selection: P-521, no other curves]</i>]
+                that meet the following: 
+                [<i><abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix A.2</i>]</li></ul></b>
+              and [<b>selection:</b><i>
+                <ul>
+                  <li><b>[RSA schemes]</b> using cryptographic key sizes of [3072-bit or greater] that meet
+                    the following: [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)," Appendix A.1]</li>
+                  
+                  <li><b>[<abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> Schemes]</b> using [“safe-prime” groups] [<b>selection:</b>
+                    <ul>
+                      <li>MODP-3072</li>
+                      <li>MODP-4096</li>
+                      <li>MODP-6144</li>
+                      <li>MODP-8192</li>
+                      <li>ffdhe-3072</li>
+                      <li>ffdhe-4096</li>
+                      <li>ffdhe-6144</li>
+                      <li>ffdhe-8192</li>
+                    </ul>
+                    that meet the following: 
+                    [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes
+                    Using Discrete Logarithm Cryptography” and [<b>selection:</b> <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919]]
+                  </li>
+                  <li><b>Leighton-Micali Signature</b> Algorithm using the parameter sets  
+                    <ul>								
+                      <li>LMS_SHAKE_M24_H5</li>
+                      <li>LMS_SHAKE_M24_H10</li>
+                      <li>LMS_SHAKE_M24_H15</li>
+                      <li>LMS_SHAKE_M24_H25</li>
+                      <li>LMS_SHAKE_M32_H5</li>
+                      <li>LMS_SHAKE_M32_H10</li>
+                      <li>LMS_SHAKE_M32_H15</li>
+                      <li>LMS_SHAKE_M32_H25</li>
+                      <li>LMS_SHA256_M24_H5</li>
+                      <li>LMS_SHA256_M24_H10</li>
+                      <li>LMS_SHA256_M24_H15</li>
+                      <li>LMS_SHA256_M24_H25</li>
+                      <li>LMS_SHA256_M32_H5</li>
+                      <li>LMS_SHA256_M32_H10</li>
+                      <li>LMS_SHA256_M32_H15</li>
+                      <li>LMS_SHA256_M32_H25</li>
+                    </ul>
+                    that meet the following[<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]
+                  </li>
+                  <li><b>eXtended Merkle Signature Scheme Algorithm</b> using the parameter sets 
+                    <ul>
+                      <li>XMSS-SHA2_10_192</li>
+                      <li>XMSS-SHA2_16_192</li>
+                      <li>XMSS-SHA2_20_192</li>
+                      <li>XMSS-SHA2_10_256</li>
+                      <li>XMSS-SHA2_16_256</li>
+                      <li>XMSS-SHA2_20_256</li>
+                      <li>XMSS-SHAKE_10_192</li>
+                      <li>XMSS-SHAKE_16_192</li>
+                      <li>XMSS-SHAKE_20_192</li>
+                      <li>XMSS-SHAKE_10_256</li>
+                      <li>XMSS-SHAKE_16_256</li>
+                      <li>XMSS-SHAKE_20_256</li>
+                    </ul>
+                    bits that meets the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]
+                  </li>
+                  <li><b>Module-Lattice-Based Key-Encapsulation Mechanism Standard</b> using the parameter set ML-KEM-1024 
+                    that meets the following: [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</li>
+                  
+                  <li><b>Module-Lattice-Based Digital Signature Standard</b> using the parameter set ML-DSA-87 
+                    that meets the following [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> 204, Module-Lattice-Based Digital Signature Standard]</li>
+                  <li><b>no other key generation methods</b></li>
+                </ul></i>].
+              
+            </span></div><div class="comp" id="@id"><h4>FCS_CKM.2: Cryptographic Key Establishment</h4><span class="description">
+              <p>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> differs from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by moving elliptic curve-based
+                key establishment schemes from selectable to mandatory due to the mandated
+                support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in <a href="#FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</a>. 
+                The selection for "no other schemes"
+                was added in case the algorithms that IPsec requires are the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s only use of key establishment.
+              </p>
+              The text of the requirement is replaced with:<br/><br/>
+              
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform <b>cryptographic key establishment</b> in accordance with a specified cryptographic key establishment method:
+              <ul>
+                <li><b>[Elliptic curve-based key establishment schemes] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”]</b></li>
+              </ul>
+              [<b>selection:</b> <i>
+                <ul>
+                  <li><b>[RSA-based key establishment schemes]</b> that meet the following: <b>[<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56B, “Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography”]</b></li>
+                  <li><b>[<abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> Schemes using “safe-prime” groups]</b> that meet the following: <b>‘<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”</b> and [<b>selection:</b> <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919]</li>
+                  <li>Module-Lattice-Based Key-Encapsulation Mechanism Standard using the parameter set ML-KEM-1024 that meets the following: [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> 203, Module-Latice-Based Key-Encapsulation Mechanism Standard]</li>
+                  <li><b>no other key establishment schemes.</b></li>
+                </ul></i>
+              
+            </span></div><div class="comp" id="@id"><h4>FCS_CKM_EXT.1: Cryptographic Key Generation Services</h4><span class="description">
+              <p>
+                This selection differs from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by
+                removing the selection for “generate no asymmetric cryptographic keys” for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client
+                <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will either perform its own key generation or interface with the underlying platform to provide this 
+                service, either of which causes <a href="#FCS_CKM.1">FCS_CKM.1</a>/AK to be claimed.
+              </p>
+              The text of the requirement is replaced with:<br/><br/>
+              
+              The application shall [<b>selection:</b><ul><i>
+                <li>invoke platform-provided functionality for asymmetric key generation</li>
+                <li>implement asymmetric key generation</li></i>
+              </ul>].
+              
+            </span></div><div class="comp" id="@id"><h4>FCS_COP.1/SKC: Cryptographic Operation - Encryption/Decryption</h4><span class="description">
+              <p>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and remains selection-based here because
+                this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> allows for the possibility that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> relies on platform-provided
+                cryptographic algorithm services for its own implementation of IPsec. However, if
+                the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> does claim this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to support IPsec, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must select at minimum
+                both <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC and <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM for consistency
+                with the relevant IPsec claims (<a href="#FCS_IPSEC_EXT.1.4">FCS_IPSEC_EXT.1.4</a> requires 
+                <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM and <a href="#FCS_IPSEC_EXT.1.6">FCS_IPSEC_EXT.1.6</a> requires <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC). The "no other modes" selection is added
+                for the case where no <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> claims need to be made beyond what is mandated for IPsec.
+              </p>
+              The text of the requirement is replaced with:<br/><br/>
+              
+              The <b>application</b> shall <b>[selection:<i> perform, invoke the platform to perform</i>]</b> [<i>encryption and decryption</i>] in accordance with a specified cryptographic algorithm <b><ul>
+                <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38A) mode</li>
+                <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38D) mode</li>
+              </ul> and </b>
+              
+              [<b>selection:</b><ul>
 
-            
-            <div class="comp" id="FCS_CKM.2"><h4>FCS_CKM.2 Cryptographic Key Establishment</h4>
+                <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-XTS (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38E) mode</li>
+                <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCM (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38C) mode</li>
+                <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CTR (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38A) mode</li>
+                <li><b>no other modes</b></li>
+              ] </ul> and cryptographic key size of [<i>256-bits</i>].
               
-              <div class="element"><div class="reqid" id="FCS_CKM.2.1"><a href="#FCS_CKM.2.1" class="abbr">FCS_CKM.2.1</a></div><div class="reqdesc">The application shall 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_76">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_77">implement functionality</span>] to perform cryptographic key
-                  establishment in accordance with a specified cryptographic key establishment method:
-                  <ul>
-                    <li><b>[Elliptic curve-based key establishment schemes] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr>
-                      Special Publication 800-56A, “Recommendation for Pair-Wise Key Establishment
-                      Schemes Using Discrete Logarithm Cryptography”]; and</b>
-                    </li>
-                  </ul>
-                  [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_78">[RSA-based key establishment schemes] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special
-                      Publication 800-56B, “Recommendation for Pair-Wise Key Establishment
-                      Schemes Using Integer Factorization Cryptography”]</span></li><li style=""><span class="selectable-content" id="_s_79"> [RSA-based key establishment schemes] that meet the following: RSAES-PKCS1-v1_5 as specified
-                      in Section 7.2 of <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8017, “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications
-                      Version 2.1"</span></li><li style=""><span class="selectable-content" id="_s_80">[Finite field-based key establishment schemes] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr>
-                      Special Publication 800-56A, “Recommendation for Pair-Wise Key Establishment
-                      Schemes Using Discrete Logarithm Cryptography”]</span></li><li style=""><span class="selectable-content" id="_s_81">[Key establishment scheme using Diffie-Hellman group 14] that meets the
-                      following: <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, Section 3</span></li><li style=""><span class="selectable-content" id="_s_82">[<abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> Schemes using “safe-prime” groups] that meet the following: <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special
-                      Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
-                      Establishment Schemes Using Discrete Logarithm Cryptography” and 
-                      [<b>selection</b>: <span class="selectable-content" id="_s_83"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526</span>, <span class="selectable-content" id="_s_84"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919</span>]</span></li><li style=""><span class="selectable-content" id="_s_85">no other schemes</span></li></ul>].
-                <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-                  This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> differs from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by moving elliptic curve-based
-                  key establishment schemes from selectable to mandatory due to the mandated
-                  support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> groups 19 and 20 in <a href="#FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</a>. 
-                  The selection for "no other schemes"
-                  was added in case the algorithms that IPsec requires are the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s only use of key establishment.</span></div></div></div>
+            </span></div><h4 id="@id" class="indexable" data-level="4">5.3.1.2 Trusted Path/Channels</h4><div class="comp" id="@id"><h4>FTP_DIT_EXT.1: Protection of Data in Transit</h4><span class="description">
+              <p>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is identical to what is defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that the selection for IPsec is
+                mandated, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is forced to select the "encrypt all transmitted sensitive data" option, and
+                the options for invoking platform-provided IPsec functionality have been removed. Since it is possible for a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to implement IPsec while relying on the platform for some other protocol (e.g., using platform-provided TLS to obtain IPsec configuration from a gateway), the other platform-provided protocol selections remain.  
+                Additionally, since it is possible that a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may not implement any encryption protocols other than 
+                IPsec, “no other protocols” is provided as a selectable option in the list of supported protocols. 
+              </p>
+              The text of the requirement is replaced with:<br/><br/>
               
-            </div>
-
-            
-			
-            <div class="comp" id="FCS_CKM_EXT.1"><h4>FCS_CKM_EXT.1 Cryptographic Key Generation Services</h4>
-               
-              <div class="element"><div class="reqid" id="FCS_CKM_EXT.1.1"><a href="#FCS_CKM_EXT.1.1" class="abbr">FCS_CKM_EXT.1.1</a></div><div class="reqdesc">The application shall 
-                  [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_86">invoke platform-provided functionality for asymmetric key generation</span></li><li style=""><span class="selectable-content" id="_s_87">implement asymmetric key generation</span></li></ul>].
-                <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-                  This selection differs from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by
-                  removing the selection for “generate no asymmetric cryptographic keys” for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client
-                  <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will either perform its own key generation or interface with the underlying platform to provide this 
-                  service, either of which causes <span class="no-link">FCS_CKM.1/AK</span> to be claimed.
-                </span></div></div></div>
+              The application shall [<b>selection:</b><i><ul>
+                <li>encrypt all transmitted [<b>selection, choose one of:</b> sensitive data, data] with <b>IPsec as defined in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client and </b>[<b>selection:</b><ul>
+                <li>HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client</li>
+                <li>HTTPS as a server in accordance with FCS_HTTPS_EXT.1/Server</li>
+                <li>HTTPS as a server using mutual authentication in accordance with FCS_HTTPS_EXT.2</li>
+                <li>TLS as a server as defined in the Functional Package for TLS and also supports functionality for [<b>selection:</b> mutual authentication, none]</li>
+                <li>TLS as a client as defined in the Functional Package for TLS</li>
+                <li>DTLS as a server as defined in the Functional Package for TLS and also supports functionality for [<b>selection:</b> mutual authentication, none]</li>
+                <li>DTLS as a client as defined in the Functional Package for TLS</li>
+                <li>SSH as defined in the Functional Package for Secure Shell</li>
+                <li>no other functions</li></ul>  
+                ] for [<b>assignment:</b> function(s)] using certificates as defined in the Functional Package for X.509</li>
               
-            </div>
-
-            
-            <div class="comp" id="FCS_COP.1/SKC"><h4>FCS_COP.1/SKC Cryptographic Operation</h4>
-			  	
-				
+                <li>invoke platform-provided functionality to encrypt all transmitted sensitive data with [<b>selection:</b> HTTPS, TLS, DTLS, SSH] for [<b>assignment: function(s</b>)] using certificates as defined in the Functional Package for X.509</li>
+                <li>invoke platform-provided functionality to encrypt all transmitted data with [<b>selection:</b> HTTPS, TLS, DTLS, SSH, IPsec] for [<b>assignment:</b> function(s)] using certificates as defined in the Functional Package for X.509</li>
+              </ul></i>] between itself and another trusted <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> product.
               
-              <div class="element"><div class="reqid" id="FCS_COP.1.1/SKC"><a href="#FCS_COP.1.1/SKC" class="abbr">FCS_COP.1.1/SKC</a></div><div class="reqdesc">The application shall perform [encryption/decryption] in accordance with
-                  a specified cryptographic algorithm <b>
-                  <ul>
-                    <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38A) mode,</li>
-                    <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38D) mode,</li>
-                  </ul>and </b>
-                  [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_88"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-XTS (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38E) mode</span></li><li style=""><span class="selectable-content" id="_s_89"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCM (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38C) mode</span></li><li style=""><span class="selectable-content" id="_s_90"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CTR (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38A) mode</span></li><li style=""><span class="selectable-content" id="_s_91"><b>no other modes</b></span></li></ul>]
-                  and cryptographic key sizes [<i>128-bit, 256-bit</i>].
-                <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-                  This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and remains selection-based here because
-                  this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> allows for the possibility that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> relies on platform-provided
-                  cryptographic algorithm services for its own implementation of IPsec. However, if
-                  the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> does claim this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to support IPsec, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must select at minimum
-                  both <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC and <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM with both 128-bit and 256-bit key sizes for consistency
-                  with the relevant IPsec claims (<a href="#FCS_IPSEC_EXT.1.4">FCS_IPSEC_EXT.1.4</a> requires both 128-bit and 256-bit
-                  <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM and <a href="#FCS_IPSEC_EXT.1.6">FCS_IPSEC_EXT.1.6</a> requires both 128-bit and 256-bit <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC). The "no other modes" selection is added
-                  for the case where no <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> claims need to be made beyond what is mandated for IPsec.
-                </span></div></div></div>
-              
-            </div>
-          
-        
-          <h4 id="ap-m-ftp" class="indexable" data-level="4">5.3.1.2 Trusted Path/Channels (FTP)</h4>
-            
-            
-            <div class="comp" id="FTP_DIT_EXT.1"><h4>FTP_DIT_EXT.1 Protection of Data in Transit</h4>
-              
-              <div class="element"><div class="reqid" id="FTP_DIT_EXT.1.1"><a href="#FTP_DIT_EXT.1.1" class="abbr">FTP_DIT_EXT.1.1</a></div><div class="reqdesc">The application shall [<i>encrypt all transmitted [sensitive data] with <b>IPsec as specified
-                  in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client [<b>assignment</b>: 
-     <span class="assignable-content">functions</span>] and </b>
-                  [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_92">HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client for [<b>assignment</b>: 
-     <span class="assignable-content">functions</span>]</span></li><li style=""><span class="selectable-content" id="_s_93">HTTPS as a server in accordance with FCS_HTTPS_EXT.1/Server for [<b>assignment</b>: 
-     <span class="assignable-content">functions</span>]</span></li><li style=""><span class="selectable-content" id="_s_94">HTTPS as a server using mutual authentication in accordance with FCS_HTTPS_EXT.2 for 
-                      [<b>assignment</b>: 
-     <span class="assignable-content">functions</span>]
-                    </span></li><li style=""><span class="selectable-content" id="_s_95">TLS as a server as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.0</a> and also supports functionality for
-                      [<b>selection</b>: <span class="selectable-content" id="_s_96">mutual authentication</span>, <span class="selectable-content" id="_s_97">none</span>]
-                      for [<b>assignment</b>: 
-     <span class="assignable-content">functions</span>]
-                    </span></li><li style=""><span class="selectable-content" id="_s_98">TLS as a client as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.0</a> for 
-                      [<b>assignment</b>: 
-     <span class="assignable-content">functions</span>]</span></li><li style=""><span class="selectable-content" id="_s_99">DTLS as a server as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.0</a> and also supports functionality for
-                      [<b>selection</b>: <span class="selectable-content" id="_s_100">mutual authentication</span>, <span class="selectable-content" id="_s_101">none</span>] for [<b>assignment</b>: 
-     <span class="assignable-content">functions</span>]
-                    </span></li><li style=""><span class="selectable-content" id="_s_102">DTLS as a client as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.0</a> for [<b>assignment</b>: 
-     <span class="assignable-content">functions</span>]</span></li><li style=""><span class="selectable-content" id="_s_103">SSH as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=465&amp;id=465">Functional Package for Secure Shell (SSH),
-        version 
-        2.0</a> for [<b>assignment</b>: 
-     <span class="assignable-content">functions</span>]</span></li><li style=""><span class="selectable-content" id="_s_104"><b>no other protocols</b></span></li></ul>]
-                </i>] between itself and another trusted <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> product.
-                <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">
-                  This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is identical to what is defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that mandatory support for IPsec is
-				  added, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is forced to select the ‘encrypt all transmitted sensitive data’ option, and
-				  the options for invoking platform-provided functionality have been removed. 
-                  Since it is possible that a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may not use any encryption protocols other than 
-				  IPsec, “no other protocols” is provided as a selectable option in the list of supported protocols.              
-                </span></div></div></div>
-              
-            </div>
-          
-      <h3 id="addsfr-bpp-app" class="indexable" data-level="3">5.3.2  Additional SFRs</h3>
+            </span></div><h3 id="addsfr-bpp-app" class="indexable" data-level="3">5.3.2  Additional SFRs</h3>
       This section defines additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be added to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary in order to implement
 	  the functionality in any <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> where the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
 	  claimed as the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
@@ -1744,7 +1752,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             
             
             <div class="element"><div class="reqid" id="FCS_CKM_EXT.2.1"><a href="#FCS_CKM_EXT.2.1" class="abbr">FCS_CKM_EXT.2.1</a></div><div class="reqdesc">The 
-                [<b>selection</b>: <span class="selectable-content" id="_s_105"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="_s_106"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>] shall store persistent secrets and private keys
+                [<b>selection</b>: <span class="selectable-content" id="_s_155"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="_s_156"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>] shall store persistent secrets and private keys
                 when not in use in platform-provided key storage.
               <div class="appnote"><span class="note-header">Application
       Note:
@@ -1766,10 +1774,10 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             
             
             <div class="element"><div class="reqid" id="FCS_CKM.6.1"><a href="#FCS_CKM.6.1" class="abbr">FCS_CKM.6.1</a></div><div class="reqdesc">The <b>
-                [<b>selection</b>: <span class="selectable-content" id="_s_107"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_108"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>]</b> 
+                [<b>selection</b>: <span class="selectable-content" id="_s_157"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_158"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>]</b> 
                 shall destroy [<b>assignment</b>: 
      <span class="assignable-content">list of cryptographic keys (including keying material)</span>]
-                when [<b>selection</b>: <span class="selectable-content" id="_s_109">no longer needed</span>, <span class="selectable-content" id="_s_110">[<b>assignment</b>: 
+                when [<b>selection</b>: <span class="selectable-content" id="_s_159">no longer needed</span>, <span class="selectable-content" id="_s_160">[<b>assignment</b>: 
      <span class="assignable-content">assignment: other circumstances for key or keying material destruction</span>]</span>].
 
               </div></div>
@@ -1828,21 +1836,21 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           <div class="comp" id="FCS_CKM.1"><h4>FCS_CKM.1 Cryptographic Key Generation</h4>
             
             <div class="element"><div class="reqid" id="FCS_CKM.1.1"><a href="#FCS_CKM.1.1" class="abbr">FCS_CKM.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_111">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_112">implement functionality</span>]
+                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_161">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_162">implement functionality</span>]
                 to generate asymmetric cryptographic keys in accordance with a specified cryptographic key
                 generation algorithm: 
                 <ul>
                   <li><b><abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> schemes using “<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curves” <b>P-256,</b> P-384, and 
-                      [<b>selection</b>: <span class="selectable-content" id="_s_113">P-521</span>, <span class="selectable-content" id="_s_114">no other curves</span>] 
+                      [<b>selection</b>: <span class="selectable-content" id="_s_163">P-521</span>, <span class="selectable-content" id="_s_164">no other curves</span>] 
                       that meet the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix B.4, and</b>
                   </li>
                 </ul>
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_115">RSA schemes using cryptographic key sizes of 2048-bit or greater that meet
-                    <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix B.3</span></li><li style=""><span class="selectable-content" id="_s_116"><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using cryptographic key sizes of 2048-bit or greater that meets
-                    the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, “Digital Signature Standards (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix B.1</span></li><li style=""><span class="selectable-content" id="_s_117"><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using Diffie-Hellman group 14 that meets the following: <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, Section 3</span></li><li style=""><span class="selectable-content" id="_s_118"><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using “safe-prime” groups that meet the following: <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr>
+                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_165">RSA schemes using cryptographic key sizes of 2048-bit or greater that meet
+                    <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix B.3</span></li><li style=""><span class="selectable-content" id="_s_166"><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using cryptographic key sizes of 2048-bit or greater that meets
+                    the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-4, “Digital Signature Standards (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix B.1</span></li><li style=""><span class="selectable-content" id="_s_167"><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using Diffie-Hellman group 14 that meets the following: <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, Section 3</span></li><li style=""><span class="selectable-content" id="_s_168"><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using “safe-prime” groups that meet the following: <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr>
                     Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
                     Establishment Schemes Using Discrete Logarithm Cryptography,” and
-                    [<b>selection</b>: <span class="selectable-content" id="_s_119"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526</span>, <span class="selectable-content" id="_s_120"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919</span>]</span></li><li style=""><span class="selectable-content" id="_s_121"><b>no other key generation schemes</b></span></li></ul>].
+                    [<b>selection</b>: <span class="selectable-content" id="_s_169"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526</span>, <span class="selectable-content" id="_s_170"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919</span>]</span></li><li style=""><span class="selectable-content" id="_s_171"><b>no other key generation schemes</b></span></li></ul>].
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1860,7 +1868,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           <div class="comp" id="FCS_CKM.2"><h4>FCS_CKM.2 Cryptographic Key Establishment</h4>
             
             <div class="element"><div class="reqid" id="FCS_CKM.2.1"><a href="#FCS_CKM.2.1" class="abbr">FCS_CKM.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-                [<b>selection</b>: <span class="selectable-content" id="_s_122">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_123">implement functionality</span>]
+                [<b>selection</b>: <span class="selectable-content" id="_s_172">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_173">implement functionality</span>]
                 to perform cryptographic key establishment in accordance with a specified key establishment method:
                 <ul>
                   <li><b>Elliptic curve-based key establishment schemes that meet the following:
@@ -1868,15 +1876,15 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                     Establishment Schemes Using Discrete Logarithm Cryptography”</b>
                   </li>
                 </ul>and
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_124">RSA-based key establishment schemes that meet the following: 
+                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_174">RSA-based key establishment schemes that meet the following: 
                     RSAES-PKCS1-v1_5 as specified in Section 7.2 of <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8017, “Public-Key Cryptography Standards
-                    (PKCS) #1: RSA Cryptography Specifications Version 2.1"</span></li><li style=""><span class="selectable-content" id="_s_125">Finite field-based key establishment schemes that meet the following: <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr>
+                    (PKCS) #1: RSA Cryptography Specifications Version 2.1"</span></li><li style=""><span class="selectable-content" id="_s_175">Finite field-based key establishment schemes that meet the following: <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr>
                     Special Publication 800-56A <b>Revision 3</b>, “Recommendation for Pair-Wise Key
-                    Establishment Schemes Using Discrete Logarithm Cryptography”</span></li><li style=""><span class="selectable-content" id="_s_126">Key establishment scheme using Diffie-Hellman group 14 that meets the
-                    following: <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, Section 3</span></li><li style=""><span class="selectable-content" id="_s_127"><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using "safe-prime" groups that meet the following: <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr>
+                    Establishment Schemes Using Discrete Logarithm Cryptography”</span></li><li style=""><span class="selectable-content" id="_s_176">Key establishment scheme using Diffie-Hellman group 14 that meets the
+                    following: <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, Section 3</span></li><li style=""><span class="selectable-content" id="_s_177"><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using "safe-prime" groups that meet the following: <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr>
                     Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key
                     Establishment Schemes Using Discrete Logarithm Cryptography" and
-                    [<b>selection</b>: <span class="selectable-content" id="_s_128"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526</span>, <span class="selectable-content" id="_s_129"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919</span>]</span></li><li style=""><span class="selectable-content" id="_s_130"><b>no other schemes</b></span></li></ul>].
+                    [<b>selection</b>: <span class="selectable-content" id="_s_178"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526</span>, <span class="selectable-content" id="_s_179"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919</span>]</span></li><li style=""><span class="selectable-content" id="_s_180"><b>no other schemes</b></span></li></ul>].
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1894,13 +1902,13 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           <div class="comp" id="FCS_COP.1/CONF_ALG"><h4>FCS_COP.1/CONF_ALG Cryptographic Operation (Confidentiality Algorithms)</h4>
             
             <div class="element"><div class="reqid" id="FCS_COP.1.1/CONF_ALG"><a href="#FCS_COP.1.1/CONF_ALG" class="abbr">FCS_COP.1.1/CONF_ALG</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
-                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_131">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_132">implement functionality</span>]
+                [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_181">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_182">implement functionality</span>]
                 to perform encryption/decryption in accordance with a specified cryptographic algorithm
                 <ul><b>
                   <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC (as defined in <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 197, <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38A) mode,</li>
                   <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38D), and</li></b>
                 </ul>
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_133"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> Key Wrap (KW) (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38F)</span></li><li style=""><span class="selectable-content" id="_s_134"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> Key Wrap with Padding (KWP) (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38F)</span></li><li style=""><span class="selectable-content" id="_s_135"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCM (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38C)</span></li><li style=""><span class="selectable-content" id="_s_136"><b>no other modes</b></span></li></ul>]
+                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_183"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> Key Wrap (KW) (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38F)</span></li><li style=""><span class="selectable-content" id="_s_184"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> Key Wrap with Padding (KWP) (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38F)</span></li><li style=""><span class="selectable-content" id="_s_185"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCM (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38C)</span></li><li style=""><span class="selectable-content" id="_s_186"><b>no other modes</b></span></li></ul>]
                 and cryptographic key sizes [<i>128-bit, 256-bit</i>].
               <div class="appnote"><span class="note-header">Application
       Note:
@@ -1954,28 +1962,28 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 <li><b>implement functionality using IPsec as defined in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
                   for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients, and </b></li>
               </ul>
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_137">invoke platform-provided functionality to use
-                    [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_138">SSH</span></li><li style=""><span class="selectable-content" id="_s_139">mutually authenticated TLS</span></li><li style=""><span class="selectable-content" id="_s_140">mutually authenticated DTLS</span></li><li style=""><span class="selectable-content" id="_s_141">HTTPS</span></li></ul>]</span></li><li style=""><span class="selectable-content" id="_s_142">implement functionality using
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_143">SSH as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=465&amp;id=465">Functional Package for Secure Shell (SSH),
+                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_187">invoke platform-provided functionality to use
+                    [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_188">SSH</span></li><li style=""><span class="selectable-content" id="_s_189">mutually authenticated TLS</span></li><li style=""><span class="selectable-content" id="_s_190">mutually authenticated DTLS</span></li><li style=""><span class="selectable-content" id="_s_191">HTTPS</span></li></ul>]</span></li><li style=""><span class="selectable-content" id="_s_192">implement functionality using
+                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_193">SSH as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=465&amp;id=465">Functional Package for Secure Shell (SSH),
         version 
-        2.0</a></span></li><li style=""><span class="selectable-content" id="_s_144">mutually authenticated TLS as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Transport Layer Security (TLS),
+        2.0</a></span></li><li style=""><span class="selectable-content" id="_s_194">mutually authenticated TLS as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Transport Layer Security (TLS),
         version 
-        2.0</a></span></li><li style=""><span class="selectable-content" id="_s_145">mutually authenticated DTLS as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Transport Layer Security (TLS),
+        2.0</a></span></li><li style=""><span class="selectable-content" id="_s_195">mutually authenticated DTLS as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Transport Layer Security (TLS),
         version 
-        2.0</a></span></li><li style=""><span class="selectable-content" id="_s_146">HTTPS in accordance with FCS_HTTPS_EXT.1</span></li></ul>]</span></li><li style=""><span class="selectable-content" id="_s_147"><b>not invoke or implement any other protocol functionality</b></span></li></ul>] to provide a trusted communication channel between itself and authorized <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr>
+        2.0</a></span></li><li style=""><span class="selectable-content" id="_s_196">HTTPS in accordance with FCS_HTTPS_EXT.1</span></li></ul>]</span></li><li style=""><span class="selectable-content" id="_s_197"><b>not invoke or implement any other protocol functionality</b></span></li></ul>] to provide a trusted communication channel between itself and authorized <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr>
 				entities supporting the following capabilities: audit server, 
-				[<b>selection</b>: <span class="selectable-content" id="_s_148">authentication server</span>, <span class="selectable-content" id="_s_149">[<b>assignment</b>: 
+				[<b>selection</b>: <span class="selectable-content" id="_s_198">authentication server</span>, <span class="selectable-content" id="_s_199">[<b>assignment</b>: 
      <span class="assignable-content">other capabilities</span>]</span>]
 				that is logically distinct from other communication channels and provides assured identification
 				of its end points and protection of channel data from modification and disclosure.
               </div></div>
             <div class="element"><div class="reqid" id="FTP_ITC.1.2/INTER_XFER_IT"><a href="#FTP_ITC.1.2/INTER_XFER_IT" class="abbr">FTP_ITC.1.2/INTER_XFER_IT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>implement functionality and</b> 
-				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_150">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_151"><b>not invoke platform-provided functionality</b></span>]
+				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_200">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_201"><b>not invoke platform-provided functionality</b></span>]
 				to permit the MDM Server or other authorized <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entities to initiate communication via the trusted
 				channel.
               </div></div>
             <div class="element"><div class="reqid" id="FTP_ITC.1.3/INTER_XFER_IT"><a href="#FTP_ITC.1.3/INTER_XFER_IT" class="abbr">FTP_ITC.1.3/INTER_XFER_IT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>implement functionality and</b> 
-				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_152">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_153"><b>not invoke platform-provided functionality</b></span>]
+				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_202">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_203"><b>not invoke platform-provided functionality</b></span>]
 				to initiate communication via the trusted channel for
 				[<b>assignment</b>: 
      <span class="assignable-content">list of services for which the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is able to initiate communications</span>].
@@ -2009,25 +2017,25 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 <li><b>implement functionality using IPsec as defined in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
                   for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients, and </b></li>
                 </ul>
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_154">
-                  invoke platform-provided functionality to use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_155">TLS</span></li><li style=""><span class="selectable-content" id="_s_156">HTTPS</span></li><li style=""><span class="selectable-content" id="_s_157">SSH</span></li></ul>]</span></li><li style=""><span class="selectable-content" id="_s_158">implement functionality using 
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_159">TLS as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Transport Layer Security (TLS),
+                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_204">
+                  invoke platform-provided functionality to use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_205">TLS</span></li><li style=""><span class="selectable-content" id="_s_206">HTTPS</span></li><li style=""><span class="selectable-content" id="_s_207">SSH</span></li></ul>]</span></li><li style=""><span class="selectable-content" id="_s_208">implement functionality using 
+                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_209">TLS as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Transport Layer Security (TLS),
         version 
-        2.0</a>y</span></li><li style=""><span class="selectable-content" id="_s_160">HTTPS in accordance with FCS_HTTPS_EXT.1</span></li><li style=""><span class="selectable-content" id="_s_161">SSH as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=465&amp;id=465">Functional Package for Secure Shell (SSH),
+        2.0</a>y</span></li><li style=""><span class="selectable-content" id="_s_210">HTTPS in accordance with FCS_HTTPS_EXT.1</span></li><li style=""><span class="selectable-content" id="_s_211">SSH as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=465&amp;id=465">Functional Package for Secure Shell (SSH),
         version 
-        2.0</a></span></li></ul>]</span></li><li style=""><span class="selectable-content" id="_s_162"><b>not invoke or implement any other protocol functionality</b></span></li></ul>]
+        2.0</a></span></li></ul>]</span></li><li style=""><span class="selectable-content" id="_s_212"><b>not invoke or implement any other protocol functionality</b></span></li></ul>]
 				to provide a trusted communication channel between itself as a 
-				[<b>selection</b>: <span class="selectable-content" id="_s_163">server</span>, <span class="selectable-content" id="_s_164">peer</span>] 
+				[<b>selection</b>: <span class="selectable-content" id="_s_213">server</span>, <span class="selectable-content" id="_s_214">peer</span>] 
 				and another trusted <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> product that is logically distinct from other communication
 				channels and provides assured identification of its endpoints and protection of the
 				communicated data from [<i>modification or disclosure</i>].
               </div></div>
             <div class="element"><div class="reqid" id="FTP_TRP.1.2/TRUSTPATH_REM_ADMIN"><a href="#FTP_TRP.1.2/TRUSTPATH_REM_ADMIN" class="abbr">FTP_TRP.1.2/TRUSTPATH_REM_ADMIN</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>implement functionality and</b> 
-				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_165">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_166"><b>not invoke platform-provided functionality</b></span>]
+				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_215">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_216"><b>not invoke platform-provided functionality</b></span>]
 				to permit remote administrators to initiate communication via the trusted channel.
               </div></div>
             <div class="element"><div class="reqid" id="FTP_TRP.1.3/TRUSTPATH_REM_ADMIN"><a href="#FTP_TRP.1.3/TRUSTPATH_REM_ADMIN" class="abbr">FTP_TRP.1.3/TRUSTPATH_REM_ADMIN</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>implement functionality and</b> 
-				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_167">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_168"><b>not invoke platform-provided functionality</b></span>]
+				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_217">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_218"><b>not invoke platform-provided functionality</b></span>]
                 to require the use of the trusted channel for [<i>all remote administration actions</i>].
               <div class="appnote"><span class="note-header">Application
       Note:
@@ -2077,10 +2085,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
 		  <div class="element"><div class="reqid" id="FCS_CKM.1.1/VPN"><a href="#FCS_CKM.1.1/VPN" class="abbr">FCS_CKM.1.1/VPN</a></div><div class="reqdesc">
 				The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>
-				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_169">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_170">implement functionality</span>]
+				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_219">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_220">implement functionality</span>]
 				to </b>generate <b>asymmetric</b> cryptographic keys <b>used for <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> peer authentication</b>
 				in accordance with:
-				<b>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_171"><abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix B.3 for RSA schemes</span></li><li style=""><span class="selectable-content" id="_s_172"><abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix B.4 for
+				<b>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_221"><abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix B.3 for RSA schemes</span></li><li style=""><span class="selectable-content" id="_s_222"><abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix B.4 for
 						ECDSA schemes and implementing “<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curve” P-384 and no other curves.
 					</span></li></ul>]</b>
 				and specified cryptographic key sizes [<i>equivalent to, or greater than, a
@@ -2158,7 +2166,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 				configured by the client.
             </span></div></div></div>
           <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.2"><a href="#FCS_IPSEC_EXT.1.2" class="abbr">FCS_IPSEC_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement 
-				[<b>selection</b>: <span class="selectable-content" id="_s_173">tunnel mode</span>, <span class="selectable-content" id="_s_174">transport mode</span>].
+				[<b>selection</b>: <span class="selectable-content" id="_s_223">tunnel mode</span>, <span class="selectable-content" id="_s_224">transport mode</span>].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2175,8 +2183,8 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             </div></div>
           <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.4"><a href="#FCS_IPSEC_EXT.1.4" class="abbr">FCS_IPSEC_EXT.1.4</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the IPsec protocol <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr> as defined by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4303 using the cryptographic algorithms
 				[<i><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM-256 as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4106,</i>
-				[<b>selection</b>: <span class="selectable-content" id="_s_175"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-256 (both specified by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3602)
-						 with a Secure Hash Algorithm (<abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>)-based HMAC</span>, <span class="selectable-content" id="_s_176">no other algorithms</span>]].
+				[<b>selection</b>: <span class="selectable-content" id="_s_225"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-256 (both specified by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3602)
+						 with a Secure Hash Algorithm (<abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr>)-based HMAC</span>, <span class="selectable-content" id="_s_226">no other algorithms</span>]].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2184,18 +2192,18 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 				or by an administrator of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself.
 			</span></div></div></div>
           <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.5"><a href="#FCS_IPSEC_EXT.1.5" class="abbr">FCS_IPSEC_EXT.1.5</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the protocol:
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_177">IKEv1, using Main Mode for Phase I exchanges, as defined in RFCs 2407,
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_227">IKEv1, using Main Mode for Phase I exchanges, as defined in RFCs 2407,
 					2408, 2409, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4109, 
-					[<b>selection</b>: <span class="selectable-content" id="_s_178">no other RFCs for extended sequence numbers</span>, <span class="selectable-content" id="_s_179"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4304 for extended sequence numbers</span>], 
-					[<b>selection</b>: <span class="selectable-content" id="_s_180">no other RFCs for hash functions</span>, <span class="selectable-content" id="_s_181"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4868 for hash functions</span>], and 
-					[<b>selection</b>: <span class="selectable-content" id="_s_182">support for XAUTH</span>, <span class="selectable-content" id="_s_183">no support for XAUTH</span>]</span></li><li style=""><span class="selectable-content" id="_s_184">IKEv2 as defined in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7296 (with mandatory support for <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> traversal as
+					[<b>selection</b>: <span class="selectable-content" id="_s_228">no other RFCs for extended sequence numbers</span>, <span class="selectable-content" id="_s_229"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4304 for extended sequence numbers</span>], 
+					[<b>selection</b>: <span class="selectable-content" id="_s_230">no other RFCs for hash functions</span>, <span class="selectable-content" id="_s_231"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4868 for hash functions</span>], and 
+					[<b>selection</b>: <span class="selectable-content" id="_s_232">support for XAUTH</span>, <span class="selectable-content" id="_s_233">no support for XAUTH</span>]</span></li><li style=""><span class="selectable-content" id="_s_234">IKEv2 as defined in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7296 (with mandatory support for <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> traversal as
 					specified in section 2.23), <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8247, and 
-					[<b>selection</b>: <span class="selectable-content" id="_s_185">no other RFCs for hash functions</span>, <span class="selectable-content" id="_s_186"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4868 for hash functions</span>]</span></li></ul>].
+					[<b>selection</b>: <span class="selectable-content" id="_s_235">no other RFCs for hash functions</span>, <span class="selectable-content" id="_s_236"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4868 for hash functions</span>]</span></li></ul>].
             </div></div>
           <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.6"><a href="#FCS_IPSEC_EXT.1.6" class="abbr">FCS_IPSEC_EXT.1.6</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the encrypted payload in the 
-				[<b>selection</b>: <span class="selectable-content" id="_s_187">IKEv1</span>, <span class="selectable-content" id="_s_188">IKEv2</span>] 
+				[<b>selection</b>: <span class="selectable-content" id="_s_237">IKEv1</span>, <span class="selectable-content" id="_s_238">IKEv2</span>] 
 				protocol uses the cryptographic algorithms [<i><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC-256 as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 6379 and </i>
-				[<b>selection</b>: <span class="selectable-content" id="_s_189"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM-256 as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5282</span>, <span class="selectable-content" id="_s_190">no other algorithm</span>]].
+				[<b>selection</b>: <span class="selectable-content" id="_s_239"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM-256 as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5282</span>, <span class="selectable-content" id="_s_240">no other algorithm</span>]].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2203,16 +2211,16 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 				or by an administrator of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself.
 			</span></div></div></div>
           <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.7"><a href="#FCS_IPSEC_EXT.1.7" class="abbr">FCS_IPSEC_EXT.1.7</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that 
-				[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_193">IKEv2 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes can be configured by 
-						[<b>selection</b>: <span class="selectable-content" id="_s_194">an administrator</span>, <span class="selectable-content" id="_s_195">a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] 
+				[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_243">IKEv2 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes can be configured by 
+						[<b>selection</b>: <span class="selectable-content" id="_s_244">an administrator</span>, <span class="selectable-content" id="_s_245">a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] 
 						based on 
-						[<b>selection</b>: <span class="selectable-content" id="_s_196">number of packets/number of bytes</span>, <span class="selectable-content" id="_s_197">length of time</span>]</span></li><li style=""><span class="selectable-content" id="_s_198">IKEv1 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes
-				  [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_199"> can be configured by
-  						[<b>selection</b>: <span class="selectable-content" id="_s_200">an administrator</span>, <span class="selectable-content" id="_s_201">a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] 
+						[<b>selection</b>: <span class="selectable-content" id="_s_246">number of packets/number of bytes</span>, <span class="selectable-content" id="_s_247">length of time</span>]</span></li><li style=""><span class="selectable-content" id="_s_248">IKEv1 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes
+				  [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_249"> can be configured by
+  						[<b>selection</b>: <span class="selectable-content" id="_s_250">an administrator</span>, <span class="selectable-content" id="_s_251">a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] 
   						based on 
-  						[<b>selection</b>: <span class="selectable-content" id="_s_202">number of packets/number of bytes</span>, <span class="selectable-content" id="_s_203">length of time</span>]
-  				  </span></li><li style=""><span class="selectable-content" id="_s_204">are fixed based on 
-  						[<b>selection</b>: <span class="selectable-content" id="_s_205">number of packets/number of bytes</span>, <span class="selectable-content" id="_s_206">length of time</span>]
+  						[<b>selection</b>: <span class="selectable-content" id="_s_252">number of packets/number of bytes</span>, <span class="selectable-content" id="_s_253">length of time</span>]
+  				  </span></li><li style=""><span class="selectable-content" id="_s_254">are fixed based on 
+  						[<b>selection</b>: <span class="selectable-content" id="_s_255">number of packets/number of bytes</span>, <span class="selectable-content" id="_s_256">length of time</span>]
   					</span></li></ul>]
 				  </span></li></ul>]. 
 				If length of time is used, it must include at least one option that
@@ -2247,7 +2255,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.8"><a href="#FCS_IPSEC_EXT.1.8" class="abbr">FCS_IPSEC_EXT.1.8</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> protocols implement <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> Groups <ul>
                 <li>20 (384-bit Random ECP) according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5114 and</li></ul> 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_207">15 (3072-bit MODP)</span></li><li style=""><span class="selectable-content" id="_s_208">16 (4096-bit MODP)</span></li><li style=""><span class="selectable-content" id="_s_209">17 (6144-bit MODP)</span></li><li style=""><span class="selectable-content" id="_s_210">18 (8192-bit MODP)</span></li></ul>] according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526.
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_257">15 (3072-bit MODP)</span></li><li style=""><span class="selectable-content" id="_s_258">16 (4096-bit MODP)</span></li><li style=""><span class="selectable-content" id="_s_259">17 (6144-bit MODP)</span></li><li style=""><span class="selectable-content" id="_s_260">18 (8192-bit MODP)</span></li></ul>] according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526.
                 
                 
             <div class="appnote"><span class="note-header">Application
@@ -2291,13 +2299,13 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.11"><a href="#FCS_IPSEC_EXT.1.11" class="abbr">FCS_IPSEC_EXT.1.11</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_211">IKEv1 performs peer authentication using  
-                  [<b>selection</b>: <span class="selectable-content" id="_s_212">RSA</span>, <span class="selectable-content" id="_s_213">ECDSA</span>] 
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_261">IKEv1 performs peer authentication using  
+                  [<b>selection</b>: <span class="selectable-content" id="_s_262">RSA</span>, <span class="selectable-content" id="_s_263">ECDSA</span>] 
                   that use X.509v3 certificates that conform to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4945.
-                </span></li><li style=""><span class="selectable-content" id="_s_214">IKEv2 performs peer authentication using  
-                  [<b>selection</b>: <span class="selectable-content" id="_s_215">RSA</span>, <span class="selectable-content" id="_s_216">ECDSA</span>] 
+                </span></li><li style=""><span class="selectable-content" id="_s_264">IKEv2 performs peer authentication using  
+                  [<b>selection</b>: <span class="selectable-content" id="_s_265">RSA</span>, <span class="selectable-content" id="_s_266">ECDSA</span>] 
                   that use X.509v3 certificates that conform to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4945 and 
-                  [<b>selection</b>: <span class="selectable-content" id="sel-ipsec-e11-psk">Pre-shared Keys that conform to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8784</span>, <span class="selectable-content" id="sel-ipsec-e11-eapttls">Pre-shared Keys transmitted via EAP-TTLS</span>, <span class="selectable-content" id="sel-ipsec-e11-eaptls">EAP-TLS</span>, <span class="selectable-content" id="_s_220">no other method</span>].
+                  [<b>selection</b>: <span class="selectable-content" id="sel-ipsec-e11-psk">Pre-shared Keys that conform to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8784</span>, <span class="selectable-content" id="sel-ipsec-e11-eapttls">Pre-shared Keys transmitted via EAP-TTLS</span>, <span class="selectable-content" id="sel-ipsec-e11-eaptls">EAP-TLS</span>, <span class="selectable-content" id="_s_270">no other method</span>].
                 </span></li></ul>]
               
             <div class="appnote"><span class="note-header">Application
@@ -2326,9 +2334,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <br/><br/>
               This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by adding new selections for <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> versions and authentication methods.      
             </span></div></div></div>
-          <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.12"><a href="#FCS_IPSEC_EXT.1.12" class="abbr">FCS_IPSEC_EXT.1.12</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> if the [<b>selection</b>: <span class="selectable-content" id="_s_221"><abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> address</span>, <span class="selectable-content" id="_s_222">Fully Qualified Domain Name (<abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>)</span>, <span class="selectable-content" id="_s_223">user <abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr></span>, <span class="selectable-content" id="_s_224">Distinguished Name (<abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>)</span>] 
+          <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.12"><a href="#FCS_IPSEC_EXT.1.12" class="abbr">FCS_IPSEC_EXT.1.12</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> if the [<b>selection</b>: <span class="selectable-content" id="_s_271"><abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> address</span>, <span class="selectable-content" id="_s_272">Fully Qualified Domain Name (<abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>)</span>, <span class="selectable-content" id="_s_273">user <abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr></span>, <span class="selectable-content" id="_s_274">Distinguished Name (<abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>)</span>] 
 				and 
-				[<b>selection</b>: <span class="selectable-content" id="_s_225">no other reference identifier type</span>, <span class="selectable-content" id="_s_226">[<b>assignment</b>: 
+				[<b>selection</b>: <span class="selectable-content" id="_s_275">no other reference identifier type</span>, <span class="selectable-content" id="_s_276">[<b>assignment</b>: 
      <span class="assignable-content">other supported reference identifier types</span>]</span>] contained in a certificate does not match the expected values for the
 				entity attempting to establish a connection.
             <div class="appnote"><span class="note-header">Application
@@ -2368,12 +2376,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 				<a href="#FMT_SMF.1.1/VPN">FMT_SMF.1.1/VPN</a>.
 			</span></div></div></div>
           <div class="element"><div class="reqid" id="FCS_IPSEC_EXT.1.14"><a href="#FCS_IPSEC_EXT.1.14" class="abbr">FCS_IPSEC_EXT.1.14</a></div><div class="reqdesc">The 
-				[<b>selection</b>: <span class="selectable-content" id="_s_227"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_228"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] shall be able to ensure by default that the strength of the symmetric algorithm (in terms 
+				[<b>selection</b>: <span class="selectable-content" id="_s_277"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_278"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] shall be able to ensure by default that the strength of the symmetric algorithm (in terms 
 				of the number of bits in the key) negotiated to protect the 
-				[<b>selection</b>: <span class="selectable-content" id="_s_229">IKEv1 Phase 1</span>, <span class="selectable-content" id="_s_230">IKEv2 IKE_SA</span>] 
+				[<b>selection</b>: <span class="selectable-content" id="_s_279">IKEv1 Phase 1</span>, <span class="selectable-content" id="_s_280">IKEv2 IKE_SA</span>] 
 				connection is greater than or equal to the strength of the symmetric algorithm
 				(in terms of the number of bits in the key) negotiated to protect the 
-				[<b>selection</b>: <span class="selectable-content" id="_s_231">IKEv1 Phase 2</span>, <span class="selectable-content" id="_s_232">IKEv2 CHILD_SA</span>] connection.
+				[<b>selection</b>: <span class="selectable-content" id="_s_281">IKEv1 Phase 2</span>, <span class="selectable-content" id="_s_282">IKEv2 CHILD_SA</span>] connection.
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2399,9 +2407,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         <div class="comp" id="FDP_RIP.2"><h4>FDP_RIP.2 Full Residual Information Protection</h4>
           
           <div class="element"><div class="reqid" id="FDP_RIP.2.1"><a href="#FDP_RIP.2.1" class="abbr">FDP_RIP.2.1</a></div><div class="reqdesc"> The <b>
-				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_233"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_234"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>]</b>  
+				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_283"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_284"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>]</b>  
 				shall ensure that any previous information content of a resource is made unavailable upon the 
-				[<b>selection</b>: <span class="selectable-content" id="_s_235">allocation of the resource to</span>, <span class="selectable-content" id="_s_236">deallocation of the resource from</span>] all objects.
+				[<b>selection</b>: <span class="selectable-content" id="_s_285">allocation of the resource to</span>, <span class="selectable-content" id="_s_286">deallocation of the resource from</span>] all objects.
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2425,7 +2433,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         <div class="comp" id="FMT_SMF.1/VPN"><h4>FMT_SMF.1/VPN Specification of Management Functions (VPN)</h4>
           
           <div class="element"><div class="reqid" id="FMT_SMF.1.1/VPN"><a href="#FMT_SMF.1.1/VPN" class="abbr">FMT_SMF.1.1/VPN</a></div><div class="reqdesc"> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the following management functions: 
-				[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_237">Specify <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways to use for connections</span></li><li style=""><span class="selectable-content" id="_s_238">Specify IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients to use for connections</span></li><li style=""><span class="selectable-content" id="_s_239">Specify IPsec-capable network devices to use for connections</span></li><li style=""><span class="selectable-content" id="_s_240">Specify client credentials to be used for connections</span></li><li style=""><span class="selectable-content" id="_s_241">Configure the reference identifier of the peer</span></li><li style=""><span class="selectable-content" id="_s_242">[<b>assignment</b>: 
+				[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_287">Specify <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways to use for connections</span></li><li style=""><span class="selectable-content" id="_s_288">Specify IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients to use for connections</span></li><li style=""><span class="selectable-content" id="_s_289">Specify IPsec-capable network devices to use for connections</span></li><li style=""><span class="selectable-content" id="_s_290">Specify client credentials to be used for connections</span></li><li style=""><span class="selectable-content" id="_s_291">Configure the reference identifier of the peer</span></li><li style=""><span class="selectable-content" id="_s_292">[<b>assignment</b>: 
      <span class="assignable-content">any additional management functions</span>]</span></li></ul>]
             <div class="appnote"><span class="note-header">Application
       Note:
@@ -2460,13 +2468,13 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           <div class="element"><div class="reqid" id="FPT_TST_EXT.1.1/VPN"><a href="#FPT_TST_EXT.1.1/VPN" class="abbr">FPT_TST_EXT.1.1/VPN</a></div><div class="reqdesc">
 				The 
-				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_243"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_244"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
+				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_293"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_294"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
 				shall run a suite of self tests during initial start-up (on power on) to demonstrate the correct 
 				operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.
             </div></div>
           <div class="element"><div class="reqid" id="FPT_TST_EXT.1.2/VPN"><a href="#FPT_TST_EXT.1.2/VPN" class="abbr">FPT_TST_EXT.1.2/VPN</a></div><div class="reqdesc">
 				The 
-				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_245"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_246"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
+				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_295"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_296"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
 				shall provide the capability to verify the integrity of stored <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable code when it is loaded 
 				for execution through the use of the 
 				[<b>assignment</b>: 
@@ -2731,33 +2739,39 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       This is considered to be consistent because the functionality provided by the
       App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose.
       
-          The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> also identifies a number of modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
-          App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
-            as well as new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> 
-          
-          that are used entirely to provide functionality for
-	  <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client.
+            The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are used entirely to provide
+            functionality for
+ 	    <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client.
         
           The rationale for why this does not conflict with the claims
       defined by the
       App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">15</span></span>: Consistency of Requirements (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM.1/AK">FCS_CKM.1/AK</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
-		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.
-		Additionally, this behavior is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but is made
-		mandatory since it is required for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality.</td></tr><tr><td><a href="#FCS_CKM.2">FCS_CKM.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
-		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements and is modified to include Diffie-Hellman
-		group 14 as an additional supported method for key establishment.</td></tr><tr><td><a href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
-		address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; specifically, since key generation services
-		are required in some capacity in order to support <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> functionality, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>
-		author loses the choice of stating that the application does not have any key
-		generation functionality. Additionally, this behavior is selection-based in the
-		App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but is made mandatory since it is required for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client
-		functionality</td></tr><tr><td><a href="#FCS_COP.1/SKC">FCS_COP.1/SKC</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is given guidance to make specific selections if this
-		selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is claimed in support of IPsec functionality. The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself
-		is unmodified.</td></tr><tr><td><a href="#FTP_DIT_EXT.1">FTP_DIT_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is for the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client application and does not maintain any
-		sensitive data of its own. Therefore, there is no need to protect (through
-		<a href="#FTP_DIT_EXT.1.1">FTP_DIT_EXT.1.1</a>) <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>-client-specific data.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds a requirement for key storage, which is new
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM.1">FCS_CKM.1</a>/AK</td><td>
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
+              address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is
+              unmodified. Additionally, this behavior is selection-based in the App
+              <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but is made mandatory since it is required for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client
+              functionality.
+            </td></tr><tr><td><a href="#FCS_CKM.2">FCS_CKM.2</a></td><td>
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
+              address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements and is modified to include <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 14 as an additional supported method for key
+              establishment.
+            </td></tr><tr><td>FCS_CKM_EXT.1</td><td>
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
+              address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; specifically, since key generation
+              services are required in some capacity in order to support <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>
+              functionality, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author loses the choice of stating that the
+              application does not have any key generation functionality.
+              Additionally, this behavior is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but is made
+              mandatory since it is required for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality.
+            </td></tr><tr><td>FCS_COP.1/SKC</td><td>
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
+              address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is
+              unmodified.
+            </td></tr><tr><td>FTP_DIT_EXT.1</td><td>
+              This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires the existing selection of IPsec to be chosen to satisfy the dependency on this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
+            </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds a requirement for key storage, which is new
 		functionality when compared to the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but does not interfere with its existing security functions.</td></tr><tr><td><a href="#FCS_CKM.6">FCS_CKM.6</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds a requirement for key destruction, which is new
 		functionality when compared to the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but does not interfere with its
 		existing security functions.</td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FCS_CKM.1/VPN">FCS_CKM.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the method of key generation for <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> peer authentication,
@@ -2944,7 +2958,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           <div class="element"><div class="reqid" id="FAU_SEL.1.1/VPN"><a href="#FAU_SEL.1.1/VPN" class="abbr">FAU_SEL.1.1/VPN</a></div><div class="reqdesc">
               The <b>
-				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_288"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_289"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>]</b> 
+				[<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_338"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_339"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>]</b> 
 				shall be able to select the set of events to be audited from the set of all auditable events based on
 				the following attributes:
 				[<i>event type, <b>[success of auditable security events, failure of auditable security events]</b>, 
@@ -2983,7 +2997,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 	    
 	    <div class="element"><div class="reqid" id="FAU_GEN.1.1/VPN"><a href="#FAU_GEN.1.1/VPN" class="abbr">FAU_GEN.1.1/VPN</a></div><div class="reqdesc">
 	        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> <b>and 
-	          [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_290"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>, <span class="selectable-content" id="_s_291">no other component</span>]</b> 
+	          [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_340"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>, <span class="selectable-content" id="_s_341">no other component</span>]</b> 
 	        shall be able to generate audit data of the following auditable events: 
 	        <ol type="a">
 	          <li>Start-up and shutdown of the audit functions;</li>
@@ -3024,7 +3038,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 	        responsible for performing the auditing, not the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.
 	      </span></div></div></div>
 	    <div class="element"><div class="reqid" id="FAU_GEN.1.2/VPN"><a href="#FAU_GEN.1.2/VPN" class="abbr">FAU_GEN.1.2/VPN</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> <b>and 
-	        [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_292"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>, <span class="selectable-content" id="_s_293">no other component</span>]</b> 
+	        [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_342"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>, <span class="selectable-content" id="_s_343">no other component</span>]</b> 
 	        shall record within the audit data at least the following information: 
 	        <ol type="a">
 	          <li>Date and time of the event, type of event, subject identity, and the outcome
@@ -3067,18 +3081,18 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           <div class="element"><div class="reqid" id="FCS_EAP_EXT.1.1"><a href="#FCS_EAP_EXT.1.1" class="abbr">FCS_EAP_EXT.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support
-              [<b>selection</b>: <span class="selectable-content" id="_s_251">EAP-TLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5216 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>, <span class="selectable-content" id="_s_252">EAP-TTLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5281 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>]
+              [<b>selection</b>: <span class="selectable-content" id="_s_301">EAP-TLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5216 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>, <span class="selectable-content" id="_s_302">EAP-TTLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5281 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>]
               over a protected channel <b>per the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></b> with an authentication server. 
             </div></div>
           <div class="element"><div class="reqid" id="FCS_EAP_EXT.1.2"><a href="#FCS_EAP_EXT.1.2" class="abbr">FCS_EAP_EXT.1.2</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement 
-              [<b>selection</b>: <span class="selectable-content" id="_s_255">EAP-TLS</span>, <span class="selectable-content" id="_s_256">EAP-TTLS</span>]
+              [<b>selection</b>: <span class="selectable-content" id="_s_305">EAP-TLS</span>, <span class="selectable-content" id="_s_306">EAP-TTLS</span>]
               with the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> as the EAP client, an external authentication server as the EAP server and the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer as the supplicant. 
             </div></div>
       
           <div class="element"><div class="reqid" id="FCS_EAP_EXT.1.3"><a href="#FCS_EAP_EXT.1.3" class="abbr">FCS_EAP_EXT.1.3</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the MSK from the 
-              [<b>selection</b>: <span class="selectable-content" id="_s_257">EAP-TLS</span>, <span class="selectable-content" id="_s_258">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload.
+              [<b>selection</b>: <span class="selectable-content" id="_s_307">EAP-TLS</span>, <span class="selectable-content" id="_s_308">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload.
             </div></div>
           
           
@@ -3109,7 +3123,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 	  
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.1.1"><a href="#FIA_PSK_EXT.1.1" class="abbr">FIA_PSK_EXT.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for 
-              [<b>selection</b>: <span class="selectable-content" id="_s_259">IKEv2</span>, <span class="selectable-content" id="_s_260">multifactor authentication filtering</span>].
+              [<b>selection</b>: <span class="selectable-content" id="_s_309">IKEv2</span>, <span class="selectable-content" id="_s_310">multifactor authentication filtering</span>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.1.2"><a href="#FIA_PSK_EXT.1.2" class="abbr">FIA_PSK_EXT.1.2</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept the following as pre-shared keys: 
@@ -3146,7 +3160,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.2.1"><a href="#FIA_PSK_EXT.2.1" class="abbr">FIA_PSK_EXT.2.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to 
-              [<b>selection</b>: <span class="selectable-content" id="_s_277">accept externally generated pre-shared keys</span>, <span class="selectable-content" id="_s_278">
+              [<b>selection</b>: <span class="selectable-content" id="_s_327">accept externally generated pre-shared keys</span>, <span class="selectable-content" id="_s_328">
                   generate 256 bit-based pre-shared keys via the random number generator used by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. 
                   
                 </span>].
@@ -3177,8 +3191,8 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.2"><a href="#FIA_PSK_EXT.3.2" class="abbr">FIA_PSK_EXT.3.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow PSKs to be composed of any combination of upper case characters, 
               lower case characters, numbers, and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and 
-              [<b>selection</b>: <span class="selectable-content" id="_s_279">[<b>assignment</b>: 
-     <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_280">no other characters</span>].
+              [<b>selection</b>: <span class="selectable-content" id="_s_329">[<b>assignment</b>: 
+     <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_330">no other characters</span>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.3"><a href="#FIA_PSK_EXT.3.3" class="abbr">FIA_PSK_EXT.3.3</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm [<i>HMAC-SHA-384</i>], with 
@@ -3188,12 +3202,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.4"><a href="#FIA_PSK_EXT.3.4" class="abbr">FIA_PSK_EXT.3.4</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not accept PSKs less than 
-              [<b>selection</b>: <span class="selectable-content" id="_s_281">a value settable by the administrator</span>, <span class="selectable-content" id="_s_282">[<b>assignment</b>: 
+              [<b>selection</b>: <span class="selectable-content" id="_s_331">a value settable by the administrator</span>, <span class="selectable-content" id="_s_332">[<b>assignment</b>: 
      <span class="assignable-content">minimum PSK length accepted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, must be &gt;= 6</span>]</span>] and greater than the maximum PSK length defined in <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>.
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.5"><a href="#FIA_PSK_EXT.3.5" class="abbr">FIA_PSK_EXT.3.5</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate all salts using an <abbr class="dyn-abbr"><a href="#abbr_RBG">RBG</a></abbr> that meets 
-              <b>[<b>selection</b>: <span class="selectable-content" id="_s_283">FCS_RBG.1</span>, <span class="selectable-content" id="_s_284">FCS_RBG_EXT.1</span>]</b> and with entropy of [<b>assignment</b>: 
+              <b>[<b>selection</b>: <span class="selectable-content" id="_s_333">FCS_RBG.1</span>, <span class="selectable-content" id="_s_334">FCS_RBG_EXT.1</span>]</b> and with entropy of [<b>assignment</b>: 
      <span class="assignable-content">value equal to or greater than 256</span>] bits.
             <div class="appnote"><span class="note-header">Application
       Note:
@@ -3204,7 +3218,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
             <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.7"><a href="#FIA_PSK_EXT.3.7" class="abbr">FIA_PSK_EXT.3.7</a></div><div class="reqdesc">
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-                [<b>selection</b>: <span class="selectable-content" id="_s_285">provide a password strength meter</span>, <span class="selectable-content" id="_s_286">check the password against a denylist</span>, <span class="selectable-content" id="_s_287">perform no action to assist the user in choosing a strong password</span>]. 
+                [<b>selection</b>: <span class="selectable-content" id="_s_335">provide a password strength meter</span>, <span class="selectable-content" id="_s_336">check the password against a denylist</span>, <span class="selectable-content" id="_s_337">perform no action to assist the user in choosing a strong password</span>]. 
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -3310,34 +3324,34 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			<span class="no-link">FCS_COP.1</span> Cryptographic Operation<br/><br/>
 		  </td></tr></table><h4 id="ext-comp-FCS_IPSEC_EXT.1.1">FCS_IPSEC_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the IPsec architecture as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4301.
             <h4 id="ext-comp-FCS_IPSEC_EXT.1.2">FCS_IPSEC_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement 
-				[<b>selection</b>: <span class="selectable-content" id="_s_173">tunnel mode</span>, <span class="selectable-content" id="_s_174">transport mode</span>].
+				[<b>selection</b>: <span class="selectable-content" id="_s_223">tunnel mode</span>, <span class="selectable-content" id="_s_224">transport mode</span>].
             <h4 id="ext-comp-FCS_IPSEC_EXT.1.3">FCS_IPSEC_EXT.1.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall have a nominal, final entry in the <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr> that matches anything that
 				is otherwise unmatched, and discards it.
             <h4 id="ext-comp-FCS_IPSEC_EXT.1.4">FCS_IPSEC_EXT.1.4</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the IPsec protocol <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr> as defined by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4303 using the cryptographic algorithms
                 [<b>assignment</b>: 
      <span class="assignable-content">supported cryptographic algorithms</span>].<h4 id="ext-comp-FCS_IPSEC_EXT.1.5">FCS_IPSEC_EXT.1.5</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the protocol:
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_177">IKEv1, using Main Mode for Phase I exchanges, as defined in RFCs 2407,
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_227">IKEv1, using Main Mode for Phase I exchanges, as defined in RFCs 2407,
 					2408, 2409, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4109, 
-					[<b>selection</b>: <span class="selectable-content" id="_s_178">no other RFCs for extended sequence numbers</span>, <span class="selectable-content" id="_s_179"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4304 for extended sequence numbers</span>], 
-					[<b>selection</b>: <span class="selectable-content" id="_s_180">no other RFCs for hash functions</span>, <span class="selectable-content" id="_s_181"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4868 for hash functions</span>], and 
-					[<b>selection</b>: <span class="selectable-content" id="_s_182">support for XAUTH</span>, <span class="selectable-content" id="_s_183">no support for XAUTH</span>]</span></li><li style=""><span class="selectable-content" id="_s_184">IKEv2 as defined in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7296 (with mandatory support for <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> traversal as
+					[<b>selection</b>: <span class="selectable-content" id="_s_228">no other RFCs for extended sequence numbers</span>, <span class="selectable-content" id="_s_229"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4304 for extended sequence numbers</span>], 
+					[<b>selection</b>: <span class="selectable-content" id="_s_230">no other RFCs for hash functions</span>, <span class="selectable-content" id="_s_231"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4868 for hash functions</span>], and 
+					[<b>selection</b>: <span class="selectable-content" id="_s_232">support for XAUTH</span>, <span class="selectable-content" id="_s_233">no support for XAUTH</span>]</span></li><li style=""><span class="selectable-content" id="_s_234">IKEv2 as defined in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7296 (with mandatory support for <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> traversal as
 					specified in section 2.23), <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8247, and 
-					[<b>selection</b>: <span class="selectable-content" id="_s_185">no other RFCs for hash functions</span>, <span class="selectable-content" id="_s_186"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4868 for hash functions</span>]</span></li></ul>].
+					[<b>selection</b>: <span class="selectable-content" id="_s_235">no other RFCs for hash functions</span>, <span class="selectable-content" id="_s_236"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4868 for hash functions</span>]</span></li></ul>].
             <h4 id="ext-comp-FCS_IPSEC_EXT.1.6">FCS_IPSEC_EXT.1.6</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the encrypted payload in the 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_191">IKEv1</span>, <span class="selectable-content" id="_s_192">IKEv2</span>] 
+                  [<b>selection</b>: <span class="selectable-content" id="_s_241">IKEv1</span>, <span class="selectable-content" id="_s_242">IKEv2</span>] 
                   protocol uses the cryptographic algorithms [<b>assignment</b>: 
      <span class="assignable-content">supported cryptographic algorithms</span>].
               <h4 id="ext-comp-FCS_IPSEC_EXT.1.7">FCS_IPSEC_EXT.1.7</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that 
-				[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_193">IKEv2 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes can be configured by 
-						[<b>selection</b>: <span class="selectable-content" id="_s_194">an administrator</span>, <span class="selectable-content" id="_s_195">a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] 
+				[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_243">IKEv2 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes can be configured by 
+						[<b>selection</b>: <span class="selectable-content" id="_s_244">an administrator</span>, <span class="selectable-content" id="_s_245">a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] 
 						based on 
-						[<b>selection</b>: <span class="selectable-content" id="_s_196">number of packets/number of bytes</span>, <span class="selectable-content" id="_s_197">length of time</span>]</span></li><li style=""><span class="selectable-content" id="_s_198">IKEv1 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes
-				  [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_199"> can be configured by
-  						[<b>selection</b>: <span class="selectable-content" id="_s_200">an administrator</span>, <span class="selectable-content" id="_s_201">a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] 
+						[<b>selection</b>: <span class="selectable-content" id="_s_246">number of packets/number of bytes</span>, <span class="selectable-content" id="_s_247">length of time</span>]</span></li><li style=""><span class="selectable-content" id="_s_248">IKEv1 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes
+				  [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_249"> can be configured by
+  						[<b>selection</b>: <span class="selectable-content" id="_s_250">an administrator</span>, <span class="selectable-content" id="_s_251">a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] 
   						based on 
-  						[<b>selection</b>: <span class="selectable-content" id="_s_202">number of packets/number of bytes</span>, <span class="selectable-content" id="_s_203">length of time</span>]
-  				  </span></li><li style=""><span class="selectable-content" id="_s_204">are fixed based on 
-  						[<b>selection</b>: <span class="selectable-content" id="_s_205">number of packets/number of bytes</span>, <span class="selectable-content" id="_s_206">length of time</span>]
+  						[<b>selection</b>: <span class="selectable-content" id="_s_252">number of packets/number of bytes</span>, <span class="selectable-content" id="_s_253">length of time</span>]
+  				  </span></li><li style=""><span class="selectable-content" id="_s_254">are fixed based on 
+  						[<b>selection</b>: <span class="selectable-content" id="_s_255">number of packets/number of bytes</span>, <span class="selectable-content" id="_s_256">length of time</span>]
   					</span></li></ul>]
 				  </span></li></ul>]. 
 				If length of time is used, it must include at least one option that
@@ -3345,7 +3359,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <h4 id="ext-comp-FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> protocols implement <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> Groups <ul>
                 <li>20 (384-bit Random ECP) according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5114 and</li></ul> 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_207">15 (3072-bit MODP)</span></li><li style=""><span class="selectable-content" id="_s_208">16 (4096-bit MODP)</span></li><li style=""><span class="selectable-content" id="_s_209">17 (6144-bit MODP)</span></li><li style=""><span class="selectable-content" id="_s_210">18 (8192-bit MODP)</span></li></ul>] according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526.
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_257">15 (3072-bit MODP)</span></li><li style=""><span class="selectable-content" id="_s_258">16 (4096-bit MODP)</span></li><li style=""><span class="selectable-content" id="_s_259">17 (6144-bit MODP)</span></li><li style=""><span class="selectable-content" id="_s_260">18 (8192-bit MODP)</span></li></ul>] according to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526.
                 
                 
             <h4 id="ext-comp-FCS_IPSEC_EXT.1.9">FCS_IPSEC_EXT.1.9</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate the secret value x used in the
@@ -3363,43 +3377,43 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 				associated with the negotiated <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group as listed in Table 2 of <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr>
 				SP 800-57, Recommendation for Key Management – Part 1: General</span>].
             <h4 id="ext-comp-FCS_IPSEC_EXT.1.11">FCS_IPSEC_EXT.1.11</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_211">IKEv1 performs peer authentication using  
-                  [<b>selection</b>: <span class="selectable-content" id="_s_212">RSA</span>, <span class="selectable-content" id="_s_213">ECDSA</span>] 
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_261">IKEv1 performs peer authentication using  
+                  [<b>selection</b>: <span class="selectable-content" id="_s_262">RSA</span>, <span class="selectable-content" id="_s_263">ECDSA</span>] 
                   that use X.509v3 certificates that conform to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4945.
-                </span></li><li style=""><span class="selectable-content" id="_s_214">IKEv2 performs peer authentication using  
-                  [<b>selection</b>: <span class="selectable-content" id="_s_215">RSA</span>, <span class="selectable-content" id="_s_216">ECDSA</span>] 
+                </span></li><li style=""><span class="selectable-content" id="_s_264">IKEv2 performs peer authentication using  
+                  [<b>selection</b>: <span class="selectable-content" id="_s_265">RSA</span>, <span class="selectable-content" id="_s_266">ECDSA</span>] 
                   that use X.509v3 certificates that conform to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4945 and 
-                  [<b>selection</b>: <span class="selectable-content" id="sel-ipsec-e11-psk">Pre-shared Keys that conform to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8784</span>, <span class="selectable-content" id="sel-ipsec-e11-eapttls">Pre-shared Keys transmitted via EAP-TTLS</span>, <span class="selectable-content" id="sel-ipsec-e11-eaptls">EAP-TLS</span>, <span class="selectable-content" id="_s_220">no other method</span>].
+                  [<b>selection</b>: <span class="selectable-content" id="sel-ipsec-e11-psk">Pre-shared Keys that conform to <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8784</span>, <span class="selectable-content" id="sel-ipsec-e11-eapttls">Pre-shared Keys transmitted via EAP-TTLS</span>, <span class="selectable-content" id="sel-ipsec-e11-eaptls">EAP-TLS</span>, <span class="selectable-content" id="_s_270">no other method</span>].
                 </span></li></ul>]
               
-            <h4 id="ext-comp-FCS_IPSEC_EXT.1.12">FCS_IPSEC_EXT.1.12</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> if the [<b>selection</b>: <span class="selectable-content" id="_s_221"><abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> address</span>, <span class="selectable-content" id="_s_222">Fully Qualified Domain Name (<abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>)</span>, <span class="selectable-content" id="_s_223">user <abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr></span>, <span class="selectable-content" id="_s_224">Distinguished Name (<abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>)</span>] 
+            <h4 id="ext-comp-FCS_IPSEC_EXT.1.12">FCS_IPSEC_EXT.1.12</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> if the [<b>selection</b>: <span class="selectable-content" id="_s_271"><abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> address</span>, <span class="selectable-content" id="_s_272">Fully Qualified Domain Name (<abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>)</span>, <span class="selectable-content" id="_s_273">user <abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr></span>, <span class="selectable-content" id="_s_274">Distinguished Name (<abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>)</span>] 
 				and 
-				[<b>selection</b>: <span class="selectable-content" id="_s_225">no other reference identifier type</span>, <span class="selectable-content" id="_s_226">[<b>assignment</b>: 
+				[<b>selection</b>: <span class="selectable-content" id="_s_275">no other reference identifier type</span>, <span class="selectable-content" id="_s_276">[<b>assignment</b>: 
      <span class="assignable-content">other supported reference identifier types</span>]</span>] contained in a certificate does not match the expected values for the
 				entity attempting to establish a connection.
             <h4 id="ext-comp-FCS_IPSEC_EXT.1.13">FCS_IPSEC_EXT.1.13</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> if the presented identifier does not match the
 				configured reference identifier of the peer.
             <h4 id="ext-comp-FCS_IPSEC_EXT.1.14">FCS_IPSEC_EXT.1.14</h4>The 
-				[<b>selection</b>: <span class="selectable-content" id="_s_227"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_228"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] shall be able to ensure by default that the strength of the symmetric algorithm (in terms 
+				[<b>selection</b>: <span class="selectable-content" id="_s_277"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_278"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] shall be able to ensure by default that the strength of the symmetric algorithm (in terms 
 				of the number of bits in the key) negotiated to protect the 
-				[<b>selection</b>: <span class="selectable-content" id="_s_229">IKEv1 Phase 1</span>, <span class="selectable-content" id="_s_230">IKEv2 IKE_SA</span>] 
+				[<b>selection</b>: <span class="selectable-content" id="_s_279">IKEv1 Phase 1</span>, <span class="selectable-content" id="_s_280">IKEv2 IKE_SA</span>] 
 				connection is greater than or equal to the strength of the symmetric algorithm
 				(in terms of the number of bits in the key) negotiated to protect the 
-				[<b>selection</b>: <span class="selectable-content" id="_s_231">IKEv1 Phase 2</span>, <span class="selectable-content" id="_s_232">IKEv2 CHILD_SA</span>] connection.
+				[<b>selection</b>: <span class="selectable-content" id="_s_281">IKEv1 Phase 2</span>, <span class="selectable-content" id="_s_282">IKEv2 CHILD_SA</span>] connection.
             </div></div><h3 id="ext-comp-FCS_EAP_EXT" class="indexable" data-level="4">C.2.1.3 FCS_EAP_EXT EAP-TLS</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe the requirements for EAP-TLS.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCS_EAP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a>,
              EAP-TLS,
              defines the use of EAP-TLS.</p><h4>Management: FCS_EAP_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FCS_EAP_EXT.1</h4><p>No specific audit functions are identified.
           </p><h4>FCS_EAP_EXT.1 EAP-TLS</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FCS_IPSEC_EXT.1</span> IPsec</td></tr></table><h4 id="ext-comp-FCS_EAP_EXT.1.1">FCS_EAP_EXT.1.1</h4>
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support
-                [<b>selection</b>: <span class="selectable-content" id="_s_253">EAP-TLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5216 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>, <span class="selectable-content" id="_s_254">EAP-TTLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5281 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>]
+                [<b>selection</b>: <span class="selectable-content" id="_s_303">EAP-TLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5216 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>, <span class="selectable-content" id="_s_304">EAP-TTLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5281 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996</span>]
                 over a protected channel per the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> with an authentication server. 
               <h4 id="ext-comp-FCS_EAP_EXT.1.2">FCS_EAP_EXT.1.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement 
-              [<b>selection</b>: <span class="selectable-content" id="_s_255">EAP-TLS</span>, <span class="selectable-content" id="_s_256">EAP-TTLS</span>]
+              [<b>selection</b>: <span class="selectable-content" id="_s_305">EAP-TLS</span>, <span class="selectable-content" id="_s_306">EAP-TTLS</span>]
               with the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> as the EAP client, an external authentication server as the EAP server and the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer as the supplicant. 
             <h4 id="ext-comp-FCS_EAP_EXT.1.3">FCS_EAP_EXT.1.3</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the MSK from the 
-              [<b>selection</b>: <span class="selectable-content" id="_s_257">EAP-TLS</span>, <span class="selectable-content" id="_s_258">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload.
+              [<b>selection</b>: <span class="selectable-content" id="_s_307">EAP-TLS</span>, <span class="selectable-content" id="_s_308">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload.
             </div></div></span><span data-sortkey="Identification and Authentication (FIA)"><h3 id="ext-comp-FIA" class="indexable" data-level="3">C.2.2 Identification and Authentication (FIA)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FIA class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FIA_X509_EXT" class="indexable" data-level="4">C.2.2.1 FIA_X509_EXT X.509 Certificate Use and Management</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe the requirements that pertain to <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic and information flow
@@ -3435,17 +3449,17 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
              defines the use and composition of TOTP pre-shared keys used for IPsec.</p><h4>Management: FIA_PSK_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.1</h4><p>No specific audit functions are identified.
           </p><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FCS_IPSEC_EXT.1</span> IPsec</td></tr></table><h4 id="ext-comp-FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for 
-              [<b>selection</b>: <span class="selectable-content" id="_s_259">IKEv2</span>, <span class="selectable-content" id="_s_260">multifactor authentication filtering</span>].
+              [<b>selection</b>: <span class="selectable-content" id="_s_309">IKEv2</span>, <span class="selectable-content" id="_s_310">multifactor authentication filtering</span>].
             <h4 id="ext-comp-FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept the following as pre-shared keys: 
-              [<b>selection</b>: <span class="selectable-content" id="_s_269">generated bit-based</span>, <span class="selectable-content" id="_s_270">password-based</span>, <span class="selectable-content" id="_s_271">HMAC-based one-time password</span>, <span class="selectable-content" id="_s_272">time-based one-time password</span>, <span class="selectable-content" id="_s_273">combination of a generated bit-based and HMAC-based one-time password</span>, <span class="selectable-content" id="_s_274">combination of a generated bit-based and time-based one-time password</span>, <span class="selectable-content" id="_s_275">combination of a password-based and HMAC-based one-time password</span>, <span class="selectable-content" id="_s_276">combination of a password-based and time-based one-time password</span>] keys.
+              [<b>selection</b>: <span class="selectable-content" id="_s_319">generated bit-based</span>, <span class="selectable-content" id="_s_320">password-based</span>, <span class="selectable-content" id="_s_321">HMAC-based one-time password</span>, <span class="selectable-content" id="_s_322">time-based one-time password</span>, <span class="selectable-content" id="_s_323">combination of a generated bit-based and HMAC-based one-time password</span>, <span class="selectable-content" id="_s_324">combination of a generated bit-based and time-based one-time password</span>, <span class="selectable-content" id="_s_325">combination of a password-based and HMAC-based one-time password</span>, <span class="selectable-content" id="_s_326">combination of a password-based and time-based one-time password</span>] keys.
             </div><h4>Management: FIA_PSK_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.2</h4><p>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the
             <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:<ul>
               <li>Failure of the randomization process</li>
             </ul>
           </p><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FIA_PSK_EXT.1</span> Pre-Shared Key Composition</td></tr></table><h4 id="ext-comp-FIA_PSK_EXT.2.1">FIA_PSK_EXT.2.1</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to 
-              [<b>selection</b>: <span class="selectable-content" id="_s_277">accept externally generated pre-shared keys</span>, <span class="selectable-content" id="_s_278">
+              [<b>selection</b>: <span class="selectable-content" id="_s_327">accept externally generated pre-shared keys</span>, <span class="selectable-content" id="_s_328">
                   generate 256 bit-based pre-shared keys via the random number generator used by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. 
                   
                 </span>].
@@ -3460,8 +3474,8 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
      <span class="assignable-content">positive integer of 64 or more</span>] characters. 
             <h4 id="ext-comp-FIA_PSK_EXT.3.2">FIA_PSK_EXT.3.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow PSKs to be composed of any combination of upper case characters, 
               lower case characters, numbers, and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and 
-              [<b>selection</b>: <span class="selectable-content" id="_s_279">[<b>assignment</b>: 
-     <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_280">no other characters</span>].
+              [<b>selection</b>: <span class="selectable-content" id="_s_329">[<b>assignment</b>: 
+     <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_330">no other characters</span>].
             <h4 id="ext-comp-FIA_PSK_EXT.3.3">FIA_PSK_EXT.3.3</h4>       The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm [<b>assignment</b>: 
      <span class="assignable-content">cryptographic algorithm used for key derivation</span>], with 
                 [<b>assignment</b>: 
@@ -3470,14 +3484,14 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 that meet the following: [<b>assignment</b>: 
      <span class="assignable-content">list of standards</span>].<h4 id="ext-comp-FIA_PSK_EXT.3.4">FIA_PSK_EXT.3.4</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not accept PSKs less than 
-              [<b>selection</b>: <span class="selectable-content" id="_s_281">a value settable by the administrator</span>, <span class="selectable-content" id="_s_282">[<b>assignment</b>: 
+              [<b>selection</b>: <span class="selectable-content" id="_s_331">a value settable by the administrator</span>, <span class="selectable-content" id="_s_332">[<b>assignment</b>: 
      <span class="assignable-content">minimum PSK length accepted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, must be &gt;= 6</span>]</span>] and greater than the maximum PSK length defined in <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>.
             <h4 id="ext-comp-FIA_PSK_EXT.3.5">FIA_PSK_EXT.3.5</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate all salts using an <abbr class="dyn-abbr"><a href="#abbr_RBG">RBG</a></abbr> that meets FCS_RBG.1 and with entropy of [<b>assignment</b>: 
      <span class="assignable-content">value equal to or greater than 256</span>] bits.<h4 id="ext-comp-FIA_PSK_EXT.3.6">FIA_PSK_EXT.3.6</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the PSK to be entered before every initiated connection.
             <h4 id="ext-comp-FIA_PSK_EXT.3.7">FIA_PSK_EXT.3.7</h4>
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-                [<b>selection</b>: <span class="selectable-content" id="_s_285">provide a password strength meter</span>, <span class="selectable-content" id="_s_286">check the password against a denylist</span>, <span class="selectable-content" id="_s_287">perform no action to assist the user in choosing a strong password</span>]. 
+                [<b>selection</b>: <span class="selectable-content" id="_s_335">provide a password strength meter</span>, <span class="selectable-content" id="_s_336">check the password against a denylist</span>, <span class="selectable-content" id="_s_337">perform no action to assist the user in choosing a strong password</span>]. 
               </div><h4>Management: FIA_PSK_EXT.4</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.4</h4><p>No specific audit functions are identified.
           </p><h4>FIA_PSK_EXT.4 HMAC-Based One-Time Password Pre-shared Keys Support</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FIA_PSK_EXT.1</span> Pre-Shared Key Composition</td></tr></table><h4 id="ext-comp-FIA_PSK_EXT.4.1">FIA_PSK_EXT.4.1</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall accept and send an HOTP while initiating a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection.
@@ -3503,12 +3517,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
              requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to perform power on self-tests to verify its functionality and
             the integrity of its stored executable code.</p><h4>Management: FPT_TST_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FPT_TST_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FPT_TST_EXT.1 TSF Self-Test</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies.</td></tr></table><h4 id="ext-comp-FPT_TST_EXT.1.1">FPT_TST_EXT.1.1</h4>
               The 
-              [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_247"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_248"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
+              [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_297"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_298"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
               shall run a suite of self tests during initial start-up (on power on) to demonstrate the correct 
               operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.
             <h4 id="ext-comp-FPT_TST_EXT.1.2">FPT_TST_EXT.1.2</h4>
               The 
-              [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_249"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_250"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
+              [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_299"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="_s_300"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] 
               shall provide the capability to verify the integrity of stored <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable code when it is loaded 
               for execution through the use of the 
               [<b>assignment</b>: 
