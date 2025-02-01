@@ -767,7 +767,7 @@ expected to enforce.<h:br/><h:br/>
               
               The text of the requirement is replaced with:<h:br/><h:br/>
               
-              The <h:b>OS</h:b> shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a
+              The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a
               specified cryptographic key generation algorithm 
               <h:b><h:ul><h:i>
                 <h:li>ECC schemes using “NIST curves” P-256, P-384, and 
@@ -854,7 +854,7 @@ expected to enforce.<h:br/><h:br/>
             
             <replace>
               <xpath-specified xpath="*//cc:f-element[@id='fel-crypt-key-estab']//cc:title">
-                <title>The OS shall implement functionality to perform cryptographic key
+                <title>The TSF shall implement functionality to perform cryptographic key
                   establishment in accordance with a specified cryptographic key establishment method:
                   <h:ul>
                     <h:li><h:b><h:i>Elliptic curve-based key establishment schemes that meet the following:
@@ -1340,261 +1340,290 @@ expected to enforce.<h:br/><h:br/>
 		with the functionality required by the VPN client in order for it to conform to this PP-Module. -->
 	      
         <section title="Cryptographic Support (FCS)" id="md-m-fcs">
-          
-          <!-- 5.2.1.1 FCS_CKM.1 Cryptographic Key Generation -->
-          <f-component cc-id="fcs_ckm.1" id="md-fcs-ckm-1" name="Cryptographic Key Generation">
-            <consistency-rationale>The ST author is instructed to make specific selections at minimum to
-              address VPN client requirements; the SFR behavior itself is
-              unmodified.</consistency-rationale>
-            <f-element id="md-fcs-ckm-1e1">
-              <title>The TSF shall generate asymmetric cryptographic keys in accordance with a specified cryptographic key generation algorithm
-                  <h:b><h:ul>
-                    <h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature
-                      Standard (DSS)", Appendix A.2</h:li>
-                  </h:ul></h:b>
-                <selectables linebreak="yes">
-                  <selectable>
-                    RSA schemes using cryptographic key sizes of <assignable>3072-bit or greater</assignable>
-                    that meet [FIPS PUB 186-5, “Digital Signature Standard (DSS),”
-                    Appendix B.3]</selectable>
-                  <selectable><h:b>ECC schemes using Curve25519 schemes that meet the following: [RFC 7748]</h:b></selectable>
-                  <selectable>FFC schemes using
-                    <selectables linebreak="yes">
-                      <selectable>cryptographic key sizes of 2048-bit or greater that meet
-                        the following: [FIPS PUB 186-4, “Digital Signature Standard (DSS),”
-                        Appendix B.1]</selectable>
-                      <selectable>“safe-prime” groups that meet the following: [NIST Special Publication 800-56A Revision 3,
-                        “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"]</selectable></selectables>,
-                  </selectable>
-                  <selectable exclusive="yes"><h:b>No other key generation methods</h:b></selectable>
-                </selectables>.
-              </title>
-              <note role="application">
-                This SFR is functionally identical to what is defined in the MDF PP except that
-				ECC key generation with support for P-256 and P-384 has been
-				made mandatory in support of IPsec due to the mandated support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8. 
-				Curve25519 schemes remain selectable for their potential use in
-				satisfying <no-link>FDP_DAR_EXT.2.2</no-link> in the MDF PP; these schemes are not used in
-				support of IPsec. RSA and ECC support for P-521 remain present as selections
-				since they may be used by parts of the TOE that are not specifically related to
-				VPN client functionality.
-				</note>
-              <aactivity level="element">
-                <no-tests>Refer to the EAs for FCS_CKM.1 in the MDF PP. The only change to this SFR is that some selections are
-		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
-		changed.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-
-          <!-- 5.2.1.2 FCS_CKM.2/UNLOCKED Cryptographic Key Establishment -->
-          <f-component cc-id="fcs_ckm.2" id="md-fcs-ckm-2-1" name="Cryptographic Key Establishment" iteration="UNLOCKED">
-            <consistency-rationale>The ST author is instructed to make specific selections at minimum to
-              address VPN client requirements; the SFR behavior itself is
-              unmodified.</consistency-rationale>
-            <f-element id="md-fcs-ckm-2e1i1">
-              <title>The TSF shall perform cryptographic key
-                establishment in accordance with a specified cryptographic key establishment method:
-                <h:ul>
-                  <h:li><h:b>[Elliptic curve-based key establishment schemes] that meet the following:
-                    [NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
-                    Establishment Schemes Using Discrete Logarithm Cryptography”]</h:b>
-                  </h:li>
-                </h:ul>
-                <selectables linebreak="yes">
-                  <selectable>[Finite field-based key establishment schemes] that meet the following: [NIST
-                    Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
-                    Establishment Schemes Using Discrete Logarithm Cryptography”]</selectable>
-                  <selectable>[RSA-based key establishment schemes] that meet the following: 
-                    <selectables linebreak="yes">
-                      <selectable>NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key
-                        Establishment Schemes Using Integer Factorization Cryptography”</selectable>
-                      <selectable>RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017,
-                        “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.2"</selectable></selectables></selectable>
-                  <selectable exclusive="yes"><h:b>no other key establishment schemes</h:b></selectable>
-                </selectables>.
-              </title>
-              <note role="application">
-                This SFR differs from its definition in the MDF PP by moving elliptic curve-based
-				key establishment schemes from selectable to mandatory, due to the mandated
-				support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8. This PP-Module does not require the use of RSA for any
-				function but it is present in the selection in case other MDF PP functions require
-				its use.
-              </note>
-              <aactivity level="element"> 
-                <no-tests>Refer to the EAs for FCS_CKM.2/UNLOCKED in the MDF PP. The only change to this SFR is that some
-		selections are mandated, therefore the corresponding testing is mandatory. The actual testing for those
-		selections is not changed.</no-tests>
                 
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
+                <!-- FCS_CKM.1 Cryptographic Key Generation -->
+                <base-sfr-spec cc-id="fcs_ckm.1" title="Cryptographic Key Generation" id="mdf-fcs-ckm-1">
+                  <consistency-rationale>
+                    The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
+                  </consistency-rationale>
+                  <description>
+                    <h:p>
+                      This SFR is functionally identical to what is defined in the MDF PP except that ECC key generation with support for P-384 has been made mandatory in support of IPsec due to the mandated support for DH group 20 in FCS_IPSEC_EXT.1.8. Curve25519 schemes remain selectable for their potential use in satisfying FDP_DAR_EXT.2.2 in the MDF PP; these schemes are not used in support of IPsec. RSA support remains present as a selection since it may be used by parts of the TOE that are not specifically related to VPN client functionality.
+                    </h:p>
+                    The text of the requirement is replaced with:<h:br/><h:br/>
+                    
+                    The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
+                    <h:b><h:ul>
+                      <h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.2</h:li>
+                    </h:ul></h:b>
+                    [<h:b>selection:</h:b><h:i>
+                    <h:ul>
+                      <h:li>RSA schemes using cryptographic key sizes of 3072 bits that meet the following: [FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix A.1]</h:li>
+                      <h:li><h:b>ECC schemes using Curve25519 schemes that meet the following: [RFC 7748]</h:b></h:li>
+                      <h:li>FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [<h:b>selection:</h:b> RFC 3526, RFC 7919]</h:li>
+                      <h:li>No other key generation methods</h:li>
+                    </h:ul></h:i>
+                    ].
+                  </description>
+                  <replace>
+                    <xpath-specified xpath="*//cc:f-element[@id='fel-asym-key-gen']//cc:title">
+                      <title> The TSF shall generate <refinement>asymmetric</refinement> cryptographic keys in
+                        accordance with a specified cryptographic key generation algorithm <h:ul>
+                          <h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.2</h:li>
+                        </h:ul> 
+                        <selectables linebreak="yes">
+                          <selectable><readable>RSA schemes</readable><refinement>RSA schemes using</refinement> cryptographic key sizes of
+                            <assignable id="a-keygen-rsa-size">3072-bit or greater</assignable> that meet [<h:i>FIPS PUB
+                              186-5, "Digital Signature Standard (DSS)", Appendix
+                              A.1</h:i>]</selectable>
+                          <selectable id="s-keygen-ecc"><readable>ECC schemes</readable><refinement>ECC schemes using: </refinement><selectables linebreak="yes">
+                            <selectable><refinement>"NIST curves" P-384</refinement> that meet the following: [<h:i>FIPS PUB 186-5, "Digital
+                              Signature Standard (DSS)", Appendix A.2</h:i>]</selectable>
+                            <selectable><refinement>Curve25519 schemes</refinement> that meet the following: [<h:i>RFC
+                              7748</h:i>]</selectable></selectables></selectable>
+                          <selectable>FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, 
+                            "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and <selectables>
+                              <selectable>RFC 3526</selectable>
+                              <selectable>RFC 7919</selectable>
+                            </selectables></selectable>
+                          <selectable><h:b>no other key generation methods</h:b></selectable>
+                        </selectables>.</title>
+                    </xpath-specified>
+                  </replace>
+                </base-sfr-spec>
+                
+                <!-- FCS_CKM.2/UNLOCKED Cryptographic Key Establishment (When Unlocked) -->
+                <base-sfr-spec cc-id="fcs_ckm.2" iteration="UNLOCKED" title="Cryptographic Key Establishment (When Locked)" id="mdf-fcs-ckm-2-unlocked">
+                  <consistency-rationale>
+                    The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
+                  </consistency-rationale>
+                  <description>
+                    <h:p>
+                      This SFR differs from its definition in the MDF PP by moving elliptic curve-based key establishment schemes from selectable to mandatory, due to the mandated support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8. This PP-Module does not require the use of RSA for any function but it is present in the selection in case other MDF PP functions require its use.
+                    </h:p>
+                    The text of the requirement is replaced with:<h:br/><h:br/>
+                    
+                    The TSF shall perform <h:b>cryptographic key establishment</h:b> in accordance with a specified cryptographic key establishment method:
+                    <h:ul>
+                      <h:li><h:b>[Elliptic curve-based key establishment schemes] that meet the following: [NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”]</h:b></h:li>
+                    </h:ul>
+                    [<h:b>selection:</h:b>
+                    <h:ul>
+                      <h:li>[RSA-based key establishment schemes] that meet the following: [<h:b>selection:</h:b>
+                        <h:ul>
+                          <h:li>NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography”</h:li>
+                        <h:li>RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.2"</h:li></h:ul></h:li>
+                      <h:li></h:li>
+                      <h:li><h:b>no other key establishment schemes.</h:b></h:li>
+                    </h:ul>
+                   
+                    
+                  </description>
+                  <replace>
+                    <xpath-specified xpath="*//cc:f-element[@id='fel-unlocked-key']//cc:title">
+                      <title>The TSF shall <refinement>perform</refinement> cryptographic <refinement>key
+                        establishment</refinement> in accordance with a specified cryptographic key
+                        <refinement>establishment</refinement> method <h:ul>
+                          <h:li><h:b><readable>Elliptic curve-based key establishment schemes</readable>[<h:i>Elliptic curve-based key establishment schemes</h:i>]
+                          that meet the following: [<h:i>NIST Special Publication 800-56A Revision 3,
+                            "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm
+                            Cryptography"</h:i>]</h:b></h:li>
+                        </h:ul>
+                        
+                        <selectables linebreak="yes">
+                          <selectable><readable>RSA-based key establishment schemes</readable>[<h:i>RSA-based key establishment schemes</h:i>] that meet the following
+                            <selectables linebreak="yes">
+                              <selectable>NIST Special Publication 800-56B, “Recommendation for Pair-Wise
+                                Key Establishment Schemes Using Integer Factorization
+                                Cryptography”</selectable>
+                              <selectable>RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017,
+                                "Public-Key Cryptography Standards (PKCS) #1:RSA Cryptography Specifications
+                                Version 2.2"</selectable>
+                            </selectables></selectable>
 
-          <!-- 5.2.1.3 FCS_COP.1/ENCRYPT Cryptographic Operation -->
-          <f-component cc-id="fcs_cop.1" id="md-fcs-cop-1-1" name="Cryptographic Operation" iteration="ENCRYPT">
-            <consistency-rationale>The ST author is instructed to make specific selections at minimum to
-              address VPN client requirements; the SFR behavior itself is
-              unmodified.</consistency-rationale>
-            <f-element id="md-fcs-cop-1e1i1">
-              <title>The TSF shall perform [encryption/decryption] in accordance with
-                a specified cryptographic algorithm [<h:i>
-                <h:ul>
-                  <h:li>AES-CBC (as defined in FIPS PUB 197, and NIST SP 800-38A) mode,</h:li>
-                  <h:li>AES-CCMP (as defined in FIPS PUB 197, NIST SP 800-38C and IEEE 802.11-2012),</h:li>
-                  <h:li><h:b>AES-GCM (as defined in NIST SP 800-38D),</h:b></h:li>
-                </h:ul> and </h:i>
-                <selectables linebreak="yes">
-                  <selectable>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</selectable>
-                  <selectable>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</selectable>
-                  <selectable>AES-CCM (as defined in NIST SP 800-38C)</selectable>
-                  <selectable>AES-XTS (as defined in NIST SP 800-38E) mode</selectable>
-                  <selectable>AES-CCMP-256 (as defined in NIST SP 800-38C and IEEE 802.11ac-2013)</selectable>
-                  <selectable>AES-GCMP-256 (as defined in NIST SP 800-38D and IEEE 802.11ac-2013)</selectable>
-                  <selectable exclusive="yes">no other modes</selectable>
-                </selectables>
-               ] and cryptographic key sizes [128-bit key sizes and [<h:i>256-bit key sizes</h:i>]].
-              </title>
-              <note role="application">
-                This SFR is identical to what is defined in the MDF PP except that support for
-                GCM mode and support for 256-bit key sizes are both mandatory in order to
-                address the requirements for FCS_IPSEC_EXT.1.
-              </note>
-              <aactivity level="element">
-                <no-tests>Refer to the EAs for FCS_COP.1/ENCRYPT in the MDF PP. The only change to this SFR is that some
-		selections are mandated, therefore the corresponding testing is mandatory. The actual testing for those
-		selections is not changed.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-        </section>   <!-- FCS -->
+                          <selectable>[<h:i>Finite field-based key establishment schemes</h:i>]
+                            that meet the following: [<h:i>NIST Special Publication 800-56A Revision 3,
+                              "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm
+                              Cryptography"</h:i>]</selectable>
+                          <selectable><h:b>no other key establishment schemes</h:b></selectable>
+                        </selectables>. </title>
+                      
+                    </xpath-specified>
+                  </replace>
+                </base-sfr-spec>
+          
+          <!-- FCS_COP.1/ENCRYPT Cryptographic Operation -->
+          <base-sfr-spec cc-id="fcs_cop.1" iteration="ENCRYPT" title="Cryptographic Operation" id="mdf-fcs-cop-1-encrypt">
+            <consistency-rationale>
+              The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
+            </consistency-rationale>
+            <description>
+              <h:p>
+                This SFR is identical to what is defined in the MDF PP except that support for GCM mode and support for 256-bit key sizes are both mandatory in order to address the requirements for FCS_IPSEC_EXT.1.
+              </h:p>
+              The text of the requirement is replaced with:<h:br/><h:br/>
+              
+              The TSF shall perform [<h:i>encryption/decryption</h:i>] in accordance with a specified
+              cryptographic algorithm: [<h:br/>
+                <h:i><h:ul>
+                  <h:li>AES-CBC (as defined in FIPS PUB 197, and NIST SP 800-38A) mode</h:li> 
+                  <h:li>AES-CCMP (as defined in FIPS PUB 197, NIST SP 800-38C and IEEE 802.11-2012), </h:li>
+                  <h:li><h:b>AES-GCM (as defined in NIST SP 800-38D), and </h:b></h:li>  
+                  <h:li>[<h:b>selection:</h:b><h:ul>
+                    <h:li>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</h:li> 
+                    <h:li>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</h:li> 
+                    <h:li>AES-CCM (as defined in NIST SP 800-38C)</h:li> 
+                    <h:li>AES-XTS (as defined in NIST SP 800-38E) mode</h:li>
+                    <h:li>AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)</h:li> 
+                    <h:li>AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)</h:li> 
+                    <h:li>no other modes</h:li></h:ul> 
+              
+              ]</h:li></h:ul>
+              ]</h:i> and cryptographic key sizes [<h:i>128-bit key sizes and [256-bit key sizes]</h:i>].
 
-        <section title="User Data Protection (FDP)" id="md-m-fdp">
-		
-          <!-- 5.2.1.4 FDP_IFC_EXT.1 Subset Information Flow Control -->
-          <f-component cc-id="fdp_ifc_ext.1" id="md-fdp-ifc-ext-1-1" name="Subset Information Flow Control">
-            <consistency-rationale>The ST author is instructed to make specific selections at minimum to
-              address VPN client requirements; the SFR behavior itself is
-              unmodified.</consistency-rationale>
-            <f-element id="md-fdp-ifc-ext-1e1">
-              <title>The TSF shall [<h:ul>
-					<h:li><h:i>provide a VPN client which can protect all IP traffic using IPsec as
-					  defined in the PP-Module for <h:b>VPN Client</h:b></h:i></h:li>
-					</h:ul>] with the exception of IP traffic needed to manage the VPN connection, and <selectables>
-					  <selectable><assignable>traffic needed for correct functioning of the TOE</assignable></selectable>
-					  <selectable>no other traffic</selectable></selectables> when the VPN is enabled.
-              </title>
-              <note role="application">
-                This SFR is identical to its definition in the Base-PP except that the selection item
-				that requires the TOE to implement its own VPN client is always selected when
-				the TOE’s conformance claim includes this PP-Module.
-			  </note>
-              <aactivity level="element">
-              <no-tests>Refer to the EAs for FDP_IFC_EXT.1 in the MDF PP. The only change to this SFR is that some selections are
-		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
-		changed.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-        </section>   <!-- FDP -->
-		
-		
+            </description>
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-crypt-how']//cc:title">
+                <title>The TSF shall perform [<h:i>encryption/decryption</h:i>] in accordance with a specified
+                  cryptographic algorithm: [<h:i> <h:br/>
+                    <h:ul>
+                      <h:li>AES-CBC (as defined in FIPS PUB 197, and NIST SP 800-38A) mode</h:li> 
+                      <h:li>AES-CCMP (as defined in FIPS PUB 197, NIST SP 800-38C and IEEE 802.11-2012), </h:li>
+                      <h:li><h:b>AES-GCM (as defined in NIST SP 800-38D), and </h:b></h:li>  
+                      <h:li><selectables linebreak="yes"> 
+                        <selectable>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</selectable> 
+                        <selectable>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</selectable> 
+                        <selectable>AES-CCM (as defined in NIST SP 800-38C)</selectable> 
+                        <selectable>AES-XTS (as defined in NIST SP 800-38E) mode</selectable> 
+                        <selectable>AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)</selectable> 
+                        <selectable>AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)</selectable> 
+                        <selectable exclusive="yes">no other modes</selectable></selectables></h:li>
+                    </h:ul> </h:i>] and cryptographic key sizes [<h:i>128-bit key sizes and [256-bit key sizes]</h:i>].</title>
+              </xpath-specified>
+            </replace>
+          </base-sfr-spec>
+        </section>
         
-	<section title="Security Management (FMT)" id="md-m-fmt">
-	      
-         <!-- 5.2.1.6 FMT_SMF_EXT.1 Specification of Management Functions -->
-	 <f-component cc-id="fmt_smf.1" id="md-fmt-smf-1" name="Specification of Management Functions">
-	      <consistency-rationale>This PP-Module modifies management function 45 regarding Always-on VPN protection. </consistency-rationale>
-		<f-element id="md-fmt-smf-1-1">
-		 <title>
-			This SFR is not reproduced in its entirety for size purposes. The only change to this SFR is the following
-			change to management function 45:
-			<h:table border="1" style="width:100%">
-				<h:tr>
-				<h:td>
-					45. enable/disable the Always On VPN protection:<h:ul>
-					  <h:li>across device</h:li>
-					  <h:li>[<h:i>no other method</h:i>]</h:li>
-					</h:ul>
-					</h:td>
-					<h:td><h:b>M</h:b></h:td>
-					<h:td>O</h:td>
-					<h:td>O</h:td>
-					<h:td>O</h:td>
-				</h:tr>
-			 </h:table>
-		 </title>
-		  <note role="Application">This PP-Module requires that Always On VPN protection be enabled across the entire device
-		  and does not permit this to be applied at the level of an application or group of application processes.</note>
-		  <aactivity level="element">
-		    <no-tests>Refer to the EAs for FMT_SMF.1 in the MDF PP. The only change to this SFR is the change to management function 45. 
-		      Testing of all other functions is not affected.</no-tests>
-              </aactivity>
-	</f-element>
-	<audit-event/>
-	</f-component>
-		
-	</section>  <!-- FMT -->
-	      
-		
+        <section title="User Data Protection (FDP)" id="md-m-fdp">
+          
+          <!-- FDP_IFC_EXT.1 Subset Information Flow Control -->
+          <base-sfr-spec cc-id="fdp_ifc_ext.1" title="Subset Information Flow Control" id="mdf-fdp-ifc-ext-1">
+            <consistency-rationale>
+              The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
+            </consistency-rationale>
+            <description>
+              <h:p>
+                This SFR is identical to its definition in the Base-PP except that the selection item that requires the TOE to implement its own VPN client is always selected when the TOE’s conformance claim includes this PP-Module.
+              </h:p>
+              The text of the requirement is replaced with:<h:br/><h:br/>
+              
+              The TSF shall [<h:ul>
+                <h:li>provide a VPN client which can protect all IP traffic using IPsec as defined in the PP-Module for VPN Client</h:li></h:ul>
+              ] with the exception of IP traffic needed to manage the VPN connection, and [<h:b>selection:</h:b> <h:i>[<h:b>assignment:</h:b> traffic needed for correct functioning of the TOE], no other traffic</h:i>] when the VPN is enabled.
+              
+            </description>
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-vpn-service']//cc:title">
+                <title>The TSF shall [<h:ul>
+                  <h:li><h:i>provide a VPN client which can protect all IP traffic using IPsec as
+                    defined in the PP-Module for <h:b>VPN Client</h:b></h:i></h:li>
+                </h:ul>] with the exception of IP traffic needed to manage the VPN connection, and <selectables>
+                  <selectable><assignable>traffic needed for correct functioning of the TOE</assignable></selectable>
+                  <selectable>no other traffic</selectable></selectables> when the VPN is enabled.
+                </title>
+              </xpath-specified>
+            </replace>
+          </base-sfr-spec>
+          
+        </section>
+        
+        <section title="Security Management (FMT)" id="md-m-fmt">
+          
+          <!-- FMT_SMF_EXT.1 Specification of Management Functions -->
+          <base-sfr-spec cc-id="fmt_smf_ext.1" title="Specification of Management Functions" id="mdf-fmt-smf-ext-1">
+            <consistency-rationale>
+              This PP-Module modifies the management function regarding Always-on VPN protection.
+            </consistency-rationale>
+            <description>
+              <h:p>
+                This PP-Module requires that Always On VPN protection be enabled across the entire device and does not permit this to be applied at the level of an application or group of application processes.
+              </h:p>
+              This SFR is not reproduced in its entirety for size purposes. The only change to this SFR is the following
+              change to management function 45:
+              <h:table border="1" style="width:100%">
+                <h:tr>
+                  <h:td>
+                    45. enable/disable the Always On VPN protection:<h:ul>
+                      <h:li>across device</h:li>
+                      <h:li>[<h:i>no other method</h:i>]</h:li>
+                    </h:ul>
+                  </h:td>
+                  <h:td><h:b>M</h:b></h:td>
+                  <h:td>O</h:td>
+                  <h:td>O</h:td>
+                  <h:td>O</h:td>
+                </h:tr>
+              </h:table>
+              
+            </description>
+            <insert-after>
+              <xpath-specified xpath="*//cc:management-function[@id='mf-alwaysOnVPN']//cc:text">
+                  <M ref="I"/>
+              </xpath-specified>
+            </insert-after>
+          </base-sfr-spec>
+          
+        </section>
+        
         <section title="Trusted Path/Channels (FTP)" id="md-m-ftp">
           
-          <!-- 5.2.1.7 FTP_ITC_EXT.1 Trusted Channel Communications -->
-          <f-component cc-id="ftp_itc_ext.1" id="md-ftp-itc-ext-1" name="Trusted Channel Communication">
-            <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
-              implement trusted channels.</consistency-rationale>
-            <f-element id="md-ftp-itc-ext-1e1">
-              <title>The TSF shall use<h:ul>
-		      <h:li>802.11-2012 in accordance with the [PP-Module for Wireless LAN Clients, version 1.1]</h:li>
-                <h:li>802.1X in accordance with the [PP-Module for Wireless LAN Clients, version 1.1]</h:li>
-                <h:li>EAP-TLS in accordance with the [PP-Module for Wireless LAN Clients, version 1.1]</h:li>
-		      <h:li>Mutually authenticated TLS in accordance with [<xref to="pkg-tls"/>]</h:li>
-		      <h:li><h:b>IPsec in accordance with the PP-Module for VPN Clients</h:b></h:li></h:ul>
-		      and
-                <selectables>
-                  <selectable>mutually authenticated DTLS as defined in <xref to="pkg-tls"/></selectable>
+          <!-- FTP_ITC_EXT.1 Trusted Channel Communication -->
+          <base-sfr-spec cc-id="ftp_itc_ext.1" title="Trusted Channel Communication" id="mdf-ftp-itc-ext-1">
+            <consistency-rationale>
+              This PP-Module adds IPsec as a new protocol that is used to implement trusted channels.
+            </consistency-rationale>
+            <description>
+              <h:p>
+                This SFR is identical to what is defined in the Base-PP except that support for IPsec is mandated. Additionally, since the Base-PP requires ‘at least one of’ the selected protocols which previously included IPsec, ‘no other protocols’ is now available as an option in the selection.
+              </h:p>
+              The text of FTP_ITC_EXT.1.1 is replaced with:<h:br/><h:br/>
+              
+              The TSF shall use <h:ul>
+                <h:li>802.11-2012 in accordance with the [<h:i>PP-Module for Wireless LAN Clients, version 1.1</h:i>],</h:li>
+                <h:li>802.1X in accordance with the [<h:i>PP-Module for Wireless LAN Clients, version 1.1</h:i>],</h:li>
+                <h:li>EAP-TLS in accordance with the [<h:i>PP-Module for Wireless LAN Clients, version 1.1</h:i>],</h:li>
+                <h:li>Mutually authenticated TLS in accordance with the [<h:i>Functional Package for TLS, version 2.1</h:i>]</h:li>
+                <h:li><h:b>IPsec in accordance with the [<h:i>PP-Module for VPN Clients, version 2.6</h:i>],</h:b></h:li>
+              </h:ul> and <h:ul>
+                <h:li>mutually authenticated DTLS as defined in the Functional Package for TLS, version 2.1</h:li>
+                <h:li>HTTPS</h:li>
+                <h:li><h:b>no other</h:b></h:li>
+              </h:ul> protocols to provide a communication channel between itself and another trusted IT product using certificates as defined in [<h:i>Functional Package for X.509, version 1.0</h:i>] that is logically distinct from other communication channels, 
+              provides assured identification of its end points, protects channel data from disclosure, and detects modification of the channel data.
+              
+              <h:br/><h:br/>FTP_ITC_EXT.1.2 and FTP_ITC_EXT.1.3 are unchanged.
+              
+            </description>
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-wlan']//cc:title">
+                <title>The TSF shall use <h:ul>
+                  <h:li>802.11-2012 in accordance with the [<h:i><xref to="mod-wlanclient"/></h:i>],</h:li>
+                  <h:li>802.1X in accordance with the [<h:i><xref to="mod-wlanclient"/></h:i>],</h:li>
+                  <h:li>EAP-TLS in accordance with the [<h:i><xref to="mod-wlanclient"/></h:i>],</h:li>
+                  <h:li>Mutually authenticated TLS in accordance with [<h:i>the <xref to="pkg-tls"/></h:i>]</h:li>
+                  <h:li>IPsec in accordance with the [<h:i><xref to="mod-vpnclient"/></h:i>],</h:li>
+                </h:ul> and <selectables linebreak="yes">
+                  <selectable id="itc_dtls"><snip>mutually authenticated DTLS</snip> as defined in the <xref to="pkg-tls"/></selectable>
                   <selectable>HTTPS</selectable>
-                  <selectable exclusive="yes"><h:b>no other</h:b></selectable>
-                </selectables>
-                protocols to provide a communication channel between itself
-                and another trusted IT product that is logically distinct from other
-                communication channels, provides assured identification of its end points,
-                protects channel data from disclosure, and detects modification of the channel
-                data.
-                </title>
-            </f-element>
-            <f-element id="md-ftp-itc-ext-1e2">
-              <title>The TSF shall permit the TSF to initiate communication via the trusted channel.
-              </title>
-            </f-element>
-            <f-element id="md-ftp-itc-ext-1e3">
-              <title>
-                The TSF shall initiate communication via the trusted channel for wireless access
-                point connections, administrative communication, configured enterprise
-                connections, and 
-                <selectables>
-                  <selectable>OTA updates</selectable>
-                  <selectable exclusive="yes">no other connections</selectable>
-                </selectables>.
-              </title>
-              <note role="application">
-                This SFR is identical to what is defined in the Base-PP except that support for
-		IPsec is mandated. Additionally, since the Base-PP requires ‘at least one of’ the
-		selected protocols which previously included IPsec, ‘no other protocols’ is now
-		available as an option in the selection.
-              </note>
-              <aactivity level="component"> 
-                <no-tests>Refer to the EAs for FTP_ITC_EXT.1 in the MDF PP. The only change to this SFR is that some selections are
-		mandated, therefore the corresponding testing is mandatory. The actual testing for those selections is not
-		changed.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
+                  <selectable><h:b>no other</h:b></selectable>
+                </selectables> protocols to provide a communication channel between itself and another trusted IT product using certificates as defined in [<h:i><xref to="pkg-x509"/></h:i>] that is logically distinct from other communication channels, 
+                  provides assured identification of its end points, protects channel data from disclosure, and detects modification of the channel data. </title>
+              </xpath-specified>
+            </replace>
+          </base-sfr-spec>
+          
         </section>
+       
       </modified-sfrs>
       
       <!-- 5.2.2 Additional SFRs -->
