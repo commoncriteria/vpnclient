@@ -1928,9 +1928,9 @@ expected to enforce.<h:br/><h:br/>
               </h:p>
               The text of the requirement is replaced with:<h:br/><h:br/>
               
-              The <h:b>application</h:b> shall <h:b><h:ul>
+              The <h:b>application</h:b> shall <h:b>[selection:<h:i><h:ul>
                 <h:li>invoke platform-provided functionality</h:li>
-                <h:li>implement functionality</h:li></h:ul></h:b>
+                <h:li>implement functionality</h:li></h:ul></h:i>]</h:b>
               to generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
               
               <h:b><h:ul><h:li>[ECC schemes] using [<h:i>“NIST curves” P-384 and [selection: P-521, no other curves]</h:i>]
@@ -2007,10 +2007,11 @@ expected to enforce.<h:br/><h:br/>
               <xpath-specified xpath="*//cc:f-element[@id='fel-asym-key-gen-impl']//cc:title">
                 
                   <title>            
-                    The <h:b>application</h:b> shall <h:b>[selection:<h:i><h:ul>
-                      <h:li>invoke platform-provided functionality</h:li>
-                      <h:li>implement functionality</h:li></h:ul></h:i>]</h:b>
-                    to generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
+                    The <h:b>application</h:b> shall <h:b><selectables linebreak="yes">
+                      <selectable>invoke platform-provided functionality</selectable>
+                      <selectable>implement functionality</selectable>
+                    </selectables></h:b>
+                     to generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
                     <h:ul>
                     <h:li><h:b>[ECC schemes] using [<h:i>“NIST curves” P-384 and <selectables>
                       <selectable>P-521</selectable>
@@ -2234,7 +2235,7 @@ expected to enforce.<h:br/><h:br/>
                 <h:li>AES-CCM (as defined in NIST SP 800-38C) mode</h:li>
                 <h:li>AES-CTR (as defined in NIST SP 800-38A) mode</h:li>
                 <h:li><h:b>no other modes</h:b></h:li>
-                ] </h:ul></h:i> and cryptographic key size of [<h:i>256-bits</h:i>].
+              </h:ul></h:i>] and cryptographic key size of [<h:i>256-bits</h:i>].
               
             </description>
             <replace>
@@ -2254,7 +2255,9 @@ expected to enforce.<h:br/><h:br/>
                   <selectables linebreak="yes">
                     <selectable id="sel_aes_xts">AES-XTS (as defined in NIST SP 800-38E) mode</selectable>
                     <selectable id="sel_aes_ccm">AES-CCM (as defined in NIST SP 800-38C) mode</selectable>
-                    <selectable id="sel_aes_ctr">AES-CTR (as defined in NIST SP 800-38A) mode</selectable></selectables>
+                    <selectable id="sel_aes_ctr">AES-CTR (as defined in NIST SP 800-38A) mode</selectable>
+                    <selectable><h:b>no other modes</h:b></selectable>
+                  </selectables>
                   and cryptographic key size of [<h:i>256-bits</h:i>].
                 </title>
               </xpath-specified>
