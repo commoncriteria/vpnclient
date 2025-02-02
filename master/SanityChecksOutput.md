@@ -47,9 +47,27 @@
 * Error: Detected dangling ref to 'ap-ftp-dit-ext-1'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/con-mod[16]"This PP-M"/ref[1]""
+* Error: Detected dangling ref to 'dm-fcs-ckm-1'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/con-mod[11]"The ST au"/ref[1]""
+* Error: Detected dangling ref to 'dm-fcs-ckm-2'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/con-mod[12]"The ST au"/ref[1]""
+* Error: Detected dangling ref to 'dm-fcs-cop-1-1'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/con-mod[13]"The ST au"/ref[1]""
 * Error: Detected dangling ref to 'dm-fia-x509-ext-2'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/con-mod[14]"The ST au"/ref[1]""
+* Error: Detected dangling ref to 'dm-fpt-itt-1-1'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/con-mod[15]"When this"/ref[1]""
+* Error: Detected dangling ref to 'dm-ftp-itc-1-1'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/con-mod[16]"When this"/ref[1]""
+* Error: Detected dangling ref to 'dm-ftp-trp-1-1'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/con-mod[17]"When this"/ref[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[1]""/description[1]"This SFR "/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[2]""/description[1]"This SFR "/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[3]""/description[1]"This SFR "/h:p[1]""
