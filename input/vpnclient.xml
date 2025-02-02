@@ -2695,7 +2695,7 @@ expected to enforce.<h:br/><h:br/>
                 <h:ul>
                   <h:li>RSA schemes using cryptographic key sizes of 3072 bits that meet the following: [FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix A.1]</h:li>
                   <h:li>FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [<h:b>selection:</h:b> RFC 3526, RFC 7919]</h:li>
-                  <h:li>No other key generation methods</h:li>
+                  <h:li><h:b>No other key generation methods</h:b></h:li>
                 </h:ul></h:i>
               ].
             </description>
@@ -2796,7 +2796,7 @@ expected to enforce.<h:br/><h:br/>
                   <h:li>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</h:li>
                   <h:li>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</h:li>
                   <h:li>AES-CCM (as defined in NIST SP 800-38C)</h:li>
-                  <h:li>no other modes</h:li></h:ul></h:i>] 
+                  <h:li><h:b>no other modes</h:b></h:li></h:ul></h:i>] 
                 and a cryptographic key size of 256-bits.
             </description>
             <replace>
@@ -2838,7 +2838,7 @@ expected to enforce.<h:br/><h:br/>
               
               The TSF shall [<h:i>implement functionality using [IPsec as defined in the PP-Module for VPN Clients]</h:i>] to protect all data from [<h:i>disclosure and modification</h:i>] when it is transferred between separate parts of the TOE.
               
-              <h:br/><h:p>
+              <h:br/><h:br/><h:p>
                 This SFR is selection-based in the Base-PP depending on the selections made in the Base-PP requirement FTP_ITC_EXT.1. This is not changed by the PP-Module.
               </h:p><h:p>
                 This SFR is modified from its definition in the Base-PP by mandating that the TSF implement IPsec communications and by prohibiting the TOE from relying on platform-provided functionality to implement this.
@@ -2888,7 +2888,7 @@ expected to enforce.<h:br/><h:br/>
                     <h:li>mutually authenticated DTLS as defined in the Package for Transport Layer Security</h:li>
                     <h:li>HTTPS in accordance with FCS_HTTPS_EXT.1</h:li></h:ul></h:li>
                   <h:li>not invoke or implement any other protocol functionality</h:li></h:ul></h:b></h:i>] <h:b>to</h:b> provide a <h:b>trusted</h:b>
-                communication channel between itself and <h:b>authorized</h:b> IT entities supporting the following capabilities: audit server, [<h:b>selection:</h:b><h:i>authentication server, [<h:b>assignment:</h:b> other capabilities]</h:i>]
+                communication channel between itself and <h:b>authorized</h:b> IT entities supporting the following capabilities: audit server, [<h:b>selection:</h:b> <h:i>authentication server, [<h:b>assignment:</h:b> other capabilities]</h:i>]
 that is logically distinct from other communication channels and provides assured identification of its endpoints
                 and protection of the channel data from modification or disclosure.
               
@@ -2953,10 +2953,10 @@ that is logically distinct from other communication channels and provides assure
                     <h:li>SSH as defined in the Functional Package for Secure Shell</h:li>
                   </h:ul></h:li>
                   <h:li>not invoke or implement any other protocol functionality</h:li>
-                </h:ul></h:b></h:i> <h:b>to</h:b> provide a <h:b>trusted</h:b>
+                </h:ul></h:b></h:i>] <h:b>to</h:b> provide a <h:b>trusted</h:b>
                 communication path between itself <h:b>as a [selection: <h:i>server, peer</h:i>]
                 and another trusted IT product</h:b> that is logically distinct from other communication <h:b>channels</h:b> and provides assured
-                identification of its endpoints and protection of the channel data from [<h:i>modification or disclosure.</h:i>] 
+                identification of its endpoints and protection of the channel data from [<h:i>modification or disclosure</h:i>]. 
               
             </description>
             <replace>
@@ -2989,347 +2989,6 @@ that is logically distinct from other communication channels and provides assure
           
         </section>
         
-<!--        The SFRs listed in this section are defined in the MDM PP and relevant to the secure operation of the
-        VPN client. It is necessary for the ST author to complete selections and/or assignments for these SFRs in
-        a specific manner in order to ensure that the functionality provided by the application is consistent with
-        the functionality required by the VPN client in order for it to conform to this PP-Module.
--->        
-        <section title="Cryptographic Support (FCS)" id="dm-m-fcs">
-          
-          <!-- 5.4.1.1 FCS_CKM.1 Cryptographic Key Generation -->
-          <f-component cc-id="fcs_ckm.1" id="dm-fcs-ckm-1" name="Cryptographic Key Generation">
-            <consistency-rationale>The ST author is instructed to make specific selections at minimum to
-              address VPN client requirements; the SFR behavior itself is
-              unmodified.</consistency-rationale>
-            <f-element id="dm-fcs-ckm-1e1">
-              <title>The TSF shall 
-                <selectables onlyone="yes">
-                  <selectable>invoke platform-provided functionality</selectable>
-                  <selectable>implement functionality</selectable>
-                </selectables>
-                to generate asymmetric cryptographic keys in accordance with a specified cryptographic key
-                generation algorithm: 
-                <h:ul>
-                  <h:li><h:b>ECC schemes using “NIST curves” <h:b>P-256,</h:b> P-384, and 
-                      <selectables>
-                        <selectable>P-521</selectable>
-                        <selectable exclusive="yes">no other curves</selectable>
-                      </selectables> 
-                      that meet the following: FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.4, and</h:b>
-                  </h:li>
-                </h:ul>
-                <selectables linebreak="yes">
-                  <selectable>RSA schemes using cryptographic key sizes of 2048-bit or greater that meet
-                    FIPS PUB 186-4, "Digital Signature Standard (DSS),” Appendix B.3</selectable>
-                  <selectable>FFC schemes using cryptographic key sizes of 2048-bit or greater that meets
-                    the following: FIPS PUB 186-4, “Digital Signature Standards (DSS),” Appendix B.1</selectable>
-                  <selectable>FFC schemes using Diffie-Hellman group 14 that meets the following: RFC 3526, Section 3</selectable>
-                  <selectable>FFC schemes using “safe-prime” groups that meet the following: NIST
-                    Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
-                    Establishment Schemes Using Discrete Logarithm Cryptography,” and
-                    <selectables>
-                      <selectable>RFC 3526</selectable>
-                      <selectable>RFC 7919</selectable></selectables></selectable>
-                  <selectable exclusive="yes"><h:b>no other key generation schemes</h:b></selectable>
-                </selectables>.
-              </title>
-              <note role="application">
-                This SFR is modified from its definition in the MDM PP by mandating the key
-                generation algorithms that are required by this PP-Module in support of IPsec due to
-                the mandated support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8. Other
-                selections may be chosen by the ST author as needed for parts of the TOE that are
-                not specifically related to VPN client functionality. The selection for "no other key generation methods"
-                was added in case the algorithms that IPsec requires are the TSF's only use of key generation.
-              </note>
-              <aactivity level="element">
-                <no-tests>Refer to the EA for <no-link>FCS_CKM.1</no-link> in the MDM PP.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-
-          <!-- 5.4.1.2 FCS_CKM.2 Cryptographic Key Establishment -->
-          <f-component cc-id="fcs_ckm.2" id="dm-fcs-ckm-2" name="Cryptographic Key Establishment">
-            <consistency-rationale>The ST author is instructed to make specific selections at minimum to
-              address VPN client requirements; the SFR behavior itself is
-              unmodified.</consistency-rationale>
-            <f-element id="dm-fcs-ckm-2e1">
-              <title>The TSF shall 
-                <selectables>
-                  <selectable>invoke platform-provided functionality</selectable>
-                  <selectable>implement functionality</selectable>
-                </selectables>
-                to perform cryptographic key establishment in accordance with a specified key establishment method:
-                <h:ul>
-                  <h:li><h:b>Elliptic curve-based key establishment schemes that meet the following:
-                    NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
-                    Establishment Schemes Using Discrete Logarithm Cryptography”</h:b>
-                  </h:li>
-                </h:ul>and
-                <selectables linebreak="yes">                  
-                  <selectable>RSA-based key establishment schemes that meet the following: 
-                    RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, “Public-Key Cryptography Standards
-                    (PKCS) #1: RSA Cryptography Specifications Version 2.1"</selectable>
-                  <selectable>Finite field-based key establishment schemes that meet the following: NIST
-                    Special Publication 800-56A <h:b>Revision 3</h:b>, “Recommendation for Pair-Wise Key
-                    Establishment Schemes Using Discrete Logarithm Cryptography”</selectable>
-                  <selectable>Key establishment scheme using Diffie-Hellman group 14 that meets the
-                    following: RFC 3526, Section 3</selectable>
-                  <selectable>FFC schemes using "safe-prime" groups that meet the following: NIST
-                    Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key
-                    Establishment Schemes Using Discrete Logarithm Cryptography" and
-                    <selectables>
-                      <selectable>RFC 3526</selectable>
-                      <selectable>RFC 7919</selectable></selectables></selectable>
-                  <selectable exclusive="yes"><h:b>no other schemes</h:b></selectable>
-                </selectables>.
-              </title>
-              <note role="application">
-                This SFR is modified from its definition in the MDM PP by mandating the key
-                establishment algorithms that are required by this PP-Module in support of IPsec due
-                to the mandated support for DH groups 19 and 20 in FCS_IPSEC_EXT.1.8. Other
-                selections may be chosen by the ST author as needed for parts of the TOE that are
-                not specifically related to VPN client functionality. The selection for "no other schemes"
-                was added in case the algorithms that IPsec requires are the TSF's only use of key establishment.
-              </note>
-              <aactivity level="element">
-                <no-tests>Refer to the EA for <no-link>FCS_CKM.2</no-link> in the MDM PP.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-
-          <!-- 5.4.1.3 FCS_COP.1(1) Cryptographic Operation (Confidentiality Algorithms) -->
-          <f-component cc-id="fcs_cop.1" id="dm-fcs-cop-1-1" name="Cryptographic Operation (Confidentiality Algorithms)" iteration="CONF_ALG">
-            <consistency-rationale>The ST author is instructed to make specific selections at minimum to
-              address VPN client requirements; the SFR behavior itself is
-              unmodified.</consistency-rationale>
-            <f-element id="dm-fcs-cop-1e1i1">
-              <title>The TSF shall
-                <selectables onlyone="yes">
-                  <selectable>invoke platform-provided functionality</selectable>
-                  <selectable>implement functionality</selectable>
-                </selectables>
-                to perform encryption/decryption in accordance with a specified cryptographic algorithm
-                <h:ul><h:b>
-                  <h:li>AES-CBC (as defined in FIPS PUB 197, NIST SP 800-38A) mode,</h:li>
-                  <h:li>AES-GCM (as defined in NIST SP 800-38D), and</h:li></h:b>
-                </h:ul>
-                <selectables linebreak="yes">
-                  <selectable>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</selectable>
-                  <selectable>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</selectable>
-                  <selectable>AES-CCM (as defined in NIST SP 800-38C)</selectable>
-                  <selectable exclusive="yes"><h:b>no other modes</h:b></selectable>
-                </selectables>
-                and cryptographic key sizes [<h:i>128-bit, 256-bit</h:i>].
-              </title>
-              <note role="application">
-                This SFR is modified from its definition in the Base-PP by mandating support for both
-                128-bit and 256-bit implementations of AES-CBC (which this PP-Module requires for
-                the use of IKE and allows for the use of ESP) and AES-GCM (which this PP-Module
-                requires for the use of ESP and allows for the use of IKE). Other AES modes may be
-                selected by the ST author as needed to address functions not required by this PP-Module. The "no other modes" selection is added
-                for the case where no AES claims need to be made beyond what is mandated for IPsec.
-              </note>
-              <aactivity level="element">
-                <no-tests>Refer to the EA for <no-link>FCS_COP.1/CONF_ALG</no-link> in the MDM PP.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-        </section>
-        
-        <section title="Protection of the TSF (FPT)" id="dm-m-fpt">
-          
-          
-          <!-- 5.4.1.5 FPT_ITT.1(1) Basic Internal TSF Data Transfer Protection -->
-          <f-component cc-id="fpt_itt.1" iteration="INTER_XFER" id="dm-fpt-itt-1-1" name="Basic Internal TSF Data Transfer Protection">
-            <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
-              implement trusted channels.</consistency-rationale>
-            <f-element id="dm-fpt-itt-1e1i1">
-              <title>The TSF shall [<h:i>implement functionality using [IPsec as defined in the PP-Module for
-                VPN Clients]</h:i>] to protect all data from [disclosure and modification] when it is transferred between separate
-                parts of the TOE.
-              </title>
-              <note role="application">
-
-                When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
-                communications. However, this PP-Module does not specify that any one particular interface must be
-                implemented using IPsec. If the TOE is distributed and uses IPsec to secure communications between its
-                distributed components, <no-link>FPT_ITT.1/INTER_XFER)</no-link> is refined as above.<h:br/><h:br/>
-                This SFR is selection-based in the Base-PP depending on the selections made in the
-                Base-PP requirement FTP_ITC_EXT.1. This is not changed by the PP-Module.<h:br/><h:br/>
-                This SFR is modified from its definition in the Base-PP by mandating that the TSF
-                implement IPsec communications and by prohibiting the TOE from relying on
-                platform-provided functionality to implement this.
-              </note>
-              <aactivity level="element">
-                <no-tests>Refer to the EA for <no-link>FPT_ITT.1/INTER_XFER</no-link> in the MDM PP. Note that the PP-Module does not require any separate
-                  testing for this if IPsec is not used to implement this function.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>		  
-          
-        </section>
-
-        <section title="Trusted Path/Channels (FTP)" id="dm-m-ftp">
-
-
-	<!-- 5.4.1.6 FTP_ITC.1(1) Inter-TSF Trusted Channel (Authorized IT Entities) -->
-          <f-component cc-id="ftp_itc.1" iteration="INTER_XFER_IT" id="dm-ftp-itc-1-1" name=" Inter-TSF Trusted Channel (Authorized IT Entities)">
-            <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
-              implement trusted channels.</consistency-rationale>
-            <f-element id="dm-ftp-itc-1e1i1">
-              <title> The TSF shall: <h:ul>
-                <h:li><h:b>implement functionality using IPsec as defined in the PP-Module
-                  for VPN Clients, and </h:b></h:li>
-              </h:ul>
-                <selectables linebreak="yes">
-                  <selectable>invoke platform-provided functionality to use
-                    <selectables linebreak="yes">
-                      <selectable>SSH</selectable>
-                      <selectable>mutually authenticated TLS</selectable>
-                      <selectable>mutually authenticated DTLS</selectable>
-                      <selectable>HTTPS</selectable>
-                    </selectables></selectable>
-                  <selectable>implement functionality using
-                <selectables linebreak="yes">
-                  <selectable>SSH as defined in <xref to="pkg-ssh"/></selectable>
-                  <selectable>mutually authenticated TLS as defined in <xref to="pkg-tls"/></selectable>
-                  <selectable>mutually authenticated DTLS as defined in <xref to="pkg-tls"/></selectable>
-                  <selectable>HTTPS in accordance with FCS_HTTPS_EXT.1</selectable>
-                </selectables></selectable>
-                  <selectable><h:b>not invoke or implement any other protocol functionality</h:b></selectable>
-                </selectables> to provide a trusted communication channel between itself and authorized IT
-				entities supporting the following capabilities: audit server, 
-				<selectables>
-					<selectable>authentication server</selectable>
-					<selectable><assignable>other capabilities</assignable></selectable>
-				</selectables>
-				that is logically distinct from other communication channels and provides assured identification
-				of its end points and protection of channel data from modification and disclosure.
-              </title>
-            </f-element>
-            <f-element id="dm-ftp-itc-1e2i1">
-              <title>The TSF shall <h:b>implement functionality and</h:b> 
-				<selectables onlyone="yes">
-					<selectable>invoke platform-provided functionality</selectable>
-					<selectable><h:b>not invoke platform-provided functionality</h:b></selectable>
-				</selectables>
-				to permit the MDM Server or other authorized IT entities to initiate communication via the trusted
-				channel.
-              </title>
-            </f-element>
-            <f-element id="dm-ftp-itc-1e3i1">
-              <title>The TSF shall <h:b>implement functionality and</h:b> 
-				<selectables onlyone="yes">
-					<selectable>invoke platform-provided functionality</selectable>
-					<selectable><h:b>not invoke platform-provided functionality</h:b></selectable>
-				</selectables>
-				to initiate communication via the trusted channel for
-				<assignable>list of services for which the TSF is able to initiate communications</assignable>.
-              </title>
-              <note role="application">
-
-      			When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
-			communications. However, this PP-Module does not specify that any one particular interface must be
-			implemented using IPsec. If the TOE uses IPsec to secure communications between itself and external
-			trusted IT entities, <no-link>FTP_ITC.1/INTER_XFER_IT</no-link> is refined as noted by the refinements above.<h:br/><h:br/>
-                This SFR is refined from its definition in the Base-PP by mandating that the
-				“implement functionality” selection be chosen at minimum for IPsec and by
-				prohibiting the TOE from relying on platform-provided IPsec functionality. Since the
-				TOE may support multiple trusted channel interfaces, the ST author is given the
-				option to select other protocols (SSH, TLS, DTLS, HTTPS) either as being implemented
-				by the TSF or invoked from the platform. The
-				"not invoke or implement any other protocol functionality"
-				is added for the case where the TOE's implementation of IPsec is the only trusted channel protocol the TSF uses.
-              </note>
-              <aactivity level="component">
-                <no-tests>Refer to the EA for <no-link>FTP_ITC.1/INTER_XFER_IT</no-link> in the MDM PP. Note that the PP-Module does not require any separate
-                  testing for this if IPsec is not used to implement this function.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-
-		
-		
-          <!-- 5.4.1.7 FTP_TRP.1(1) Trusted Path (for Remote Administration) -->
-          <f-component cc-id="ftp_trp.1" iteration="TRUSTPATH_REM_ADMIN" id="dm-ftp-trp-1-1" name="Trusted Path (for Remote Administration)">
-            <consistency-rationale>This PP-Module adds IPsec as a new protocol that is used to
-              implement trusted channels.</consistency-rationale>
-            <f-element id="dm-ftp-trp-1e1i1">
-              <title> The TSF shall
-                <h:ul>
-                <h:li><h:b>implement functionality using IPsec as defined in the PP-Module
-                  for VPN Clients, and </h:b></h:li>
-                </h:ul>
-                <selectables linebreak="yes"><selectable>
-                  invoke platform-provided functionality to use <selectables linebreak="yes">
-                    <selectable>TLS</selectable>
-                    <selectable>HTTPS</selectable>
-                    <selectable>SSH</selectable>
-                  </selectables></selectable>
-                <selectable>implement functionality using 
-                <selectables linebreak="yes">
-                  <selectable>TLS as defined in <xref to="pkg-tls"/>y</selectable>
-                  <selectable>HTTPS in accordance with FCS_HTTPS_EXT.1</selectable>
-                  <selectable>SSH as defined in <xref to="pkg-ssh"/></selectable>
-                </selectables></selectable>
-                  <selectable><h:b>not invoke or implement any other protocol functionality</h:b></selectable>
-                </selectables>
-				to provide a trusted communication channel between itself as a 
-				<selectables>
-					<selectable>server</selectable>
-					<selectable>peer</selectable>
-				</selectables> 
-				and another trusted IT product that is logically distinct from other communication
-				channels and provides assured identification of its endpoints and protection of the
-				communicated data from [<h:i>modification or disclosure</h:i>].
-              </title>
-            </f-element>
-            <f-element id="dm-ftp-trp-1e2i1">
-              <title>The TSF shall <h:b>implement functionality and</h:b> 
-				<selectables onlyone="yes">
-					<selectable>invoke platform-provided functionality</selectable>
-					<selectable><h:b>not invoke platform-provided functionality</h:b></selectable>
-				</selectables>
-				to permit remote administrators to initiate communication via the trusted channel.
-              </title>
-            </f-element>
-            <f-element id="dm-ftp-trp-1e3i1">
-              <title>The TSF shall <h:b>implement functionality and</h:b> 
-				<selectables onlyone="yes">
-					<selectable>invoke platform-provided functionality</selectable>
-					<selectable><h:b>not invoke platform-provided functionality</h:b></selectable>
-				</selectables>
-                to require the use of the trusted channel for [<h:i>all remote administration actions</h:i>].
-              </title>
-              <note role="application">
-
-		      	When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec
-			communications. However, this PP-Module does not specify that any one particular interface must be
-			implemented using IPsec. If the TOE uses IPsec to secure communications between itself and trusted
-			remote administrators, <no-link>FPT_TRP.1/TRUSTPATH_REM_ADMIN</no-link> is refined as above.<h:br/><h:br/>
-                This SFR is refined from its definition in the Base-PP by mandating that the
-				“implement functionality” selection be chosen at minimum for IPsec and by
-				prohibiting the TOE from relying on platform-provided IPsec functionality. Since the
-				TOE may support multiple remote administrative interfaces, the ST author is given
-				the option to select other protocols (SSH, TLS, HTTPS) either as being implemented
-				by the TSF or invoked from the platform. The
-				"not invoke or implement any other protocol functionality"
-				is added for the case where the TOE's implementation of IPsec is the only trusted path protocol the TSF uses.
-              </note>
-              <aactivity level="component">
-                <no-tests>Refer to the EA for <no-link>FTP_TRP.1/TRUSTPATH_REM_ADMIN</no-link> in the MDM PP. Note that the PP-Module does not require any
-			separate testing for this if IPsec is not used to implement this function.
-                </no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-        </section>
       </modified-sfrs>
       		 
       <!-- 5.4.2 Additional SFRs -->
