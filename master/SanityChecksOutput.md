@@ -3,6 +3,8 @@
         on/Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/additional-sfrs[1]""/section[2]""/f-component[1]""/depends[1]""/on[1]""
 * Error: Detected multiple elements with an id of 's-aes-ctr'.
 * Error: Detected multiple elements with an id of 's-aes-ctr'.
+* Error: Detected multiple elements with an id of 'a-keygen-rsa-size'.
+* Error: Detected multiple elements with an id of 'a-keygen-rsa-size'.
 * Error: Detected dangling ref to 'os-fcs-ckm-1'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[11]"The ST au"/ref[1]""
