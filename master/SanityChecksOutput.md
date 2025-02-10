@@ -14,6 +14,9 @@
 * Error: Detected dangling ref to 'os-fcs-cop-1-1'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[13]"The SFR i"/ref[1]""
+* Error: Detected dangling ref to 'os-fia-x509-ext-3'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[15]"This SFR "/ref[1]""
 * Error: Detected dangling ref to 'md-fcs-ckm-1'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/con-mod[11]"The ST au"/ref[1]""

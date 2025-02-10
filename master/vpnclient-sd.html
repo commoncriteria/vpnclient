@@ -467,12 +467,12 @@ The following sections list Common Criteria and technology terms used in this do
                 <div class="eacategory">Tests</div><div class="ea">There are no test EAs for this component.</div>
               </span></div>
 
-        <h3 class="indexable" data-level="3" id="os-a-fia">2.1.2.2 Identification and Authentication (FIA)</h3><div class="comp" id="OS-FIA-X509-EXT-3"><h4>FIA_X509_EXT.3 X.509 Certificate Use and Management</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_X509_EXT.3.1</div>
-                <span class="no-link">FIA_X509_EXT.3.1</span> is evaluated as part of <span class="no-link">FCS_IPSEC_EXT.1</span> (and
+        <h3 class="indexable" data-level="3" id="os-a-fia">2.1.2.2 Identification and Authentication (FIA)</h3><div class="comp" id="OS-FIA-X509-EXT-4"><h4>FIA_X509_EXT.4 X.509 Certificate Use and Management</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_X509_EXT.4.1</div>
+                <span class="no-link">FIA_X509_EXT.4.1</span> is evaluated as part of <span class="no-link">FCS_IPSEC_EXT.1</span> (and
                   conditionally as part of <span class="no-link">FPT_TUD_EXT.1</span> or <span class="no-link">FPT_TST_EXT.1</span>).
                 <br/><br/>
-              <div class="element-activity-header">FIA_X509_EXT.3.2</div>
-                
+              <div class="element-activity-header">FIA_X509_EXT.4.2</div>
+
                 <div class="eacategory">TSS</div><div class="ea">The evaluator shall check the TSS to ensure that it describes whether the VPN client or the OS implements
                   the certificate validation functionality, how the VPN client/OS chooses which certificates to use, and any
                   necessary instructions in the administrative guidance for configuring the OS so that desired certificates
@@ -489,18 +489,18 @@ The following sections list Common Criteria and technology terms used in this do
                   The evaluator shall perform the following test regardless of whether the certificate validation functionality
                   is implemented by the VPN client or by the OS:
                   <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FIA_X509_EXT.3.2:1</a>:
+                    <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FIA_X509_EXT.4.2:1</a>:
       The evaluator shall demonstrate that using a valid certificate that requires certificate validation
                       checking to be performed in at least some part by communicating with a non-TOE IT entity. The evaluator
                       shall then manipulate the environment so that the TOE is unable to verify the validity of the certificate,
-                      and observe that the action selected in FIA_X509_EXT.3.2 is performed. If the selected action is
+                      and observe that the action selected in FIA_X509_EXT.4.2 is performed. If the selected action is
                       administrator-configurable, then the evaluator shall follow the operational guidance to determine that all
                       supported administrator-configurable options behave in their documented manner.
                     </li>
                   </ul></span>
                 </div>
-              <div class="element-activity-header">FIA_X509_EXT.3.3</div>
-                FIA_X509_EXT.3.3 is evaluated as part of FCS_IPSEC_EXT.1.11.
+              <div class="element-activity-header">FIA_X509_EXT.4.3</div>
+                FIA_X509_EXT.4.3 is evaluated as part of FCS_IPSEC_EXT.1.11.
                 <br/><br/>
               </span></div>
 
@@ -1069,7 +1069,7 @@ The following sections list Common Criteria and technology terms used in this do
               <div class="eacategory">Tests</div><div class="ea">For efficiency’s sake, the testing that is performed here has been combined with the testing for
                 <span class="no-link">FIA_X509_EXT.2</span> in <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509,
         version 
-        1.0</a> and <span class="no-link">FIA_X509_EXT.3</span> (for IPsec connections and depending on the Base-PP),
+        1.0</a> and <span class="no-link">FIA_X509_EXT.4</span> (for IPsec connections and depending on the Base-PP),
                 <span class="no-link">FCS_IPSEC_EXT.1.12</span>, and <span class="no-link">FCS_IPSEC_EXT.1.13</span>. The following tests shall be repeated for each peer
                 authentication protocol selected in the <span class="no-link">FCS_IPSEC_EXT.1.11</span> selection above:
               <span class="testlist-"><ul>
@@ -1441,7 +1441,7 @@ The following sections list Common Criteria and technology terms used in this do
 		include those attributes listed in the assignment. The administrative guidance shall also contain
 		instructions on how to set the pre-selection or how the VPN gateway will configure the client, as well as
 		explain the syntax (if present) for multi-value pre-selection. The administrative guidance shall also identify
-		those audit records that are always recorded, regardless of the selection criteria currently being enforced.<br/><br/></div>
+		the audit data that are always recorded, regardless of the selection criteria currently being enforced.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following tests:
               <span class="testlist-"><ul>
                 <li class="test-"><a id="_t_54" class="defined" href="#_t_54">Test FAU_SEL.1.1/VPN:1</a>:
@@ -1463,7 +1463,7 @@ The following sections list Common Criteria and technology terms used in this do
 	        
 	      <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to determine that it describes the auditable events and the
 	          component that is responsible for each type of auditable event.<br/><br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall check the operational guidance and ensure that it lists all of the auditable events and
-	          provides a format for audit records. Each audit record format type must be covered, along with a brief
+	          provides a format for audit data. All audit data format types must be covered, along with a brief
 	          description of each field. The evaluator shall check to make sure that every audit event type mandated by
 	          the PP-Module for VPN Clients is described and that the description of the fields contains the information
 	          required in FAU_GEN.1.2/VPN, and the additional information specified in the Auditable Events table of
@@ -1493,18 +1493,18 @@ The following sections list Common Criteria and technology terms used in this do
 	          For each required auditable event, the evaluator shall examine the operational guidance to determine
 	          that it is clear to the reader where each event is generated (e.g. the TSF may generate its own audit logs
 	          in one location while the platform-provided auditable events are generated elsewhere).<br/><br/>
-	        </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the TOE’s ability to correctly generate audit records by having the TOE generate
-	          audit records in accordance with the EAs associated with the functional requirements in the PP-Module for VPN Clients. 
+	        </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the TOE’s ability to correctly generate audit data by having the TOE generate
+	          audit data in accordance with the EAs associated with the functional requirements in the PP-Module for VPN Clients. 
 	          Additionally, the evaluator shall test that each administrative action applicable in the context
 	          of the PP-Module for VPN Clients is auditable. When verifying the test results, the evaluator shall ensure the
-	          audit records generated during testing match the format specified in the guidance and that
+	          audit data generated during testing match the format specified in the guidance and that
 	          the fields in each audit record have the proper entries.
 	          <br/><br/>
 	          
 	          Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms
 	          directly. For example, testing performed to ensure that the administrative guidance provided is correct
 	          verifies that AGD_OPE.1 is satisfied and should address the invocation of the administrative actions that
-	          are needed to verify the audit records are generated as expected.
+	          are needed to verify the audit data is generated as expected.
 	        </div></div></span></div><h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
     
 	base-PP to which it must claim conformance.
