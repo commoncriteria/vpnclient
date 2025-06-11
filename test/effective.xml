@@ -447,6 +447,7 @@ expected to enforce.<h:br/><h:br/>
       The following threats defined in this PP-Module extend the threats defined by the Base-PPs.
       <threats>
         <threat name="T.UNAUTHORIZED_ACCESS">
+		   <from base="bpp-mdf"/>
           <description>This PP-Module does not include requirements that can protect against an insider threat. Authorized
             users are not considered hostile or malicious and are trusted to follow appropriate guidance. Only
             authorized personnel should have access to the system or device that contains the IPsec VPN client.
@@ -513,6 +514,8 @@ expected to enforce.<h:br/><h:br/>
         </threat>
 
         <threat name="T.TSF_CONFIGURATION">
+		   <from base="bpp-mdm"/>
+		   <from base="bpp-mdf"/>
           <description> Configuring VPN tunnels is a complex and time-consuming process, and prone to errors if the
             interface for doing so is not well-specified or well-behaved. The inability or failure of an ignorant or careless administrator to configure certain aspects
             of the interface may also lead to the incorrect specification of the desired communications policy or use
@@ -538,6 +541,10 @@ expected to enforce.<h:br/><h:br/>
         </threat>
 
         <threat name="T.USER_DATA_REUSE">
+		   <from base="bpp-mdm"/>
+		   <from base="bpp-mdf"/>
+		   <from base="bpp-gpos"/>
+
           <description>Data traversing the TOE could inadvertently be sent to a different user as a consequence of a poorly-designed TOE; since these data may be
             sensitive, this may cause a compromise that is unacceptable. The specific threat that must be
             addressed concerns user data that is retained by the TOE in the course of processing network traffic
@@ -569,6 +576,11 @@ expected to enforce.<h:br/><h:br/>
         </threat>
 
         <threat name="T.TSF_FAILURE">
+		   <from base="bpp-mdm"/>
+		   <from base="bpp-mdf"/>
+		   <from base="bpp-gpos"/>
+		   <from base="bpp-app"/>
+
           <description> Security mechanisms of the TOE generally build up from a primitive set of mechanisms (e.g.,
             memory management, privileged modes of process execution) to more complex sets of
             mechanisms. Failure of the primitive mechanisms could lead to a compromise in more complex
