@@ -2,7 +2,7 @@
 	
   <PPReference>
    <ReferenceTable>
-      <PPVersion>2.6</PPVersion>
+	   <PPVersion>2.6</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
       <PPPubDate>2025-01-31</PPPubDate>
       <Keywords>VPN, VPN Client</Keywords>
@@ -31,22 +31,16 @@
       <date>2022-03-31</date>
       <subject>Incorporation of TC feedback</subject>
     </entry>
-  </RevisionHistory>
-  <release-notes><h:h3>TDs Applied</h:h3></release-notes><RevisionHistory>
     <entry>
       <version>2.3</version>
       <date>2021-08-10</date>
       <subject>Support for MDF, Bluetooth updates</subject>
     </entry>
-  </RevisionHistory>
-  <RevisionHistory>
     <entry>
       <version>2.2</version>
       <date>2021-01-05</date>
       <subject>Update release</subject>
     </entry>
-  </RevisionHistory>
-  <RevisionHistory>
     <entry>
       <version>2.1</version>
       <date>2019-11-14</date>
@@ -55,7 +49,7 @@
   </RevisionHistory>
 
 
-  <include-pkg id="pkg-ssh">
+  <release-notes><h:h3>TDs Applied</h:h3></release-notes><include-pkg id="pkg-ssh">
     <git>
       <url>https://github.com/commoncriteria/ssh</url>
       <branch>master</branch>
@@ -92,7 +86,7 @@
       <h:ul>
         <h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 4.3</h:li>
         <h:li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 3.3</h:li>
-        <h:li>Protection Profile for Application Software (App PP), Version 1.4</h:li>
+        <h:li>Protection Profile for Application Software (App PP), Version 2.0</h:li>
         <h:li>Protection Profile for Mobile Device Management (MDM PP), Version 4.0</h:li>
       </h:ul>
 
@@ -778,9 +772,7 @@ expected to enforce.<h:br/><h:br/>
             </description>
             
             <replace>
-              <!-- <xpath-specified xpath="*//cc:f-element[@id='fel-asym-gen']//cc:title"> -->
-               <xpath-specified xpath="*//cc:f-component[@cc-id='fcs_ckm.1']">
-                <f-element id="fel-asym-gen">
+              <xpath-specified xpath="*//cc:f-element[@id='fel-asym-gen']//cc:title">
                 <title>The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
                   <h:b><h:ul>
                     <h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature
@@ -798,7 +790,6 @@ expected to enforce.<h:br/><h:br/>
                     <selectable><h:b>no other key generation methods</h:b></selectable>
                   </selectables>.
                 </title>
-            </f-element>
               </xpath-specified>			
             </replace>
           </base-sfr-spec>
@@ -1870,12 +1861,12 @@ expected to enforce.<h:br/><h:br/>
     </base-pp>
 
     <!-- 5.3 App PP Security Functional requirements Direction -->
-    <base-pp id="bpp-app" name="Protection Profile for Application Software" product="Application" short="App" version="1.4">
+    <base-pp id="bpp-app" name="Protection Profile for Application Software" product="Application" short="App" version="2.0">
       <git>
 	<url>https://github.com/commoncriteria/application</url>
 	<branch>release-1.4</branch>
       </git>
-      <url>https://www.niap-ccevs.org/static_html/protection-profile/462/462/index.html</url>
+      <url>https://www.niap-ccevs.org/protectionprofiles/516</url>
 		
 		<sec-func-req-dir>
       In a PP-Configuration that includes the App PP, the VPN client is expected to rely on some of the security
@@ -5326,8 +5317,7 @@ that is logically distinct from other communication channels and provides assure
     <entry id="bibAppPP">
       <tag>App PP</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/static_html/protection-profile/462/462/index.html">
-			Protection Profile for Application Software</h:a>, Version 1.4, October 2021
+        <h:a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software, Version 2.0, June 16, 2025</h:a>
       </description>
     </entry>
 
