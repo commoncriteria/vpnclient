@@ -2,7 +2,7 @@
 	
   <PPReference>
    <ReferenceTable>
-	   <PPVersion>2.6</PPVersion>
+      <PPVersion>2.6</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
       <PPPubDate>2025-01-31</PPPubDate>
       <Keywords>VPN, VPN Client</Keywords>
@@ -31,16 +31,22 @@
       <date>2022-03-31</date>
       <subject>Incorporation of TC feedback</subject>
     </entry>
+  </RevisionHistory>
+  <release-notes><h:h3>TDs Applied</h:h3></release-notes><RevisionHistory>
     <entry>
       <version>2.3</version>
       <date>2021-08-10</date>
       <subject>Support for MDF, Bluetooth updates</subject>
     </entry>
+  </RevisionHistory>
+  <RevisionHistory>
     <entry>
       <version>2.2</version>
       <date>2021-01-05</date>
       <subject>Update release</subject>
     </entry>
+  </RevisionHistory>
+  <RevisionHistory>
     <entry>
       <version>2.1</version>
       <date>2019-11-14</date>
@@ -49,7 +55,7 @@
   </RevisionHistory>
 
 
-  <release-notes><h:h3>TDs Applied</h:h3></release-notes><include-pkg id="pkg-ssh">
+  <include-pkg id="pkg-ssh">
     <git>
       <url>https://github.com/commoncriteria/ssh</url>
       <branch>master</branch>
@@ -86,7 +92,7 @@
       <h:ul>
         <h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 4.3</h:li>
         <h:li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 3.3</h:li>
-        <h:li>Protection Profile for Application Software (App PP), Version 2.0</h:li>
+        <h:li>Protection Profile for Application Software (App PP), Version 1.4</h:li>
         <h:li>Protection Profile for Mobile Device Management (MDM PP), Version 4.0</h:li>
       </h:ul>
 
@@ -1861,12 +1867,12 @@ expected to enforce.<h:br/><h:br/>
     </base-pp>
 
     <!-- 5.3 App PP Security Functional requirements Direction -->
-    <base-pp id="bpp-app" name="Protection Profile for Application Software" product="Application" short="App" version="2.0">
+    <base-pp id="bpp-app" name="Protection Profile for Application Software" product="Application" short="App" version="1.4">
       <git>
 	<url>https://github.com/commoncriteria/application</url>
 	<branch>release-1.4</branch>
       </git>
-      <url>https://www.niap-ccevs.org/protectionprofiles/516</url>
+      <url>https://www.niap-ccevs.org/static_html/protection-profile/462/462/index.html</url>
 		
 		<sec-func-req-dir>
       In a PP-Configuration that includes the App PP, the VPN client is expected to rely on some of the security
@@ -3168,7 +3174,7 @@ that is logically distinct from other communication channels and provides assure
 				</Tests>
 			</aactivity>
 		  </f-element>
-		  <audit-event table="atref-mandatory"/>
+		  <audit-event/>
 		</f-component>
     
 	      <!-- 5.5.1.2 FCS_IPSEC_EXT.1 IPsec  -->	
@@ -4041,17 +4047,17 @@ that is logically distinct from other communication channels and provides assure
 		</Tests>
             </aactivity>
           </f-element>
-          <audit-event table="atref-mandatory">
+          <audit-event>
 		  <audit-event-descr>Decisions to DISCARD or BYPASS network packets processed by the TOE.</audit-event-descr>
 		  <audit-event-info>Presumed identity of source subject.</audit-event-info>
 		  <audit-event-info>The entry in the SPD that applied to the decision.</audit-event-info>
 	  </audit-event>
-          <audit-event table="atref-mandatory">
+          <audit-event>
 		  <audit-event-descr>Failure to establish an IPsec SA.</audit-event-descr>
 		  <audit-event-info>Identity of destination subject.</audit-event-info>
 		  <audit-event-info>Reason for failure.</audit-event-info>
 	  </audit-event>
-          <audit-event table="atref-mandatory">
+          <audit-event>
 		  <audit-event-descr>Establishment/Termination of an IPsec SA.</audit-event-descr>
 		  <audit-event-info>Identity of destination subject.</audit-event-info>
 		  <audit-event-info>Transport layer protocol, if applicable.</audit-event-info>
@@ -4102,7 +4108,7 @@ that is logically distinct from other communication channels and provides assure
               <Tests>There are no test EAs for this requirement.<h:br/><h:br/></Tests>
             </aactivity>
           </f-element>
-          <audit-event table="atref-mandatory"/>
+          <audit-event/>
         </f-component>
       </section>  <!-- FDP -->
 
@@ -4161,7 +4167,7 @@ that is logically distinct from other communication channels and provides assure
               </Tests>
             </aactivity>
           </f-element>
-          <audit-event table="atref-mandatory">
+          <audit-event>
 		  <audit-event-descr>Success or failure of management function.</audit-event-descr>
 	    <audit-event-info>No additional information.</audit-event-info>
  	  </audit-event>
@@ -4254,7 +4260,7 @@ that is logically distinct from other communication channels and provides assure
               </Tests>
             </aactivity>
           </f-element>
-          <audit-event table="atref-mandatory"/>
+          <audit-event/>
         </f-component>
         
                 
@@ -4378,7 +4384,7 @@ that is logically distinct from other communication channels and provides assure
             </aactivity>
             
           </f-element>
-          <audit-event table="atref-optional"/>
+          <audit-event/>
         </f-component>
       </section>
       
@@ -4431,7 +4437,7 @@ that is logically distinct from other communication channels and provides assure
         </f-element>
          
         
-        <audit-event table="atref-optional"/>
+        <audit-event/>
         </f-component>
       </section>
       
@@ -5157,7 +5163,7 @@ that is logically distinct from other communication channels and provides assure
 	        </Tests>
 	      </aactivity>
 	    </f-element>
-	    <audit-event table="atref-impl-dep"/>
+	    <audit-event/>
 	  </f-component>
 	  
 	  </section>
@@ -5317,7 +5323,8 @@ that is logically distinct from other communication channels and provides assure
     <entry id="bibAppPP">
       <tag>App PP</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software, Version 2.0, June 16, 2025</h:a>
+        <h:a href="https://www.niap-ccevs.org/static_html/protection-profile/462/462/index.html">
+			Protection Profile for Application Software</h:a>, Version 1.4, October 2021
       </description>
     </entry>
 
