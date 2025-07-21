@@ -3186,7 +3186,7 @@ that is logically distinct from other communication channels and provides assure
 				</Tests>
 			</aactivity>
 		  </f-element>
-		  <audit-event/>
+		  <audit-event table="atref-mandatory"/>
 		</f-component>
     
 	      <!-- 5.5.1.2 FCS_IPSEC_EXT.1 IPsec  -->	
@@ -4059,17 +4059,17 @@ that is logically distinct from other communication channels and provides assure
 		</Tests>
             </aactivity>
           </f-element>
-          <audit-event>
+          <audit-event table="atref-mandatory">
 		  <audit-event-descr>Decisions to DISCARD or BYPASS network packets processed by the TOE.</audit-event-descr>
 		  <audit-event-info>Presumed identity of source subject.</audit-event-info>
 		  <audit-event-info>The entry in the SPD that applied to the decision.</audit-event-info>
 	  </audit-event>
-          <audit-event>
+          <audit-event table="atref-mandatory">
 		  <audit-event-descr>Failure to establish an IPsec SA.</audit-event-descr>
 		  <audit-event-info>Identity of destination subject.</audit-event-info>
 		  <audit-event-info>Reason for failure.</audit-event-info>
 	  </audit-event>
-          <audit-event>
+          <audit-event table="atref-mandatory">
 		  <audit-event-descr>Establishment/Termination of an IPsec SA.</audit-event-descr>
 		  <audit-event-info>Identity of destination subject.</audit-event-info>
 		  <audit-event-info>Transport layer protocol, if applicable.</audit-event-info>
@@ -4120,7 +4120,7 @@ that is logically distinct from other communication channels and provides assure
               <Tests>There are no test EAs for this requirement.<h:br/><h:br/></Tests>
             </aactivity>
           </f-element>
-          <audit-event/>
+          <audit-event table="atref-mandatory"/>
         </f-component>
       </section>  <!-- FDP -->
 
@@ -4179,7 +4179,7 @@ that is logically distinct from other communication channels and provides assure
               </Tests>
             </aactivity>
           </f-element>
-          <audit-event>
+          <audit-event table="atref-mandatory">
 		  <audit-event-descr>Success or failure of management function.</audit-event-descr>
 	    <audit-event-info>No additional information.</audit-event-info>
  	  </audit-event>
@@ -4272,7 +4272,7 @@ that is logically distinct from other communication channels and provides assure
               </Tests>
             </aactivity>
           </f-element>
-          <audit-event/>
+          <audit-event table="atref-mandatory"/>
         </f-component>
         
                 
@@ -4310,7 +4310,7 @@ that is logically distinct from other communication channels and provides assure
        <no-tests/>
             </aactivity>
           </f-element>
-          <audit-event/>
+          <audit-event table="atref-mandatory"/>
         </f-component>
       </section>   <!-- FPT -->
     </man-sfrs>
@@ -4396,7 +4396,7 @@ that is logically distinct from other communication channels and provides assure
             </aactivity>
             
           </f-element>
-          <audit-event/>
+          <audit-event table="atref-optional"/>
         </f-component>
       </section>
       
@@ -4449,7 +4449,7 @@ that is logically distinct from other communication channels and provides assure
         </f-element>
          
         
-        <audit-event/>
+        <audit-event table="atref-optional"/>
         </f-component>
       </section>
       
@@ -4567,7 +4567,7 @@ that is logically distinct from other communication channels and provides assure
             </aactivity>
           </f-element>
           
-          <audit-event/>
+          <audit-event table="sel-based"/>
         </f-component>
        
       </section>
@@ -4667,7 +4667,7 @@ that is logically distinct from other communication channels and provides assure
           </f-element>
             
             
-		 <audit-event/>
+		 <audit-event table="sel-based"/>
         </f-component>
         <f-component cc-id="fia_psk_ext.2" id="fia-psk-ext-2" name="Generated Pre-Shared Keys">
           <depends on-sel="pskgen"/>
@@ -4714,7 +4714,7 @@ that is logically distinct from other communication channels and provides assure
               </Tests>
             </aactivity>
           </f-element>
-          <audit-event/>
+          <audit-event table="sel-based"/>
         </f-component>
         
         <f-component cc-id="fia_psk_ext.3" id="fia-psk-ext-3" name="Password-Based Pre-Shared Keys">
@@ -4868,7 +4868,7 @@ that is logically distinct from other communication channels and provides assure
               </Tests>
             </aactivity>
           </f-element>
-          <audit-event/>
+          <audit-event table="sel-based"/>
         </f-component>
         
         <f-component cc-id="fia_psk_ext.4" id="fia-psk-ext-4" name="HMAC-Based One-Time Password Pre-shared Keys Support">
@@ -4917,7 +4917,7 @@ that is logically distinct from other communication channels and provides assure
               </Tests>
             </aactivity>
           </f-element>
-          <audit-event/>
+          <audit-event table="sel-based"/>
             
         </f-component>
         
@@ -4965,7 +4965,7 @@ that is logically distinct from other communication channels and provides assure
               </Tests>
             </aactivity>
           </f-element>
-          <audit-event/>
+          <audit-event table="sel-based"/>
         </f-component>
      
         
@@ -5039,7 +5039,7 @@ that is logically distinct from other communication channels and provides assure
               </Tests>
             </aactivity>
           </f-element>
-	  <audit-event>
+	  <audit-event table="objective">
 		  <audit-event-descr>All modifications to the audit configuration
 			that occur while the audit collection functions are operating.</audit-event-descr> 
 	    <audit-event-info>No additional information.</audit-event-info>
@@ -5175,7 +5175,7 @@ that is logically distinct from other communication channels and provides assure
 	        </Tests>
 	      </aactivity>
 	    </f-element>
-	    <audit-event/>
+	    <audit-event table="atref-impl-dep"/>
 	  </f-component>
 	  
 	  </section>
