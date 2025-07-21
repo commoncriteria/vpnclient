@@ -790,8 +790,6 @@ expected to enforce.<h:br/><h:br/>
             
             <replace>
               <xpath-specified xpath="*//cc:f-element[@id='fel-asym-gen']//cc:title">
-																			  
-											 
                 <title>The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
                   <h:b><h:ul>
                     <h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature
@@ -809,7 +807,6 @@ expected to enforce.<h:br/><h:br/>
                     <selectable><h:b>no other key generation methods</h:b></selectable>
                   </selectables>.
                 </title>
-						
               </xpath-specified>			
             </replace>
           </base-sfr-spec>
@@ -3189,7 +3186,7 @@ that is logically distinct from other communication channels and provides assure
 				</Tests>
 			</aactivity>
 		  </f-element>
-		  <audit-event table="atref-mandatory"/>
+		  <audit-event/>
 		</f-component>
     
 	      <!-- 5.5.1.2 FCS_IPSEC_EXT.1 IPsec  -->	
@@ -4062,17 +4059,17 @@ that is logically distinct from other communication channels and provides assure
 		</Tests>
             </aactivity>
           </f-element>
-          <audit-event table="atref-mandatory">
+          <audit-event>
 		  <audit-event-descr>Decisions to DISCARD or BYPASS network packets processed by the TOE.</audit-event-descr>
 		  <audit-event-info>Presumed identity of source subject.</audit-event-info>
 		  <audit-event-info>The entry in the SPD that applied to the decision.</audit-event-info>
 	  </audit-event>
-          <audit-event table="atref-mandatory">
+          <audit-event>
 		  <audit-event-descr>Failure to establish an IPsec SA.</audit-event-descr>
 		  <audit-event-info>Identity of destination subject.</audit-event-info>
 		  <audit-event-info>Reason for failure.</audit-event-info>
 	  </audit-event>
-          <audit-event table="atref-mandatory">
+          <audit-event>
 		  <audit-event-descr>Establishment/Termination of an IPsec SA.</audit-event-descr>
 		  <audit-event-info>Identity of destination subject.</audit-event-info>
 		  <audit-event-info>Transport layer protocol, if applicable.</audit-event-info>
@@ -4123,7 +4120,7 @@ that is logically distinct from other communication channels and provides assure
               <Tests>There are no test EAs for this requirement.<h:br/><h:br/></Tests>
             </aactivity>
           </f-element>
-          <audit-event table="atref-mandatory"/>
+          <audit-event/>
         </f-component>
       </section>  <!-- FDP -->
 
@@ -4182,7 +4179,7 @@ that is logically distinct from other communication channels and provides assure
               </Tests>
             </aactivity>
           </f-element>
-          <audit-event table="atref-mandatory">
+          <audit-event>
 		  <audit-event-descr>Success or failure of management function.</audit-event-descr>
 	    <audit-event-info>No additional information.</audit-event-info>
  	  </audit-event>
@@ -4275,7 +4272,7 @@ that is logically distinct from other communication channels and provides assure
               </Tests>
             </aactivity>
           </f-element>
-          <audit-event table="atref-mandatory"/>
+          <audit-event/>
         </f-component>
         
                 
@@ -4317,138 +4314,6 @@ that is logically distinct from other communication channels and provides assure
         </f-component>
       </section>   <!-- FPT -->
     </man-sfrs>
-	
-	<mod-sars>
-      <h:p>
-        The PP identifies the Security Assurance Requirements (SARs) to frame the extent to which 
-		the evaluator assesses the documentation applicable for the evaluation and performs independent testing.
-        <h:p/>
-        This section lists the set of SARs from CC part 3 that are required in evaluations against this
-		PP. Individual Evaluation Activities (EAs) to be performed are specified both
-		in
-        <xref to="req"/>
-        as well as in this section. These SARs were chosen based on the notion that a hypothetical attacker of the TOE lacks administrative privilege
-    	on its platform but otherwise has persistent access to the TOE itself and the sophistication to interact with the platform in a way that they can
-    	attempt to access stored data without authorization or to run tools that automate more sophisticated malicious activity.
-        <h:p/>
-        The general model for evaluation of TOEs against STs written to conform to this PP is as follows:
-        <h:p/>
-        After the ST has been approved for evaluation, the  CCTL will obtain the TOE, supporting
-		environmental IT, and the administrative/user guides for the TOE. The CCTL is expected to
-		perform actions mandated by the Common Evaluation Methodology (CEM) for the ASE and
-		ALC SARs. The CCTL also performs the evaluation activities contained within
-        <xref to="req"/>
-        ,
-		which are intended to be an interpretation of the other CEM assurance requirements as they
-		apply to the specific technology instantiated in the TOE. The evaluation activities that are
-		captured in
-        <xref to="req"/>
-        also provide clarification as to what the developer needs
-		to provide to demonstrate the TOE is compliant with the PP. The results of these activities will be documented
-	    and presented (along with the administrative guidance used) for validation.
-      </h:p>
-      <section title="Class ADV: Development" id="adv">
-        The information about the TOE
-        is contained in the guidance documentation available to the end user as
-        well as the TSS portion of the ST. The TOE developer 
-        must concur with the description of the product that is contained in the TSS as it relates 
-        to the functional requirements. The evaluation activities contained in
-        <xref to="SFRs"/>
-        should provide the ST authors with sufficient information to 
-        determine the appropriate content for the TSS section.
-        <component cc-id="adv_fsp.1" name="Basic Functional Specification (ADV_FSP.1)">
-          The functional
-			specification describes the TSFIs. It is not necessary
-			to have a formal or complete specification of these interfaces. Additionally, because
-            TOEs conforming to this PP will necessarily have interfaces to the
-			Operational Environment that are not directly invocable by TOE users, 
-			there is little point specifying that such interfaces be described in and of themselves 
-			since only indirect testing of such interfaces may be possible. For this PP, the 
-			activities for this family should focus on understanding the interfaces presented in the 
-			TSS in response to the functional requirements and the interfaces 
-			presented in the AGD documentation. No additional “functional specification” documentation 
-			is necessary to satisfy the evaluation activities specified. The interfaces that need to be 
-			evaluated are characterized through the information needed to perform the assurance 
-			activities listed, rather than as an independent, abstract list.
-          <element type="D">
-            <title>
-              The developer shall provide a functional specification.
-            </title>
-            <aactivity/>
-          </element>
-          <element type="D">
-            <title>
-              The developer shall provide a tracing from the functional specification to the
-					SFRs.
-            </title>
-            <note role="application">
-              As indicated in the introduction to this section, the
-					functional specification is comprised of the information contained in the AGD_OPE and
-					AGD_PRE documentation. The developer may reference a website accessible to application
-					developers and the evaluator. The evaluation activities in the functional requirements
-					point to evidence that should exist in the documentation and TSS
-					section; since these are directly associated with the SFRs, the tracing in element
-					ADV_FSP.1.2D is implicitly already done and no additional documentation is
-					necessary.
-            </note>
-            <aactivity/>
-          </element>
-          <element type="C">
-            <title>
-              The functional specification shall describe the purpose and method of use for
-					each SFR-enforcing and SFR-supporting TSFI.
-            </title>
-            <aactivity/>
-          </element>
-          <element type="C">
-            <title>
-              The functional specification shall identify all parameters associated with each
-					SFR-enforcing and SFR-supporting TSFI.
-            </title>
-            <aactivity/>
-          </element>
-          <element type="C">
-            <title>
-              The functional specification shall provide rationale for the implicit
-					categorization of interfaces as SFR-non-interfering.
-            </title>
-            <aactivity/>
-          </element>
-          <element type="C">
-            <title>
-              The tracing shall demonstrate that the SFRs trace to TSFIs in the functional specification.
-            </title>
-            <aactivity/>
-          </element>
-          <element type="E">
-            <title>
-              The evaluator shall confirm that the information provided meets all requirements
-					for content and presentation of evidence.
-            </title>
-            <aactivity/>
-          </element>
-          <element type="E">
-            <title>
-              The evaluator shall determine that the functional specification is an accurate
-					and complete instantiation of the SFRs.
-            </title>
-            <aactivity>
-              There are no specific evaluation activities associated with these SARs, except
-					ensuring the information is provided. The functional specification documentation is
-					provided to support the evaluation activities described in
-              <xref to="SFRs"/>
-              , and
-					other activities described for AGD, ATE, and AVA SARs. The requirements on the content
-					of the functional specification information is implicitly assessed by virtue of the
-					other evaluation activities being performed; if the evaluator is unable to perform an
-					activity because there is insufficient interface information, then an adequate
-					functional specification has not been provided.
-            </aactivity>
-          </element>
-        </component>
-      </section>
-    </mod-sars>
- 
 
     <!-- <mod-sars> -->
      <!-- 5.7 TOE Security Assurance Requirements -->
@@ -4531,7 +4396,7 @@ that is logically distinct from other communication channels and provides assure
             </aactivity>
             
           </f-element>
-          <audit-event table="atref-optional"/>
+          <audit-event/>
         </f-component>
       </section>
       
@@ -4584,7 +4449,7 @@ that is logically distinct from other communication channels and provides assure
         </f-element>
          
         
-        <audit-event table="atref-optional"/>
+        <audit-event/>
         </f-component>
       </section>
       
@@ -5310,7 +5175,7 @@ that is logically distinct from other communication channels and provides assure
 	        </Tests>
 	      </aactivity>
 	    </f-element>
-	    <audit-event table="atref-impl-dep"/>
+	    <audit-event/>
 	  </f-component>
 	  
 	  </section>
