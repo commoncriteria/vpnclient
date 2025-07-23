@@ -654,7 +654,7 @@ function showTarget(id){
     </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.3.1.2<span>Trusted Path/Channels</span></a><a href="#addsfr-bpp-app" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#app-audit-table" style="text-indent:30px">5.3.2.1<span>Auditable Events for App PP Additional SFRs</span></a><a href="#ap-a-fcs" style="text-indent:30px">5.3.2.2<span>Cryptographic Support (FCS)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.4<span>
     Protection Profile for Protection Profile for Mobile Device Management
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.4.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.4.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.4.1.2<span>Protection of the TSF (FPT)</span></a><a href="#@id" style="text-indent:30px">5.4.1.3<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.4.2<span> Additional SFRs</span></a><a href="#man-sfrs" style="text-indent:10px">5.5<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.5.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fcs" style="text-indent:20px">5.5.2<span>Cryptographic Support (FCS)</span></a><a href="#m-fdp" style="text-indent:20px">5.5.3<span>User Data Protection (FDP)</span></a><a href="#m-fmt" style="text-indent:20px">5.5.4<span>Security Management (FMT)</span></a><a href="#m-fpt" style="text-indent:20px">5.5.5<span>Protection of the TSF (FPT)</span></a><a href="#mod-sars" style="text-indent:10px">5.6<span>TOE Security Assurance Requirements</span></a><a href="#adv" style="text-indent:30px">5.6.0.1<span>Class ADV: Development</span></a><a href="#agd" style="text-indent:30px">5.6.0.2<span>Class AGD: Guidance Documentation</span></a><a href="#obj-req-map" style="text-indent:10px">5.7<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-gpos" style="text-indent:10px">6.1<span>
+    </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.4.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.4.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.4.1.2<span>Protection of the TSF (FPT)</span></a><a href="#@id" style="text-indent:30px">5.4.1.3<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.4.2<span> Additional SFRs</span></a><a href="#man-sfrs" style="text-indent:10px">5.5<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.5.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fcs" style="text-indent:20px">5.5.2<span>Cryptographic Support (FCS)</span></a><a href="#m-fdp" style="text-indent:20px">5.5.3<span>User Data Protection (FDP)</span></a><a href="#m-fmt" style="text-indent:20px">5.5.4<span>Security Management (FMT)</span></a><a href="#m-fpt" style="text-indent:20px">5.5.5<span>Protection of the TSF (FPT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.6<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-sars" style="text-indent:10px">5.7<span>TOE Security Assurance Requirements</span></a><a href="#adv" style="text-indent:20px">5.7.1<span>Class ADV: Development</span></a><a href="#agd" style="text-indent:20px">5.7.2<span>Class AGD: Guidance Documentation</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-gpos" style="text-indent:10px">6.1<span>
     Protection Profile for Protection Profile for General Purpose Operating System</span></a><a href="#contoe-bpp-gpos" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-bpp-gpos" style="text-indent:20px">6.1.2<span>
@@ -2406,7 +2406,51 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 
         
          
-    <h2 id="mod-sars" class="indexable" data-level="2">5.6 TOE Security Assurance Requirements</h2>
+    <h2 id="obj-req-map" class="indexable" data-level="2">5.6 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
+    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">6</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="10"><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_​ACCESS</a></td><td><a href="#FTP_ITC.1">FTP_ITC.1</a> (additional to GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by defining the use of IPsec for protecting data in transit.</td></tr>
+<tr><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the
+            <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s implementation of IPsec to include requirements for how the remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway or
+            peer is authenticated.</td></tr>
+<tr><td><a href="#FIA_BMA_EXT.1">FIA_BMA_EXT.1</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally defining the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s support for a platform-based biometric mechanism to use as an authentication mechanism.</td></tr>
+<tr><td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally enforcing a multifactor authentication requirement on an IPsec connection.</td></tr>
+<tr><td><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally implementing EAP-TLS or EAP-TTLS as a mechanism for authentication.</td></tr>
+<tr><td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
+            requiring support for pre-shared keys as an alternate authentication method for IPsec.</td></tr>
+<tr><td><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally specifying whether the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generates its own pre-shared keys used for authentication or accept them from an external source.</td></tr>
+<tr><td><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally defining the composition and use of password-based pre-shared keys used for authentication.</td></tr>
+<tr><td><a href="#FIA_PSK_EXT.4">FIA_PSK_EXT.4</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
+            defining HOTP as an authentication mechanism.</td></tr>
+<tr><td><a href="#FIA_PSK_EXT.5">FIA_PSK_EXT.5</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
+            defining TOTP as an authentication mechanism.</td></tr>
+<tr class="major-row"><td rowspan="5"><a href="#T.TSF_CONFIGURATION">T.TSF_​CONFIGURATION</a></td><td><a href="#FIA_X509_EXT.4">FIA_X509_EXT.4</a> (additional to GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by providing the ability to verify the integrity of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using X.509 certificates.</td></tr>
+<tr><td><a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+            to implement certain administratively-configurable functions.</td></tr>
+<tr><td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+            to execute self-tests that demonstrate that its integrity is maintained.</td></tr>
+<tr><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
+            requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to generate audit data for its behavior.</td></tr>
+<tr><td><a href="#FAU_SEL.1/VPN">FAU_SEL.1/VPN</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
+            requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to allow for the configuration of what behavior is audited.</td></tr>
+<tr class="major-row"><td rowspan="6"><a href="#T.USER_DATA_REUSE">T.USER_​DATA_​REUSE</a></td><td><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a> (additional to GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+            to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>’ key storage.</td></tr>
+<tr><td><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a> (additional to MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
+            requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
+            established IPsec tunnel.</td></tr>
+<tr><td><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a> (additional to App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+            or its platform to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>' key storage.</td></tr>
+<tr><td><a href="#FCS_CKM.6">FCS_CKM.6</a> (additional to App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+            or its platform to zeroize key data when no longer needed.</td></tr>
+<tr><td><a href="#FDP_RIP.2">FDP_RIP.2</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to ensure that
+            residual data is purged from the system.</td></tr>
+<tr><td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
+            requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.</td></tr>
+<tr class="major-row"><td rowspan="3"><a href="#T.TSF_FAILURE">T.TSF_​FAILURE</a></td><td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+            to execute self-tests that demonstrate that its integrity is maintained.</td></tr>
+<tr><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
+            requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to generate audit data for its behavior.</td></tr>
+<tr><td><a href="#FAU_SEL.1/VPN">FAU_SEL.1/VPN</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
+            requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to allow for the configuration of what behavior is audited.</td></tr>
+</table></p><h2 id="mod-sars" class="indexable" data-level="2">5.7 TOE Security Assurance Requirements</h2>
 			The following section describes the <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> that must be satisfied by any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 			These <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> must be claimed regardless of which <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> is used to define the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
         		
@@ -2415,7 +2459,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
      
 		
 		
-		<h4 id="adv" class="indexable" data-level="4">5.6.0.1 Class ADV: Development</h4>The information about the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is contained in the guidance documentation
+		<h3 id="adv" class="indexable" data-level="3">5.7.1 Class ADV: Development</h3>The information about the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is contained in the guidance documentation
 			available to the end user as well as the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> portion of the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> developer must concur with the description
 			of the product that is contained in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> as it relates to the functional requirements. The Evaluation Activities
 			contained in <a href="#SFRs" class="dynref" data-format=""></a> should provide the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> Authors with
@@ -2463,7 +2507,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 						and complete instantiation of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</div></div></div>
 		   
 		
-		<h4 id="agd" class="indexable" data-level="4">5.6.0.2 Class AGD: Guidance Documentation</h4>The guidance documents will be
+		<h3 id="agd" class="indexable" data-level="3">5.7.2 Class AGD: Guidance Documentation</h3>The guidance documents will be
 			provided with the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. Guidance must include a description of how the <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr>
 			personnel verifies that the Operational Environment can fulfill its role for the security
 			functionality. The documentation should be in an informal style and readable by the <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr>
@@ -2542,51 +2586,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		
 		
   
-    <h2 id="obj-req-map" class="indexable" data-level="2">5.7 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
-    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">6</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="10"><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_​ACCESS</a></td><td><a href="#FTP_ITC.1">FTP_ITC.1</a> (additional to GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by defining the use of IPsec for protecting data in transit.</td></tr>
-<tr><td><a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the
-            <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s implementation of IPsec to include requirements for how the remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway or
-            peer is authenticated.</td></tr>
-<tr><td><a href="#FIA_BMA_EXT.1">FIA_BMA_EXT.1</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally defining the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s support for a platform-based biometric mechanism to use as an authentication mechanism.</td></tr>
-<tr><td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally enforcing a multifactor authentication requirement on an IPsec connection.</td></tr>
-<tr><td><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally implementing EAP-TLS or EAP-TTLS as a mechanism for authentication.</td></tr>
-<tr><td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
-            requiring support for pre-shared keys as an alternate authentication method for IPsec.</td></tr>
-<tr><td><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally specifying whether the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generates its own pre-shared keys used for authentication or accept them from an external source.</td></tr>
-<tr><td><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally defining the composition and use of password-based pre-shared keys used for authentication.</td></tr>
-<tr><td><a href="#FIA_PSK_EXT.4">FIA_PSK_EXT.4</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
-            defining HOTP as an authentication mechanism.</td></tr>
-<tr><td><a href="#FIA_PSK_EXT.5">FIA_PSK_EXT.5</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
-            defining TOTP as an authentication mechanism.</td></tr>
-<tr class="major-row"><td rowspan="5"><a href="#T.TSF_CONFIGURATION">T.TSF_​CONFIGURATION</a></td><td><a href="#FIA_X509_EXT.4">FIA_X509_EXT.4</a> (additional to GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by providing the ability to verify the integrity of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using X.509 certificates.</td></tr>
-<tr><td><a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to implement certain administratively-configurable functions.</td></tr>
-<tr><td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to execute self-tests that demonstrate that its integrity is maintained.</td></tr>
-<tr><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
-            requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to generate audit data for its behavior.</td></tr>
-<tr><td><a href="#FAU_SEL.1/VPN">FAU_SEL.1/VPN</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
-            requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to allow for the configuration of what behavior is audited.</td></tr>
-<tr class="major-row"><td rowspan="6"><a href="#T.USER_DATA_REUSE">T.USER_​DATA_​REUSE</a></td><td><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a> (additional to GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>’ key storage.</td></tr>
-<tr><td><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a> (additional to MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
-            requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
-            established IPsec tunnel.</td></tr>
-<tr><td><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a> (additional to App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            or its platform to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>' key storage.</td></tr>
-<tr><td><a href="#FCS_CKM.6">FCS_CKM.6</a> (additional to App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            or its platform to zeroize key data when no longer needed.</td></tr>
-<tr><td><a href="#FDP_RIP.2">FDP_RIP.2</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to ensure that
-            residual data is purged from the system.</td></tr>
-<tr><td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
-            requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.</td></tr>
-<tr class="major-row"><td rowspan="3"><a href="#T.TSF_FAILURE">T.TSF_​FAILURE</a></td><td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to execute self-tests that demonstrate that its integrity is maintained.</td></tr>
-<tr><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
-            requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to generate audit data for its behavior.</td></tr>
-<tr><td><a href="#FAU_SEL.1/VPN">FAU_SEL.1/VPN</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
-            requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to allow for the configuration of what behavior is audited.</td></tr>
-</table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-bpp-gpos" class="indexable" data-level="2">6.1 
+    <h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-bpp-gpos" class="indexable" data-level="2">6.1 
     Protection Profile for Protection Profile for General Purpose Operating System</h2><h3 id="contoe-bpp-gpos" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type
       </h3>If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a 
