@@ -78,5 +78,7 @@
  Failed to find a reference to bibCEM.
  Failed to find a reference to SFRs.
  Failed to find a reference to SFRs.
+ Failed to find a reference to SFRs.
+ Failed to find a reference to bibCEM.
 * Warning: Since FCS_IPSEC_EXT.1.11 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
