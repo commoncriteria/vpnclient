@@ -886,6 +886,10 @@ expected to enforce.
           </ext-comp-def>
           <!-- FCS_CKM_EXT.2 Cryptographic Key Storage -->
           <f-component cc-id="fcs_ckm_ext.2" id="os-fcs-ckm-ext-2" name="Cryptographic Key Storage">
+            <consistency-rationale>
+              Storage of key data related to VPN functionality can be accomplished
+              using the same mechanism defined by FCS_STO_EXT.1 in the GPOS PP.
+            </consistency-rationale>
             <comp-lev>
               requires the TSF to securely store key data when not in use.
             </comp-lev>
@@ -898,7 +902,6 @@ expected to enforce.
             <dependencies>
               No dependencies.
             </dependencies>
-            <consistency-rationale/>
             <f-element id="os-fcs-ckm-ext-2e1">
               <title>
                 The
@@ -954,6 +957,10 @@ expected to enforce.
           </ext-comp-def>
           <!-- FIA_X509_EXT.4 X.509 Certificate Use and Management -->
           <f-component cc-id="fia_x509_ext.4" id="os-fia-x509-ext-4" name="X.509 Certificate Use and Management">
+            <consistency-rationale>
+              This SFR defines additional uses for X.509 certificate functionality that
+              do not conflict with those defined in the GPOS PP.
+            </consistency-rationale>
             <comp-lev>
               requires the TOE to perform X.509 certificate
               authentication and describes the behavior that is followed if the status of the certificate is unknown or
@@ -977,7 +984,6 @@ expected to enforce.
               <h:br/>
               FPT_TUD_EXT.1 Trusted Update
             </dependencies>
-            <consistency-rationale/>
             <f-element id="os-fia-x509-ext-4e1">
               <title>
                 The TSF shall use X.509v3 certificates as defined by RFC 5280 to support
@@ -1122,7 +1128,11 @@ expected to enforce.
         <section title="Trusted Path/Channels (FTP)" id="os-a-ftp">
           <!-- FTP_ITC.1 Inter-TSF Trusted Channel -->
           <f-component cc-id="ftp_itc.1" id="os-ftp-itc-1" name="Inter-TSF Trusted Channel">
-            <consistency-rationale/>
+            <consistency-rationale>
+              This SFR defines a trusted channel for IPsec, which is added
+              functionality that does not prevent the existing OS functions from
+              being performed.
+            </consistency-rationale>
             <f-element id="os-ftp-itc-1e1">
               <title>
                 The
@@ -1926,6 +1936,7 @@ expected to enforce.
           </ext-comp-def>
           <!-- FDP_VPN_EXT.1 Split Tunnel Prevention -->
           <f-component cc-id="fdp_vpn_ext.1" id="fdp-vpn-ext-1" name="Split Tunnel Prevention">
+            <consistency-rationale/>
             <comp-lev>
               requires the TSF to process all IP traffic through its VPN client
               functionality.
@@ -1942,7 +1953,6 @@ expected to enforce.
               </no-link>
               IPsec
             </dependencies>
-            <consistency-rationale/>
             <f-element id="fdp-vpn-ext-1e1">
               <title>
                 The TSF shall ensure that all IP traffic (other than IP traffic required to establish
@@ -2750,6 +2760,11 @@ expected to enforce.
         <section title="Cryptographic Support (FCS)" id="ap-a-fcs">
           <!-- FCS_CKM.6 Cryptographic Key Destruction -->
           <f-component cc-id="fcs_ckm.6" id="ap-fcs-ckm-6" name="Cryptographic Key Destruction">
+            <consistency-rationale>
+              This PP-Module adds a requirement for key destruction, which is new
+              functionality when compared to the Base-PP but does not interfere
+              with its existing security functions.
+            </consistency-rationale>
             <comp-lev>
               requires the TSF to destroy key data when no longer required.
             </comp-lev>
@@ -2762,7 +2777,6 @@ expected to enforce.
             <dependencies>
               No dependencies.
             </dependencies>
-            <consistency-rationale/>
             <f-element id="ap-fcs-ckm-6e1">
               <title>
                 The
@@ -2931,6 +2945,11 @@ expected to enforce.
           </f-component>
           <!-- FCS_CKM_EXT.2 Cryptographic Key Storage -->
           <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage">
+            <consistency-rationale>
+              This PP-Module adds a requirement for key storage, which is new
+              functionality when compared to the Base-PP but does not interfere
+              with its existing security functions.
+            </consistency-rationale>
             <comp-lev>
               requires the TSF to securely store key data when not in use.
             </comp-lev>
@@ -2943,7 +2962,6 @@ expected to enforce.
             <dependencies>
               No dependencies.
             </dependencies>
-            <consistency-rationale/>
             <f-element id="ap-fcs-ckm-ext-2e1">
               <title>
                 The
