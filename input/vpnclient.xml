@@ -876,13 +876,19 @@ expected to enforce.
       </modified-sfrs>
       <!-- 5.VPN client.2 Additional SFRs -->
       <additional-sfrs>
-        <section title="Cryptographic Support (FCS)">
-          <section id="gpos-audit-table" title="Auditable Events for GPOS PP Additional SFRs">
-            <audit-table id="gpos-additional" table="tab-gpos-additional" title="Auditable Events for GPOS PP Additional SFRs">
-            </audit-table>
-          </section>
+        <section id="gpos-audit-table" title="Auditable Events for GPOS PP Additional SFRs">
+          <audit-table id="gpos-additional" table="tab-gpos-additional" title="Auditable Events for GPOS PP Additional SFRs">
+          </audit-table>
+        </section>
+        <section title="Cryptographic Support (FCS)" id="os-a-fcs">
+          <ext-comp-def title="Cryptographic Key Management" fam-id="FCS_CKM_EXT">
+            <fam-behavior>
+              Components in this family describe requirements for key management functionality such as key
+		storage and destruction.
+            </fam-behavior>
+          </ext-comp-def>
           <!-- FCS_CKM_EXT.2 Cryptographic Key Storage -->
-          <f-component cc-id="fcs_ckm_ext.2" id="os-fcs-ckm-ext-2" title="Cryptographic Key Storage">
+          <f-component cc-id="fcs_ckm_ext.2" id="os-fcs-ckm-ext-2" name="Cryptographic Key Storage">
             <comp-lev>
               requires the TSF to securely store key data when not in use.
             </comp-lev>
@@ -942,13 +948,15 @@ expected to enforce.
             </f-element>
           </f-component>
         </section>
-        <section title="Identification and Authentication (FIA)">
-          <section id="gpos-audit-table" title="Auditable Events for GPOS PP Additional SFRs">
-            <audit-table id="gpos-additional" table="tab-gpos-additional" title="Auditable Events for GPOS PP Additional SFRs">
-            </audit-table>
-          </section>
+        <section title="Identification and Authentication (FIA)" id="os-a-fia">
+          <ext-comp-def title="X.509 Certificate Use and Management" fam-id="FIA_X509_EXT">
+            <fam-behavior>
+              Components in this family describe the requirements that pertain to IP traffic and information flow
+              through the VPN client.
+            </fam-behavior>
+          </ext-comp-def>
           <!-- FIA_X509_EXT.4 X.509 Certificate Use and Management -->
-          <f-component cc-id="fia_x509_ext.4" id="os-fia-x509-ext-4" title="X.509 Certificate Use and Management">
+          <f-component cc-id="fia_x509_ext.4" id="os-fia-x509-ext-4" name="X.509 Certificate Use and Management">
             <comp-lev>
               requires the TOE to perform X.509 certificate
               authentication and describes the behavior that is followed if the status of the certificate is unknown or
@@ -1114,13 +1122,9 @@ expected to enforce.
             </f-element>
           </f-component>
         </section>
-        <section title="Trusted Path/Channels (FTP)">
-          <section id="gpos-audit-table" title="Auditable Events for GPOS PP Additional SFRs">
-            <audit-table id="gpos-additional" table="tab-gpos-additional" title="Auditable Events for GPOS PP Additional SFRs">
-            </audit-table>
-          </section>
+        <section title="Trusted Path/Channels (FTP)" id="os-a-ftp">
           <!-- FTP_ITC.1 Inter-TSF Trusted Channel -->
-          <f-component cc-id="ftp_itc.1" id="os-ftp-itc-1" title="Inter-TSF Trusted Channel">
+          <f-component cc-id="ftp_itc.1" id="os-ftp-itc-1" name="Inter-TSF Trusted Channel">
             <consistency-rationale/>
             <f-element id="os-ftp-itc-1e1">
               <title>
@@ -1912,13 +1916,19 @@ expected to enforce.
       </modified-sfrs>
       <!-- 5.VPN client.2 Additional SFRs -->
       <additional-sfrs>
-        <section title="User Data Protection (FDP)">
-          <section id="mdf-audit-table" title="Auditable Events for MDF PP Additional SFRs">
-            <audit-table id="mdf-additional" table="tab-mdf-additional" title="Auditable Events for MDF PP Additional SFRs">
-            </audit-table>
-          </section>
+        <section id="mdf-audit-table" title="Auditable Events for MDF PP Additional SFRs">
+          <audit-table id="mdf-additional" table="tab-mdf-additional" title="Auditable Events for MDF PP Additional SFRs">
+          </audit-table>
+        </section>
+        <section title="User Data Protection (FDP)" id="ib-fdp">
+          <ext-comp-def title="Subset Information Flow Control" fam-id="FDP_VPN_EXT">
+            <fam-behavior>
+              Components in this family describe the requirements that pertain to IP traffic and information flow
+              through the VPN client.
+            </fam-behavior>
+          </ext-comp-def>
           <!-- FDP_VPN_EXT.1 Split Tunnel Prevention -->
-          <f-component cc-id="fdp_vpn_ext.1" id="fdp-vpn-ext-1" title="Split Tunnel Prevention">
+          <f-component cc-id="fdp_vpn_ext.1" id="fdp-vpn-ext-1" name="Split Tunnel Prevention">
             <comp-lev>
               requires the TSF to process all IP traffic through its VPN client
               functionality.
@@ -2736,13 +2746,13 @@ expected to enforce.
       </modified-sfrs>
       <!-- 5.VPN client.2 Additional SFRs -->
       <additional-sfrs>
-        <section title="Cryptographic Support (FCS)">
-          <section id="app-audit-table" title="Auditable Events for App PP Additional SFRs">
-            <audit-table id="app-additional" table="tab-app-additional" title="Auditable Events for App PP Additional SFRs">
-            </audit-table>
-          </section>
+        <section id="app-audit-table" title="Auditable Events for App PP Additional SFRs">
+          <audit-table id="app-additional" table="tab-app-additional" title="Auditable Events for App PP Additional SFRs">
+          </audit-table>
+        </section>
+        <section title="Cryptographic Support (FCS)" id="ap-a-fcs">
           <!-- FCS_CKM.6 Cryptographic Key Destruction -->
-          <f-component cc-id="fcs_ckm.6" id="ap-fcs-ckm-6" title="Cryptographic Key Destruction">
+          <f-component cc-id="fcs_ckm.6" id="ap-fcs-ckm-6" name="Cryptographic Key Destruction">
             <comp-lev>
               requires the TSF to destroy key data when no longer required.
             </comp-lev>
@@ -2923,7 +2933,7 @@ expected to enforce.
             </f-element>
           </f-component>
           <!-- FCS_CKM_EXT.2 Cryptographic Key Storage -->
-          <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" title="Cryptographic Key Storage">
+          <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage">
             <comp-lev>
               requires the TSF to securely store key data when not in use.
             </comp-lev>
