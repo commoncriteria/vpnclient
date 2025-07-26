@@ -524,7 +524,7 @@
          The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
         <h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4>
         <div class="comp" id="@id">
-            <h4>FCS_CKM.1: </h4>
+            <h4>FCS_CKM.1: Cryptographic Key Generation</h4>
             <span class="description"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that <abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> key generation with support for P-384 has been made mandatory in support of IPsec due to the mandated support for Diffie-Hellman (<abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr>) group 20 in FCS_IPSEC_EXT.1.8. 
                 <p></p>
                  The text of the requirement is replaced with: 
@@ -552,7 +552,7 @@
                 </i> <b> ] </b> . </span>
         </div>
         <div class="comp" id="@id">
-            <h4>FCS_CKM.2: </h4>
+            <h4>FCS_CKM.2: Cryptographic Key Establishment</h4>
             <span class="description"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that elliptic curve cryptography (<abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr>) key generation with support for P-384 has been made mandatory in support of IPsec due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in FCS_IPSEC_EXT.1.8. 
                 <p></p>
                  The text of the requirement is replaced with: 
@@ -591,7 +591,7 @@
             </tr>
         </table>
         <div class="comp" id="FCS_CKM_EXT.2">
-            <h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4>
+            <h4>FCS_CKM_EXT.2 </h4>
             <div class="element">
                 <div class="reqid" id="FCS_CKM_EXT.2.1">
                     <a href="#FCS_CKM_EXT.2.1" class="abbr">FCS_CKM_EXT.2.1</a>
@@ -617,7 +617,7 @@
             </tr>
         </table>
         <div class="comp" id="FIA_X509_EXT.4">
-            <h4>FIA_X509_EXT.4 X.509 Certificate Use and Management</h4>
+            <h4>FIA_X509_EXT.4 </h4>
             <div class="element">
                 <div class="reqid" id="FIA_X509_EXT.4.1">
                     <a href="#FIA_X509_EXT.4.1" class="abbr">FIA_X509_EXT.4.1</a>
@@ -659,7 +659,7 @@
             </tr>
         </table>
         <div class="comp" id="FTP_ITC.1">
-            <h4>FTP_ITC.1 Inter-TSF Trusted Channel</h4>
+            <h4>FTP_ITC.1 </h4>
             <div class="element">
                 <div class="reqid" id="FTP_ITC.1.1">
                     <a href="#FTP_ITC.1.1" class="abbr">FTP_ITC.1.1</a>
@@ -709,7 +709,7 @@
          The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
         <h4 id="@id" class="indexable" data-level="4">5.2.1.1 Trusted Path/Channels (FTP)</h4>
         <div class="comp" id="@id">
-            <h4>FCS_CKM.1: </h4>
+            <h4>FCS_CKM.1: Cryptographic Key Generation</h4>
             <span class="description">
                 <p>
                      This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that <abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> key generation with support for P-384 has been made mandatory in support of IPsec due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in FCS_IPSEC_EXT.1.8. Curve25519 schemes remain selectable for their potential use in satisfying FDP_DAR_EXT.2.2 in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>; these schemes are not used in support of IPsec. RSA support remains present as a selection since it may be used by parts of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are not specifically related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality. 
@@ -741,7 +741,7 @@
                 </i> ]. </span>
         </div>
         <div class="comp" id="@id">
-            <h4>FCS_CKM.2/UNLOCKED: </h4>
+            <h4>FCS_CKM.2/UNLOCKED: Cryptographic Key Establishment</h4>
             <span class="description">
                 <p>
                      This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> differs from its definition in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by moving elliptic curve-based key establishment schemes from selectable to mandatory, due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in FCS_IPSEC_EXT.1.8. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not require the use of RSA for any function but it is present in the selection in case other MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functions require its use. 
@@ -778,7 +778,7 @@
                 </i> ]. </span>
         </div>
         <div class="comp" id="@id">
-            <h4>FDP_IFC_EXT.1: </h4>
+            <h4>FDP_IFC_EXT.1: Subset Information Flow Control</h4>
             <span class="description">
                 <p>
                      This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is identical to its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> except that the selection item that requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to implement its own <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is always selected when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s conformance claim includes this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
@@ -795,7 +795,7 @@
                  ] with the exception of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic needed to manage the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection, and [ <b> selection: </b> <i> [ <b> assignment: </b> traffic needed for correct functioning of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>], no other traffic </i> ] when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> is enabled. </span>
         </div>
         <div class="comp" id="@id">
-            <h4>FTP_ITC_EXT.1: </h4>
+            <h4>FTP_ITC_EXT.1: Trusted Channel Communication</h4>
             <span class="description">
                 <p>
                      This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is identical to what is defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> except that support for IPsec is mandated. Additionally, since the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requires &lsquo;at least one of&rsquo; the selected protocols which previously included IPsec, &lsquo;no other protocols&rsquo; is now available as an option in the selection. 
@@ -846,7 +846,7 @@
             </tr>
         </table>
         <div class="comp" id="FDP_VPN_EXT.1">
-            <h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4>
+            <h4>FDP_VPN_EXT.1 </h4>
             <div class="element">
                 <div class="reqid" id="FDP_VPN_EXT.1.1">
                     <a href="#FDP_VPN_EXT.1.1" class="abbr">FDP_VPN_EXT.1.1</a>
@@ -871,7 +871,7 @@
          The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
         <h4 id="@id" class="indexable" data-level="4">5.3.1.1 Trusted Path/Channels</h4>
         <div class="comp" id="@id">
-            <h4>FCS_CKM.2: </h4>
+            <h4>FCS_CKM.2: Cryptographic Key Establishment</h4>
             <span class="description">
                 <p>
                      This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> differs from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by moving elliptic curve-based key establishment schemes from selectable to mandatory due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in FCS_IPSEC_EXT.1.8. The selection for "no other schemes" was added in case the algorithms that IPsec requires are the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s only use of key establishment. 
@@ -908,7 +908,7 @@
                 </i> ]. </span>
         </div>
         <div class="comp" id="@id">
-            <h4>FCS_CKM_EXT.1: </h4>
+            <h4>FCS_CKM_EXT.1: Cryptographic Key Generation Services</h4>
             <span class="description">
                 <p>
                      This selection differs from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by removing the selection for &ldquo;generate no asymmetric cryptographic keys&rdquo; for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will either perform its own key generation or interface with the underlying platform to provide this service, either of which causes FCS_CKM.1/AK to be claimed. 
@@ -927,7 +927,7 @@
                  ]. </span>
         </div>
         <div class="comp" id="@id">
-            <h4>FCS_COP.1/SKC: </h4>
+            <h4>FCS_COP.1/SKC: Cryptographic Operation - Encryption/Decryption</h4>
             <span class="description">
                 <p>
                      This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and remains selection-based here because this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> allows for the possibility that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> relies on platform-provided cryptographic algorithm services for its own implementation of IPsec. However, if the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> does claim this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to support IPsec, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must select at minimum both <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC and <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM for consistency with the relevant IPsec claims (FCS_IPSEC_EXT.1.4 requires <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM and FCS_IPSEC_EXT.1.6 requires <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC). The "no other modes" selection is added for the case where no <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> claims need to be made beyond what is mandated for IPsec. 
@@ -962,7 +962,7 @@
                 </i> ] and cryptographic key size of [ <i> 256-bits </i> ]. </span>
         </div>
         <div class="comp" id="@id">
-            <h4>FTP_DIT_EXT.1: </h4>
+            <h4>FTP_DIT_EXT.1: Protection of Data in Transit</h4>
             <span class="description">
                 <p>
                      This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is identical to what is defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that the selection for IPsec is mandated, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is forced to select the "encrypt all transmitted sensitive data" option, and the options for invoking platform-provided IPsec functionality have been removed. Since it is possible for a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to implement IPsec while relying on the platform for some other protocol (e.g., using platform-provided TLS to obtain IPsec configuration from a gateway), the other platform-provided protocol selections remain. Additionally, since it is possible that a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may not implement any encryption protocols other than IPsec, &ldquo;no other protocols&rdquo; is provided as a selectable option in the list of supported protocols. 
@@ -1014,7 +1014,7 @@
             </tr>
         </table>
         <div class="comp" id="FCS_CKM.6">
-            <h4>FCS_CKM.6 Cryptographic Key Destruction</h4>
+            <h4>FCS_CKM.6 </h4>
             <div class="element">
                 <div class="reqid" id="FCS_CKM.6.1">
                     <a href="#FCS_CKM.6.1" class="abbr">FCS_CKM.6.1</a>
@@ -1045,7 +1045,7 @@
             </div>
         </div>
         <div class="comp" id="FCS_CKM_EXT.2">
-            <h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4>
+            <h4>FCS_CKM_EXT.2 </h4>
             <div class="element">
                 <div class="reqid" id="FCS_CKM_EXT.2.1">
                     <a href="#FCS_CKM_EXT.2.1" class="abbr">FCS_CKM_EXT.2.1</a>

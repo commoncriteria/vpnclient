@@ -687,7 +687,7 @@ expected to enforce.
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="os-m-fcs">
           <!-- FCS_CKM.1 Cryptographic Key Generation -->
-          <base-sfr-spec cc-id="fcs_ckm.1" id="modsfr-os-fcs-ckm-1" name="Cryptographic Key Generation">
+          <base-sfr-spec cc-id="fcs_ckm.1" id="modsfr-os-fcs-ckm-1" title="Cryptographic Key Generation">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client
               requirements; the SFR behavior itself is unmodified.
@@ -786,7 +786,7 @@ expected to enforce.
             </replace>
           </base-sfr-spec>
           <!-- FCS_CKM.2 Cryptographic Key Establishment -->
-          <base-sfr-spec cc-id="fcs_ckm.2" id="modsfr-os-fcs-ckm-2" name="Cryptographic Key Establishment">
+          <base-sfr-spec cc-id="fcs_ckm.2" id="modsfr-os-fcs-ckm-2" title="Cryptographic Key Establishment">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
@@ -879,7 +879,7 @@ expected to enforce.
             </audit-table>
           </section>
           <!-- FCS_CKM_EXT.2 Cryptographic Key Storage -->
-          <f-component cc-id="fcs_ckm_ext.2" id="os-fcs-ckm-ext-2" name="Cryptographic Key Storage">
+          <f-component cc-id="fcs_ckm_ext.2" id="os-fcs-ckm-ext-2" title="Cryptographic Key Storage">
             <comp-lev>
               requires the TSF to securely store key data when not in use.
             </comp-lev>
@@ -945,7 +945,7 @@ expected to enforce.
             </audit-table>
           </section>
           <!-- FIA_X509_EXT.4 X.509 Certificate Use and Management -->
-          <f-component cc-id="fia_x509_ext.4" id="os-fia-x509-ext-4" name="X.509 Certificate Use and Management">
+          <f-component cc-id="fia_x509_ext.4" id="os-fia-x509-ext-4" title="X.509 Certificate Use and Management">
             <comp-lev>
               requires the TOE to perform X.509 certificate
               authentication and describes the behavior that is followed if the status of the certificate is unknown or
@@ -1117,7 +1117,7 @@ expected to enforce.
             </audit-table>
           </section>
           <!-- FTP_ITC.1 Inter-TSF Trusted Channel -->
-          <f-component cc-id="ftp_itc.1" id="os-ftp-itc-1" name="Inter-TSF Trusted Channel">
+          <f-component cc-id="ftp_itc.1" id="os-ftp-itc-1" title="Inter-TSF Trusted Channel">
             <consistency-rationale/>
             <f-element id="os-ftp-itc-1e1">
               <title>
@@ -1438,7 +1438,7 @@ expected to enforce.
       <modified-sfrs>
         <section title="Trusted Path/Channels (FTP)" id="md-m-ftp">
           <!-- FCS_CKM.1 Cryptographic Key Generation -->
-          <base-sfr-spec cc-id="fcs_ckm.1" id="mdf-fcs-ckm-1" name="Cryptographic Key Generation">
+          <base-sfr-spec cc-id="fcs_ckm.1" id="mdf-fcs-ckm-1" title="Cryptographic Key Generation">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1575,7 +1575,7 @@ expected to enforce.
             </replace>
           </base-sfr-spec>
           <!-- FCS_CKM.2/UNLOCKED Cryptographic Key Establishment -->
-          <base-sfr-spec cc-id="fcs_ckm.2" id="mdf-fcs-ckm-2-unlocked" name="Cryptographic Key Establishment" iteration="UNLOCKED">
+          <base-sfr-spec cc-id="fcs_ckm.2" id="mdf-fcs-ckm-2-unlocked" title="Cryptographic Key Establishment" iteration="UNLOCKED">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1703,7 +1703,7 @@ expected to enforce.
             </replace>
           </base-sfr-spec>
           <!-- FDP_IFC_EXT.1 Subset Information Flow Control -->
-          <base-sfr-spec cc-id="fdp_ifc_ext.1" id="mdf-fdp-ifc-ext-1" name="Subset Information Flow Control">
+          <base-sfr-spec cc-id="fdp_ifc_ext.1" id="mdf-fdp-ifc-ext-1" title="Subset Information Flow Control">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1764,7 +1764,7 @@ expected to enforce.
             </replace>
           </base-sfr-spec>
           <!-- FTP_ITC_EXT.1 Trusted Channel Communication -->
-          <base-sfr-spec cc-id="ftp_itc_ext.1" id="mdf-ftp-itc-ext-1" name="Trusted Channel Communication">
+          <base-sfr-spec cc-id="ftp_itc_ext.1" id="mdf-ftp-itc-ext-1" title="Trusted Channel Communication">
             <consistency-rationale>
               This PP-Module adds IPsec as a new protocol that is used to implement trusted channels.
             </consistency-rationale>
@@ -1915,7 +1915,7 @@ expected to enforce.
             </audit-table>
           </section>
           <!-- FDP_VPN_EXT.1 Split Tunnel Prevention -->
-          <f-component cc-id="fdp_vpn_ext.1" id="fdp-vpn-ext-1" name="Split Tunnel Prevention">
+          <f-component cc-id="fdp_vpn_ext.1" id="fdp-vpn-ext-1" title="Split Tunnel Prevention">
             <comp-lev>
               requires the TSF to process all IP traffic through its VPN client
               functionality.
@@ -2180,7 +2180,7 @@ expected to enforce.
       <modified-sfrs>
         <section title="Trusted Path/Channels" id="ap-m-ftp">
           <!-- FCS_CKM.2 Cryptographic Key Establishment -->
-          <base-sfr-spec cc-id="fcs_ckm.2" id="app-fcs-ckm-2" name="Cryptographic Key Establishment">
+          <base-sfr-spec cc-id="fcs_ckm.2" id="app-fcs-ckm-2" title="Cryptographic Key Establishment">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements and is modified to include DH group 14 as an additional supported method for key
@@ -2335,7 +2335,7 @@ expected to enforce.
             </replace>
           </base-sfr-spec>
           <!-- FCS_CKM_EXT.1 Cryptographic Key Generation Services -->
-          <base-sfr-spec cc-id="fcs_ckm_ext.1" id="app-fcs-ckm-ext-1" name="Cryptographic Key Generation Services">
+          <base-sfr-spec cc-id="fcs_ckm_ext.1" id="app-fcs-ckm-ext-1" title="Cryptographic Key Generation Services">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; specifically, since key generation
@@ -2387,7 +2387,7 @@ expected to enforce.
             </replace>
           </base-sfr-spec>
           <!-- FCS_COP.1/SKC Cryptographic Operation - Encryption/Decryption -->
-          <base-sfr-spec cc-id="fcs_cop.1" id="app-fcs-cop-1-skc" name="Cryptographic Operation - Encryption/Decryption" iteration="SKC">
+          <base-sfr-spec cc-id="fcs_cop.1" id="app-fcs-cop-1-skc" title="Cryptographic Operation - Encryption/Decryption" iteration="SKC">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
@@ -2519,7 +2519,7 @@ expected to enforce.
             </replace>
           </base-sfr-spec>
           <!-- FTP_DIT_EXT.1 Protection of Data in Transit -->
-          <base-sfr-spec cc-id="ftp_dit_ext.1" id="app-ftp-dit-ext-1" name="Protection of Data in Transit">
+          <base-sfr-spec cc-id="ftp_dit_ext.1" id="app-ftp-dit-ext-1" title="Protection of Data in Transit">
             <consistency-rationale>
               This PP-Module requires the existing selection of IPsec to be chosen to satisfy the dependency on this PP-Module
             </consistency-rationale>
@@ -2739,7 +2739,7 @@ expected to enforce.
             </audit-table>
           </section>
           <!-- FCS_CKM.6 Cryptographic Key Destruction -->
-          <f-component cc-id="fcs_ckm.6" id="ap-fcs-ckm-6" name="Cryptographic Key Destruction">
+          <f-component cc-id="fcs_ckm.6" id="ap-fcs-ckm-6" title="Cryptographic Key Destruction">
             <comp-lev>
               requires the TSF to destroy key data when no longer required.
             </comp-lev>
@@ -2920,7 +2920,7 @@ expected to enforce.
             </f-element>
           </f-component>
           <!-- FCS_CKM_EXT.2 Cryptographic Key Storage -->
-          <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage">
+          <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" title="Cryptographic Key Storage">
             <comp-lev>
               requires the TSF to securely store key data when not in use.
             </comp-lev>
