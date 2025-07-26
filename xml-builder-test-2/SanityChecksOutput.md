@@ -7,14 +7,8 @@
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_1'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_2'.
-* Error: Detected multiple elements with an id of 'gpos-audit-table'.
-* Error: Detected multiple elements with an id of 'gpos-additional'.
 * Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_1'.
 * Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_2'.
-* Error: Detected multiple elements with an id of 'gpos-audit-table'.
-* Error: Detected multiple elements with an id of 'gpos-additional'.
-* Error: Detected multiple elements with an id of 'gpos-audit-table'.
-* Error: Detected multiple elements with an id of 'gpos-additional'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_4'.
@@ -283,3 +277,13 @@ warning: failed to load external entity "output/pkg-x509.xml"
 warning: failed to load external entity "output/pkg-x509.xml"
 warning: failed to load external entity "output/pkg-x509.xml"
 warning: failed to load external entity "output/pkg-x509.xml"
+* Warning: Since FCS_CKM_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
+                       
+* Warning: Since FCS_CKM_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
+                       
+* Warning: Since FIA_X509_EXT.4.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
+                       
+* Warning: Since FIA_X509_EXT.4.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
+                       
+* Warning: Since FIA_X509_EXT.4.3 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
+                       

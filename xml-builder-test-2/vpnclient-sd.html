@@ -352,11 +352,11 @@
       agencies, Common Criteria Test Laboratories, and members of academia.
       </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#aa-bpp-gpos" style="text-indent:10px">2.1<span>Protection Profile for General Purpose Operating System</span></a><a href="#qq-sfrs-bpp-gpos-Modified" style="text-indent:20px">2.1.1<span>Modified SFRs
         </span></a><a href="#qq-sfrs-bpp-gpos-Additional" style="text-indent:20px">2.1.2<span>Additional SFRs
-        </span></a><a href="#_sec_3" style="text-indent:30px">2.1.2.1<span>Cryptographic Support (FCS)</span></a><a href="#_sec_5" style="text-indent:30px">2.1.2.2<span>Identification and Authentication (FIA)</span></a><a href="#_sec_7" style="text-indent:30px">2.1.2.3<span>Trusted Path/Channels (FTP)</span></a><a href="#aa-bpp-mdf" style="text-indent:10px">2.2<span>Protection Profile for Mobile Device Fundamentals</span></a><a href="#qq-sfrs-bpp-mdf-Modified" style="text-indent:20px">2.2.1<span>Modified SFRs
+        </span></a><a href="#os-a-fcs" style="text-indent:30px">2.1.2.1<span>Cryptographic Support (FCS)</span></a><a href="#os-a-fia" style="text-indent:30px">2.1.2.2<span>Identification and Authentication (FIA)</span></a><a href="#os-a-ftp" style="text-indent:30px">2.1.2.3<span>Trusted Path/Channels (FTP)</span></a><a href="#aa-bpp-mdf" style="text-indent:10px">2.2<span>Protection Profile for Mobile Device Fundamentals</span></a><a href="#qq-sfrs-bpp-mdf-Modified" style="text-indent:20px">2.2.1<span>Modified SFRs
         </span></a><a href="#qq-sfrs-bpp-mdf-Additional" style="text-indent:20px">2.2.2<span>Additional SFRs
-        </span></a><a href="#_sec_10" style="text-indent:30px">2.2.2.1<span>User Data Protection (FDP)</span></a><a href="#aa-bpp-app" style="text-indent:10px">2.3<span>Protection Profile for Application Software</span></a><a href="#qq-sfrs-bpp-app-Modified" style="text-indent:20px">2.3.1<span>Modified SFRs
+        </span></a><a href="#ib-fdp" style="text-indent:30px">2.2.2.1<span>User Data Protection (FDP)</span></a><a href="#aa-bpp-app" style="text-indent:10px">2.3<span>Protection Profile for Application Software</span></a><a href="#qq-sfrs-bpp-app-Modified" style="text-indent:20px">2.3.1<span>Modified SFRs
         </span></a><a href="#qq-sfrs-bpp-app-Additional" style="text-indent:20px">2.3.2<span>Additional SFRs
-        </span></a><a href="#_sec_13" style="text-indent:30px">2.3.2.1<span>Cryptographic Support (FCS)</span></a><a href="#aa-bpp-mdm" style="text-indent:10px">2.4<span>Protection Profile for Mobile Device Management</span></a><a href="#qq-sfrs-bpp-mdm-Modified" style="text-indent:20px">2.4.1<span>Modified SFRs
+        </span></a><a href="#ap-a-fcs" style="text-indent:30px">2.3.2.1<span>Cryptographic Support (FCS)</span></a><a href="#aa-bpp-mdm" style="text-indent:10px">2.4<span>Protection Profile for Mobile Device Management</span></a><a href="#qq-sfrs-bpp-mdm-Modified" style="text-indent:20px">2.4.1<span>Modified SFRs
         </span></a><a href="#man-sfrs" style="text-indent:10px">2.5<span>TOE SFR Evaluation Activities</span></a><a href="#opt-sfrs" style="text-indent:10px">2.6<span>Evaluation Activities for Optional SFRs</span></a><a href="#sel-sfrs" style="text-indent:10px">2.7<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#obj-sfrs" style="text-indent:10px">2.8<span>Evaluation Activities for Objective SFRs</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.9<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
     PP-Module for VPN Client is
     to describe the security functionality of 
@@ -511,7 +511,8 @@ The following sections list Common Criteria and technology terms used in this do
 	  GPOS PP is the base.
 	<h3 class="indexable" data-level="2" id="qq-sfrs-bpp-gpos-Additional">2.1.2 Additional SFRs
         </h3>
-        <h3 class="indexable" data-level="3" id="_sec_3">2.1.2.1 Cryptographic Support (FCS)</h3><div class="comp" id="OS-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 </h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.2.1</div>
+        
+        <h3 class="indexable" data-level="3" id="os-a-fcs">2.1.2.1 Cryptographic Support (FCS)</h3><div class="comp" id="OS-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.2.1</div>
                 <div class="eacategory">TSS</div><div class="ea">
                   Regardless of whether this requirement is met by the VPN client or the OS, the evaluator shall check the
 			TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to meet
@@ -534,7 +535,7 @@ The following sections list Common Criteria and technology terms used in this do
                   There are no test EAs for this component.
                 </div>
               </span></div>
-        <h3 class="indexable" data-level="3" id="_sec_5">2.1.2.2 Identification and Authentication (FIA)</h3><div class="comp" id="OS-FIA-X509-EXT-4"><h4>FIA_X509_EXT.4 </h4><span class="activity_pane_body"><div class="element-activity-header">FIA_X509_EXT.4.1</div>
+        <h3 class="indexable" data-level="3" id="os-a-fia">2.1.2.2 Identification and Authentication (FIA)</h3><div class="comp" id="OS-FIA-X509-EXT-4"><h4>FIA_X509_EXT.4 X.509 Certificate Use and Management</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_X509_EXT.4.1</div>
                 
                   <span class="no-link">
                     FIA_X509_EXT.4.1
@@ -594,7 +595,7 @@ The following sections list Common Criteria and technology terms used in this do
                   FIA_X509_EXT.4.3 is evaluated as part of FCS_IPSEC_EXT.1.11.
                 <br/><br/>
               </span></div>
-        <h3 class="indexable" data-level="3" id="_sec_7">2.1.2.3 Trusted Path/Channels (FTP)</h3><div class="comp" id="OS-FTP-ITC-1"><h4>FTP_ITC.1 </h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC.1</div>
+        <h3 class="indexable" data-level="3" id="os-a-ftp">2.1.2.3 Trusted Path/Channels (FTP)</h3><div class="comp" id="OS-FTP-ITC-1"><h4>FTP_ITC.1 Inter-TSF Trusted Channel</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC.1</div>
                 
                 
                 
@@ -650,7 +651,8 @@ The following sections list Common Criteria and technology terms used in this do
 	  MDF PP is the base.
 	<h3 class="indexable" data-level="2" id="qq-sfrs-bpp-mdf-Additional">2.2.2 Additional SFRs
         </h3>
-        <h3 class="indexable" data-level="3" id="_sec_10">2.2.2.1 User Data Protection (FDP)</h3><div class="comp" id="FDP-VPN-EXT-1"><h4>FDP_VPN_EXT.1 </h4><span class="activity_pane_body"><div class="element-activity-header">FDP_VPN_EXT.1.1</div>
+        
+        <h3 class="indexable" data-level="3" id="ib-fdp">2.2.2.1 User Data Protection (FDP)</h3><div class="comp" id="FDP-VPN-EXT-1"><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4><span class="activity_pane_body"><div class="element-activity-header">FDP_VPN_EXT.1.1</div>
                 <div class="eacategory">TSS</div><div class="ea">
                   The evaluator shall verify that the TSS section of the ST describes the routing of IP traffic through processes
                   on the TSF when a VPN client is enabled. The evaluator shall ensure that the description indicates which
@@ -710,7 +712,8 @@ The following sections list Common Criteria and technology terms used in this do
 	  App PP is the base.
 	<h3 class="indexable" data-level="2" id="qq-sfrs-bpp-app-Additional">2.3.2 Additional SFRs
         </h3>
-        <h3 class="indexable" data-level="3" id="_sec_13">2.3.2.1 Cryptographic Support (FCS)</h3><div class="comp" id="AP-FCS-CKM-6"><h4>FCS_CKM.6 </h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.6</div>
+        
+        <h3 class="indexable" data-level="3" id="ap-a-fcs">2.3.2.1 Cryptographic Support (FCS)</h3><div class="comp" id="AP-FCS-CKM-6"><h4>FCS_CKM.6 Cryptographic Key Destruction</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.6</div>
                 
                 
                 
@@ -803,7 +806,7 @@ The following sections list Common Criteria and technology terms used in this do
 					intermediate copies are cleared.
                     </li>
                   </ul></span>
-                </div></div></span></div><div class="comp" id="AP-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 </h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.2.1</div>
+                </div></div></span></div><div class="comp" id="AP-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.2.1</div>
                 <div class="eacategory">TSS</div><div class="ea">
                   Regardless of whether this requirement is met by the TOE or the TOE platform, the evaluator shall check
 			the TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to
