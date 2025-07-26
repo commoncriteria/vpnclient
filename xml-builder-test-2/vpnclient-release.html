@@ -705,7 +705,7 @@ function showTarget(id){
     </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.3.1.1<span>Trusted Path/Channels</span></a><a href="#addsfr-bpp-app" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#app-audit-table" style="text-indent:30px">5.3.2.1<span>Auditable Events for App PP Additional SFRs</span></a><a href="#ap-a-fcs" style="text-indent:30px">5.3.2.2<span>Cryptographic Support (FCS)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.4<span>
     Protection Profile for Protection Profile for Mobile Device Management
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.4.1<span> Modified SFRs </span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.4.2<span> Additional SFRs</span></a><a href="#man-sfrs" style="text-indent:10px">5.5<span>TOE Security Functional Requirements</span></a><a href="#obj-req-map" style="text-indent:10px">5.6<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-gpos" style="text-indent:10px">6.1<span>
+    </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.4.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.4.1.1<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.4.2<span> Additional SFRs</span></a><a href="#man-sfrs" style="text-indent:10px">5.5<span>TOE Security Functional Requirements</span></a><a href="#obj-req-map" style="text-indent:10px">5.6<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-gpos" style="text-indent:10px">6.1<span>
     Protection Profile for Protection Profile for General Purpose Operating System</span></a><a href="#contoe-bpp-gpos" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-bpp-gpos" style="text-indent:20px">6.1.2<span>
@@ -2170,8 +2170,276 @@ provide all of its security functionality.
       In this case, the following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
       defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in addition to what is mandated by section 5.5.
       <h3 id="modsfr-bpp-mdm" class="indexable" data-level="3">5.4.1  Modified SFRs </h3>
-      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify any <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined by the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-    <h3 id="addsfr-bpp-mdm" class="indexable" data-level="3">5.4.2  Additional SFRs</h3>
+		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+
+		<h4 id="@id" class="indexable" data-level="4">5.4.1.1 Trusted Path/Channels (FTP)</h4><div class="comp" id="@id"><h4>FCS_CKM.1: Cryptographic Key Generation</h4><span class="description">
+              <p>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by mandating the key generation algorithms that are required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in support of IPsec due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in FCS_IPSEC_EXT.1.8. Other selections may be chosen by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author as needed for parts of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are not specifically related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality. The selection for "no other key generation methods" was added in case the algorithms that IPsec requires are the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s only use of key generation.
+              </p>
+              The text of the requirement is replaced with:
+              <br/>
+              <br/>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
+              <b>
+                [selection:
+                <i>
+                  invoke platform-provided functionality, implement functionality
+                </i>
+                ]
+              </b>
+              to generate
+              <b>
+                asymmetric
+              </b>
+              cryptographic keys in accordance with a specified cryptographic key generation algorithm
+              <b>
+                <ul>
+                  <li>
+                    <abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> schemes using "<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curve" P-384 that meets the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix A.2
+                  </li>
+                </ul>
+              </b>
+              [
+              <b>
+                selection:
+              </b>
+              <i>
+                <ul>
+                  <li>
+                    RSA schemes using cryptographic key sizes of 3072 bits that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix A.1]
+                  </li>
+                  <li>
+                    <abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using "safe-prime" groups that meet the following: '<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [
+                    <b>
+                      selection:
+                    </b>
+                    <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919]
+                  </li>
+                  <li>
+                    <b>
+                      No other key generation methods
+                    </b>
+                  </li>
+                </ul>
+              </i>
+              ].
+            </span></div><div class="comp" id="@id"><h4>FCS_CKM.2: Cryptographic Key Establishment</h4><span class="description">
+              <p>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by mandating the key establishment algorithms that are required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in support of IPsec due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in FCS_IPSEC_EXT.1.8. Other selections may be chosen by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author as needed for parts of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are not specifically related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality. The selection for "no other schemes" was added in case the algorithms that IPsec requires are the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s only use of key establishment.
+              </p>
+              The text of the requirement is replaced with:
+              <br/>
+              <br/>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
+              <b>
+                [selection:
+                <i>
+                  invoke platform-provided functionality, implement functionality
+                </i>
+                ]
+              </b>
+              to perform
+              <b>
+                cryptographic key establishment
+              </b>
+              in accordance with a specified cryptographic key establishment method:
+              <ul>
+                <li>
+                  <b>
+                    [Elliptic curve-based key establishment schemes] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”]
+                  </b>
+                </li>
+              </ul>
+              [
+              <b>
+                selection:
+              </b>
+              <i>
+                <ul>
+                  <li>
+                    RSA-based key establishment schemes that meet the following: RSAES-PKCS1-v1_5 as specified in Section 7.2 of <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8017, "Public-Key Cryptography Standards (PKCS) #1:RSA Cryptography Specifications Version 2.1"</li>
+                  <li>
+                    Finite field-based key establishment schemes that meets <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”
+                  </li>
+                  <li>
+                    <b>
+                      no other key establishment schemes
+                    </b>
+                  </li>
+                </ul>
+              </i>
+              ].
+            </span></div><div class="comp" id="@id"><h4>FTP_ITC.1/INTER_XFER_IT: Inter-TSF Trusted Channel (Authorized IT Entities)</h4><span class="description">
+              <p>
+                When the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, at least one of its interfaces will implement IPsec communications. However, this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not specify that any one particular interface must be implemented using IPsec. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> uses IPsec to secure communications between itself and external trusted <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entities, <a href="#FTP_ITC.1">FTP_ITC.1</a>/INTER_XFER_IT is refined as noted by the refinements above.
+                <p></p>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is refined from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by mandating that the “implement functionality” selection be chosen at minimum for IPsec and by prohibiting the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from relying on platform-provided IPsec functionality. Since the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may support multiple trusted channel interfaces, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is given the option to select other protocols (SSH, TLS, DTLS, HTTPS) either as being implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> or invoked from the platform. The "not invoke or implement any other protocol functionality" is added for the case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s implementation of IPsec is the only trusted channel protocol the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> uses.
+              </p>
+              The text of <a href="#FTP_ITC.1.1">FTP_ITC.1.1</a>/INTER_XFER_IT is replaced with (the other elements are unaffected):
+              <br/>
+              <br/>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
+              <ul>
+                <li>
+                  <b>
+                    implement functionality using IPsec as defined in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client, and
+                  </b>
+                </li>
+              </ul>
+              [
+              <b>
+                selection:
+              </b>
+              <i>
+                <b>
+                  <ul>
+                    <li>
+                      invoke platform-provided functionality to use [selection:
+                      <ul>
+                        <li>
+                          SSH
+                        </li>
+                        <li>
+                          mutually authenticated TLS
+                        </li>
+                        <li>
+                          mutually authenticated DTLS
+                        </li>
+                        <li>
+                          HTTPS
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      implement functionality using [selection:
+                      <ul>
+                        <li>
+                          SSH as defined in the Functional Package for Secure Shell
+                        </li>
+                        <li>
+                          mutually authenticated TLS as defined in the Package for Transport Layer Security
+                        </li>
+                        <li>
+                          mutually authenticated DTLS as defined in the Package for Transport Layer Security
+                        </li>
+                        <li>
+                          HTTPS in accordance with FCS_HTTPS_EXT.1
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      not invoke or implement any other protocol functionality
+                    </li>
+                  </ul>
+                </b>
+              </i>
+              ]
+              <b>
+                to
+              </b>
+              provide a
+              <b>
+                trusted
+              </b>
+              communication channel between itself and
+              <b>
+                authorized
+              </b>
+              <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr>
+              <b>
+                entities supporting the following capabilities: audit server, [
+                <b>
+                  selection:
+                </b>
+                <i>
+                  authentication server, [assignment: other capabilities]
+                </i>
+                ]
+              </b>
+              that is logically distinct from other communication channels and provides assured identification of its endpoints
+                and protection of the channel data from modification or disclosure.
+            </span></div><div class="comp" id="@id"><h4>FTP_TRP.1/TRUSTPATH_REM_ADMIN: Trusted Path (for Remote Administration)</h4><span class="description">
+              <p>
+                When the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, at least one of its interfaces will implement IPsec communications. However, this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not specify that any one particular interface must be implemented using IPsec. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> uses IPsec to secure communications between itself and trusted remote administrators, FPT_TRP.1/TRUSTPATH_REM_ADMIN is refined as below.
+                <p></p>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is refined from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by mandating that the “implement functionality” selection be chosen at minimum for IPsec and by prohibiting the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from relying on platform-provided IPsec functionality. Since the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may support multiple remote administrative interfaces, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is given the option to select other protocols (SSH, TLS, HTTPS) either as being implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> or invoked from the platform. The "not invoke or implement any other protocol functionality" is added for the case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s implementation of IPsec is the only trusted path protocol the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> uses.
+              </p>
+              The text of FTP_TRP.1.1/TRUSTPATH_REM_ADMIN is replaced with (the other elements are unaffected):
+              <br/>
+              <br/>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
+              <ul>
+                <li>
+                  <b>
+                    implement functionality using IPsec as defined in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client, and
+                  </b>
+                </li>
+              </ul>
+              [
+              <b>
+                selection:
+              </b>
+              <i>
+                <b>
+                  <ul>
+                    <li>
+                      invoke platform-provided functionality to use [selection:
+                      <ul>
+                        <li>
+                          TLS
+                        </li>
+                        <li>
+                          HTTPS
+                        </li>
+                        <li>
+                          SSH
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      implement functionality using [selection:
+                      <ul>
+                        <li>
+                          TLS as defined in the Package for Transport Layer Security
+                        </li>
+                        <li>
+                          HTTPS in accordance with FCS_HTTPS_EXT.1
+                        </li>
+                        <li>
+                          SSH as defined in the Functional Package for Secure Shell
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      not invoke or implement any other protocol functionality
+                    </li>
+                  </ul>
+                </b>
+              </i>
+              ]
+              <b>
+                to
+              </b>
+              provide a
+              <b>
+                trusted
+              </b>
+              communication path between itself
+              <b>
+                as a [selection:
+                <i>
+                  server, peer
+                </i>
+                ]
+                and another trusted <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> product
+              </b>
+              that is logically distinct from other communication paths and provides assured
+                identification of its endpoints and protection of the communicated data from [
+              <i>
+                modification or disclosure
+              </i>
+              ].
+            </span></div><h3 id="addsfr-bpp-mdm" class="indexable" data-level="3">5.4.2  Additional SFRs</h3>
 This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> for any <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> where the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is claimed as the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
     <h2 id="man-sfrs" class="indexable" data-level="2">5.5 TOE Security Functional Requirements</h2>
 	This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
@@ -2571,10 +2839,15 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       defined by the
       MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">17</span></span>: Consistency of Requirements (MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
-			This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify any requirements when the
-			MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base.
-		  </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_CKM.1</td><td>
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.
+            </td></tr><tr><td>FCS_CKM.2</td><td>
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.
+            </td></tr><tr><td><a href="#FTP_ITC.1">FTP_ITC.1</a>/INTER_XFER_IT</td><td>
+              When this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>’s functionality, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections to implement this behavior using the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client at minimum. This is done by forcing the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to make a specific selection that is already present in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> definition of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> and by removing a selection option; no new behavior is introduced by this.
+            </td></tr><tr><td>FTP_TRP.1/TRUSTPATH_REM_ADMIN</td><td>
+              When this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>’s functionality, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections to implement this behavior using the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client at minimum. This is done by forcing the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to make a specific selection that is already present in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> definition of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> and by removing a selection option; no new behavior is introduced by this.
+            </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not add any requirements when the
 	      MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base.
 	    </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">

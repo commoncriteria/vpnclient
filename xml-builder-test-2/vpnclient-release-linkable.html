@@ -703,7 +703,7 @@ function showTarget(id){
     </span></a><a href="#modsfr-bpp-app" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.3.1.1<span>Trusted Path/Channels</span></a><a href="#addsfr-bpp-app" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#app-audit-table" style="text-indent:30px">5.3.2.1<span>Auditable Events for App PP Additional SFRs</span></a><a href="#ap-a-fcs" style="text-indent:30px">5.3.2.2<span>Cryptographic Support (FCS)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.4<span>
     Protection Profile for Protection Profile for Mobile Device Management
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.4.1<span> Modified SFRs </span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.4.2<span> Additional SFRs</span></a><a href="#man-sfrs" style="text-indent:10px">5.5<span>TOE Security Functional Requirements</span></a><a href="#obj-req-map" style="text-indent:10px">5.6<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-gpos" style="text-indent:10px">6.1<span>
+    </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.4.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.4.1.1<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.4.2<span> Additional SFRs</span></a><a href="#man-sfrs" style="text-indent:10px">5.5<span>TOE Security Functional Requirements</span></a><a href="#obj-req-map" style="text-indent:10px">5.6<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-gpos" style="text-indent:10px">6.1<span>
     Protection Profile for Protection Profile for General Purpose Operating System</span></a><a href="#contoe-bpp-gpos" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-bpp-gpos" style="text-indent:20px">6.1.2<span>
@@ -2045,46 +2045,304 @@ provide all of its security functionality<a id="period_153" href="#period_153">.
         In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is expected to rely on some of the
       security functions implemented by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> as a whole and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_251" href="#period_251">. </a>      In this case, the following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
       defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in addition to what is mandated by section 5.5<a id="period_252" href="#period_252">. </a>      <h3 id="modsfr-bpp-mdm" class="indexable" data-level="3">5.4.1  Modified SFRs </h3>
-      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify any <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined by the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_253" href="#period_253">. </a>    <h3 id="addsfr-bpp-mdm" class="indexable" data-level="3">5.4.2  Additional SFRs</h3>
-This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> for any <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> where the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is claimed as the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_254" href="#period_254">. </a>    <h2 id="man-sfrs" class="indexable" data-level="2">5.5 TOE Security Functional Requirements</h2>
-	This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr><a id="period_255" href="#period_255">. </a>      <h2 id="obj-req-map" class="indexable" data-level="2">5.6 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
+		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_253" href="#period_253">. </a>
+		<h4 id="@id" class="indexable" data-level="4">5.4.1.1 Trusted Path/Channels (FTP)</h4><div class="comp" id="@id"><h4>FCS_CKM.1: Cryptographic Key Generation</h4><span class="description">
+              <p>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by mandating the key generation algorithms that are required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in support of IPsec due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in FCS_IPSEC_EXT.1.8<a id="period_254" href="#period_254">. </a>Other selections may be chosen by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author as needed for parts of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are not specifically related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality<a id="period_255" href="#period_255">. </a>The selection for "no other key generation methods" was added in case the algorithms that IPsec requires are the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s only use of key generation<a id="period_256" href="#period_256">. </a>              </p>
+              The text of the requirement is replaced with:
+              <br>
+              <br>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
+              <b>
+                [selection:
+                <i>
+                  invoke platform-provided functionality, implement functionality
+                </i>
+                ]
+              </b>
+              to generate
+              <b>
+                asymmetric
+              </b>
+              cryptographic keys in accordance with a specified cryptographic key generation algorithm
+              <b>
+                <ul>
+                  <li>
+                    <abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> schemes using "<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curve" P-384 that meets the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix A.2
+                  </li>
+                </ul>
+              </b>
+              [
+              <b>
+                selection:
+              </b>
+              <i>
+                <ul>
+                  <li>
+                    RSA schemes using cryptographic key sizes of 3072 bits that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, &#8220;Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),&#8221; Appendix A.1]
+                  </li>
+                  <li>
+                    <abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using "safe-prime" groups that meet the following: '<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [
+                    <b>
+                      selection:
+                    </b>
+                    <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919]
+                  </li>
+                  <li>
+                    <b>
+                      No other key generation methods
+                    </b>
+                  </li>
+                </ul>
+              </i>
+              ]<a id="period_257" href="#period_257">. </a>            </span></div><div class="comp" id="@id"><h4>FCS_CKM.2: Cryptographic Key Establishment</h4><span class="description">
+              <p>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by mandating the key establishment algorithms that are required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in support of IPsec due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in FCS_IPSEC_EXT.1.8<a id="period_258" href="#period_258">. </a>Other selections may be chosen by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author as needed for parts of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are not specifically related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality<a id="period_259" href="#period_259">. </a>The selection for "no other schemes" was added in case the algorithms that IPsec requires are the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s only use of key establishment<a id="period_260" href="#period_260">. </a>              </p>
+              The text of the requirement is replaced with:
+              <br>
+              <br>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
+              <b>
+                [selection:
+                <i>
+                  invoke platform-provided functionality, implement functionality
+                </i>
+                ]
+              </b>
+              to perform
+              <b>
+                cryptographic key establishment
+              </b>
+              in accordance with a specified cryptographic key establishment method:
+              <ul>
+                <li>
+                  <b>
+                    [Elliptic curve-based key establishment schemes] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, &#8220;Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography&#8221;]
+                  </b>
+                </li>
+              </ul>
+              [
+              <b>
+                selection:
+              </b>
+              <i>
+                <ul>
+                  <li>
+                    RSA-based key establishment schemes that meet the following: RSAES-PKCS1-v1_5 as specified in Section 7.2 of <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8017, "Public-Key Cryptography Standards (PKCS) #1:RSA Cryptography Specifications Version 2.1"</li>
+                  <li>
+                    Finite field-based key establishment schemes that meets <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, &#8220;Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography&#8221;
+                  </li>
+                  <li>
+                    <b>
+                      no other key establishment schemes
+                    </b>
+                  </li>
+                </ul>
+              </i>
+              ]<a id="period_261" href="#period_261">. </a>            </span></div><div class="comp" id="@id"><h4>FTP_ITC.1/INTER_XFER_IT: Inter-TSF Trusted Channel (Authorized IT Entities)</h4><span class="description">
+              <p>
+                When the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, at least one of its interfaces will implement IPsec communications<a id="period_262" href="#period_262">. </a>However, this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not specify that any one particular interface must be implemented using IPsec<a id="period_263" href="#period_263">. </a>If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> uses IPsec to secure communications between itself and external trusted <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entities, <a href="#FTP_ITC.1">FTP_ITC.1</a>/INTER_XFER_IT is refined as noted by the refinements above<a id="period_264" href="#period_264">. </a>                <p></p>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is refined from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by mandating that the &#8220;implement functionality&#8221; selection be chosen at minimum for IPsec and by prohibiting the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from relying on platform-provided IPsec functionality<a id="period_265" href="#period_265">. </a>Since the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may support multiple trusted channel interfaces, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is given the option to select other protocols (SSH, TLS, DTLS, HTTPS) either as being implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> or invoked from the platform<a id="period_266" href="#period_266">. </a>The "not invoke or implement any other protocol functionality" is added for the case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s implementation of IPsec is the only trusted channel protocol the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> uses<a id="period_267" href="#period_267">. </a>              </p>
+              The text of <a href="#FTP_ITC.1.1">FTP_ITC.1.1</a>/INTER_XFER_IT is replaced with (the other elements are unaffected):
+              <br>
+              <br>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
+              <ul>
+                <li>
+                  <b>
+                    implement functionality using IPsec as defined in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client, and
+                  </b>
+                </li>
+              </ul>
+              [
+              <b>
+                selection:
+              </b>
+              <i>
+                <b>
+                  <ul>
+                    <li>
+                      invoke platform-provided functionality to use [selection:
+                      <ul>
+                        <li>
+                          SSH
+                        </li>
+                        <li>
+                          mutually authenticated TLS
+                        </li>
+                        <li>
+                          mutually authenticated DTLS
+                        </li>
+                        <li>
+                          HTTPS
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      implement functionality using [selection:
+                      <ul>
+                        <li>
+                          SSH as defined in the Functional Package for Secure Shell
+                        </li>
+                        <li>
+                          mutually authenticated TLS as defined in the Package for Transport Layer Security
+                        </li>
+                        <li>
+                          mutually authenticated DTLS as defined in the Package for Transport Layer Security
+                        </li>
+                        <li>
+                          HTTPS in accordance with FCS_HTTPS_EXT.1
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      not invoke or implement any other protocol functionality
+                    </li>
+                  </ul>
+                </b>
+              </i>
+              ]
+              <b>
+                to
+              </b>
+              provide a
+              <b>
+                trusted
+              </b>
+              communication channel between itself and
+              <b>
+                authorized
+              </b>
+              <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr>
+              <b>
+                entities supporting the following capabilities: audit server, [
+                <b>
+                  selection:
+                </b>
+                <i>
+                  authentication server, [assignment: other capabilities]
+                </i>
+                ]
+              </b>
+              that is logically distinct from other communication channels and provides assured identification of its endpoints
+                and protection of the channel data from modification or disclosure<a id="period_268" href="#period_268">. </a>            </span></div><div class="comp" id="@id"><h4>FTP_TRP.1/TRUSTPATH_REM_ADMIN: Trusted Path (for Remote Administration)</h4><span class="description">
+              <p>
+                When the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, at least one of its interfaces will implement IPsec communications<a id="period_269" href="#period_269">. </a>However, this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not specify that any one particular interface must be implemented using IPsec<a id="period_270" href="#period_270">. </a>If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> uses IPsec to secure communications between itself and trusted remote administrators, FPT_TRP.1/TRUSTPATH_REM_ADMIN is refined as below<a id="period_271" href="#period_271">. </a>                <p></p>
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is refined from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by mandating that the &#8220;implement functionality&#8221; selection be chosen at minimum for IPsec and by prohibiting the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from relying on platform-provided IPsec functionality<a id="period_272" href="#period_272">. </a>Since the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may support multiple remote administrative interfaces, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is given the option to select other protocols (SSH, TLS, HTTPS) either as being implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> or invoked from the platform<a id="period_273" href="#period_273">. </a>The "not invoke or implement any other protocol functionality" is added for the case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s implementation of IPsec is the only trusted path protocol the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> uses<a id="period_274" href="#period_274">. </a>              </p>
+              The text of FTP_TRP.1.1/TRUSTPATH_REM_ADMIN is replaced with (the other elements are unaffected):
+              <br>
+              <br>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
+              <ul>
+                <li>
+                  <b>
+                    implement functionality using IPsec as defined in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client, and
+                  </b>
+                </li>
+              </ul>
+              [
+              <b>
+                selection:
+              </b>
+              <i>
+                <b>
+                  <ul>
+                    <li>
+                      invoke platform-provided functionality to use [selection:
+                      <ul>
+                        <li>
+                          TLS
+                        </li>
+                        <li>
+                          HTTPS
+                        </li>
+                        <li>
+                          SSH
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      implement functionality using [selection:
+                      <ul>
+                        <li>
+                          TLS as defined in the Package for Transport Layer Security
+                        </li>
+                        <li>
+                          HTTPS in accordance with FCS_HTTPS_EXT.1
+                        </li>
+                        <li>
+                          SSH as defined in the Functional Package for Secure Shell
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      not invoke or implement any other protocol functionality
+                    </li>
+                  </ul>
+                </b>
+              </i>
+              ]
+              <b>
+                to
+              </b>
+              provide a
+              <b>
+                trusted
+              </b>
+              communication path between itself
+              <b>
+                as a [selection:
+                <i>
+                  server, peer
+                </i>
+                ]
+                and another trusted <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> product
+              </b>
+              that is logically distinct from other communication paths and provides assured
+                identification of its endpoints and protection of the communicated data from [
+              <i>
+                modification or disclosure
+              </i>
+              ]<a id="period_275" href="#period_275">. </a>            </span></div><h3 id="addsfr-bpp-mdm" class="indexable" data-level="3">5.4.2  Additional SFRs</h3>
+This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> for any <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> where the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is claimed as the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_276" href="#period_276">. </a>    <h2 id="man-sfrs" class="indexable" data-level="2">5.5 TOE Security Functional Requirements</h2>
+	This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr><a id="period_277" href="#period_277">. </a>      <h2 id="obj-req-map" class="indexable" data-level="2">5.6 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
     showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">5</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="1"><a href="#T.TSF_CONFIGURATION">T.TSF_&#8203;CONFIGURATION</a><br></td><td>
             <a href="#FIA_X509_EXT.4">FIA_X509_EXT.4</a>
           </td><td>
-            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by providing the ability to verify the integrity of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using X.509 certificates<a id="period_256" href="#period_256">. </a>          </td></tr>
+            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by providing the ability to verify the integrity of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using X.509 certificates<a id="period_278" href="#period_278">. </a>          </td></tr>
 <tr class="major-row"><td rowspan="1"><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_&#8203;ACCESS</a><br></td><td>
             <a href="#FTP_ITC.1">FTP_ITC.1</a>
           </td><td>
-            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by defining the use of IPsec for protecting data in transit<a id="period_257" href="#period_257">. </a>          </td></tr>
+            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by defining the use of IPsec for protecting data in transit<a id="period_279" href="#period_279">. </a>          </td></tr>
 <tr class="major-row"><td rowspan="4"><a href="#T.USER_DATA_REUSE">T.USER_&#8203;DATA_&#8203;REUSE</a><br></td><td>
             <a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a>
           </td><td>
             This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>&#8217; key storage<a id="period_258" href="#period_258">. </a>          </td></tr>
+            to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>&#8217; key storage<a id="period_280" href="#period_280">. </a>          </td></tr>
 <tr><td>
             <a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a>
           </td><td>
             This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            or its platform to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>' key storage<a id="period_259" href="#period_259">. </a>          </td></tr>
+            or its platform to store sensitive data in the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>' key storage<a id="period_281" href="#period_281">. </a>          </td></tr>
 <tr><td>
             <a href="#FCS_CKM.6">FCS_CKM.6</a>
           </td><td>
             This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            or its platform to zeroize key data when no longer needed<a id="period_260" href="#period_260">. </a>          </td></tr>
+            or its platform to zeroize key data when no longer needed<a id="period_282" href="#period_282">. </a>          </td></tr>
 <tr><td>
             <a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a>
           </td><td>
             This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally
             requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
-            established IPsec tunnel<a id="period_261" href="#period_261">. </a>          </td></tr>
+            established IPsec tunnel<a id="period_283" href="#period_283">. </a>          </td></tr>
 </table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-bpp-gpos" class="indexable" data-level="2">6.1 
     Protection Profile for Protection Profile for General Purpose Operating System</h2><h3 id="contoe-bpp-gpos" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type
       </h3>
         If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a 
-		general-purpose <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr><a id="period_262" href="#period_262">. </a>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality that
+		general-purpose <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr><a id="period_284" href="#period_284">. </a>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality that
 		is built into the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> so that additional security functionality is claimed within the scope of
-		the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_263" href="#period_263">. </a>      <h3 id="consecprob-bpp-gpos" class="indexable" data-level="3">6.1.2 
+		the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_285" href="#period_285">. </a>      <h3 id="consecprob-bpp-gpos" class="indexable" data-level="3">6.1.2 
 	Consistency of Security Problem Definition
       </h3>
         The threats and assumptions defined by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> (see sections 3.1 and 3.2) supplement those
@@ -2093,67 +2351,67 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, <abbr class="dyn-abbr"><a href="#abbr_OSP">OSP</a></abbr></th><th>Consistency Rationale</th></tr><tr><td><a href="#T.TSF_CONFIGURATION">T.TSF_CONFIGURATION</a></td><td>
         The threat of a misconfigured <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is consistent with the
 		T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats on the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because misconfiguration could allow <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> traffic to be subjected
-		unexpectedly to unauthorized modification or disclosure<a id="period_264" href="#period_264">. </a>      </td></tr><tr><td><a href="#T.TSF_FAILURE">T.TSF_FAILURE</a></td><td>
+		unexpectedly to unauthorized modification or disclosure<a id="period_286" href="#period_286">. </a>      </td></tr><tr><td><a href="#T.TSF_FAILURE">T.TSF_FAILURE</a></td><td>
         A failure of <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> functionality could compromise the local system, which is
-		consistent with the T.LOCAL_ATTACK threat in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_265" href="#period_265">. </a>      </td></tr><tr><td><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_ACCESS</a></td><td>
+		consistent with the T.LOCAL_ATTACK threat in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_287" href="#period_287">. </a>      </td></tr><tr><td><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_ACCESS</a></td><td>
         The threat of an attacker gaining access to a network interface or data
-        that is transmitted over it is consistent with the T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_266" href="#period_266">. </a>      </td></tr><tr><td><a href="#T.USER_DATA_REUSE">T.USER_DATA_REUSE</a></td><td>
+        that is transmitted over it is consistent with the T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_288" href="#period_288">. </a>      </td></tr><tr><td><a href="#T.USER_DATA_REUSE">T.USER_DATA_REUSE</a></td><td>
         Inadvertent disclosure of user data to an unauthorized recipient is
-		consistent with the T.NETWORK_EAVESDROP threat in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_267" href="#period_267">. </a>      </td></tr><tr><td><a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a></td><td>
+		consistent with the T.NETWORK_EAVESDROP threat in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_289" href="#period_289">. </a>      </td></tr><tr><td><a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a></td><td>
         The <a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a> assumption assumes that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> is configured in such a manner that the only network route to the
-	      protected network is through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_268" href="#period_268">. </a>This does not conflict with
-		the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> makes no assumptions about the network architecture in which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is deployed<a id="period_269" href="#period_269">. </a>      </td></tr><tr><td><a href="#A.PHYSICAL">A.PHYSICAL</a></td><td>
+	      protected network is through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_290" href="#period_290">. </a>This does not conflict with
+		the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> makes no assumptions about the network architecture in which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is deployed<a id="period_291" href="#period_291">. </a>      </td></tr><tr><td><a href="#A.PHYSICAL">A.PHYSICAL</a></td><td>
         The assumption that physical security is provided by the environment is
 		not explicitly stated in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but is consistent with the A.PLATFORM assumption defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, which expects the computing
-		platform to be trusted<a id="period_270" href="#period_270">. </a>      </td></tr><tr><td><a href="#A.TRUSTED_CONFIG">A.TRUSTED_CONFIG</a></td><td>
+		platform to be trusted<a id="period_292" href="#period_292">. </a>      </td></tr><tr><td><a href="#A.TRUSTED_CONFIG">A.TRUSTED_CONFIG</a></td><td>
         The assumption that personnel responsible for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&#8217;s configuration are
 		trusted to follow the guidance is consistent with the A.PROPER_ADMIN
-		defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_271" href="#period_271">. </a>      </td></tr></table><h3 id="conobj-bpp-gpos" class="indexable" data-level="3">6.1.3 
+		defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_293" href="#period_293">. </a>      </td></tr></table><h3 id="conobj-bpp-gpos" class="indexable" data-level="3">6.1.3 
 			Consistency of OE Objectives
 		</h3><p><table><caption><span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">7</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#OE.NO_TOE_BYPASS">OE.NO_TOE_BYPASS</a></td><td>
         This objective addresses behavior that is out of scope of the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and
-		does not define an environment that a GPOS <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is incapable of existing in<a id="period_272" href="#period_272">. </a>      </td></tr><tr><td><a href="#OE.PHYSICAL">OE.PHYSICAL</a></td><td>
+		does not define an environment that a GPOS <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is incapable of existing in<a id="period_294" href="#period_294">. </a>      </td></tr><tr><td><a href="#OE.PHYSICAL">OE.PHYSICAL</a></td><td>
         This is part of satisfying <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PLATFORM as defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because
 		physical security is required for hardware to be considered &#8216;trusted.&#8217;
       </td></tr><tr><td><a href="#OE.TRUSTED_CONFIG">OE.TRUSTED_CONFIG</a></td><td>
         The expectation of trusted configuration is consistent with <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_USER
-		and <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_ADMIN in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_273" href="#period_273">. </a>      </td></tr></table></p><h3 id="conreq-bpp-gpos" class="indexable" data-level="3">6.1.4 
+		and <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_ADMIN in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_295" href="#period_295">. </a>      </td></tr></table></p><h3 id="conreq-bpp-gpos" class="indexable" data-level="3">6.1.4 
 	Consistency of Requirements
       </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
       GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support
-      <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality<a id="period_274" href="#period_274">. </a>      This is considered to be consistent because the functionality provided by the
-      GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose<a id="period_275" href="#period_275">. </a>      
+      <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality<a id="period_296" href="#period_296">. </a>      This is considered to be consistent because the functionality provided by the
+      GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose<a id="period_297" href="#period_297">. </a>      
             The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are used entirely to provide
             functionality for
- 	    <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_276" href="#period_276">. </a>        
+ 	    <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_298" href="#period_298">. </a>        
           The rationale for why this does not conflict with the claims
       defined by the
       GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">8</span></span>: Consistency of Requirements (GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_CKM.1</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client
-              requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified<a id="period_277" href="#period_277">. </a>            </td></tr><tr><td>FCS_CKM.2</td><td>
+              requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified<a id="period_299" href="#period_299">. </a>            </td></tr><tr><td>FCS_CKM.2</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
               address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is
-              unmodified<a id="period_278" href="#period_278">. </a>            </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a></td><td>
+              unmodified<a id="period_300" href="#period_300">. </a>            </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a></td><td>
         Storage of key data related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> functionality can be accomplished using
-		the same mechanism defined by FCS_STO_EXT.1 in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_279" href="#period_279">. </a>      </td></tr><tr><td><a href="#FIA_X509_EXT.4">FIA_X509_EXT.4</a></td><td>
+		the same mechanism defined by FCS_STO_EXT.1 in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_301" href="#period_301">. </a>      </td></tr><tr><td><a href="#FIA_X509_EXT.4">FIA_X509_EXT.4</a></td><td>
               This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines additional uses for X.509 certificate functionality that
-              do not conflict with those defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_280" href="#period_280">. </a>            </td></tr><tr><td><a href="#FTP_ITC.1">FTP_ITC.1</a></td><td>
+              do not conflict with those defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_302" href="#period_302">. </a>            </td></tr><tr><td><a href="#FTP_ITC.1">FTP_ITC.1</a></td><td>
         This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines a trusted channel for IPsec, which is added functionality
-		that does not prevent the existing GPOS functions from being performed<a id="period_281" href="#period_281">. </a>      </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Mandatory requirements<a id="period_282" href="#period_282">. </a>	    </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements<a id="period_283" href="#period_283">. </a>	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements<a id="period_284" href="#period_284">. </a>	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-dependent requirements<a id="period_285" href="#period_285">. </a>	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Selection-based requirements<a id="period_286" href="#period_286">. </a>	    </td></tr></tr></table><h2 id="conrat-bpp-mdf" class="indexable" data-level="2">6.2 
+		that does not prevent the existing GPOS functions from being performed<a id="period_303" href="#period_303">. </a>      </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Mandatory requirements<a id="period_304" href="#period_304">. </a>	    </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements<a id="period_305" href="#period_305">. </a>	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements<a id="period_306" href="#period_306">. </a>	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-dependent requirements<a id="period_307" href="#period_307">. </a>	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Selection-based requirements<a id="period_308" href="#period_308">. </a>	    </td></tr></tr></table><h2 id="conrat-bpp-mdf" class="indexable" data-level="2">6.2 
     Protection Profile for Protection Profile for Mobile Device Fundamentals</h2><h3 id="contoe-bpp-mdf" class="indexable" data-level="3">6.2.1 
 	Consistency of TOE Type
       </h3>
-        If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a mobile device<a id="period_287" href="#period_287">. </a>		The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality that is built into the device&#8217;s
-		software so that additional security functionality is claimed within the scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_288" href="#period_288">. </a>      <h3 id="consecprob-bpp-mdf" class="indexable" data-level="3">6.2.2 
+        If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a mobile device<a id="period_309" href="#period_309">. </a>		The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality that is built into the device&#8217;s
+		software so that additional security functionality is claimed within the scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_310" href="#period_310">. </a>      <h3 id="consecprob-bpp-mdf" class="indexable" data-level="3">6.2.2 
 	Consistency of Security Problem Definition
       </h3>
         The threats and assumptions defined by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> (see sections 3.1 and 3.2) supplement those
@@ -2161,66 +2419,66 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       <table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">9</span></span>: Consistency of Security Problem Definition (MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, <abbr class="dyn-abbr"><a href="#abbr_OSP">OSP</a></abbr></th><th>Consistency Rationale</th></tr><tr><td><a href="#T.TSF_CONFIGURATION">T.TSF_CONFIGURATION</a></td><td>
         The threat of a misconfigured <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is consistent with the
-		T.NETWORK and T.EAVESDROP threats in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because failure to mitigate against misconfiguration makes these threats more significant<a id="period_289" href="#period_289">. </a>      </td></tr><tr><td><a href="#T.TSF_FAILURE">T.TSF_FAILURE</a></td><td>
+		T.NETWORK and T.EAVESDROP threats in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because failure to mitigate against misconfiguration makes these threats more significant<a id="period_311" href="#period_311">. </a>      </td></tr><tr><td><a href="#T.TSF_FAILURE">T.TSF_FAILURE</a></td><td>
         A failure of <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> functionality could compromise the local system, which is
-		consistent with the T.FLAWAPP threat in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_290" href="#period_290">. </a>      </td></tr><tr><td><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_ACCESS</a></td><td>
+		consistent with the T.FLAWAPP threat in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_312" href="#period_312">. </a>      </td></tr><tr><td><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_ACCESS</a></td><td>
         The threat of an attacker gaining access to a network interface or data
-		that is transmitted over it is consistent with the T.NETWORK and T.EAVESDROP threats in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_291" href="#period_291">. </a>      </td></tr><tr><td><a href="#T.USER_DATA_REUSE">T.USER_DATA_REUSE</a></td><td>
+		that is transmitted over it is consistent with the T.NETWORK and T.EAVESDROP threats in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_313" href="#period_313">. </a>      </td></tr><tr><td><a href="#T.USER_DATA_REUSE">T.USER_DATA_REUSE</a></td><td>
         Inadvertent disclosure of user data to an unauthorized recipient is
-		consistent with the T.EAVESDROP threat in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_292" href="#period_292">. </a>      </td></tr><tr><td><a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a></td><td>
+		consistent with the T.EAVESDROP threat in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_314" href="#period_314">. </a>      </td></tr><tr><td><a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a></td><td>
         The <a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a> assumption assumes that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> is configured in such a manner that the only network route
-		to the protected network is through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_293" href="#period_293">. </a>This does not conflict with
+		to the protected network is through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_315" href="#period_315">. </a>This does not conflict with
 		the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> makes no assumptions about the
-		network architecture in which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is deployed<a id="period_294" href="#period_294">. </a>      </td></tr><tr><td><a href="#A.PHYSICAL">A.PHYSICAL</a></td><td>
+		network architecture in which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is deployed<a id="period_316" href="#period_316">. </a>      </td></tr><tr><td><a href="#A.PHYSICAL">A.PHYSICAL</a></td><td>
         The MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> includes the A.NOTIFY and A.PRECAUTION assumptions to
-		mitigate the risk of physical theft of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_295" href="#period_295">. </a>This is consistent with the
+		mitigate the risk of physical theft of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_317" href="#period_317">. </a>This is consistent with the
 		<a href="#A.PHYSICAL">A.PHYSICAL</a> assumption in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> includes
-		reasonable assumptions about the physical security of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_296" href="#period_296">. </a>      </td></tr><tr><td><a href="#A.TRUSTED_CONFIG">A.TRUSTED_CONFIG</a></td><td>
+		reasonable assumptions about the physical security of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_318" href="#period_318">. </a>      </td></tr><tr><td><a href="#A.TRUSTED_CONFIG">A.TRUSTED_CONFIG</a></td><td>
         This assumption is consistent with the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
-		includes the A.CONFIG assumption which assumes that all security functions are appropriately configured<a id="period_297" href="#period_297">. </a>      </td></tr></table><h3 id="conobj-bpp-mdf" class="indexable" data-level="3">6.2.3 
+		includes the A.CONFIG assumption which assumes that all security functions are appropriately configured<a id="period_319" href="#period_319">. </a>      </td></tr></table><h3 id="conobj-bpp-mdf" class="indexable" data-level="3">6.2.3 
 			Consistency of OE Objectives
 		</h3><p><table><caption><span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">10</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#OE.NO_TOE_BYPASS">OE.NO_TOE_BYPASS</a></td><td>
         This objective addresses behavior that is out of scope of the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
-		and does not define an environment that an MDF <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is incapable of existing in<a id="period_298" href="#period_298">. </a>      </td></tr><tr><td><a href="#OE.PHYSICAL">OE.PHYSICAL</a></td><td>
+		and does not define an environment that an MDF <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is incapable of existing in<a id="period_320" href="#period_320">. </a>      </td></tr><tr><td><a href="#OE.PHYSICAL">OE.PHYSICAL</a></td><td>
         The operational environment of a mobile device cannot guarantee
 		physical security, but the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PRECAUTION objective in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
-		ensures that an appropriate level of physical security is provided<a id="period_299" href="#period_299">. </a>      </td></tr><tr><td><a href="#OE.TRUSTED_CONFIG">OE.TRUSTED_CONFIG</a></td><td>
+		ensures that an appropriate level of physical security is provided<a id="period_321" href="#period_321">. </a>      </td></tr><tr><td><a href="#OE.TRUSTED_CONFIG">OE.TRUSTED_CONFIG</a></td><td>
         The expectation of trusted configuration is consistent with
-		<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.CONFIG in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_300" href="#period_300">. </a>      </td></tr></table></p><h3 id="conreq-bpp-mdf" class="indexable" data-level="3">6.2.4 
+		<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.CONFIG in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_322" href="#period_322">. </a>      </td></tr></table></p><h3 id="conreq-bpp-mdf" class="indexable" data-level="3">6.2.4 
 	Consistency of Requirements
       </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
       MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support
-      <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality<a id="period_301" href="#period_301">. </a>      This is considered to be consistent because the functionality provided by the
-      MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose<a id="period_302" href="#period_302">. </a>      
+      <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality<a id="period_323" href="#period_323">. </a>      This is considered to be consistent because the functionality provided by the
+      MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose<a id="period_324" href="#period_324">. </a>      
             The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are used entirely to provide
             functionality for
- 	    <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_303" href="#period_303">. </a>        
+ 	    <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_325" href="#period_325">. </a>        
           The rationale for why this does not conflict with the claims
       defined by the
       MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">11</span></span>: Consistency of Requirements (MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_CKM.1</td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified<a id="period_304" href="#period_304">. </a>            </td></tr><tr><td>FCS_CKM.2/UNLOCKED</td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified<a id="period_305" href="#period_305">. </a>            </td></tr><tr><td>FDP_IFC_EXT.1</td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified<a id="period_306" href="#period_306">. </a>            </td></tr><tr><td>FTP_ITC_EXT.1</td><td>
-              This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds IPsec as a new protocol that is used to implement trusted channels<a id="period_307" href="#period_307">. </a>            </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></td><td>
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified<a id="period_326" href="#period_326">. </a>            </td></tr><tr><td>FCS_CKM.2/UNLOCKED</td><td>
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified<a id="period_327" href="#period_327">. </a>            </td></tr><tr><td>FDP_IFC_EXT.1</td><td>
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified<a id="period_328" href="#period_328">. </a>            </td></tr><tr><td>FTP_ITC_EXT.1</td><td>
+              This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds IPsec as a new protocol that is used to implement trusted channels<a id="period_329" href="#period_329">. </a>            </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></td><td>
         The ability of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client to prevent split tunneling of IPsec traffic
         requires it to have hooks into lower-level mobile device behavior, but there
         are no requirements in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that would prevent this functionality
-        from being supported<a id="period_308" href="#period_308">. </a>      </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Mandatory requirements<a id="period_309" href="#period_309">. </a>	    </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements<a id="period_310" href="#period_310">. </a>	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements<a id="period_311" href="#period_311">. </a>	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-dependent requirements<a id="period_312" href="#period_312">. </a>	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Selection-based requirements<a id="period_313" href="#period_313">. </a>	    </td></tr></tr></table><h2 id="conrat-bpp-app" class="indexable" data-level="2">6.3 
+        from being supported<a id="period_330" href="#period_330">. </a>      </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Mandatory requirements<a id="period_331" href="#period_331">. </a>	    </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements<a id="period_332" href="#period_332">. </a>	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements<a id="period_333" href="#period_333">. </a>	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-dependent requirements<a id="period_334" href="#period_334">. </a>	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Selection-based requirements<a id="period_335" href="#period_335">. </a>	    </td></tr></tr></table><h2 id="conrat-bpp-app" class="indexable" data-level="2">6.3 
     Protection Profile for Protection Profile for Application Software</h2><h3 id="contoe-bpp-app" class="indexable" data-level="3">6.3.1 
 	Consistency of TOE Type
       </h3>
         If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a software
-		application<a id="period_314" href="#period_314">. </a>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is made more specific by defining the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as a specific type of
-		application<a id="period_315" href="#period_315">. </a>      <h3 id="consecprob-bpp-app" class="indexable" data-level="3">6.3.2 
+		application<a id="period_336" href="#period_336">. </a>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is made more specific by defining the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as a specific type of
+		application<a id="period_337" href="#period_337">. </a>      <h3 id="consecprob-bpp-app" class="indexable" data-level="3">6.3.2 
 	Consistency of Security Problem Definition
       </h3>
         The threats and assumptions defined by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> (see sections 3.1 and 3.2) supplement those
@@ -2228,45 +2486,45 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       <table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">12</span></span>: Consistency of Security Problem Definition (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, <abbr class="dyn-abbr"><a href="#abbr_OSP">OSP</a></abbr></th><th>Consistency Rationale</th></tr><tr><td><a href="#T.TSF_CONFIGURATION">T.TSF_CONFIGURATION</a></td><td>
         The threat of a misconfigured <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is consistent with the
-		T.LOCAL_ATTACK threat in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_316" href="#period_316">. </a>      </td></tr><tr><td><a href="#T.TSF_FAILURE">T.TSF_FAILURE</a></td><td>
+		T.LOCAL_ATTACK threat in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_338" href="#period_338">. </a>      </td></tr><tr><td><a href="#T.TSF_FAILURE">T.TSF_FAILURE</a></td><td>
         A failure of <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> functionality could compromise the local system, which is
-		consistent with the T.LOCAL_ATTACK threat in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_317" href="#period_317">. </a>      </td></tr><tr><td><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_ACCESS</a></td><td>
+		consistent with the T.LOCAL_ATTACK threat in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_339" href="#period_339">. </a>      </td></tr><tr><td><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_ACCESS</a></td><td>
         The threat of an attacker gaining access to a network interface or data
 		that is transmitted over it is consistent with the T.NETWORK_ATTACK and
-		T.NETWORK_EAVESDROP threats in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_318" href="#period_318">. </a>      </td></tr><tr><td><a href="#T.USER_DATA_REUSE">T.USER_DATA_REUSE</a></td><td>
+		T.NETWORK_EAVESDROP threats in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_340" href="#period_340">. </a>      </td></tr><tr><td><a href="#T.USER_DATA_REUSE">T.USER_DATA_REUSE</a></td><td>
         Inadvertent disclosure of user data to an unauthorized recipient is
-		consistent with the T.NETWORK_EAVESDROP threat in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_319" href="#period_319">. </a>      </td></tr><tr><td><a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a></td><td>
+		consistent with the T.NETWORK_EAVESDROP threat in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_341" href="#period_341">. </a>      </td></tr><tr><td><a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a></td><td>
         The <a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a> assumption assumes that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> is configured in such a manner that the only network route
-		to the protected network is through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_320" href="#period_320">. </a>This does not conflict with
+		to the protected network is through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_342" href="#period_342">. </a>This does not conflict with
 		the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> makes no assumptions about the network
-		architecture in which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is deployed<a id="period_321" href="#period_321">. </a>      </td></tr><tr><td><a href="#A.PHYSICAL">A.PHYSICAL</a></td><td>
+		architecture in which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is deployed<a id="period_343" href="#period_343">. </a>      </td></tr><tr><td><a href="#A.PHYSICAL">A.PHYSICAL</a></td><td>
         The assumption that physical security is provided by the environment is
 		not explicitly stated in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but is consistent with the A.PLATFORM
 		assumption defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, which expects the computing platform
-		to be trusted<a id="period_322" href="#period_322">. </a>      </td></tr><tr><td><a href="#A.TRUSTED_CONFIG">A.TRUSTED_CONFIG</a></td><td>
+		to be trusted<a id="period_344" href="#period_344">. </a>      </td></tr><tr><td><a href="#A.TRUSTED_CONFIG">A.TRUSTED_CONFIG</a></td><td>
         The assumption that personnel responsible for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&#8217;s configuration are
 		trusted to follow the guidance is consistent with the A.PROPER_ADMIN
-		defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_323" href="#period_323">. </a>      </td></tr></table><h3 id="conobj-bpp-app" class="indexable" data-level="3">6.3.3 
+		defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_345" href="#period_345">. </a>      </td></tr></table><h3 id="conobj-bpp-app" class="indexable" data-level="3">6.3.3 
 			Consistency of OE Objectives
 		</h3><p><table><caption><span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">13</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#OE.NO_TOE_BYPASS">OE.NO_TOE_BYPASS</a></td><td>
         This objective addresses behavior that is out of scope of the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
 		and does not define an environment that is globally applicable to all
-		software applications<a id="period_324" href="#period_324">. </a>      </td></tr><tr><td><a href="#OE.PHYSICAL">OE.PHYSICAL</a></td><td>
+		software applications<a id="period_346" href="#period_346">. </a>      </td></tr><tr><td><a href="#OE.PHYSICAL">OE.PHYSICAL</a></td><td>
         This is part of satisfying <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PLATFORM as defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
 		because physical security is required for the underlying platform to
-		be considered &#8216;trustworthy&#8217;<a id="period_325" href="#period_325">. </a>      </td></tr><tr><td><a href="#OE.TRUSTED_CONFIG">OE.TRUSTED_CONFIG</a></td><td>
+		be considered &#8216;trustworthy&#8217;<a id="period_347" href="#period_347">. </a>      </td></tr><tr><td><a href="#OE.TRUSTED_CONFIG">OE.TRUSTED_CONFIG</a></td><td>
         The expectation of trusted configuration is consistent with
-		<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_USER and <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_ADMIN in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_326" href="#period_326">. </a>      </td></tr></table></p><h3 id="conreq-bpp-app" class="indexable" data-level="3">6.3.4 
+		<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_USER and <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_ADMIN in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_348" href="#period_348">. </a>      </td></tr></table></p><h3 id="conreq-bpp-app" class="indexable" data-level="3">6.3.4 
 	Consistency of Requirements
       </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
       App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support
-      <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality<a id="period_327" href="#period_327">. </a>      This is considered to be consistent because the functionality provided by the
-      App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose<a id="period_328" href="#period_328">. </a>      
+      <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality<a id="period_349" href="#period_349">. </a>      This is considered to be consistent because the functionality provided by the
+      App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose<a id="period_350" href="#period_350">. </a>      
             The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are used entirely to provide
             functionality for
- 	    <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_329" href="#period_329">. </a>        
+ 	    <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_351" href="#period_351">. </a>        
           The rationale for why this does not conflict with the claims
       defined by the
       App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
@@ -2274,35 +2532,35 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_CKM.2</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
               address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements and is modified to include <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 14 as an additional supported method for key
-              establishment<a id="period_330" href="#period_330">. </a>            </td></tr><tr><td>FCS_CKM_EXT.1</td><td>
+              establishment<a id="period_352" href="#period_352">. </a>            </td></tr><tr><td>FCS_CKM_EXT.1</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
               address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; specifically, since key generation
               services are required in some capacity in order to support <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>
               functionality, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author loses the choice of stating that the
-              application does not have any key generation functionality<a id="period_331" href="#period_331">. </a>              Additionally, this behavior is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but is made
-              mandatory since it is required for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality<a id="period_332" href="#period_332">. </a>            </td></tr><tr><td>FCS_COP.1/SKC</td><td>
+              application does not have any key generation functionality<a id="period_353" href="#period_353">. </a>              Additionally, this behavior is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but is made
+              mandatory since it is required for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality<a id="period_354" href="#period_354">. </a>            </td></tr><tr><td>FCS_COP.1/SKC</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
               address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is
-              unmodified<a id="period_333" href="#period_333">. </a>            </td></tr><tr><td>FTP_DIT_EXT.1</td><td>
+              unmodified<a id="period_355" href="#period_355">. </a>            </td></tr><tr><td>FTP_DIT_EXT.1</td><td>
               This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires the existing selection of IPsec to be chosen to satisfy the dependency on this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
             </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM.6">FCS_CKM.6</a></td><td>
         This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds a requirement for key destruction, which is new
 		functionality when compared to the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but does not interfere with its
-		existing security functions<a id="period_334" href="#period_334">. </a>      </td></tr><tr><td><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a></td><td>
+		existing security functions<a id="period_356" href="#period_356">. </a>      </td></tr><tr><td><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a></td><td>
         This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds a requirement for key storage, which is new
-		functionality when compared to the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but does not interfere with its existing security functions<a id="period_335" href="#period_335">. </a>      </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Mandatory requirements<a id="period_336" href="#period_336">. </a>	    </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements<a id="period_337" href="#period_337">. </a>	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements<a id="period_338" href="#period_338">. </a>	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-dependent requirements<a id="period_339" href="#period_339">. </a>	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Selection-based requirements<a id="period_340" href="#period_340">. </a>	    </td></tr></tr></table><h2 id="conrat-bpp-mdm" class="indexable" data-level="2">6.4 
+		functionality when compared to the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but does not interfere with its existing security functions<a id="period_357" href="#period_357">. </a>      </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Mandatory requirements<a id="period_358" href="#period_358">. </a>	    </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements<a id="period_359" href="#period_359">. </a>	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements<a id="period_360" href="#period_360">. </a>	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-dependent requirements<a id="period_361" href="#period_361">. </a>	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Selection-based requirements<a id="period_362" href="#period_362">. </a>	    </td></tr></tr></table><h2 id="conrat-bpp-mdm" class="indexable" data-level="2">6.4 
     Protection Profile for Protection Profile for Mobile Device Management</h2><h3 id="contoe-bpp-mdm" class="indexable" data-level="3">6.4.1 
 	Consistency of TOE Type
       </h3>
         If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a mobile device
-		management solution<a id="period_341" href="#period_341">. </a>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality that is
+		management solution<a id="period_363" href="#period_363">. </a>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality that is
 		included with the MDM software so that additional security functionality is claimed within the scope of
-		the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_342" href="#period_342">. </a>      <h3 id="consecprob-bpp-mdm" class="indexable" data-level="3">6.4.2 
+		the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_364" href="#period_364">. </a>      <h3 id="consecprob-bpp-mdm" class="indexable" data-level="3">6.4.2 
 	Consistency of Security Problem Definition
       </h3>
         The threats and assumptions defined by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> (see sections 3.1 and 3.2) supplement those
@@ -2312,64 +2570,66 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         The threat of a misconfigured <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is consistent with the
 		T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats in the MDM
 		<abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because failure to mitigate against misconfiguration makes these
-		threats more significant<a id="period_343" href="#period_343">. </a>      </td></tr><tr><td><a href="#T.TSF_FAILURE">T.TSF_FAILURE</a></td><td>
+		threats more significant<a id="period_365" href="#period_365">. </a>      </td></tr><tr><td><a href="#T.TSF_FAILURE">T.TSF_FAILURE</a></td><td>
         A failure of <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> functionality could compromise the implementation of the
-		IPsec channel, which would lead to an exploitation of the T.NETWORK_ATTACK threat<a id="period_344" href="#period_344">. </a>      </td></tr><tr><td><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_ACCESS</a></td><td>
+		IPsec channel, which would lead to an exploitation of the T.NETWORK_ATTACK threat<a id="period_366" href="#period_366">. </a>      </td></tr><tr><td><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_ACCESS</a></td><td>
         The threat of an attacker gaining access to a network interface or data
 		that is transmitted over it is consistent with the T.NETWORK_ATTACK and
-		T.NETWORK_EAVESDROP threats in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_345" href="#period_345">. </a>      </td></tr><tr><td><a href="#T.USER_DATA_REUSE">T.USER_DATA_REUSE</a></td><td>
+		T.NETWORK_EAVESDROP threats in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_367" href="#period_367">. </a>      </td></tr><tr><td><a href="#T.USER_DATA_REUSE">T.USER_DATA_REUSE</a></td><td>
         Inadvertent disclosure of user data to an unauthorized recipient is
-		consistent with the T.NETWORK_EAVESDROP threat in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_346" href="#period_346">. </a>      </td></tr><tr><td><a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a></td><td>
+		consistent with the T.NETWORK_EAVESDROP threat in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_368" href="#period_368">. </a>      </td></tr><tr><td><a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a></td><td>
         The <a href="#A.NO_TOE_BYPASS">A.NO_TOE_BYPASS</a> assumption assumes that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> is configured in such a manner that the only network route
-		to the protected network is through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_347" href="#period_347">. </a>This does not conflict with
+		to the protected network is through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_369" href="#period_369">. </a>This does not conflict with
 		the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> makes no assumptions about the
-		network architecture in which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is deployed<a id="period_348" href="#period_348">. </a>      </td></tr><tr><td><a href="#A.PHYSICAL">A.PHYSICAL</a></td><td>
+		network architecture in which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is deployed<a id="period_370" href="#period_370">. </a>      </td></tr><tr><td><a href="#A.PHYSICAL">A.PHYSICAL</a></td><td>
         The assumption that physical security is provided by the environment is
 		not explicitly stated in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but is consistent with the A.MDM_SERVER_PLATFORM assumption defined in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, which
-		expects the computing platform to be trusted<a id="period_349" href="#period_349">. </a>      </td></tr><tr><td><a href="#A.TRUSTED_CONFIG">A.TRUSTED_CONFIG</a></td><td>
+		expects the computing platform to be trusted<a id="period_371" href="#period_371">. </a>      </td></tr><tr><td><a href="#A.TRUSTED_CONFIG">A.TRUSTED_CONFIG</a></td><td>
         The assumption that personnel responsible for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&#8217;s configuration are
 		trusted to follow the guidance is consistent with the A.PROPER_ADMIN
-		defined in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_350" href="#period_350">. </a>      </td></tr></table><h3 id="conobj-bpp-mdm" class="indexable" data-level="3">6.4.3 
+		defined in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_372" href="#period_372">. </a>      </td></tr></table><h3 id="conobj-bpp-mdm" class="indexable" data-level="3">6.4.3 
 			Consistency of OE Objectives
 		</h3><p><table><caption><span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">16</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#OE.NO_TOE_BYPASS">OE.NO_TOE_BYPASS</a></td><td>
         This objective addresses behavior that is out of scope of the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
 		and does not define an environment that an MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is incapable
-		of existing in<a id="period_351" href="#period_351">. </a>      </td></tr><tr><td><a href="#OE.PHYSICAL">OE.PHYSICAL</a></td><td>
+		of existing in<a id="period_373" href="#period_373">. </a>      </td></tr><tr><td><a href="#OE.PHYSICAL">OE.PHYSICAL</a></td><td>
         This is part of satisfying <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.IT_ENTERPRISE as defined in the MDM
 		<abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because provisioning of physical security is a reasonable
-		expectation for an <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> enterprise<a id="period_352" href="#period_352">. </a>      </td></tr><tr><td><a href="#OE.TRUSTED_CONFIG">OE.TRUSTED_CONFIG</a></td><td>
+		expectation for an <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> enterprise<a id="period_374" href="#period_374">. </a>      </td></tr><tr><td><a href="#OE.TRUSTED_CONFIG">OE.TRUSTED_CONFIG</a></td><td>
         The expectation of trusted configuration is consistent with
-		<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_USER and <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_ADMIN in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_353" href="#period_353">. </a>      </td></tr></table></p><h3 id="conreq-bpp-mdm" class="indexable" data-level="3">6.4.4 
+		<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_USER and <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_ADMIN in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_375" href="#period_375">. </a>      </td></tr></table></p><h3 id="conreq-bpp-mdm" class="indexable" data-level="3">6.4.4 
 	Consistency of Requirements
       </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
       MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support
-      <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality<a id="period_354" href="#period_354">. </a>      This is considered to be consistent because the functionality provided by the
-      MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose<a id="period_355" href="#period_355">. </a>      
+      <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality<a id="period_376" href="#period_376">. </a>      This is considered to be consistent because the functionality provided by the
+      MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose<a id="period_377" href="#period_377">. </a>      
           The rationale for why this does not conflict with the claims
       defined by the
       MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">17</span></span>: Consistency of Requirements (MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
-			This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify any requirements when the
-			MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base<a id="period_356" href="#period_356">. </a>		  </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_CKM.1</td><td>
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified<a id="period_378" href="#period_378">. </a>            </td></tr><tr><td>FCS_CKM.2</td><td>
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified<a id="period_379" href="#period_379">. </a>            </td></tr><tr><td><a href="#FTP_ITC.1">FTP_ITC.1</a>/INTER_XFER_IT</td><td>
+              When this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>&#8217;s functionality, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections to implement this behavior using the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client at minimum<a id="period_380" href="#period_380">. </a>This is done by forcing the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to make a specific selection that is already present in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> definition of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> and by removing a selection option; no new behavior is introduced by this<a id="period_381" href="#period_381">. </a>            </td></tr><tr><td>FTP_TRP.1/TRUSTPATH_REM_ADMIN</td><td>
+              When this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>&#8217;s functionality, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections to implement this behavior using the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client at minimum<a id="period_382" href="#period_382">. </a>This is done by forcing the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to make a specific selection that is already present in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> definition of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> and by removing a selection option; no new behavior is introduced by this<a id="period_383" href="#period_383">. </a>            </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not add any requirements when the
-	      MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base<a id="period_357" href="#period_357">. </a>	    </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Mandatory requirements<a id="period_358" href="#period_358">. </a>	    </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements<a id="period_359" href="#period_359">. </a>	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements<a id="period_360" href="#period_360">. </a>	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-dependent requirements<a id="period_361" href="#period_361">. </a>	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Selection-based requirements<a id="period_362" href="#period_362">. </a>	    </td></tr></tr></table><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements
+	      MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base<a id="period_384" href="#period_384">. </a>	    </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Mandatory requirements<a id="period_385" href="#period_385">. </a>	    </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements<a id="period_386" href="#period_386">. </a>	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements<a id="period_387" href="#period_387">. </a>	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-dependent requirements<a id="period_388" href="#period_388">. </a>	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Selection-based requirements<a id="period_389" href="#period_389">. </a>	    </td></tr></tr></table><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements
     </h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any 
-       Strictly Optional        <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr><a id="period_363" href="#period_363">. </a></p><h2 id="obj-sfrs" class="indexable" data-level="2">A.2 Objective Requirements
+       Strictly Optional        <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr><a id="period_390" href="#period_390">. </a></p><h2 id="obj-sfrs" class="indexable" data-level="2">A.2 Objective Requirements
     </h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any 
-       Objective       <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr><a id="period_364" href="#period_364">. </a></p><h2 id="impl-dep-sfrs" class="indexable" data-level="2">A.3 Implementation-dependent Requirements
+       Objective       <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr><a id="period_391" href="#period_391">. </a></p><h2 id="impl-dep-sfrs" class="indexable" data-level="2">A.3 Implementation-dependent Requirements
     </h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any 
-       Implementation-dependent       <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr><a id="period_365" href="#period_365">. </a></p><h1 id="sel-sfrs" class="indexable" data-level="1">Appendix B -  Selection-based Requirements
+       Implementation-dependent       <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr><a id="period_392" href="#period_392">. </a></p><h1 id="sel-sfrs" class="indexable" data-level="1">Appendix B -  Selection-based Requirements
     </h1><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any 
-       Selection-based       <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr><a id="period_366" href="#period_366">. </a></p><h1 id="ext-comp-defs" class="indexable" data-level="A">Appendix C -  Extended Component Definitions</h1>
-	This appendix contains the definitions for all extended requirements specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_367" href="#period_367">. </a>
+       Selection-based       <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr><a id="period_393" href="#period_393">. </a></p><h1 id="ext-comp-defs" class="indexable" data-level="A">Appendix C -  Extended Component Definitions</h1>
+	This appendix contains the definitions for all extended requirements specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_394" href="#period_394">. </a>
     <h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.1 Extended Components Table</h2>
 
 	All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are listed in this table:
@@ -2378,16 +2638,16 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 	 FCS class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FCS_CKM_EXT" class="indexable" data-level="4">C.2.1.1 FCS_CKM_EXT Cryptographic Key Management</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>
               Components in this family describe requirements for key management functionality such as key
-		storage and destruction<a id="period_368" href="#period_368">. </a>            </div><h4>Component Leveling</h4><svg style="max-height: 50px;"><text x="4" fill="black" font-size="15" y="44">FCS_CKM_EXT</text><rect x="2" y="31" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">2</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="17" stroke="black"></line><text x="234" fill="black" font-size="15" y="44">2</text><rect x="232" y="31" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="37" stroke="black"></line></svg><p><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a>,
+		storage and destruction<a id="period_395" href="#period_395">. </a>            </div><h4>Component Leveling</h4><svg style="max-height: 50px;"><text x="4" fill="black" font-size="15" y="44">FCS_CKM_EXT</text><rect x="2" y="31" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">2</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="17" stroke="black"></line><text x="234" fill="black" font-size="15" y="44">2</text><rect x="232" y="31" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="37" stroke="black"></line></svg><p><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a>,
              Cryptographic Key Storage,
              
-              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to securely store key data when not in use<a id="period_369" href="#period_369">. </a>            </p><p><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a>,
+              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to securely store key data when not in use<a id="period_396" href="#period_396">. </a>            </p><p><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a>,
              Cryptographic Key Storage,
              
-              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to securely store key data when not in use<a id="period_370" href="#period_370">. </a>            </p><h4>Management: FCS_CKM_EXT.2</h4><p>
-              No specific management functions are identified<a id="period_371" href="#period_371">. </a>            </p><h4>Audit: FCS_CKM_EXT.2</h4><p>
-              There are no auditable events foreseen<a id="period_372" href="#period_372">. </a>            </p><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_373" href="#period_373">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
-              No dependencies<a id="period_374" href="#period_374">. </a>            </td></tr></table><h4 id="ext-comp-FCS_CKM_EXT.2.1">FCS_CKM_EXT.2.1</h4>
+              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to securely store key data when not in use<a id="period_397" href="#period_397">. </a>            </p><h4>Management: FCS_CKM_EXT.2</h4><p>
+              No specific management functions are identified<a id="period_398" href="#period_398">. </a>            </p><h4>Audit: FCS_CKM_EXT.2</h4><p>
+              There are no auditable events foreseen<a id="period_399" href="#period_399">. </a>            </p><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_400" href="#period_400">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
+              No dependencies<a id="period_401" href="#period_401">. </a>            </td></tr></table><h4 id="ext-comp-FCS_CKM_EXT.2.1">FCS_CKM_EXT.2.1</h4>
                 The
                 [<b>selection</b>: <span class="selectable-content" id="fcs_ckm_ext.2.1_1">
                     <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client
@@ -2395,10 +2655,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                     <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>
                   </span>]
                 shall store persistent secrets and private keys
-                when not in use in <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>-provided key storage<a id="period_375" href="#period_375">. </a>              </div><h4>Management: FCS_CKM_EXT.2</h4><p>
-              No specific management functions are identified<a id="period_376" href="#period_376">. </a>            </p><h4>Audit: FCS_CKM_EXT.2</h4><p>
-              There are no auditable events foreseen<a id="period_377" href="#period_377">. </a>            </p><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_378" href="#period_378">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
-              No dependencies<a id="period_379" href="#period_379">. </a>            </td></tr></table><h4 id="ext-comp-FCS_CKM_EXT.2.1">FCS_CKM_EXT.2.1</h4>
+                when not in use in <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>-provided key storage<a id="period_402" href="#period_402">. </a>              </div><h4>Management: FCS_CKM_EXT.2</h4><p>
+              No specific management functions are identified<a id="period_403" href="#period_403">. </a>            </p><h4>Audit: FCS_CKM_EXT.2</h4><p>
+              There are no auditable events foreseen<a id="period_404" href="#period_404">. </a>            </p><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_405" href="#period_405">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
+              No dependencies<a id="period_406" href="#period_406">. </a>            </td></tr></table><h4 id="ext-comp-FCS_CKM_EXT.2.1">FCS_CKM_EXT.2.1</h4>
                 The
                 [<b>selection</b>: <span class="selectable-content" id="fcs_ckm_ext.2.1_1">
                     <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client
@@ -2406,18 +2666,18 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                     <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>
                   </span>]
                 shall store persistent secrets and private keys
-                when not in use in platform-provided key storage<a id="period_380" href="#period_380">. </a>              </div></div></span><span data-sortkey="Identification and Authentication (FIA)"><h3 id="ext-comp-FIA" class="indexable" data-level="3">C.2.2 Identification and Authentication (FIA)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+                when not in use in platform-provided key storage<a id="period_407" href="#period_407">. </a>              </div></div></span><span data-sortkey="Identification and Authentication (FIA)"><h3 id="ext-comp-FIA" class="indexable" data-level="3">C.2.2 Identification and Authentication (FIA)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FIA class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FIA_X509_EXT" class="indexable" data-level="4">C.2.2.1 FIA_X509_EXT X.509 Certificate Use and Management</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>
               Components in this family describe the requirements that pertain to <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic and information flow
-              through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_381" href="#period_381">. </a>            </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FIA_X509_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">4</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FIA_X509_EXT.4">FIA_X509_EXT.4</a>,
+              through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_408" href="#period_408">. </a>            </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FIA_X509_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">4</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FIA_X509_EXT.4">FIA_X509_EXT.4</a>,
              X.509 Certificate Use and Management,
              
               requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to perform X.509 certificate
               authentication and describes the behavior that is followed if the status of the certificate is unknown or
-              invalid<a id="period_382" href="#period_382">. </a>            </p><h4>Management: FIA_X509_EXT.4</h4><p>
-              No specific management functions are identified<a id="period_383" href="#period_383">. </a>            </p><h4>Audit: FIA_X509_EXT.4</h4><p>
-              There are no auditable events foreseen<a id="period_384" href="#period_384">. </a>            </p><h4>FIA_X509_EXT.4 X.509 Certificate Use and Management</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_385" href="#period_385">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
+              invalid<a id="period_409" href="#period_409">. </a>            </p><h4>Management: FIA_X509_EXT.4</h4><p>
+              No specific management functions are identified<a id="period_410" href="#period_410">. </a>            </p><h4>Audit: FIA_X509_EXT.4</h4><p>
+              There are no auditable events foreseen<a id="period_411" href="#period_411">. </a>            </p><h4>FIA_X509_EXT.4 X.509 Certificate Use and Management</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_412" href="#period_412">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
               FIA_X509_EXT.1 X.509 Certificate Validation
               <br>
               <br>
@@ -2438,7 +2698,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                   </span>, <span class="selectable-content" id="fia_x509_ext.4.1_3">
                     no additional uses
                   </span>]
-                <a id="period_386" href="#period_386">. </a>              <h4 id="ext-comp-FIA_X509_EXT.4.2">FIA_X509_EXT.4.2</h4>
+                <a id="period_413" href="#period_413">. </a>              <h4 id="ext-comp-FIA_X509_EXT.4.2">FIA_X509_EXT.4.2</h4>
                 When a connection to determine the validity of a certificate cannot be
                   established, the
                 [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="fia_x509_ext.4.2_1">
@@ -2454,7 +2714,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                   </span>, <span class="selectable-content" id="fia_x509_ext.4.2_5">
                     not accept the certificate
                   </span>]
-                <a id="period_387" href="#period_387">. </a>              <h4 id="ext-comp-FIA_X509_EXT.4.3">FIA_X509_EXT.4.3</h4>
+                <a id="period_414" href="#period_414">. </a>              <h4 id="ext-comp-FIA_X509_EXT.4.3">FIA_X509_EXT.4.3</h4>
                 The
                 [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="fia_x509_ext.4.3_1">
                     <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client
@@ -2462,29 +2722,29 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                     <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>
                   </span>]
                 shall not establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> if a certificate or
-                certificate path is deemed invalid<a id="period_388" href="#period_388">. </a>              </div></div></span><span data-sortkey="User Data Protection (FDP)"><h3 id="ext-comp-FDP" class="indexable" data-level="3">C.2.3 User Data Protection (FDP)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+                certificate path is deemed invalid<a id="period_415" href="#period_415">. </a>              </div></div></span><span data-sortkey="User Data Protection (FDP)"><h3 id="ext-comp-FDP" class="indexable" data-level="3">C.2.3 User Data Protection (FDP)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FDP class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FDP_VPN_EXT" class="indexable" data-level="4">C.2.3.1 FDP_VPN_EXT Subset Information Flow Control</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>
               Components in this family describe the requirements that pertain to <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic and information flow
-              through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_389" href="#period_389">. </a>            </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FDP_VPN_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a>,
+              through the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_416" href="#period_416">. </a>            </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FDP_VPN_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a>,
              Split Tunnel Prevention,
              
               requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to process all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through its <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client
-              functionality<a id="period_390" href="#period_390">. </a>            </p><h4>Management: FDP_VPN_EXT.1</h4><p>
-              No specific management functions are identified<a id="period_391" href="#period_391">. </a>            </p><h4>Audit: FDP_VPN_EXT.1</h4><p>
-              There are no auditable events foreseen<a id="period_392" href="#period_392">. </a>            </p><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_393" href="#period_393">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
+              functionality<a id="period_417" href="#period_417">. </a>            </p><h4>Management: FDP_VPN_EXT.1</h4><p>
+              No specific management functions are identified<a id="period_418" href="#period_418">. </a>            </p><h4>Audit: FDP_VPN_EXT.1</h4><p>
+              There are no auditable events foreseen<a id="period_419" href="#period_419">. </a>            </p><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_420" href="#period_420">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
               <span class="no-link">
                 FCS_IPSEC_EXT.1
               </span>
               IPsec
             </td></tr></table><h4 id="ext-comp-FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</h4>
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic (other than <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic required to establish
-                the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_394" href="#period_394">. </a>              </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
-			successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_395" href="#period_395">. </a>These requirements are not featured
-			explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_396" href="#period_396">. </a>They are not included as 
-			standalone <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> because it would increase the time, cost, and complexity of evaluation<a id="period_397" href="#period_397">. </a>			This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.3 Dependencies between components<a id="period_398" href="#period_398">. </a></p><p>This information benefits systems engineering activities which call for inclusion of particular
-			security controls<a id="period_399" href="#period_399">. </a>Evaluation against the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> provides evidence that these controls are present 
-			and have been evaluated<a id="period_400" href="#period_400">. </a></p>
+                the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection) flow through the IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_421" href="#period_421">. </a>              </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
+			successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_422" href="#period_422">. </a>These requirements are not featured
+			explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_423" href="#period_423">. </a>They are not included as 
+			standalone <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> because it would increase the time, cost, and complexity of evaluation<a id="period_424" href="#period_424">. </a>			This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.3 Dependencies between components<a id="period_425" href="#period_425">. </a></p><p>This information benefits systems engineering activities which call for inclusion of particular
+			security controls<a id="period_426" href="#period_426">. </a>Evaluation against the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> provides evidence that these controls are present 
+			and have been evaluated<a id="period_427" href="#period_427">. </a></p>
     
     
     <b>
@@ -2508,7 +2768,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           </b>
         </td>
         <td>
-          FCS_CKM.1 (which is defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> as FCS_CKM.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>) requires one of FCS_CKM.2 or FCS_COP.1 to be claimed so that the generated keys can serve some security-relevant purpose<a id="period_401" href="#period_401">. </a>Each of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> define an iteration of FCS_COP.1 for symmetric cryptography that is expected to use the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> keys generated by FCS_CKM.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr><a id="period_402" href="#period_402">. </a>Therefore, this dependency is satisfied through requirements defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr><a id="period_403" href="#period_403">. </a>        </td>
+          FCS_CKM.1 (which is defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> as FCS_CKM.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>) requires one of FCS_CKM.2 or FCS_COP.1 to be claimed so that the generated keys can serve some security-relevant purpose<a id="period_428" href="#period_428">. </a>Each of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> define an iteration of FCS_COP.1 for symmetric cryptography that is expected to use the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> keys generated by FCS_CKM.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr><a id="period_429" href="#period_429">. </a>Therefore, this dependency is satisfied through requirements defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr><a id="period_430" href="#period_430">. </a>        </td>
       </tr>
       <tr>
         <td>
@@ -2517,7 +2777,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           </b>
         </td>
         <td>
-          FCS_IPSEC_EXT.1 has a dependency on FCS_COP.1 because of the cryptographic operations that are needed in support of implementing the IPsec protocol<a id="period_404" href="#period_404">. </a>FCS_COP.1 is not defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because each of the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> define iterations of FCS_COP.1 that support the functions that are relevant to IPsec<a id="period_405" href="#period_405">. </a>        </td>
+          FCS_IPSEC_EXT.1 has a dependency on FCS_COP.1 because of the cryptographic operations that are needed in support of implementing the IPsec protocol<a id="period_431" href="#period_431">. </a>FCS_COP.1 is not defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because each of the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> define iterations of FCS_COP.1 that support the functions that are relevant to IPsec<a id="period_432" href="#period_432">. </a>        </td>
       </tr>
       <tr>
         <td>
@@ -2526,16 +2786,16 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           </b>
         </td>
         <td>
-          FAU_SEL.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> has a dependency on FMT_MTD.1 to enforce appropriate access controls on the audit configuration, as this is <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> data<a id="period_406" href="#period_406">. </a>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is not explicitly defined in any of the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> but the dependency is implicitly addressed by each <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in the following manner:
+          FAU_SEL.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> has a dependency on FMT_MTD.1 to enforce appropriate access controls on the audit configuration, as this is <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> data<a id="period_433" href="#period_433">. </a>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is not explicitly defined in any of the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> but the dependency is implicitly addressed by each <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in the following manner:
           <ul>
             <li>
-              GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> implicitly defines the existence of &#8216;user&#8217; and &#8216;administrator&#8217; roles in the extended <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> FMT_MOF_EXT.1 and FMT_SMF_EXT.1<a id="period_407" href="#period_407">. </a>A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> can associate the ability to perform the functionality defined by FAU_SEL.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> to one or both of these roles<a id="period_408" href="#period_408">. </a>            </li>
+              GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> implicitly defines the existence of &#8216;user&#8217; and &#8216;administrator&#8217; roles in the extended <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> FMT_MOF_EXT.1 and FMT_SMF_EXT.1<a id="period_434" href="#period_434">. </a>A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> can associate the ability to perform the functionality defined by FAU_SEL.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> to one or both of these roles<a id="period_435" href="#period_435">. </a>            </li>
             <li>
-              MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> implicitly defines the existence of &#8216;user,&#8217; &#8216;administrator,&#8217; and &#8216;MDM&#8217; roles in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> FMT_MOF_EXT.1 and FMT_SMF.1<a id="period_409" href="#period_409">. </a>A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> can associate the ability to perform the functionality defined by FAU_SEL.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> to one or more of these roles<a id="period_410" href="#period_410">. </a>            </li>
+              MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> implicitly defines the existence of &#8216;user,&#8217; &#8216;administrator,&#8217; and &#8216;MDM&#8217; roles in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> FMT_MOF_EXT.1 and FMT_SMF.1<a id="period_436" href="#period_436">. </a>A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> can associate the ability to perform the functionality defined by FAU_SEL.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> to one or more of these roles<a id="period_437" href="#period_437">. </a>            </li>
             <li>
-              App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not define the existence of a separately authenticated management interface; instead, the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> assumes that authentication to the underlying <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> platform is sufficient authorization to access the application&#8217;s management functionality<a id="period_411" href="#period_411">. </a>            </li>
+              App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not define the existence of a separately authenticated management interface; instead, the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> assumes that authentication to the underlying <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> platform is sufficient authorization to access the application&#8217;s management functionality<a id="period_438" href="#period_438">. </a>            </li>
             <li>
-              MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines the existence of management roles in FMT_SMR.1/SECMAN_ROLES<a id="period_412" href="#period_412">. </a>A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> can associate the ability to perform the functionality defined by FAU_SEL.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> to one or more of the roles defined here<a id="period_413" href="#period_413">. </a>            </li>
+              MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines the existence of management roles in FMT_SMR.1/SECMAN_ROLES<a id="period_439" href="#period_439">. </a>A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> can associate the ability to perform the functionality defined by FAU_SEL.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> to one or more of the roles defined here<a id="period_440" href="#period_440">. </a>            </li>
           </ul>
         </td>
       </tr>
@@ -2546,16 +2806,16 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           </b>
         </td>
         <td>
-          FAU_GEN.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> has a dependency on FPT_STM.1 because audit data is required to have timestamps that are based on reliable clock data<a id="period_414" href="#period_414">. </a>All of the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> either define this requirement explicitly or provide rationale for why the reader should expect that a reliable clock service should be present<a id="period_415" href="#period_415">. </a>Depending on the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, the dependency is satisfied in the following manner:
+          FAU_GEN.1/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> has a dependency on FPT_STM.1 because audit data is required to have timestamps that are based on reliable clock data<a id="period_441" href="#period_441">. </a>All of the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> either define this requirement explicitly or provide rationale for why the reader should expect that a reliable clock service should be present<a id="period_442" href="#period_442">. </a>Depending on the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, the dependency is satisfied in the following manner:
           <ul>
             <li>
-              GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> states that FPT_STM.1 is implicitly satisfied by the requirements of FAU_GEN.1 since that requirement could not be satisfied if no clock service was present<a id="period_416" href="#period_416">. </a>Additionally, a clock service is reasonably assumed to be provided by a general-purpose <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr><a id="period_417" href="#period_417">. </a>            </li>
+              GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> states that FPT_STM.1 is implicitly satisfied by the requirements of FAU_GEN.1 since that requirement could not be satisfied if no clock service was present<a id="period_443" href="#period_443">. </a>Additionally, a clock service is reasonably assumed to be provided by a general-purpose <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr><a id="period_444" href="#period_444">. </a>            </li>
             <li>
-              MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> explicitly defines FPT_STM.1<a id="period_418" href="#period_418">. </a>            </li>
+              MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> explicitly defines FPT_STM.1<a id="period_445" href="#period_445">. </a>            </li>
             <li>
-              App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> assumption A.PLATFORM assumes that the general-purpose computing platform on which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is installed is &#8216;a trustworthy computing platform.&#8217; System time data is not explicitly mentioned but a clock service is reasonably assumed to be provided by a general-purpose computer<a id="period_419" href="#period_419">. </a>            </li>
+              App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> assumption A.PLATFORM assumes that the general-purpose computing platform on which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is installed is &#8216;a trustworthy computing platform.&#8217; System time data is not explicitly mentioned but a clock service is reasonably assumed to be provided by a general-purpose computer<a id="period_446" href="#period_446">. </a>            </li>
             <li>
-              MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> assumption A.MDM_SERVER_PLATFORM assumes that the platform on which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is installed will provide reliable time services<a id="period_420" href="#period_420">. </a>            </li>
+              MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>: The MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> assumption A.MDM_SERVER_PLATFORM assumes that the platform on which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is installed will provide reliable time services<a id="period_447" href="#period_447">. </a>            </li>
           </ul>
         </td>
       </tr>
@@ -2566,11 +2826,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           </b>
         </td>
         <td>
-          FAU_GEN.1 has a dependency on FPT_STM.1<a id="period_421" href="#period_421">. </a>While not explicitly stated in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, it is assumed that this will be provided by the underlying hardware platform on which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is installed<a id="period_422" href="#period_422">. </a>This is because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is installed as a software or firmware product that runs on general-purpose computing hardware so a hardware clock is assumed to be available<a id="period_423" href="#period_423">. </a>        </td>
+          FAU_GEN.1 has a dependency on FPT_STM.1<a id="period_448" href="#period_448">. </a>While not explicitly stated in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, it is assumed that this will be provided by the underlying hardware platform on which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is installed<a id="period_449" href="#period_449">. </a>This is because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is installed as a software or firmware product that runs on general-purpose computing hardware so a hardware clock is assumed to be available<a id="period_450" href="#period_450">. </a>        </td>
       </tr>
     </table>
   <h1 id="app-ent" class="indexable" data-level="A">Appendix E -  Entropy Documentation and Assessment</h1>
-    The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr><a id="period_424" href="#period_424">. </a>As with other <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requirements, the only additional requirement is that the entropy documentation also applies to the specific <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client capabilities of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in addition to the functionality required by the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_425" href="#period_425">. </a>  <h1 id="acronyms" class="indexable" data-level="A">Appendix F -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">20</span></span>: Acronyms
+    The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr><a id="period_451" href="#period_451">. </a>As with other <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requirements, the only additional requirement is that the entropy documentation also applies to the specific <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client capabilities of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in addition to the functionality required by the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_452" href="#period_452">. </a>  <h1 id="acronyms" class="indexable" data-level="A">Appendix F -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">20</span></span>: Acronyms
 		</caption><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_AES"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr></span></td><td><span id="long_abbr_AES">Advanced Encryption Standard</span></td></tr>
 <tr><td><span class="term" id="abbr_Base-PP" data-plural="Base-PPs"><abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span></td><td><span id="long_abbr_Base-PP">Base Protection Profile</span></td></tr>
 <tr><td><span class="term" id="abbr_CC"><abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr></span></td><td><span id="long_abbr_CC">Common Criteria</span></td></tr>
@@ -2645,16 +2905,16 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         </a>
       </span></td></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
             <li><a href="https://www.commoncriteriaportal.org/files/ccfiles/CC2022PART1R1.pdf">Part 1: 
-				Introduction and general model</a>, CCMB-2022-11-001, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_426" href="#period_426">. </a></li>
+				Introduction and general model</a>, CCMB-2022-11-001, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_453" href="#period_453">. </a></li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART2R1.pdf">Part 2: 
-				Security functional requirements</a>, CCMB-2022-11-002, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_427" href="#period_427">. </a></li>
+				Security functional requirements</a>, CCMB-2022-11-002, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_454" href="#period_454">. </a></li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART3R1.pdf">Part 3: 
-                Security assurance requirements</a>, CCMB-2022-11-003, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_428" href="#period_428">. </a></li>
+                Security assurance requirements</a>, CCMB-2022-11-003, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_455" href="#period_455">. </a></li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART4R1.pdf">Part 4: 
-                Framework for the specification of evaluation methods and activities</a>, CCMB-2022-11-004, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_429" href="#period_429">. </a></li>
+                Framework for the specification of evaluation methods and activities</a>, CCMB-2022-11-004, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_456" href="#period_456">. </a></li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART5R1.pdf">Part 5: 
-                 Pre-defined packages of security requirements</a>, CCMB-2022-11-005, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_430" href="#period_430">. </a></li>
+                 Pre-defined packages of security requirements</a>, CCMB-2022-11-005, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_457" href="#period_457">. </a></li>
           </ul></span></td></tr><tr><td><span id="bibCEM">[<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>]</span></td><td><span class="description">Common Methodology for Information Technology Security Evaluation - <ul>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CEM2022R1.pdf">
-                 Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_431" href="#period_431">. </a></li>
+                 Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_458" href="#period_458">. </a></li>
           </ul></span></td></tr></table></body></html>

@@ -2,6 +2,7 @@
 * Error: Detected dangling id-reference to fcs-eap-ext-1 from attribute
         on/Module[1]""/include-pkg[2]""/depends[1]""/on[1]""
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
@@ -13,6 +14,9 @@
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_6'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_7'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_8'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_1'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_3'.
@@ -25,6 +29,18 @@
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_5'.
 * Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_1'.
 * Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_2'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_2'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_6'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_7'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_8'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.2_1'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.2_2'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.2_3'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.2_4'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.2_5'.
 * Error: Detected dangling ref to 'os-fcs-ckm-1'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[11]"The ST au"/ref[1]""
@@ -273,6 +289,8 @@
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/con-mod[33]"This SFR "/ref[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[1]""/description[1]"This SFR "/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[2]""/description[1]"This SFR "/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[3]""/description[1]""/h:p[1]"When the "/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[4]""/description[1]""/h:p[1]"When the "/h:p[1]""
 warning: failed to load external entity "output/pkg-x509.xml"
 warning: failed to load external entity "output/pkg-x509.xml"
 warning: failed to load external entity "output/pkg-x509.xml"
