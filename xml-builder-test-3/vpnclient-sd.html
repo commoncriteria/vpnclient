@@ -303,26 +303,44 @@
         2024-06-24
       </td><td>
         Incorporation of TC feedback:
-        
-          
+        <ul>
+          <li>
             Incorporation of TDs: 0662, 0672, 0690, 0697, 0711, 0725, 0753, 0788
-          
-          
+          </li>
+          <li>
             Corrections to Base-PP references
-          
-          
+          </li>
+          <li>
             Definition of auditable events for Additional SFRs
-          
-          
+          </li>
+          <li>
             Explicit association of evaluation activities with components and elements
-          
-        
+          </li>
+        </ul>
       </td></tr><tr><td>
         2.4
       </td><td>
         2022-03-31
       </td><td>
         Incorporation of TC feedback
+      </td></tr><tr><td>
+        2.3
+      </td><td>
+        2021-08-10
+      </td><td>
+        Support for MDF, Bluetooth updates
+      </td></tr><tr><td>
+        2.2
+      </td><td>
+        2021-01-05
+      </td><td>
+        Update release
+      </td></tr><tr><td>
+        2.1
+      </td><td>
+        2019-11-14
+      </td><td>
+        Initial Release
       </td></tr></table></p><p><b>General Purpose:</b><br/>
       The purpose of this SD is to define evaluation methods for the functional behavior of
       VPN client      
@@ -334,11 +352,11 @@
       agencies, Common Criteria Test Laboratories, and members of academia.
       </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#aa-bpp-gpos" style="text-indent:10px">2.1<span>Protection Profile for General Purpose Operating System</span></a><a href="#qq-sfrs-bpp-gpos-Modified" style="text-indent:20px">2.1.1<span>Modified SFRs
         </span></a><a href="#qq-sfrs-bpp-gpos-Additional" style="text-indent:20px">2.1.2<span>Additional SFRs
-        </span></a><a href="#_sec_4" style="text-indent:30px">2.1.2.1<span>Cryptographic Support (FCS)</span></a><a href="#_sec_6" style="text-indent:30px">2.1.2.2<span>Identification and Authentication (FIA)</span></a><a href="#_sec_8" style="text-indent:30px">2.1.2.3<span>Trusted Path/Channels (FTP)</span></a><a href="#aa-bpp-mdf" style="text-indent:10px">2.2<span>Protection Profile for Mobile Device Fundamentals</span></a><a href="#qq-sfrs-bpp-mdf-Modified" style="text-indent:20px">2.2.1<span>Modified SFRs
+        </span></a><a href="#os-a-fcs" style="text-indent:30px">2.1.2.1<span>Cryptographic Support (FCS)</span></a><a href="#os-a-fia" style="text-indent:30px">2.1.2.2<span>Identification and Authentication (FIA)</span></a><a href="#os-a-ftp" style="text-indent:30px">2.1.2.3<span>Trusted Path/Channels (FTP)</span></a><a href="#aa-bpp-mdf" style="text-indent:10px">2.2<span>Protection Profile for Mobile Device Fundamentals</span></a><a href="#qq-sfrs-bpp-mdf-Modified" style="text-indent:20px">2.2.1<span>Modified SFRs
         </span></a><a href="#qq-sfrs-bpp-mdf-Additional" style="text-indent:20px">2.2.2<span>Additional SFRs
-        </span></a><a href="#_sec_14" style="text-indent:30px">2.2.2.1<span>User Data Protection (FDP)</span></a><a href="#aa-bpp-app" style="text-indent:10px">2.3<span>Protection Profile for Application Software</span></a><a href="#qq-sfrs-bpp-app-Modified" style="text-indent:20px">2.3.1<span>Modified SFRs
+        </span></a><a href="#ib-fdp" style="text-indent:30px">2.2.2.1<span>User Data Protection (FDP)</span></a><a href="#aa-bpp-app" style="text-indent:10px">2.3<span>Protection Profile for Application Software</span></a><a href="#qq-sfrs-bpp-app-Modified" style="text-indent:20px">2.3.1<span>Modified SFRs
         </span></a><a href="#qq-sfrs-bpp-app-Additional" style="text-indent:20px">2.3.2<span>Additional SFRs
-        </span></a><a href="#_sec_20" style="text-indent:30px">2.3.2.1<span>Cryptographic Support (FCS)</span></a><a href="#aa-bpp-mdm" style="text-indent:10px">2.4<span>Protection Profile for Mobile Device Management</span></a><a href="#qq-sfrs-bpp-mdm-Modified" style="text-indent:20px">2.4.1<span>Modified SFRs
+        </span></a><a href="#ap-a-fcs" style="text-indent:30px">2.3.2.1<span>Cryptographic Support (FCS)</span></a><a href="#aa-bpp-mdm" style="text-indent:10px">2.4<span>Protection Profile for Mobile Device Management</span></a><a href="#qq-sfrs-bpp-mdm-Modified" style="text-indent:20px">2.4.1<span>Modified SFRs
         </span></a><a href="#man-sfrs" style="text-indent:10px">2.5<span>TOE SFR Evaluation Activities</span></a><a href="#opt-sfrs" style="text-indent:10px">2.6<span>Evaluation Activities for Optional SFRs</span></a><a href="#sel-sfrs" style="text-indent:10px">2.7<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#obj-sfrs" style="text-indent:10px">2.8<span>Evaluation Activities for Objective SFRs</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.9<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
     PP-Module for VPN Client is
     to describe the security functionality of 
@@ -348,7 +366,7 @@
 
     
     The PP-Module is intended for use with the following Base-PPs:
-        <ul><li>Protection Profile for General Purpose Operating System, version 4.3.</li><li>Protection Profile for Mobile Device Fundamentals, version 3.3.</li><li>Protection Profile for Application Software, version 1.4.</li><li>Protection Profile for Mobile Device Management, version 4.0.</li></ul><br/>
+        <ul><li>Protection Profile for General Purpose Operating System, version 4.3.</li><li>Protection Profile for Mobile Device Fundamentals, version 3.3.</li><li>Protection Profile for Application Software, version 2.0.</li><li>Protection Profile for Mobile Device Management, version 4.0.</li></ul><br/>
     This SD is mandatory for evaluations of TOEs that claim conformance to a PP-Configuration that includes the PP-Module for :
     <ul><li>VPN client, Version 
         2.6
@@ -493,30 +511,31 @@ The following sections list Common Criteria and technology terms used in this do
 	  GPOS PP is the base.
 	<h3 class="indexable" data-level="2" id="qq-sfrs-bpp-gpos-Additional">2.1.2 Additional SFRs
         </h3>
-        <h3 class="indexable" data-level="3" id="_sec_4">2.1.2.1 Cryptographic Support (FCS)</h3><div class="comp" id="OS-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.2.1</div>
+        
+        <h3 class="indexable" data-level="3" id="os-a-fcs">2.1.2.1 Cryptographic Support (FCS)</h3><div class="comp" id="OS-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.2.1</div>
                 <div class="eacategory">TSS</div><div class="ea">
                   Regardless of whether this requirement is met by the VPN client or the OS, the evaluator shall check the
 			TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to meet
 			the requirements in the ST. For each of these items, the evaluator shall confirm that the TSS lists for what
 			purpose it is used, and how it is stored.
-                  
-                  
+                  <br/>
+                  <br/>
                   The evaluator shall review the TSS to determine that it makes a case that, for each item listed as being
 			manipulated, it is not written unencrypted to persistent memory, and that the item is
 			stored by the OS.
-                  
-                  
+                  <br/>
+                  <br/>
                 </div>
                 <div class="eacategory">Guidance</div><div class="ea">
                   There are no guidance EAs for this requirement.
-                  
-                  
+                  <br/>
+                  <br/>
                 </div>
                 <div class="eacategory">Tests</div><div class="ea">
                   There are no test EAs for this component.
                 </div>
               </span></div>
-        <h3 class="indexable" data-level="3" id="_sec_6">2.1.2.2 Identification and Authentication (FIA)</h3><div class="comp" id="OS-FIA-X509-EXT-4"><h4>FIA_X509_EXT.4 X.509 Certificate Use and Management</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_X509_EXT.4.1</div>
+        <h3 class="indexable" data-level="3" id="os-a-fia">2.1.2.2 Identification and Authentication (FIA)</h3><div class="comp" id="OS-FIA-X509-EXT-4"><h4>FIA_X509_EXT.4 X.509 Certificate Use and Management</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_X509_EXT.4.1</div>
                 
                   <span class="no-link">
                     FIA_X509_EXT.4.1
@@ -542,20 +561,20 @@ The following sections list Common Criteria and technology terms used in this do
                   the certificate validation functionality, how the VPN client/OS chooses which certificates to use, and any
                   necessary instructions in the administrative guidance for configuring the OS so that desired certificates
                   can be used.
-                  
-                  
+                  <br/>
+                  <br/>
                   The evaluator shall examine the TSS to confirm that it describes the behavior of the client/OS when a
                   connection cannot be established during the validity check of a certificate used in establishing a trusted
                   channel.
-                  
-                  
+                  <br/>
+                  <br/>
                 </div>
                 <div class="eacategory">Guidance</div><div class="ea">
                   If the requirement indicates that the administrator is able to specify the default action, then the evaluator
                   shall ensure that the operational guidance contains instructions on how this configuration action is
                   performed.
-                  
-                  
+                  <br/>
+                  <br/>
                 </div>
                 <div class="eacategory">Tests</div><div class="ea">
                   The evaluator shall perform the following test regardless of whether the certificate validation functionality is implemented by the VPN client or by the OS:
@@ -576,7 +595,7 @@ The following sections list Common Criteria and technology terms used in this do
                   FIA_X509_EXT.4.3 is evaluated as part of FCS_IPSEC_EXT.1.11.
                 <br/><br/>
               </span></div>
-        <h3 class="indexable" data-level="3" id="_sec_8">2.1.2.3 Trusted Path/Channels (FTP)</h3><div class="comp" id="OS-FTP-ITC-1"><h4>FTP_ITC.1 Inter-TSF Trusted Channel</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC.1</div>
+        <h3 class="indexable" data-level="3" id="os-a-ftp">2.1.2.3 Trusted Path/Channels (FTP)</h3><div class="comp" id="OS-FTP-ITC-1"><h4>FTP_ITC.1 Inter-TSF Trusted Channel</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC.1</div>
                 
                 
                 
@@ -586,14 +605,14 @@ The following sections list Common Criteria and technology terms used in this do
 			protocols specified in the requirement, along with TOE-specific options or procedures that might not be
 			reflected in the specification. The evaluator shall also confirm that all protocols listed in the TSS are
 			specified and included in the requirements in the ST.
-                  
-                  
+                  <br/>
+                  <br/>
                 </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
                   The evaluator shall confirm that the operational guidance contains instructions for establishing the
 			connection to a VPN gateway, VPN client, or IPsec-capable network device, and that it contains
 			recovery instructions should a connection be unintentionally broken.
-                  
-                  
+                  <br/>
+                  <br/>
                 </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                   The evaluator shall perform the following tests:
                   <span class="testlist-"><ul>
@@ -632,7 +651,8 @@ The following sections list Common Criteria and technology terms used in this do
 	  MDF PP is the base.
 	<h3 class="indexable" data-level="2" id="qq-sfrs-bpp-mdf-Additional">2.2.2 Additional SFRs
         </h3>
-        <h3 class="indexable" data-level="3" id="_sec_14">2.2.2.1 User Data Protection (FDP)</h3><div class="comp" id="FDP-VPN-EXT-1"><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4><span class="activity_pane_body"><div class="element-activity-header">FDP_VPN_EXT.1.1</div>
+        
+        <h3 class="indexable" data-level="3" id="ib-fdp">2.2.2.1 User Data Protection (FDP)</h3><div class="comp" id="FDP-VPN-EXT-1"><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4><span class="activity_pane_body"><div class="element-activity-header">FDP_VPN_EXT.1.1</div>
                 <div class="eacategory">TSS</div><div class="ea">
                   The evaluator shall verify that the TSS section of the ST describes the routing of IP traffic through processes
                   on the TSF when a VPN client is enabled. The evaluator shall ensure that the description indicates which
@@ -641,37 +661,45 @@ The following sections list Common Criteria and technology terms used in this do
                   VPN connection (IKE traffic and perhaps HTTPS or DNS traffic) is not encapsulated by the VPN protocol 
                   (IPsec). The ST author shall also identify in the TSS section any differences in the routing of IP traffic when
                   using any supported baseband protocols (e.g. Wi-Fi, LTE).
-                  
-                  
+                  <br/>
+                  <br/>
                 </div>
                 <div class="eacategory">Guidance</div><div class="ea">
                   The evaluator shall verify that the following is addressed by the documentation:
-                  
-                    
+                  <ul>
+                    <li>
                       The description above indicates that if a VPN client is enabled, all configurations route all IP traffic
                       (other than IP traffic required to establish the VPN connection) through the VPN client.
-                    
-                    
+                    </li>
+                    <li>
                       The guidance describes how the user or administrator can configure the TSF to meet
                       this requirement.
-                    
-                  
-                  
-                  
+                    </li>
+                  </ul>
+                  <br/>
+                  <br/>
                 </div>
                 <div class="eacategory">Tests</div><div class="ea">
                   The evaluator shall perform the following test:
-                  
-                  
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
                   Step 1 - The evaluator shall use the platform to enable a network connection without using IPsec. The evaluator shall use a packet sniffing tool between the platform and an internet-connected network. The evaluator shall turn on the sniffing tool and perform actions with the device such as navigating to websites, using provided applications, accessing other internet resources (Use Case 1), accessing another VPN client (Use Case 2), or accessing an IPsec-capable network device (Use Case 3). The evaluator shall verify that the sniffing tool captures the traffic generated by these actions, turn off the sniffing tool, and save the session data.
-                  
-                  
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
                   Step 2 - The evaluator shall configure an IPsec VPN client that supports the routing specified in this requirement, and if necessary, configure the device to perform the routing specified as described in the AGD guidance. The evaluator shall turn on the sniffing tool, establish the VPN connection, and perform the same actions with the device as performed in the first step. The evaluator shall verify that the sniffing tool captures traffic generated by these actions, turn off the sniffing tool, and save the session data.
-                  
-                  
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
                   Step 3 - The evaluator shall examine the traffic from both step one and step two to verify that all IP traffic, aside from and after traffic necessary for establishing the VPN (such as IKE, DNS, and possibly HTTPS), is encapsulated by IPsec.
-                  
-                  
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
                   Step 4 - The evaluator shall attempt to send packets to the TOE outside the VPN connection and shall verify that the TOE discards them.
                 </div>
               </span></div>
@@ -684,7 +712,8 @@ The following sections list Common Criteria and technology terms used in this do
 	  App PP is the base.
 	<h3 class="indexable" data-level="2" id="qq-sfrs-bpp-app-Additional">2.3.2 Additional SFRs
         </h3>
-        <h3 class="indexable" data-level="3" id="_sec_20">2.3.2.1 Cryptographic Support (FCS)</h3><div class="comp" id="AP-FCS-CKM-6"><h4>FCS_CKM.6 Cryptographic Key Destruction</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.6</div>
+        
+        <h3 class="indexable" data-level="3" id="ap-a-fcs">2.3.2.1 Cryptographic Support (FCS)</h3><div class="comp" id="AP-FCS-CKM-6"><h4>FCS_CKM.6 Cryptographic Key Destruction</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.6</div>
                 
                 
                 
@@ -692,28 +721,28 @@ The following sections list Common Criteria and technology terms used in this do
                   The evaluator shall ensure that all plaintext secret and private cryptographic keys and CSPs (whether
 			manipulated by the TOE or exclusively by the platform) are identified in the VPN client ST's TSS, and that
 			they are accounted for by the EAs in this section.
-                  
-                  
-                  
+                  <br/>
+                  <br/>
+                  <b>
                     Requirement met by the platform:
-                  
-                  
-                  
+                  </b>
+                  <br/>
+                  <br/>
                   The evaluator shall check to ensure the TSS describes each of the secret keys (keys used for
                   	symmetric encryption), private keys, and CSPs used to generate keys that are not otherwise covered
                   	by the FCS_CKM.6 requirement levied on the TOE.
-                  
-                  
+                  <br/>
+                  <br/>
                   For each platform listed in the ST, the evaluator shall examine the TSS of the ST of the platform to
                   	ensure that each of the secret keys, private keys, and CSPs used to generate the keys listed above are
                   	covered.
-                  
-                  
-                  
+                  <br/>
+                  <br/>
+                  <b>
                     Requirement met by the TOE:
-                  
-                  
-                  
+                  </b>
+                  <br/>
+                  <br/>
                   The evaluator shall check to ensure the TSS describes when each of the plaintext keys are cleared (e.g.,
 			system power off, disconnection of an IPsec connection, when no longer needed by the VPN channel per
 			the protocol); and the type of clearing procedure that is performed (cryptographic erase, overwrite with
@@ -723,12 +752,12 @@ The following sections list Common Criteria and technology terms used in this do
 			data are stored (for example, "secret keys stored on flash are cleared by overwriting once with zeros,
 			while secret keys stored on the internal persistent storage device are cleared by overwriting three times
 			with a random pattern that is changed before each write").
-                  
-                  
+                  <br/>
+                  <br/>
                 </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
                   There are no guidance EAs for this requirement.
-                  
-                  
+                  <br/>
+                  <br/>
                 </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                   For each key clearing situation described in the TSS, the evaluator shall repeat the following test.
                   <span class="testlist-"><ul>
@@ -738,41 +767,41 @@ The following sections list Common Criteria and technology terms used in this do
 					development tools (debuggers, simulators, etc.) for the TOE and instrumented TOE builds to test that keys
 					are cleared correctly, including all intermediate copies of the key that may have been created internally
 					by the TOE during normal cryptographic processing with that key.
-                      
-                      
+                      <br/>
+                      <br/>
                       Cryptographic TOE implementations in software shall be loaded and exercised under a debugger to
 					perform such tests. The evaluator shall perform the following test for each key subject to clearing,
 					including intermediate copies of keys that are persisted encrypted by the TOE:
-                      
-                      
-                      
-                        
+                      <br/>
+                      <br/>
+                      <ol type="1">
+                        <li>
                           Load the instrumented TOE build in a debugger.
-                        
-                        
+                        </li>
+                        <li>
                           Record the value of the key in the TOE subject to clearing.
-                        
-                        
+                        </li>
+                        <li>
                           Cause the TOE to perform a normal cryptographic processing with the key from #1.
-                        
-                        
+                        </li>
+                        <li>
                           Cause the TOE to clear the key.
-                        
-                        
+                        </li>
+                        <li>
                           Cause the TOE to stop the execution but not exit.
-                        
-                        
+                        </li>
+                        <li>
                           Cause the TOE to dump the entire memory footprint of the TOE into a binary file.
-                        
-                        
+                        </li>
+                        <li>
                           Search the content of the binary file created in #6 for instances of the known key value from
   					                  #1.
-                        
-                      
-                      
+                        </li>
+                      </ol>
+                      <br/>
                       The test succeeds if no copies of the key from #1 are found in step #7 above and fails otherwise.
-                      
-                      
+                      <br/>
+                      <br/>
                       The evaluator shall perform this test on all keys, including those persisted in encrypted form, to ensure
 					intermediate copies are cleared.
                     </li>
@@ -783,33 +812,33 @@ The following sections list Common Criteria and technology terms used in this do
 			the TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to
 			meet the requirements in the ST. For each of these items, the evaluator shall confirm that the TSS lists for
 			what purpose it is used, and how it is stored. The evaluator shall then perform the following actions:
-                  
-                  
-                  
+                  <br/>
+                  <br/>
+                  <b>
                     Persistent secrets and private keys manipulated by the platform:
-                  
-                  
-                  
+                  </b>
+                  <br/>
+                  <br/>
                   For each platform listed in the ST, the evaluator shall examine the ST of the platform to ensure that the
 			persistent secrets and private keys listed as being stored by the platform in the VPN client ST are identified
 			as being protected in that platform's ST
-                  
-                  
-                  
+                  <br/>
+                  <br/>
+                  <b>
                     Persistent secrets and private keys manipulated by the TOE:
-                  
-                  
-                  
+                  </b>
+                  <br/>
+                  <br/>
                   The evaluator shall review the TSS to determine that it makes a case that, for each item listed as being
 			manipulated by the TOE, it is not written unencrypted to persistent memory, and that the item is stored
 			by the platform.
-                  
-                  
+                  <br/>
+                  <br/>
                 </div>
                 <div class="eacategory">Guidance</div><div class="ea">
                   There are no guidance EAs for this requirement.
-                  
-                  
+                  <br/>
+                  <br/>
                 </div>
                 <div class="eacategory">Tests</div><div class="ea">
                   There are no test EAs for this requirement.
@@ -847,36 +876,35 @@ guidance, and testing.</p><h1 id="biblio" class="indexable" data-level="A">Appen
     <tr><td><span id="bibGPOS"></span>[
         GPOS PP
       ]</td><td>
-        
+        <a href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html">
           Protection Profile for General Purpose Operating Systems, Version 4.3
-        
+        </a>
         , September 27, 2022
       </td></tr>
 
     <tr><td><span id="bibMDF"></span>[
         MDF PP
       ]</td><td>
-        
+        <a href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html">
           Protection Profile for Mobile Device Fundamentals, Version 3.3
-        
+        </a>
         , Version 3.3, September 12, 2022
       </td></tr>
 
     <tr><td><span id="bibMDM"></span>[
         MDM PP
       ]</td><td>
-        
+        <a href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">
           Protection Profile for Mobile Device Management, Version 4.0, April 25, 2019
-        
+        </a>
       </td></tr>
 
     <tr><td><span id="bibAppPP"></span>[
         App PP
       ]</td><td>
-        
-          Protection Profile for Application Software
-        
-        , Version 1.4, October 2021
+        <a href="https://www.niap-ccevs.org/protectionprofiles/516">
+          Protection Profile for Application Software, Version 2.0, June 16, 2025
+        </a>
       </td></tr>
 
   </table></body></html>
