@@ -524,7 +524,125 @@ expected to enforce.
     specific capabilities provided by a VPN client.
     <!-- 3.1 Threats -->
     <sec:Threats>
-      <threats/>
+      The following threats defined in this PP-Module extend the threats defined by the Base-PPs.
+      <threats>
+        <threat name="T.TSF_CONFIGURATION">
+          <description>
+            Configuring VPN tunnels is a complex and time-consuming process, and prone to errors if the            interface for doing so is not well-specified or well-behaved. The inability or failure of an ignorant or careless administrator to configure certain aspects            of the interface may also lead to the incorrect specification of the desired communications policy or use            of cryptography that may be desired or required for a particular site. This may result in unintended            weak or plaintext communications while the user thinks that their data are being protected. Other            aspects of configuring the TOE or using its security mechanisms (for example, the update process)            may also result in a reduction in the trustworthiness of the VPN client.
+          </description>
+          <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>
+            FIA_X509_EXT.4
+          </addressed-by>
+          <rationale>
+            This SFR mitigates the threat by providing the ability to verify the integrity of the TSF using X.509 certificates.
+
+This SFR mitigates the threat by requiring the TOE
+            to implement certain administratively-configurable functions.
+
+This SFR mitigates the threat by requiring the TOE
+            to execute self-tests that demonstrate that its integrity is maintained.
+
+This SFR mitigates the threat by optionally
+            requiring the TOE to generate audit data for its behavior.
+
+This SFR mitigates the threat by optionally
+            requiring the TOE to allow for the configuration of what behavior is audited.
+          </rationale>
+        </threat>
+        <threat name="T.TSF_FAILURE">
+          <description>
+            Security mechanisms of the TOE generally build up from a primitive set of mechanisms (e.g.,            memory management, privileged modes of process execution) to more complex sets of            mechanisms. Failure of the primitive mechanisms could lead to a compromise in more complex            mechanisms, resulting in a compromise of the TSF.
+          </description>
+          <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>
+            FPT_TST_EXT.1/VPN
+          </addressed-by>
+          <rationale>
+            This SFR mitigates the threat by requiring the TOE
+            to execute self-tests that demonstrate that its integrity is maintained.
+
+This SFR mitigates the threat by optionally
+            requiring the TOE to generate audit data for its behavior.
+
+This SFR mitigates the threat by optionally
+            requiring the TOE to allow for the configuration of what behavior is audited.
+          </rationale>
+        </threat>
+        <threat name="T.UNAUTHORIZED_ACCESS">
+          <description>
+            This PP-Module does not include requirements that can protect against an insider threat. Authorized            users are not considered hostile or malicious and are trusted to follow appropriate guidance. Only            authorized personnel should have access to the system or device that contains the IPsec VPN client.            Therefore, the primary threat agents are the unauthorized entities that try to gain access to the            protected network (in cases where tunnel mode is used) or to plaintext data that traverses the            public network (regardless of whether transport mode or tunnel mode is used).
+            <h:br/>
+            <h:br/>
+            The endpoint of the network communication can be both geographically and logically distant from            the TOE and can pass through a variety of other systems. These intermediate systems may be under            the control of the adversary, and offer an opportunity for communications over the network to be            compromised.
+            <h:br/>
+            <h:br/>
+            Plaintext communication over the network may allow critical data (such as passwords, configuration            settings, and user data) to be read or manipulated directly by a malicious user or process on intermediate systems, leading to            a compromise of the TOE or to the secured environmental systems that the TOE is being used to            facilitate communications with. IPsec can be used to provide protection for this communication;            however, there are numerous options that can be implemented for the protocol to be compliant to the            protocol specification listed in the RFC. Some of these options can have negative impacts on the            security of the connection. For instance, using a weak encryption algorithm (even one that is            allowed by the RFC, such as DES) can allow an adversary to read and even manipulate the data on            the encrypted channel, thus circumventing countermeasures in place to prevent such attacks.            Further, if the protocol is implemented with little-used or non-standard options, it may be compliant             with the protocol specification, but will not be able to interact with other diverse equipment that is            typically found in large enterprises.
+            <h:br/>
+            <h:br/>
+            Even though the communication path is protected, there is a possibility that the IPsec peer could be            tricked into thinking that a malicious third-party user or system is the TOE. For instance, a            middleman could intercept a connection request to the TOE and respond to the request as if it were            the TOE. In a similar manner, the TOE could also be tricked into thinking that it is establishing            communications with a legitimate IPsec peer when in fact it is not. An attacker could also mount a            malicious man-in-the-middle-type of attack, in which an intermediate system is compromised, and            the traffic is proxied, examined, and modified by this system. This attack can even be mounted via            encrypted communication channels if appropriate countermeasures are not applied. These attacks            are, in part, enabled by a malicious attacker capturing network traffic (for instance, an            authentication session) and “playing back” that traffic in order to fool an endpoint into thinking it            was communicating with a legitimate remote entity.
+          </description>
+          <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>
+            FTP_ITC.1
+          </addressed-by>
+          <rationale>
+            This SFR mitigates the threat by defining the use of IPsec for protecting data in transit.
+
+This SFR mitigates the threat by requiring the
+            TOE’s implementation of IPsec to include requirements for how the remote VPN gateway or
+            peer is authenticated.
+
+This SFR mitigates the threat by optionally defining the TOE's support for a platform-based biometric mechanism to use as an authentication mechanism.
+
+This SFR mitigates the threat by optionally enforcing a multifactor authentication requirement on an IPsec connection.
+
+This SFR mitigates the threat by optionally implementing EAP-TLS or EAP-TTLS as a mechanism for authentication.
+
+This SFR mitigates the threat by optionally
+            requiring support for pre-shared keys as an alternate authentication method for IPsec.
+
+This SFR mitigates the threat by optionally specifying whether the TOE generates its own pre-shared keys used for authentication or accept them from an external source.
+
+This SFR mitigates the threat by optionally defining the composition and use of password-based pre-shared keys used for authentication.
+
+This SFR mitigates the threat by optionally
+            defining HOTP as an authentication mechanism.
+
+This SFR mitigates the threat by optionally
+            defining TOTP as an authentication mechanism.
+          </rationale>
+        </threat>
+        <threat name="T.USER_DATA_REUSE">
+          <description>
+            Data traversing the TOE could inadvertently be sent to a different user as a consequence of a poorly-designed TOE; since these data may be            sensitive, this may cause a compromise that is unacceptable. The specific threat that must be            addressed concerns user data that is retained by the TOE in the course of processing network traffic            that could be inadvertently reused in sending network traffic to a user other than that intended by            the sender of the original network traffic.
+          </description>
+          <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>
+            FCS_CKM_EXT.2
+          </addressed-by>
+          <rationale>
+            This SFR mitigates the threat by requiring the TOE
+            to store sensitive data in the OS’ key storage.
+
+This SFR mitigates the threat by optionally
+            requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
+            established IPsec tunnel.
+
+This SFR mitigates the threat by requiring the TOE
+            or its platform to store sensitive data in the OS' key storage.
+
+This SFR mitigates the threat by requiring the TOE
+            or its platform to zeroize key data when no longer needed.
+
+This SFR mitigates the threat by requiring the TOE or its platform to ensure that
+            residual data is purged from the system.
+
+This SFR mitigates the threat by optionally
+            requiring the TOE to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.
+          </rationale>
+        </threat>
+      </threats>
     </sec:Threats>
     <!-- 3.2 Assumptions -->
     <sec:Assumptions>
@@ -625,7 +743,193 @@ expected to enforce.
 			defined in the Base-PP in addition to what is mandated by section 5.5.
       </sec-func-req-dir>
       <!-- 5.1.1 Modified SFRs -->
-      <modified-sfrs/>
+      <modified-sfrs>
+        <section title="Cryptographic Support (FCS)" id="os-m-fcs">
+          <!-- FCS_CKM.1 Cryptographic Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="modsfr-os-fcs-ckm-1" title="Cryptographic Key Generation">
+            <consistency-rationale>
+              The ST author is instructed to make specific selections at minimum to address VPN client
+              requirements; the SFR behavior itself is unmodified.
+            </consistency-rationale>
+            <description>
+              This SFR is functionally identical to what is defined in the GPOS PP except that
+              ECC key generation with support for P-384 has been made mandatory
+              in support of IPsec due to the mandated support for Diffie-Hellman (DH) group 20 in
+              FCS_IPSEC_EXT.1.8.
+              <h:p/>
+              The text of the requirement is replaced with:
+              <h:br/>
+              <h:br/>
+              The TSF shall generate
+              <h:b>
+                asymmetric
+              </h:b>
+              cryptographic keys in accordance with a
+              specified cryptographic key generation algorithm
+              <h:b>
+                <h:ul>
+                  <h:i>
+                    <h:li>
+                      ECC schemes using “NIST curve” P-384
+                  that meet the following: FIPS PUB 186-5, “Digital Signature
+                  Standard (DSS),” Appendix A.2, and,
+                    </h:li>
+                  </h:i>
+                </h:ul>
+              </h:b>
+              <h:b>
+                [selection:
+              </h:b>
+              <h:i>
+                <h:ul>
+                  <h:li>
+                    RSA schemes using cryptographic key sizes of 3072-bit or greater that
+                  meet the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.1
+                  </h:li>
+                  <h:li>
+                    FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [
+                    <h:b>
+                      selection:
+                    </h:b>
+                    RFC 3526, RFC 7919]
+                  </h:li>
+                  <h:li>
+                    <h:b>
+                      No other key generation methods
+                    </h:b>
+                  </h:li>
+                </h:ul>
+              </h:i>
+              <h:b>
+                ]
+              </h:b>
+              .
+            </description>
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-asym-gen']//cc:title">
+                The TSF shall generate
+                <h:b>
+                  asymmetric
+                </h:b>
+                cryptographic keys in accordance with a specified cryptographic key generation algorithm
+                <h:b>
+                  <h:ul>
+                    <h:li>
+                      ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.2
+                    </h:li>
+                  </h:ul>
+                </h:b>
+                <selectables linebreak="yes">
+                  <selectable id="FCS_CKM.1_1">
+                    RSA schemes using a cryptographic key size of 3072-bits that meet the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.1
+                  </selectable>
+                  <selectable id="FCS_CKM.1_2">
+                    FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and
+                    <selectables>
+                      <selectable id="FCS_CKM.1_3">
+                        RFC 3526
+                      </selectable>
+                      <selectable id="FCS_CKM.1_4">
+                        RFC 7919
+                      </selectable>
+                    </selectables>
+                  </selectable>
+                  <selectable id="FCS_CKM.1_5">
+                    <h:b>
+                      no other key generation methods
+                    </h:b>
+                  </selectable>
+                </selectables>
+                .
+              </xpath-specified>
+            </replace>
+          </base-sfr-spec>
+          <!-- FCS_CKM.2 Cryptographic Key Establishment -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="modsfr-os-fcs-ckm-2" title="Cryptographic Key Establishment">
+            <consistency-rationale>
+              The ST author is instructed to make specific selections at minimum to
+              address VPN client requirements; the SFR behavior itself is
+              unmodified.
+            </consistency-rationale>
+            <description>
+              This SFR is functionally identical to what is defined in the GPOS PP except that elliptic 
+              curve cryptography (ECC) key generation with support for P-384 has been made 
+              mandatory in support of IPsec due to the mandated support for DH group 20 
+              in FCS_IPSEC_EXT.1.8.
+              <h:p/>
+              The text of the requirement is replaced with:
+              <h:br/>
+              <h:br/>
+              The TSF shall
+              <h:b>
+                implement functionality to perform cryptographic key establishment
+              </h:b>
+              in
+              accordance with a specified cryptographic key
+              <h:b>
+                establishment
+              </h:b>
+              method:
+              <h:b>
+                <h:ul>
+                  <h:i>
+                    <h:li>
+                      Elliptic curve-based key establishment schemes that meet the following: NIST Special
+                  Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes
+                  Using Discrete Logarithm Cryptography,” and
+                    </h:li>
+                  </h:i>
+                </h:ul>
+              </h:b>
+              <h:b>
+                [selection:
+              </h:b>
+              <h:i>
+                <h:ul>
+                  <h:li>
+                    Finite field-based key establishment schemes that meets NIST Special Publication 800-56A Revision 3, “Recommendation 
+                  for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”
+                  </h:li>
+                  <h:li>
+                    <h:b>
+                      No other key generation methods
+                    </h:b>
+                  </h:li>
+                </h:ul>
+              </h:i>
+              <h:b>
+                ]
+              </h:b>
+              .
+            </description>
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-crypt-key-estab']//cc:title">
+                The TSF shall implement functionality to perform cryptographic key establishment in accordance with a specified cryptographic key establishment method:
+                <h:ul>
+                  <h:li>
+                    <h:b>
+                      <h:i>
+                        Elliptic curve-based key establishment schemes that meet the following: NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography,” and
+                      </h:i>
+                    </h:b>
+                  </h:li>
+                </h:ul>
+                <selectables linebreak="yes">
+                  <selectable id="FCS_CKM.2_1">
+                    Finite field-based key establishment schemes that meets NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”
+                  </selectable>
+                  <selectable id="FCS_CKM.2_2" exclusive="yes">
+                    <h:b>
+                      No other key establishment schemes
+                    </h:b>
+                  </selectable>
+                </selectables>
+                .
+              </xpath-specified>
+            </replace>
+          </base-sfr-spec>
+        </section>
+      </modified-sfrs>
       <!-- 5.1.2 Additional SFRs -->
       <additional-sfrs>
         <section id="gpos-audit-table" title="Auditable Events for GPOS PP Additional SFRs">
@@ -1343,134 +1647,6 @@ expected to enforce.
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- FCS_CKM.2/UNLOCKED Cryptographic Key Establishment (When Unlocked) -->
-          <base-sfr-spec cc-id="fcs_ckm.2" id="mdf-fcs-ckm-2-unlocked" title="Cryptographic Key Establishment (When Unlocked)" iteration="UNLOCKED">
-            <consistency-rationale>
-              The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
-            </consistency-rationale>
-            <description>
-              <h:p>
-                This SFR differs from its definition in the MDF PP by moving elliptic curve-based key establishment schemes from selectable to mandatory, due to the mandated support for DH group 20 in FCS_IPSEC_EXT.1.8. This PP-Module does not require the use of RSA for any function but it is present in the selection in case other MDF PP functions require its use.
-              </h:p>
-              The text of the requirement is replaced with:
-              <h:br/>
-              <h:br/>
-              The TSF shall perform
-              <h:b>
-                cryptographic key establishment
-              </h:b>
-              in accordance with a specified cryptographic key establishment method:
-              <h:ul>
-                <h:li>
-                  <h:b>
-                    [Elliptic curve-based key establishment schemes] that meet the following: [NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”]
-                  </h:b>
-                </h:li>
-              </h:ul>
-              [
-              <h:b>
-                selection:
-              </h:b>
-              <h:i>
-                <h:ul>
-                  <h:li>
-                    [RSA-based key establishment schemes] that meet the following: [
-                    <h:b>
-                      selection:
-                    </h:b>
-                    <h:ul>
-                      <h:li>
-                        NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography”
-                      </h:li>
-                      <h:li>
-                        RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.2"</h:li>
-                    </h:ul>
-                  </h:li>
-                  <h:li>
-                    [
-                    <h:i>
-                      Finite field-based key establishment schemes
-                    </h:i>
-                    ]
-                      that meet the following: [
-                    <h:i>
-                      NIST Special Publication 800-56A Revision 3,
-                        "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm
-                        Cryptography"</h:i>
-                    ]
-                  </h:li>
-                  <h:li>
-                    <h:b>
-                      no other key establishment schemes
-                    </h:b>
-                  </h:li>
-                </h:ul>
-              </h:i>
-              ].
-            </description>
-            <replace>
-              <xpath-specified xpath="*//cc:f-element[@id='fel-unlocked-key']//cc:title">
-                The TSF shall perform cryptographic
-                <h:b>
-                  key establishment
-                </h:b>
-                in accordance with a specified cryptographic key
-                <h:b>
-                  establishment
-                </h:b>
-                method
-                <h:ul>
-                  <h:li>
-                    <h:b>
-                      [
-                      <h:i>
-                        Elliptic curve-based key establishment schemes
-                      </h:i>
-                      ] that meet the following: [
-                      <h:i>
-                        NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"</h:i>
-                      ]
-                    </h:b>
-                  </h:li>
-                </h:ul>
-                <h:b>
-                  and
-                </h:b>
-                <selectables linebreak="yes">
-                  <selectable id="FCS_CKM.2_1">
-                    [
-                    <h:i>
-                      RSA-based key establishment schemes
-                    </h:i>
-                    ] that meet the following
-                    <selectables linebreak="yes">
-                      <selectable id="FCS_CKM.2_2">
-                        NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography”
-                      </selectable>
-                      <selectable id="FCS_CKM.2_3">
-                        RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, "Public-Key Cryptography Standards (PKCS) #1:RSA Cryptography Specifications Version 2.2"</selectable>
-                    </selectables>
-                  </selectable>
-                  <selectable id="FCS_CKM.2_4">
-                    [
-                    <h:i>
-                      Finite field-based key establishment schemes
-                    </h:i>
-                    ] that meet the following: [
-                    <h:i>
-                      NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"</h:i>
-                    ]
-                  </selectable>
-                  <selectable id="FCS_CKM.2_5">
-                    <h:b>
-                      no other key establishment schemes
-                    </h:b>
-                  </selectable>
-                </selectables>
-                .
-              </xpath-specified>
-            </replace>
-          </base-sfr-spec>
         </section>
         <section title="User Data Protection (FDP)" id="md-m-fdp">
           <!-- FDP_IFC_EXT.1 Subset Information Flow Control -->
@@ -2162,138 +2338,6 @@ expected to enforce.
                   </selectable>
                 </selectables>
                 .
-              </xpath-specified>
-            </replace>
-          </base-sfr-spec>
-          <!-- FCS_COP.1/SKC Cryptographic Operation - Encryption/Decryption -->
-          <base-sfr-spec cc-id="fcs_cop.1" id="app-fcs-cop-1-skc" title="Cryptographic Operation - Encryption/Decryption" iteration="SKC">
-            <consistency-rationale>
-              The ST author is instructed to make specific selections at minimum to
-              address VPN client requirements; the SFR behavior itself is
-              unmodified.
-            </consistency-rationale>
-            <description>
-              <h:p>
-                This SFR is selection-based in the Base-PP and remains selection-based here because
-                this PP-Module allows for the possibility that the TSF relies on platform-provided
-                cryptographic algorithm services for its own implementation of IPsec. However, if
-                the TSF does claim this SFR to support IPsec, the ST author must select at minimum
-                both AES-CBC and AES-GCM for consistency
-                with the relevant IPsec claims (FCS_IPSEC_EXT.1.4 requires 
-                AES-GCM and FCS_IPSEC_EXT.1.6 requires AES-CBC). The "no other modes" selection is added
-                for the case where no AES claims need to be made beyond what is mandated for IPsec.
-              </h:p>
-              The text of the requirement is replaced with:
-              <h:br/>
-              <h:br/>
-              The
-              <h:b>
-                application
-              </h:b>
-              shall
-              <h:b>
-                [selection:
-                <h:i>
-                  perform, invoke the platform to perform
-                </h:i>
-                ]
-              </h:b>
-              [
-              <h:i>
-                encryption and decryption
-              </h:i>
-              ] in accordance with a specified cryptographic algorithm
-              <h:b>
-                <h:ul>
-                  <h:li>
-                    AES-CBC (as defined in NIST SP 800-38A) mode
-                  </h:li>
-                  <h:li>
-                    AES-GCM (as defined in NIST SP 800-38D) mode
-                  </h:li>
-                </h:ul>
-                and
-              </h:b>
-              [
-              <h:b>
-                selection:
-              </h:b>
-              <h:i>
-                <h:ul>
-                  <h:li>
-                    AES-XTS (as defined in NIST SP 800-38E) mode
-                  </h:li>
-                  <h:li>
-                    AES-CCM (as defined in NIST SP 800-38C) mode
-                  </h:li>
-                  <h:li>
-                    AES-CTR (as defined in NIST SP 800-38A) mode
-                  </h:li>
-                  <h:li>
-                    <h:b>
-                      no other modes
-                    </h:b>
-                  </h:li>
-                </h:ul>
-              </h:i>
-              ] and cryptographic key size of [
-              <h:i>
-                256-bits
-              </h:i>
-              ].
-            </description>
-            <replace>
-              <xpath-specified xpath="*//cc:f-element[@id='fel-sym-encrypt']//cc:title">
-                The
-                <h:b>
-                  application
-                </h:b>
-                shall
-                <selectables>
-                  <selectable id="FCS_COP.1_1">
-                    perform
-                  </selectable>
-                  <selectable id="FCS_COP.1_2">
-                    invoke the platform to perform
-                  </selectable>
-                </selectables>
-                [
-                <h:i>
-                  encryption and decryption
-                </h:i>
-                ] in accordance with a specified cryptographic algorithm
-                <h:b>
-                  <h:ul>
-                    <h:li>
-                      AES-CBC (as defined in NIST SP 800-38A) mode
-                    </h:li>
-                    <h:li>
-                      AES-GCM (as defined in NIST SP 800-38D) mode
-                    </h:li>
-                  </h:ul>
-                  and
-                </h:b>
-                <selectables linebreak="yes">
-                  <selectable id="sel_aes_xts">
-                    AES-XTS (as defined in NIST SP 800-38E) mode
-                  </selectable>
-                  <selectable id="sel_aes_ccm">
-                    AES-CCM (as defined in NIST SP 800-38C) mode
-                  </selectable>
-                  <selectable id="sel_aes_ctr">
-                    AES-CTR (as defined in NIST SP 800-38A) mode
-                  </selectable>
-                  <selectable id="FCS_COP.1_3">
-                    <h:b>
-                      no other modes
-                    </h:b>
-                  </selectable>
-                </selectables>
-                and cryptographic key size of [
-                <h:i>
-                  256-bits
-                </h:i>
-                ].
               </xpath-specified>
             </replace>
           </base-sfr-spec>
@@ -3203,357 +3247,6 @@ expected to enforce.
                   </selectable>
                 </selectables>
                 .
-              </xpath-specified>
-            </replace>
-          </base-sfr-spec>
-        </section>
-        <section title="Trusted Path/Channels (FTP)" id="mdm-m-ftp">
-          <!-- FTP_ITC.1/INTER_XFER_IT Inter-TSF Trusted Channel (Authorized IT Entities) -->
-          <base-sfr-spec cc-id="ftp_itc.1" id="mdm-ftp-itc-1-inter-xfer-it" title="Inter-TSF Trusted Channel (Authorized IT Entities)" iteration="INTER_XFER_IT">
-            <consistency-rationale>
-              When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client at minimum. This is done by forcing the ST author to make a specific selection that is already present in the MDM PP definition of the SFR and by removing a selection option; no new behavior is introduced by this.
-            </consistency-rationale>
-            <description>
-              <h:p>
-                When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec communications. However, this PP-Module does not specify that any one particular interface must be implemented using IPsec. If the TOE uses IPsec to secure communications between itself and external trusted IT entities, FTP_ITC.1/INTER_XFER_IT is refined as noted by the refinements above.
-                <h:p/>
-                This SFR is refined from its definition in the Base-PP by mandating that the “implement functionality” selection be chosen at minimum for IPsec and by prohibiting the TOE from relying on platform-provided IPsec functionality. Since the TOE may support multiple trusted channel interfaces, the ST author is given the option to select other protocols (SSH, TLS, DTLS, HTTPS) either as being implemented by the TSF or invoked from the platform. The "not invoke or implement any other protocol functionality" is added for the case where the TOE's implementation of IPsec is the only trusted channel protocol the TSF uses.
-              </h:p>
-              The text of FTP_ITC.1.1/INTER_XFER_IT is replaced with (the other elements are unaffected):
-              <h:br/>
-              <h:br/>
-              The TSF shall
-              <h:ul>
-                <h:li>
-                  <h:b>
-                    implement functionality using IPsec as defined in the PP-Module for VPN Client, and
-                  </h:b>
-                </h:li>
-              </h:ul>
-              [
-              <h:b>
-                selection:
-              </h:b>
-              <h:i>
-                <h:b>
-                  <h:ul>
-                    <h:li>
-                      invoke platform-provided functionality to use [selection:
-                      <h:ul>
-                        <h:li>
-                          SSH
-                        </h:li>
-                        <h:li>
-                          mutually authenticated TLS
-                        </h:li>
-                        <h:li>
-                          mutually authenticated DTLS
-                        </h:li>
-                        <h:li>
-                          HTTPS
-                        </h:li>
-                      </h:ul>
-                    </h:li>
-                    <h:li>
-                      implement functionality using [selection:
-                      <h:ul>
-                        <h:li>
-                          SSH as defined in the Functional Package for Secure Shell
-                        </h:li>
-                        <h:li>
-                          mutually authenticated TLS as defined in the Package for Transport Layer Security
-                        </h:li>
-                        <h:li>
-                          mutually authenticated DTLS as defined in the Package for Transport Layer Security
-                        </h:li>
-                        <h:li>
-                          HTTPS in accordance with FCS_HTTPS_EXT.1
-                        </h:li>
-                      </h:ul>
-                    </h:li>
-                    <h:li>
-                      not invoke or implement any other protocol functionality
-                    </h:li>
-                  </h:ul>
-                </h:b>
-              </h:i>
-              ]
-              <h:b>
-                to
-              </h:b>
-              provide a
-              <h:b>
-                trusted
-              </h:b>
-              communication channel between itself and
-              <h:b>
-                authorized
-              </h:b>
-              IT
-              <h:b>
-                entities supporting the following capabilities: audit server, [
-                <h:b>
-                  selection:
-                </h:b>
-                <h:i>
-                  authentication server, [assignment: other capabilities]
-                </h:i>
-                ]
-              </h:b>
-              that is logically distinct from other communication channels and provides assured identification of its endpoints
-                and protection of the channel data from modification or disclosure.
-            </description>
-            <replace>
-              <xpath-specified xpath="*//cc:f-element[@id='fel-inter-xfer-it']//cc:title">
-                The TSF shall
-                <h:ul>
-                  <h:li>
-                    <h:b>
-                      implement functionality using IPsec as defined in the PP-Module for VPN Client, and
-                    </h:b>
-                  </h:li>
-                </h:ul>
-                <selectables>
-                  <selectable id="FTP_ITC.1_1">
-                    <h:b>
-                      invoke platform-provided functionality to use
-                      <selectables linebreak="yes">
-                        <selectable id="ITC1_SSH_INVOKE">
-                          SSH
-                        </selectable>
-                        <selectable id="ITC1_TLS_INVOKE">
-                          mutually authenticated TLS
-                        </selectable>
-                        <selectable id="ITC1_DTLS_INVOKE">
-                          mutually authenticated DTLS
-                        </selectable>
-                        <selectable id="ITC1_HTTPS_INVOKE">
-                          HTTPS
-                        </selectable>
-                      </selectables>
-                    </h:b>
-                  </selectable>
-                  <selectable id="FTP_ITC.1_2">
-                    <h:b>
-                      implement functionality using
-                      <selectables linebreak="yes">
-                        <selectable id="ITC1_SSH_IMPLEMENT">
-                          SSH as defined in the Functional Package for Secure Shell
-                        </selectable>
-                        <selectable id="ITC1_TLS_IMPLEMENT">
-                          mutually authenticated TLS as defined in the Package for Transport Layer Security
-                        </selectable>
-                        <selectable id="ITC1_DTLS_IMPLEMENT">
-                          mutually authenticated DTLS as defined in the Package for Transport Layer Security
-                        </selectable>
-                        <selectable id="ITC1_HTTPS_IMPLEMENT">
-                          HTTPS in accordance with FCS_HTTPS_EXT.1
-                        </selectable>
-                      </selectables>
-                    </h:b>
-                  </selectable>
-                  <selectable id="FTP_ITC.1_3">
-                    <h:b>
-                      not invoke or implement any other protocol functionality
-                    </h:b>
-                  </selectable>
-                </selectables>
-                <h:b>
-                  to
-                </h:b>
-                provide a
-                <h:b>
-                  trusted
-                </h:b>
-                communication channel between itself and
-                <h:b>
-                  authorized
-                </h:b>
-                IT
-                <h:b>
-                  entities supporting the following capabilities: audit server,
-                  <selectables>
-                    <selectable id="FTP_ITC.1_4">
-                      authentication server
-                    </selectable>
-                    <selectable id="FTP_ITC.1_6">
-                      <assignable>
-                        other capabilities
-                      </assignable>
-                    </selectable>
-                  </selectables>
-                </h:b>
-                that is logically distinct from other communication channels and provides assured identification of its endpoints and protection of the channel data from modification or disclosure.
-              </xpath-specified>
-            </replace>
-          </base-sfr-spec>
-          <!-- FTP_TRP.1/TRUSTPATH_REM_ADMIN Trusted Path (for Remote Administration) -->
-          <base-sfr-spec cc-id="ftp_trp.1" id="mdm-ftp-trp-1-trustpath-rem-admin" title="Trusted Path (for Remote Administration)" iteration="TRUSTPATH_REM_ADMIN">
-            <consistency-rationale>
-              When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client at minimum. This is done by forcing the ST author to make a specific selection that is already present in the MDM PP definition of the SFR and by removing a selection option; no new behavior is introduced by this.
-            </consistency-rationale>
-            <description>
-              <h:p>
-                When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec communications. However, this PP-Module does not specify that any one particular interface must be implemented using IPsec. If the TOE uses IPsec to secure communications between itself and trusted remote administrators, FPT_TRP.1/TRUSTPATH_REM_ADMIN is refined as below.
-                <h:p/>
-                This SFR is refined from its definition in the Base-PP by mandating that the “implement functionality” selection be chosen at minimum for IPsec and by prohibiting the TOE from relying on platform-provided IPsec functionality. Since the TOE may support multiple remote administrative interfaces, the ST author is given the option to select other protocols (SSH, TLS, HTTPS) either as being implemented by the TSF or invoked from the platform. The "not invoke or implement any other protocol functionality" is added for the case where the TOE's implementation of IPsec is the only trusted path protocol the TSF uses.
-              </h:p>
-              The text of FTP_TRP.1.1/TRUSTPATH_REM_ADMIN is replaced with (the other elements are unaffected):
-              <h:br/>
-              <h:br/>
-              The TSF shall
-              <h:ul>
-                <h:li>
-                  <h:b>
-                    implement functionality using IPsec as defined in the PP-Module for VPN Client, and
-                  </h:b>
-                </h:li>
-              </h:ul>
-              [
-              <h:b>
-                selection:
-              </h:b>
-              <h:i>
-                <h:b>
-                  <h:ul>
-                    <h:li>
-                      invoke platform-provided functionality to use [selection:
-                      <h:ul>
-                        <h:li>
-                          TLS
-                        </h:li>
-                        <h:li>
-                          HTTPS
-                        </h:li>
-                        <h:li>
-                          SSH
-                        </h:li>
-                      </h:ul>
-                    </h:li>
-                    <h:li>
-                      implement functionality using [selection:
-                      <h:ul>
-                        <h:li>
-                          TLS as defined in the Package for Transport Layer Security
-                        </h:li>
-                        <h:li>
-                          HTTPS in accordance with FCS_HTTPS_EXT.1
-                        </h:li>
-                        <h:li>
-                          SSH as defined in the Functional Package for Secure Shell
-                        </h:li>
-                      </h:ul>
-                    </h:li>
-                    <h:li>
-                      not invoke or implement any other protocol functionality
-                    </h:li>
-                  </h:ul>
-                </h:b>
-              </h:i>
-              ]
-              <h:b>
-                to
-              </h:b>
-              provide a
-              <h:b>
-                trusted
-              </h:b>
-              communication path between itself
-              <h:b>
-                as a [selection:
-                <h:i>
-                  server, peer
-                </h:i>
-                ]
-                and another trusted IT product
-              </h:b>
-              that is logically distinct from other communication paths and provides assured
-                identification of its endpoints and protection of the communicated data from [
-              <h:i>
-                modification or disclosure
-              </h:i>
-              ].
-            </description>
-            <replace>
-              <xpath-specified xpath="*//cc:f-element[@id='trustpath-rem-admin']//cc:title">
-                The TSF shall
-                <h:ul>
-                  <h:li>
-                    <h:b>
-                      implement functionality using IPsec as defined in the PP-Module for VPN Client, and
-                    </h:b>
-                  </h:li>
-                </h:ul>
-                <selectables linebreak="yes">
-                  <selectable id="FTP_TRP.1_1">
-                    <h:b>
-                      invoke platform-provided functionality to use
-                      <selectables linebreak="yes">
-                        <selectable id="TRP1_TLS_INVOKE">
-                          TLS
-                        </selectable>
-                        <selectable id="TRP1_HTTPS_INVOKE">
-                          HTTPS
-                        </selectable>
-                        <selectable id="TRP1_SSH_INVOKE">
-                          SSH
-                        </selectable>
-                      </selectables>
-                    </h:b>
-                  </selectable>
-                  <selectable id="FTP_TRP.1_2">
-                    <h:b>
-                      implement functionality using
-                      <selectables linebreak="yes">
-                        <selectable id="TRP1_TLS_IMPLEMENT">
-                          TLS as defined in the Package for Transport Layer Security
-                        </selectable>
-                        <selectable id="TRP1_HTTPS_IMPLEMENT">
-                          HTTPS in accordance with FCS_HTTPS_EXT.1
-                        </selectable>
-                        <selectable id="TRP1_SSH_IMPLEMENT">
-                          SSH as defined in the Functional Package for Secure Shell
-                        </selectable>
-                      </selectables>
-                    </h:b>
-                  </selectable>
-                  <selectable id="FTP_TRP.1_3">
-                    <h:b>
-                      not invoke or implement any other protocol functionality
-                    </h:b>
-                  </selectable>
-                </selectables>
-                <h:b>
-                  to
-                </h:b>
-                provide a
-                <h:b>
-                  trusted
-                </h:b>
-                communication path between itself
-                <h:b>
-                  as a
-                  <selectables>
-                    <selectable id="FTP_TRP.1_4">
-                      server
-                    </selectable>
-                    <selectable id="FTP_TRP.1_5">
-                      peer
-                    </selectable>
-                  </selectables>
-                </h:b>
-                <h:b>
-                  and another trusted IT product
-                </h:b>
-                that is logically distinct from other communication
-                <h:b>
-                  channels
-                </h:b>
-                and provides assured identification of its endpoints and protection of the channel data from [
-                <h:i>
-                  modification or disclosure.
-                </h:i>
-                ]
               </xpath-specified>
             </replace>
           </base-sfr-spec>
