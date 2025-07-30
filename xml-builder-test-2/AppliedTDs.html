@@ -693,7 +693,7 @@ function showTarget(id){
       </td><td>
         Initial Release
       </td></tr>
-</table><h3>TDs Applied</h3><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-gpos" style="text-indent:10px">5.1<span>
+</table><h3>TDs Applied</h3><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#" style="text-indent:10px">4.1<span>Security Objectives Rationale</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-gpos" style="text-indent:10px">5.1<span>
     Protection Profile for Protection Profile for General Purpose Operating System
        Security Functional Requirements Direction
     </span></a><a href="#modsfr-bpp-gpos" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#addsfr-bpp-gpos" style="text-indent:20px">5.1.2<span> Additional SFRs</span></a><a href="#gpos-audit-table" style="text-indent:30px">5.1.2.1<span>Auditable Events for GPOS PP Additional SFRs</span></a><a href="#os-a-fcs" style="text-indent:30px">5.1.2.2<span>Cryptographic Support (FCS)</span></a><a href="#os-a-fia" style="text-indent:30px">5.1.2.3<span>Identification and Authentication (FIA)</span></a><a href="#os-a-ftp" style="text-indent:30px">5.1.2.4<span>Trusted Path/Channels (FTP)</span></a><a href="#secreq-bpp-mdf" style="text-indent:10px">5.2<span>
@@ -1124,6 +1124,7 @@ expected to enforce.
     specific capabilities provided by a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client.
     
     <h2 class="indexable" data-level="2" id="Threats">3.1 Threats</h2>
+      The following threats defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extend the threats defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>.
       <dl><dt class="threat defined" id="T.TSF_CONFIGURATION">T.TSF_CONFIGURATION</dt><dd><span class="description">
             Configuring <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> tunnels is a complex and time-consuming process, and prone to errors if the            interface for doing so is not well-specified or well-behaved. The inability or failure of an ignorant or careless administrator to configure certain aspects            of the interface may also lead to the incorrect specification of the desired communications policy or use            of cryptography that may be desired or required for a particular site. This may result in unintended            weak or plaintext communications while the user thinks that their data are being protected. Other            aspects of configuring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or using its security mechanisms (for example, the update process)            may also result in a reduction in the trustworthiness of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client.
           </span></dd><dt class="threat defined" id="T.TSF_FAILURE">T.TSF_FAILURE</dt><dd><span class="description">
@@ -1172,20 +1173,8 @@ provide all of its security functionality.
   <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
     
     
-    <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_Operational_Environment">4.1 Security Objectives for the Operational Environment</h2>
-      <dl><dt class="SOE defined" id="OE.NO_TOE_BYPASS">OE.NO_TOE_BYPASS</dt><dd><span class="description">
-            Information cannot flow onto the network to which the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client’s host is connected without
-            passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-          </span></dd><dt class="SOE defined" id="OE.PHYSICAL">OE.PHYSICAL</dt><dd><span class="description">
-            Physical security, commensurate with the value of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the data it contains, is assumed to
-            be provided by the environment.
-          </span></dd><dt class="SOE defined" id="OE.TRUSTED_CONFIG">OE.TRUSTED_CONFIG</dt><dd><span class="description">
-            Personnel configuring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and its <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> will follow the applicable security
-            configuration guidance.
-          </span></dd></dl>
     
-    
-    <h2 id="" class="indexable,h2" data-level="2">4.2 Security Objectives Rationale</h2>   
+    <h2 id="" class="indexable,h2" data-level="2">4.1 Security Objectives Rationale</h2>   
 		This section describes how the assumptions and organizational 
 		security policies map to operational environment security objectives.
 	<table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Assumption or <abbr class="dyn-abbr"><a href="#abbr_OSP">OSP</a></abbr></td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="1"><a href="#A.NO_TOE_BYPASS">A.NO_​TOE_​BYPASS</a></td><td><a href="#OE.NO_TOE_BYPASS">OE.NO_​TOE_​BYPASS</a></td><td>
@@ -1200,6 +1189,23 @@ provide all of its security functionality.
               anyone responsible for administering the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> can be trusted not to misconfigure it,
               whether intentionally or not.
             </td></tr></table>
+    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">4.2 Security Objectives for the Operational Environment</h2>
+The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements technical and procedural measures to assist the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in correctly providing its security functionality (which is defined by the security objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>).
+The security objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> consist of a set of statements describing the goals that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> should achieve.
+This section defines the security objectives that are to be addressed by the <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> domain or by non-technical or procedural means.
+The assumptions identified in Section 3 are incorporated as security objectives for the environment.
+      
+      <dl><dt class="SOE defined" id="OE.NO_TOE_BYPASS">OE.NO_TOE_BYPASS</dt><dd><span class="description">
+            Information cannot flow onto the network to which the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client’s host is connected without
+            passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+          </span></dd><dt class="SOE defined" id="OE.PHYSICAL">OE.PHYSICAL</dt><dd><span class="description">
+            Physical security, commensurate with the value of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the data it contains, is assumed to
+            be provided by the environment.
+          </span></dd><dt class="SOE defined" id="OE.TRUSTED_CONFIG">OE.TRUSTED_CONFIG</dt><dd><span class="description">
+            Personnel configuring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and its <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> will follow the applicable security
+            configuration guidance.
+          </span></dd></dl>
+    
   <h1 id="Security_Requirements" class="indexable" data-level="1">5 Security Requirements</h1>
       This chapter describes the security requirements which have to be fulfilled by the product under evaluation.
      Those requirements comprise functional components from Part 2 and assurance components from Part 3 of 
