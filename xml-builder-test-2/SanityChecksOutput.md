@@ -132,14 +132,6 @@
 * Warning: fau_sel.1 in obj-sfrs section is missing a _depends_/_objective_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/section[2]""/f-component[1]""
 * Warning: fia_bma_ext.1 in opt-sfrs section is missing a _depends_/_optional_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/opt-sfrs[1]""/section[2]"The TOE m"/f-component[1]""
 * Warning: fpf_mfa_ext.1 in opt-sfrs section is missing a _depends_/_optional_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/opt-sfrs[1]""/section[3]""/f-component[1]""
-warning: failed to load external entity "output/pkg-x509.xml"
-warning: failed to load external entity "output/pkg-x509.xml"
-warning: failed to load external entity "output/pkg-x509.xml"
-warning: failed to load external entity "output/pkg-x509.xml"
-warning: failed to load external entity "output/pkg-x509.xml"
-warning: failed to load external entity "output/pkg-x509.xml"
-warning: failed to load external entity "output/pkg-x509.xml"
-warning: failed to load external entity "output/pkg-x509.xml"
 * Warning: Since FCS_CKM_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
 * Warning: Since FCS_CKM_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
