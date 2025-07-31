@@ -119,9 +119,6 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/description[1]"The text "/h:p[1]"When the "/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[2]""/description[1]"The text "/h:p[1]"When the "/h:p[1]""
 * Warning: fau_gen.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]""/f-component[1]""
-* Warning: fau_sel.1 in obj-sfrs section is missing a _depends_/_objective_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/obj-sfrs[1]""/section[2]""/f-component[1]""
-* Warning: fia_bma_ext.1 in opt-sfrs section is missing a _depends_/_optional_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/opt-sfrs[1]""/section[2]"The TOE m"/f-component[1]""
-* Warning: fpf_mfa_ext.1 in opt-sfrs section is missing a _depends_/_optional_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/opt-sfrs[1]""/section[3]""/f-component[1]""
 * Warning: Since FCS_CKM_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
 * Warning: Since FCS_CKM_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
