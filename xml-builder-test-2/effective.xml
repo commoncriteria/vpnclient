@@ -23,21 +23,6 @@
       <date>2022-03-31</date>
       <subject>Incorporation of TC feedback</subject>
     </entry>
-    <entry>
-      <version>2.3</version>
-      <date>2021-08-10</date>
-      <subject>Support for MDF, Bluetooth updates</subject>
-    </entry>
-    <entry>
-      <version>2.2</version>
-      <date>2021-01-05</date>
-      <subject>Update release</subject>
-    </entry>
-    <entry>
-      <version>2.1</version>
-      <date>2019-11-14</date>
-      <subject>Initial Release</subject>
-    </entry>
   </RevisionHistory>
   <release-notes><h:h3>TDs Applied</h:h3></release-notes><include-pkg id="pkg-ssh">
     <git>
@@ -69,7 +54,7 @@
       client in terms of  <xref g="CC"/> and to define functional and assurance requirements for such
       products. This PP-Module is intended for use with the following Base-PPs:
 
-      <h:ul><h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 4.3</h:li><h:li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 3.3</h:li><h:li>Protection Profile for Application Software (App PP), Version 2.0</h:li><h:li>Protection Profile for Mobile Device Management (MDM PP), Version 4.0</h:li></h:ul>
+      <h:ul><h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 4.3</h:li><h:li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 3.3</h:li><h:li>Protection Profile for Application Software (App PP), Version 1.4</h:li><h:li>Protection Profile for Mobile Device Management (MDM PP), Version 4.0</h:li></h:ul>
 
       These Base-PPs are all valid because a VPN client may be a specific type of stand-alone software
       application or a built-in component of an operating system (OS), whether desktop or mobile. Regardless of
@@ -1125,7 +1110,7 @@ This SFR mitigates the threat by optionally
         applies to the establishment of IPsec connections.</con-mod>
     </base-pp>
     <!-- 5.3 App PP Security Functional Requirements Direction -->
-    <base-pp id="bpp-app" name="Protection Profile for Application Software" product="Application" short="App" version="2.0">
+    <base-pp id="bpp-app" name="Protection Profile for Application Software" product="Application" short="App" version="1.4">
       <git>
         <url>https://github.com/commoncriteria/application</url>
         <branch>release-1.4</branch>
@@ -1778,7 +1763,7 @@ that is logically distinct from other communication channels and provides assure
     <!-- 5.5 TOE Security Functional Requirements -->
     <man-sfrs>
       <section id="ss-audit-table" title="Auditable Events for Mandatory SFRs">
-        <xref to="at-mandatory"/>must be included as part of FAU_GEN.1/VPN for GPOS, MDF, and MDM Base-PPs. When App PP is the Base-PP, it should be included only if implementation-dependent requirement FAU_GEN.1/VPN is included in the ST. <audit-table id="at-mandatory" table="atref-mandatory" title="Auditable Events for Mandatory SFRs"/>
+        <xref to="at-mandatory"/>must be included as part of FAU_GEN.1/VPN for GPOS, MDF, and MDM Base-PPs. When App PP is the Base-PP, it should be included only if implementation-dependent requirement FAU_GEN.1/VPN is included in the ST. 
         <audit-table id="at-mandatory" table="atref-mandatory" title="Auditable Events for Mandatory SFRs"/>
       </section>
       <!-- 5.5.1 Cryptographic Support (FCS) -->
@@ -2672,7 +2657,7 @@ that is logically distinct from other communication channels and provides assure
     </man-sfrs>
     <opt-sfrs>
       <section id="sop-audit-table" title="Auditable Events for Strictly Optional SFRs">
-        Entries from <xref to="at-optional"/>must be included for GPOS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any strictly optional SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST. <audit-table id="at-optional" table="atref-optional" title="Auditable Events for Strictly Optional SFRs"/>
+        Entries from <xref to="at-optional"/>must be included for GPOS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any strictly optional SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST. 
         <audit-table id="at-optional" table="atref-optional" title="Auditable Events for Strictly Optional SFRs"/>
       </section>
       <!-- 5.5.5 Identification and Authentication (FIA) -->
@@ -2751,7 +2736,7 @@ that is logically distinct from other communication channels and provides assure
     </opt-sfrs>
     <sel-sfrs>
       <section id="sb-audit-table" title="Auditable Events for Selection-based SFRs">
-        Entries from <xref to="at-sel-based"/>must be included for GPOS, MDF, and MDM Base-PPs if the selection-based SFRs are included in the ST. When the App PP is the Base-PP, if any selection-based SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST. <audit-table id="at-sel-based" table="sel-based" title="Auditable Events for Selection-Based SFRs"/>
+        Entries from <xref to="at-sel-based"/>must be included for GPOS, MDF, and MDM Base-PPs if the selection-based SFRs are included in the ST. When the App PP is the Base-PP, if any selection-based SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST. 
         <audit-table id="at-sel-based" table="sel-based" title="Auditable Events for Selection-Based SFRs"/>
       </section>
       <!-- 5.5.7 Cryptographic Support (FCS) -->
@@ -3106,7 +3091,7 @@ that is logically distinct from other communication channels and provides assure
     </sel-sfrs>
     <obj-sfrs>
       <section id="sob-audit-table" title="Auditable Events for Objective SFRs">
-        Entries from <xref to="at-objective"/>must be included for GPOS, MDF, and MDM Base-PPs if the objective SFRs are included in the ST. When the App PP is the Base-PP, if any objective SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST. <audit-table id="at-objective" table="objective" title="Auditable Events for Objective SFRs"/>
+        Entries from <xref to="at-objective"/>must be included for GPOS, MDF, and MDM Base-PPs if the objective SFRs are included in the ST. When the App PP is the Base-PP, if any objective SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST. 
         <audit-table id="at-objective" table="objective" title="Auditable Events for Objective SFRs"/>
       </section>
       <!-- 5.5.9 Security Audit (FAU) -->
@@ -3164,7 +3149,7 @@ that is logically distinct from other communication channels and provides assure
     </obj-sfrs>
     <impl-dep-sfrs>
       <section id="impl-audit-table" title="Auditable Events for Implementation-dependent SFRs">
-        Entries from <xref to="at-impl-dep"/>must be included for GPOS, MDF, and MDM Base-PPs if the implementation-dependent SFRs are included in the ST. When the App PP is the Base-PP, if any implementation-dependent SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST. <audit-table id="at-impl-dep" table="atref-impl-dep" title="Auditable Events for Implementation-dependent SFRs"/>
+        Entries from <xref to="at-impl-dep"/>must be included for GPOS, MDF, and MDM Base-PPs if the implementation-dependent SFRs are included in the ST. When the App PP is the Base-PP, if any implementation-dependent SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST. 
         <audit-table id="at-impl-dep" table="atref-impl-dep" title="Auditable Events for Implementation-dependent SFRs"/>
       </section>
       <!-- 5.5.10 Security Audit (FAU) -->
@@ -3283,7 +3268,9 @@ that is logically distinct from other communication channels and provides assure
     </entry>
     <entry id="bibAppPP">
       <tag>App PP</tag>
-      <description><h:a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software, Version 2.0, June 16, 2025</h:a></description>
+      <description><h:a href="https://www.niap-ccevs.org/static_html/protection-profile/462/462/index.html">
+			Protection Profile for Application Software</h:a>, Version 1.4, October 2021
+      </description>
     </entry>
   </bibliography>
 </Module>

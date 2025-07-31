@@ -40,21 +40,11 @@
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_3'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_5'.
-* Error: Detected multiple elements with an id of 'at-mandatory'.
-* Error: Detected multiple elements with an id of 'at-mandatory'.
-* Error: Detected multiple elements with an id of 'fcs'.
-* Error: Detected multiple elements with an id of 'at-optional'.
-* Error: Detected multiple elements with an id of 'at-optional'.
-* Error: Detected multiple elements with an id of 'fia'.
-* Error: Detected multiple elements with an id of 'at-sel-based'.
-* Error: Detected multiple elements with an id of 'at-sel-based'.
 * Error: Detected multiple elements with an id of 'fcs'.
 * Error: Detected multiple elements with an id of 'fia'.
-* Error: Detected multiple elements with an id of 'at-objective'.
-* Error: Detected multiple elements with an id of 'at-objective'.
+* Error: Detected multiple elements with an id of 'fcs'.
+* Error: Detected multiple elements with an id of 'fia'.
 * Error: Detected multiple elements with an id of 'fau'.
-* Error: Detected multiple elements with an id of 'at-impl-dep'.
-* Error: Detected multiple elements with an id of 'at-impl-dep'.
 * Error: Detected multiple elements with an id of 'fau'.
 * Error: Detected dangling ref to 'os-fcs-ckm-1'
         for a ref.
