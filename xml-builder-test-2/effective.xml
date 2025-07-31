@@ -1053,7 +1053,7 @@ This SFR mitigates the threat by optionally
                   <selectable id="s-aes-ccm">
                     AES-CCM (as defined in NIST SP 800-38C)
                   </selectable>
-                  <selectable id="FCS_COP.1_1" exclusive="yes">
+                  <selectable id="FCS_COP.1/ENCRYPT_1" exclusive="yes">
                     no other modes
                   </selectable>
                 </selectables>
@@ -1062,7 +1062,7 @@ This SFR mitigates the threat by optionally
                   <selectable id="s-128">
                     128-bit
                   </selectable>
-                  <selectable id="FCS_COP.1_2">
+                  <selectable id="FCS_COP.1/ENCRYPT_2">
                     no other bit size
                   </selectable>
                 </selectables>
@@ -1786,6 +1786,260 @@ This SFR mitigates the threat by optionally
                   </selectable>
                 </selectables>
                 .
+              </xpath-specified>
+            </replace>
+          </base-sfr-spec>
+          <!-- FCS_CKM.2/UNLOCKED Cryptographic Key Establishment (When Unlocked) -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="mdf-fcs-ckm-2-unlocked" title="Cryptographic Key Establishment (When Unlocked)" iteration="UNLOCKED">
+            <consistency-rationale>
+              The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
+            </consistency-rationale>
+            <description>
+              <h:p>
+                This SFR differs from its definition in the MDF PP by moving elliptic curve-based key establishment schemes from selectable to mandatory, due to the mandated support for DH group 20 in FCS_IPSEC_EXT.1.8. This PP-Module does not require the use of RSA for any function but it is present in the selection in case other MDF PP functions require its use.
+              </h:p>
+              The text of the requirement is replaced with:
+              <h:br/>
+              <h:br/>
+              The TSF shall perform
+              <h:b>
+                cryptographic key establishment
+              </h:b>
+              in accordance with a specified cryptographic key establishment method:
+              <h:ul>
+                <h:li>
+                  <h:b>
+                    [Elliptic curve-based key establishment schemes] that meet the following: [NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”]
+                  </h:b>
+                </h:li>
+              </h:ul>
+              [
+              <h:b>
+                selection:
+              </h:b>
+              <h:i>
+                <h:ul>
+                  <h:li>
+                    [RSA-based key establishment schemes] that meet the following: [
+                    <h:b>
+                      selection:
+                    </h:b>
+                    <h:ul>
+                      <h:li>
+                        NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography”
+                      </h:li>
+                      <h:li>
+                        RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.2"</h:li>
+                    </h:ul>
+                  </h:li>
+                  <h:li>
+                    [
+                    <h:i>
+                      Finite field-based key establishment schemes
+                    </h:i>
+                    ]
+                      that meet the following: [
+                    <h:i>
+                      NIST Special Publication 800-56A Revision 3,
+                        "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm
+                        Cryptography"</h:i>
+                    ]
+                  </h:li>
+                  <h:li>
+                    <h:b>
+                      no other key establishment schemes
+                    </h:b>
+                  </h:li>
+                </h:ul>
+              </h:i>
+              ].
+            </description>
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-unlocked-key']//cc:title">
+                The TSF shall perform cryptographic
+                <h:b>
+                  key establishment
+                </h:b>
+                in accordance with a specified cryptographic key
+                <h:b>
+                  establishment
+                </h:b>
+                method
+                <h:ul>
+                  <h:li>
+                    <h:b>
+                      [
+                      <h:i>
+                        Elliptic curve-based key establishment schemes
+                      </h:i>
+                      ] that meet the following: [
+                      <h:i>
+                        NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"</h:i>
+                      ]
+                    </h:b>
+                  </h:li>
+                </h:ul>
+                <h:b>
+                  and
+                </h:b>
+                <selectables linebreak="yes">
+                  <selectable id="FCS_CKM.2/UNLOCKED_1">
+                    [
+                    <h:i>
+                      RSA-based key establishment schemes
+                    </h:i>
+                    ] that meet the following
+                    <selectables linebreak="yes">
+                      <selectable id="FCS_CKM.2/UNLOCKED_2">
+                        NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography”
+                      </selectable>
+                      <selectable id="FCS_CKM.2/UNLOCKED_3">
+                        RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, "Public-Key Cryptography Standards (PKCS) #1:RSA Cryptography Specifications Version 2.2"</selectable>
+                    </selectables>
+                  </selectable>
+                  <selectable id="FCS_CKM.2/UNLOCKED_4">
+                    [
+                    <h:i>
+                      Finite field-based key establishment schemes
+                    </h:i>
+                    ] that meet the following: [
+                    <h:i>
+                      NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"</h:i>
+                    ]
+                  </selectable>
+                  <selectable id="FCS_CKM.2/UNLOCKED_5">
+                    <h:b>
+                      no other key establishment schemes
+                    </h:b>
+                  </selectable>
+                </selectables>
+                .
+              </xpath-specified>
+            </replace>
+          </base-sfr-spec>
+          <!-- FCS_COP.1/ENCRYPT Cryptographic Operation -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="mdf-fcs-cop-1-encrypt" title="Cryptographic Operation" iteration="ENCRYPT">
+            <consistency-rationale>
+              The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
+            </consistency-rationale>
+            <description>
+              <h:p>
+                This SFR is identical to what is defined in the MDF PP except that support for GCM mode and support for 256-bit key sizes are both mandatory in order to address the requirements for FCS_IPSEC_EXT.1.
+              </h:p>
+              The text of the requirement is replaced with:
+              <h:br/>
+              <h:br/>
+              The TSF shall perform [
+              <h:i>
+                encryption/decryption
+              </h:i>
+              ] in accordance with a specified
+              cryptographic algorithm: [
+              <h:br/>
+              <h:i>
+                <h:ul>
+                  <h:li>
+                    AES-CBC (as defined in FIPS PUB 197, and NIST SP 800-38A) mode
+                  </h:li>
+                  <h:li>
+                    AES-CCMP (as defined in FIPS PUB 197, NIST SP 800-38C and IEEE 802.11-2012),
+                  </h:li>
+                  <h:li>
+                    <h:b>
+                      AES-GCM (as defined in NIST SP 800-38D), and
+                    </h:b>
+                  </h:li>
+                  <h:li>
+                    [
+                    <h:b>
+                      selection:
+                    </h:b>
+                    <h:ul>
+                      <h:li>
+                        AES Key Wrap (KW) (as defined in NIST SP 800-38F)
+                      </h:li>
+                      <h:li>
+                        AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)
+                      </h:li>
+                      <h:li>
+                        AES-CCM (as defined in NIST SP 800-38C)
+                      </h:li>
+                      <h:li>
+                        AES-XTS (as defined in NIST SP 800-38E) mode
+                      </h:li>
+                      <h:li>
+                        AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)
+                      </h:li>
+                      <h:li>
+                        AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)
+                      </h:li>
+                      <h:li>
+                        no other modes
+                      </h:li>
+                    </h:ul>
+                    ]
+                  </h:li>
+                </h:ul>
+                ]
+              </h:i>
+              and cryptographic key sizes [
+              <h:i>
+                128-bit key sizes and [256-bit key sizes]
+              </h:i>
+              ].
+            </description>
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-crypt-how']//cc:title">
+                The TSF shall perform [
+                <h:i>
+                  encryption/decryption
+                </h:i>
+                ] in accordance with a specified cryptographic algorithm: [
+                <selectables linebreak="yes">
+                  <selectable id="FCS_COP.1/ENCRYPT_1">
+                    AES Key Wrap (KW) (as defined in NIST SP 800-38F)
+                  </selectable>
+                  <selectable id="FCS_COP.1/ENCRYPT_2">
+                    AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)
+                  </selectable>
+                  <selectable id="FCS_COP.1/ENCRYPT_3">
+                    AES-CCM (as defined in NIST SP 800-38C)
+                  </selectable>
+                  <selectable id="FCS_COP.1/ENCRYPT_4">
+                    AES-XTS (as defined in NIST SP 800-38E) mode
+                  </selectable>
+                  <selectable id="FCS_COP.1/ENCRYPT_5">
+                    AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)
+                  </selectable>
+                  <selectable id="FCS_COP.1/ENCRYPT_6">
+                    AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)
+                  </selectable>
+                  <selectable id="FCS_COP.1/ENCRYPT_7" exclusive="yes">
+                    no other modes
+                  </selectable>
+                </selectables>
+                <h:i>
+                  <h:br/>
+                  <h:ul>
+                    <h:li>
+                      AES-CBC (as defined in FIPS PUB 197, and NIST SP 800-38A) mode
+                    </h:li>
+                    <h:li>
+                      AES-CCMP (as defined in FIPS PUB 197, NIST SP 800-38C and IEEE 802.11-2012),
+                    </h:li>
+                    <h:li>
+                      <h:b>
+                        AES-GCM (as defined in NIST SP 800-38D), and
+                      </h:b>
+                    </h:li>
+                    <h:li/>
+                  </h:ul>
+                </h:i>
+                ] and cryptographic key sizes [
+                <h:i>
+                  128-bit key sizes and [256-bit key sizes]
+                </h:i>
+                ].
               </xpath-specified>
             </replace>
           </base-sfr-spec>
@@ -2533,10 +2787,10 @@ This SFR mitigates the threat by optionally
                 shall
                 <h:b>
                   <selectables linebreak="yes">
-                    <selectable id="FCS_CKM.1_1">
+                    <selectable id="FCS_CKM.1/AK_1">
                       invoke platform-provided functionality
                     </selectable>
-                    <selectable id="FCS_CKM.1_2">
+                    <selectable id="FCS_CKM.1/AK_2">
                       implement functionality
                     </selectable>
                   </selectables>
@@ -2547,10 +2801,10 @@ This SFR mitigates the threat by optionally
                 </h:b>
                 cryptographic keys in accordance with a specified cryptographic key generation algorithm “NIST curves” P-384 and
                 <selectables>
-                  <selectable id="FCS_CKM.1_3">
+                  <selectable id="FCS_CKM.1/AK_3">
                     P-521
                   </selectable>
-                  <selectable id="FCS_CKM.1_4">
+                  <selectable id="FCS_CKM.1/AK_4">
                     no other curves
                   </selectable>
                 </selectables>
@@ -2571,7 +2825,7 @@ This SFR mitigates the threat by optionally
                   and
                 </h:b>
                 <selectables linebreak="yes">
-                  <selectable id="FCS_CKM.1_5">
+                  <selectable id="FCS_CKM.1/AK_5">
                     <h:b>
                       [RSA schemes]
                     </h:b>
@@ -2585,7 +2839,7 @@ This SFR mitigates the threat by optionally
                     </h:i>
                     ]
                   </selectable>
-                  <selectable id="FCS_CKM.1_6">
+                  <selectable id="FCS_CKM.1/AK_6">
                     <h:b>
                       [FFC Schemes]
                     </h:b>
@@ -2595,28 +2849,28 @@ This SFR mitigates the threat by optionally
                     </h:i>
                     ]
                     <selectables>
-                      <selectable id="FCS_CKM.1_7">
+                      <selectable id="FCS_CKM.1/AK_7">
                         MODP-3072
                       </selectable>
-                      <selectable id="FCS_CKM.1_8">
+                      <selectable id="FCS_CKM.1/AK_8">
                         MODP-4096
                       </selectable>
-                      <selectable id="FCS_CKM.1_9">
+                      <selectable id="FCS_CKM.1/AK_9">
                         MODP-6144
                       </selectable>
-                      <selectable id="FCS_CKM.1_10">
+                      <selectable id="FCS_CKM.1/AK_10">
                         MODP-8192
                       </selectable>
-                      <selectable id="FCS_CKM.1_11">
+                      <selectable id="FCS_CKM.1/AK_11">
                         ffdhe-3072
                       </selectable>
-                      <selectable id="FCS_CKM.1_12">
+                      <selectable id="FCS_CKM.1/AK_12">
                         ffdhe-4096
                       </selectable>
-                      <selectable id="FCS_CKM.1_13">
+                      <selectable id="FCS_CKM.1/AK_13">
                         ffdhe-6144
                       </selectable>
-                      <selectable id="FCS_CKM.1_14">
+                      <selectable id="FCS_CKM.1/AK_14">
                         ffdhe-8192
                       </selectable>
                     </selectables>
@@ -2624,131 +2878,131 @@ This SFR mitigates the threat by optionally
                     <h:i>
                       NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography” and
                       <selectables>
-                        <selectable id="FCS_CKM.1_15">
+                        <selectable id="FCS_CKM.1/AK_15">
                           RFC 3526
                         </selectable>
-                        <selectable id="FCS_CKM.1_16">
+                        <selectable id="FCS_CKM.1/AK_16">
                           RFC 7919
                         </selectable>
                       </selectables>
                     </h:i>
                     ]
                   </selectable>
-                  <selectable id="FCS_CKM.1_17">
+                  <selectable id="FCS_CKM.1/AK_17">
                     <h:b>
                       Leighton-Micali Signature
                     </h:b>
                     Algorithm using the parameter sets
                     <selectables>
-                      <selectable id="FCS_CKM.1_18">
+                      <selectable id="FCS_CKM.1/AK_18">
                         LMS_SHAKE_M24_H5
                       </selectable>
-                      <selectable id="FCS_CKM.1_19">
+                      <selectable id="FCS_CKM.1/AK_19">
                         LMS_SHAKE_M24_H10
                       </selectable>
-                      <selectable id="FCS_CKM.1_20">
+                      <selectable id="FCS_CKM.1/AK_20">
                         LMS_SHAKE_M24_H15
                       </selectable>
-                      <selectable id="FCS_CKM.1_21">
+                      <selectable id="FCS_CKM.1/AK_21">
                         LMS_SHAKE_M24_H25
                       </selectable>
-                      <selectable id="FCS_CKM.1_22">
+                      <selectable id="FCS_CKM.1/AK_22">
                         LMS_SHAKE_M32_H5
                       </selectable>
-                      <selectable id="FCS_CKM.1_23">
+                      <selectable id="FCS_CKM.1/AK_23">
                         LMS_SHAKE_M32_H10
                       </selectable>
-                      <selectable id="FCS_CKM.1_24">
+                      <selectable id="FCS_CKM.1/AK_24">
                         LMS_SHAKE_M32_H15
                       </selectable>
-                      <selectable id="FCS_CKM.1_25">
+                      <selectable id="FCS_CKM.1/AK_25">
                         LMS_SHAKE_M32_H25
                       </selectable>
-                      <selectable id="FCS_CKM.1_26">
+                      <selectable id="FCS_CKM.1/AK_26">
                         LMS_SHA256_M24_H5
                       </selectable>
-                      <selectable id="FCS_CKM.1_27">
+                      <selectable id="FCS_CKM.1/AK_27">
                         LMS_SHA256_M24_H10
                       </selectable>
-                      <selectable id="FCS_CKM.1_28">
+                      <selectable id="FCS_CKM.1/AK_28">
                         LMS_SHA256_M24_H15
                       </selectable>
-                      <selectable id="FCS_CKM.1_29">
+                      <selectable id="FCS_CKM.1/AK_29">
                         LMS_SHA256_M24_H25
                       </selectable>
-                      <selectable id="FCS_CKM.1_30">
+                      <selectable id="FCS_CKM.1/AK_30">
                         LMS_SHA256_M32_H5
                       </selectable>
-                      <selectable id="FCS_CKM.1_31">
+                      <selectable id="FCS_CKM.1/AK_31">
                         LMS_SHA256_M32_H10
                       </selectable>
-                      <selectable id="FCS_CKM.1_32">
+                      <selectable id="FCS_CKM.1/AK_32">
                         LMS_SHA256_M32_H15
                       </selectable>
-                      <selectable id="FCS_CKM.1_33">
+                      <selectable id="FCS_CKM.1/AK_33">
                         LMS_SHA256_M32_H25
                       </selectable>
                     </selectables>
                     that meet the following[NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]
                   </selectable>
-                  <selectable id="FCS_CKM.1_34">
+                  <selectable id="FCS_CKM.1/AK_34">
                     <h:b>
                       eXtended Merkle Signature Scheme Algorithm
                     </h:b>
                     using the parameter sets
                     <selectables>
-                      <selectable id="FCS_CKM.1_35">
+                      <selectable id="FCS_CKM.1/AK_35">
                         XMSS-SHA2_10_192
                       </selectable>
-                      <selectable id="FCS_CKM.1_36">
+                      <selectable id="FCS_CKM.1/AK_36">
                         XMSS-SHA2_16_192
                       </selectable>
-                      <selectable id="FCS_CKM.1_37">
+                      <selectable id="FCS_CKM.1/AK_37">
                         XMSS-SHA2_20_192
                       </selectable>
-                      <selectable id="FCS_CKM.1_38">
+                      <selectable id="FCS_CKM.1/AK_38">
                         XMSS-SHA2_10_256
                       </selectable>
-                      <selectable id="FCS_CKM.1_39">
+                      <selectable id="FCS_CKM.1/AK_39">
                         XMSS-SHA2_16_256
                       </selectable>
-                      <selectable id="FCS_CKM.1_40">
+                      <selectable id="FCS_CKM.1/AK_40">
                         XMSS-SHA2_20_256
                       </selectable>
-                      <selectable id="FCS_CKM.1_41">
+                      <selectable id="FCS_CKM.1/AK_41">
                         XMSS-SHAKE_10_192
                       </selectable>
-                      <selectable id="FCS_CKM.1_42">
+                      <selectable id="FCS_CKM.1/AK_42">
                         XMSS-SHAKE_16_192
                       </selectable>
-                      <selectable id="FCS_CKM.1_43">
+                      <selectable id="FCS_CKM.1/AK_43">
                         XMSS-SHAKE_20_192
                       </selectable>
-                      <selectable id="FCS_CKM.1_44">
+                      <selectable id="FCS_CKM.1/AK_44">
                         XMSS-SHAKE_10_256
                       </selectable>
-                      <selectable id="FCS_CKM.1_45">
+                      <selectable id="FCS_CKM.1/AK_45">
                         XMSS-SHAKE_16_256
                       </selectable>
-                      <selectable id="FCS_CKM.1_46">
+                      <selectable id="FCS_CKM.1/AK_46">
                         XMSS-SHAKE_20_256
                       </selectable>
                     </selectables>
                     bits that meets the following: [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]
                   </selectable>
-                  <selectable id="FCS_CKM.1_47">
+                  <selectable id="FCS_CKM.1/AK_47">
                     <h:b>
                       Module-Lattice-Based Key-Encapsulation Mechanism Standard
                     </h:b>
                     using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]
                   </selectable>
-                  <selectable id="FCS_CKM.1_48">
+                  <selectable id="FCS_CKM.1/AK_48">
                     <h:b>
                       Module-Lattice-Based Digital Signature Standard
                     </h:b>
                     using the parameter set ML-DSA-87 that meets the following [FIPS 204, Module-Lattice-Based Digital Signature Standard]
                   </selectable>
-                  <selectable id="FCS_CKM.1_49">
+                  <selectable id="FCS_CKM.1/AK_49">
                     <h:b>
                       no other key generation methods
                     </h:b>
@@ -2962,6 +3216,138 @@ This SFR mitigates the threat by optionally
                   </selectable>
                 </selectables>
                 .
+              </xpath-specified>
+            </replace>
+          </base-sfr-spec>
+          <!-- FCS_COP.1/SKC Cryptographic Operation - Encryption/Decryption -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="app-fcs-cop-1-skc" title="Cryptographic Operation - Encryption/Decryption" iteration="SKC">
+            <consistency-rationale>
+              The ST author is instructed to make specific selections at minimum to
+              address VPN client requirements; the SFR behavior itself is
+              unmodified.
+            </consistency-rationale>
+            <description>
+              <h:p>
+                This SFR is selection-based in the Base-PP and remains selection-based here because
+                this PP-Module allows for the possibility that the TSF relies on platform-provided
+                cryptographic algorithm services for its own implementation of IPsec. However, if
+                the TSF does claim this SFR to support IPsec, the ST author must select at minimum
+                both AES-CBC and AES-GCM for consistency
+                with the relevant IPsec claims (FCS_IPSEC_EXT.1.4 requires 
+                AES-GCM and FCS_IPSEC_EXT.1.6 requires AES-CBC). The "no other modes" selection is added
+                for the case where no AES claims need to be made beyond what is mandated for IPsec.
+              </h:p>
+              The text of the requirement is replaced with:
+              <h:br/>
+              <h:br/>
+              The
+              <h:b>
+                application
+              </h:b>
+              shall
+              <h:b>
+                [selection:
+                <h:i>
+                  perform, invoke the platform to perform
+                </h:i>
+                ]
+              </h:b>
+              [
+              <h:i>
+                encryption and decryption
+              </h:i>
+              ] in accordance with a specified cryptographic algorithm
+              <h:b>
+                <h:ul>
+                  <h:li>
+                    AES-CBC (as defined in NIST SP 800-38A) mode
+                  </h:li>
+                  <h:li>
+                    AES-GCM (as defined in NIST SP 800-38D) mode
+                  </h:li>
+                </h:ul>
+                and
+              </h:b>
+              [
+              <h:b>
+                selection:
+              </h:b>
+              <h:i>
+                <h:ul>
+                  <h:li>
+                    AES-XTS (as defined in NIST SP 800-38E) mode
+                  </h:li>
+                  <h:li>
+                    AES-CCM (as defined in NIST SP 800-38C) mode
+                  </h:li>
+                  <h:li>
+                    AES-CTR (as defined in NIST SP 800-38A) mode
+                  </h:li>
+                  <h:li>
+                    <h:b>
+                      no other modes
+                    </h:b>
+                  </h:li>
+                </h:ul>
+              </h:i>
+              ] and cryptographic key size of [
+              <h:i>
+                256-bits
+              </h:i>
+              ].
+            </description>
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-sym-encrypt']//cc:title">
+                The
+                <h:b>
+                  application
+                </h:b>
+                shall
+                <selectables>
+                  <selectable id="FCS_COP.1/SKC_1">
+                    perform
+                  </selectable>
+                  <selectable id="FCS_COP.1/SKC_2">
+                    invoke the platform to perform
+                  </selectable>
+                </selectables>
+                [
+                <h:i>
+                  encryption and decryption
+                </h:i>
+                ] in accordance with a specified cryptographic algorithm
+                <h:b>
+                  <h:ul>
+                    <h:li>
+                      AES-CBC (as defined in NIST SP 800-38A) mode
+                    </h:li>
+                    <h:li>
+                      AES-GCM (as defined in NIST SP 800-38D) mode
+                    </h:li>
+                  </h:ul>
+                  and
+                </h:b>
+                <selectables linebreak="yes">
+                  <selectable id="sel_aes_xts">
+                    AES-XTS (as defined in NIST SP 800-38E) mode
+                  </selectable>
+                  <selectable id="sel_aes_ccm">
+                    AES-CCM (as defined in NIST SP 800-38C) mode
+                  </selectable>
+                  <selectable id="sel_aes_ctr">
+                    AES-CTR (as defined in NIST SP 800-38A) mode
+                  </selectable>
+                  <selectable id="FCS_COP.1/SKC_3">
+                    <h:b>
+                      no other modes
+                    </h:b>
+                  </selectable>
+                </selectables>
+                and cryptographic key size of [
+                <h:i>
+                  256-bits
+                </h:i>
+                ].
               </xpath-specified>
             </replace>
           </base-sfr-spec>
@@ -3941,10 +4327,10 @@ This SFR mitigates the threat by optionally
               <xpath-specified xpath="*//cc:f-element[@id='fel-conf-alg']//cc:title">
                 The TSF shall
                 <selectables>
-                  <selectable id="FCS_COP.1_1">
+                  <selectable id="FCS_COP.1/CONF_ALG_1">
                     invoke platform-provided functionality
                   </selectable>
-                  <selectable id="FCS_COP.1_2">
+                  <selectable id="FCS_COP.1/CONF_ALG_2">
                     implement functionality
                   </selectable>
                 </selectables>
@@ -3968,16 +4354,16 @@ This SFR mitigates the threat by optionally
                   and
                 </h:b>
                 <selectables linebreak="yes">
-                  <selectable id="FCS_COP.1_3">
+                  <selectable id="FCS_COP.1/CONF_ALG_3">
                     AES Key Wrap (KW) (as defined in NIST SP 800-38F)
                   </selectable>
-                  <selectable id="FCS_COP.1_4">
+                  <selectable id="FCS_COP.1/CONF_ALG_4">
                     AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)
                   </selectable>
-                  <selectable id="FCS_COP.1_5">
+                  <selectable id="FCS_COP.1/CONF_ALG_5">
                     AES-CCM (as defined in NIST SP 800-38C)
                   </selectable>
-                  <selectable id="FCS_COP.1_6">
+                  <selectable id="FCS_COP.1/CONF_ALG_6">
                     <h:b>
                       no other modes
                     </h:b>
@@ -4032,6 +4418,357 @@ This SFR mitigates the threat by optionally
             </description>
             <replace>
               <xpath-specified xpath="*//cc:f-element[@id='fel-interxfer']//cc:title"/>
+            </replace>
+          </base-sfr-spec>
+        </section>
+        <section title="Trusted Path/Channels (FTP)" id="mdm-m-ftp">
+          <!-- FTP_ITC.1/INTER_XFER_IT Inter-TSF Trusted Channel (Authorized IT Entities) -->
+          <base-sfr-spec cc-id="ftp_itc.1" id="mdm-ftp-itc-1-inter-xfer-it" title="Inter-TSF Trusted Channel (Authorized IT Entities)" iteration="INTER_XFER_IT">
+            <consistency-rationale>
+              When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client at minimum. This is done by forcing the ST author to make a specific selection that is already present in the MDM PP definition of the SFR and by removing a selection option; no new behavior is introduced by this.
+            </consistency-rationale>
+            <description>
+              <h:p>
+                When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec communications. However, this PP-Module does not specify that any one particular interface must be implemented using IPsec. If the TOE uses IPsec to secure communications between itself and external trusted IT entities, FTP_ITC.1/INTER_XFER_IT is refined as noted by the refinements above.
+                <h:p/>
+                This SFR is refined from its definition in the Base-PP by mandating that the “implement functionality” selection be chosen at minimum for IPsec and by prohibiting the TOE from relying on platform-provided IPsec functionality. Since the TOE may support multiple trusted channel interfaces, the ST author is given the option to select other protocols (SSH, TLS, DTLS, HTTPS) either as being implemented by the TSF or invoked from the platform. The "not invoke or implement any other protocol functionality" is added for the case where the TOE's implementation of IPsec is the only trusted channel protocol the TSF uses.
+              </h:p>
+              The text of FTP_ITC.1.1/INTER_XFER_IT is replaced with (the other elements are unaffected):
+              <h:br/>
+              <h:br/>
+              The TSF shall
+              <h:ul>
+                <h:li>
+                  <h:b>
+                    implement functionality using IPsec as defined in the PP-Module for VPN Client, and
+                  </h:b>
+                </h:li>
+              </h:ul>
+              [
+              <h:b>
+                selection:
+              </h:b>
+              <h:i>
+                <h:b>
+                  <h:ul>
+                    <h:li>
+                      invoke platform-provided functionality to use [selection:
+                      <h:ul>
+                        <h:li>
+                          SSH
+                        </h:li>
+                        <h:li>
+                          mutually authenticated TLS
+                        </h:li>
+                        <h:li>
+                          mutually authenticated DTLS
+                        </h:li>
+                        <h:li>
+                          HTTPS
+                        </h:li>
+                      </h:ul>
+                    </h:li>
+                    <h:li>
+                      implement functionality using [selection:
+                      <h:ul>
+                        <h:li>
+                          SSH as defined in the Functional Package for Secure Shell
+                        </h:li>
+                        <h:li>
+                          mutually authenticated TLS as defined in the Package for Transport Layer Security
+                        </h:li>
+                        <h:li>
+                          mutually authenticated DTLS as defined in the Package for Transport Layer Security
+                        </h:li>
+                        <h:li>
+                          HTTPS in accordance with FCS_HTTPS_EXT.1
+                        </h:li>
+                      </h:ul>
+                    </h:li>
+                    <h:li>
+                      not invoke or implement any other protocol functionality
+                    </h:li>
+                  </h:ul>
+                </h:b>
+              </h:i>
+              ]
+              <h:b>
+                to
+              </h:b>
+              provide a
+              <h:b>
+                trusted
+              </h:b>
+              communication channel between itself and
+              <h:b>
+                authorized
+              </h:b>
+              IT
+              <h:b>
+                entities supporting the following capabilities: audit server, [
+                <h:b>
+                  selection:
+                </h:b>
+                <h:i>
+                  authentication server, [assignment: other capabilities]
+                </h:i>
+                ]
+              </h:b>
+              that is logically distinct from other communication channels and provides assured identification of its endpoints
+                and protection of the channel data from modification or disclosure.
+            </description>
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-inter-xfer-it']//cc:title">
+                The TSF shall
+                <h:ul>
+                  <h:li>
+                    <h:b>
+                      implement functionality using IPsec as defined in the PP-Module for VPN Client, and
+                    </h:b>
+                  </h:li>
+                </h:ul>
+                <selectables>
+                  <selectable id="FTP_ITC.1/INTER_XFER_IT_1">
+                    <h:b>
+                      invoke platform-provided functionality to use
+                      <selectables linebreak="yes">
+                        <selectable id="ITC1_SSH_INVOKE">
+                          SSH
+                        </selectable>
+                        <selectable id="ITC1_TLS_INVOKE">
+                          mutually authenticated TLS
+                        </selectable>
+                        <selectable id="ITC1_DTLS_INVOKE">
+                          mutually authenticated DTLS
+                        </selectable>
+                        <selectable id="ITC1_HTTPS_INVOKE">
+                          HTTPS
+                        </selectable>
+                      </selectables>
+                    </h:b>
+                  </selectable>
+                  <selectable id="FTP_ITC.1/INTER_XFER_IT_2">
+                    <h:b>
+                      implement functionality using
+                      <selectables linebreak="yes">
+                        <selectable id="ITC1_SSH_IMPLEMENT">
+                          SSH as defined in the Functional Package for Secure Shell
+                        </selectable>
+                        <selectable id="ITC1_TLS_IMPLEMENT">
+                          mutually authenticated TLS as defined in the Package for Transport Layer Security
+                        </selectable>
+                        <selectable id="ITC1_DTLS_IMPLEMENT">
+                          mutually authenticated DTLS as defined in the Package for Transport Layer Security
+                        </selectable>
+                        <selectable id="ITC1_HTTPS_IMPLEMENT">
+                          HTTPS in accordance with FCS_HTTPS_EXT.1
+                        </selectable>
+                      </selectables>
+                    </h:b>
+                  </selectable>
+                  <selectable id="FTP_ITC.1/INTER_XFER_IT_3">
+                    <h:b>
+                      not invoke or implement any other protocol functionality
+                    </h:b>
+                  </selectable>
+                </selectables>
+                <h:b>
+                  to
+                </h:b>
+                provide a
+                <h:b>
+                  trusted
+                </h:b>
+                communication channel between itself and
+                <h:b>
+                  authorized
+                </h:b>
+                IT
+                <h:b>
+                  entities supporting the following capabilities: audit server,
+                  <selectables>
+                    <selectable id="FTP_ITC.1/INTER_XFER_IT_4">
+                      authentication server
+                    </selectable>
+                    <selectable id="FTP_ITC.1/INTER_XFER_IT_6">
+                      <assignable>
+                        other capabilities
+                      </assignable>
+                    </selectable>
+                  </selectables>
+                </h:b>
+                that is logically distinct from other communication channels and provides assured identification of its endpoints and protection of the channel data from modification or disclosure.
+              </xpath-specified>
+            </replace>
+          </base-sfr-spec>
+          <!-- FTP_TRP.1/TRUSTPATH_REM_ADMIN Trusted Path (for Remote Administration) -->
+          <base-sfr-spec cc-id="ftp_trp.1" id="mdm-ftp-trp-1-trustpath-rem-admin" title="Trusted Path (for Remote Administration)" iteration="TRUSTPATH_REM_ADMIN">
+            <consistency-rationale>
+              When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client at minimum. This is done by forcing the ST author to make a specific selection that is already present in the MDM PP definition of the SFR and by removing a selection option; no new behavior is introduced by this.
+            </consistency-rationale>
+            <description>
+              <h:p>
+                When the MDM TOE claims this PP-Module, at least one of its interfaces will implement IPsec communications. However, this PP-Module does not specify that any one particular interface must be implemented using IPsec. If the TOE uses IPsec to secure communications between itself and trusted remote administrators, FPT_TRP.1/TRUSTPATH_REM_ADMIN is refined as below.
+                <h:p/>
+                This SFR is refined from its definition in the Base-PP by mandating that the “implement functionality” selection be chosen at minimum for IPsec and by prohibiting the TOE from relying on platform-provided IPsec functionality. Since the TOE may support multiple remote administrative interfaces, the ST author is given the option to select other protocols (SSH, TLS, HTTPS) either as being implemented by the TSF or invoked from the platform. The "not invoke or implement any other protocol functionality" is added for the case where the TOE's implementation of IPsec is the only trusted path protocol the TSF uses.
+              </h:p>
+              The text of FTP_TRP.1.1/TRUSTPATH_REM_ADMIN is replaced with (the other elements are unaffected):
+              <h:br/>
+              <h:br/>
+              The TSF shall
+              <h:ul>
+                <h:li>
+                  <h:b>
+                    implement functionality using IPsec as defined in the PP-Module for VPN Client, and
+                  </h:b>
+                </h:li>
+              </h:ul>
+              [
+              <h:b>
+                selection:
+              </h:b>
+              <h:i>
+                <h:b>
+                  <h:ul>
+                    <h:li>
+                      invoke platform-provided functionality to use [selection:
+                      <h:ul>
+                        <h:li>
+                          TLS
+                        </h:li>
+                        <h:li>
+                          HTTPS
+                        </h:li>
+                        <h:li>
+                          SSH
+                        </h:li>
+                      </h:ul>
+                    </h:li>
+                    <h:li>
+                      implement functionality using [selection:
+                      <h:ul>
+                        <h:li>
+                          TLS as defined in the Package for Transport Layer Security
+                        </h:li>
+                        <h:li>
+                          HTTPS in accordance with FCS_HTTPS_EXT.1
+                        </h:li>
+                        <h:li>
+                          SSH as defined in the Functional Package for Secure Shell
+                        </h:li>
+                      </h:ul>
+                    </h:li>
+                    <h:li>
+                      not invoke or implement any other protocol functionality
+                    </h:li>
+                  </h:ul>
+                </h:b>
+              </h:i>
+              ]
+              <h:b>
+                to
+              </h:b>
+              provide a
+              <h:b>
+                trusted
+              </h:b>
+              communication path between itself
+              <h:b>
+                as a [selection:
+                <h:i>
+                  server, peer
+                </h:i>
+                ]
+                and another trusted IT product
+              </h:b>
+              that is logically distinct from other communication paths and provides assured
+                identification of its endpoints and protection of the communicated data from [
+              <h:i>
+                modification or disclosure
+              </h:i>
+              ].
+            </description>
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='trustpath-rem-admin']//cc:title">
+                The TSF shall
+                <h:ul>
+                  <h:li>
+                    <h:b>
+                      implement functionality using IPsec as defined in the PP-Module for VPN Client, and
+                    </h:b>
+                  </h:li>
+                </h:ul>
+                <selectables linebreak="yes">
+                  <selectable id="FTP_TRP.1/TRUSTPATH_REM_ADMIN_1">
+                    <h:b>
+                      invoke platform-provided functionality to use
+                      <selectables linebreak="yes">
+                        <selectable id="TRP1_TLS_INVOKE">
+                          TLS
+                        </selectable>
+                        <selectable id="TRP1_HTTPS_INVOKE">
+                          HTTPS
+                        </selectable>
+                        <selectable id="TRP1_SSH_INVOKE">
+                          SSH
+                        </selectable>
+                      </selectables>
+                    </h:b>
+                  </selectable>
+                  <selectable id="FTP_TRP.1/TRUSTPATH_REM_ADMIN_2">
+                    <h:b>
+                      implement functionality using
+                      <selectables linebreak="yes">
+                        <selectable id="TRP1_TLS_IMPLEMENT">
+                          TLS as defined in the Package for Transport Layer Security
+                        </selectable>
+                        <selectable id="TRP1_HTTPS_IMPLEMENT">
+                          HTTPS in accordance with FCS_HTTPS_EXT.1
+                        </selectable>
+                        <selectable id="TRP1_SSH_IMPLEMENT">
+                          SSH as defined in the Functional Package for Secure Shell
+                        </selectable>
+                      </selectables>
+                    </h:b>
+                  </selectable>
+                  <selectable id="FTP_TRP.1/TRUSTPATH_REM_ADMIN_3">
+                    <h:b>
+                      not invoke or implement any other protocol functionality
+                    </h:b>
+                  </selectable>
+                </selectables>
+                <h:b>
+                  to
+                </h:b>
+                provide a
+                <h:b>
+                  trusted
+                </h:b>
+                communication path between itself
+                <h:b>
+                  as a
+                  <selectables>
+                    <selectable id="FTP_TRP.1/TRUSTPATH_REM_ADMIN_4">
+                      server
+                    </selectable>
+                    <selectable id="FTP_TRP.1/TRUSTPATH_REM_ADMIN_5">
+                      peer
+                    </selectable>
+                  </selectables>
+                </h:b>
+                <h:b>
+                  and another trusted IT product
+                </h:b>
+                that is logically distinct from other communication
+                <h:b>
+                  channels
+                </h:b>
+                and provides assured identification of its endpoints and protection of the channel data from [
+                <h:i>
+                  modification or disclosure.
+                </h:i>
+                ]
+              </xpath-specified>
             </replace>
           </base-sfr-spec>
         </section>
