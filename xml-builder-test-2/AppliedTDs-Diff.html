@@ -653,7 +653,7 @@
                     <a href="#FIA_X509_EXT.4.1" class="abbr">FIA_X509_EXT.4.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use X.509v3 certificates as defined by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5280 to support authentication for IPsec exchanges, and [<b>selection</b>: <span class="selectable-content" id="fia_x509_ext.4.1_1">digital signatures for FPT_TUD_EXT.1</span>, <span class="selectable-content" id="fia_x509_ext.4.1_2">integrity checks for <a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a></span>, <span class="selectable-content" id="fia_x509_ext.4.1_3">no additional uses</span>] . 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use X.509v3 certificates as defined by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5280 to support authentication for IPsec exchanges, and [<b>selection</b>: <span class="selectable-content" id="fia_x509_ext.4.1_1">digital signatures for FPT_TUD_EXT.1</span>, <span class="selectable-content" id="fia_x509_ext.4.1_2">integrity checks for FPT_TST_EXT.1</span>, <span class="selectable-content" id="fia_x509_ext.4.1_3">no additional uses</span>] . 
                 </div>
             </div>
             <div class="element">
@@ -1501,7 +1501,7 @@
                 <td>Success or failure of management function.</td><td>No additional information.</td>
             </tr>
             <tr data-sortkey="FPT_TST_EXT.1">
-                <td rowspan="2"><a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a></td><td style="display:none"></td>
+                <td rowspan="2">FPT_TST_EXT.1</td><td style="display:none"></td>
             </tr>
             <tr style="display:none;" data-sortkey="FPT_TST_EXT.1#">
                 <td></td>
@@ -1877,25 +1877,6 @@
             </div>
         </div>
         <h3 id="fpt" class="indexable" data-level="3">5.5.5 Protection of the TSF (FPT)</h3>
-        <div class="comp" id="FPT_TST_EXT.1">
-            <h4>FPT_TST_EXT.1 TSF Self-Test</h4>
-            <div class="element">
-                <div class="reqid" id="FPT_TST_EXT.1.1">
-                    <a href="#FPT_TST_EXT.1.1" class="abbr">FPT_TST_EXT.1.1</a>
-                </div>
-                <div class="reqdesc">
-                     The [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="fpt_tst_ext.1.1_1"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="fpt_tst_ext.1.1_2"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] shall run a suite of self tests during initial start-up (on power on) to demonstrate the correct operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. 
-                </div>
-            </div>
-            <div class="element">
-                <div class="reqid" id="FPT_TST_EXT.1.2">
-                    <a href="#FPT_TST_EXT.1.2" class="abbr">FPT_TST_EXT.1.2</a>
-                </div>
-                <div class="reqdesc">
-                     The [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="fpt_tst_ext.1.2_1"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span>, <span class="selectable-content" id="fpt_tst_ext.1.2_2"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] shall provide the capability to verify the integrity of stored <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable code when it is loaded for execution through the use of the [<b>assignment</b>: <span class="assignable-content">cryptographic services provided either by the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> described by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> or by the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr></span>] . 
-                </div>
-            </div>
-        </div>
         <div class="comp" id="FPT_TST_EXT.1/VPN">
             <h4>FPT_TST_EXT.1/VPN TSF Self-Test</h4>
             <div class="element">
@@ -2058,9 +2039,6 @@
                 <td><a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a></td><td>The ability to configure the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client behavior does not affect whether the GPOS as a whole can perform its security functions.</td>
             </tr>
             <tr>
-                <td><a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a></td><td></td>
-            </tr>
-            <tr>
                 <td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>Self-testing of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality does not impact the ability of the GPOS to perform its security functions.</td>
             </tr>
             <tr>
@@ -2207,9 +2185,6 @@
             </tr>
             <tr>
                 <td><a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a></td><td>The ability to configure the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client behavior does not affect whether the MDF as a whole can perform its security functions.</td>
-            </tr>
-            <tr>
-                <td><a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a></td><td></td>
             </tr>
             <tr>
                 <td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>Self-testing of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality does not impact the ability of the MDF to perform its security functions.</td>
@@ -2363,9 +2338,6 @@
                 <td><a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a></td><td>The ability to configure the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client behavior does not affect whether the application as a whole can perform its security functions.</td>
             </tr>
             <tr>
-                <td><a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a></td><td></td>
-            </tr>
-            <tr>
                 <td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>Self-testing of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality does not impact the ability of the application to perform its security functions.</td>
             </tr>
             <tr>
@@ -2515,9 +2487,6 @@
             </tr>
             <tr>
                 <td><a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a></td><td>The ability to configure the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client behavior does not affect whether the MDM as a whole can perform its security functions.</td>
-            </tr>
-            <tr>
-                <td><a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a></td><td></td>
             </tr>
             <tr>
                 <td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>Self-testing of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality does not impact the ability of the MDM to perform its security functions.</td>
@@ -3357,7 +3326,7 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FIA_X509_EXT.4.1">FIA_X509_EXT.4.1</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use X.509v3 certificates as defined by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5280 to support authentication for IPsec exchanges, and [<b>selection</b>: <span class="selectable-content" id="fia_x509_ext.4.1_1">digital signatures for FPT_TUD_EXT.1</span>, <span class="selectable-content" id="fia_x509_ext.4.1_2">integrity checks for <a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a></span>, <span class="selectable-content" id="fia_x509_ext.4.1_3">no additional uses</span>] . 
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use X.509v3 certificates as defined by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5280 to support authentication for IPsec exchanges, and [<b>selection</b>: <span class="selectable-content" id="fia_x509_ext.4.1_1">digital signatures for FPT_TUD_EXT.1</span>, <span class="selectable-content" id="fia_x509_ext.4.1_2">integrity checks for FPT_TST_EXT.1</span>, <span class="selectable-content" id="fia_x509_ext.4.1_3">no additional uses</span>] . 
                         <h4 id="ext-comp-FIA_X509_EXT.4.2">FIA_X509_EXT.4.2</h4>
                          When a connection to determine the validity of a certificate cannot be established, the [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="fia_x509_ext.4.2_1"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="fia_x509_ext.4.2_2"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>] shall [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="fia_x509_ext.4.2_3">allow the administrator to choose whether to accept the certificate in these cases</span>, <span class="selectable-content" id="fia_x509_ext.4.2_4">accept the certificate</span>, <span class="selectable-content" id="fia_x509_ext.4.2_5">not accept the certificate</span>] . 
                         <h4 id="ext-comp-FIA_X509_EXT.4.3">FIA_X509_EXT.4.3</h4>
@@ -3604,7 +3573,7 @@
                         <line x1="152" y1="17" x2="231" y2="17" stroke="black"></line>
                     </svg>
                     <p>
-                        <a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a>, <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test, requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to perform power on self-tests to verify its functionality and the integrity of its stored executable code.
+                        FPT_TST_EXT.1, <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test, requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to perform power on self-tests to verify its functionality and the integrity of its stored executable code.
                     </p>
                     <h4>Management: FPT_TST_EXT.1</h4>
                     <p>No specific management functions are identified.</p>
