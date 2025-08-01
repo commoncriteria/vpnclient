@@ -517,8 +517,8 @@ This SFR mitigates the threat by optionally
       <!-- 5.1.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="os-m-fcs">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="modsfr-os-fcs-ckm-1" title="">
+          <!-- FCS_CKM.1 Cryptographic Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="modsfr-os-fcs-ckm-1" title="Cryptographic Key Generation">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client
               requirements; the SFR behavior itself is unmodified.
@@ -546,8 +546,8 @@ This SFR mitigates the threat by optionally
               <xpath-specified xpath="*//cc:f-element[@id='fel-asym-gen']//cc:title">The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm <h:b><h:ul><h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.2</h:li></h:ul></h:b> <selectables linebreak="yes"><selectable id="FCS_CKM.1_1" >RSA schemes using a cryptographic key size of 3072-bits that meet the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.1</selectable><selectable id="FCS_CKM.1_2">FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and <selectables><selectable id="FCS_CKM.1_3" >RFC 3526</selectable><selectable id="FCS_CKM.1_4" >RFC 7919</selectable></selectables> </selectable><selectable id="FCS_CKM.1_5" ><h:b>no other key generation methods</h:b></selectable> </selectables>.</xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="modsfr-os-fcs-ckm-2" title="">
+          <!-- FCS_CKM.2 Cryptographic Key Establishment -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="modsfr-os-fcs-ckm-2" title="Cryptographic Key Establishment">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
@@ -572,8 +572,8 @@ This SFR mitigates the threat by optionally
               <xpath-specified xpath="*//cc:f-element[@id='fel-crypt-key-estab']//cc:title">The TSF shall implement functionality to perform cryptographic key establishment in accordance with a specified cryptographic key establishment method: <h:ul><h:li><h:b><h:i>Elliptic curve-based key establishment schemes that meet the following: NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography,” and</h:i></h:b></h:li></h:ul> <selectables linebreak="yes"><selectable id="FCS_CKM.2_1" >Finite field-based key establishment schemes that meets NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”</selectable><selectable id="FCS_CKM.2_2" exclusive="yes"><h:b>No other key establishment schemes</h:b></selectable> </selectables>.</xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="modsfr-os-fcs-cop-1-encrypt" title="">
+          <!-- FCS_COP.1/ENCRYPT Cryptographic Operation - Encryption/Decryption -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="modsfr-os-fcs-cop-1-encrypt" title="Cryptographic Operation - Encryption/Decryption" iteration="ENCRYPT">
             <consistency-rationale>
               The SFR is refined to mandate AES modes that must be supported to address VPN 
               client requirements; the use of these modes for VPN connectivity does not impact the ability 
@@ -886,8 +886,8 @@ This SFR mitigates the threat by optionally
       <!-- 5.2.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="md-m-fcs">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fcs-ckm-1" title="">
+          <!-- FCS_CKM.1 Cryptographic Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="mdf-fcs-ckm-1" title="Cryptographic Key Generation">
             <consistency-rationale>
                     The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
                   </consistency-rationale>
@@ -905,8 +905,8 @@ This SFR mitigates the threat by optionally
               <xpath-specified xpath="*//cc:f-element[@id='fel-asym-key-gen']//cc:title">The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm <h:ul><h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.2</h:li></h:ul> and <selectables linebreak="yes"><selectable id="FCS_CKM.1_1"><h:b>RSA schemes using</h:b> cryptographic key sizes of <assignable>3072-bit or greater</assignable> that meet [<h:i>FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.1</h:i>]</selectable><selectable id="s-keygen-ecc"><h:b>ECC schemes using: </h:b> <selectables linebreak="yes"><selectable id="FCS_CKM.1_3" ><h:b>"NIST curves" P-384</h:b> that meet the following: [<h:i>FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.2</h:i>]</selectable><selectable id="FCS_CKM.1_4" ><h:b>Curve25519 schemes</h:b> that meet the following: [<h:i>RFC 7748</h:i>]</selectable></selectables> </selectable><selectable id="FCS_CKM.1_5">FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and <selectables><selectable id="FCS_CKM.1_6" >RFC 3526</selectable><selectable id="FCS_CKM.1_7" >RFC 7919</selectable></selectables> </selectable><selectable id="FCS_CKM.1_8" ><h:b>no other key generation methods</h:b></selectable> </selectables>.</xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fcs-ckm-2-unlocked" title="">
+          <!-- FCS_CKM.2/UNLOCKED Cryptographic Key Establishment (When Unlocked) -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="mdf-fcs-ckm-2-unlocked" title="Cryptographic Key Establishment (When Unlocked)" iteration="UNLOCKED">
             <consistency-rationale>
                     The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
                   </consistency-rationale>
@@ -928,8 +928,8 @@ This SFR mitigates the threat by optionally
               <xpath-specified xpath="*//cc:f-element[@id='fel-unlocked-key']//cc:title">The TSF shall perform cryptographic <h:b>key establishment</h:b> in accordance with a specified cryptographic key <h:b>establishment</h:b> method <h:ul><h:li><h:b>[<h:i>Elliptic curve-based key establishment schemes</h:i>] that meet the following: [<h:i>NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"</h:i>]</h:b></h:li></h:ul> <h:b>and</h:b> <selectables linebreak="yes"><selectable id="FCS_CKM.2/UNLOCKED_1">[<h:i>RSA-based key establishment schemes</h:i>] that meet the following <selectables linebreak="yes"><selectable id="FCS_CKM.2/UNLOCKED_2" >NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography”</selectable><selectable id="FCS_CKM.2/UNLOCKED_3" >RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, "Public-Key Cryptography Standards (PKCS) #1:RSA Cryptography Specifications Version 2.2"</selectable></selectables> </selectable><selectable id="FCS_CKM.2/UNLOCKED_4" >[<h:i>Finite field-based key establishment schemes</h:i>] that meet the following: [<h:i>NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"</h:i>]</selectable><selectable id="FCS_CKM.2/UNLOCKED_5" ><h:b>no other key establishment schemes</h:b></selectable> </selectables>.</xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fcs-cop-1-encrypt" title="">
+          <!-- FCS_COP.1/ENCRYPT Cryptographic Operation -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="mdf-fcs-cop-1-encrypt" title="Cryptographic Operation" iteration="ENCRYPT">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -951,8 +951,8 @@ This SFR mitigates the threat by optionally
           </base-sfr-spec>
         </section>
         <section title="User Data Protection (FDP)" id="md-m-fdp">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fdp-ifc-ext-1" title="">
+          <!-- FDP_IFC_EXT.1 Subset Information Flow Control -->
+          <base-sfr-spec cc-id="fdp_ifc_ext.1" id="mdf-fdp-ifc-ext-1" title="Subset Information Flow Control">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -971,8 +971,8 @@ This SFR mitigates the threat by optionally
           </base-sfr-spec>
         </section>
         <section title="Trusted Path/Channels (FTP)" id="md-m-ftp">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-ftp-itc-ext-1" title="">
+          <!-- FTP_ITC_EXT.1 Trusted Channel Communication -->
+          <base-sfr-spec cc-id="ftp_itc_ext.1" id="mdf-ftp-itc-ext-1" title="Trusted Channel Communication">
             <consistency-rationale>
               This PP-Module adds IPsec as a new protocol that is used to implement trusted channels.
             </consistency-rationale>
@@ -1141,8 +1141,8 @@ This SFR mitigates the threat by optionally
       <!-- 5.3.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="ap-m-fcs">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-fcs-ckm-1" title="">
+          <!-- FCS_CKM.1/AK Cryptographic Asymmetric Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="app-fcs-ckm-1" title="Cryptographic Asymmetric Key Generation" iteration="AK">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
@@ -1190,8 +1190,8 @@ This SFR mitigates the threat by optionally
               <xpath-specified xpath="*//cc:f-element[@id='fel-asym-key-gen-impl']//cc:title">The <h:b>application</h:b> shall <h:b> <selectables linebreak="yes"><selectable id="FCS_CKM.1/AK_1" >invoke platform-provided functionality</selectable><selectable id="FCS_CKM.1/AK_2" >implement functionality</selectable> </selectables> </h:b> to generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm “NIST curves” P-384 and <selectables><selectable id="FCS_CKM.1/AK_3" >P-521</selectable><selectable id="FCS_CKM.1/AK_4" >no other curves</selectable> </selectables> <h:ul><h:li><h:b>[ECC schemes] using [<h:i></h:i>] that meet the following: [<h:i>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix A.2</h:i>]</h:b></h:li></h:ul> <h:b>and</h:b> <selectables linebreak="yes"><selectable id="FCS_CKM.1/AK_5" ><h:b>[RSA schemes]</h:b> using cryptographic key sizes of [<h:i>3072-bit or greater</h:i>] that meet the following: [<h:i>FIPS PUB 186-5, "Digital Signature Standard (DSS)," Appendix A.1</h:i>]</selectable><selectable id="FCS_CKM.1/AK_6"><h:b>[FFC Schemes]</h:b> using [<h:i>“safe-prime” groups</h:i>] <selectables><selectable id="FCS_CKM.1/AK_7" >MODP-3072</selectable><selectable id="FCS_CKM.1/AK_8" >MODP-4096</selectable><selectable id="FCS_CKM.1/AK_9" >MODP-6144</selectable><selectable id="FCS_CKM.1/AK_10" >MODP-8192</selectable><selectable id="FCS_CKM.1/AK_11" >ffdhe-3072</selectable><selectable id="FCS_CKM.1/AK_12" >ffdhe-4096</selectable><selectable id="FCS_CKM.1/AK_13" >ffdhe-6144</selectable><selectable id="FCS_CKM.1/AK_14" >ffdhe-8192</selectable></selectables> that meet the following: [<h:i>NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography” and <selectables><selectable id="FCS_CKM.1/AK_15" >RFC 3526</selectable><selectable id="FCS_CKM.1/AK_16" >RFC 7919</selectable></selectables> </h:i>]</selectable><selectable id="FCS_CKM.1/AK_17"><h:b>Leighton-Micali Signature</h:b> Algorithm using the parameter sets <selectables><selectable id="FCS_CKM.1/AK_18" >LMS_SHAKE_M24_H5</selectable><selectable id="FCS_CKM.1/AK_19" >LMS_SHAKE_M24_H10</selectable><selectable id="FCS_CKM.1/AK_20" >LMS_SHAKE_M24_H15</selectable><selectable id="FCS_CKM.1/AK_21" >LMS_SHAKE_M24_H25</selectable><selectable id="FCS_CKM.1/AK_22" >LMS_SHAKE_M32_H5</selectable><selectable id="FCS_CKM.1/AK_23" >LMS_SHAKE_M32_H10</selectable><selectable id="FCS_CKM.1/AK_24" >LMS_SHAKE_M32_H15</selectable><selectable id="FCS_CKM.1/AK_25" >LMS_SHAKE_M32_H25</selectable><selectable id="FCS_CKM.1/AK_26" >LMS_SHA256_M24_H5</selectable><selectable id="FCS_CKM.1/AK_27" >LMS_SHA256_M24_H10</selectable><selectable id="FCS_CKM.1/AK_28" >LMS_SHA256_M24_H15</selectable><selectable id="FCS_CKM.1/AK_29" >LMS_SHA256_M24_H25</selectable><selectable id="FCS_CKM.1/AK_30" >LMS_SHA256_M32_H5</selectable><selectable id="FCS_CKM.1/AK_31" >LMS_SHA256_M32_H10</selectable><selectable id="FCS_CKM.1/AK_32" >LMS_SHA256_M32_H15</selectable><selectable id="FCS_CKM.1/AK_33" >LMS_SHA256_M32_H25</selectable></selectables> that meet the following[NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]</selectable><selectable id="FCS_CKM.1/AK_34"><h:b>eXtended Merkle Signature Scheme Algorithm</h:b> using the parameter sets <selectables><selectable id="FCS_CKM.1/AK_35" >XMSS-SHA2_10_192</selectable><selectable id="FCS_CKM.1/AK_36" >XMSS-SHA2_16_192</selectable><selectable id="FCS_CKM.1/AK_37" >XMSS-SHA2_20_192</selectable><selectable id="FCS_CKM.1/AK_38" >XMSS-SHA2_10_256</selectable><selectable id="FCS_CKM.1/AK_39" >XMSS-SHA2_16_256</selectable><selectable id="FCS_CKM.1/AK_40" >XMSS-SHA2_20_256</selectable><selectable id="FCS_CKM.1/AK_41" >XMSS-SHAKE_10_192</selectable><selectable id="FCS_CKM.1/AK_42" >XMSS-SHAKE_16_192</selectable><selectable id="FCS_CKM.1/AK_43" >XMSS-SHAKE_20_192</selectable><selectable id="FCS_CKM.1/AK_44" >XMSS-SHAKE_10_256</selectable><selectable id="FCS_CKM.1/AK_45" >XMSS-SHAKE_16_256</selectable><selectable id="FCS_CKM.1/AK_46" >XMSS-SHAKE_20_256</selectable></selectables> bits that meets the following: [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]</selectable><selectable id="FCS_CKM.1/AK_47" ><h:b>Module-Lattice-Based Key-Encapsulation Mechanism Standard</h:b>using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</selectable><selectable id="FCS_CKM.1/AK_48" ><h:b>Module-Lattice-Based Digital Signature Standard</h:b> using the parameter set ML-DSA-87 that meets the following [FIPS 204, Module-Lattice-Based Digital Signature Standard]</selectable><selectable id="FCS_CKM.1/AK_49" ><h:b>no other key generation methods</h:b></selectable> </selectables>.</xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-fcs-ckm-2" title="">
+          <!-- FCS_CKM.2 Cryptographic Key Establishment -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="app-fcs-ckm-2" title="Cryptographic Key Establishment">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements and is modified to include DH group 14 as an additional supported method for key
@@ -1217,8 +1217,8 @@ This SFR mitigates the threat by optionally
               <xpath-specified xpath="*//cc:f-element[@id='fel-key-est']//cc:title"><h:p> The application shall <selectables><selectable id="FCS_CKM.2_1" >invoke platform-provided functionality</selectable><selectable id="FCS_CKM.2_2" >implement functionality</selectable> </selectables> to perform cryptographic key establishment in accordance with a specified cryptographic key establishment method:</h:p> <h:ul><h:li><h:b>[Elliptic curve-based key establishment schemes] that meets the following: [NIST Special Publication 800-56A, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”]</h:b></h:li></h:ul> <h:b>and</h:b> <h:p> <selectables linebreak="yes"><selectable id="FCS_CKM.2_3" ><h:b>[RSA-based key establishment schemes]</h:b> that meets the following: <h:b>[NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography”]</h:b></selectable><selectable id="FCS_CKM.2_4"><h:b>[FFC Schemes using “safe-prime” groups]</h:b> that meet the following: <h:b>‘NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”</h:b> and <selectables><selectable id="FCS_CKM.2_5" >RFC 3526</selectable><selectable id="FCS_CKM.2_6" >RFC 7919</selectable></selectables> </selectable><selectable id="FCS_CKM.2_7" >Module-Lattice-Based Key-Encapsulation Mechanism Standard using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</selectable><selectable id="FCS_CKM.2_8" ><h:b>no other key establishment schemes</h:b></selectable> </selectables> </h:p> .</xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-fcs-ckm-ext-1" title="">
+          <!-- FCS_CKM_EXT.1 Cryptographic Key Generation Services -->
+          <base-sfr-spec cc-id="fcs_ckm_ext.1" id="app-fcs-ckm-ext-1" title="Cryptographic Key Generation Services">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; specifically, since key generation
@@ -1243,8 +1243,8 @@ This SFR mitigates the threat by optionally
               <xpath-specified xpath="*//cc:f-element[@id='fel-asym-key-gen']//cc:title">The application shall <selectables linebreak="yes"><selectable id="sel_invoke_genkey" >invoke platform-provided functionality for asymmetric key generation</selectable><selectable id="sel_impl_genkey" >implement asymmetric key generation</selectable> </selectables>.</xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-fcs-cop-1-skc" title="">
+          <!-- FCS_COP.1/SKC Cryptographic Operation - Encryption/Decryption -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="app-fcs-cop-1-skc" title="Cryptographic Operation - Encryption/Decryption" iteration="SKC">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
@@ -1273,8 +1273,8 @@ This SFR mitigates the threat by optionally
           </base-sfr-spec>
         </section>
         <section title="Trusted Path/Channels" id="ap-m-ftp">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-ftp-dit-ext-1" title="">
+          <!-- FTP_DIT_EXT.1 Protection of Data in Transit -->
+          <base-sfr-spec cc-id="ftp_dit_ext.1" id="app-ftp-dit-ext-1" title="Protection of Data in Transit">
             <consistency-rationale>
               This PP-Module requires the existing selection of IPsec to be chosen to satisfy the dependency on this PP-Module
             </consistency-rationale>
@@ -1389,7 +1389,7 @@ This SFR mitigates the threat by optionally
             </f-element>
           </f-component>
           <!-- FCS_CKM_EXT.2 Cryptographic Key Storage -->
-          <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage" notnew="true">
+          <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage">
             <consistency-rationale>This PP-Module adds a requirement for key storage, which is new
               functionality when compared to the Base-PP but does not interfere
               with its existing security functions.</consistency-rationale>
@@ -1544,8 +1544,8 @@ This SFR mitigates the threat by optionally
       <!-- 5.4.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="mdm-m-fcs">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-fcs-ckm-1" title="">
+          <!-- FCS_CKM.1 Cryptographic Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="mdm-fcs-ckm-1" title="Cryptographic Key Generation">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1563,8 +1563,8 @@ This SFR mitigates the threat by optionally
               <xpath-specified xpath="*//cc:f-element[@id='fel-ckm-tsf-func']//cc:title">The TSF shall <selectables><selectable id="FCS_CKM.1_1" >invoke platform-provided functionality</selectable><selectable id="FCS_CKM.1_2" >implement functionality</selectable> </selectables> to generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm <h:ul><h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.2</h:li></h:ul> and <selectables linebreak="yes"><selectable id="FCS_CKM.1_3"><h:b>RSA schemes using</h:b> cryptographic key sizes of <assignable>3072-bit or greater</assignable> that meet [<h:i>FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.1</h:i>]</selectable><selectable id="FCS_CKM.1_5">FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and <selectables><selectable id="FCS_CKM.1_6" >RFC 3526</selectable><selectable id="FCS_CKM.1_7" >RFC 7919</selectable></selectables> </selectable><selectable id="FCS_CKM.1_8" ><h:b>no other key generation methods</h:b></selectable> </selectables>.</xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-fcs-ckm-2" title="">
+          <!-- FCS_CKM.2 Cryptographic Key Establishment -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="mdm-fcs-ckm-2" title="Cryptographic Key Establishment">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1582,8 +1582,8 @@ This SFR mitigates the threat by optionally
               <xpath-specified xpath="*//cc:f-element[@id='fel-ckm']//cc:title">The TSF shall <selectables><selectable id="FCS_CKM.2_1" >invoke platform-provided functionality</selectable><selectable id="FCS_CKM.2_2" >implement functionality</selectable> </selectables> <h:b>to perform</h:b> cryptographic <h:b>key establishment</h:b> in accordance with a specified cryptographic key <h:b>establishment</h:b> method: <h:ul><h:li><h:b>[<h:i>Elliptic curve-based key establishment schemes</h:i>] that meet the following: [<h:i>NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"</h:i>]</h:b></h:li></h:ul> <h:b>and</h:b> <selectables linebreak="yes"><selectable id="FCS_CKM.2_3" >RSA-based key establishment schemes that meet the following: RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, "Public-Key Cryptography Standards (PKCS) #1:RSA Cryptography Specifications Version 2.1"</selectable><selectable id="FCS_CKM.2_4" >Finite field-based key establishment schemes that meets NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”</selectable><selectable id="FCS_CKM.2_5" ><h:b>no other key establishment schemes</h:b></selectable> </selectables>.</xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-fcs-cop-1-conf-alg" title="">
+          <!-- FCS_COP.1/CONF_ALG Cryptographic Operation (Confidentiality Algorithms) -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="mdm-fcs-cop-1-conf-alg" title="Cryptographic Operation (Confidentiality Algorithms)" iteration="CONF_ALG">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1604,8 +1604,8 @@ This SFR mitigates the threat by optionally
           </base-sfr-spec>
         </section>
         <section title="Protection of the TSF (FPT)" id="mdm-m-fpt">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-fpt-itt-1-inter-xfer" title="">
+          <!-- FPT_ITT.1/INTER_XFER Internal TOE TSF Data Transfer -->
+          <base-sfr-spec cc-id="fpt_itt.1" id="mdm-fpt-itt-1-inter-xfer" title="Internal TOE TSF Data Transfer" iteration="INTER_XFER">
             <consistency-rationale>
               When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client. This is done by forcing the ST author to make specific selections that are already present in the MDM PP definition of the SFR; no new behavior is introduced by this.
             </consistency-rationale>
@@ -1627,8 +1627,8 @@ This SFR mitigates the threat by optionally
           </base-sfr-spec>
         </section>
         <section title="Trusted Path/Channels (FTP)" id="mdm-m-ftp">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-ftp-itc-1-inter-xfer-it" title="">
+          <!-- FTP_ITC.1/INTER_XFER_IT Inter-TSF Trusted Channel (Authorized IT Entities) -->
+          <base-sfr-spec cc-id="ftp_itc.1" id="mdm-ftp-itc-1-inter-xfer-it" title="Inter-TSF Trusted Channel (Authorized IT Entities)" iteration="INTER_XFER_IT">
             <consistency-rationale>
               When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client at minimum. This is done by forcing the ST author to make a specific selection that is already present in the MDM PP definition of the SFR and by removing a selection option; no new behavior is introduced by this.
             </consistency-rationale>
@@ -1650,8 +1650,8 @@ that is logically distinct from other communication channels and provides assure
               <xpath-specified xpath="*//cc:f-element[@id='fel-inter-xfer-it']//cc:title">The TSF shall <h:ul><h:li><h:b>implement functionality using IPsec as defined in the PP-Module for VPN Client, and</h:b></h:li></h:ul> <selectables><selectable id="FTP_ITC.1/INTER_XFER_IT_1"><h:b>invoke platform-provided functionality to use <selectables linebreak="yes"><selectable id="ITC1_SSH_INVOKE" >SSH</selectable><selectable id="ITC1_TLS_INVOKE" >mutually authenticated TLS</selectable><selectable id="ITC1_DTLS_INVOKE" >mutually authenticated DTLS</selectable><selectable id="ITC1_HTTPS_INVOKE" >HTTPS</selectable></selectables> </h:b></selectable><selectable id="FTP_ITC.1/INTER_XFER_IT_2"><h:b>implement functionality using <selectables linebreak="yes"><selectable id="ITC1_SSH_IMPLEMENT" >SSH as defined in the Functional Package for Secure Shell</selectable><selectable id="ITC1_TLS_IMPLEMENT" >mutually authenticated TLS as defined in the Package for Transport Layer Security</selectable><selectable id="ITC1_DTLS_IMPLEMENT" >mutually authenticated DTLS as defined in the Package for Transport Layer Security</selectable><selectable id="ITC1_HTTPS_IMPLEMENT" >HTTPS in accordance with FCS_HTTPS_EXT.1</selectable></selectables> </h:b></selectable><selectable id="FTP_ITC.1/INTER_XFER_IT_3" ><h:b>not invoke or implement any other protocol functionality</h:b></selectable> </selectables> <h:b>to</h:b> provide a <h:b>trusted</h:b> communication channel between itself and <h:b>authorized</h:b> IT <h:b>entities supporting the following capabilities: audit server, <selectables><selectable id="FTP_ITC.1/INTER_XFER_IT_4" >authentication server</selectable><selectable id="FTP_ITC.1/INTER_XFER_IT_6" ><assignable>other capabilities</assignable></selectable> </selectables> </h:b> that is logically distinct from other communication channels and provides assured identification of its endpoints and protection of the channel data from modification or disclosure.</xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-ftp-trp-1-trustpath-rem-admin" title="">
+          <!-- FTP_TRP.1/TRUSTPATH_REM_ADMIN Trusted Path (for Remote Administration) -->
+          <base-sfr-spec cc-id="ftp_trp.1" id="mdm-ftp-trp-1-trustpath-rem-admin" title="Trusted Path (for Remote Administration)" iteration="TRUSTPATH_REM_ADMIN">
             <consistency-rationale>
               When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client at minimum. This is done by forcing the ST author to make a specific selection that is already present in the MDM PP definition of the SFR and by removing a selection option; no new behavior is introduced by this.
             </consistency-rationale>
