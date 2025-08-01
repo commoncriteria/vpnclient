@@ -1905,9 +1905,15 @@
                     <th>Threat</th><th>Addressed by</th><th>Rationale</th>
                 </tr>
                 <tr class="major-row">
-                    <td rowspan="3"><a href="#T.TSF_CONFIGURATION">T.TSF_​CONFIGURATION</a>
+                    <td rowspan="5"><a href="#T.TSF_CONFIGURATION">T.TSF_​CONFIGURATION</a>
                         <br>
-                    </td><td><a href="#FIA_X509_EXT.4">FIA_X509_EXT.4</a> (additional to GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by providing the ability to verify the integrity of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using X.509 certificates.</td>
+                    </td><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a> (implementation-dependent)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to generate audit data for its behavior.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_SEL.1/VPN">FAU_SEL.1/VPN</a> (objective)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to allow for the configuration of what behavior is audited.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FIA_X509_EXT.4">FIA_X509_EXT.4</a> (additional to GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by providing the ability to verify the integrity of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> using X.509 certificates.</td>
                 </tr>
                 <tr>
                     <td><a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to implement certain administratively-configurable functions.</td>
@@ -1916,9 +1922,15 @@
                     <td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to execute self-tests that demonstrate that its integrity is maintained.</td>
                 </tr>
                 <tr class="major-row">
-                    <td rowspan="1"><a href="#T.TSF_FAILURE">T.TSF_​FAILURE</a>
+                    <td rowspan="3"><a href="#T.TSF_FAILURE">T.TSF_​FAILURE</a>
                         <br>
-                    </td><td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to execute self-tests that demonstrate that its integrity is maintained.</td>
+                    </td><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a> (implementation-dependent)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to generate audit data for its behavior.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_SEL.1/VPN">FAU_SEL.1/VPN</a> (objective)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to allow for the configuration of what behavior is audited.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> mitigates the threat by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to execute self-tests that demonstrate that its integrity is maintained.</td>
                 </tr>
                 <tr class="major-row">
                     <td rowspan="10"><a href="#T.UNAUTHORIZED_ACCESS">T.UNAUTHORIZED_​ACCESS</a>
