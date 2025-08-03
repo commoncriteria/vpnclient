@@ -23,6 +23,21 @@
       <date>2022-03-31</date>
       <subject>Incorporation of TC feedback</subject>
     </entry>
+    <entry>
+      <version>2.3</version>
+      <date>2021-08-10</date>
+      <subject>Support for MDF, Bluetooth updates</subject>
+    </entry>
+    <entry>
+      <version>2.2</version>
+      <date>2021-01-05</date>
+      <subject>Update release</subject>
+    </entry>
+    <entry>
+      <version>2.1</version>
+      <date>2019-11-14</date>
+      <subject>Initial Release</subject>
+    </entry>
   </RevisionHistory>
   <release-notes><h:h3>TDs Applied</h:h3></release-notes><include-pkg id="pkg-ssh">
     <git>
@@ -54,7 +69,7 @@
       client in terms of  <xref g="CC"/> and to define functional and assurance requirements for such
       products. This PP-Module is intended for use with the following Base-PPs:
 
-      <h:ul><h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 4.3</h:li><h:li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 3.3</h:li><h:li>Protection Profile for Application Software (App PP), Version 1.4</h:li><h:li>Protection Profile for Mobile Device Management (MDM PP), Version 4.0</h:li></h:ul>
+      <h:ul><h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 4.3</h:li><h:li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 3.3</h:li><h:li>Protection Profile for Application Software (App PP), Version 2.0</h:li><h:li>Protection Profile for Mobile Device Management (MDM PP), Version 4.0</h:li></h:ul>
 
       These Base-PPs are all valid because a VPN client may be a specific type of stand-alone software
       application or a built-in component of an operating system (OS), whether desktop or mobile. Regardless of
@@ -359,25 +374,65 @@ expected to enforce.<h:br/><h:br/>
     <!-- 3.1 Threats -->
     <sec:Threats>
       The following threats defined in this PP-Module extend the threats defined by the Base-PPs.
-      <threats><threat name="T.TSF_CONFIGURATION"><description> Configuring VPN tunnels is a complex and time-consuming process, and prone to errors if the            interface for doing so is not well-specified or well-behaved. The inability or failure of an ignorant or careless administrator to configure certain aspects            of the interface may also lead to the incorrect specification of the desired communications policy or use            of cryptography that may be desired or required for a particular site. This may result in unintended            weak or plaintext communications while the user thinks that their data are being protected. Other            aspects of configuring the TOE or using its security mechanisms (for example, the update process)            may also result in a reduction in the trustworthiness of the VPN client.</description><!-- New mapping to build updated threat mapping table. --><addressed-by>FAU_GEN.1/VPN (implementation-dependent)</addressed-by><rationale>This SFR mitigates the threat by optionally
-            requiring the TOE to generate audit data for its behavior.</rationale><addressed-by>FAU_SEL.1/VPN (objective)</addressed-by><rationale>This SFR mitigates the threat by optionally
-            requiring the TOE to allow for the configuration of what behavior is audited.</rationale><addressed-by>FIA_X509_EXT.4 (additional to GPOS PP)</addressed-by><rationale>This SFR mitigates the threat by providing the ability to verify the integrity of the TSF using X.509 certificates.</rationale><addressed-by>FMT_SMF.1/VPN</addressed-by><rationale>This SFR mitigates the threat by requiring the TOE
-            to implement certain administratively-configurable functions.</rationale><addressed-by>FPT_TST_EXT.1/VPN</addressed-by><rationale>This SFR mitigates the threat by requiring the TOE
-            to execute self-tests that demonstrate that its integrity is maintained.</rationale></threat><threat name="T.TSF_FAILURE"><description> Security mechanisms of the TOE generally build up from a primitive set of mechanisms (e.g.,            memory management, privileged modes of process execution) to more complex sets of            mechanisms. Failure of the primitive mechanisms could lead to a compromise in more complex            mechanisms, resulting in a compromise of the TSF.          </description><!-- New mapping to build updated threat mapping table. --><addressed-by>FAU_GEN.1/VPN (implementation-dependent)</addressed-by><rationale>This SFR mitigates the threat by optionally
-            requiring the TOE to generate audit data for its behavior.</rationale><addressed-by>FAU_SEL.1/VPN (objective)</addressed-by><rationale>This SFR mitigates the threat by optionally
-            requiring the TOE to allow for the configuration of what behavior is audited.</rationale><addressed-by>FPT_TST_EXT.1/VPN</addressed-by><rationale>This SFR mitigates the threat by requiring the TOE
-            to execute self-tests that demonstrate that its integrity is maintained.</rationale></threat><threat name="T.UNAUTHORIZED_ACCESS"><description>This PP-Module does not include requirements that can protect against an insider threat. Authorized            users are not considered hostile or malicious and are trusted to follow appropriate guidance. Only            authorized personnel should have access to the system or device that contains the IPsec VPN client.            Therefore, the primary threat agents are the unauthorized entities that try to gain access to the            protected network (in cases where tunnel mode is used) or to plaintext data that traverses the            public network (regardless of whether transport mode or tunnel mode is used). <h:br/><h:br/>            The endpoint of the network communication can be both geographically and logically distant from            the TOE and can pass through a variety of other systems. These intermediate systems may be under            the control of the adversary, and offer an opportunity for communications over the network to be            compromised. <h:br/><h:br/>            Plaintext communication over the network may allow critical data (such as passwords, configuration            settings, and user data) to be read or manipulated directly by a malicious user or process on intermediate systems, leading to            a compromise of the TOE or to the secured environmental systems that the TOE is being used to            facilitate communications with. IPsec can be used to provide protection for this communication;            however, there are numerous options that can be implemented for the protocol to be compliant to the            protocol specification listed in the RFC. Some of these options can have negative impacts on the            security of the connection. For instance, using a weak encryption algorithm (even one that is            allowed by the RFC, such as DES) can allow an adversary to read and even manipulate the data on            the encrypted channel, thus circumventing countermeasures in place to prevent such attacks.            Further, if the protocol is implemented with little-used or non-standard options, it may be compliant             with the protocol specification, but will not be able to interact with other diverse equipment that is            typically found in large enterprises. <h:br/><h:br/>            Even though the communication path is protected, there is a possibility that the IPsec peer could be            tricked into thinking that a malicious third-party user or system is the TOE. For instance, a            middleman could intercept a connection request to the TOE and respond to the request as if it were            the TOE. In a similar manner, the TOE could also be tricked into thinking that it is establishing            communications with a legitimate IPsec peer when in fact it is not. An attacker could also mount a            malicious man-in-the-middle-type of attack, in which an intermediate system is compromised, and            the traffic is proxied, examined, and modified by this system. This attack can even be mounted via            encrypted communication channels if appropriate countermeasures are not applied. These attacks            are, in part, enabled by a malicious attacker capturing network traffic (for instance, an            authentication session) and “playing back” that traffic in order to fool an endpoint into thinking it            was communicating with a legitimate remote entity.</description><!-- New mapping to build updated threat mapping table. --><addressed-by>FCS_EAP_EXT.1 (selection-based)</addressed-by><rationale>This SFR mitigates the threat by optionally implementing EAP-TLS or EAP-TTLS as a mechanism for authentication.</rationale><addressed-by>FCS_IPSEC_EXT.1</addressed-by><rationale>This SFR mitigates the threat by requiring the
+      <threats><threat name="T.TSF_CONFIGURATION"><description> Configuring VPN tunnels is a complex and time-consuming process, and prone to errors if the            interface for doing so is not well-specified or well-behaved. The inability or failure of an ignorant or careless administrator to configure certain aspects            of the interface may also lead to the incorrect specification of the desired communications policy or use            of cryptography that may be desired or required for a particular site. This may result in unintended            weak or plaintext communications while the user thinks that their data are being protected. Other            aspects of configuring the TOE or using its security mechanisms (for example, the update process)            may also result in a reduction in the trustworthiness of the VPN client.</description><!-- New mapping to build updated threat mapping table. --><addressed-by>FIA_X509_EXT.4</addressed-by><rationale>This SFR mitigates the threat by providing the ability to verify the integrity of the TSF using X.509 certificates.
+
+This SFR mitigates the threat by requiring the TOE
+            to implement certain administratively-configurable functions.
+
+This SFR mitigates the threat by requiring the TOE
+            to execute self-tests that demonstrate that its integrity is maintained.
+
+This SFR mitigates the threat by optionally
+            requiring the TOE to generate audit data for its behavior.
+
+This SFR mitigates the threat by optionally
+            requiring the TOE to allow for the configuration of what behavior is audited.</rationale></threat><threat name="T.TSF_FAILURE"><description> Security mechanisms of the TOE generally build up from a primitive set of mechanisms (e.g.,            memory management, privileged modes of process execution) to more complex sets of            mechanisms. Failure of the primitive mechanisms could lead to a compromise in more complex            mechanisms, resulting in a compromise of the TSF.          </description><!-- New mapping to build updated threat mapping table. --><addressed-by>FPT_TST_EXT.1/VPN</addressed-by><rationale>This SFR mitigates the threat by requiring the TOE
+            to execute self-tests that demonstrate that its integrity is maintained.
+
+This SFR mitigates the threat by optionally
+            requiring the TOE to generate audit data for its behavior.
+
+This SFR mitigates the threat by optionally
+            requiring the TOE to allow for the configuration of what behavior is audited.</rationale></threat><threat name="T.UNAUTHORIZED_ACCESS"><description>This PP-Module does not include requirements that can protect against an insider threat. Authorized            users are not considered hostile or malicious and are trusted to follow appropriate guidance. Only            authorized personnel should have access to the system or device that contains the IPsec VPN client.            Therefore, the primary threat agents are the unauthorized entities that try to gain access to the            protected network (in cases where tunnel mode is used) or to plaintext data that traverses the            public network (regardless of whether transport mode or tunnel mode is used). <h:br/><h:br/>            The endpoint of the network communication can be both geographically and logically distant from            the TOE and can pass through a variety of other systems. These intermediate systems may be under            the control of the adversary, and offer an opportunity for communications over the network to be            compromised. <h:br/><h:br/>            Plaintext communication over the network may allow critical data (such as passwords, configuration            settings, and user data) to be read or manipulated directly by a malicious user or process on intermediate systems, leading to            a compromise of the TOE or to the secured environmental systems that the TOE is being used to            facilitate communications with. IPsec can be used to provide protection for this communication;            however, there are numerous options that can be implemented for the protocol to be compliant to the            protocol specification listed in the RFC. Some of these options can have negative impacts on the            security of the connection. For instance, using a weak encryption algorithm (even one that is            allowed by the RFC, such as DES) can allow an adversary to read and even manipulate the data on            the encrypted channel, thus circumventing countermeasures in place to prevent such attacks.            Further, if the protocol is implemented with little-used or non-standard options, it may be compliant             with the protocol specification, but will not be able to interact with other diverse equipment that is            typically found in large enterprises. <h:br/><h:br/>            Even though the communication path is protected, there is a possibility that the IPsec peer could be            tricked into thinking that a malicious third-party user or system is the TOE. For instance, a            middleman could intercept a connection request to the TOE and respond to the request as if it were            the TOE. In a similar manner, the TOE could also be tricked into thinking that it is establishing            communications with a legitimate IPsec peer when in fact it is not. An attacker could also mount a            malicious man-in-the-middle-type of attack, in which an intermediate system is compromised, and            the traffic is proxied, examined, and modified by this system. This attack can even be mounted via            encrypted communication channels if appropriate countermeasures are not applied. These attacks            are, in part, enabled by a malicious attacker capturing network traffic (for instance, an            authentication session) and “playing back” that traffic in order to fool an endpoint into thinking it            was communicating with a legitimate remote entity.</description><!-- New mapping to build updated threat mapping table. --><addressed-by>FTP_ITC.1</addressed-by><rationale>This SFR mitigates the threat by defining the use of IPsec for protecting data in transit.
+
+This SFR mitigates the threat by requiring the
             TOE’s implementation of IPsec to include requirements for how the remote VPN gateway or
-            peer is authenticated.</rationale><addressed-by>FIA_BMA_EXT.1 (optional)</addressed-by><rationale>This SFR mitigates the threat by optionally defining the TOE's support for a platform-based biometric mechanism to use as an authentication mechanism.</rationale><addressed-by>FIA_PSK_EXT.1 (selection-based)</addressed-by><rationale>This SFR mitigates the threat by optionally
-            requiring support for pre-shared keys as an alternate authentication method for IPsec.</rationale><addressed-by>FIA_PSK_EXT.2 (selection-based)</addressed-by><rationale>This SFR mitigates the threat by optionally specifying whether the TOE generates its own pre-shared keys used for authentication or accept them from an external source.</rationale><addressed-by>FIA_PSK_EXT.3 (selection-based)</addressed-by><rationale>This SFR mitigates the threat by optionally defining the composition and use of password-based pre-shared keys used for authentication.</rationale><addressed-by>FIA_PSK_EXT.4 (selection-based)</addressed-by><rationale>This SFR mitigates the threat by optionally
-            defining HOTP as an authentication mechanism.</rationale><addressed-by>FIA_PSK_EXT.5 (selection-based)</addressed-by><rationale>This SFR mitigates the threat by optionally
-            defining TOTP as an authentication mechanism.</rationale><addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by><rationale>This SFR mitigates the threat by optionally enforcing a multifactor authentication requirement on an IPsec connection.</rationale><addressed-by>FTP_ITC.1 (additional to GPOS PP)</addressed-by><rationale>This SFR mitigates the threat by defining the use of IPsec for protecting data in transit.</rationale></threat><threat name="T.USER_DATA_REUSE"><description>Data traversing the TOE could inadvertently be sent to a different user as a consequence of a poorly-designed TOE; since these data may be            sensitive, this may cause a compromise that is unacceptable. The specific threat that must be            addressed concerns user data that is retained by the TOE in the course of processing network traffic            that could be inadvertently reused in sending network traffic to a user other than that intended by            the sender of the original network traffic.          </description><!-- New mapping to build updated threat mapping table. --><addressed-by>FCS_CKM_EXT.2 (additional to App PP)</addressed-by><rationale>This SFR mitigates the threat by requiring the TOE
-            or its platform to store sensitive data in the OS' key storage.</rationale><addressed-by>FCS_CKM_EXT.2 (additional to GPOS PP)</addressed-by><rationale>This SFR mitigates the threat by requiring the TOE
-            to store sensitive data in the OS’ key storage.</rationale><addressed-by>FCS_CKM.6 (additional to App PP)</addressed-by><rationale>This SFR mitigates the threat by requiring the TOE
-            or its platform to zeroize key data when no longer needed.</rationale><addressed-by>FDP_RIP.2</addressed-by><rationale>This SFR mitigates the threat by requiring the TOE or its platform to ensure that
-            residual data is purged from the system.</rationale><addressed-by>FDP_VPN_EXT.1 (additional to MDF PP)</addressed-by><rationale>This SFR mitigates the threat by optionally
+            peer is authenticated.
+
+This SFR mitigates the threat by optionally defining the TOE's support for a platform-based biometric mechanism to use as an authentication mechanism.
+
+This SFR mitigates the threat by optionally enforcing a multifactor authentication requirement on an IPsec connection.
+
+This SFR mitigates the threat by optionally implementing EAP-TLS or EAP-TTLS as a mechanism for authentication.
+
+This SFR mitigates the threat by optionally
+            requiring support for pre-shared keys as an alternate authentication method for IPsec.
+
+This SFR mitigates the threat by optionally specifying whether the TOE generates its own pre-shared keys used for authentication or accept them from an external source.
+
+This SFR mitigates the threat by optionally defining the composition and use of password-based pre-shared keys used for authentication.
+
+This SFR mitigates the threat by optionally
+            defining HOTP as an authentication mechanism.
+
+This SFR mitigates the threat by optionally
+            defining TOTP as an authentication mechanism.</rationale></threat><threat name="T.USER_DATA_REUSE"><description>Data traversing the TOE could inadvertently be sent to a different user as a consequence of a poorly-designed TOE; since these data may be            sensitive, this may cause a compromise that is unacceptable. The specific threat that must be            addressed concerns user data that is retained by the TOE in the course of processing network traffic            that could be inadvertently reused in sending network traffic to a user other than that intended by            the sender of the original network traffic.          </description><!-- New mapping to build updated threat mapping table. --><addressed-by>FCS_CKM_EXT.2</addressed-by><rationale>This SFR mitigates the threat by requiring the TOE
+            to store sensitive data in the OS’ key storage.
+
+This SFR mitigates the threat by optionally
             requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
-            established IPsec tunnel.</rationale><addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by><rationale>This SFR mitigates the threat by optionally
+            established IPsec tunnel.
+
+This SFR mitigates the threat by requiring the TOE
+            or its platform to store sensitive data in the OS' key storage.
+
+This SFR mitigates the threat by requiring the TOE
+            or its platform to zeroize key data when no longer needed.
+
+This SFR mitigates the threat by requiring the TOE or its platform to ensure that
+            residual data is purged from the system.
+
+This SFR mitigates the threat by optionally
             requiring the TOE to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.</rationale></threat></threats></sec:Threats>
     <!-- 3.2 Assumptions -->
     <sec:Assumptions>
@@ -912,6 +967,24 @@ expected to enforce.<h:br/><h:br/>
             </replace>
           </base-sfr-spec>
         </section>
+        <section title="Security Management (FMT)" id="md-m-fmt">
+          <!-- FMT_SMF_EXT.1 Specification of Management Functions -->
+          <base-sfr-spec cc-id="fmt_smf_ext.1" id="mdf-fmt-smf-ext-1" title="Specification of Management Functions">
+            <consistency-rationale>
+              This PP-Module modifies the management function regarding Always-on VPN protection.
+            </consistency-rationale>
+            <description><h:p>
+                This PP-Module requires that Always On VPN protection be enabled across the entire device and does not permit this to be applied at the level of an application or group of application processes.
+              </h:p>
+              This SFR is not reproduced in its entirety for size purposes. The only change to this SFR is the following
+              change to management function 45:
+              <h:table border="1" style="width:100%"><h:tr><h:td>
+                    45. enable/disable the Always On VPN protection:<h:ul><h:li>across device</h:li><h:li>[<h:i>no other method</h:i>]</h:li></h:ul></h:td><h:td><h:b>M</h:b></h:td><h:td>O</h:td><h:td>O</h:td><h:td>O</h:td></h:tr></h:table></description>
+            <insert-after>
+              <xpath-specified xpath="*//cc:management-function[@id='mf-alwaysOnVPN']//cc:text"><M ref="I"/></xpath-specified>
+            </insert-after>
+          </base-sfr-spec>
+        </section>
         <section title="Trusted Path/Channels (FTP)" id="md-m-ftp">
           <!-- FTP_ITC_EXT.1 Trusted Channel Communication -->
           <base-sfr-spec cc-id="ftp_itc_ext.1" id="mdf-ftp-itc-ext-1" title="Trusted Channel Communication">
@@ -1070,7 +1143,7 @@ expected to enforce.<h:br/><h:br/>
         applies to the establishment of IPsec connections.</con-mod>
     </base-pp>
     <!-- 5.3 App PP Security Functional Requirements Direction -->
-    <base-pp id="bpp-app" name="Protection Profile for Application Software" product="Application" short="App" version="1.4">
+    <base-pp id="bpp-app" name="Protection Profile for Application Software" product="Application" short="App" version="2.0">
       <git>
         <url>https://github.com/commoncriteria/application</url>
         <branch>release-1.4</branch>
@@ -3253,9 +3326,7 @@ that is logically distinct from other communication channels and provides assure
     </entry>
     <entry id="bibAppPP">
       <tag>App PP</tag>
-      <description><h:a href="https://www.niap-ccevs.org/static_html/protection-profile/462/462/index.html">
-			Protection Profile for Application Software</h:a>, Version 1.4, October 2021
-      </description>
+      <description><h:a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software, Version 2.0, June 16, 2025</h:a></description>
     </entry>
   </bibliography>
 </Module>
