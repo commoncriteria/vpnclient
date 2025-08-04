@@ -13,7 +13,7 @@
 * Error: f-element .1  appears not to have an associated evaluation activity.:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[2]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""
+        /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[4]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[4]""/replace[1]""/xpath-specified[1]""/f-element[1]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
@@ -81,11 +81,11 @@
 * Error: Detected multiple elements with an id of 'fau'.
 * Error: Detected multiple elements with an id of 'fau'.
 * Error: Detected dangling ref-id to 'itc_dtls '.
-	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]"The inten"/rule[2]""/if[1]""/ref-id[1]"itc_dtls"
+	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[4]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]"The inten"/rule[2]""/if[1]""/ref-id[1]"itc_dtls"
 * Error: Detected dangling ref-id to 's-itc-ipsec '.
-	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]"The inten"/rule[3]""/if[1]""/ref-id[1]"s-itc-ips"
+	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[4]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]"The inten"/rule[3]""/if[1]""/ref-id[1]"s-itc-ips"
 * Error: Detected dangling ref-id to 'mod-vpnclient '.
-	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]"The inten"/rule[3]""/then[1]""/ref-id[1]"mod-vpncl"
+	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[4]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]"The inten"/rule[3]""/then[1]""/ref-id[1]"mod-vpncl"
 * Error: Detected dangling ref to 'os-fcs-ckm-1'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[11]"The ST au"/ref[1]""
@@ -160,8 +160,8 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[3]""/description[1]"This SFR "/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[3]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]""/h:p[1]"AES CCMP "/h:p[2]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[3]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]""/h:p[1]"AES CCMP "/h:p[3]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]"The inten"/h:p[1]"Claims fr"/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]"The inten"/h:p[1]"Claims fr"/h:p[2]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[4]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]"The inten"/h:p[1]"Claims fr"/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[4]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]"The inten"/h:p[1]"Claims fr"/h:p[2]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]""/h:p[1]"The ST sh"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]""/h:p[1]"The ST sh"/h:p[2]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/aactivity[1]""/TSS[1]""/h:p[1]"The evalu"/h:p[1]""
@@ -184,9 +184,6 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/modified-sfrs[1]""/section[2]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]""/h:p[1]"Encryptio"/h:p[9]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/modified-sfrs[1]""/section[2]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]""/h:p[1]"Encryptio"/h:p[10]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/modified-sfrs[1]""/section[2]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]""/h:p[1]"Encryptio"/h:p[11]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[2]""/base-sfr-spec[1]""/description[1]"The text "/h:p[2]"This SFR "/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/description[1]"The text "/h:p[1]"When the "/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[2]""/description[1]"The text "/h:p[1]"When the "/h:p[1]""
 * Rules without a 'Validation Guidelines' appendix has been detected.
 * Warning: fau_gen.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]""/f-component[1]""
 * Warning: Since FCS_CKM_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
