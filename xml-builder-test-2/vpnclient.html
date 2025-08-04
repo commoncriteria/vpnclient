@@ -1128,7 +1128,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	  claimed as the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
       
         <h4 class="indexable" data-level="4" id="gpos-audit-table">5.1.2.1 Auditable Events for GPOS PP Additional SFRs</h4>
-          <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="gpos-additional" data-counter-type="ct-Table" id="gpos-additional">Table <span class="counter">2</span></span>: Auditable Events for GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr></table>
+          <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="gpos-additional" data-counter-type="ct-Table" id="gpos-additional">Table <span class="counter">2</span></span>: Auditable Events for GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FCS_CKM_EXT.2"><td rowspan="2"><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FCS_CKM_EXT.2#"><td></td></tr><tr data-sortkey="FCS_CKM_EXT.2.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_X509_EXT.4"><td rowspan="2"><a href="#FIA_X509_EXT.4">FIA_X509_EXT.4</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_X509_EXT.4#"><td></td></tr><tr data-sortkey="FIA_X509_EXT.4.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTP_ITC.1"><td rowspan="4"><a href="#FTP_ITC.1">FTP_ITC.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTP_ITC.1#"><td></td></tr><tr data-sortkey="FTP_ITC.1.4"><td>Initiation of the trusted channel.</td><td>Identification of the initiator and target.</td></tr><tr data-sortkey="FTP_ITC.1.5"><td>Termination of the trusted channel.</td><td>No additional information.</td></tr><tr data-sortkey="FTP_ITC.1.6"><td>Failure of the trusted channel functions.</td><td>Identification of the initiator and target, reason for failure.</td></tr></table>
         
         <h4 id="os-a-fcs" class="indexable" data-level="4">5.1.2.2 Cryptographic Support (FCS)</h4>
           
@@ -1153,6 +1153,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 manipulated by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client and others are manipulated by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, then both
                 of the selections can be specified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author.
               </span></div></div></div>
+            
           <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="element-activity-header"><a href="#FCS_CKM_EXT.2.1">FCS_CKM_EXT.2.1</a></div>
                 <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">Regardless of whether this requirement is met by the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client or the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, the evaluator shall check the
 			<abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it lists each persistent secret (credential, secret key) and private key needed to meet
@@ -1208,6 +1209,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 The  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="fia_x509_ext.4.3_1"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</span>, <span class="selectable-content" id="fia_x509_ext.4.3_2"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span>]  shall not establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> if a certificate or
                 certificate path is deemed invalid.
               </div></div>
+            
           <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="element-activity-header"><a href="#FIA_X509_EXT.4.1">FIA_X509_EXT.4.1</a></div>
                 <span class="no-link">FIA_X509_EXT.4.1 </span>  is evaluated as part of <span class="no-link">FCS_IPSEC_EXT.1 </span>  (and
                   conditionally as part of <span class="no-link">FPT_TUD_EXT.1 </span>  or <span class="no-link">FPT_TST_EXT.1 </span> ).
@@ -1275,6 +1277,9 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 intervention, there may be a window created where an attacker might be able to
                 gain critical information or compromise a connection.
               </span></div></div></div>
+            
+            
+            
           <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_ITC.1">FTP_ITC.1</a></div>
                 
                 
@@ -1380,7 +1385,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	  claimed as the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
       
         <h4 class="indexable" data-level="4" id="mdf-audit-table">5.2.2.1 Auditable Events for MDF PP Additional SFRs</h4>
-          <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="mdf-additional" data-counter-type="ct-Table" id="mdf-additional">Table <span class="counter">3</span></span>: Auditable Events for MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr></table>
+          <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="mdf-additional" data-counter-type="ct-Table" id="mdf-additional">Table <span class="counter">3</span></span>: Auditable Events for MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FDP_VPN_EXT.1"><td rowspan="2"><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FDP_VPN_EXT.1#"><td></td></tr><tr data-sortkey="FDP_VPN_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
         
         <h4 id="ib-fdp" class="indexable" data-level="4">5.2.2.2 User Data Protection (FDP)</h4>
           
@@ -1408,6 +1413,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 hooks provided by the platform such that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is able to ensure that no <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr>
                 traffic can flow through other network interfaces.
               </span></div></div></div>
+            
           <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="element-activity-header"><a href="#FDP_VPN_EXT.1.1">FDP_VPN_EXT.1.1</a></div>
                 <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section of the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> describes the routing of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic through processes
                   on the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> when a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is enabled. The evaluator shall ensure that the description indicates which
@@ -1527,7 +1533,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	  claimed as the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
       
         <h4 class="indexable" data-level="4" id="app-audit-table">5.3.2.1 Auditable Events for App PP Additional SFRs</h4>
-          <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="app-additional" data-counter-type="ct-Table" id="app-additional">Table <span class="counter">4</span></span>: Auditable Events for App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr></table>
+          <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="app-additional" data-counter-type="ct-Table" id="app-additional">Table <span class="counter">4</span></span>: Auditable Events for App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FCS_CKM.6"><td rowspan="2"><a href="#FCS_CKM.6">FCS_CKM.6</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FCS_CKM.6#"><td></td></tr><tr data-sortkey="FCS_CKM.6.7"><td>Destruction of cryptographic key.</td><td>Identification of key.</td></tr><tr data-sortkey="FCS_CKM_EXT.2"><td rowspan="2"><a href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FCS_CKM_EXT.2#"><td></td></tr><tr data-sortkey="FCS_CKM_EXT.2.1"><td>No events specified</td><td>N/A</td></tr></table>
         
         <h4 id="ap-a-fcs" class="indexable" data-level="4">5.3.2.2 Cryptographic Support (FCS)</h4>
           
@@ -1579,6 +1585,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 data are manipulated entirely by the platform, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must select both
                 options.
               </span></div></div></div>
+            
           <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCS_CKM.6">FCS_CKM.6</a></div>
                 
                 
@@ -1638,6 +1645,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 are manipulated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and others are manipulated by the platform, then
                 both of the selections can be specified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author.
               </span></div></div></div>
+            
           <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="element-activity-header"><a href="#FCS_CKM_EXT.2.1">FCS_CKM_EXT.2.1</a></div>
                 <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">Regardless of whether this requirement is met by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform, the evaluator shall check
 			the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it lists each persistent secret (credential, secret key) and private key needed to
