@@ -1605,7 +1605,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 			with a random pattern that is changed before each write").<br/><br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                   For each key clearing situation described in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>, the evaluator shall repeat the following test.
                   <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FCS_CKM.6:1</a>:
+                    <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FCS_CKM.6:1</a>:
       The evaluator shall use appropriate combinations of specialized <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> and
 					development tools (debuggers, simulators, etc.) for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and instrumented <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> builds to test that keys
 					are cleared correctly, including all intermediate copies of the key that may have been created internally
@@ -2096,7 +2096,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <div class="eacategory">Tests</div><div class="ea">
                 Depending on the implementation, the evaluator may be required to use a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway or some form of application to configure the client. For Test 2, the evaluator is required to choose an application that allows for the configuration of the full set of capabilities of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client (in conjunction with the platform). For example, if the client provides a robust interface that allows for specification of wildcards, subnets, etc., it is unacceptable for the evaluator to choose a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway that only allows for specifying a single fully qualified <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> addresses in the rule. <br/><br/> <br/><br/>The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FCS_IPSEC_EXT.1.1:1</a>:
+                  <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FCS_IPSEC_EXT.1.1:1</a>:
        The evaluator shall configure an <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr> on the client that is capable of the following: dropping a
 			packet, encrypting a packet, and allowing a packet to flow in plaintext. The selectors used in the
 			construction of the rule shall be different such that the evaluator can generate a packet and send packets
@@ -2105,7 +2105,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			of rule. The evaluator shall observe via the audit trail and packet captures that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> exhibited the expected
 			behavior: appropriate packets were dropped, allowed through without modification, was encrypted by
 			the IPsec implementation.</li>
-                  <li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FCS_IPSEC_EXT.1.1:2</a>:
+                  <li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FCS_IPSEC_EXT.1.1:2</a>:
       The evaluator shall devise several tests that cover a variety of scenarios for packet processing.
 			These scenarios must exercise the range of possibilities for <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr> entries and processing modes as outlined
 			in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> and operational guidance. Potential areas to cover include rules with overlapping ranges and
@@ -2126,7 +2126,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests based on the selections chosen:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FCS_IPSEC_EXT.1.2:1</a>:
+                  <li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FCS_IPSEC_EXT.1.2:1</a>:
        [conditional]: If tunnel mode is selected, the evaluator shall use the operational guidance to configure
 			the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway to operate in tunnel mode. The
 			evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway to use any of the allowable cryptographic algorithms, 
@@ -2134,7 +2134,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			initiate a connection from the client to connect to the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway peer. The evaluator shall observe (for example,
 			in the audit trail and the captured packets) that a successful connection was established using the tunnel
 			mode.</li>
-                  <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FCS_IPSEC_EXT.1.2:2</a>:
+                  <li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FCS_IPSEC_EXT.1.2:2</a>:
       [conditional]: If transport mode is selected, the evaluator shall use the operational guidance to
 			configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to operate in transport mode and also configures an IPsec peer to accept IPsec
 			connections using transport mode. The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the endpoint device to use any
@@ -2143,10 +2143,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			The evaluator shall observe (for example, in the audit trail and the captured packets) that a successful
 			connection was established using the transport mode.
 		</li>
-                  <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FCS_IPSEC_EXT.1.2:3</a>:
+                  <li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FCS_IPSEC_EXT.1.2:3</a>:
        [conditional]: If both tunnel and transport modes are selected, the evaluator shall perform
 			both Test 1 and Test 2 above, demonstrating that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> can be configured to support both modes.</li>
-                  <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FCS_IPSEC_EXT.1.2:4</a>:
+                  <li class="test-"><a id="_t_34" class="defined" href="#_t_34">Test FCS_IPSEC_EXT.1.2:4</a>:
        [conditional]: If both tunnel and transport modes are selected, the evaluator shall modify the
 			testing for <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> to include the supported mode for <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr> PROTECT entries to show that they
 			only apply to traffic that is transmitted or received using the indicated mode.
@@ -2162,7 +2162,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following test: <br/><br/>
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FCS_IPSEC_EXT.1.3:1</a>:
+                  <li class="test-"><a id="_t_35" class="defined" href="#_t_35">Test FCS_IPSEC_EXT.1.3:1</a>:
       
 		     		The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr> such that it has entries that contain operations that DISCARD,
 				PROTECT, and (if applicable) BYPASS network packets. The evaluator may use the <abbr class="dyn-abbr"><a href="#abbr_SPD">SPD</a></abbr> that was created
@@ -2187,7 +2187,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		environmental component.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FCS_IPSEC_EXT.1.4:1</a>:
+                  <li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FCS_IPSEC_EXT.1.4:1</a>:
       
 				      The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as indicated in the operational guidance, configuring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
 					to using the <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM-256 algorithm, and attempt to establish a connection
@@ -2210,7 +2210,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		main mode is used for Phase 1 exchanges or provides instructions for disabling aggressive mode.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FCS_IPSEC_EXT.1.5:1</a>:
+                  <li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FCS_IPSEC_EXT.1.5:1</a>:
       The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> so that it will perform <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> traversal processing as described
 			in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7296, section 2.23. The evaluator shall initiate an IPsec connection and determine that
 			the <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> is successfully traversed. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports IKEv1 with or without XAUTH, the evaluator shall
@@ -2221,7 +2221,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			
                     <br/><br/> In the case that the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway enforces the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s configuration, the following steps shall be performed to meet the objective of Test 1:
                     <ol type="1"><li>Configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> client and <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway to have XAUTH enabled.</li> <li>Attempt the connection and observe that the connection succeeds and that XAUTH is used.</li> <li>Configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and gateway to have XAUTH disabled.</li> <li>Attempt the connection and observe that the connection succeeds and that XAUTH is not present.</li> <li>Attempt to configure a mismatch between the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and gateway (i.e. modify a local configuration setting on the client system)</li> <li>Verify that no IPsec connection is attempted until the gateway corrects the configuration settings</li></ol></li>
-                  <li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FCS_IPSEC_EXT.1.5:2</a>:
+                  <li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FCS_IPSEC_EXT.1.5:2</a>:
        [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports IKEv1, the evaluator shall perform any applicable operational
 			guidance steps to disable the use of aggressive mode and then attempt to establish a connection using an
 			IKEv1 Phase 1 connection in aggressive mode. This attempt should fail. The evaluator shall show that the
@@ -2243,7 +2243,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall use the operational guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (or to configure the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> to have the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> receive configuration) to perform the following test for each ciphersuite selected: <br/><br/>
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FCS_IPSEC_EXT.1.6:1</a>:
+                  <li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FCS_IPSEC_EXT.1.6:1</a>:
       
                			The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use the ciphersuite under test to encrypt the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> payload for each 
 				supported <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> version and establish a connection with a peer device, which is configured to only accept the
@@ -2265,20 +2265,20 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <div class="eacategory">Tests</div><div class="ea">
                 When testing this functionality, the evaluator shall ensure that both sides are configured appropriately. From the <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> “A difference between IKEv1 and IKEv2 is that in IKEv1 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes were negotiated. In IKEv2, each end of the <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> is responsible for enforcing its own lifetime policy on the <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> and rekeying the <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> when necessary. If the two ends have different lifetime policies, the end with the shorter lifetime will end up always being the one to request the rekeying. If the two ends have the same lifetime policies, it is possible that both will initiate a rekeying at the same time (which will result in redundant SAs). To reduce the probability of this happening, the timing of rekeying requests SHOULD be jittered.” <br/><br/> <br/><br/>Each of the following tests shall be performed for each version of <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> selected in the <a href="#FCS_IPSEC_EXT.1.5">FCS_IPSEC_EXT.1.5</a> protocol selection:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FCS_IPSEC_EXT.1.7:1</a>:
+                  <li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FCS_IPSEC_EXT.1.7:1</a>:
        [conditional]: The evaluator shall configure a maximum lifetime in terms of the # of packets (or
 			bytes) allowed following the operational guidance. The evaluator shall establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> and determine that
 			once the allowed # of packets (or bytes) through this <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> is exceeded, the connection is closed.</li>
-                  <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FCS_IPSEC_EXT.1.7:2</a>:
+                  <li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FCS_IPSEC_EXT.1.7:2</a>:
        [conditional]: The evaluator shall construct a test where a Phase 1 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> is established and attempted
 			to be maintained for more than 24 hours before it is renegotiated. The evaluator shall observe that this
 			<abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> is closed or renegotiated in 24 hours or less. If such an action requires that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> be configured in a
 			specific way, the evaluator shall implement tests demonstrating that the configuration capability of the
 			<abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> works as documented in the operational guidance.</li>
-                  <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FCS_IPSEC_EXT.1.7:3</a>:
+                  <li class="test-"><a id="_t_42" class="defined" href="#_t_42">Test FCS_IPSEC_EXT.1.7:3</a>:
        [conditional]: The evaluator shall perform a test similar to Test 2 for Phase 2 SAs, except that the
 			lifetime will be 8 hours or less instead of 24 hours or less.</li>
-                  <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FCS_IPSEC_EXT.1.7:4</a>:
+                  <li class="test-"><a id="_t_43" class="defined" href="#_t_43">Test FCS_IPSEC_EXT.1.7:4</a>:
        [conditional]: If a fixed limit for IKEv1 SAs is supported, the evaluator shall establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> and
 			observe that the connection is closed after the fixed traffic or time value is reached.</li>
                 </ul></span>
@@ -2291,7 +2291,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following test:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FCS_IPSEC_EXT.1.8:1</a>:
+                  <li class="test-"><a id="_t_44" class="defined" href="#_t_44">Test FCS_IPSEC_EXT.1.8:1</a>:
       For each supported <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group, the evaluator shall test to ensure that all supported <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> 
 				      protocols can be successfully completed using that particular <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group.
 			      </li>
@@ -2329,18 +2329,18 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         1.0</a> and <span class="no-link">FIA_X509_EXT.4 </span>  (for IPsec connections and depending on the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <span class="no-link">FCS_IPSEC_EXT.1.12 </span>  , and <span class="no-link">FCS_IPSEC_EXT.1.13 </span>  . The following tests shall be repeated for each peer authentication protocol selected in the <span class="no-link">FCS_IPSEC_EXT.1.11 </span>  selection above:
                 <span class="testlist-"><ul>
                   For each supported identifier type (excluding DNs), the evaluator shall repeat the following tests:
-                  <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FCS_IPSEC_EXT.1.11:1</a>:
+                  <li class="test-"><a id="_t_45" class="defined" href="#_t_45">Test FCS_IPSEC_EXT.1.11:1</a>:
       The evaluator shall have the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generate a public-private key pair and submit a CSR (Certificate
 			Signing Request) to a CA (trusted by both the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the peer <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> used to establish a connection) for
 			its signature. The values for the <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> (Common Name, Organization, Organizational Unit, and Country) will
 			also be passed in the request. Alternatively, the evaluator may import to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> a previously generated
 			private key and corresponding certificate.
                 </li>
-                  <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FCS_IPSEC_EXT.1.11:2</a>:
+                  <li class="test-"><a id="_t_46" class="defined" href="#_t_46">Test FCS_IPSEC_EXT.1.11:2</a>:
       The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use a private key and associated certificate signed by a
 			trusted CA and shall establish an IPsec connection with the peer.                
 		</li>
-                  <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FCS_IPSEC_EXT.1.11:3</a>:
+                  <li class="test-"><a id="_t_47" class="defined" href="#_t_47">Test FCS_IPSEC_EXT.1.11:3</a>:
        The evaluator shall test that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> can properly handle revoked certificates – conditional on
 			whether <abbr class="dyn-abbr"><a href="#abbr_CRL">CRL</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_OCSP">OCSP</a></abbr> is selected; if both are selected, then a test is performed for each method. For
 			this current version of the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, the evaluator has to only test one up in the trust chain (future
@@ -2349,18 +2349,18 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			certificate that will be revoked (for each method chosen in the selection) to ensure when the certificate
 			is no longer valid that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will not establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr>.
                 </li>
-                  <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FCS_IPSEC_EXT.1.11:4</a>:
+                  <li class="test-"><a id="_t_48" class="defined" href="#_t_48">Test FCS_IPSEC_EXT.1.11:4</a>:
        [conditional]: For each selection made, the evaluator shall verify factors are required, as indicated in the
 			operational guidance, to establish an IPsec connection with the server. </li>
-                  <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FCS_IPSEC_EXT.1.11:5</a>:
+                  <li class="test-"><a id="_t_49" class="defined" href="#_t_49">Test FCS_IPSEC_EXT.1.11:5</a>:
        For each field of the certificate supported for comparison, the evaluator shall configure the peer’s
 			reference identifier on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (per the administrative guidance) to match the field in the peer’s
 			presented certificate and shall verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication succeeds.</li>
-                  <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FCS_IPSEC_EXT.1.11:6</a>:
+                  <li class="test-"><a id="_t_50" class="defined" href="#_t_50">Test FCS_IPSEC_EXT.1.11:6</a>:
       For each field of the certificate support for comparison, the evaluator shall configure the peer’s
 			reference identifier on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (per the administrative guidance) to not match the field in the peer’s
 			presented certificate and shall verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication fails.</li>
-                  <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FCS_IPSEC_EXT.1.11:7</a>:
+                  <li class="test-"><a id="_t_51" class="defined" href="#_t_51">Test FCS_IPSEC_EXT.1.11:7</a>:
        [conditional]: If, according to the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports both Common Name and SAN certificate
 			fields and uses the preferred logic outlined in the Application Note, the tests above with the Common
 			Name field shall be performed using peer certificates with no SAN extension. Additionally, the evaluator
@@ -2368,7 +2368,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			certificate, but to match the Common Name in the peer’s presented certificate and verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>
 			authentication fails.
 		</li>
-                  <li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FCS_IPSEC_EXT.1.11:8</a>:
+                  <li class="test-"><a id="_t_52" class="defined" href="#_t_52">Test FCS_IPSEC_EXT.1.11:8</a>:
        [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> identifier types, the evaluator shall configure the peer's
 			reference identifier on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (per the administrative guidance) to match the subject <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> in the peer's
 			presented certificate and shall verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication succeeds. To demonstrate a bit-wise
@@ -2376,14 +2376,14 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 			(OID) in the <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>) and verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication fails. To demonstrate a comparison of <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> values,
 			the evaluator shall change any one of the four <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> values and verify that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication fails.
                 </li>
-                  <li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FCS_IPSEC_EXT.1.11:9</a>:
+                  <li class="test-"><a id="_t_53" class="defined" href="#_t_53">Test FCS_IPSEC_EXT.1.11:9</a>:
        [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports both IPv4 and IPv6 and supports <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> address identifier types, the
 			evaluator must repeat tests 1 and 2 with both IPv4 address identifiers and IPv6 identifiers. Additionally,
 			the evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> verifies that the <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> header matches the identifiers by setting the
 			presented identifiers and the reference identifier with the same <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> address that differs from the actual <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr>
 			address of the peer in the <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> headers and verifying that the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> authentication fails.
 		</li>
-                  <li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FCS_IPSEC_EXT.1.11:10</a>:
+                  <li class="test-"><a id="_t_54" class="defined" href="#_t_54">Test FCS_IPSEC_EXT.1.11:10</a>:
       [conditional]: If, according to the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> performs comparisons between the peer’s ID
 			payload and the peer’s certificate, the evaluator shall repeat the following test for each combination of
 			supported identifier types and supported certificate fields (as above). The evaluator shall configure the
@@ -2406,21 +2406,21 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall follow the guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to perform the following tests:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FCS_IPSEC_EXT.1.14:1</a>:
+                  <li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FCS_IPSEC_EXT.1.14:1</a>:
       This test shall be performed for each version of <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> supported. The evaluator shall successfully
 		negotiate an IPsec connection using each of the supported algorithms and hash functions identified in the
 		requirements.</li>
-                  <li class="test-"><a id="_t_34" class="defined" href="#_t_34">Test FCS_IPSEC_EXT.1.14:2</a>:
+                  <li class="test-"><a id="_t_56" class="defined" href="#_t_56">Test FCS_IPSEC_EXT.1.14:2</a>:
        [conditional]: This test shall be performed for each version of <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> supported. The evaluator shall
 			attempt to establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr> that selects an encryption algorithm with more strength than that being
 			used for the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> (i.e., symmetric algorithm with a key size larger than that being used for the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr>).
 			Such attempts should fail.</li>
-                  <li class="test-"><a id="_t_35" class="defined" href="#_t_35">Test FCS_IPSEC_EXT.1.14:3</a>:
+                  <li class="test-"><a id="_t_57" class="defined" href="#_t_57">Test FCS_IPSEC_EXT.1.14:3</a>:
       This test shall be performed for each version of <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> supported. The evaluator shall attempt to
 			establish an <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> using an algorithm that is not one of the supported algorithms and hash functions
 			identified in the requirements. Such an attempt should fail.
                 </li>
-                  <li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FCS_IPSEC_EXT.1.14:4</a>:
+                  <li class="test-"><a id="_t_58" class="defined" href="#_t_58">Test FCS_IPSEC_EXT.1.14:4</a>:
        This test shall be performed for each version of <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> supported. The evaluator shall attempt to
 			establish an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr> (assumes the proper parameters where used to establish the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr>) that selects
 			an encryption algorithm that is not identified in <a href="#FCS_IPSEC_EXT.1.4">FCS_IPSEC_EXT.1.4</a>. Such an attempt should fail.
@@ -2565,11 +2565,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		references or includes the platform-specific guidance for each platform listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FPT_TST_EXT.1/VPN:1</a>:
+                  <li class="test-"><a id="_t_59" class="defined" href="#_t_59">Test FPT_TST_EXT.1/VPN:1</a>:
       The evaluator shall perform the integrity check on a known good <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable and verifies that the
 			check is successful.
                   </li>
-                  <li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FPT_TST_EXT.1/VPN:2</a>:
+                  <li class="test-"><a id="_t_60" class="defined" href="#_t_60">Test FPT_TST_EXT.1/VPN:2</a>:
       The evaluator shall modify the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable, performs the integrity check on the modified <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>
 			executable, and verifies that the check fails.</li>
                 </ul></span>
@@ -2992,7 +2992,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		      guidance documentation.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FIA_BMA_EXT.1.1:1</a>:
+                  <li class="test-"><a id="_t_61" class="defined" href="#_t_61">Test FIA_BMA_EXT.1.1:1</a>:
       The evaluator shall initiate a connection and verify that a biometric prompt is presented and accepted before the
 			  connection can proceed.  The evaluator shall also verify the connection does not proceed if the biometric is not presented or accepted.</li>
                 </ul></span>
@@ -3026,7 +3026,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		    to enable and configure filtering.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FPF_MFA_EXT.1.1:1</a>:
+                  <li class="test-"><a id="_t_62" class="defined" href="#_t_62">Test FPF_MFA_EXT.1.1:1</a>:
        
                   The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules.  
                   The evaluator shall then provide the supported PSKs and confirm it is accepted and traffic is no longer blocked.</li>
@@ -3076,12 +3076,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_54" class="defined" href="#_t_54">Test FAU_SEL.1.1/VPN:1</a>:
+                  <li class="test-"><a id="_t_76" class="defined" href="#_t_76">Test FAU_SEL.1.1/VPN:1</a>:
       For each attribute listed in the requirement, the evaluator shall devise a test to show that selecting
 			the attribute causes only audit events with that attribute (or those that are always recorded, as identified
 			in the administrative guidance) to be recorded.
                 </li>
-                  <li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FAU_SEL.1.1/VPN:2</a>:
+                  <li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FAU_SEL.1.1/VPN:2</a>:
       [conditional] If the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> supports specification of more complex audit pre-selection criteria (e.g.,
 			multiple attributes, logical expressions using attributes), then the evaluator shall devise tests showing that
 			this capability is correctly implemented. The evaluator shall also, in the test plan, provide a short narrative
@@ -3229,24 +3229,24 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 functionality, including instructions for configuration of the authenticators and registration processes for clients.<br/><br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 Testing for TLS functionality is in accordance with the TLS package. <b></b>For each supported EAP method claimed in FCS_EAP_TLS_EXT.1.1 and for each authentication method claimed in FCS_EAP_TLS_EXT.1.3, the evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FCS_EAP_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_63" class="defined" href="#_t_63">Test FCS_EAP_EXT.1:1</a>:
       The evaluator shall follow AGD guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use the EAP method claimed. 
                     The evaluator shall follow AGD guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use the authentication method claimed, and 
                     for EAP-TTLS, register a client with the appropriate key material required for the authentication method. 
                     The evaluator shall establish a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> session using a test client with a valid certificate, and for EAP-TTLS, 
                     configured to provide a correct value for the configured authenticator. The evaluator shall  observe the the 
                     <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> session is successful.</li>
-                  <li class="test-"><a id="_t_42" class="defined" href="#_t_42">Test FCS_EAP_EXT.1:2</a>:
+                  <li class="test-"><a id="_t_64" class="defined" href="#_t_64">Test FCS_EAP_EXT.1:2</a>:
       (conditional for EAP-TTLS support): The evaluator shall cause the test client with a valid certificate to send 
                     an invalid authenticator for the claimed authentication method.
                     <b></b>For HOTP, replay the HOTP value sent previously. 
                     <b></b>For TOTP or PSK, modify a byte of the properly constructed value and observe that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> aborts the session.</li>
-                  <li class="test-"><a id="_t_43" class="defined" href="#_t_43">Test FCS_EAP_EXT.1:3</a>:
+                  <li class="test-"><a id="_t_65" class="defined" href="#_t_65">Test FCS_EAP_EXT.1:3</a>:
       The evaluator shall establish a new, valid certificate for a test client using an identifier not 
                     corresponding to a registered user. For EAP-TTLS, the evaluator shall cause the test client using this 
                     certificate to send a correct authenticator value for the registered user. The evaluator shall initiate a 
                     <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> session from the test client to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> and observe that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> aborts the session.</li>
-                  <li class="test-"><a id="_t_44" class="defined" href="#_t_44">Test FCS_EAP_EXT.1:4</a>:
+                  <li class="test-"><a id="_t_66" class="defined" href="#_t_66">Test FCS_EAP_EXT.1:4</a>:
       The evaluator shall follow AGD guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use a supported EAP method and register the 
                     user with the key material required for a supported authentication method. The evaluator shall configure a test 
                     client to respond to an IKEv2 exchange with EAP-request, providing valid phase 1 handshake and valid TLS 
@@ -3316,7 +3316,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, if performed by a different implementation on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>).
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_45" class="defined" href="#_t_45">Test FIA_PSK_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_67" class="defined" href="#_t_67">Test FIA_PSK_EXT.1:1</a>:
       For each mechanism selected in <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>, the evaluator shall attempt to establish a connection 
                     and confirm that the connection requires the selected factors in the PSK to establish the connection in alignment with table 1 from <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8784. </li>
                 </ul></span>
@@ -3350,7 +3350,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 for each protocol identified in the <a href="#FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</a>. <br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_46" class="defined" href="#_t_46">Test FIA_PSK_EXT.2.1:1</a>:
+                  <li class="test-"><a id="_t_68" class="defined" href="#_t_68">Test FIA_PSK_EXT.2.1:1</a>:
       [conditional] If "generate" was selected, the evaluator shall generate a pre-shared key and confirm the output matches
 			  the size selected in <a href="#FIA_PSK_EXT.2.1">FIA_PSK_EXT.2.1</a>.
                   </li>
@@ -3457,20 +3457,20 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		      password checking functionality. <br/><br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> configured according to the operational guidance:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_47" class="defined" href="#_t_47">Test FIA_PSK_EXT.3:1</a>:
+                  <li class="test-"><a id="_t_69" class="defined" href="#_t_69">Test FIA_PSK_EXT.3:1</a>:
       The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance
 			  with the <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>.3 and verify that a successful protocol negotiation can be performed with the key. </li>
-                  <li class="test-"><a id="_t_48" class="defined" href="#_t_48">Test FIA_PSK_EXT.3:2</a>:
+                  <li class="test-"><a id="_t_70" class="defined" href="#_t_70">Test FIA_PSK_EXT.3:2</a>:
       [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports pre-shared keys of multiple lengths, the evaluator shall repeat Test 1 using the minimum length and invalid 
 			  lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should 
 			  be successful, and the invalid lengths must be rejected by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. </li>
-                  <li class="test-"><a id="_t_49" class="defined" href="#_t_49">Test FIA_PSK_EXT.3:3</a>:
+                  <li class="test-"><a id="_t_71" class="defined" href="#_t_71">Test FIA_PSK_EXT.3:3</a>:
       [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> initiates connections, initiate and establish a remote connection, disconnect from the connection, and verify
 			  that the PSK is required when initiating the connection a second time.</li>
-                  <li class="test-"><a id="_t_50" class="defined" href="#_t_50">Test FIA_PSK_EXT.3:4</a>:
+                  <li class="test-"><a id="_t_72" class="defined" href="#_t_72">Test FIA_PSK_EXT.3:4</a>:
       [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports a password meter, the evaluator shall enter a password and verify the password checker
 			  responds per the description in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>.</li>
-                  <li class="test-"><a id="_t_51" class="defined" href="#_t_51">Test FIA_PSK_EXT.3:5</a>:
+                  <li class="test-"><a id="_t_73" class="defined" href="#_t_73">Test FIA_PSK_EXT.3:5</a>:
       [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports a password denylist, the evaluator shall enter a denylisted password and verify that the
 			  password is rejected or flagged as such.</li>
                 </ul></span>
@@ -3503,7 +3503,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 The evaluator shall verify the operational guidance contains any configuration necessary to enable HOTP.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_52" class="defined" href="#_t_52">Test FIA_PSK_EXT.4.1:1</a>:
+                  <li class="test-"><a id="_t_74" class="defined" href="#_t_74">Test FIA_PSK_EXT.4.1:1</a>:
       
                     The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use a supported HOTP factor, then attempt to establish a connection using that factor.  
                     The evaluator shall verify the client prompts the user for the HOTP before initiating the connection.  
@@ -3538,7 +3538,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 The evaluator shall verify the operational guidance contains any configuration necessary to enable TOTP.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_53" class="defined" href="#_t_53">Test FIA_PSK_EXT.5.1:1</a>:
+                  <li class="test-"><a id="_t_75" class="defined" href="#_t_75">Test FIA_PSK_EXT.5.1:1</a>:
       
                     The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use a supported TOTP factor, then attempt to establish a connection using that factor.  
                     The evaluator shall verify the client prompts the user for the TOTP before initiating the connection.  
@@ -3576,7 +3576,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <h4 id="ext-comp-FCS_IPSEC_EXT.1.4">FCS_IPSEC_EXT.1.4</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the IPsec protocol <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr> as defined by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4303 using the cryptographic algorithms [<b>assignment</b>: 
      <span class="assignable-content">supported cryptographic algorithms </span>] . <h4 id="ext-comp-FCS_IPSEC_EXT.1.5">FCS_IPSEC_EXT.1.5</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the protocol:
                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="fcs_ipsec_ext.1.5_1">IKEv1, using Main Mode for Phase I exchanges, as defined in RFCs 2407, 2408, 2409, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4109, [<b>selection</b>: <span class="selectable-content" id="fcs_ipsec_ext.1.5_2">no other RFCs for extended sequence numbers</span>, <span class="selectable-content" id="fcs_ipsec_ext.1.5_3"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4304 for extended sequence numbers</span>] , [<b>selection</b>: <span class="selectable-content" id="fcs_ipsec_ext.1.5_4">no other RFCs for hash functions</span>, <span class="selectable-content" id="fcs_ipsec_ext.1.5_5"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4868 for hash functions</span>] , and [<b>selection</b>: <span class="selectable-content" id="fcs_ipsec_ext.1.5_6">support for XAUTH</span>, <span class="selectable-content" id="fcs_ipsec_ext.1.5_7">no support for XAUTH</span>] </span></li><li style=""><span class="selectable-content" id="fcs_ipsec_ext.1.5_8">IKEv2 as defined in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7296 (with mandatory support for <abbr class="dyn-abbr"><a href="#abbr_NAT">NAT</a></abbr> traversal as specified in section 2.23), <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8247, and [<b>selection</b>: <span class="selectable-content" id="fcs_ipsec_ext.1.5_9">no other RFCs for hash functions</span>, <span class="selectable-content" id="fcs_ipsec_ext.1.5_10"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 4868 for hash functions</span>] </span></li></ul>] .
-            <h4 id="ext-comp-FCS_IPSEC_EXT.1.6">FCS_IPSEC_EXT.1.6</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the encrypted payload in the [<b>selection</b>: <span class="selectable-content" id="_s_226">IKEv1 </span>, <span class="selectable-content" id="_s_227">IKEv2 </span>] protocol uses the cryptographic algorithms [<b>assignment</b>: 
+            <h4 id="ext-comp-FCS_IPSEC_EXT.1.6">FCS_IPSEC_EXT.1.6</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the encrypted payload in the [<b>selection</b>: <span class="selectable-content" id="_s_276">IKEv1 </span>, <span class="selectable-content" id="_s_277">IKEv2 </span>] protocol uses the cryptographic algorithms [<b>assignment</b>: 
      <span class="assignable-content">supported cryptographic algorithms </span>] . <h4 id="ext-comp-FCS_IPSEC_EXT.1.7">FCS_IPSEC_EXT.1.7</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that 
 				 [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="fcs_ipsec_ext.1.7_1">IKEv2 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes can be configured by [<b>selection</b>: <span class="selectable-content" id="fcs_ipsec_ext.1.7_2">an administrator</span>, <span class="selectable-content" id="fcs_ipsec_ext.1.7_3">a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] based on [<b>selection</b>: <span class="selectable-content" id="fcs_ipsec_ext.1.7_4">number of packets/number of bytes</span>, <span class="selectable-content" id="fcs_ipsec_ext.1.7_5">length of time</span>] </span></li><li style=""><span class="selectable-content" id="fcs_ipsec_ext.1.7_6">IKEv1 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="fcs_ipsec_ext.1.7_7">can be configured by [<b>selection</b>: <span class="selectable-content" id="fcs_ipsec_ext.1.7_8">an administrator</span>, <span class="selectable-content" id="fcs_ipsec_ext.1.7_9">a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway</span>] based on [<b>selection</b>: <span class="selectable-content" id="fcs_ipsec_ext.1.7_10">number of packets/number of bytes</span>, <span class="selectable-content" id="fcs_ipsec_ext.1.7_11">length of time</span>] </span></li><li style=""><span class="selectable-content" id="fcs_ipsec_ext.1.7_12">are fixed based on [<b>selection</b>: <span class="selectable-content" id="fcs_ipsec_ext.1.7_13">number of packets/number of bytes</span>, <span class="selectable-content" id="fcs_ipsec_ext.1.7_14">length of time</span>] </span></li></ul>] </span></li></ul>] . 
 				If length of time is used, it must include at least one option that
@@ -3610,7 +3610,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 				 [<b>selection</b>: <span class="selectable-content" id="fcs_ipsec_ext.1.14_5">IKEv1 Phase 2</span>, <span class="selectable-content" id="fcs_ipsec_ext.1.14_6">IKEv2 CHILD_SA</span>]  connection.
             </div></div><h3 id="ext-comp-FCS_EAP_EXT" class="indexable" data-level="4">C.2.1.3 FCS_EAP_EXT EAP-TLS</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe the requirements for EAP-TLS.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCS_EAP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a>,
              EAP-TLS,
-             defines the use of EAP-TLS.</p><h4>Management: FCS_EAP_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FCS_EAP_EXT.1</h4><p>No specific audit functions are identified. </p><h4>FCS_EAP_EXT.1 EAP-TLS</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FCS_IPSEC_EXT.1 </span>  IPsec</td></tr></table><h4 id="ext-comp-FCS_EAP_EXT.1.1">FCS_EAP_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support [<b>selection</b>: <span class="selectable-content" id="_s_288">EAP-TLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5216 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996 </span>, <span class="selectable-content" id="_s_289">EAP-TTLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5281 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996 </span>] over a protected channel per the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> with an authentication server. <h4 id="ext-comp-FCS_EAP_EXT.1.2">FCS_EAP_EXT.1.2</h4>
+             defines the use of EAP-TLS.</p><h4>Management: FCS_EAP_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FCS_EAP_EXT.1</h4><p>No specific audit functions are identified. </p><h4>FCS_EAP_EXT.1 EAP-TLS</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FCS_IPSEC_EXT.1 </span>  IPsec</td></tr></table><h4 id="ext-comp-FCS_EAP_EXT.1.1">FCS_EAP_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support [<b>selection</b>: <span class="selectable-content" id="_s_338">EAP-TLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5216 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996 </span>, <span class="selectable-content" id="_s_339">EAP-TTLS as specified in <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 5281 and updated by <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8996 </span>] over a protected channel per the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> with an authentication server. <h4 id="ext-comp-FCS_EAP_EXT.1.2">FCS_EAP_EXT.1.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement 
                [<b>selection</b>: <span class="selectable-content" id="fcs_eap_ext.1.2_1">EAP-TLS</span>, <span class="selectable-content" id="fcs_eap_ext.1.2_2">EAP-TTLS</span>] 
               with the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> as the EAP client, an external authentication server as the EAP server and the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer as the supplicant. 
@@ -3650,7 +3650,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
              defines the use and composition of TOTP pre-shared keys used for IPsec.</p><h4>Management: FIA_PSK_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.1</h4><p>No specific audit functions are identified. </p><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FCS_IPSEC_EXT.1 </span>  IPsec</td></tr></table><h4 id="ext-comp-FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for 
                [<b>selection</b>: <span class="selectable-content" id="fia_psk_ext.1.1_1">IKEv2</span>, <span class="selectable-content" id="fia_psk_ext.1.1_2">multifactor authentication filtering</span>] .
-            <h4 id="ext-comp-FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept the following as pre-shared keys: [<b>selection</b>: <span class="selectable-content" id="_s_304">generated bit-based </span>, <span class="selectable-content" id="_s_305">password-based </span>, <span class="selectable-content" id="_s_306">HMAC-based one-time password </span>, <span class="selectable-content" id="_s_307">time-based one-time password </span>, <span class="selectable-content" id="_s_308">combination of a generated bit-based and HMAC-based one-time password </span>, <span class="selectable-content" id="_s_309">combination of a generated bit-based and time-based one-time password </span>, <span class="selectable-content" id="_s_310">combination of a password-based and HMAC-based one-time password </span>, <span class="selectable-content" id="_s_311">combination of a password-based and time-based one-time password </span>] keys. </div><h4>Management: FIA_PSK_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.2</h4><p>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>: <ul><li>Failure of the randomization process </li> </ul> </p><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FIA_PSK_EXT.1 </span>  Pre-Shared Key Composition</td></tr></table><h4 id="ext-comp-FIA_PSK_EXT.2.1">FIA_PSK_EXT.2.1</h4>
+            <h4 id="ext-comp-FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept the following as pre-shared keys: [<b>selection</b>: <span class="selectable-content" id="_s_354">generated bit-based </span>, <span class="selectable-content" id="_s_355">password-based </span>, <span class="selectable-content" id="_s_356">HMAC-based one-time password </span>, <span class="selectable-content" id="_s_357">time-based one-time password </span>, <span class="selectable-content" id="_s_358">combination of a generated bit-based and HMAC-based one-time password </span>, <span class="selectable-content" id="_s_359">combination of a generated bit-based and time-based one-time password </span>, <span class="selectable-content" id="_s_360">combination of a password-based and HMAC-based one-time password </span>, <span class="selectable-content" id="_s_361">combination of a password-based and time-based one-time password </span>] keys. </div><h4>Management: FIA_PSK_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.2</h4><p>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>: <ul><li>Failure of the randomization process </li> </ul> </p><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FIA_PSK_EXT.1 </span>  Pre-Shared Key Composition</td></tr></table><h4 id="ext-comp-FIA_PSK_EXT.2.1">FIA_PSK_EXT.2.1</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to 
                [<b>selection</b>: <span class="selectable-content" id="fia_psk_ext.2.1_1">accept externally generated pre-shared keys</span>, <span class="selectable-content" id="fia_psk_ext.2.1_2">generate 256 bit-based pre-shared keys via the random number generator used by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</span>] .
             </div><h4>Management: FIA_PSK_EXT.3</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.3</h4><p>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>: <ul><li>Failure of the randomization process </li> </ul> </p><h4>FIA_PSK_EXT.3 Password-Based Pre-Shared Keys</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FCS_RBG.1 </span>  Random Bit Generation (<abbr class="dyn-abbr"><a href="#abbr_RBG">RBG</a></abbr>)
