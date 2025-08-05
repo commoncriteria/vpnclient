@@ -342,11 +342,24 @@ requirements defined by the PP-Module, expressed as Evaluation Activities (EAs).
   <sec:Conformance_Claims boilerplate="no">
     <CClaimsInfo cc-version="cc-2022r1" cc-approach="direct-rationale">
       <cc-st-conf>exact</cc-st-conf>
-      <cc-pt2-conf>conformant</cc-pt2-conf>
-      <cc-pt3-conf>conformant</cc-pt3-conf>
+      <cc-pt2-conf>extended</cc-pt2-conf>
+      <cc-pt3-conf>extended</cc-pt3-conf>
       <cc-pp-conf/>
-      <cc-pp-config-with/>
-      <cc-pkg-claim/>
+      <cc-pp-config-with>
+        <PP-cc-ref>Protection Profile for General Purpose Operating Systems, Version 4.3</PP-cc-ref>
+        <PP-cc-ref>Protection Profile for Mobile Device Fundamentals, Version 3.3</PP-cc-ref>
+        <PP-cc-ref>Protection Profile for Mobile Device Management, Version 4.0</PP-cc-ref>
+        <PP-cc-ref>Protection Profile for Application Software, Version 2.0</PP-cc-ref>
+        <Mod-cc-ref>cPP-Module for Wireless LAN Clients, version 1.1</Mod-cc-ref>
+        <Mod-cc-ref>PP-Module for Bluetooth, version 1.1</Mod-cc-ref>
+        <Mod-cc-ref>PP-Module for Mobile Device Management Agent, version 1.2</Mod-cc-ref>
+        <Mod-cc-ref>cPP-Module for Biometric Enrolment and Verification, version 1.1</Mod-cc-ref>
+      </cc-pp-config-with>
+      <cc-pkg-claim>
+        <AP-cc-ref conf="conformant">Assurance Package for Flaw Remediation Version 1.0</AP-cc-ref>
+        <FP-cc-ref conf="conformant">Functional Package for Transport Layer Security Version 2.1</FP-cc-ref>
+        <FP-cc-ref conf="conformant">Functional Package for X.509 Version 1.0</FP-cc-ref>
+      </cc-pkg-claim>
     </CClaimsInfo>
   </sec:Conformance_Claims>
   <!-- 3.0 Security Problem Definition-->
@@ -1549,7 +1562,7 @@ expected to enforce.<h:br/><h:br/>
             </audit-event>
           </f-component>
           <!-- FCS_CKM_EXT.2 Cryptographic Key Storage -->
-          <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage">
+          <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage" notnew="true">
             <consistency-rationale>This PP-Module adds a requirement for key storage, which is new
               functionality when compared to the Base-PP but does not interfere
               with its existing security functions.</consistency-rationale>
@@ -2868,6 +2881,9 @@ that is logically distinct from other communication channels and provides assure
 				operation of the TSF.
             </title>
             <aactivity level="component">
+              
+              Except for where it is explicitly noted, the evaluator is expected to check the following information
+		regardless of whether the functionality is implemented by the TOE or by the TOE platform.<h:br/><h:br/>
               <TSS>The evaluator shall examine the TSS to ensure that it details the self-tests that are run by the TSF on
 		      startup; this description should include an outline of what the tests are actually doing (e.g., rather than saying
 		"memory is tested," a description similar to "memory is tested by writing a value to each memory location
