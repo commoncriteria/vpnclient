@@ -472,8 +472,8 @@ expected to enforce.<h:br/><h:br/>
       <!-- 5.1.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="os-m-fcs">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="modsfr-os-fcs-ckm-1" title="">
+          <!-- FCS_CKM.1 Cryptographic Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="modsfr-os-fcs-ckm-1" title="Cryptographic Key Generation">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client
               requirements; the SFR behavior itself is unmodified.
@@ -518,8 +518,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="modsfr-os-fcs-ckm-2" title="">
+          <!-- FCS_CKM.2 Cryptographic Key Establishment -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="modsfr-os-fcs-ckm-2" title="Cryptographic Key Establishment">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
@@ -556,8 +556,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="modsfr-os-fcs-cop-1-encrypt" title="">
+          <!-- FCS_COP.1/ENCRYPT Cryptographic Operation - Encryption/Decryption -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="modsfr-os-fcs-cop-1-encrypt" title="Cryptographic Operation - Encryption/Decryption" iteration="ENCRYPT">
             <consistency-rationale>
               The SFR is refined to mandate AES modes that must be supported to address VPN 
               client requirements; the use of these modes for VPN connectivity does not impact the ability 
@@ -900,8 +900,8 @@ expected to enforce.<h:br/><h:br/>
       <!-- 5.2.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="md-m-fcs">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fcs-ckm-1" title="">
+          <!-- FCS_CKM.1 Cryptographic Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="mdf-fcs-ckm-1" title="Cryptographic Key Generation">
             <consistency-rationale>
                     The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
                   </consistency-rationale>
@@ -931,8 +931,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fcs-ckm-2-unlocked" title="">
+          <!-- FCS_CKM.2/UNLOCKED Cryptographic Key Establishment (When Unlocked) -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="mdf-fcs-ckm-2-unlocked" title="Cryptographic Key Establishment (When Unlocked)" iteration="UNLOCKED">
             <consistency-rationale>
                     The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
                   </consistency-rationale>
@@ -964,8 +964,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fcs-cop-1-encrypt" title="">
+          <!-- FCS_COP.1/ENCRYPT Cryptographic Operation -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="mdf-fcs-cop-1-encrypt" title="Cryptographic Operation" iteration="ENCRYPT">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -995,8 +995,8 @@ expected to enforce.<h:br/><h:br/>
           </base-sfr-spec>
         </section>
         <section title="User Data Protection (FDP)" id="md-m-fdp">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fdp-ifc-ext-1" title="">
+          <!-- FDP_IFC_EXT.1 Subset Information Flow Control -->
+          <base-sfr-spec cc-id="fdp_ifc_ext.1" id="mdf-fdp-ifc-ext-1" title="Subset Information Flow Control">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1035,8 +1035,8 @@ expected to enforce.<h:br/><h:br/>
           </base-sfr-spec>
         </section>
         <section title="Security Management (FMT)" id="md-m-fmt">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fmt-smf-ext-1" title="">
+          <!-- FMT_SMF_EXT.1 Specification of Management Functions -->
+          <base-sfr-spec cc-id="fmt_smf_ext.1" id="mdf-fmt-smf-ext-1" title="Specification of Management Functions">
             <consistency-rationale>
               This PP-Module modifies the management function regarding Always-on VPN protection.
             </consistency-rationale>
@@ -1053,8 +1053,8 @@ expected to enforce.<h:br/><h:br/>
           </base-sfr-spec>
         </section>
         <section title="Trusted Path/Channels (FTP)" id="md-m-ftp">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-ftp-itc-ext-1" title="">
+          <!-- FTP_ITC_EXT.1 Trusted Channel Communication -->
+          <base-sfr-spec cc-id="ftp_itc_ext.1" id="mdf-ftp-itc-ext-1" title="Trusted Channel Communication">
             <consistency-rationale>
               This PP-Module adds IPsec as a new protocol that is used to implement trusted channels.
             </consistency-rationale>
@@ -1250,8 +1250,8 @@ expected to enforce.<h:br/><h:br/>
       <!-- 5.3.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="ap-m-fcs">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-fcs-ckm-1" title="">
+          <!-- FCS_CKM.1/AK Cryptographic Asymmetric Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="app-fcs-ckm-1" title="Cryptographic Asymmetric Key Generation" iteration="AK">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
@@ -1309,8 +1309,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-fcs-ckm-2" title="">
+          <!-- FCS_CKM.2 Cryptographic Key Establishment -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="app-fcs-ckm-2" title="Cryptographic Key Establishment">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements and is modified to include DH group 14 as an additional supported method for key
@@ -1346,8 +1346,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-fcs-ckm-ext-1" title="">
+          <!-- FCS_CKM_EXT.1 Cryptographic Key Generation Services -->
+          <base-sfr-spec cc-id="fcs_ckm_ext.1" id="app-fcs-ckm-ext-1" title="Cryptographic Key Generation Services">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; specifically, since key generation
@@ -1382,8 +1382,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-fcs-cop-1-skc" title="">
+          <!-- FCS_COP.1/SKC Cryptographic Operation - Encryption/Decryption -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="app-fcs-cop-1-skc" title="Cryptographic Operation - Encryption/Decryption" iteration="SKC">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
@@ -1417,8 +1417,8 @@ expected to enforce.<h:br/><h:br/>
           </base-sfr-spec>
         </section>
         <section title="Trusted Path/Channels" id="ap-m-ftp">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-ftp-dit-ext-1" title="">
+          <!-- FTP_DIT_EXT.1 Protection of Data in Transit -->
+          <base-sfr-spec cc-id="ftp_dit_ext.1" id="app-ftp-dit-ext-1" title="Protection of Data in Transit">
             <consistency-rationale>
               This PP-Module requires the existing selection of IPsec to be chosen to satisfy the dependency on this PP-Module
             </consistency-rationale>
@@ -1703,8 +1703,8 @@ expected to enforce.<h:br/><h:br/>
       <!-- 5.4.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="mdm-m-fcs">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-fcs-ckm-1" title="">
+          <!-- FCS_CKM.1 Cryptographic Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="mdm-fcs-ckm-1" title="Cryptographic Key Generation">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1737,8 +1737,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-fcs-ckm-2" title="">
+          <!-- FCS_CKM.2 Cryptographic Key Establishment -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="mdm-fcs-ckm-2" title="Cryptographic Key Establishment">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1764,8 +1764,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-fcs-cop-1-conf-alg" title="">
+          <!-- FCS_COP.1/CONF_ALG Cryptographic Operation (Confidentiality Algorithms) -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="mdm-fcs-cop-1-conf-alg" title="Cryptographic Operation (Confidentiality Algorithms)" iteration="CONF_ALG">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1792,8 +1792,8 @@ expected to enforce.<h:br/><h:br/>
           </base-sfr-spec>
         </section>
         <section title="Protection of the TSF (FPT)" id="mdm-m-fpt">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-fpt-itt-1-inter-xfer" title="">
+          <!-- FPT_ITT.1/INTER_XFER Internal TOE TSF Data Transfer -->
+          <base-sfr-spec cc-id="fpt_itt.1" id="mdm-fpt-itt-1-inter-xfer" title="Internal TOE TSF Data Transfer" iteration="INTER_XFER">
             <consistency-rationale>
               When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client. This is done by forcing the ST author to make specific selections that are already present in the MDM PP definition of the SFR; no new behavior is introduced by this.
             </consistency-rationale>
@@ -1832,8 +1832,8 @@ expected to enforce.<h:br/><h:br/>
           </base-sfr-spec>
         </section>
         <section title="Trusted Path/Channels (FTP)" id="mdm-m-ftp">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-ftp-itc-1-inter-xfer-it" title="">
+          <!-- FTP_ITC.1/INTER_XFER_IT Inter-TSF Trusted Channel (Authorized IT Entities) -->
+          <base-sfr-spec cc-id="ftp_itc.1" id="mdm-ftp-itc-1-inter-xfer-it" title="Inter-TSF Trusted Channel (Authorized IT Entities)" iteration="INTER_XFER_IT">
             <consistency-rationale>
               When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client at minimum. This is done by forcing the ST author to make a specific selection that is already present in the MDM PP definition of the SFR and by removing a selection option; no new behavior is introduced by this.
             </consistency-rationale>
@@ -1900,8 +1900,8 @@ that is logically distinct from other communication channels and provides assure
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-ftp-trp-1-trustpath-rem-admin" title="">
+          <!-- FTP_TRP.1/TRUSTPATH_REM_ADMIN Trusted Path (for Remote Administration) -->
+          <base-sfr-spec cc-id="ftp_trp.1" id="mdm-ftp-trp-1-trustpath-rem-admin" title="Trusted Path (for Remote Administration)" iteration="TRUSTPATH_REM_ADMIN">
             <consistency-rationale>
               When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client at minimum. This is done by forcing the ST author to make a specific selection that is already present in the MDM PP definition of the SFR and by removing a selection option; no new behavior is introduced by this.
             </consistency-rationale>
