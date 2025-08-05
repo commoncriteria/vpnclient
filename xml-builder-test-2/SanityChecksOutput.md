@@ -188,8 +188,6 @@
 * Warning: fau_gen.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]""/f-component[1]""
 * Warning: Since FCS_CKM_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
-* Warning: Since FCS_CKM_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
 * Warning: Since FCS_IPSEC_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
 * Warning: Since FCS_IPSEC_EXT.1.5 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
