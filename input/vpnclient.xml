@@ -490,8 +490,8 @@ expected to enforce.<h:br/><h:br/>
       <!-- 5.1.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="os-m-fcs">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="modsfr-os-fcs-ckm-1" title="">
+          <!-- FCS_CKM.1 Cryptographic Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="modsfr-os-fcs-ckm-1" title="Cryptographic Key Generation">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client
               requirements; the SFR behavior itself is unmodified.
@@ -536,8 +536,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="modsfr-os-fcs-ckm-2" title="">
+          <!-- FCS_CKM.2 Cryptographic Key Establishment -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="modsfr-os-fcs-ckm-2" title="Cryptographic Key Establishment">
             <consistency-rationale>The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
@@ -574,8 +574,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="modsfr-os-fcs-cop-1-encrypt" title="">
+          <!-- FCS_COP.1/ENCRYPT Cryptographic Operation - Encryption/Decryption -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="modsfr-os-fcs-cop-1-encrypt" title="Cryptographic Operation - Encryption/Decryption" iteration="ENCRYPT">
             <consistency-rationale>
               The SFR is refined to mandate AES modes that must be supported to address VPN 
               client requirements; the use of these modes for VPN connectivity does not impact the ability 
@@ -622,8 +622,8 @@ expected to enforce.<h:br/><h:br/>
             <fam-behavior>Components in this family describe requirements for key management functionality such as key
 		storage and destruction.</fam-behavior>
           </ext-comp-def>
-          <!-- undefined Cryptographic Key Storage -->
-          <f-component cc-id="" id="os-fcs-ckm-ext-2" name="Cryptographic Key Storage">
+          <!-- FCS_CKM_EXT.2 Cryptographic Key Storage -->
+          <f-component cc-id="fcs_ckm_ext.2" id="os-fcs-ckm-ext-2" name="Cryptographic Key Storage">
             <consistency-rationale>Storage of key data related to VPN functionality can be accomplished
               using the same mechanism defined by FCS_STO_EXT.1 in the GPOS PP.</consistency-rationale>
             <comp-lev>requires the TSF to securely store key data when not in use.</comp-lev>
@@ -660,8 +660,8 @@ expected to enforce.<h:br/><h:br/>
             <fam-behavior>Components in this family describe the requirements that pertain to IP traffic and information flow
               through the VPN client.</fam-behavior>
           </ext-comp-def>
-          <!-- undefined X.509 Certificate Use and Management -->
-          <f-component cc-id="" id="os-fia-x509-ext-4" name="X.509 Certificate Use and Management">
+          <!-- FIA_X509_EXT.4 X.509 Certificate Use and Management -->
+          <f-component cc-id="fia_x509_ext.4" id="os-fia-x509-ext-4" name="X.509 Certificate Use and Management">
             <consistency-rationale>This SFR defines additional uses for X.509 certificate functionality that
               do not conflict with those defined in the GPOS PP.</consistency-rationale>
             <comp-lev>requires the TOE to perform X.509 certificate
@@ -739,8 +739,8 @@ expected to enforce.<h:br/><h:br/>
           </f-component>
         </section>
         <section title="Trusted Path/Channels (FTP)" id="os-a-ftp">
-          <!-- undefined Inter-TSF Trusted Channel -->
-          <f-component cc-id="" id="os-ftp-itc-1" name="Inter-TSF Trusted Channel">
+          <!-- FTP_ITC.1 Inter-TSF Trusted Channel -->
+          <f-component cc-id="ftp_itc.1" id="os-ftp-itc-1" name="Inter-TSF Trusted Channel">
             <consistency-rationale>This SFR defines a trusted channel for IPsec, which is added
               functionality that does not prevent the existing OS functions from
               being performed.
@@ -918,8 +918,8 @@ expected to enforce.<h:br/><h:br/>
       <!-- 5.2.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="md-m-fcs">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fcs-ckm-1" title="">
+          <!-- FCS_CKM.1 Cryptographic Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="mdf-fcs-ckm-1" title="Cryptographic Key Generation">
             <consistency-rationale>
                     The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
                   </consistency-rationale>
@@ -949,8 +949,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fcs-ckm-2-unlocked" title="">
+          <!-- FCS_CKM.2/UNLOCKED Cryptographic Key Establishment (When Unlocked) -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="mdf-fcs-ckm-2-unlocked" title="Cryptographic Key Establishment (When Unlocked)" iteration="UNLOCKED">
             <consistency-rationale>
                     The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
                   </consistency-rationale>
@@ -982,8 +982,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fcs-cop-1-encrypt" title="">
+          <!-- FCS_COP.1/ENCRYPT Cryptographic Operation -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="mdf-fcs-cop-1-encrypt" title="Cryptographic Operation" iteration="ENCRYPT">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1013,8 +1013,8 @@ expected to enforce.<h:br/><h:br/>
           </base-sfr-spec>
         </section>
         <section title="User Data Protection (FDP)" id="md-m-fdp">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fdp-ifc-ext-1" title="">
+          <!-- FDP_IFC_EXT.1 Subset Information Flow Control -->
+          <base-sfr-spec cc-id="fdp_ifc_ext.1" id="mdf-fdp-ifc-ext-1" title="Subset Information Flow Control">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1053,8 +1053,8 @@ expected to enforce.<h:br/><h:br/>
           </base-sfr-spec>
         </section>
         <section title="Security Management (FMT)" id="md-m-fmt">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-fmt-smf-ext-1" title="">
+          <!-- FMT_SMF_EXT.1 Specification of Management Functions -->
+          <base-sfr-spec cc-id="fmt_smf_ext.1" id="mdf-fmt-smf-ext-1" title="Specification of Management Functions">
             <consistency-rationale>
               This PP-Module modifies the management function regarding Always-on VPN protection.
             </consistency-rationale>
@@ -1071,8 +1071,8 @@ expected to enforce.<h:br/><h:br/>
           </base-sfr-spec>
         </section>
         <section title="Trusted Path/Channels (FTP)" id="md-m-ftp">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdf-ftp-itc-ext-1" title="">
+          <!-- FTP_ITC_EXT.1 Trusted Channel Communication -->
+          <base-sfr-spec cc-id="ftp_itc_ext.1" id="mdf-ftp-itc-ext-1" title="Trusted Channel Communication">
             <consistency-rationale>
               This PP-Module adds IPsec as a new protocol that is used to implement trusted channels.
             </consistency-rationale>
@@ -1129,8 +1129,8 @@ expected to enforce.<h:br/><h:br/>
             <fam-behavior>Components in this family describe the requirements that pertain to IP traffic and information flow
               through the VPN client.</fam-behavior>
           </ext-comp-def>
-          <!-- undefined Split Tunnel Prevention -->
-          <f-component cc-id="" id="fdp-vpn-ext-1" name="Split Tunnel Prevention">
+          <!-- FDP_VPN_EXT.1 Split Tunnel Prevention -->
+          <f-component cc-id="fdp_vpn_ext.1" id="fdp-vpn-ext-1" name="Split Tunnel Prevention">
             <consistency-rationale/>
             <comp-lev>requires the TSF to process all IP traffic through its VPN client
               functionality.</comp-lev>
@@ -1268,8 +1268,8 @@ expected to enforce.<h:br/><h:br/>
       <!-- 5.3.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="ap-m-fcs">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-fcs-ckm-1" title="">
+          <!-- FCS_CKM.1/AK Cryptographic Asymmetric Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="app-fcs-ckm-1" title="Cryptographic Asymmetric Key Generation" iteration="AK">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
@@ -1327,8 +1327,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-fcs-ckm-2" title="">
+          <!-- FCS_CKM.2 Cryptographic Key Establishment -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="app-fcs-ckm-2" title="Cryptographic Key Establishment">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements and is modified to include DH group 14 as an additional supported method for key
@@ -1364,8 +1364,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-fcs-ckm-ext-1" title="">
+          <!-- FCS_CKM_EXT.1 Cryptographic Key Generation Services -->
+          <base-sfr-spec cc-id="fcs_ckm_ext.1" id="app-fcs-ckm-ext-1" title="Cryptographic Key Generation Services">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; specifically, since key generation
@@ -1400,8 +1400,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-fcs-cop-1-skc" title="">
+          <!-- FCS_COP.1/SKC Cryptographic Operation - Encryption/Decryption -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="app-fcs-cop-1-skc" title="Cryptographic Operation - Encryption/Decryption" iteration="SKC">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to
               address VPN client requirements; the SFR behavior itself is
@@ -1435,8 +1435,8 @@ expected to enforce.<h:br/><h:br/>
           </base-sfr-spec>
         </section>
         <section title="Trusted Path/Channels" id="ap-m-ftp">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="app-ftp-dit-ext-1" title="">
+          <!-- FTP_DIT_EXT.1 Protection of Data in Transit -->
+          <base-sfr-spec cc-id="ftp_dit_ext.1" id="app-ftp-dit-ext-1" title="Protection of Data in Transit">
             <consistency-rationale>
               This PP-Module requires the existing selection of IPsec to be chosen to satisfy the dependency on this PP-Module
             </consistency-rationale>
@@ -1475,8 +1475,8 @@ expected to enforce.<h:br/><h:br/>
           <audit-table id="app-additional" table="tab-app-additional" title="Auditable Events for App PP Additional SFRs"> </audit-table>
         </section>
         <section title="Cryptographic Support (FCS)" id="ap-a-fcs">
-          <!-- undefined Cryptographic Key Destruction -->
-          <f-component cc-id="" id="ap-fcs-ckm-6" name="Cryptographic Key Destruction">
+          <!-- FCS_CKM.6 Cryptographic Key Destruction -->
+          <f-component cc-id="fcs_ckm.6" id="ap-fcs-ckm-6" name="Cryptographic Key Destruction">
             <consistency-rationale>This PP-Module adds a requirement for key destruction, which is new
               functionality when compared to the Base-PP but does not interfere
               with its existing security functions.</consistency-rationale>
@@ -1564,8 +1564,8 @@ expected to enforce.<h:br/><h:br/>
               <audit-event-info>Identification of key.</audit-event-info>
             </audit-event>
           </f-component>
-          <!-- undefined Cryptographic Key Storage -->
-          <f-component cc-id="" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage" notnew="true">
+          <!-- FCS_CKM_EXT.2 Cryptographic Key Storage -->
+          <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage" notnew="true">
             <consistency-rationale>This PP-Module adds a requirement for key storage, which is new
               functionality when compared to the Base-PP but does not interfere
               with its existing security functions.</consistency-rationale>
@@ -1721,8 +1721,8 @@ expected to enforce.<h:br/><h:br/>
       <!-- 5.4.1 Modified SFRs -->
       <modified-sfrs>
         <section title="Cryptographic Support (FCS)" id="mdm-m-fcs">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-fcs-ckm-1" title="">
+          <!-- FCS_CKM.1 Cryptographic Key Generation -->
+          <base-sfr-spec cc-id="fcs_ckm.1" id="mdm-fcs-ckm-1" title="Cryptographic Key Generation">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1755,8 +1755,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-fcs-ckm-2" title="">
+          <!-- FCS_CKM.2 Cryptographic Key Establishment -->
+          <base-sfr-spec cc-id="fcs_ckm.2" id="mdm-fcs-ckm-2" title="Cryptographic Key Establishment">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1782,8 +1782,8 @@ expected to enforce.<h:br/><h:br/>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-fcs-cop-1-conf-alg" title="">
+          <!-- FCS_COP.1/CONF_ALG Cryptographic Operation (Confidentiality Algorithms) -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="mdm-fcs-cop-1-conf-alg" title="Cryptographic Operation (Confidentiality Algorithms)" iteration="CONF_ALG">
             <consistency-rationale>
               The ST author is instructed to make specific selections at minimum to address VPN client requirements; the SFR behavior itself is unmodified.
             </consistency-rationale>
@@ -1810,8 +1810,8 @@ expected to enforce.<h:br/><h:br/>
           </base-sfr-spec>
         </section>
         <section title="Protection of the TSF (FPT)" id="mdm-m-fpt">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-fpt-itt-1-inter-xfer" title="">
+          <!-- FPT_ITT.1/INTER_XFER Internal TOE TSF Data Transfer -->
+          <base-sfr-spec cc-id="fpt_itt.1" id="mdm-fpt-itt-1-inter-xfer" title="Internal TOE TSF Data Transfer" iteration="INTER_XFER">
             <consistency-rationale>
               When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client. This is done by forcing the ST author to make specific selections that are already present in the MDM PP definition of the SFR; no new behavior is introduced by this.
             </consistency-rationale>
@@ -1850,8 +1850,8 @@ expected to enforce.<h:br/><h:br/>
           </base-sfr-spec>
         </section>
         <section title="Trusted Path/Channels (FTP)" id="mdm-m-ftp">
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-ftp-itc-1-inter-xfer-it" title="">
+          <!-- FTP_ITC.1/INTER_XFER_IT Inter-TSF Trusted Channel (Authorized IT Entities) -->
+          <base-sfr-spec cc-id="ftp_itc.1" id="mdm-ftp-itc-1-inter-xfer-it" title="Inter-TSF Trusted Channel (Authorized IT Entities)" iteration="INTER_XFER_IT">
             <consistency-rationale>
               When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client at minimum. This is done by forcing the ST author to make a specific selection that is already present in the MDM PP definition of the SFR and by removing a selection option; no new behavior is introduced by this.
             </consistency-rationale>
@@ -1918,8 +1918,8 @@ that is logically distinct from other communication channels and provides assure
               </xpath-specified>
             </replace>
           </base-sfr-spec>
-          <!-- undefined undefined -->
-          <base-sfr-spec cc-id="" id="mdm-ftp-trp-1-trustpath-rem-admin" title="">
+          <!-- FTP_TRP.1/TRUSTPATH_REM_ADMIN Trusted Path (for Remote Administration) -->
+          <base-sfr-spec cc-id="ftp_trp.1" id="mdm-ftp-trp-1-trustpath-rem-admin" title="Trusted Path (for Remote Administration)" iteration="TRUSTPATH_REM_ADMIN">
             <consistency-rationale>
               When this SFR relates to the PP-Module’s functionality, the ST author is instructed to make specific selections to implement this behavior using the VPN client at minimum. This is done by forcing the ST author to make a specific selection that is already present in the MDM PP definition of the SFR and by removing a selection option; no new behavior is introduced by this.
             </consistency-rationale>
@@ -2061,8 +2061,8 @@ that is logically distinct from other communication channels and provides assure
         <ext-comp-def title="IPsec" fam-id="FCS_IPSEC_EXT">
           <fam-behavior>Components in this family describe requirements for IPsec implementation.</fam-behavior>
         </ext-comp-def>
-        <!-- undefined/VPN VPN Cryptographic Key Generation (IKE) -->
-        <f-component cc-id="" id="fcs-ckm-1-vpn" name="VPN Cryptographic Key Generation (IKE)" iteration="VPN">
+        <!-- FCS_CKM.1/VPN VPN Cryptographic Key Generation (IKE) -->
+        <f-component cc-id="fcs_ckm.1" id="fcs-ckm-1-vpn" name="VPN Cryptographic Key Generation (IKE)" iteration="VPN">
           <consistency-rationale/>
           <f-element id="fcs-ckm-1e1i1">
             <title>
@@ -2096,8 +2096,8 @@ that is logically distinct from other communication channels and provides assure
           </f-element>
           <audit-event table="atref-mandatory"/>
         </f-component>
-        <!-- undefined IPsec -->
-        <f-component cc-id="" id="fcs-ipsec-ext-1" name="IPsec">
+        <!-- FCS_IPSEC_EXT.1 IPsec -->
+        <f-component cc-id="fcs_ipsec_ext.1" id="fcs-ipsec-ext-1" name="IPsec">
           <consistency-rationale/>
           <comp-lev>requires the TSF to securely implement the IPsec protocol.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Specify VPN gateways to use for connections</h:li> <h:li>Specify IPsec VPN clients to use for connections</h:li> <h:li>Specify IPsec-capable network devices to use for connections</h:li> <h:li>Specify client credentials to be used for connections</h:li></h:ul></management>
@@ -2765,8 +2765,8 @@ that is logically distinct from other communication channels and provides assure
       </section>
       <!-- 5.5.2 User Data Protection (FDP) -->
       <section title="User Data Protection (FDP)" id="fdp">
-        <!-- undefined Full Residual Information Protection -->
-        <f-component cc-id="" id="fdp-rip-2" name="Full Residual Information Protection">
+        <!-- FDP_RIP.2 Full Residual Information Protection -->
+        <f-component cc-id="fdp_rip.2" id="fdp-rip-2" name="Full Residual Information Protection">
           <consistency-rationale/>
           <f-element id="fdp-rip-2e1">
             <title> The  <h:b> <selectables onlyone="yes"><selectable id="fdp_rip.2.1_1" >TOE</selectable><selectable id="fdp_rip.2.1_2" >TOE platform</selectable> </selectables> </h:b>  
@@ -2807,8 +2807,8 @@ that is logically distinct from other communication channels and provides assure
 	The client itself has to be configurable - whether it is from the EUD or from a VPN gateway.
 
 		
-        <!-- undefined/VPN Specification of Management Functions (VPN) -->
-        <f-component cc-id="" id="fmt-smf-1-vpn" name="Specification of Management Functions (VPN)" iteration="VPN">
+        <!-- FMT_SMF.1/VPN Specification of Management Functions (VPN) -->
+        <f-component cc-id="fmt_smf.1" id="fmt-smf-1-vpn" name="Specification of Management Functions (VPN)" iteration="VPN">
           <consistency-rationale/>
           <f-element id="fmt-smf-1e1-vpn">
             <title> The TSF shall be capable of performing the following management functions: 
@@ -2846,8 +2846,8 @@ that is logically distinct from other communication channels and provides assure
         <ext-comp-def title="TSF Self-Test" fam-id="FPT_TST_EXT">
           <fam-behavior>Components in this family describe requirements for self-test to verify functionality and integrity of the TOE.</fam-behavior>
         </ext-comp-def>
-        <!-- undefined TSF Self-Test -->
-        <f-component cc-id="" id="fpt-tst-ext-1" name="TSF Self-Test" status="invisible">
+        <!-- FPT_TST_EXT.1 TSF Self-Test -->
+        <f-component cc-id="fpt_tst_ext.1" id="fpt-tst-ext-1" name="TSF Self-Test" status="invisible">
           <consistency-rationale/>
           <comp-lev>requires the TOE to perform power on self-tests to verify its functionality and
             the integrity of its stored executable code.</comp-lev>
@@ -2875,8 +2875,8 @@ that is logically distinct from other communication channels and provides assure
             </title>
           </f-element>
         </f-component>
-        <!-- undefined/VPN TSF Self-Test -->
-        <f-component cc-id="" id="fpt-tst-ext-1-vpn" name="TSF Self-Test" iteration="VPN">
+        <!-- FPT_TST_EXT.1/VPN TSF Self-Test -->
+        <f-component cc-id="fpt_tst_ext.1" id="fpt-tst-ext-1-vpn" name="TSF Self-Test" iteration="VPN">
           <consistency-rationale/>
           <f-element id="fpt-tst-ext-1e1-vpn">
             <title>
@@ -2886,6 +2886,9 @@ that is logically distinct from other communication channels and provides assure
 				operation of the TSF.
             </title>
             <aactivity level="component">
+              
+              Except for where it is explicitly noted, the evaluator is expected to check the following information
+		regardless of whether the functionality is implemented by the TOE or by the TOE platform.<h:br/><h:br/>
               <TSS>The evaluator shall examine the TSS to ensure that it details the self-tests that are run by the TSF on
 		      startup; this description should include an outline of what the tests are actually doing (e.g., rather than saying
 		"memory is tested," a description similar to "memory is tested by writing a value to each memory location
@@ -2960,8 +2963,8 @@ that is logically distinct from other communication channels and provides assure
         <ext-comp-def title="Biometric Activation" fam-id="FIA_BMA_EXT">
           <fam-behavior>Components in this family describe the requirements for biometrics when using the VPN client.</fam-behavior>
         </ext-comp-def>
-        <!-- undefined Biometric Activation -->
-        <f-component cc-id="" id="fia-bma-ext-1" name="Biometric Activation">
+        <!-- FIA_BMA_EXT.1 Biometric Activation -->
+        <f-component cc-id="fia_bma_ext.1" id="fia-bma-ext-1" name="Biometric Activation">
           <depends>
             <optional/>
           </depends>
@@ -2995,8 +2998,8 @@ that is logically distinct from other communication channels and provides assure
         <ext-comp-def title="Multifactor Authentication Filtering" fam-id="FPF_MFA_EXT">
           <fam-behavior>Components in this family describe the requirements for multifactor authentication filtering when using the VPN client.</fam-behavior>
         </ext-comp-def>
-        <!-- undefined Multifactor Authentication Filtering -->
-        <f-component cc-id="" id="fpf-mfa-ext-1" name="Multifactor Authentication Filtering">
+        <!-- FPF_MFA_EXT.1 Multifactor Authentication Filtering -->
+        <f-component cc-id="fpf_mfa_ext.1" id="fpf-mfa-ext-1" name="Multifactor Authentication Filtering">
           <depends>
             <optional/>
           </depends>
@@ -3041,8 +3044,8 @@ that is logically distinct from other communication channels and provides assure
         <ext-comp-def title="EAP-TLS" fam-id="FCS_EAP_EXT">
           <fam-behavior>Components in this family describe the requirements for EAP-TLS.</fam-behavior>
         </ext-comp-def>
-        <!-- undefined EAP-TLS -->
-        <f-component cc-id="" id="fcs-eap-ext-1" name="EAP-TLS">
+        <!-- FCS_EAP_EXT.1 EAP-TLS -->
+        <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS">
           <depends on-sel="sel-ipsec-e11-eapttls"/>
           <depends on-sel="sel-ipsec-e11-eaptls"/>
           <consistency-rationale/>
@@ -3119,8 +3122,8 @@ that is logically distinct from other communication channels and provides assure
         <ext-comp-def title="Pre-Shared Key Composition" fam-id="FIA_PSK_EXT">
           <fam-behavior>Components in this family describe the requirements for pre-shared keys when implementing IPsec.</fam-behavior>
         </ext-comp-def>
-        <!-- undefined Pre-Shared Key Composition -->
-        <f-component cc-id="" id="fia-psk-ext-1" name="Pre-Shared Key Composition">
+        <!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
+        <f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition">
           <depends on-fcomp="fpf-mfa-ext-1"/>
           <depends on-sel="sel-ipsec-e11-psk"/>
           <depends on-sel="sel-ipsec-e11-eapttls"/>
@@ -3175,8 +3178,8 @@ that is logically distinct from other communication channels and provides assure
           </f-element>
           <audit-event table="sel-based"/>
         </f-component>
-        <!-- undefined Generated Pre-Shared Keys -->
-        <f-component cc-id="" id="fia-psk-ext-2" name="Generated Pre-Shared Keys">
+        <!-- FIA_PSK_EXT.2 Generated Pre-Shared Keys -->
+        <f-component cc-id="fia_psk_ext.2" id="fia-psk-ext-2" name="Generated Pre-Shared Keys">
           <depends on-sel="pskgen"/>
           <depends on-sel="pskgenhotp"/>
           <depends on-sel="pskgentotp"/>
@@ -3210,8 +3213,8 @@ that is logically distinct from other communication channels and provides assure
           </f-element>
           <audit-event table="sel-based"/>
         </f-component>
-        <!-- undefined Password-Based Pre-Shared Keys -->
-        <f-component cc-id="" id="fia-psk-ext-3" name="Password-Based Pre-Shared Keys">
+        <!-- FIA_PSK_EXT.3 Password-Based Pre-Shared Keys -->
+        <f-component cc-id="fia_psk_ext.3" id="fia-psk-ext-3" name="Password-Based Pre-Shared Keys">
           <depends on-sel="pskpw"/>
           <depends on-sel="pskpwhotp"/>
           <depends on-sel="pskpwtotp"/>
@@ -3332,8 +3335,8 @@ that is logically distinct from other communication channels and provides assure
           </f-element>
           <audit-event table="sel-based"/>
         </f-component>
-        <!-- undefined HMAC-Based One-Time Password Pre-shared Keys Support -->
-        <f-component cc-id="" id="fia-psk-ext-4" name="HMAC-Based One-Time Password Pre-shared Keys Support">
+        <!-- FIA_PSK_EXT.4 HMAC-Based One-Time Password Pre-shared Keys Support -->
+        <f-component cc-id="fia_psk_ext.4" id="fia-psk-ext-4" name="HMAC-Based One-Time Password Pre-shared Keys Support">
           <depends on-sel="pskhotp"/>
           <depends on-sel="pskgenhotp"/>
           <depends on-sel="pskpwhotp"/>
@@ -3368,8 +3371,8 @@ that is logically distinct from other communication channels and provides assure
           </f-element>
           <audit-event table="sel-based"/>
         </f-component>
-        <!-- undefined Time-Based One-Time Password Pre-shared Keys Support -->
-        <f-component cc-id="" id="fia-psk-ext-5" name="Time-Based One-Time Password Pre-shared Keys Support">
+        <!-- FIA_PSK_EXT.5 Time-Based One-Time Password Pre-shared Keys Support -->
+        <f-component cc-id="fia_psk_ext.5" id="fia-psk-ext-5" name="Time-Based One-Time Password Pre-shared Keys Support">
           <depends on-sel="psktotp"/>
           <depends on-sel="pskgentotp"/>
           <depends on-sel="pskpwtotp"/>
@@ -3410,8 +3413,8 @@ that is logically distinct from other communication channels and provides assure
       </section>
       <!-- 5.5.9 Security Audit (FAU) -->
       <section title="Security Audit (FAU)" id="fau">
-        <!-- undefined/VPN Selective Audit -->
-        <f-component cc-id="" id="fau-sel-1-vpn" name="Selective Audit" iteration="VPN">
+        <!-- FAU_SEL.1/VPN Selective Audit -->
+        <f-component cc-id="fau_sel.1" id="fau-sel-1-vpn" name="Selective Audit" iteration="VPN">
           <depends>
             <objective/>
           </depends>
@@ -3471,8 +3474,8 @@ that is logically distinct from other communication channels and provides assure
       </section>
       <!-- 5.5.10 Security Audit (FAU) -->
       <section title="Security Audit (FAU)" id="fau">
-        <!-- undefined/VPN Audit Data Generation -->
-        <f-component cc-id="" id="fau-gen-1-vpn" name="Audit Data Generation" iteration="VPN">
+        <!-- FAU_GEN.1/VPN Audit Data Generation -->
+        <f-component cc-id="fau_gen.1" id="fau-gen-1-vpn" name="Audit Data Generation" iteration="VPN">
           <consistency-rationale/>
           <f-element id="fau-gen-1e1-vpn">
             <title>
