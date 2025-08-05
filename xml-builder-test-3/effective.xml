@@ -63,7 +63,7 @@
   </include-pkg>
   <pp-preferences/>
   <sec:Introduction>
-    <sec:Overview><comment>FIA_X509_EXT references to the Base-PPs are now removed and where appropriate the X.509 package is referenced instead. However, it's unclear whether there is still sufficient mechanism to actually 'force' the X.509 SFRs to be included. That is to say, there is nothing in here that says "because IPsec functionality is dependent on X.509 validation, and because the Base-PPs conform to the X.509 FP, the ST shall make the relevant X.509 FP claims."</comment>
+    <sec:Overview><comment>FIA_X509_EXT references to the Base-PPs are now removed and where appropriate the X.509 package is referenced instead. However, it's unclear whether there is still sufficient mechanism to actually 'force' the X.509 SFRs to be included. That is to say, there is nothing in here that says "because IPsec functionality is dependent on X.509 validation, and because the Base-PPs conform to the X.509 FP, the ST shall make the relevant X.509 FP claims." </comment> 
       
       The scope of this Protection Profile Module (PP-Module) is to describe the security functionality of a virtual private network (VPN)
       client in terms of  <xref g="CC"/> and to define functional and assurance requirements for such
@@ -612,7 +612,7 @@ expected to enforce.<h:br/><h:br/>
               using the same mechanism defined by FCS_STO_EXT.1 in the GPOS PP.</consistency-rationale>
             <comp-lev>requires the TSF to securely store key data when not in use.</comp-lev>
             <management>No specific management functions are identified.</management>
-            <audit>There are no auditable events foreseen.</audit>
+            <audit>There are no auditable events foreseen. </audit>
             <dependencies>No dependencies.</dependencies>
             <f-element id="os-fcs-ckm-ext-2e1">
               <title>The  <selectables><selectable id="fcs_ckm_ext.2.1_1">VPN client</selectable><selectable id="fcs_ckm_ext.2.1_2">OS</selectable> </selectables>  shall store persistent secrets and private keys
@@ -652,16 +652,16 @@ expected to enforce.<h:br/><h:br/>
               authentication and describes the behavior that is followed if the status of the certificate is unknown or
               invalid.</comp-lev>
             <management>No specific management functions are identified.</management>
-            <audit>There are no auditable events foreseen.</audit>
-            <dependencies>FIA_X509_EXT.1 X.509 Certificate Validation<h:br/><h:br/><no-link>FPT_TST_EXT.1</no-link> TSF Self-Test<h:br/><h:br/>
+            <audit>There are no auditable events foreseen. </audit>
+            <dependencies>FIA_X509_EXT.1 X.509 Certificate Validation<h:br/><h:br/><no-link>FPT_TST_EXT.1 </no-link>  TSF Self-Test<h:br/><h:br/>
             FPT_TUD_EXT.1 Trusted Update</dependencies>
             <f-element id="os-fia-x509-ext-4e1">
               <title>The TSF shall use X.509v3 certificates as defined by RFC 5280 to support
               authentication for IPsec exchanges, and  <selectables><selectable id="fia_x509_ext.4.1_1">digital signatures for FPT_TUD_EXT.1</selectable><selectable id="fia_x509_ext.4.1_2">integrity checks for FPT_TST_EXT.1</selectable><selectable id="fia_x509_ext.4.1_3" exclusive="yes">no additional uses</selectable> </selectables>.
               </title>
               <aactivity level="element">
-                <no-tests><no-link>FIA_X509_EXT.4.1</no-link> is evaluated as part of <no-link>FCS_IPSEC_EXT.1</no-link> (and
-                  conditionally as part of <no-link>FPT_TUD_EXT.1</no-link> or <no-link>FPT_TST_EXT.1</no-link>).
+                <no-tests><no-link>FIA_X509_EXT.4.1 </no-link>  is evaluated as part of <no-link>FCS_IPSEC_EXT.1 </no-link>  (and
+                  conditionally as part of <no-link>FPT_TUD_EXT.1 </no-link>  or <no-link>FPT_TST_EXT.1 </no-link> ).
                 </no-tests>
               </aactivity>
             </f-element>
@@ -1119,8 +1119,8 @@ expected to enforce.<h:br/><h:br/>
             <comp-lev>requires the TSF to process all IP traffic through its VPN client
               functionality.</comp-lev>
             <management>No specific management functions are identified.</management>
-            <audit>There are no auditable events foreseen.</audit>
-            <dependencies><no-link>FCS_IPSEC_EXT.1</no-link> IPsec</dependencies>
+            <audit>There are no auditable events foreseen. </audit>
+            <dependencies><no-link>FCS_IPSEC_EXT.1 </no-link>  IPsec</dependencies>
             <f-element id="fdp-vpn-ext-1e1">
               <title>
                 The TSF shall ensure that all IP traffic (other than IP traffic required to establish
@@ -1466,7 +1466,7 @@ expected to enforce.<h:br/><h:br/>
               with its existing security functions.</consistency-rationale>
             <comp-lev>requires the TSF to destroy key data when no longer required.</comp-lev>
             <management>No specific management functions are identified.</management>
-            <audit>There are no auditable events foreseen.</audit>
+            <audit>There are no auditable events foreseen. </audit>
             <dependencies>No dependencies.</dependencies>
             <f-element id="ap-fcs-ckm-6e1">
               <title>The  <h:b> <selectables><selectable id="fcs_ckm.6.1_1">TOE</selectable><selectable id="fcs_ckm.6.1_2">TOE platform</selectable> </selectables> </h:b> 
@@ -1555,7 +1555,7 @@ expected to enforce.<h:br/><h:br/>
               with its existing security functions.</consistency-rationale>
             <comp-lev>requires the TSF to securely store key data when not in use.</comp-lev>
             <management>No specific management functions are identified.</management>
-            <audit>There are no auditable events foreseen.</audit>
+            <audit>There are no auditable events foreseen. </audit>
             <dependencies>No dependencies.</dependencies>
             <f-element id="ap-fcs-ckm-ext-2e1">
               <title>The 
@@ -2075,7 +2075,7 @@ that is logically distinct from other communication channels and provides assure
 					invoked.<h:br/><h:br/></TSS>
               <Guidance>
 				  There are no guidance EAs for this requirement.<h:br/><h:br/></Guidance>
-              <Tests>If this functionality is implemented by the TSF, refer to the following EAs, depending on the TOE’s claimed Base-PP: <h:br/> <h:br/> <h:ul><h:li>GPOS PP: <no-link>FCS_CKM.1</no-link></h:li> <h:li>MDF PP: <no-link>FCS_CKM.1</no-link></h:li> <h:li>App PP: <no-link>FCS_CKM.1/AK</no-link></h:li> <h:li>MDM PP: <no-link>FCS_CKM.1</no-link></h:li></h:ul></Tests>
+              <Tests>If this functionality is implemented by the TSF, refer to the following EAs, depending on the TOE’s claimed Base-PP: <h:br/> <h:br/> <h:ul><h:li>GPOS PP: <no-link>FCS_CKM.1 </no-link> </h:li> <h:li>MDF PP: <no-link>FCS_CKM.1 </no-link> </h:li> <h:li>App PP: <no-link>FCS_CKM.1/AK </no-link> </h:li> <h:li>MDM PP: <no-link>FCS_CKM.1 </no-link> </h:li></h:ul></Tests>
             </aactivity>
           </f-element>
           <audit-event table="atref-mandatory"/>
@@ -2085,8 +2085,8 @@ that is logically distinct from other communication channels and provides assure
           <consistency-rationale/>
           <comp-lev>requires the TSF to securely implement the IPsec protocol.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Specify VPN gateways to use for connections</h:li> <h:li>Specify IPsec VPN clients to use for connections</h:li> <h:li>Specify IPsec-capable network devices to use for connections</h:li> <h:li>Specify client credentials to be used for connections</h:li></h:ul></management>
-          <audit>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the PP/ST:<h:ul><h:li>Decisions to DISCARD or BYPASS network packets processed by the TOE</h:li><h:li>Failure to establish an IPsec SA</h:li><h:li>Establishment/Termination of an IPsec SA</h:li></h:ul></audit>
-          <dependencies><no-link>FCS_CKM.1</no-link> Cryptographic Key Generation<h:br/><h:br/><no-link>FCS_CKM.2</no-link> Cryptographic Key Distribution<h:br/><h:br/><no-link>FCS_COP.1</no-link> Cryptographic Operation<h:br/><h:br/></dependencies>
+          <audit>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the PP/ST: <h:ul><h:li>Decisions to DISCARD or BYPASS network packets processed by the TOE </h:li> <h:li>Failure to establish an IPsec SA </h:li> <h:li>Establishment/Termination of an IPsec SA </h:li> </h:ul> </audit>
+          <dependencies><no-link>FCS_CKM.1 </no-link>  Cryptographic Key Generation<h:br/><h:br/><no-link>FCS_CKM.2 </no-link>  Cryptographic Key Distribution<h:br/><h:br/><no-link>FCS_COP.1 </no-link>  Cryptographic Operation<h:br/><h:br/></dependencies>
           <f-element id="fcs-ipsec-ext-1e1">
             <title>The TSF shall implement the IPsec architecture as specified in RFC 4301.
             </title>
@@ -2309,7 +2309,7 @@ that is logically distinct from other communication channels and provides assure
             <title>The TSF shall implement the IPsec protocol ESP as defined by RFC 4303 using the cryptographic algorithms
 				[<h:i>AES-GCM-256 as specified in RFC 4106,</h:i> <selectables><selectable id="fcs_ipsec_ext.1.4_1">AES-CBC-256 (both specified by RFC 3602) with a Secure Hash Algorithm (SHA)-based HMAC</selectable><selectable id="fcs_ipsec_ext.1.4_2" exclusive="yes">no other algorithms</selectable> </selectables> ].
             </title>
-            <ext-comp-def-title><title>The TSF shall implement the IPsec protocol ESP as defined by RFC 4303 using the cryptographic algorithms<assignable>supported cryptographic algorithms</assignable>.</title></ext-comp-def-title>
+            <ext-comp-def-title><title>The TSF shall implement the IPsec protocol ESP as defined by RFC 4303 using the cryptographic algorithms <assignable>supported cryptographic algorithms </assignable> . </title> </ext-comp-def-title>
             <note role="application">
 				If this functionality is configurable, the TSF may be configured by a VPN gateway
 				or by an administrator of the TOE itself.
@@ -2381,7 +2381,7 @@ that is logically distinct from other communication channels and provides assure
 				 <selectables><selectable id="fcs_ipsec_ext.1.6_1">IKEv1</selectable><selectable id="fcs_ipsec_ext.1.6_2">IKEv2</selectable> </selectables>  
 				protocol uses the cryptographic algorithms [<h:i>AES-CBC-256 as specified in RFC 6379 and </h:i> <selectables><selectable id="fcs_ipsec_ext.1.6_3">AES-GCM-256 as specified in RFC 5282</selectable><selectable id="fcs_ipsec_ext.1.6_4" exclusive="yes">no other algorithm</selectable> </selectables> ].
             </title>
-            <ext-comp-def-title><title>The TSF shall ensure the encrypted payload in the<selectables><selectable>IKEv1</selectable><selectable>IKEv2</selectable></selectables>protocol uses the cryptographic algorithms<assignable>supported cryptographic algorithms</assignable>.</title></ext-comp-def-title>
+            <ext-comp-def-title><title>The TSF shall ensure the encrypted payload in the <selectables><selectable>IKEv1 </selectable> <selectable>IKEv2 </selectable> </selectables> protocol uses the cryptographic algorithms <assignable>supported cryptographic algorithms </assignable> . </title> </ext-comp-def-title>
             <note role="application">
 				If this functionality is configurable, the TSF may be configured by a VPN gateway
 				or by an administrator of the TOE itself.
@@ -2476,7 +2476,7 @@ that is logically distinct from other communication channels and provides assure
 				The selection is used to specify additional DH groups supported. This applies to
 				IKEv1 and IKEv2 exchanges. It should be noted that if any additional DH groups
 				are specified, they must comply with the requirements (in terms of the
-				ephemeral keys that are established) listed in <no-link>FCS_CKM.1</no-link>.<h:br/><h:br/>
+				ephemeral keys that are established) listed in <no-link>FCS_CKM.1 </no-link> .<h:br/><h:br/>
 
 				Since the implementation may allow different DH groups to be
 				negotiated for use in forming the SAs, the assignments in FCS_IPSEC_EXT.1.9
@@ -2572,7 +2572,7 @@ that is logically distinct from other communication channels and provides assure
 		The evaluator shall also ensure that the operational guidance includes the configuration of the reference
 		identifiers for the peer.<h:br/><h:br/></Guidance>
               <Tests>
-                For efficiency’s sake, the testing that is performed here has been combined with the testing for <no-link>FIA_X509_EXT.2</no-link> in <xref to="pkg-x509"/> and <no-link>FIA_X509_EXT.4</no-link> (for IPsec connections and depending on the Base-PP), <no-link>FCS_IPSEC_EXT.1.12</no-link> , and <no-link>FCS_IPSEC_EXT.1.13</no-link> . The following tests shall be repeated for each peer authentication protocol selected in the <no-link>FCS_IPSEC_EXT.1.11</no-link> selection above:
+                For efficiency’s sake, the testing that is performed here has been combined with the testing for <no-link>FIA_X509_EXT.2 </no-link>  in <xref to="pkg-x509"/> and <no-link>FIA_X509_EXT.4 </no-link>  (for IPsec connections and depending on the Base-PP), <no-link>FCS_IPSEC_EXT.1.12 </no-link>  , and <no-link>FCS_IPSEC_EXT.1.13 </no-link>  . The following tests shall be repeated for each peer authentication protocol selected in the <no-link>FCS_IPSEC_EXT.1.11 </no-link>  selection above:
                 <testlist>
                   For each supported identifier type (excluding DNs), the evaluator shall repeat the following tests:
                   <test>The evaluator shall have the TOE generate a public-private key pair and submit a CSR (Certificate
@@ -2834,7 +2834,7 @@ that is logically distinct from other communication channels and provides assure
           <comp-lev>requires the TOE to perform power on self-tests to verify its functionality and
             the integrity of its stored executable code.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>There are no auditable events foreseen.</audit>
+          <audit>There are no auditable events foreseen. </audit>
           <dependencies>No dependencies.</dependencies>
           <f-element id="fpt-tst-ext-1e1">
             <title>
@@ -2930,7 +2930,7 @@ that is logically distinct from other communication channels and provides assure
     </man-sfrs>
     <opt-sfrs>
       <section id="sop-audit-table" title="Auditable Events for Strictly Optional SFRs">
-        Entries from<xref to="at-optional"/> must be included for GPOS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any strictly optional SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
+        Entries from <xref to="at-optional"/> must be included for GPOS, MDF, and MDM Base-PPs if the strictly optional SFRs are included in the ST. When the App PP is the Base-PP, if any strictly optional SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
         <audit-table id="at-optional" table="atref-optional" title="Auditable Events for Strictly Optional SFRs"/>
       </section>
       <!-- 5.5.5 Identification and Authentication (FIA) -->
@@ -2950,7 +2950,7 @@ that is logically distinct from other communication channels and provides assure
           <consistency-rationale/>
           <comp-lev>defines the use of biometrics when using the VPN client.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.</audit>
+          <audit>No specific audit functions are identified. </audit>
           <f-element id="fia-bma-ext-1e1">
             <title>
               The TSF shall leverage the platform biometric features to confirm the user before initiating a trusted channel.
@@ -2985,7 +2985,7 @@ that is logically distinct from other communication channels and provides assure
           <consistency-rationale/>
           <comp-lev>defines the use and composition of multifactor authentication filtering.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.</audit>
+          <audit>No specific audit functions are identified. </audit>
           <f-element id="fpf-mfa-ext-1e1">
             <title>
             The TSF shall not forward packets to the internal network until the IKE/IPsec tunnel has been established, 
@@ -3015,7 +3015,7 @@ that is logically distinct from other communication channels and provides assure
     </opt-sfrs>
     <sel-sfrs>
       <section id="sb-audit-table" title="Auditable Events for Selection-based SFRs">
-        Entries from<xref to="at-sel-based"/> must be included for GPOS, MDF, and MDM Base-PPs if the selection-based SFRs are included in the ST. When the App PP is the Base-PP, if any selection-based SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
+        Entries from <xref to="at-sel-based"/> must be included for GPOS, MDF, and MDM Base-PPs if the selection-based SFRs are included in the ST. When the App PP is the Base-PP, if any selection-based SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
         <audit-table id="at-sel-based" table="sel-based" title="Auditable Events for Selection-Based SFRs"/>
       </section>
       <!-- 5.5.7 Cryptographic Support (FCS) -->
@@ -3030,15 +3030,15 @@ that is logically distinct from other communication channels and provides assure
           <consistency-rationale/>
           <comp-lev>defines the use of EAP-TLS.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.</audit>
-          <dependencies><no-link>FCS_IPSEC_EXT.1</no-link> IPsec</dependencies>
+          <audit>No specific audit functions are identified. </audit>
+          <dependencies><no-link>FCS_IPSEC_EXT.1 </no-link>  IPsec</dependencies>
           <f-element id="fcs-eap-ext-1e1">
             <title>
               The TSF shall support
                <selectables><selectable id="fcs_eap_ext.1.1_1">EAP-TLS as specified in RFC 5216 and updated by RFC 8996</selectable><selectable id="fcs_eap_ext.1.1_2">EAP-TTLS as specified in RFC 5281 and updated by RFC 8996</selectable> </selectables> 
               over a protected channel <h:b>per the Base-PP</h:b> with an authentication server. 
             </title>
-            <ext-comp-def-title><title>The TSF shall support<selectables><selectable>EAP-TLS as specified in RFC 5216 and updated by RFC 8996</selectable><selectable>EAP-TTLS as specified in RFC 5281 and updated by RFC 8996</selectable></selectables>over a protected channel per the Base-PP with an authentication server.</title></ext-comp-def-title>
+            <ext-comp-def-title><title>The TSF shall support <selectables><selectable>EAP-TLS as specified in RFC 5216 and updated by RFC 8996 </selectable> <selectable>EAP-TTLS as specified in RFC 5281 and updated by RFC 8996 </selectable> </selectables> over a protected channel per the Base-PP with an authentication server. </title> </ext-comp-def-title>
             <aactivity level="component">
               <TSS>The evaluator shall verify that the TSS describes the use of EAP options for each of the selected peer authentication 
                 mechanisms, that TLS with mutual authentication is used, that the random values are from an appropriate source, 
@@ -3109,8 +3109,8 @@ that is logically distinct from other communication channels and provides assure
           <consistency-rationale/>
           <comp-lev>defines the use and composition of pre-shared keys used for IPsec.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.</audit>
-          <dependencies><no-link>FCS_IPSEC_EXT.1</no-link> IPsec</dependencies>
+          <audit>No specific audit functions are identified. </audit>
+          <dependencies><no-link>FCS_IPSEC_EXT.1 </no-link>  IPsec</dependencies>
           <f-element id="fia-psk-ext-1e1">
             <title>
               The TSF shall be able to use pre-shared keys for 
@@ -3140,7 +3140,7 @@ that is logically distinct from other communication channels and provides assure
               The TSF shall be able to accept the following as pre-shared keys: 
                <selectables><selectable id="pskgen">generated bit-based</selectable><selectable id="pskpw">password-based</selectable><selectable id="pskhotp">HMAC-based one-time password</selectable><selectable id="psktotp">time-based one-time password</selectable><selectable id="pskgenhotp">combination of a generated bit-based and HMAC-based one-time password</selectable><selectable id="pskgentotp">combination of a generated bit-based and time-based one-time password</selectable><selectable id="pskpwhotp">combination of a password-based and HMAC-based one-time password</selectable><selectable id="pskpwtotp">combination of a password-based and time-based one-time password</selectable> </selectables>  keys.
             </title>
-            <ext-comp-def-title><title>The TSF shall be able to accept the following as pre-shared keys:<selectables><selectable>generated bit-based</selectable><selectable>password-based</selectable><selectable>HMAC-based one-time password</selectable><selectable>time-based one-time password</selectable><selectable>combination of a generated bit-based and HMAC-based one-time password</selectable><selectable>combination of a generated bit-based and time-based one-time password</selectable><selectable>combination of a password-based and HMAC-based one-time password</selectable><selectable>combination of a password-based and time-based one-time password</selectable></selectables>keys.</title></ext-comp-def-title>
+            <ext-comp-def-title><title>The TSF shall be able to accept the following as pre-shared keys: <selectables><selectable>generated bit-based </selectable> <selectable>password-based </selectable> <selectable>HMAC-based one-time password </selectable> <selectable>time-based one-time password </selectable> <selectable>combination of a generated bit-based and HMAC-based one-time password </selectable> <selectable>combination of a generated bit-based and time-based one-time password </selectable> <selectable>combination of a password-based and HMAC-based one-time password </selectable> <selectable>combination of a password-based and time-based one-time password </selectable> </selectables> keys. </title> </ext-comp-def-title>
             <note role="application">
               If “pre-shared keys that conform to RFC 8784” is selected in FCS_IPSEC_EXT.1.11, a generated, bit-based PSK must be used. 
               
@@ -3165,8 +3165,8 @@ that is logically distinct from other communication channels and provides assure
           <consistency-rationale/>
           <comp-lev>defines the use and composition of generated pre-shared keys used for IPsec.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the PP/ST:<h:ul><h:li>Failure of the randomization process</h:li></h:ul></audit>
-          <dependencies><no-link>FIA_PSK_EXT.1</no-link> Pre-Shared Key Composition</dependencies>
+          <audit>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the PP/ST: <h:ul><h:li>Failure of the randomization process </h:li> </h:ul> </audit>
+          <dependencies><no-link>FIA_PSK_EXT.1 </no-link>  Pre-Shared Key Composition</dependencies>
           <f-element id="fia-psk-ext-2e1">
             <title>
               The TSF shall be able to 
@@ -3200,9 +3200,9 @@ that is logically distinct from other communication channels and provides assure
           <consistency-rationale/>
           <comp-lev>defines the use and composition of password-based pre-shared keys used for IPsec.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the PP/ST:<h:ul><h:li>Failure of the randomization process</h:li></h:ul></audit>
-          <dependencies><no-link>FCS_RBG.1</no-link> Random Bit Generation (RBG)
-            <no-link>FIA_PSK_EXT.1</no-link> Pre-Shared Key Composition</dependencies>
+          <audit>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the PP/ST: <h:ul><h:li>Failure of the randomization process </h:li> </h:ul> </audit>
+          <dependencies><no-link>FCS_RBG.1 </no-link>  Random Bit Generation (RBG)
+            <no-link>FIA_PSK_EXT.1 </no-link>  Pre-Shared Key Composition</dependencies>
           <f-element id="fia-psk-ext-3e1">
             <title>
               The TSF shall support a PSK of up to  <assignable>positive integer of 64 or more</assignable>  characters. 
@@ -3272,7 +3272,7 @@ that is logically distinct from other communication channels and provides assure
                <assignable>positive integer of 4096 or more</assignable>  iterations, and output cryptographic key sizes [<h:i>256 bits</h:i>]
               that meet the following: [<h:i>NIST SP 800-132</h:i>].
             </title>
-            <ext-comp-def-title><title>The TSF shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm<assignable>cryptographic algorithm used for key derivation</assignable>, with<assignable>positive integer of 4096 or more</assignable>iterations, and output cryptographic key sizes<assignable>output key size</assignable>that meet the following:<assignable>list of standards</assignable>.</title></ext-comp-def-title>
+            <ext-comp-def-title><title>The TSF shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm <assignable>cryptographic algorithm used for key derivation </assignable> , with <assignable>positive integer of 4096 or more </assignable> iterations, and output cryptographic key sizes <assignable>output key size </assignable> that meet the following: <assignable>list of standards </assignable> . </title> </ext-comp-def-title>
           </f-element>
           <f-element id="fia-psk-ext-3e4">
             <title>
@@ -3285,7 +3285,7 @@ that is logically distinct from other communication channels and provides assure
               The TSF shall generate all salts using an RBG that meets 
                <h:b> <selectables><selectable id="fia_psk_ext.3.5_1">FCS_RBG.1</selectable><selectable id="fia_psk_ext.3.5_2">FCS_RBG_EXT.1</selectable> </selectables> </h:b> and with entropy of  <assignable>value equal to or greater than 256</assignable>  bits.
             </title>
-            <ext-comp-def-title><title>The TSF shall generate all salts using an RBG that meets FCS_RBG.1 and with entropy of<assignable>value equal to or greater than 256</assignable>bits.</title></ext-comp-def-title>
+            <ext-comp-def-title><title>The TSF shall generate all salts using an RBG that meets FCS_RBG.1 and with entropy of <assignable>value equal to or greater than 256 </assignable> bits. </title> </ext-comp-def-title>
             <note role="application">For the first selection, the ST author selects FCS_RBG.1 if the TOE implements its own DRBG. The ST author selects FCS_RBG_EXT.1 if <xref to="bibAppPP"/> is the Base-PP for the TOE and the TSF relies on a DRBG in its operational environment.</note>
           </f-element>
           <f-element id="fia-psk-ext-3e6">
@@ -3322,8 +3322,8 @@ that is logically distinct from other communication channels and provides assure
           <consistency-rationale/>
           <comp-lev>defines the use and composition of HOTP pre-shared keys used for IPsec.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.</audit>
-          <dependencies><no-link>FIA_PSK_EXT.1</no-link> Pre-Shared Key Composition</dependencies>
+          <audit>No specific audit functions are identified. </audit>
+          <dependencies><no-link>FIA_PSK_EXT.1 </no-link>  Pre-Shared Key Composition</dependencies>
           <f-element id="fia-psk-ext-4e1">
             <title>
               The TSF shall accept and send an HOTP while initiating a VPN connection.
@@ -3358,8 +3358,8 @@ that is logically distinct from other communication channels and provides assure
           <consistency-rationale/>
           <comp-lev>defines the use and composition of TOTP pre-shared keys used for IPsec.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.</audit>
-          <dependencies><no-link>FIA_PSK_EXT.1</no-link> Pre-Shared Key Composition</dependencies>
+          <audit>No specific audit functions are identified. </audit>
+          <dependencies><no-link>FIA_PSK_EXT.1 </no-link>  Pre-Shared Key Composition</dependencies>
           <f-element id="fia-psk-ext-5e1">
             <title>
               The TSF shall accept and send a TOTP while initiating a VPN connection.
@@ -3387,7 +3387,7 @@ that is logically distinct from other communication channels and provides assure
     </sel-sfrs>
     <obj-sfrs>
       <section id="sob-audit-table" title="Auditable Events for Objective SFRs">
-        Entries from<xref to="at-objective"/> must be included for GPOS, MDF, and MDM Base-PPs if the objective SFRs are included in the ST. When the App PP is the Base-PP, if any objective SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
+        Entries from <xref to="at-objective"/> must be included for GPOS, MDF, and MDM Base-PPs if the objective SFRs are included in the ST. When the App PP is the Base-PP, if any objective SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
         <audit-table id="at-objective" table="objective" title="Auditable Events for Objective SFRs"/>
       </section>
       <!-- 5.5.9 Security Audit (FAU) -->
@@ -3448,7 +3448,7 @@ that is logically distinct from other communication channels and provides assure
     </obj-sfrs>
     <impl-dep-sfrs>
       <section id="impl-audit-table" title="Auditable Events for Implementation-dependent SFRs">
-        Entries from<xref to="at-impl-dep"/> must be included for GPOS, MDF, and MDM Base-PPs if the implementation-dependent SFRs are included in the ST. When the App PP is the Base-PP, if any implementation-dependent SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
+        Entries from <xref to="at-impl-dep"/> must be included for GPOS, MDF, and MDM Base-PPs if the implementation-dependent SFRs are included in the ST. When the App PP is the Base-PP, if any implementation-dependent SFRs are included in the ST, corresponding auditable event entries must be included only if the implementation-dependent requirement FAU_GEN.1/VPN is included in the ST.
         <audit-table id="at-impl-dep" table="atref-impl-dep" title="Auditable Events for Implementation-dependent SFRs"/>
       </section>
       <!-- 5.5.10 Security Audit (FAU) -->
@@ -3549,8 +3549,8 @@ that is logically distinct from other communication channels and provides assure
 	This information benefits systems engineering activities which call for inclusion of particular security
 	controls. Evaluation against the PP-Module provides evidence that these controls are present and have
 	been evaluated.
-  --><h:b><ctr ctr-type="Table" pre="Table " id="imp-sat-reqs-table">: Implicitly Satisfied Requirements</ctr></h:b><h:table><h:tr class="header"><h:td>Requirement</h:td><h:td>Rationale for Satisfaction</h:td></h:tr><h:tr><h:td><h:b>FCS_CKM.2 – Cryptographic Key Distribution, or FCS_COP.1 – Cryptographic Operation</h:b></h:td><h:td>FCS_CKM.1 (which is defined in this PP-Module as FCS_CKM.1/VPN) requires one of FCS_CKM.2 or FCS_COP.1 to be claimed so that the generated keys can serve some security-relevant purpose. Each of the Base-PPs for this PP-Module define an iteration of FCS_COP.1 for symmetric cryptography that is expected to use the IKE keys generated by FCS_CKM.1/VPN. Therefore, this dependency is satisfied through requirements defined in the Base-PPs.</h:td></h:tr><h:tr><h:td><h:b>FCS_COP.1 – Cryptographic Operation</h:b></h:td><h:td>FCS_IPSEC_EXT.1 has a dependency on FCS_COP.1 because of the cryptographic operations that are needed in support of implementing the IPsec protocol. FCS_COP.1 is not defined in this PP-Module because each of the supported Base-PPs define iterations of FCS_COP.1 that support the functions that are relevant to IPsec.</h:td></h:tr><h:tr><h:td><h:b>FMT_MTD.1 – Management of TSF Data</h:b></h:td><h:td>FAU_SEL.1/VPN has a dependency on FMT_MTD.1 to enforce appropriate access controls on the audit configuration, as this is TSF data. This SFR is not explicitly defined in any of the supported Base-PPs but the dependency is implicitly addressed by each Base-PP in the following manner:<h:ul><h:li>GPOS PP: The GPOS PP implicitly defines the existence of ‘user’ and ‘administrator’ roles in the extended SFRs FMT_MOF_EXT.1 and FMT_SMF_EXT.1. A TOE that conforms to this Base-PP can associate the ability to perform the functionality defined by FAU_SEL.1/VPN to one or both of these roles.</h:li><h:li>MDF PP: The MDF PP implicitly defines the existence of ‘user,’ ‘administrator,’ and ‘MDM’ roles in the SFRs FMT_MOF_EXT.1 and FMT_SMF.1. A TOE that conforms to this Base-PP can associate the ability to perform the functionality defined by FAU_SEL.1/VPN to one or more of these roles.</h:li><h:li>App PP: The App PP does not define the existence of a separately authenticated management interface; instead, the App PP assumes that authentication to the underlying OS platform is sufficient authorization to access the application’s management functionality.</h:li><h:li>MDM PP: The MDM PP defines the existence of management roles in FMT_SMR.1/SECMAN_ROLES. A TOE that conforms to this Base-PP can associate the ability to perform the functionality defined by FAU_SEL.1/VPN to one or more of the roles defined here.</h:li></h:ul></h:td></h:tr><h:tr><h:td><h:b>FPT_STM.1 – Reliable Time Stamps</h:b></h:td><h:td>FAU_GEN.1/VPN has a dependency on FPT_STM.1 because audit data is required to have timestamps that are based on reliable clock data. All of the supported Base-PPs either define this requirement explicitly or provide rationale for why the reader should expect that a reliable clock service should be present. Depending on the claimed Base-PP, the dependency is satisfied in the following manner:<h:ul><h:li>GPOS PP: The GPOS PP states that FPT_STM.1 is implicitly satisfied by the requirements of FAU_GEN.1 since that requirement could not be satisfied if no clock service was present. Additionally, a clock service is reasonably assumed to be provided by a general-purpose OS.</h:li><h:li>MDF PP: The MDF PP explicitly defines FPT_STM.1.</h:li><h:li>App PP: The App PP assumption A.PLATFORM assumes that the general-purpose computing platform on which the TOE is installed is ‘a trustworthy computing platform.’ System time data is not explicitly mentioned but a clock service is reasonably assumed to be provided by a general-purpose computer.</h:li><h:li>MDM PP: The MDM PP assumption A.MDM_SERVER_PLATFORM assumes that the platform on which the TOE is installed will provide reliable time services.</h:li></h:ul></h:td></h:tr><h:tr><h:td><h:b>FPT_STM.1 – Reliable Time Stamps</h:b></h:td><h:td>FAU_GEN.1 has a dependency on FPT_STM.1. While not explicitly stated in the PP, it is assumed that this will be provided by the underlying hardware platform on which the TOE is installed. This is because the TOE is installed as a software or firmware product that runs on general-purpose computing hardware so a hardware clock is assumed to be available.</h:td></h:tr></h:table></appendix>
-  <appendix title="Entropy Documentation and Assessment" id="app-ent">The TOE does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the Base-PPs. As with other Base-PP requirements, the only additional requirement is that the entropy documentation also applies to the specific VPN client capabilities of the TOE in addition to the functionality required by the claimed Base-PP.</appendix>
+  --><h:b><ctr ctr-type="Table" pre="Table " id="imp-sat-reqs-table">: Implicitly Satisfied Requirements </ctr> </h:b> <h:table><h:tr class="header"><h:td>Requirement </h:td> <h:td>Rationale for Satisfaction </h:td> </h:tr> <h:tr><h:td><h:b>FCS_CKM.2 – Cryptographic Key Distribution, or FCS_COP.1 – Cryptographic Operation </h:b> </h:td> <h:td>FCS_CKM.1 (which is defined in this PP-Module as FCS_CKM.1/VPN) requires one of FCS_CKM.2 or FCS_COP.1 to be claimed so that the generated keys can serve some security-relevant purpose. Each of the Base-PPs for this PP-Module define an iteration of FCS_COP.1 for symmetric cryptography that is expected to use the IKE keys generated by FCS_CKM.1/VPN. Therefore, this dependency is satisfied through requirements defined in the Base-PPs. </h:td> </h:tr> <h:tr><h:td><h:b>FCS_COP.1 – Cryptographic Operation </h:b> </h:td> <h:td>FCS_IPSEC_EXT.1 has a dependency on FCS_COP.1 because of the cryptographic operations that are needed in support of implementing the IPsec protocol. FCS_COP.1 is not defined in this PP-Module because each of the supported Base-PPs define iterations of FCS_COP.1 that support the functions that are relevant to IPsec. </h:td> </h:tr> <h:tr><h:td><h:b>FMT_MTD.1 – Management of TSF Data </h:b> </h:td> <h:td>FAU_SEL.1/VPN has a dependency on FMT_MTD.1 to enforce appropriate access controls on the audit configuration, as this is TSF data. This SFR is not explicitly defined in any of the supported Base-PPs but the dependency is implicitly addressed by each Base-PP in the following manner: <h:ul><h:li>GPOS PP: The GPOS PP implicitly defines the existence of ‘user’ and ‘administrator’ roles in the extended SFRs FMT_MOF_EXT.1 and FMT_SMF_EXT.1. A TOE that conforms to this Base-PP can associate the ability to perform the functionality defined by FAU_SEL.1/VPN to one or both of these roles. </h:li> <h:li>MDF PP: The MDF PP implicitly defines the existence of ‘user,’ ‘administrator,’ and ‘MDM’ roles in the SFRs FMT_MOF_EXT.1 and FMT_SMF.1. A TOE that conforms to this Base-PP can associate the ability to perform the functionality defined by FAU_SEL.1/VPN to one or more of these roles. </h:li> <h:li>App PP: The App PP does not define the existence of a separately authenticated management interface; instead, the App PP assumes that authentication to the underlying OS platform is sufficient authorization to access the application’s management functionality. </h:li> <h:li>MDM PP: The MDM PP defines the existence of management roles in FMT_SMR.1/SECMAN_ROLES. A TOE that conforms to this Base-PP can associate the ability to perform the functionality defined by FAU_SEL.1/VPN to one or more of the roles defined here. </h:li> </h:ul> </h:td> </h:tr> <h:tr><h:td><h:b>FPT_STM.1 – Reliable Time Stamps </h:b> </h:td> <h:td>FAU_GEN.1/VPN has a dependency on FPT_STM.1 because audit data is required to have timestamps that are based on reliable clock data. All of the supported Base-PPs either define this requirement explicitly or provide rationale for why the reader should expect that a reliable clock service should be present. Depending on the claimed Base-PP, the dependency is satisfied in the following manner: <h:ul><h:li>GPOS PP: The GPOS PP states that FPT_STM.1 is implicitly satisfied by the requirements of FAU_GEN.1 since that requirement could not be satisfied if no clock service was present. Additionally, a clock service is reasonably assumed to be provided by a general-purpose OS. </h:li> <h:li>MDF PP: The MDF PP explicitly defines FPT_STM.1. </h:li> <h:li>App PP: The App PP assumption A.PLATFORM assumes that the general-purpose computing platform on which the TOE is installed is ‘a trustworthy computing platform.’ System time data is not explicitly mentioned but a clock service is reasonably assumed to be provided by a general-purpose computer. </h:li> <h:li>MDM PP: The MDM PP assumption A.MDM_SERVER_PLATFORM assumes that the platform on which the TOE is installed will provide reliable time services. </h:li> </h:ul> </h:td> </h:tr> <h:tr><h:td><h:b>FPT_STM.1 – Reliable Time Stamps </h:b> </h:td> <h:td>FAU_GEN.1 has a dependency on FPT_STM.1. While not explicitly stated in the PP, it is assumed that this will be provided by the underlying hardware platform on which the TOE is installed. This is because the TOE is installed as a software or firmware product that runs on general-purpose computing hardware so a hardware clock is assumed to be available. </h:td> </h:tr> </h:table> </appendix>
+  <appendix title="Entropy Documentation and Assessment" id="app-ent">The TOE does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the Base-PPs. As with other Base-PP requirements, the only additional requirement is that the entropy documentation also applies to the specific VPN client capabilities of the TOE in addition to the functionality required by the claimed Base-PP. </appendix>
   <bibliography>
     <cc-entry/>
     <entry id="bibGPOS">
