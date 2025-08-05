@@ -1092,7 +1092,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 			defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in addition to what is mandated by section 5.5.<h3 id="modsfr-bpp-gpos" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>: </h4><span class="description">
+		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_CKM.1: Cryptographic Key Generation</h4><span class="description">
               This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that
               <abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> key generation with support for P-384 has been made mandatory
               in support of IPsec due to the mandated support for Diffie-Hellman (<abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr>) group 20 in
@@ -1110,7 +1110,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 </li> <li><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using "safe-prime" groups that meet the following: '<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [<b>selection:</b> <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919]</li> <li><b>No other key generation methods</b></li></ul></i> <b>]</b>.
        
               
-            </span></div><div class="comp" id="@id"><h4>: </h4><span class="description">
+            </span></div><div class="comp" id="@id"><h4>FCS_CKM.2: Cryptographic Key Establishment</h4><span class="description">
               This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that elliptic 
               curve cryptography (<abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr>) key generation with support for P-384 has been made 
               mandatory in support of IPsec due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 
@@ -1126,7 +1126,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 </li></i></ul></b> <b>[selection: </b> <i><ul><li>Finite field-based key establishment schemes that meets <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, “Recommendation 
                   for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”
                 </li> <li><b>No other key generation methods</b></li></ul></i> <b>]</b>.
-            </span></div><div class="comp" id="@id"><h4>: </h4><span class="description">
+            </span></div><div class="comp" id="@id"><h4>FCS_COP.1/ENCRYPT: Cryptographic Operation - Encryption/Decryption</h4><span class="description">
               This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is identical to what is defined in the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that support for CBC and 
               GCM mode is mandatory in order to address the requirements for <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a>.<p></p>
               
@@ -1334,7 +1334,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in addition to what is mandated by section 5.5.<h3 id="modsfr-bpp-mdf" class="indexable" data-level="3">5.2.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.2.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+		<h4 id="@id" class="indexable" data-level="4">5.2.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_CKM.1: Cryptographic Key Generation</h4><span class="description"><p>
                       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is functionally identical to what is defined in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that <abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> key generation with support for P-384 has been made mandatory in support of IPsec due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in <a href="#FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</a>. Curve25519 schemes remain selectable for their potential use in satisfying FDP_DAR_EXT.2.2 in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>; these schemes are not used in support of IPsec. RSA support remains present as a selection since it may be used by parts of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are not specifically related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality.
                     </p>
                     The text of the requirement is replaced with:<br/><br/>
@@ -1343,7 +1343,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                     <b><ul><li><abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> schemes using "<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curve" P-384 that meets the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix A.2</li></ul> and</b>
                     [<b>selection:</b> <i><ul><li>RSA schemes using cryptographic key sizes of [<b>assignment:</b> <i>3072-bit or greater</i>] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix A.1]</li> <li><b><abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> schemes using Curve25519 schemes that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7748]</b></li> <li><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using "safe-prime" groups that meet the following: '<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [<b>selection:</b> <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919]</li> <li><b>no other key generation methods</b></li></ul></i>
                     ].
-                  </span></div><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+                  </span></div><div class="comp" id="@id"><h4>FCS_CKM.2/UNLOCKED: Cryptographic Key Establishment (When Unlocked)</h4><span class="description"><p>
                       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> differs from its definition in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by moving elliptic curve-based key establishment schemes from selectable to mandatory, due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in <a href="#FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</a>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not require the use of RSA for any function but it is present in the selection in case other MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> functions require its use.
                     </p>
                     The text of the requirement is replaced with:<br/><br/>
@@ -1356,7 +1356,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                         Cryptography"</i>]</li> <li><b>no other key establishment schemes</b></li></ul></i>].
                    
                     
-                  </span></div><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+                  </span></div><div class="comp" id="@id"><h4>FCS_COP.1/ENCRYPT: Cryptographic Operation</h4><span class="description"><p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is identical to what is defined in the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that support for GCM mode and support for 256-bit key sizes are both mandatory in order to address the requirements for <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a>.
               </p>
               The text of the requirement is replaced with:<br/><br/>
@@ -1367,7 +1367,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               ]</li></ul>
               ]</i> and cryptographic key sizes [<i>128-bit key sizes and [256-bit key sizes]</i>].
 
-            </span></div><h4 id="@id" class="indexable" data-level="4">5.2.1.2 User Data Protection (FDP)</h4><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+            </span></div><h4 id="@id" class="indexable" data-level="4">5.2.1.2 User Data Protection (FDP)</h4><div class="comp" id="@id"><h4>FDP_IFC_EXT.1: Subset Information Flow Control</h4><span class="description"><p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is identical to its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> except that the selection item that requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to implement its own <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is always selected when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s conformance claim includes this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
               </p>
               The text of the requirement is replaced with:<br/><br/>
@@ -1375,13 +1375,13 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<ul><li><i>provide a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client which can protect all <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic using IPsec as defined in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client</i></li></ul>
               ] with the exception of <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> traffic needed to manage the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection, and [<b>selection:</b> <i>[<b>assignment:</b> traffic needed for correct functioning of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>], no other traffic</i>] when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> is enabled.
               
-            </span></div><h4 id="@id" class="indexable" data-level="4">5.2.1.3 Security Management (FMT)</h4><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+            </span></div><h4 id="@id" class="indexable" data-level="4">5.2.1.3 Security Management (FMT)</h4><div class="comp" id="@id"><h4>FMT_SMF_EXT.1: Specification of Management Functions</h4><span class="description"><p>
                 This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires that Always On <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> protection be enabled across the entire device and does not permit this to be applied at the level of an application or group of application processes.
               </p>
               This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is not reproduced in its entirety for size purposes. The only change to this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is the following
               change to management function 45:
               <table border="1" style="width:100%"><tr><td>
-                    45. enable/disable the Always On <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> protection:<ul><li>across device</li> <li>[<i>no other method</i>]</li></ul></td><td><b>M</b></td><td>O</td><td>O</td><td>O</td></tr></table></span></div><h4 id="@id" class="indexable" data-level="4">5.2.1.4 Trusted Path/Channels (FTP)</h4><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+                    45. enable/disable the Always On <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> protection:<ul><li>across device</li> <li>[<i>no other method</i>]</li></ul></td><td><b>M</b></td><td>O</td><td>O</td><td>O</td></tr></table></span></div><h4 id="@id" class="indexable" data-level="4">5.2.1.4 Trusted Path/Channels (FTP)</h4><div class="comp" id="@id"><h4>FTP_ITC_EXT.1: Trusted Channel Communication</h4><span class="description"><p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is identical to what is defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> except that support for IPsec is mandated. Additionally, since the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requires ‘at least one of’ the selected protocols which previously included IPsec, ‘no other protocols’ is now available as an option in the selection.
               </p>
               The text of FTP_ITC_EXT.1.1 is replaced with (the other elements are unaffected):<br/><br/>
@@ -1451,7 +1451,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in addition to what is mandated by section 5.5.<h3 id="modsfr-bpp-app" class="indexable" data-level="3">5.3.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.3.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+		<h4 id="@id" class="indexable" data-level="4">5.3.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_CKM.1/AK: Cryptographic Asymmetric Key Generation</h4><span class="description"><p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> depending on the selection made in
                 FCS_CKM_EXT.1. Because key generation services (whether implemented by the
                 <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or invoked from the platform) are required for IPsec, this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is mandatory
@@ -1486,7 +1486,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                     that meets the following: [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</li> <li><b>Module-Lattice-Based Digital Signature Standard</b> using the parameter set ML-DSA-87 
                     that meets the following [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> 204, Module-Lattice-Based Digital Signature Standard]</li> <li><b>no other key generation methods</b></li></ul></i>].
               
-            </span></div><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+            </span></div><div class="comp" id="@id"><h4>FCS_CKM.2: Cryptographic Key Establishment</h4><span class="description"><p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> differs from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by moving elliptic curve-based
                 key establishment schemes from selectable to mandatory due to the mandated
                 support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in <a href="#FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</a>. 
@@ -1501,7 +1501,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               <ul><li><b>[Elliptic curve-based key establishment schemes] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”]</b></li></ul>
               [<b>selection:</b> <i><ul><li><b>[RSA-based key establishment schemes]</b> that meet the following: <b>[<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56B, “Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography”]</b></li> <li><b>[<abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> Schemes using “safe-prime” groups]</b> that meet the following: <b>‘<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”</b> and [<b>selection:</b> <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919]</li> <li>Module-Lattice-Based Key-Encapsulation Mechanism Standard using the parameter set ML-KEM-1024 that meets the following: [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</li> <li><b>no other key establishment schemes</b></li></ul></i>].
               
-            </span></div><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+            </span></div><div class="comp" id="@id"><h4>FCS_CKM_EXT.1: Cryptographic Key Generation Services</h4><span class="description"><p>
                 This selection differs from its definition in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by
                 removing the selection for “generate no asymmetric cryptographic keys” for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client
                 <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will either perform its own key generation or interface with the underlying platform to provide this 
@@ -1511,7 +1511,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               
               The application shall [<b>selection:</b> <ul><i><li>invoke platform-provided functionality for asymmetric key generation</li> <li>implement asymmetric key generation</li></i></ul>].
               
-            </span></div><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+            </span></div><div class="comp" id="@id"><h4>FCS_COP.1/SKC: Cryptographic Operation - Encryption/Decryption</h4><span class="description"><p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and remains selection-based here because
                 this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> allows for the possibility that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> relies on platform-provided
                 cryptographic algorithm services for its own implementation of IPsec. However, if
@@ -1527,7 +1527,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               
               [<b>selection:</b> <i><ul><li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-XTS (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38E) mode</li> <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCM (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38C) mode</li> <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CTR (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38A) mode</li> <li><b>no other modes</b></li></ul></i>] and cryptographic key size of [<i>256-bits</i>].
               
-            </span></div><h4 id="@id" class="indexable" data-level="4">5.3.1.2 Trusted Path/Channels</h4><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+            </span></div><h4 id="@id" class="indexable" data-level="4">5.3.1.2 Trusted Path/Channels</h4><div class="comp" id="@id"><h4>FTP_DIT_EXT.1: Protection of Data in Transit</h4><span class="description"><p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is identical to what is defined in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> except that the selection for IPsec is
                 mandated, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is forced to select the "encrypt all transmitted sensitive data" option, and
                 the options for invoking platform-provided IPsec functionality have been removed. Since it is possible for a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to implement IPsec while relying on the platform for some other protocol (e.g., using platform-provided TLS to obtain IPsec configuration from a gateway), the other platform-provided protocol selections remain.  
@@ -1684,7 +1684,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in addition to what is mandated by section 5.5.<h3 id="modsfr-bpp-mdm" class="indexable" data-level="3">5.4.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.4.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+		<h4 id="@id" class="indexable" data-level="4">5.4.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_CKM.1: Cryptographic Key Generation</h4><span class="description"><p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by mandating the key generation algorithms that are required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in support of IPsec due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in <a href="#FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</a>. Other selections may be chosen by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author as needed for parts of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are not specifically related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality. The selection for "no other key generation methods" was added in case the algorithms that IPsec requires are the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s only use of key generation.
               </p>
               The text of the requirement is replaced with:<br/><br/>
@@ -1693,7 +1693,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               <b><ul><li><abbr class="dyn-abbr"><a href="#abbr_ECC">ECC</a></abbr> schemes using "<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> curve" P-384 that meets the following: <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, "Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>)", Appendix A.2</li></ul></b>
               [<b>selection:</b> <i><ul><li>RSA schemes using cryptographic key sizes of 3072 bits that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 186-5, “Digital Signature Standard (<abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr>),” Appendix A.1]</li> <li><abbr class="dyn-abbr"><a href="#abbr_FFC">FFC</a></abbr> schemes using "safe-prime" groups that meet the following: '<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [<b>selection:</b> <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 3526, <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 7919]</li> <li><b>No other key generation methods</b></li></ul></i>
               ].
-            </span></div><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+            </span></div><div class="comp" id="@id"><h4>FCS_CKM.2: Cryptographic Key Establishment</h4><span class="description"><p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by mandating the key establishment algorithms that are required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in support of IPsec due to the mandated support for <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20 in <a href="#FCS_IPSEC_EXT.1.8">FCS_IPSEC_EXT.1.8</a>. Other selections may be chosen by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author as needed for parts of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are not specifically related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality. The selection for "no other schemes" was added in case the algorithms that IPsec requires are the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s only use of key establishment.
               </p>
               The text of the requirement is replaced with:<br/><br/>
@@ -1702,7 +1702,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               <ul><li><b>[Elliptic curve-based key establishment schemes] that meet the following: [<abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”]</b></li></ul>
               [<b>selection:</b> <i><ul><li>RSA-based key establishment schemes that meet the following: RSAES-PKCS1-v1_5 as specified in Section 7.2 of <abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr> 8017, "Public-Key Cryptography Standards (PKCS) #1:RSA Cryptography Specifications Version 2.1"</li> <li>Finite field-based key establishment schemes that meets <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”</li> <li><b>no other key establishment schemes</b></li></ul></i>].
               
-            </span></div><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+            </span></div><div class="comp" id="@id"><h4>FCS_COP.1/CONF_ALG: Cryptographic Operation (Confidentiality Algorithms)</h4><span class="description"><p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by mandating support for both 256-bit implementations of <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC (which this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires for the use of <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> and allows for the use of <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr>) and <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM (which this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires for the use of <abbr class="dyn-abbr"><a href="#abbr_ESP">ESP</a></abbr> and allows for the use of <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>). Other <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> modes may be selected by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author as needed to address functions not required by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. The "no other modes" selection is added for the case where no <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> claims need to be made beyond what is mandated for IPsec.
               </p>
               The text of the requirement is replaced with:<br/><br/>
@@ -1712,7 +1712,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               cryptographic algorithm: [<br/><b><ul><li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC (as defined in <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PUB">PUB</a></abbr> 197, and <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38A) mode</li> <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-GCM (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38D)</li></ul> and</b>
                 [<b>selection:</b> <i><ul><li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> Key Wrap (KW) (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38F)</li> <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> Key Wrap with Padding (KWP) (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38F)</li> <li><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCM (as defined in <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr> SP 800-38C)</li> <li><b>no other modes</b></li></ul></i>] 
                 and a cryptographic key size of 256-bits.
-            </span></div><h4 id="@id" class="indexable" data-level="4">5.4.1.2 Protection of the TSF (FPT)</h4><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+            </span></div><h4 id="@id" class="indexable" data-level="4">5.4.1.2 Protection of the TSF (FPT)</h4><div class="comp" id="@id"><h4>FPT_ITT.1/INTER_XFER: Internal TOE TSF Data Transfer</h4><span class="description"><p>
                 When the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, at least one of its interfaces will implement IPsec communications. However, this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not specify that any one particular interface must be implemented using IPsec. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is distributed and uses IPsec to secure communications between its distributed components, FPT_ITT.1/INTER_XFER is defined as below.
               </p>
               The text of the requirement is replaced with:<br/><br/>
@@ -1723,7 +1723,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> depending on the selections made in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requirement FTP_ITC_EXT.1. This is not changed by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
               </p> <p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by mandating that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> implement IPsec communications and by prohibiting the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from relying on platform-provided functionality to implement this.
-              </p></span></div><h4 id="@id" class="indexable" data-level="4">5.4.1.3 Trusted Path/Channels (FTP)</h4><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+              </p></span></div><h4 id="@id" class="indexable" data-level="4">5.4.1.3 Trusted Path/Channels (FTP)</h4><div class="comp" id="@id"><h4>FTP_ITC.1/INTER_XFER_IT: Inter-TSF Trusted Channel (Authorized IT Entities)</h4><span class="description"><p>
                 When the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, at least one of its interfaces will implement IPsec communications. However, this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not specify that any one particular interface must be implemented using IPsec. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> uses IPsec to secure communications between itself and external trusted <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entities, <a href="#FTP_ITC.1">FTP_ITC.1</a>/INTER_XFER_IT is refined as noted by the refinements above.
               </p> <p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is refined from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by mandating that the “implement functionality” selection be chosen at minimum for IPsec and by prohibiting the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from relying on platform-provided IPsec functionality. Since the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may support multiple trusted channel interfaces, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is given the option to select other protocols (SSH, TLS, DTLS, HTTPS) either as being implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> or invoked from the platform. The "not invoke or implement any other protocol functionality" is added for the case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s implementation of IPsec is the only trusted channel protocol the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> uses.
@@ -1736,7 +1736,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 that is logically distinct from other communication channels and provides assured identification of its endpoints
                 and protection of the channel data from modification or disclosure.
               
-            </span></div><div class="comp" id="@id"><h4>: </h4><span class="description"><p>
+            </span></div><div class="comp" id="@id"><h4>FTP_TRP.1/TRUSTPATH_REM_ADMIN: Trusted Path (for Remote Administration)</h4><span class="description"><p>
                 When the MDM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, at least one of its interfaces will implement IPsec communications. However, this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not specify that any one particular interface must be implemented using IPsec. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> uses IPsec to secure communications between itself and trusted remote administrators, FPT_TRP.1/TRUSTPATH_REM_ADMIN is refined as below.
               </p> <p>
                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is refined from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by mandating that the “implement functionality” selection be chosen at minimum for IPsec and by prohibiting the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from relying on platform-provided IPsec functionality. Since the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may support multiple remote administrative interfaces, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is given the option to select other protocols (SSH, TLS, HTTPS) either as being implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> or invoked from the platform. The "not invoke or implement any other protocol functionality" is added for the case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s implementation of IPsec is the only trusted path protocol the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> uses.
@@ -2564,6 +2564,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FPT_TST_EXT.1/VPN">FPT_TST_EXT.1/VPN</a></div>
               
+              Except for where it is explicitly noted, the evaluator is expected to check the following information
+		regardless of whether the functionality is implemented by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform.<br/><br/>
+              
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it details the self-tests that are run by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> on
@@ -2688,12 +2691,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       defined by the
       GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">9</span></span>: Consistency of Requirements (GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td></td><td>
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_CKM.1</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client
               requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.
-            </td></tr><tr><td></td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
+            </td></tr><tr><td>FCS_CKM.2</td><td>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
               address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is
-              unmodified.</td></tr><tr><td></td><td>
+              unmodified.</td></tr><tr><td>FCS_COP.1/ENCRYPT</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is refined to mandate <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> modes that must be supported to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> 
               client requirements; the use of these modes for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connectivity does not impact the ability 
               of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to satisfy any of its other security requirements.
@@ -2764,17 +2767,17 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       defined by the
       MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">12</span></span>: Consistency of Requirements (MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td></td><td>
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_CKM.1</td><td>
                     The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.
-                  </td></tr><tr><td></td><td>
+                  </td></tr><tr><td>FCS_CKM.2/UNLOCKED</td><td>
                     The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.
-                  </td></tr><tr><td></td><td>
+                  </td></tr><tr><td>FCS_COP.1/ENCRYPT</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.
-            </td></tr><tr><td></td><td>
+            </td></tr><tr><td>FDP_IFC_EXT.1</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.
-            </td></tr><tr><td></td><td>
+            </td></tr><tr><td>FMT_SMF_EXT.1</td><td>
               This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> modifies the management function regarding Always-on <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> protection.
-            </td></tr><tr><td></td><td>
+            </td></tr><tr><td>FTP_ITC_EXT.1</td><td>
               This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds IPsec as a new protocol that is used to implement trusted channels.
             </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FDP_VPN_EXT.1">FDP_VPN_EXT.1</a></td><td>The ability of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client to prevent split tunneling of IPsec traffic
         requires it to have hooks into lower-level mobile device behavior, but there
@@ -2850,17 +2853,17 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       defined by the
       App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">15</span></span>: Consistency of Requirements (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td></td><td>
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_CKM.1/AK</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
               address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is
               unmodified. Additionally, this behavior is selection-based in the App
               <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but is made mandatory since it is required for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client
               functionality.
-            </td></tr><tr><td></td><td>
+            </td></tr><tr><td>FCS_CKM.2</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
               address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements and is modified to include <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 14 as an additional supported method for key
               establishment.
-            </td></tr><tr><td></td><td>
+            </td></tr><tr><td>FCS_CKM_EXT.1</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
               address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; specifically, since key generation
               services are required in some capacity in order to support <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>
@@ -2868,11 +2871,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               application does not have any key generation functionality.
               Additionally, this behavior is selection-based in the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but is made
               mandatory since it is required for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality.
-            </td></tr><tr><td></td><td>
+            </td></tr><tr><td>FCS_COP.1/SKC</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to
               address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is
               unmodified.
-            </td></tr><tr><td></td><td>
+            </td></tr><tr><td>FTP_DIT_EXT.1</td><td>
               This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires the existing selection of IPsec to be chosen to satisfy the dependency on this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
             </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_CKM.6">FCS_CKM.6</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds a requirement for key destruction, which is new
 		functionality when compared to the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> but does not interfere with its
@@ -2946,17 +2949,17 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       defined by the
       MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">18</span></span>: Consistency of Requirements (MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td></td><td>
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_CKM.1</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.
-            </td></tr><tr><td></td><td>
+            </td></tr><tr><td>FCS_CKM.2</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.
-            </td></tr><tr><td></td><td>
+            </td></tr><tr><td>FCS_COP.1/CONF_ALG</td><td>
               The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections at minimum to address <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client requirements; the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> behavior itself is unmodified.
-            </td></tr><tr><td></td><td>
+            </td></tr><tr><td>FPT_ITT.1/INTER_XFER</td><td>
               When this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>’s functionality, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections to implement this behavior using the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client. This is done by forcing the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to make specific selections that are already present in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> definition of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>; no new behavior is introduced by this.
-            </td></tr><tr><td></td><td>
+            </td></tr><tr><td><a href="#FTP_ITC.1">FTP_ITC.1</a>/INTER_XFER_IT</td><td>
               When this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>’s functionality, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections to implement this behavior using the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client at minimum. This is done by forcing the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to make a specific selection that is already present in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> definition of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> and by removing a selection option; no new behavior is introduced by this.
-            </td></tr><tr><td></td><td>
+            </td></tr><tr><td>FTP_TRP.1/TRUSTPATH_REM_ADMIN</td><td>
               When this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>’s functionality, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author is instructed to make specific selections to implement this behavior using the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client at minimum. This is done by forcing the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to make a specific selection that is already present in the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> definition of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> and by removing a selection option; no new behavior is introduced by this.
             </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not add any requirements when the
