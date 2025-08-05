@@ -622,8 +622,8 @@ expected to enforce.<h:br/><h:br/>
             <fam-behavior>Components in this family describe requirements for key management functionality such as key
 		storage and destruction.</fam-behavior>
           </ext-comp-def>
-          <!-- FCS_CKM_EXT.2 Cryptographic Key Storage -->
-          <f-component cc-id="fcs_ckm_ext.2" id="os-fcs-ckm-ext-2" name="Cryptographic Key Storage">
+          <!-- undefined Cryptographic Key Storage -->
+          <f-component cc-id="" id="os-fcs-ckm-ext-2" name="Cryptographic Key Storage">
             <consistency-rationale>Storage of key data related to VPN functionality can be accomplished
               using the same mechanism defined by FCS_STO_EXT.1 in the GPOS PP.</consistency-rationale>
             <comp-lev>requires the TSF to securely store key data when not in use.</comp-lev>
@@ -660,8 +660,8 @@ expected to enforce.<h:br/><h:br/>
             <fam-behavior>Components in this family describe the requirements that pertain to IP traffic and information flow
               through the VPN client.</fam-behavior>
           </ext-comp-def>
-          <!-- FIA_X509_EXT.4 X.509 Certificate Use and Management -->
-          <f-component cc-id="fia_x509_ext.4" id="os-fia-x509-ext-4" name="X.509 Certificate Use and Management">
+          <!-- undefined X.509 Certificate Use and Management -->
+          <f-component cc-id="" id="os-fia-x509-ext-4" name="X.509 Certificate Use and Management">
             <consistency-rationale>This SFR defines additional uses for X.509 certificate functionality that
               do not conflict with those defined in the GPOS PP.</consistency-rationale>
             <comp-lev>requires the TOE to perform X.509 certificate
@@ -739,8 +739,8 @@ expected to enforce.<h:br/><h:br/>
           </f-component>
         </section>
         <section title="Trusted Path/Channels (FTP)" id="os-a-ftp">
-          <!-- FTP_ITC.1 Inter-TSF Trusted Channel -->
-          <f-component cc-id="ftp_itc.1" id="os-ftp-itc-1" name="Inter-TSF Trusted Channel">
+          <!-- undefined Inter-TSF Trusted Channel -->
+          <f-component cc-id="" id="os-ftp-itc-1" name="Inter-TSF Trusted Channel">
             <consistency-rationale>This SFR defines a trusted channel for IPsec, which is added
               functionality that does not prevent the existing OS functions from
               being performed.
@@ -1129,8 +1129,8 @@ expected to enforce.<h:br/><h:br/>
             <fam-behavior>Components in this family describe the requirements that pertain to IP traffic and information flow
               through the VPN client.</fam-behavior>
           </ext-comp-def>
-          <!-- FDP_VPN_EXT.1 Split Tunnel Prevention -->
-          <f-component cc-id="fdp_vpn_ext.1" id="fdp-vpn-ext-1" name="Split Tunnel Prevention">
+          <!-- undefined Split Tunnel Prevention -->
+          <f-component cc-id="" id="fdp-vpn-ext-1" name="Split Tunnel Prevention">
             <consistency-rationale/>
             <comp-lev>requires the TSF to process all IP traffic through its VPN client
               functionality.</comp-lev>
@@ -1475,8 +1475,8 @@ expected to enforce.<h:br/><h:br/>
           <audit-table id="app-additional" table="tab-app-additional" title="Auditable Events for App PP Additional SFRs"> </audit-table>
         </section>
         <section title="Cryptographic Support (FCS)" id="ap-a-fcs">
-          <!-- FCS_CKM.6 Cryptographic Key Destruction -->
-          <f-component cc-id="fcs_ckm.6" id="ap-fcs-ckm-6" name="Cryptographic Key Destruction">
+          <!-- undefined Cryptographic Key Destruction -->
+          <f-component cc-id="" id="ap-fcs-ckm-6" name="Cryptographic Key Destruction">
             <consistency-rationale>This PP-Module adds a requirement for key destruction, which is new
               functionality when compared to the Base-PP but does not interfere
               with its existing security functions.</consistency-rationale>
@@ -1564,8 +1564,8 @@ expected to enforce.<h:br/><h:br/>
               <audit-event-info>Identification of key.</audit-event-info>
             </audit-event>
           </f-component>
-          <!-- FCS_CKM_EXT.2 Cryptographic Key Storage -->
-          <f-component cc-id="fcs_ckm_ext.2" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage" notnew="true">
+          <!-- undefined Cryptographic Key Storage -->
+          <f-component cc-id="" id="ap-fcs-ckm-ext-2" name="Cryptographic Key Storage" notnew="true">
             <consistency-rationale>This PP-Module adds a requirement for key storage, which is new
               functionality when compared to the Base-PP but does not interfere
               with its existing security functions.</consistency-rationale>
@@ -2061,8 +2061,8 @@ that is logically distinct from other communication channels and provides assure
         <ext-comp-def title="IPsec" fam-id="FCS_IPSEC_EXT">
           <fam-behavior>Components in this family describe requirements for IPsec implementation.</fam-behavior>
         </ext-comp-def>
-        <!-- FCS_CKM.1/VPN VPN Cryptographic Key Generation (IKE) -->
-        <f-component cc-id="fcs_ckm.1" id="fcs-ckm-1-vpn" name="VPN Cryptographic Key Generation (IKE)" iteration="VPN">
+        <!-- undefined/VPN VPN Cryptographic Key Generation (IKE) -->
+        <f-component cc-id="" id="fcs-ckm-1-vpn" name="VPN Cryptographic Key Generation (IKE)" iteration="VPN">
           <consistency-rationale/>
           <f-element id="fcs-ckm-1e1i1">
             <title>
@@ -2096,8 +2096,8 @@ that is logically distinct from other communication channels and provides assure
           </f-element>
           <audit-event table="atref-mandatory"/>
         </f-component>
-        <!-- FCS_IPSEC_EXT.1 IPsec -->
-        <f-component cc-id="fcs_ipsec_ext.1" id="fcs-ipsec-ext-1" name="IPsec">
+        <!-- undefined IPsec -->
+        <f-component cc-id="" id="fcs-ipsec-ext-1" name="IPsec">
           <consistency-rationale/>
           <comp-lev>requires the TSF to securely implement the IPsec protocol.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Specify VPN gateways to use for connections</h:li> <h:li>Specify IPsec VPN clients to use for connections</h:li> <h:li>Specify IPsec-capable network devices to use for connections</h:li> <h:li>Specify client credentials to be used for connections</h:li></h:ul></management>
@@ -2765,8 +2765,8 @@ that is logically distinct from other communication channels and provides assure
       </section>
       <!-- 5.5.2 User Data Protection (FDP) -->
       <section title="User Data Protection (FDP)" id="fdp">
-        <!-- FDP_RIP.2 Full Residual Information Protection -->
-        <f-component cc-id="fdp_rip.2" id="fdp-rip-2" name="Full Residual Information Protection">
+        <!-- undefined Full Residual Information Protection -->
+        <f-component cc-id="" id="fdp-rip-2" name="Full Residual Information Protection">
           <consistency-rationale/>
           <f-element id="fdp-rip-2e1">
             <title> The  <h:b> <selectables onlyone="yes"><selectable id="fdp_rip.2.1_1" >TOE</selectable><selectable id="fdp_rip.2.1_2" >TOE platform</selectable> </selectables> </h:b>  
@@ -2807,8 +2807,8 @@ that is logically distinct from other communication channels and provides assure
 	The client itself has to be configurable - whether it is from the EUD or from a VPN gateway.
 
 		
-        <!-- FMT_SMF.1/VPN Specification of Management Functions (VPN) -->
-        <f-component cc-id="fmt_smf.1" id="fmt-smf-1-vpn" name="Specification of Management Functions (VPN)" iteration="VPN">
+        <!-- undefined/VPN Specification of Management Functions (VPN) -->
+        <f-component cc-id="" id="fmt-smf-1-vpn" name="Specification of Management Functions (VPN)" iteration="VPN">
           <consistency-rationale/>
           <f-element id="fmt-smf-1e1-vpn">
             <title> The TSF shall be capable of performing the following management functions: 
@@ -2846,8 +2846,8 @@ that is logically distinct from other communication channels and provides assure
         <ext-comp-def title="TSF Self-Test" fam-id="FPT_TST_EXT">
           <fam-behavior>Components in this family describe requirements for self-test to verify functionality and integrity of the TOE.</fam-behavior>
         </ext-comp-def>
-        <!-- FPT_TST_EXT.1 TSF Self-Test -->
-        <f-component cc-id="fpt_tst_ext.1" id="fpt-tst-ext-1" name="TSF Self-Test" status="invisible">
+        <!-- undefined TSF Self-Test -->
+        <f-component cc-id="" id="fpt-tst-ext-1" name="TSF Self-Test" status="invisible">
           <consistency-rationale/>
           <comp-lev>requires the TOE to perform power on self-tests to verify its functionality and
             the integrity of its stored executable code.</comp-lev>
@@ -2875,8 +2875,8 @@ that is logically distinct from other communication channels and provides assure
             </title>
           </f-element>
         </f-component>
-        <!-- FPT_TST_EXT.1/VPN TSF Self-Test -->
-        <f-component cc-id="fpt_tst_ext.1" id="fpt-tst-ext-1-vpn" name="TSF Self-Test" iteration="VPN">
+        <!-- undefined/VPN TSF Self-Test -->
+        <f-component cc-id="" id="fpt-tst-ext-1-vpn" name="TSF Self-Test" iteration="VPN">
           <consistency-rationale/>
           <f-element id="fpt-tst-ext-1e1-vpn">
             <title>
@@ -2960,8 +2960,8 @@ that is logically distinct from other communication channels and provides assure
         <ext-comp-def title="Biometric Activation" fam-id="FIA_BMA_EXT">
           <fam-behavior>Components in this family describe the requirements for biometrics when using the VPN client.</fam-behavior>
         </ext-comp-def>
-        <!-- FIA_BMA_EXT.1 Biometric Activation -->
-        <f-component cc-id="fia_bma_ext.1" id="fia-bma-ext-1" name="Biometric Activation">
+        <!-- undefined Biometric Activation -->
+        <f-component cc-id="" id="fia-bma-ext-1" name="Biometric Activation">
           <depends>
             <optional/>
           </depends>
@@ -2995,8 +2995,8 @@ that is logically distinct from other communication channels and provides assure
         <ext-comp-def title="Multifactor Authentication Filtering" fam-id="FPF_MFA_EXT">
           <fam-behavior>Components in this family describe the requirements for multifactor authentication filtering when using the VPN client.</fam-behavior>
         </ext-comp-def>
-        <!-- FPF_MFA_EXT.1 Multifactor Authentication Filtering -->
-        <f-component cc-id="fpf_mfa_ext.1" id="fpf-mfa-ext-1" name="Multifactor Authentication Filtering">
+        <!-- undefined Multifactor Authentication Filtering -->
+        <f-component cc-id="" id="fpf-mfa-ext-1" name="Multifactor Authentication Filtering">
           <depends>
             <optional/>
           </depends>
@@ -3041,8 +3041,8 @@ that is logically distinct from other communication channels and provides assure
         <ext-comp-def title="EAP-TLS" fam-id="FCS_EAP_EXT">
           <fam-behavior>Components in this family describe the requirements for EAP-TLS.</fam-behavior>
         </ext-comp-def>
-        <!-- FCS_EAP_EXT.1 EAP-TLS -->
-        <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS">
+        <!-- undefined EAP-TLS -->
+        <f-component cc-id="" id="fcs-eap-ext-1" name="EAP-TLS">
           <depends on-sel="sel-ipsec-e11-eapttls"/>
           <depends on-sel="sel-ipsec-e11-eaptls"/>
           <consistency-rationale/>
@@ -3119,8 +3119,8 @@ that is logically distinct from other communication channels and provides assure
         <ext-comp-def title="Pre-Shared Key Composition" fam-id="FIA_PSK_EXT">
           <fam-behavior>Components in this family describe the requirements for pre-shared keys when implementing IPsec.</fam-behavior>
         </ext-comp-def>
-        <!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
-        <f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition">
+        <!-- undefined Pre-Shared Key Composition -->
+        <f-component cc-id="" id="fia-psk-ext-1" name="Pre-Shared Key Composition">
           <depends on-fcomp="fpf-mfa-ext-1"/>
           <depends on-sel="sel-ipsec-e11-psk"/>
           <depends on-sel="sel-ipsec-e11-eapttls"/>
@@ -3175,8 +3175,8 @@ that is logically distinct from other communication channels and provides assure
           </f-element>
           <audit-event table="sel-based"/>
         </f-component>
-        <!-- FIA_PSK_EXT.2 Generated Pre-Shared Keys -->
-        <f-component cc-id="fia_psk_ext.2" id="fia-psk-ext-2" name="Generated Pre-Shared Keys">
+        <!-- undefined Generated Pre-Shared Keys -->
+        <f-component cc-id="" id="fia-psk-ext-2" name="Generated Pre-Shared Keys">
           <depends on-sel="pskgen"/>
           <depends on-sel="pskgenhotp"/>
           <depends on-sel="pskgentotp"/>
@@ -3210,8 +3210,8 @@ that is logically distinct from other communication channels and provides assure
           </f-element>
           <audit-event table="sel-based"/>
         </f-component>
-        <!-- FIA_PSK_EXT.3 Password-Based Pre-Shared Keys -->
-        <f-component cc-id="fia_psk_ext.3" id="fia-psk-ext-3" name="Password-Based Pre-Shared Keys">
+        <!-- undefined Password-Based Pre-Shared Keys -->
+        <f-component cc-id="" id="fia-psk-ext-3" name="Password-Based Pre-Shared Keys">
           <depends on-sel="pskpw"/>
           <depends on-sel="pskpwhotp"/>
           <depends on-sel="pskpwtotp"/>
@@ -3332,8 +3332,8 @@ that is logically distinct from other communication channels and provides assure
           </f-element>
           <audit-event table="sel-based"/>
         </f-component>
-        <!-- FIA_PSK_EXT.4 HMAC-Based One-Time Password Pre-shared Keys Support -->
-        <f-component cc-id="fia_psk_ext.4" id="fia-psk-ext-4" name="HMAC-Based One-Time Password Pre-shared Keys Support">
+        <!-- undefined HMAC-Based One-Time Password Pre-shared Keys Support -->
+        <f-component cc-id="" id="fia-psk-ext-4" name="HMAC-Based One-Time Password Pre-shared Keys Support">
           <depends on-sel="pskhotp"/>
           <depends on-sel="pskgenhotp"/>
           <depends on-sel="pskpwhotp"/>
@@ -3368,8 +3368,8 @@ that is logically distinct from other communication channels and provides assure
           </f-element>
           <audit-event table="sel-based"/>
         </f-component>
-        <!-- FIA_PSK_EXT.5 Time-Based One-Time Password Pre-shared Keys Support -->
-        <f-component cc-id="fia_psk_ext.5" id="fia-psk-ext-5" name="Time-Based One-Time Password Pre-shared Keys Support">
+        <!-- undefined Time-Based One-Time Password Pre-shared Keys Support -->
+        <f-component cc-id="" id="fia-psk-ext-5" name="Time-Based One-Time Password Pre-shared Keys Support">
           <depends on-sel="psktotp"/>
           <depends on-sel="pskgentotp"/>
           <depends on-sel="pskpwtotp"/>
@@ -3410,8 +3410,8 @@ that is logically distinct from other communication channels and provides assure
       </section>
       <!-- 5.5.9 Security Audit (FAU) -->
       <section title="Security Audit (FAU)" id="fau">
-        <!-- FAU_SEL.1/VPN Selective Audit -->
-        <f-component cc-id="fau_sel.1" id="fau-sel-1-vpn" name="Selective Audit" iteration="VPN">
+        <!-- undefined/VPN Selective Audit -->
+        <f-component cc-id="" id="fau-sel-1-vpn" name="Selective Audit" iteration="VPN">
           <depends>
             <objective/>
           </depends>
@@ -3471,8 +3471,8 @@ that is logically distinct from other communication channels and provides assure
       </section>
       <!-- 5.5.10 Security Audit (FAU) -->
       <section title="Security Audit (FAU)" id="fau">
-        <!-- FAU_GEN.1/VPN Audit Data Generation -->
-        <f-component cc-id="fau_gen.1" id="fau-gen-1-vpn" name="Audit Data Generation" iteration="VPN">
+        <!-- undefined/VPN Audit Data Generation -->
+        <f-component cc-id="" id="fau-gen-1-vpn" name="Audit Data Generation" iteration="VPN">
           <consistency-rationale/>
           <f-element id="fau-gen-1e1-vpn">
             <title>
