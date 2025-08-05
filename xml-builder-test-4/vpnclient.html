@@ -2345,7 +2345,6 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         version 
         1.0</a> and <span class="no-link">FIA_X509_EXT.4 </span>  (for IPsec connections and depending on the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <span class="no-link">FCS_IPSEC_EXT.1.12 </span>  , and <span class="no-link">FCS_IPSEC_EXT.1.13 </span>  . The following tests shall be repeated for each peer authentication protocol selected in the <span class="no-link">FCS_IPSEC_EXT.1.11 </span>  selection above:
                 <span class="testlist-"><ul>
-                  For each supported identifier type (excluding DNs), the evaluator shall repeat the following tests:
                   <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FCS_IPSEC_EXT.1.11:1</a>:
       The evaluator shall have the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generate a public-private key pair and submit a CSR (Certificate
 			Signing Request) to a CA (trusted by both the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the peer <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> used to establish a connection) for
@@ -2369,6 +2368,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                   <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FCS_IPSEC_EXT.1.11:4</a>:
        [conditional]: For each selection made, the evaluator shall verify factors are required, as indicated in the
 			operational guidance, to establish an IPsec connection with the server. </li>
+                </ul></span>
+                <span class="testlist-"><ul>
+                  For each supported identifier type (excluding DNs), the evaluator shall repeat the following tests:
                   <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FCS_IPSEC_EXT.1.11:5</a>:
        For each field of the certificate supported for comparison, the evaluator shall configure the peer’s
 			reference identifier on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (per the administrative guidance) to match the field in the peer’s
