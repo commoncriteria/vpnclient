@@ -1,51 +1,10 @@
 * Warning: This document still has at least one comment.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_2'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_4'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.2_1'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.2_2'.
+* Error: Detected dangling id-reference to feat-mystery from attribute
+        on/Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/additional-sfrs[1]""/section[2]""/f-component[1]""/depends[1]""/on[1]""
 * Error: Detected multiple elements with an id of 's-aes-ctr'.
 * Error: Detected multiple elements with an id of 's-aes-ctr'.
-* Error: Detected multiple elements with an id of 'FCS_COP.1/ENCRYPT_1'.
-* Error: Detected multiple elements with an id of 'FCS_COP.1/ENCRYPT_2'.
-* Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_1'.
-* Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_2'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_4'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_6'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_7'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_8'.
-* Error: Detected multiple elements with an id of 'FCS_COP.1/ENCRYPT_1'.
-* Error: Detected multiple elements with an id of 'FCS_COP.1/ENCRYPT_2'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.2_1'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.2_2'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.2_3'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.2_4'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.2_5'.
-* Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_1'.
-* Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_2'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_2'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_6'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_7'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_8'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.2_1'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.2_2'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.2_3'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.2_4'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.2_5'.
-* Error: Detected multiple elements with an id of 'fcs'.
-* Error: Detected multiple elements with an id of 'fia'.
-* Error: Detected multiple elements with an id of 'fcs'.
-* Error: Detected multiple elements with an id of 'fia'.
-* Error: Detected multiple elements with an id of 'fau'.
-* Error: Detected multiple elements with an id of 'fau'.
+* Error: Detected multiple elements with an id of 'a-keygen-rsa-size'.
+* Error: Detected multiple elements with an id of 'a-keygen-rsa-size'.
 * Error: Detected dangling ref to 'os-fcs-ckm-1'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[11]"The ST au"/ref[1]""
@@ -115,49 +74,6 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[1]""/description[1]"This SFR "/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[2]""/description[1]"This SFR "/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[3]""/description[1]"This SFR "/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[2]""/base-sfr-spec[1]""/description[1]"The text "/h:p[2]"This SFR "/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/description[1]"The text "/h:p[1]"When the "/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[2]""/description[1]"The text "/h:p[1]"When the "/h:p[1]""
 * Warning: fau_gen.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]""/f-component[1]""
-* Warning: Since FCS_CKM_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FCS_CKM_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FCS_IPSEC_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FCS_IPSEC_EXT.1.5 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FCS_IPSEC_EXT.1.7 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FCS_IPSEC_EXT.1.8 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
 * Warning: Since FCS_IPSEC_EXT.1.11 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FCS_IPSEC_EXT.1.12 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FCS_IPSEC_EXT.1.14 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FCS_EAP_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FCS_EAP_EXT.1.3 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FIA_X509_EXT.4.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FIA_X509_EXT.4.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FIA_X509_EXT.4.3 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FIA_PSK_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FIA_PSK_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FIA_PSK_EXT.3.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FIA_PSK_EXT.3.4 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FIA_PSK_EXT.3.7 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FPT_TST_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FPT_TST_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
