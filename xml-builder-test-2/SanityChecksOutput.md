@@ -80,6 +80,14 @@
 * Error: Detected multiple elements with an id of 'fia'.
 * Error: Detected multiple elements with an id of 'fau'.
 * Error: Detected multiple elements with an id of 'fau'.
+* Error: Detected dangling ref-id to 's-killkey-user '.
+	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/title[1]"The TSF s"/management-function-set[1]""/management-function[35]""/app-note[1]"Function"/rule[1]""/if[1]""/ref-id[1]"s-killkey"
+* Error: Detected dangling ref-id to 'mf-keyWipeRules '.
+	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/title[1]"The TSF s"/management-function-set[1]""/management-function[35]""/app-note[1]"Function"/rule[1]""/then[1]""/ref-id[1]"mf-keyWip"
+* Error: Detected dangling ref-id to 's-killkey-admin '.
+	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/title[1]"The TSF s"/management-function-set[1]""/management-function[35]""/app-note[1]"Function"/rule[2]""/if[1]""/ref-id[1]"s-killkey"
+* Error: Detected dangling ref-id to 'mf-keyWipeRules '.
+	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/title[1]"The TSF s"/management-function-set[1]""/management-function[35]""/app-note[1]"Function"/rule[2]""/then[1]""/ref-id[1]"mf-keyWip"
 * Error: Detected dangling ref-id to 'itc_dtls '.
 	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[4]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]"The inten"/rule[2]""/if[1]""/ref-id[1]"itc_dtls"
 * Error: Detected dangling ref-id to 's-itc-ipsec '.
