@@ -630,18 +630,18 @@ function showTarget(id){
 
           }
     </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for VPN Client</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
-      Version: 2.6<br/>2025-01-31<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>2.6</td><td>2025-01-31</td><td><abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 conversion, limitation of cryptographic algorithms to CNSA 1.0, incorporation of TDs
-        </td></tr>
+      Version: 3.0<br/>2025-01-31<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>2.1</td><td>2019-11-14</td><td>Initial Release</td></tr>
+<tr><td>2.2</td><td>2021-01-05</td><td>Update release</td></tr>
+<tr><td>2.3</td><td>2021-08-10</td><td>Support for MDF, Bluetooth updates</td></tr>
+<tr><td>2.4</td><td>2022-03-31</td><td>Incorporation of TC feedback</td></tr>
 <tr><td>2.5</td><td>2024-06-24</td><td>Incorporation of TC feedback: <ul>
         <li>Incorporation of TDs: 0662, 0672, 0690, 0697, 0711, 0725, 0753, 0788</li>
         <li>Corrections to <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> references</li>
         <li>Definition of auditable events for Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></li>
         <li>Explicit association of evaluation activities with components and elements</li>
       </ul></td></tr>
-<tr><td>2.4</td><td>2022-03-31</td><td>Incorporation of TC feedback</td></tr>
-<tr><td>2.3</td><td>2021-08-10</td><td>Support for MDF, Bluetooth updates</td></tr>
-<tr><td>2.2</td><td>2021-01-05</td><td>Update release</td></tr>
-<tr><td>2.1</td><td>2019-11-14</td><td>Initial Release</td></tr>
+<tr><td>3.0</td><td>2025-01-31</td><td><abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 conversion, limitation of cryptographic algorithms to CNSA 1.0, incorporation of TDs
+        </td></tr>
 </table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#rfocus" style="text-indent:10px">1.5<span>Requirements Focus</span></a><a href="#ConformanceClaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Description" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-gpos" style="text-indent:10px">5.1<span>
     Protection Profile for Protection Profile for General Purpose Operating System
        Security Functional Requirements Direction
@@ -705,10 +705,10 @@ function showTarget(id){
       products. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is intended for use with the following <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>:
 
       <ul>
-        <li>Protection Profile for General Purpose Operating Systems (GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 4.3</li>
-        <li>Protection Profile for Mobile Device Fundamentals (MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 3.3</li>
+        <li>Protection Profile for General Purpose Operating Systems (GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 5.0</li>
+        <li>Protection Profile for Mobile Device Fundamentals (MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 4.0</li>
         <li>Protection Profile for Application Software (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 2.0</li>
-        <li>Protection Profile for Mobile Device Management (MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 4.0</li>
+        <li>Protection Profile for Mobile Device Management (MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 5.0</li>
       </ul>
 
       These <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> are all valid because a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client may be a specific type of stand-alone software
@@ -779,7 +779,7 @@ The following sections list Common Criteria and technology terms used in this do
       </td></tr>
 <tr><td><div id="Public_Network">Public Network</div></td><td>
         A network that is visible to all users and entities and does not protect against
-        unauthorized access (e.g. internet).
+        unauthorized access (e.g., internet).
       </td></tr>
 <tr><td><div id="Threat_Agent">Threat Agent</div></td><td>
         An entity that tries to harm an information system through destruction,
@@ -823,7 +823,7 @@ The following sections list Common Criteria and technology terms used in this do
 
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is installed on an <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> discussed
       in that <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> (e.g., Windows, Mac <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, Linux). This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is
-      installed on a self-contained mobile device that is bundled with an <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> (e.g. Android,
+      installed on a self-contained mobile device that is bundled with an <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> (e.g., Android,
       BlackBerry <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, iOS, Windows Mobile). This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is
       provided by a third party and is a standalone application that is not a bundled part of an <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>
       or mobile device. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is included with
@@ -1011,7 +1011,7 @@ requirements defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-
 					any Protection Profile.
 				</dd><p></p><dd>The following <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules are allowed to be specified in a 
 					<abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>:
-					<ul><li>Protection Profile for General Purpose Operating Systems, Version 4.3</li><li>Protection Profile for Mobile Device Fundamentals, Version 3.3</li><li>Protection Profile for Mobile Device Management, Version 4.0</li><li>Protection Profile for Application Software, Version 2.0</li><li><abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr>-Module for Wireless LAN Clients, version 1.1</li><li><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Bluetooth, version 1.1</li><li><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Mobile Device Management Agent, version 1.2</li><li><abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr>-Module for Biometric Enrolment and Verification, version 1.1</li></ul></dd><dt>Package Claim</dt><p></p><dd><ul><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
+					<ul><li>Protection Profile for General Purpose Operating Systems, Version 5.0</li><li>Protection Profile for Mobile Device Fundamentals, Version 4.0</li><li>Protection Profile for Mobile Device Management, Version 5.0</li><li>Protection Profile for Application Software, Version 2.0</li><li><abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr>-Module for Wireless LAN Clients, version 1.1</li><li><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Bluetooth, version 1.1</li><li><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Mobile Device Management Agent, version 2.0</li><li><abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr>-Module for Biometric Enrolment and Verification, version 1.1</li></ul></dd><dt>Package Claim</dt><p></p><dd><ul><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
 					    Functional Package for Transport Layer Security Version 2.1 conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
 					    Functional Package for X.509 Version 1.0 conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
 					    Assurance Package for Flaw Remediation Version 1.0 conformant.</li></ul></dd><p></p><dd>
@@ -1025,8 +1025,8 @@ requirements defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-
     The security problem is described in terms of the threats that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to address,
 assumptions about its <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>, and any organizational security policies that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is
 expected to enforce.<br/><br/>
-    This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is written to address the situation in which a user accesses a private network (e.g. the
-    user’s office network) or terminal endpoint (e.g. a network device) using a less trusted network (such as
+    This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is written to address the situation in which a user accesses a private network (e.g., the
+    user’s office network) or terminal endpoint (e.g., a network device) using a less trusted network (such as
     a public Wi-Fi network or local area network). Protection of network packets is desired as they traverse
     a public network. To protect the data in transit from disclosure and modification, a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> is created to
     establish secure communications. The <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client provides one end of the secure <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> tunnel and
@@ -1492,7 +1492,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 <li>802.1X in accordance with the [<i><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Wireless LAN Clients, version 1.1</i>],</li>
                 <li>EAP-TLS in accordance with the [<i><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Wireless LAN Clients, version 1.1</i>],</li>
                 <li>Mutually authenticated TLS in accordance with the [<i>Functional Package for TLS, version 2.1</i>],</li>
-                <li><b>IPsec in accordance with the [<i><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients, version 2.6</i>],</b></li>
+                <li><b>IPsec in accordance with the [<i><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients, version 3.0</i>],</b></li>
               </ul> and [<b>selection:</b><i><ul>
                 <li>mutually authenticated DTLS as defined in the Functional Package for TLS, version 2.1</li>
                 <li>HTTPS</li>
@@ -3563,6 +3563,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                  Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
           </ul></span></td></tr><tr><td><span id="bibAppPP">[App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description">
         <a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software, Version 2.0, June 16, 2025</a>
-      </span></td></tr><tr><td><span id="bibGPOS">[GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description"><a href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html">Protection Profile for General Purpose Operating Systems, Version 4.3</a>, September 27, 2022</span></td></tr><tr><td><span id="bibMDF">[MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description"><a href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html">Protection Profile for Mobile Device Fundamentals, Version 3.3</a>, Version 3.3, September 12, 2022</span></td></tr><tr><td><span id="bibMDM">[MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description">
-        <a href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">Protection Profile for Mobile Device Management, Version 4.0, April 25, 2019</a>
+      </span></td></tr><tr><td><span id="bibGPOS">[GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description"><a href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%205.0%20PP/index.html">Protection
+        Profile for General Purpose Operating Systems, Version 5.0</a>, September 27, 2022</span></td></tr><tr><td><span id="bibMDF">[MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description"><a href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%204.0%20PP/index.html">Protection Profile for Mobile Device Fundamentals, Version 4.0</a>, Version 4.0, September 12, 2022</span></td></tr><tr><td><span id="bibMDM">[MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description">
+        <a href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">Protection Profile for Mobile Device Management, Version 5.0, April 25, 2019</a>
       </span></td></tr></table></body></html>

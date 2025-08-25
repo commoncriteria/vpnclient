@@ -26,7 +26,7 @@
         <div class="center">
             <img src="images/niaplogo.png" alt="NIAP Logo">
             <br>
-             Version: 2.6
+             Version: 3.0
             <br>
             2025-01-31
             <br>
@@ -39,7 +39,16 @@
                 <th>Version</th><th>Date</th><th>Comment</th>
             </tr>
             <tr>
-                <td>2.6</td><td>2025-01-31</td><td><abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 conversion, limitation of cryptographic algorithms to CNSA 1.0, incorporation of TDs </td>
+                <td>2.1</td><td>2019-11-14</td><td>Initial Release</td>
+            </tr>
+            <tr>
+                <td>2.2</td><td>2021-01-05</td><td>Update release</td>
+            </tr>
+            <tr>
+                <td>2.3</td><td>2021-08-10</td><td>Support for MDF, Bluetooth updates</td>
+            </tr>
+            <tr>
+                <td>2.4</td><td>2022-03-31</td><td>Incorporation of TC feedback</td>
             </tr>
             <tr>
                 <td>2.5</td><td>2024-06-24</td><td>Incorporation of TC feedback: 
@@ -56,16 +65,7 @@
                 </td>
             </tr>
             <tr>
-                <td>2.4</td><td>2022-03-31</td><td>Incorporation of TC feedback</td>
-            </tr>
-            <tr>
-                <td>2.3</td><td>2021-08-10</td><td>Support for MDF, Bluetooth updates</td>
-            </tr>
-            <tr>
-                <td>2.2</td><td>2021-01-05</td><td>Update release</td>
-            </tr>
-            <tr>
-                <td>2.1</td><td>2019-11-14</td><td>Initial Release</td>
+                <td>3.0</td><td>2025-01-31</td><td><abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 conversion, limitation of cryptographic algorithms to CNSA 1.0, incorporation of TDs </td>
             </tr>
         </table>
         <h3>
@@ -80,16 +80,16 @@
          <span style="" class="comment " id="Comment-1-">FIA_X509_EXT references to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> are now removed and where appropriate the X.509 package is referenced instead. However, it's unclear whether there is still sufficient mechanism to actually 'force' the X.509 <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> to be included. That is to say, there is nothing in here that says "because IPsec functionality is dependent on X.509 validation, and because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> conform to the X.509 <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> shall make the relevant X.509 <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr> claims." </span> The scope of this Protection Profile Module (<abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>) is to describe the security functionality of a virtual private network (<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>) client in terms of <a href="#bibCC">[CC]</a> and to define functional and assurance requirements for such products. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is intended for use with the following <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>: 
         <ul>
             <li>
-                Protection Profile for General Purpose Operating Systems (GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 4.3
+                Protection Profile for General Purpose Operating Systems (GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 5.0
             </li>
             <li>
-                Protection Profile for Mobile Device Fundamentals (MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 3.3
+                Protection Profile for Mobile Device Fundamentals (MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 4.0
             </li>
             <li>
                 Protection Profile for Application Software (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 2.0
             </li>
             <li>
-                Protection Profile for Mobile Device Management (MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 4.0
+                Protection Profile for Mobile Device Management (MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), Version 5.0
             </li>
         </ul>
          These <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr> are all valid because a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client may be a specific type of stand-alone software application or a built-in component of an operating system (<abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>), whether desktop or mobile. Regardless of which <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is claimed, the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality defined by this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> will rely on the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. Sections 5.1 through 5.4 of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> describe the relevant functionality for each <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, including specific selections and assignments, or inclusion of optional requirements that must be made as needed to support the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client functionality. 
@@ -234,7 +234,7 @@
                 <tr>
                     <td>
                         <div id="Public_Network">Public Network</div>
-                    </td><td> A network that is visible to all users and entities and does not protect against unauthorized access (e.g. internet). </td>
+                    </td><td> A network that is visible to all users and entities and does not protect against unauthorized access (e.g., internet). </td>
                 </tr>
                 <tr>
                     <td>
@@ -282,7 +282,7 @@
          The tunnel provides confidentiality, integrity, and data authentication for information that travels across a less trusted (sometimes public) network. All <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients that comply with this document will support IPsec.
         <br>
         <br>
-         This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is installed on an <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> discussed in that <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> (e.g., Windows, Mac <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, Linux). This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is installed on a self-contained mobile device that is bundled with an <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> (e.g. Android, BlackBerry <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, iOS, Windows Mobile). This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is provided by a third party and is a standalone application that is not a bundled part of an <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> or mobile device. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is included with MDM server software that is used for centralized deployment and administration of enterprise mobile device policies. 
+         This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is installed on an <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> discussed in that <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> (e.g., Windows, Mac <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, Linux). This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is installed on a self-contained mobile device that is bundled with an <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> (e.g., Android, BlackBerry <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, iOS, Windows Mobile). This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is provided by a third party and is a standalone application that is not a bundled part of an <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> or mobile device. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extends the MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is included with MDM server software that is used for centralized deployment and administration of enterprise mobile device policies. 
         <br>
         <br>
          As a <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> of any of these <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr>, it is expected that the content of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> and the chosen <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> be appropriately combined in the context of each product-specific <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> has been specifically defined such that there should be no difficulty or ambiguity in doing so. When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used, conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> are obligated to implement the functionality required in the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> with the additional functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> in response to the threat environment discussed in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
@@ -402,9 +402,9 @@
             <dd>
                 The following <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules are allowed to be specified in a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>: 
                 <ul>
-                    <li>Protection Profile for General Purpose Operating Systems, Version 4.3</li>
-                    <li>Protection Profile for Mobile Device Fundamentals, Version 3.3</li>
-                    <li>Protection Profile for Mobile Device Management, Version 4.0</li>
+                    <li>Protection Profile for General Purpose Operating Systems, Version 5.0</li>
+                    <li>Protection Profile for Mobile Device Fundamentals, Version 4.0</li>
+                    <li>Protection Profile for Mobile Device Management, Version 5.0</li>
                     <li>Protection Profile for Application Software, Version 2.0</li>
                     <li>
                         <abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr>-Module for Wireless LAN Clients, version 1.1
@@ -413,7 +413,7 @@
                         <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Bluetooth, version 1.1
                     </li>
                     <li>
-                        <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Mobile Device Management Agent, version 1.2
+                        <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Mobile Device Management Agent, version 2.0
                     </li>
                     <li>
                         <abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr>-Module for Biometric Enrolment and Verification, version 1.1
@@ -445,7 +445,7 @@
          The security problem is described in terms of the threats that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to address, assumptions about its <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>, and any organizational security policies that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to enforce.
         <br>
         <br>
-         This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is written to address the situation in which a user accesses a private network (e.g. the user&rsquo;s office network) or terminal endpoint (e.g. a network device) using a less trusted network (such as a public Wi-Fi network or local area network). Protection of network packets is desired as they traverse a public network. To protect the data in transit from disclosure and modification, a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> is created to establish secure communications. The <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client provides one end of the secure <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> tunnel and performs encryption and decryption of network packets in accordance with a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> security policy negotiated between the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client (<abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and its IPsec peer.
+         This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is written to address the situation in which a user accesses a private network (e.g., the user&rsquo;s office network) or terminal endpoint (e.g., a network device) using a less trusted network (such as a public Wi-Fi network or local area network). Protection of network packets is desired as they traverse a public network. To protect the data in transit from disclosure and modification, a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> is created to establish secure communications. The <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client provides one end of the secure <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> tunnel and performs encryption and decryption of network packets in accordance with a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> security policy negotiated between the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client (<abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and its IPsec peer.
         <br>
         <br>
          The proper installation and configuration of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is critical to its correct operation such that proper handling of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> by an administrator is also addressed.
@@ -983,7 +983,7 @@
                         Mutually authenticated TLS in accordance with the [<i>Functional Package for TLS, version 2.1</i>],
                     </li>
                     <li>
-                        <b>IPsec in accordance with the [<i><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients, version 2.6</i>],</b>
+                        <b>IPsec in accordance with the [<i><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Clients, version 3.0</i>],</b>
                     </li>
                 </ul>
                  and [<b>selection:</b><i>
@@ -3990,13 +3990,13 @@
                 <td><span id="bibAppPP">[App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software, Version 2.0, June 16, 2025</a> </span></td>
             </tr>
             <tr>
-                <td><span id="bibGPOS">[GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description"><a href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html">Protection Profile for General Purpose Operating Systems, Version 4.3</a>, September 27, 2022</span></td>
+                <td><span id="bibGPOS">[GPOS <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description"><a href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%205.0%20PP/index.html">Protection Profile for General Purpose Operating Systems, Version 5.0</a>, September 27, 2022</span></td>
             </tr>
             <tr>
-                <td><span id="bibMDF">[MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description"><a href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html">Protection Profile for Mobile Device Fundamentals, Version 3.3</a>, Version 3.3, September 12, 2022</span></td>
+                <td><span id="bibMDF">[MDF <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description"><a href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%204.0%20PP/index.html">Protection Profile for Mobile Device Fundamentals, Version 4.0</a>, Version 4.0, September 12, 2022</span></td>
             </tr>
             <tr>
-                <td><span id="bibMDM">[MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">Protection Profile for Mobile Device Management, Version 4.0, April 25, 2019</a> </span></td>
+                <td><span id="bibMDM">[MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">Protection Profile for Mobile Device Management, Version 5.0, April 25, 2019</a> </span></td>
             </tr>
         </table>
     </body>

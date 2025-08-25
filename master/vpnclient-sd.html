@@ -274,7 +274,7 @@
    </style></head><body><div style="text-align: center; margin-left: auto; margin-right: auto;"><h1 class="title" style="page-break-before:auto;">Supporting Document<br/>
         Mandatory Technical Document</h1><img src="images/niaplogo.png" alt="NIAP"></img><hr width="50%"></hr><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><br/>
     PP-Module for VPN Client<br/>
-      Version: 2.6<br/>2025-01-31<br/><b>National Information Assurance Partnership</b></div><div class="foreword"><h1 style="text-align: center">Foreword</h1><p>This is a Supporting Document (SD), intended to complement the Common Criteria version 3
+      Version: 3.0<br/>2025-01-31<br/><b>National Information Assurance Partnership</b></div><div class="foreword"><h1 style="text-align: center">Foreword</h1><p>This is a Supporting Document (SD), intended to complement the Common Criteria version 3
       and the associated Common Evaluation Methodology for
       Information Technology Security Evaluation.</p><p>SDs may be “Guidance Documents”, that highlight specific approaches 
       and application of the standard to areas where no mutual recognition of
@@ -284,13 +284,13 @@
       The usage of the latter class is not only mandatory, but certificates
       issued as a result of their application are recognized under the CCRA.</p><p><b>Technical Editor:</b><br/>
       National Information Assurance Partnership (NIAP)
-      </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>2.6</td><td>2025-01-31</td><td>CC:2022 conversion, limitation of cryptographic algorithms to CNSA 1.0, incorporation of TDs
-        </td></tr><tr><td>2.5</td><td>2024-06-24</td><td>Incorporation of TC feedback: <ul>
+      </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>2.1</td><td>2019-11-14</td><td>Initial Release</td></tr><tr><td>2.2</td><td>2021-01-05</td><td>Update release</td></tr><tr><td>2.3</td><td>2021-08-10</td><td>Support for MDF, Bluetooth updates</td></tr><tr><td>2.4</td><td>2022-03-31</td><td>Incorporation of TC feedback</td></tr><tr><td>2.5</td><td>2024-06-24</td><td>Incorporation of TC feedback: <ul>
         <li>Incorporation of TDs: 0662, 0672, 0690, 0697, 0711, 0725, 0753, 0788</li>
         <li>Corrections to Base-PP references</li>
         <li>Definition of auditable events for Additional SFRs</li>
         <li>Explicit association of evaluation activities with components and elements</li>
-      </ul></td></tr><tr><td>2.4</td><td>2022-03-31</td><td>Incorporation of TC feedback</td></tr><tr><td>2.3</td><td>2021-08-10</td><td>Support for MDF, Bluetooth updates</td></tr><tr><td>2.2</td><td>2021-01-05</td><td>Update release</td></tr><tr><td>2.1</td><td>2019-11-14</td><td>Initial Release</td></tr></table></p><p><b>General Purpose:</b><br/>
+      </ul></td></tr><tr><td>3.0</td><td>2025-01-31</td><td>CC:2022 conversion, limitation of cryptographic algorithms to CNSA 1.0, incorporation of TDs
+        </td></tr></table></p><p><b>General Purpose:</b><br/>
       The purpose of this SD is to define evaluation methods for the functional behavior of
       VPN client      
       products.
@@ -315,9 +315,9 @@
 
     
     The PP-Module is intended for use with the following Base-PPs:
-        <ul><li>Protection Profile for General Purpose Operating System, version 4.3.</li><li>Protection Profile for Mobile Device Fundamentals, version 3.3.</li><li>Protection Profile for Application Software, version 2.0.</li><li>Protection Profile for Mobile Device Management, version 4.0.</li></ul><br/>
+        <ul><li>Protection Profile for General Purpose Operating System, version 5.0.</li><li>Protection Profile for Mobile Device Fundamentals, version 4.0.</li><li>Protection Profile for Application Software, version 2.0.</li><li>Protection Profile for Mobile Device Management, version 5.0.</li></ul><br/>
     This SD is mandatory for evaluations of TOEs that claim conformance to a PP-Configuration that includes the PP-Module for :
-    <ul><li>VPN client, Version 2.6</li></ul>
+    <ul><li>VPN client, Version 3.0</li></ul>
     As such it defines Evaluation Activities for the functionality described in the PP-Module as well as any impacts to the Evaluation Activities to the Base-PP(s) it modifies.
     </p><p> 
 Although Evaluation Activities are defined mainly for the evaluators to follow, in general they also help developers to prepare for evaluation by identifying specific requirements for their TOE.
@@ -398,7 +398,7 @@ The following sections list Common Criteria and technology terms used in this do
       </td></tr>
 <tr><td><div id="Public_Network">Public Network</div></td><td>
         A network that is visible to all users and entities and does not protect against
-        unauthorized access (e.g. internet).
+        unauthorized access (e.g., internet).
       </td></tr>
 <tr><td><div id="Threat_Agent">Threat Agent</div></td><td>
         An entity that tries to harm an information system through destruction,
@@ -557,7 +557,7 @@ The following sections list Common Criteria and technology terms used in this do
                   baseband protocol in which only the traffic identified by the ST author is necessary for establishing the
                   VPN connection (IKE traffic and perhaps HTTPS or DNS traffic) is not encapsulated by the VPN protocol 
                   (IPsec). The ST author shall also identify in the TSS section any differences in the routing of IP traffic when
-                  using any supported baseband protocols (e.g. Wi-Fi, LTE).
+                  using any supported baseband protocols (e.g., Wi-Fi, LTE).
                   <br/><br/>
                 </div>
                 <div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the following is addressed by the documentation:
@@ -747,13 +747,13 @@ The following sections list Common Criteria and technology terms used in this do
 
                 If the TOE is a standalone software application, the evaluator shall ensure that the TSS asserts that all
 				IPsec functionality is implemented by the TSF. The evaluator shall also ensure that the TSS identifies what
-				platform functionality the TSF relies on to support its IPsec implementation, if any (e.g. does it invoke
+				platform functionality the TSF relies on to support its IPsec implementation, if any (e.g., does it invoke
 				cryptographic primitive functions from the platform’s cryptographic library, enforcement of packet
 				routing decisions by low-level network drivers).<br/><br/>
 
                 If the TOE is part of a general-purpose desktop or mobile OS, the evaluator shall ensure
 				that the TSS describes at a high level the architectural relationship between the VPN client portion of the
-				TOE and the rest of the TOE (e.g. is the VPN client an integrated part of the OS or is it a standalone
+				TOE and the rest of the TOE (e.g., is the VPN client an integrated part of the OS or is it a standalone
 				executable that is bundled into the OS package). If the SPD is implemented by the underlying platform in
 				this case, then the TSS describes how the client interacts with the platform to establish and populate the
 				SPD, including the identification of the platform's interfaces that are used by the client.<br/><br/>
@@ -1181,7 +1181,7 @@ The following sections list Common Criteria and technology terms used in this do
 		code has not been compromised. The evaluator shall check to ensure that the cryptographic requirements
 		listed are consistent with the description of the integrity verification process.<br/><br/>
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">If not present in the TSS, the evaluator shall ensure that the operational guidance describes the actions that
-		take place for successful (e.g. hash verified) and unsuccessful (e.g., hash not verified) cases. For checks
+		take place for successful (e.g., hash verified) and unsuccessful (e.g., hash not verified) cases. For checks
 		implemented entirely by the platform, the evaluator shall ensure that the operational guidance for the TOE
 		references or includes the platform-specific guidance for each platform listed in the ST.<br/><br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
@@ -1240,7 +1240,7 @@ The following sections list Common Criteria and technology terms used in this do
                     The evaluator shall follow AGD guidance to configure the TSF to use the authentication method claimed, and 
                     for EAP-TTLS, register a client with the appropriate key material required for the authentication method. 
                     The evaluator shall establish a VPN session using a test client with a valid certificate, and for EAP-TTLS, 
-                    configured to provide a correct value for the configured authenticator. The evaluator shall  observe the the 
+                    configured to provide a correct value for the configured authenticator. The evaluator shall  observe the 
                     VPN session is successful.</li>
                   <li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FCS_EAP_EXT.1:2</a>:
       (conditional for EAP-TTLS support): The evaluator shall cause the test client with a valid certificate to send 
@@ -1446,7 +1446,7 @@ The following sections list Common Criteria and technology terms used in this do
 	          guidance satisfies the requirements.<br/><br/>
 	          
 	          For each required auditable event, the evaluator shall examine the operational guidance to determine
-	          that it is clear to the reader where each event is generated (e.g. the TSF may generate its own audit logs
+	          that it is clear to the reader where each event is generated (e.g., the TSF may generate its own audit logs
 	          in one location while the platform-provided auditable events are generated elsewhere).<br/><br/>
 	        </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the TOE’s ability to correctly generate audit data by having the TOE generate
 	          audit data in accordance with the EAs associated with the functional requirements in the PP-Module for VPN Clients. 
@@ -1481,12 +1481,13 @@ guidance, and testing.</p><h1 id="biblio" class="indexable" data-level="A">Appen
               April 2017.</li><li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
                 3: Security Assurance Components</a>, CCMB-2017-04-003, Version 3.1 Revision 5,
               April 2017.</li></ul></td></tr>
-    <tr><td><span id="bibGPOS"></span>[GPOS PP]</td><td><a href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html">Protection Profile for General Purpose Operating Systems, Version 4.3</a>, September 27, 2022</td></tr>
+    <tr><td><span id="bibGPOS"></span>[GPOS PP]</td><td><a href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%205.0%20PP/index.html">Protection
+        Profile for General Purpose Operating Systems, Version 5.0</a>, September 27, 2022</td></tr>
       
-    <tr><td><span id="bibMDF"></span>[MDF PP]</td><td><a href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html">Protection Profile for Mobile Device Fundamentals, Version 3.3</a>, Version 3.3, September 12, 2022</td></tr>
+    <tr><td><span id="bibMDF"></span>[MDF PP]</td><td><a href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%204.0%20PP/index.html">Protection Profile for Mobile Device Fundamentals, Version 4.0</a>, Version 4.0, September 12, 2022</td></tr>
 
     <tr><td><span id="bibMDM"></span>[MDM PP]</td><td>
-        <a href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">Protection Profile for Mobile Device Management, Version 4.0, April 25, 2019</a>
+        <a href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">Protection Profile for Mobile Device Management, Version 5.0, April 25, 2019</a>
       </td></tr>
 
     
