@@ -13,7 +13,7 @@
 	
   <PPReference>
    <ReferenceTable>
-	   <PPVersion>2.6</PPVersion>
+	   <PPVersion>3.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
       <PPPubDate>2025-01-31</PPPubDate>
       <Keywords>VPN, VPN Client</Keywords>
@@ -21,12 +21,30 @@
   </PPReference>
 
   <RevisionHistory>
-    <entry>
-      <version>2.6</version>
-      <date>2025-01-31</date>
-      <subject>CC:2022 conversion, limitation of cryptographic algorithms to CNSA 1.0, incorporation of TDs
-        </subject>
+   <entry>
+      <version>2.1</version>
+      <date>2019-11-14</date>
+      <subject>Initial Release</subject>
     </entry>
+    
+    <entry>
+      <version>2.2</version>
+      <date>2021-01-05</date>
+      <subject>Update release</subject>
+    </entry>
+    
+    <entry>
+      <version>2.3</version>
+      <date>2021-08-10</date>
+      <subject>Support for MDF, Bluetooth updates</subject>
+    </entry>
+    
+    <entry>
+      <version>2.4</version>
+      <date>2022-03-31</date>
+      <subject>Incorporation of TC feedback</subject>
+    </entry>
+    
     <entry>
       <version>2.5</version>
       <date>2024-06-24</date>
@@ -37,25 +55,12 @@
         <h:li>Explicit association of evaluation activities with components and elements</h:li>
       </h:ul></subject>
     </entry>
+    
     <entry>
-      <version>2.4</version>
-      <date>2022-03-31</date>
-      <subject>Incorporation of TC feedback</subject>
-    </entry>
-    <entry>
-      <version>2.3</version>
-      <date>2021-08-10</date>
-      <subject>Support for MDF, Bluetooth updates</subject>
-    </entry>
-    <entry>
-      <version>2.2</version>
-      <date>2021-01-05</date>
-      <subject>Update release</subject>
-    </entry>
-    <entry>
-      <version>2.1</version>
-      <date>2019-11-14</date>
-      <subject>Initial Release</subject>
+      <version>3.0</version>
+      <date>2025-01-31</date>
+      <subject>CC:2022 conversion, limitation of cryptographic algorithms to CNSA 1.0, incorporation of TDs
+        </subject>
     </entry>
   </RevisionHistory>
 
@@ -71,7 +76,7 @@
   <include-pkg id="pkg-tls">
     <git>
       <url>https://github.com/commoncriteria/tls</url>
-      <branch>release-2.0</branch>
+      <branch>release-2.1</branch>
     </git>
     <url><![CDATA[https://www.niap-ccevs.org/protectionprofiles/465]]></url>
     <depends on="fcs-eap-ext-1"/>
@@ -95,10 +100,10 @@
       products. This PP-Module is intended for use with the following Base-PPs:
 
       <h:ul>
-        <h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 4.3</h:li>
-        <h:li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 3.3</h:li>
+        <h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 5.0</h:li>
+        <h:li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 4.0</h:li>
         <h:li>Protection Profile for Application Software (App PP), Version 2.0</h:li>
-        <h:li>Protection Profile for Mobile Device Management (MDM PP), Version 4.0</h:li>
+        <h:li>Protection Profile for Mobile Device Management (MDM PP), Version 5.0</h:li>
       </h:ul>
 
       These Base-PPs are all valid because a VPN client may be a specific type of stand-alone software
@@ -145,7 +150,7 @@
       </term>
       <term full="Public Network">
         A network that is visible to all users and entities and does not protect against
-        unauthorized access (e.g. internet).
+        unauthorized access (e.g., internet).
       </term>
       <term full="Threat Agent">
         An entity that tries to harm an information system through destruction,
@@ -221,7 +226,7 @@
 
       This PP-Module extends the GPOS PP when the VPN client is installed on an OS discussed
       in that PP (e.g., Windows, Mac OS, Linux). This PP-Module extends the MDF PP when the VPN client is
-      installed on a self-contained mobile device that is bundled with an OS (e.g. Android,
+      installed on a self-contained mobile device that is bundled with an OS (e.g., Android,
       BlackBerry OS, iOS, Windows Mobile). This PP-Module extends the App PP when the VPN client is
       provided by a third party and is a standalone application that is not a bundled part of an OS
       or mobile device. This PP-Module extends the MDM PP when the VPN client is included with
@@ -408,13 +413,13 @@ requirements defined by the PP-Module, expressed as Evaluation Activities (EAs).
       <cc-pt3-conf>extended</cc-pt3-conf>
       <cc-pp-conf/>
       <cc-pp-config-with> 
-        <PP-cc-ref>Protection Profile for General Purpose Operating Systems, Version 4.3</PP-cc-ref>
-        <PP-cc-ref>Protection Profile for Mobile Device Fundamentals, Version 3.3</PP-cc-ref>
-        <PP-cc-ref>Protection Profile for Mobile Device Management, Version 4.0</PP-cc-ref>
+        <PP-cc-ref>Protection Profile for General Purpose Operating Systems, Version 5.0</PP-cc-ref>
+        <PP-cc-ref>Protection Profile for Mobile Device Fundamentals, Version 4.0</PP-cc-ref>
+        <PP-cc-ref>Protection Profile for Mobile Device Management, Version 5.0</PP-cc-ref>
         <PP-cc-ref>Protection Profile for Application Software, Version 2.0</PP-cc-ref>
         <Mod-cc-ref>cPP-Module for Wireless LAN Clients, version 1.1</Mod-cc-ref>
         <Mod-cc-ref>PP-Module for Bluetooth, version 1.1</Mod-cc-ref>
-        <Mod-cc-ref>PP-Module for Mobile Device Management Agent, version 1.2</Mod-cc-ref>
+        <Mod-cc-ref>PP-Module for Mobile Device Management Agent, version 2.0</Mod-cc-ref>
         <Mod-cc-ref>cPP-Module for Biometric Enrolment and Verification, version 1.1</Mod-cc-ref>  
       </cc-pp-config-with>
       <cc-pkg-claim>
@@ -431,8 +436,8 @@ requirements defined by the PP-Module, expressed as Evaluation Activities (EAs).
     The security problem is described in terms of the threats that the TOE is expected to address,
 assumptions about its OE, and any organizational security policies that the TOE is
 expected to enforce.<h:br/><h:br/>
-    This PP-Module is written to address the situation in which a user accesses a private network (e.g. the
-    user’s office network) or terminal endpoint (e.g. a network device) using a less trusted network (such as
+    This PP-Module is written to address the situation in which a user accesses a private network (e.g., the
+    user’s office network) or terminal endpoint (e.g., a network device) using a less trusted network (such as
     a public Wi-Fi network or local area network). Protection of network packets is desired as they traverse
     a public network. To protect the data in transit from disclosure and modification, a VPN is created to
     establish secure communications. The VPN client provides one end of the secure VPN tunnel and
@@ -700,7 +705,7 @@ expected to enforce.<h:br/><h:br/>
         text and <h:s>strikethrough</h:s> text for removed text. Refinements are only applied to significant technical
         changes to existing SFRs; minor presentation changes with no technical impact (such as British vs
         American spelling differences) are not marked as refinements. Refinements are also indicated when
-        an operation is added or substituted for an existing operation (e.g. the PP-Module completes an
+        an operation is added or substituted for an existing operation (e.g., the PP-Module completes an
         assignment in such a way that it introduces a selection into the assignment).<h:br/><h:br/>
         Note that for SFRs that are defined either in CC Part 2 or in this PP-Module’s Extended Components
         Definition, the refinement operation is used to indicate deviations from the defined component. For
@@ -709,8 +714,8 @@ expected to enforce.<h:br/><h:br/>
         change is not affected by this PP-Module, it is not shown here as a refinement).</h:li>
       <h:li>Selections are indicated with <h:i>italicized</h:i> text.</h:li>
       <h:li>Iteration is indicated by appending the SFR name with a slash and unique identifier suggesting the
-        purpose of the iteration, e.g. ‘/VPN’ for an SFR relating to VPN functionality, or by a sequential
-        number in parentheses, e.g. (1). </h:li>  -->
+        purpose of the iteration, e.g., ‘/VPN’ for an SFR relating to VPN functionality, or by a sequential
+        number in parentheses, e.g., (1). </h:li>  -->
       <!-- We should get rid of the number and ( ) options for more than one reason. 
         1. This PP is already written and it was done one way or the other.
         2. We want it done our way: slashes for iterations, parens for instances.  -->
@@ -722,12 +727,12 @@ expected to enforce.<h:br/><h:br/>
     written. -->
     
     <!-- 5.1 GPOS PP Security Functional Requirements Direction -->
-    <base-pp id="bpp-gpos" name="Protection Profile for General Purpose Operating System" product="Operating System" short="GPOS" version="4.3">
+    <base-pp id="bpp-gpos" name="Protection Profile for General Purpose Operating System" product="Operating System" short="GPOS" version="5.0">
       <git>
 	<url>https://github.com/commoncriteria/operatingsystem</url>
-	<branch>release-4.3</branch>
+	<branch>release-5.0</branch>
       </git>
-      <url>https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html</url>
+      <url>https://www.niap-ccevs.org/static_html/protection-profile/469/OS%205.0%20PP/index.html</url>
 
 		<sec-func-req-dir> 
 			In a PP-Configuration that includes the GPOS PP, the VPN client is expected to rely on some of the
@@ -1291,12 +1296,12 @@ expected to enforce.<h:br/><h:br/>
     </base-pp>
 
     <!-- 5.2 MDF PP Security Functional Requirements Direction -->
-    <base-pp id="bpp-mdf" name="Protection Profile for Mobile Device Fundamentals" product="Mobile Device" short="MDF" version="3.3">
+    <base-pp id="bpp-mdf" name="Protection Profile for Mobile Device Fundamentals" product="Mobile Device" short="MDF" version="4.0">
       <git>
 	<url>https://github.com/commoncriteria/mobile-device</url>
-	<branch>release-3.3</branch>
+	<branch>release-4.0</branch>
       </git>
-      <url>https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html</url>
+      <url>https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%204.0%20PP/index.html</url>
 		<sec-func-req-dir>
       In a PP-Configuration that includes the MDF PP, the VPN client is expected to rely on some of the
       security functions implemented by the OS as a whole and evaluated against the Base-PP.
@@ -1572,7 +1577,7 @@ expected to enforce.<h:br/><h:br/>
                 <h:li>802.1X in accordance with the [<h:i>PP-Module for Wireless LAN Clients, version 1.1</h:i>],</h:li>
                 <h:li>EAP-TLS in accordance with the [<h:i>PP-Module for Wireless LAN Clients, version 1.1</h:i>],</h:li>
                 <h:li>Mutually authenticated TLS in accordance with the [<h:i>Functional Package for TLS, version 2.1</h:i>],</h:li>
-                <h:li><h:b>IPsec in accordance with the [<h:i>PP-Module for VPN Clients, version 2.6</h:i>],</h:b></h:li>
+                <h:li><h:b>IPsec in accordance with the [<h:i>PP-Module for VPN Clients, version 3.0</h:i>],</h:b></h:li>
               </h:ul> and [<h:b>selection:</h:b><h:i><h:ul>
                 <h:li>mutually authenticated DTLS as defined in the Functional Package for TLS, version 2.1</h:li>
                 <h:li>HTTPS</h:li>
@@ -1650,7 +1655,7 @@ expected to enforce.<h:br/><h:br/>
                   baseband protocol in which only the traffic identified by the ST author is necessary for establishing the
                   VPN connection (IKE traffic and perhaps HTTPS or DNS traffic) is not encapsulated by the VPN protocol 
                   (IPsec). The ST author shall also identify in the TSS section any differences in the routing of IP traffic when
-                  using any supported baseband protocols (e.g. Wi-Fi, LTE).
+                  using any supported baseband protocols (e.g., Wi-Fi, LTE).
                   <h:br/><h:br/>
                 </TSS>
                 <Guidance>The evaluator shall verify that the following is addressed by the documentation:
@@ -1719,7 +1724,7 @@ expected to enforce.<h:br/><h:br/>
 		baseband protocol in which only the traffic identified by the ST author is necessary for establishing the
 		VPN connection (IKE traffic and perhaps HTTPS or DNS traffic) is not encapsulated by the VPN protocol 
 		(IPsec). The ST author shall also identify in the TSS section any differences in the routing of IP traffic when
-		using any supported baseband protocols (e.g. WiFi or, LTE).
+		using any supported baseband protocols (e.g., WiFi or, LTE).
 		<h:br/><h:br/>
               </TSS>
               <Guidance>The evaluator shall verify that the following is addressed by the documentation:
@@ -2300,7 +2305,7 @@ expected to enforce.<h:br/><h:br/>
                   <selectables linebreak="yes">
                     <selectable>encrypt all transmitted [<h:i>sensitive data</h:i>]
                        with
-                      <h:b>IPsec as defined in the PP-Module for VPN Client, version 2.6 and</h:b>
+                      <h:b>IPsec as defined in the PP-Module for VPN Client, version 3.0 and</h:b>
                       <selectables>
                         <selectable id="sel_all_https_cl">HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client</selectable>
                         <selectable id="sel_all_https_sv">HTTPS as a server in accordance with FCS_HTTPS_EXT.1/Server</selectable>
@@ -2637,11 +2642,11 @@ expected to enforce.<h:br/><h:br/>
     </base-pp>
 
     <!-- 5.4 MDM PP Security Functional Requirements Direction -->
-    <base-pp id="bpp-mdm" name="Protection Profile for Mobile Device Management" product="Mobile Device Management" short="MDM" version="4.0">
+    <base-pp id="bpp-mdm" name="Protection Profile for Mobile Device Management" product="Mobile Device Management" short="MDM" version="5.0">
       
       <git>
 	<url>https://github.com/commoncriteria/mdm</url>
-	<branch>v4.0</branch>
+	<branch>v5.0</branch>
       </git>
       <url>https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html</url>
 	<sec-func-req-dir>
@@ -3298,13 +3303,13 @@ that is logically distinct from other communication channels and provides assure
 
                 If the TOE is a standalone software application, the evaluator shall ensure that the TSS asserts that all
 				IPsec functionality is implemented by the TSF. The evaluator shall also ensure that the TSS identifies what
-				platform functionality the TSF relies on to support its IPsec implementation, if any (e.g. does it invoke
+				platform functionality the TSF relies on to support its IPsec implementation, if any (e.g., does it invoke
 				cryptographic primitive functions from the platform’s cryptographic library, enforcement of packet
 				routing decisions by low-level network drivers).<h:br/><h:br/>
 
                 If the TOE is part of a general-purpose desktop or mobile OS, the evaluator shall ensure
 				that the TSS describes at a high level the architectural relationship between the VPN client portion of the
-				TOE and the rest of the TOE (e.g. is the VPN client an integrated part of the OS or is it a standalone
+				TOE and the rest of the TOE (e.g., is the VPN client an integrated part of the OS or is it a standalone
 				executable that is bundled into the OS package). If the SPD is implemented by the underlying platform in
 				this case, then the TSS describes how the client interacts with the platform to establish and populate the
 				SPD, including the identification of the platform's interfaces that are used by the client.<h:br/><h:br/>
@@ -4207,7 +4212,7 @@ that is logically distinct from other communication channels and provides assure
 		listed are consistent with the description of the integrity verification process.<h:br/><h:br/>
               </TSS>
               <Guidance>If not present in the TSS, the evaluator shall ensure that the operational guidance describes the actions that
-		take place for successful (e.g. hash verified) and unsuccessful (e.g., hash not verified) cases. For checks
+		take place for successful (e.g., hash verified) and unsuccessful (e.g., hash not verified) cases. For checks
 		implemented entirely by the platform, the evaluator shall ensure that the operational guidance for the TOE
 		references or includes the platform-specific guidance for each platform listed in the ST.<h:br/><h:br/>
               </Guidance>
@@ -4497,7 +4502,7 @@ that is logically distinct from other communication channels and provides assure
                     The evaluator shall follow AGD guidance to configure the TSF to use the authentication method claimed, and 
                     for EAP-TTLS, register a client with the appropriate key material required for the authentication method. 
                     The evaluator shall establish a VPN session using a test client with a valid certificate, and for EAP-TTLS, 
-                    configured to provide a correct value for the configured authenticator. The evaluator shall  observe the the 
+                    configured to provide a correct value for the configured authenticator. The evaluator shall  observe the 
                     VPN session is successful.</test>
                   <test>(conditional for EAP-TTLS support): The evaluator shall cause the test client with a valid certificate to send 
                     an invalid authenticator for the claimed authentication method.
@@ -5108,7 +5113,7 @@ that is logically distinct from other communication channels and provides assure
 	          guidance satisfies the requirements.<h:br/><h:br/>
 	          
 	          For each required auditable event, the evaluator shall examine the operational guidance to determine
-	          that it is clear to the reader where each event is generated (e.g. the TSF may generate its own audit logs
+	          that it is clear to the reader where each event is generated (e.g., the TSF may generate its own audit logs
 	          in one location while the platform-provided auditable events are generated elsewhere).<h:br/><h:br/>
 	        </Guidance>
 	        <Tests>The evaluator shall test the TOE’s ability to correctly generate audit data by having the TOE generate
@@ -5271,17 +5276,18 @@ that is logically distinct from other communication channels and provides assure
     <entry id="bibGPOS">
       <tag>GPOS PP</tag>
       <description><h:a
-        href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html">Protection Profile for General Purpose Operating Systems, Version 4.3</h:a>, September 27, 2022</description>
+        href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%205.0%20PP/index.html">Protection
+        Profile for General Purpose Operating Systems, Version 5.0</h:a>, September 27, 2022</description>
     </entry>      
     <entry id="bibMDF">
       <tag>MDF PP</tag>
       <description><h:a
-        href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html">Protection Profile for Mobile Device Fundamentals, Version 3.3</h:a>, Version 3.3, September 12, 2022</description>
+        href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%204.0%20PP/index.html">Protection Profile for Mobile Device Fundamentals, Version 4.0</h:a>, Version 4.0, September 12, 2022</description>
     </entry>
     <entry id="bibMDM">
       <tag>MDM PP</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">Protection Profile for Mobile Device Management, Version 4.0, April 25, 2019</h:a>
+        <h:a href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">Protection Profile for Mobile Device Management, Version 5.0, April 25, 2019</h:a>
       </description>
     </entry>
     
