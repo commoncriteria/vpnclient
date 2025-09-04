@@ -282,7 +282,7 @@ requirements defined by the PP-Module, expressed as Evaluation Activities (EAs).
 
       A TOE that conforms to this PP-Module will implement the Internet Engineering Task Force (IETF)
       IPsec Security Architecture for the Internet Protocol, RFC 4301, as well as
-      the IPsec Encapsulating Security Payload (ESP) protocol. IPsec ESP is specified in RFC 2406 and RFC 4303.
+      the IPsec Encapsulating Security Payload (ESP) protocol. IPsec ESP is specified in RFC 4303.
       The IPsec VPN client will support ESP in either tunnel mode, transport mode, or both.  <h:br/><h:br/>
 
       The IPsec VPN client will use the Internet Key Exchange (IKE)v2 protocol. IKEv2 is implemented as specified in RFC
@@ -759,18 +759,30 @@ expected to enforce.<h:br/><h:br/>
               The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a
               specified cryptographic key generation algorithm 
               <h:b><h:ul><h:i>
-                <h:li>ECC schemes using “NIST curve” P-384
+                <h:li>ECC schemes using [<h:i>“NIST curves” P-384 and [selection: P-521, no other curves]</h:i>]
                   that meet the following: FIPS PUB 186-5, “Digital Signature
-                  Standard (DSS),” Appendix A.2, and,
-                </h:li></h:i>
+                  Standard (DSS),” Appendix A.2
+                </h:li></h:i>and
               </h:ul></h:b>
-              <h:b>[selection: </h:b><h:i><h:ul>
-                <h:li>RSA schemes using cryptographic key sizes of 3072-bit or greater that
+              [<h:b>selection: </h:b><h:i><h:ul>
+                <h:li>CNSA 2.0 Compliant Algorithms: [<h:b>selection:</h:b>
+                <h:ul>
+                  <h:li>Leighton-Micali Signature Algorithm using the parameter sets [<h:b>selection: </h:b>LMS_SHAKE_M24_H5, LMS_SHAKE_M24_H10, LMS_SHAKE_M24_H15, LMS_SHAKE_M24_H25, LMS_SHAKE_M32_H5, LMS_SHAKE_M32_H10, LMS_SHAKE_M32_H15, LMS_SHAKE_M32_H25, LMS_SHA256_M24_H5, LMS_SHA256_M24_H10, LMS_SHA256_M24_H15, LMS_SHA256_M24_H25, LMS_SHA256_M32_H5, LMS_SHA256_M32_H10, LMS_SHA256_M32_H15, LMS_SHA256_M32_H25] that meet the following [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]</h:li>
+                  <h:li>eXtended Merkle Signature Scheme Algorithm using the parameter sets [<h:b>selection: </h:b><h:i>XMSS-SHA2_10_192, XMSS-SHA2_16_192, XMSS-SHA2_20_192, XMSS-SHA2_10_256, XMSS-SHA2_16_256, XMSS-SHA2_20_256, XMSS-SHAKE_10_192, XMSS-SHAKE_16_192, XMSS-SHAKE_20_192, XMSS-SHAKE_10_256, XMSS-SHAKE_16_256, XMSS-SHAKE_20_256</h:i>] that meets the following: [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]</h:li>
+                  <h:li>Module-Lattice-Based Key-Encapsulation Mechanism Standard using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</h:li>
+                  <h:li>Module-Lattice-Based Digital Signature Standard using the parameter set ML-DSA-87 that meets the following [FIPS 204, Module-Lattice-Based Digital Signature Standard]</h:li>
+                </h:ul>
+                </h:li>
+                <h:li>CNSA 1.0 Compliant Algorithms: [<h:b>selection:</h:b>
+                <h:ul>
+                  <h:li>RSA schemes using cryptographic key sizes of [<h:b>assignment: </h:b><h:i>3072-bit or greater</h:i>] that
                   meet the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.1
                 </h:li>
-                <h:li>FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [<h:b>selection:</h:b> RFC 3526, RFC 7919]</h:li>               
+                <h:li>FFC schemes using "safe-prime" groups [<h:b>selection: </h:b>MODP-3072, MODP-4096, MODP-6144, MODP-8192, ffdhe-3072, ffdhe-4096, ffdhe-6144, ffdhe-8192] that meet the following: 'NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [<h:b>selection:</h:b> RFC 3526, RFC 7919]</h:li>   
+                </h:ul>
+                </h:li>
                 <h:li><h:b>No other key generation methods</h:b></h:li>
-              </h:ul></h:i><h:b>]</h:b>.
+              </h:ul></h:i>].
        
               
             </description>
@@ -779,19 +791,69 @@ expected to enforce.<h:br/><h:br/>
               <xpath-specified xpath="*//cc:f-element[@id='fel-asym-gen']//cc:title">
                 <title>The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
                   <h:b><h:ul>
-                    <h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature
+                    <h:li>ECC schemes using [<h:i>“NIST curves” P-384 and <selectables>
+                      <selectable>P-521</selectable>
+                      <selectable>no other curves</selectable></selectables></h:i>] that meet the following: FIPS PUB 186-5, "Digital Signature
                       Standard (DSS)", Appendix A.2</h:li>
-                  </h:ul></h:b>
+                  </h:ul></h:b> and
                   <selectables linebreak="yes">
-                    <selectable>RSA schemes using a cryptographic key size of 3072-bits that
-                      meet the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix
-                      A.1</selectable>
-                    <selectable>FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, 
-                      "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and <selectables>
-                        <selectable>RFC 3526</selectable>
-                        <selectable>RFC 7919</selectable>
-                      </selectables></selectable>
-                    <selectable><h:b>no other key generation methods</h:b></selectable>
+                    <selectable>CNSA 2.0 Compliant Algorithms: <selectables linebreak="yes">
+                      <selectable id="fcs_ckm.1.1_AK_4">Leighton-Micali Signature Algorithm using the parameter sets <selectables>
+                        <selectable id="fcs_ckm.1.1_AK_5">LMS_SHAKE_M24_H5</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_6">LMS_SHAKE_M24_H10</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_7">LMS_SHAKE_M24_H15</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_8">LMS_SHAKE_M24_H25</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_9">LMS_SHAKE_M32_H5</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_10">LMS_SHAKE_M32_H10</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_11">LMS_SHAKE_M32_H15</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_12">LMS_SHAKE_M32_H25</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_13">LMS_SHA256_M24_H5</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_14">LMS_SHA256_M24_H10</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_15">LMS_SHA256_M24_H15</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_16">LMS_SHA256_M24_H25</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_17">LMS_SHA256_M32_H5</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_18">LMS_SHA256_M32_H10</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_19">LMS_SHA256_M32_H15</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_20">LMS_SHA256_M32_H25</selectable></selectables> that meet the following [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]</selectable>
+                      <selectable id="fcs_ckm.1.1_AK_21"><h:b>eXtended Merkle Signature Scheme Algorithm</h:b> using the parameter sets <selectables>
+                        <selectable id="fcs_ckm.1.1_AK_22">XMSS-SHA2_10_192</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_23">XMSS-SHA2_16_192</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_24">XMSS-SHA2_20_192</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_25">XMSS-SHA2_10_256</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_26">XMSS-SHA2_16_256</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_27">XMSS-SHA2_20_256</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_28">XMSS-SHAKE_10_192</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_29">XMSS-SHAKE_16_192</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_30">XMSS-SHAKE_20_192</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_31">XMSS-SHAKE_10_256</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_32">XMSS-SHAKE_16_256</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_33">XMSS-SHAKE_20_256</selectable>
+                      </selectables> that meets the following: [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]</selectable>
+                      <selectable id="fcs_ckm.1.1_AK_34"><h:b>Module-Lattice-Based Key-Encapsulation Mechanism Standard</h:b> using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</selectable>
+                      <selectable id="fcs_ckm.1.1_AK_35"><h:b>Module-Lattice-Based Digital Signature Standard</h:b> using the parameter set ML-DSA-87 that meets the following [FIPS 204, Module-Lattice-Based Digital Signature Standard]</selectable>
+                    </selectables>
+                    </selectable>
+                    <selectable>CNSA 1.0 Compliant Algorithms: <selectables linebreak="yes">
+                      <selectable>RSA schemes using a cryptographic key size of <assignable>3072 bits or greater</assignable> that
+                        meet the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix
+                        A.1</selectable>
+                      <selectable>FFC Schemes using [<h:i>“safe-prime” groups</h:i>] <selectables>
+                        <selectable id="fcs_ckm.1.1_AK_42">MODP-3072</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_43">MODP-4096</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_44">MODP-6144</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_45">MODP-8192</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_46">ffdhe-3072</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_47">ffdhe-4096</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_48">ffdhe-6144</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_49">ffdhe-8192</selectable>
+                      </selectables> that meet the following: [<h:i>NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography” and <selectables>
+                        <selectable id="fcs_ckm.1.1_AK_50">RFC 3526</selectable>
+                        <selectable id="fcs_ckm.1.1_AK_51">RFC 7919</selectable>
+                      </selectables> </h:i>]</selectable>  
+                    </selectables>
+                    </selectable>
+                    <selectable>
+                      <h:b>no other key generation methods</h:b></selectable>
                   </selectables>.
                 </title>
               </xpath-specified>			
@@ -805,8 +867,8 @@ expected to enforce.<h:br/><h:br/>
               address VPN client requirements; the SFR behavior itself is
               unmodified.</consistency-rationale>
             <description>
-              This SFR is functionally identical to what is defined in the GPOS PP except that elliptic 
-              curve cryptography (ECC) key generation with support for P-384 has been made 
+              This SFR is functionally identical to what is defined in the GPOS PP except that  
+              ECC key generation with support for P-384 has been made 
               mandatory in support of IPsec due to the mandated support for DH group 20 
               in FCS_IPSEC_EXT.1.8.<h:p/>
               
@@ -821,10 +883,13 @@ expected to enforce.<h:br/><h:br/>
                 </h:li></h:i>
               </h:ul></h:b>
               <h:b>[selection: </h:b><h:i><h:ul>
-                <h:li>Finite field-based key establishment schemes that meets NIST Special Publication 800-56A Revision 3, “Recommendation 
-                  for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”
-                </h:li>
-                <h:li><h:b>No other key generation methods</h:b></h:li>
+                <h:li>CNSA 2.0 Compliant Algorithm: <h:ul>
+                  <h:li>Module-Lattice-Based Key-Encapsulation Mechanism Standard using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</h:li>
+                </h:ul></h:li>
+                <h:li>CNSA 1.0 Compliant Algorithm: <h:ul> 
+                  <h:li>Finite field-based key establishment schemes using "safe-prime" groups that meets NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”</h:li>
+                </h:ul></h:li>
+                <h:li><h:b>No other key establishment methods</h:b></h:li>
               </h:ul></h:i><h:b>]</h:b>.
             </description>
             
@@ -839,9 +904,17 @@ expected to enforce.<h:br/><h:br/>
                     </h:li>
                   </h:ul>
                   <selectables linebreak="yes">
-                    <selectable>Finite field-based key establishment schemes that meets NIST
-                      Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
-                      Establishment Schemes Using Discrete Logarithm Cryptography”</selectable>
+                    <selectable>CNSA 2.0 Compliant Algorithm: <h:ul>
+                      <h:li>Module-Lattice-Based Key-Encapsulation Mechanism Standard using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</h:li>
+                    </h:ul></selectable>
+                    <selectable>CNSA 1.0 Compliant Algorithm: <h:ul>
+                      <h:li>
+                        Finite field-based key establishment schemes using "safe-prime" groups that meets NIST
+                        Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
+                        Establishment Schemes Using Discrete Logarithm Cryptography”
+                      </h:li>
+                    </h:ul> 
+                    </selectable>
                     <selectable exclusive="yes"><h:b>No other key establishment schemes</h:b></selectable>
                   </selectables>.
                 </title>
@@ -1317,45 +1390,114 @@ expected to enforce.<h:br/><h:br/>
                   </consistency-rationale>
                   <description>
                     <h:p>
-                      This SFR is functionally identical to what is defined in the MDF PP except that ECC key generation with support for P-384 has been made mandatory in support of IPsec due to the mandated support for DH group 20 in FCS_IPSEC_EXT.1.8. Curve25519 schemes remain selectable for their potential use in satisfying FDP_DAR_EXT.2.2 in the MDF PP; these schemes are not used in support of IPsec. RSA support remains present as a selection since it may be used by parts of the TOE that are not specifically related to VPN client functionality.
+                      This SFR is functionally identical to what is defined in the MDF PP except that elliptic curve cryptography (ECC) key generation with support for P-384 has been made mandatory in support of IPsec due to the mandated support for DH group 20 in FCS_IPSEC_EXT.1.8. Curve25519 schemes remain selectable for their potential use in satisfying FDP_DAR_EXT.2.2 in the MDF PP; these schemes are not used in support of IPsec. RSA support remains present as a selection since it may be used by parts of the TOE that are not specifically related to VPN client functionality.
                     </h:p>
                     The text of the requirement is replaced with:<h:br/><h:br/>
                     
-                    The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
-                    <h:b><h:ul>
-                      <h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.2</h:li>
-                    </h:ul> and</h:b>
-                    [<h:b>selection:</h:b><h:i>
-                    <h:ul>
-                      <h:li>RSA schemes using cryptographic key sizes of [<h:b>assignment:</h:b> <h:i>3072-bit or greater</h:i>] that meet the following: [FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix A.1]</h:li>
-                      <h:li><h:b>ECC schemes using Curve25519 schemes that meet the following: [RFC 7748]</h:b></h:li>
-                      <h:li>FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [<h:b>selection:</h:b> RFC 3526, RFC 7919]</h:li>
-                      <h:li><h:b>no other key generation methods</h:b></h:li>
-                    </h:ul></h:i>
-                    ].
+                    
+                    The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a
+                    specified cryptographic key generation algorithm 
+                    <h:b><h:ul><h:i>
+                      <h:li>ECC schemes using [<h:i>“NIST curves” P-384 and [selection: P-521, no other curves]</h:i>]
+                        that meet the following: FIPS PUB 186-5, “Digital Signature
+                        Standard (DSS),” Appendix A.2
+                      </h:li></h:i>and
+                    </h:ul></h:b>
+                    [<h:b>selection: </h:b><h:i><h:ul>
+                      <h:li>CNSA 2.0 Compliant Algorithms: [<h:b>selection:</h:b>
+                        <h:ul>
+                          <h:li>Leighton-Micali Signature Algorithm using the parameter sets [<h:b>selection: </h:b>LMS_SHAKE_M24_H5, LMS_SHAKE_M24_H10, LMS_SHAKE_M24_H15, LMS_SHAKE_M24_H25, LMS_SHAKE_M32_H5, LMS_SHAKE_M32_H10, LMS_SHAKE_M32_H15, LMS_SHAKE_M32_H25, LMS_SHA256_M24_H5, LMS_SHA256_M24_H10, LMS_SHA256_M24_H15, LMS_SHA256_M24_H25, LMS_SHA256_M32_H5, LMS_SHA256_M32_H10, LMS_SHA256_M32_H15, LMS_SHA256_M32_H25] that meet the following [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]</h:li>
+                          <h:li>eXtended Merkle Signature Scheme Algorithm using the parameter sets [<h:b>selection: </h:b><h:i>XMSS-SHA2_10_192, XMSS-SHA2_16_192, XMSS-SHA2_20_192, XMSS-SHA2_10_256, XMSS-SHA2_16_256, XMSS-SHA2_20_256, XMSS-SHAKE_10_192, XMSS-SHAKE_16_192, XMSS-SHAKE_20_192, XMSS-SHAKE_10_256, XMSS-SHAKE_16_256, XMSS-SHAKE_20_256</h:i>] that meets the following: [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]</h:li>
+                          <h:li>Module-Lattice-Based Key-Encapsulation Mechanism Standard using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</h:li>
+                          <h:li>Module-Lattice-Based Digital Signature Standard using the parameter set ML-DSA-87 that meets the following [FIPS 204, Module-Lattice-Based Digital Signature Standard]</h:li>
+                        </h:ul>
+                      </h:li>
+                      <h:li>CNSA 1.0 Compliant Algorithms: [<h:b>selection:</h:b>
+                        <h:ul>
+                          <h:li>RSA schemes using cryptographic key sizes of [<h:b>assignment: </h:b><h:i>3072 bits or greater</h:i>] that
+                            meet the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.1
+                          </h:li>
+                          <h:li>FFC schemes using "safe-prime" groups [<h:b>selection: </h:b>MODP-3072, MODP-4096, MODP-6144, MODP-8192, ffdhe-3072, ffdhe-4096, ffdhe-6144, ffdhe-8192] that meet the following: 'NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [<h:b>selection:</h:b> RFC 3526, RFC 7919]</h:li>   
+                        </h:ul>
+                      </h:li>
+                      <h:li>Non-CNSA Algorithms: <h:ul>
+                        <h:li>ECC schemes using Curve25519 schemes that meet the following: [RFC 7748]</h:li>
+                      </h:ul>
+                      </h:li>
+                      <h:li><h:b>No other key generation methods</h:b></h:li>
+                    </h:ul></h:i>].
+                    
                   </description>
                   <replace>
                     <xpath-specified xpath="*//cc:f-element[@id='fel-asym-key-gen']//cc:title">
                       <title> The TSF shall generate <refinement>asymmetric</refinement> cryptographic keys in
                         accordance with a specified cryptographic key generation algorithm <h:ul>
-                          <h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.2</h:li>
-                        </h:ul> and
+                          <h:li>ECC schemes using "NIST curve" P-384 and <selectables>
+                            <selectable>P-521</selectable>
+                            <selectable>no other curves</selectable></selectables> that meets the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.2</h:li>
+                        </h:ul>and
                         <selectables linebreak="yes">
-                          <selectable><h:b>RSA schemes using</h:b> cryptographic key sizes of
-                            <assignable id="a-keygen-rsa-size">3072-bit or greater</assignable> that meet [<h:i>FIPS PUB
-                              186-5, "Digital Signature Standard (DSS)", Appendix
-                              A.1</h:i>]</selectable>
-                          <selectable id="s-keygen-ecc"><h:b>ECC schemes using: </h:b><selectables linebreak="yes">
-                            <selectable><refinement>"NIST curves" P-384</refinement> that meet the following: [<h:i>FIPS PUB 186-5, "Digital
-                              Signature Standard (DSS)", Appendix A.2</h:i>]</selectable>
-                            <selectable><refinement>Curve25519 schemes</refinement> that meet the following: [<h:i>RFC
-                              7748</h:i>]</selectable></selectables></selectable>
-                          <selectable>FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, 
-                            "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and <selectables>
-                              <selectable>RFC 3526</selectable>
-                              <selectable>RFC 7919</selectable>
-                            </selectables></selectable>
-                          <selectable><h:b>no other key generation methods</h:b></selectable>
+                          <selectable>CNSA 2.0 Compliant Algorithms: <selectables linebreak="yes">
+                            <selectable id="fcs_ckm.1.1_AK_4">Leighton-Micali Signature Algorithm using the parameter sets <selectables>
+                              <selectable id="fcs_ckm.1.1_AK_5">LMS_SHAKE_M24_H5</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_6">LMS_SHAKE_M24_H10</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_7">LMS_SHAKE_M24_H15</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_8">LMS_SHAKE_M24_H25</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_9">LMS_SHAKE_M32_H5</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_10">LMS_SHAKE_M32_H10</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_11">LMS_SHAKE_M32_H15</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_12">LMS_SHAKE_M32_H25</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_13">LMS_SHA256_M24_H5</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_14">LMS_SHA256_M24_H10</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_15">LMS_SHA256_M24_H15</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_16">LMS_SHA256_M24_H25</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_17">LMS_SHA256_M32_H5</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_18">LMS_SHA256_M32_H10</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_19">LMS_SHA256_M32_H15</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_20">LMS_SHA256_M32_H25</selectable></selectables> that meet the following [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]</selectable>
+                            <selectable id="fcs_ckm.1.1_AK_21"><h:b>eXtended Merkle Signature Scheme Algorithm</h:b> using the parameter sets <selectables>
+                              <selectable id="fcs_ckm.1.1_AK_22">XMSS-SHA2_10_192</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_23">XMSS-SHA2_16_192</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_24">XMSS-SHA2_20_192</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_25">XMSS-SHA2_10_256</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_26">XMSS-SHA2_16_256</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_27">XMSS-SHA2_20_256</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_28">XMSS-SHAKE_10_192</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_29">XMSS-SHAKE_16_192</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_30">XMSS-SHAKE_20_192</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_31">XMSS-SHAKE_10_256</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_32">XMSS-SHAKE_16_256</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_33">XMSS-SHAKE_20_256</selectable>
+                            </selectables> that meets the following: [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]</selectable>
+                            <selectable id="fcs_ckm.1.1_AK_34"><h:b>Module-Lattice-Based Key-Encapsulation Mechanism Standard</h:b> using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</selectable>
+                            <selectable id="fcs_ckm.1.1_AK_35"><h:b>Module-Lattice-Based Digital Signature Standard</h:b> using the parameter set ML-DSA-87 that meets the following [FIPS 204, Module-Lattice-Based Digital Signature Standard]</selectable>
+                          </selectables>
+                          </selectable>
+                          <selectable>CNSA 1.0 Compliant Algorithms: <selectables linebreak="yes">
+                            <selectable>RSA schemes using a cryptographic key size of <assignable>3072 bits or greater</assignable> that
+                              meet the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix
+                              A.1</selectable>
+                            <selectable>FFC Schemes using [<h:i>“safe-prime” groups</h:i>] <selectables>
+                              <selectable id="fcs_ckm.1.1_AK_42">MODP-3072</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_43">MODP-4096</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_44">MODP-6144</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_45">MODP-8192</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_46">ffdhe-3072</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_47">ffdhe-4096</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_48">ffdhe-6144</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_49">ffdhe-8192</selectable>
+                            </selectables> that meet the following: [<h:i>NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography” and <selectables>
+                              <selectable id="fcs_ckm.1.1_AK_50">RFC 3526</selectable>
+                              <selectable id="fcs_ckm.1.1_AK_51">RFC 7919</selectable>
+                            </selectables> </h:i>]</selectable>  
+                          </selectables>
+                          </selectable>
+                          <selectable>Non-CNSA Algorithms: <h:ul>
+                            <h:li>ECC schemes using Curve25519 schemes that meet the following: [RFC 7748]</h:li>
+                          </h:ul>
+                          </selectable>
+                          <selectable>
+                            <h:b>no other key generation methods</h:b></selectable>
                         </selectables>.</title>
                     </xpath-specified>
                   </replace>
@@ -1376,19 +1518,16 @@ expected to enforce.<h:br/><h:br/>
                     <h:ul>
                       <h:li><h:b>[Elliptic curve-based key establishment schemes] that meet the following: [NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”]</h:b></h:li>
                     </h:ul>
-                    [<h:b>selection:</h:b> <h:i>
-                    <h:ul>
-                      <h:li>[RSA-based key establishment schemes] that meet the following: [<h:b>selection:</h:b>
-                        <h:ul>
-                          <h:li>NIST Special Publication 800-56B, “Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography”</h:li>
-                        <h:li>RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, “Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography Specifications Version 2.2"</h:li></h:ul></h:li>
-                      <h:li>[<h:i>Finite field-based key establishment schemes</h:i>]
-                      that meet the following: [<h:i>NIST Special Publication 800-56A Revision 3,
-                        "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm
-                        Cryptography"</h:i>]</h:li>
-                      <h:li><h:b>no other key establishment schemes</h:b></h:li>
-                    </h:ul></h:i>].
-                   
+                    <h:b>[selection: </h:b><h:i><h:ul>
+                      <h:li>CNSA 2.0 Compliant Algorithm: <h:ul>
+                        <h:li>Module-Lattice-Based Key-Encapsulation Mechanism Standard using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</h:li>
+                      </h:ul></h:li>
+                      <h:li>CNSA 1.0 Compliant Algorithm: <h:ul> 
+                        <h:li>Finite field-based key establishment schemes using "safe-prime" groups that meets NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”</h:li>
+                      </h:ul></h:li>
+                      <h:li><h:b>No other key establishment methods</h:b></h:li>
+                    </h:ul></h:i><h:b>]</h:b>.
+                    
                     
                   </description>
                   <replace>
@@ -1403,22 +1542,19 @@ expected to enforce.<h:br/><h:br/>
                         </h:ul> <h:b>and</h:b>
                         
                         <selectables linebreak="yes">
-                          <selectable>[<h:i>RSA-based key establishment schemes</h:i>] that meet the following
-                            <selectables linebreak="yes">
-                              <selectable>NIST Special Publication 800-56B, “Recommendation for Pair-Wise
-                                Key Establishment Schemes Using Integer Factorization
-                                Cryptography”</selectable>
-                              <selectable>RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017,
-                                "Public-Key Cryptography Standards (PKCS) #1:RSA Cryptography Specifications
-                                Version 2.2"</selectable>
-                            </selectables></selectable>
-
-                          <selectable>[<h:i>Finite field-based key establishment schemes</h:i>]
-                            that meet the following: [<h:i>NIST Special Publication 800-56A Revision 3,
-                              "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm
-                              Cryptography"</h:i>]</selectable>
-                          <selectable><h:b>no other key establishment schemes</h:b></selectable>
-                        </selectables>. </title>
+                          <selectable>CNSA 2.0 Compliant Algorithm: <h:ul>
+                            <h:li>Module-Lattice-Based Key-Encapsulation Mechanism Standard using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</h:li>
+                          </h:ul></selectable>
+                          <selectable>CNSA 1.0 Compliant Algorithm: <h:ul>
+                            <h:li>
+                              Finite field-based key establishment schemes using "safe-prime" groups that meets NIST
+                              Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
+                              Establishment Schemes Using Discrete Logarithm Cryptography”
+                            </h:li>
+                          </h:ul> 
+                          </selectable>
+                          <selectable exclusive="yes"><h:b>No other key establishment schemes</h:b></selectable>
+                        </selectables>.</title>
                       
                     </xpath-specified>
                   </replace>
@@ -1439,19 +1575,18 @@ expected to enforce.<h:br/><h:br/>
               cryptographic algorithm: [<h:br/>
                 <h:i><h:ul>
                   <h:li>AES-CBC (as defined in FIPS PUB 197, and NIST SP 800-38A) mode</h:li> 
-                  <h:li>AES-CCMP (as defined in FIPS PUB 197, NIST SP 800-38C and IEEE 802.11-2012), </h:li>
+                  <h:li>AES-CCMP-256 (as defined in NIST SP 800-38C and IEEE 802.11ac-2013), </h:li>
                   <h:li><h:b>AES-GCM (as defined in NIST SP 800-38D), and </h:b></h:li>  
                   <h:li>[<h:b>selection:</h:b><h:ul>
                     <h:li>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</h:li> 
                     <h:li>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</h:li> 
                     <h:li>AES-CCM (as defined in NIST SP 800-38C)</h:li> 
                     <h:li>AES-XTS (as defined in NIST SP 800-38E) mode</h:li>
-                    <h:li>AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)</h:li> 
                     <h:li>AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)</h:li> 
                     <h:li>no other modes</h:li></h:ul> 
               
               ]</h:li></h:ul>
-              ]</h:i> and cryptographic key sizes [<h:i>128-bit key sizes and [256-bit key sizes]</h:i>].
+                  ]</h:i> and cryptographic key sizes [<h:i>256 bits</h:i>].
 
             </description>
             <replace>
@@ -1460,17 +1595,17 @@ expected to enforce.<h:br/><h:br/>
                   cryptographic algorithm: [<h:i> <h:br/>
                     <h:ul>
                       <h:li>AES-CBC (as defined in FIPS PUB 197, and NIST SP 800-38A) mode</h:li> 
-                      <h:li>AES-CCMP (as defined in FIPS PUB 197, NIST SP 800-38C and IEEE 802.11-2012), </h:li>
+                      <h:li>AES-CCMP-256 (as defined in NIST SP 800-38C and IEEE 802.11ac-2013), </h:li>
                       <h:li><h:b>AES-GCM (as defined in NIST SP 800-38D), and </h:b></h:li>  
                       <h:li><selectables linebreak="yes"> 
                         <selectable>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</selectable> 
                         <selectable>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</selectable> 
                         <selectable>AES-CCM (as defined in NIST SP 800-38C)</selectable> 
                         <selectable>AES-XTS (as defined in NIST SP 800-38E) mode</selectable> 
-                        <selectable>AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)</selectable> 
+                        
                         <selectable>AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)</selectable> 
                         <selectable exclusive="yes">no other modes</selectable></selectables></h:li>
-                    </h:ul> </h:i>] and cryptographic key sizes [<h:i>128-bit key sizes and [256-bit key sizes]</h:i>].</title>
+                    </h:ul> </h:i>] and cryptographic key sizes [<h:i>256 bits</h:i>].</title>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
@@ -1911,9 +2046,9 @@ expected to enforce.<h:br/><h:br/>
               </h:p>
               The text of the requirement is replaced with:<h:br/><h:br/>
               
-              The <h:b>application</h:b> shall <h:b>[selection:<h:i><h:ul>
+              The <h:b>application</h:b> shall [<h:b>selection: </h:b><h:i><h:ul>
                 <h:li>invoke platform-provided functionality</h:li>
-                <h:li>implement functionality</h:li></h:ul></h:i>]</h:b>
+                <h:li>implement functionality</h:li></h:ul></h:i>]
               to generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
               
               <h:b><h:ul><h:li>[ECC schemes] using [<h:i>“NIST curves” P-384 and [selection: P-521, no other curves]</h:i>]
@@ -1921,7 +2056,7 @@ expected to enforce.<h:br/><h:br/>
                 [<h:i>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix A.2</h:i>]</h:li></h:ul></h:b>
               and [<h:b>selection:</h:b><h:i>
                 <h:ul>
-                  <h:li><h:b>[RSA schemes]</h:b> using cryptographic key sizes of [3072-bit or greater] that meet
+                  <h:li><h:b>[RSA schemes]</h:b> using cryptographic key sizes of [<h:b>assignment: </h:b><h:i>3072-bit or greater</h:i>] that meet
                     the following: [FIPS PUB 186-5, "Digital Signature Standard (DSS)," Appendix A.1]</h:li>
                   
                   <h:li><h:b>[FFC Schemes]</h:b> using [“safe-prime” groups] [<h:b>selection:</h:b>
@@ -2002,7 +2137,7 @@ expected to enforce.<h:br/><h:br/>
                       [<h:i>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix A.2</h:i>]</h:b>
                     </h:li></h:ul><h:b>and</h:b>
                     <selectables linebreak="yes">
-                      <selectable><h:b>[RSA schemes]</h:b> using cryptographic key sizes of [<h:i>3072-bit or greater</h:i>] that meet
+                      <selectable><h:b>[RSA schemes]</h:b> using cryptographic key sizes of <assignable>3072 bits or greater</assignable> that meet
                         the following: [<h:i>FIPS PUB 186-5, "Digital Signature Standard (DSS)," Appendix A.1</h:i>]</selectable>
                       <selectable><h:b>[FFC Schemes]</h:b> using [<h:i>“safe-prime” groups</h:i>] 
                         <selectables>
@@ -2059,7 +2194,7 @@ expected to enforce.<h:br/><h:br/>
                           <selectable>XMSS-SHAKE_16_256</selectable>
                           <selectable>XMSS-SHAKE_20_256</selectable>
                         </selectables>
-                        bits that meets the following: [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]
+                        that meets the following: [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]
                       </selectable>
                       <selectable><h:b>Module-Lattice-Based Key-Encapsulation Mechanism Standard</h:b>using the parameter set ML-KEM-1024 
                         that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]
@@ -2271,9 +2406,9 @@ expected to enforce.<h:br/><h:br/>
               
               The application shall [<h:b>selection:</h:b><h:i><h:ul>
                 <h:li>encrypt all transmitted [<h:i>sensitive data</h:i>] with <h:b>IPsec as defined in the PP-Module for VPN Client and </h:b>[<h:b>selection:</h:b><h:ul>
-                <h:li>HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client</h:li>
-                <h:li>HTTPS as a server in accordance with FCS_HTTPS_EXT.1/Server</h:li>
-                <h:li>HTTPS as a server using mutual authentication in accordance with FCS_HTTPS_EXT.2</h:li>
+                <h:li>HTTPS as a client in accordance with FCS_HTTPS_EXT.1 and FCS_HTTPS_EXT.2</h:li>
+                <h:li>HTTPS as a server in accordance with FCS_HTTPS_EXT.1</h:li>
+                <h:li>HTTPS as a server using mutual authentication in accordance with FCS_HTTPS_EXT.1 and FCS_HTTPS_EXT.2</h:li>
                 <h:li>TLS as a server as defined in the Functional Package for TLS and also supports functionality for [<h:b>selection:</h:b> mutual authentication, none]</h:li>
                 <h:li>TLS as a client as defined in the Functional Package for TLS</h:li>
                 <h:li>DTLS as a server as defined in the Functional Package for TLS and also supports functionality for [<h:b>selection:</h:b> mutual authentication, none]</h:li>
@@ -2294,9 +2429,9 @@ expected to enforce.<h:br/><h:br/>
                        with
                       <h:b>IPsec as defined in the PP-Module for VPN Client, version 3.0 and</h:b>
                       <selectables>
-                        <selectable id="sel_all_https_cl">HTTPS as a client in accordance with FCS_HTTPS_EXT.1/Client</selectable>
-                        <selectable id="sel_all_https_sv">HTTPS as a server in accordance with FCS_HTTPS_EXT.1/Server</selectable>
-                        <selectable id="sel_all_https_ma">HTTPS as a server using mutual authentication in accordance with FCS_HTTPS_EXT.2</selectable>
+                        <selectable id="sel_all_https_cl">HTTPS as a client in accordance with FCS_HTTPS_EXT.1 and FCS_HTTPS_EXT.2</selectable>
+                        <selectable id="sel_all_https_sv">HTTPS as a server in accordance with FCS_HTTPS_EXT.1</selectable>
+                        <selectable id="sel_all_https_ma">HTTPS as a server using mutual authentication in accordance with FCS_HTTPS_EXT.1 and FCS_HTTPS_EXT.2</selectable>
                         <selectable id="sel_all_tlss">TLS as a server as defined in the <h:a href="https://www.niap-ccevs.org/protectionprofiles/465"><h:i>Functional Package for TLS</h:i></h:a> and also supports functionality for
                           <selectables><selectable>mutual authentication</selectable><selectable>none</selectable></selectables></selectable>
                         <selectable id="sel_all_tlsc">TLS as a client as defined in the <h:a href="https://www.niap-ccevs.org/protectionprofiles/465"><h:i>Functional Package for TLS</h:i></h:a></selectable>
@@ -2658,41 +2793,164 @@ expected to enforce.<h:br/><h:br/>
               </h:p>
               The text of the requirement is replaced with:<h:br/><h:br/>
               
-              The TSF shall <h:b>[selection: <h:i>invoke platform-provided functionality, implement functionality</h:i>]</h:b> to generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm 
-              <h:b><h:ul>
-                <h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.2</h:li>
-              </h:ul></h:b>
-              [<h:b>selection:</h:b><h:i>
+              The TSF shall [<h:b>selection: </h:b><h:i><h:ul>
+                <h:li>invoke platform-provided functionality</h:li>
+                <h:li>implement functionality</h:li></h:ul></h:i>]
+              to generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
+              
+              <h:b><h:ul><h:li>[ECC schemes] using [<h:i>“NIST curves” P-384 and [selection: P-521, no other curves]</h:i>]
+                that meet the following: 
+                [<h:i>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix A.2</h:i>]</h:li></h:ul></h:b>
+              and [<h:b>selection:</h:b><h:i>
                 <h:ul>
-                  <h:li>RSA schemes using cryptographic key sizes of 3072 bits that meet the following: [FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix A.1]</h:li>
-                  <h:li>FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and [<h:b>selection:</h:b> RFC 3526, RFC 7919]</h:li>
-                  <h:li><h:b>No other key generation methods</h:b></h:li>
-                </h:ul></h:i>
-              ].
+                  <h:li><h:b>[RSA schemes]</h:b> using cryptographic key sizes of [<h:b>assignment: </h:b><h:i>3072-bit or greater</h:i>] that meet
+                    the following: [FIPS PUB 186-5, "Digital Signature Standard (DSS)," Appendix A.1]</h:li>
+                  
+                  <h:li><h:b>[FFC Schemes]</h:b> using [“safe-prime” groups] [<h:b>selection:</h:b>
+                    <h:ul>
+                      <h:li>MODP-3072</h:li>
+                      <h:li>MODP-4096</h:li>
+                      <h:li>MODP-6144</h:li>
+                      <h:li>MODP-8192</h:li>
+                      <h:li>ffdhe-3072</h:li>
+                      <h:li>ffdhe-4096</h:li>
+                      <h:li>ffdhe-6144</h:li>
+                      <h:li>ffdhe-8192</h:li>
+                    </h:ul>
+                    ] that meet the following: 
+                    [NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes
+                    Using Discrete Logarithm Cryptography” and [<h:b>selection:</h:b> RFC 3526, RFC 7919]]
+                  </h:li>
+                  <h:li><h:b>Leighton-Micali Signature</h:b> Algorithm using the parameter sets  
+                    <h:ul>								
+                      <h:li>LMS_SHAKE_M24_H5</h:li>
+                      <h:li>LMS_SHAKE_M24_H10</h:li>
+                      <h:li>LMS_SHAKE_M24_H15</h:li>
+                      <h:li>LMS_SHAKE_M24_H25</h:li>
+                      <h:li>LMS_SHAKE_M32_H5</h:li>
+                      <h:li>LMS_SHAKE_M32_H10</h:li>
+                      <h:li>LMS_SHAKE_M32_H15</h:li>
+                      <h:li>LMS_SHAKE_M32_H25</h:li>
+                      <h:li>LMS_SHA256_M24_H5</h:li>
+                      <h:li>LMS_SHA256_M24_H10</h:li>
+                      <h:li>LMS_SHA256_M24_H15</h:li>
+                      <h:li>LMS_SHA256_M24_H25</h:li>
+                      <h:li>LMS_SHA256_M32_H5</h:li>
+                      <h:li>LMS_SHA256_M32_H10</h:li>
+                      <h:li>LMS_SHA256_M32_H15</h:li>
+                      <h:li>LMS_SHA256_M32_H25</h:li>
+                    </h:ul>
+                    ] that meet the following: [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]
+                  </h:li>
+                  <h:li><h:b>eXtended Merkle Signature Scheme Algorithm</h:b> using the parameter sets 
+                    <h:ul>
+                      <h:li>XMSS-SHA2_10_192</h:li>
+                      <h:li>XMSS-SHA2_16_192</h:li>
+                      <h:li>XMSS-SHA2_20_192</h:li>
+                      <h:li>XMSS-SHA2_10_256</h:li>
+                      <h:li>XMSS-SHA2_16_256</h:li>
+                      <h:li>XMSS-SHA2_20_256</h:li>
+                      <h:li>XMSS-SHAKE_10_192</h:li>
+                      <h:li>XMSS-SHAKE_16_192</h:li>
+                      <h:li>XMSS-SHAKE_20_192</h:li>
+                      <h:li>XMSS-SHAKE_10_256</h:li>
+                      <h:li>XMSS-SHAKE_16_256</h:li>
+                      <h:li>XMSS-SHAKE_20_256</h:li>
+                    </h:ul>
+                    ] bits that meets the following: [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]
+                  </h:li>
+                  <h:li><h:b>Module-Lattice-Based Key-Encapsulation Mechanism Standard</h:b> using the parameter set ML-KEM-1024 
+                    that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</h:li>
+                  
+                  <h:li><h:b>Module-Lattice-Based Digital Signature Standard</h:b> using the parameter set ML-DSA-87 
+                    that meets the following [FIPS 204, Module-Lattice-Based Digital Signature Standard]</h:li>
+                  <h:li><h:b>no other key generation methods</h:b></h:li>
+                </h:ul></h:i>].
             </description>
             <replace>
               <xpath-specified xpath="*//cc:f-element[@id='fel-ckm-tsf-func']//cc:title">
                 
                 
-                <title>The TSF shall <selectables>
+                <title>The TSF shall <h:b><selectables linebreak="yes">
                   <selectable>invoke platform-provided functionality</selectable>
                   <selectable>implement functionality</selectable>
-                </selectables> to generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
+                </selectables></h:b>
+                  to generate <h:b>asymmetric</h:b> cryptographic keys in accordance with a specified cryptographic key generation algorithm
                   <h:ul>
-                    <h:li>ECC schemes using "NIST curve" P-384 that meets the following: FIPS PUB 186-5, "Digital Signature Standard (DSS)", Appendix A.2</h:li>
-                  </h:ul> and
+                    <h:li><h:b>[ECC schemes] using [<h:i>“NIST curves” P-384 and <selectables>
+                      <selectable>P-521</selectable>
+                      <selectable>no other curves</selectable></selectables></h:i>] that meet the following: 
+                      [<h:i>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix A.2</h:i>]</h:b>
+                    </h:li></h:ul><h:b>and</h:b>
                   <selectables linebreak="yes">
-                    <selectable><h:b>RSA schemes using</h:b> cryptographic key sizes of
-                      <assignable id="a-keygen-rsa-size">3072-bit or greater</assignable> that meet [<h:i>FIPS PUB
-                        186-5, "Digital Signature Standard (DSS)", Appendix
-                        A.1</h:i>]</selectable>
-                    <selectable>FFC schemes using "safe-prime" groups that meet the following: 'NIST Special Publication 800-56A Revision 3, 
-                      "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography"', and <selectables>
-                        <selectable>RFC 3526</selectable>
-                        <selectable>RFC 7919</selectable>
-                      </selectables></selectable>
+                    <selectable><h:b>[RSA schemes]</h:b> using cryptographic key sizes of <assignable>3072 bits or greater</assignable> that meet
+                      the following: [<h:i>FIPS PUB 186-5, "Digital Signature Standard (DSS)," Appendix A.1</h:i>]</selectable>
+                    <selectable><h:b>[FFC Schemes]</h:b> using [<h:i>“safe-prime” groups</h:i>] 
+                      <selectables>
+                        <selectable>MODP-3072</selectable>
+                        <selectable>MODP-4096</selectable>
+                        <selectable>MODP-6144</selectable>
+                        <selectable>MODP-8192</selectable>
+                        <selectable>ffdhe-3072</selectable>
+                        <selectable>ffdhe-4096</selectable>
+                        <selectable>ffdhe-6144</selectable>
+                        <selectable>ffdhe-8192</selectable>
+                      </selectables>
+                      that meet the following: 
+                      [<h:i>NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes
+                        Using Discrete Logarithm Cryptography” and 
+                        <selectables>
+                          <selectable>RFC 3526</selectable>
+                          <selectable>RFC 7919</selectable>
+                        </selectables></h:i>]
+                    </selectable>
+                    <selectable><h:b>Leighton-Micali Signature</h:b> Algorithm using the parameter sets  
+                      <selectables>								
+                        <selectable>LMS_SHAKE_M24_H5</selectable>
+                        <selectable>LMS_SHAKE_M24_H10</selectable>
+                        <selectable>LMS_SHAKE_M24_H15</selectable>
+                        <selectable>LMS_SHAKE_M24_H25</selectable>
+                        <selectable>LMS_SHAKE_M32_H5</selectable>
+                        <selectable>LMS_SHAKE_M32_H10</selectable>
+                        <selectable>LMS_SHAKE_M32_H15</selectable>
+                        <selectable>LMS_SHAKE_M32_H25</selectable>
+                        <selectable>LMS_SHA256_M24_H5</selectable>
+                        <selectable>LMS_SHA256_M24_H10</selectable>
+                        <selectable>LMS_SHA256_M24_H15</selectable>
+                        <selectable>LMS_SHA256_M24_H25</selectable>
+                        <selectable>LMS_SHA256_M32_H5</selectable>
+                        <selectable>LMS_SHA256_M32_H10</selectable>
+                        <selectable>LMS_SHA256_M32_H15</selectable>
+                        <selectable>LMS_SHA256_M32_H25</selectable>
+                      </selectables>
+                      that meet the following[NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]
+                    </selectable>
+                    <selectable><h:b>eXtended Merkle Signature Scheme Algorithm</h:b> using the parameter sets 
+                      <selectables>
+                        <selectable>XMSS-SHA2_10_192</selectable>
+                        <selectable>XMSS-SHA2_16_192</selectable>
+                        <selectable>XMSS-SHA2_20_192</selectable>
+                        <selectable>XMSS-SHA2_10_256</selectable>
+                        <selectable>XMSS-SHA2_16_256</selectable>
+                        <selectable>XMSS-SHA2_20_256</selectable>
+                        <selectable>XMSS-SHAKE_10_192</selectable>
+                        <selectable>XMSS-SHAKE_16_192</selectable>
+                        <selectable>XMSS-SHAKE_20_192</selectable>
+                        <selectable>XMSS-SHAKE_10_256</selectable>
+                        <selectable>XMSS-SHAKE_16_256</selectable>
+                        <selectable>XMSS-SHAKE_20_256</selectable>
+                      </selectables>
+                      that meets the following: [NIST SP 800-208, "Recommendation for Stateful Hash-Based Signature Schemes"]
+                    </selectable>
+                    <selectable><h:b>Module-Lattice-Based Key-Encapsulation Mechanism Standard</h:b>using the parameter set ML-KEM-1024 
+                      that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]
+                    </selectable>
+                    <selectable><h:b>Module-Lattice-Based Digital Signature Standard</h:b> using the parameter set ML-DSA-87 
+                      that meets the following [FIPS 204, Module-Lattice-Based Digital Signature Standard]
+                    </selectable>
                     <selectable><h:b>no other key generation methods</h:b></selectable>
-                  </selectables>.</title>
+                  </selectables>.
+                </title>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
@@ -2708,16 +2966,27 @@ expected to enforce.<h:br/><h:br/>
               </h:p>
               The text of the requirement is replaced with:<h:br/><h:br/>
               
-              The TSF shall <h:b>[selection: <h:i>invoke platform-provided functionality, implement functionality</h:i>]</h:b> to perform <h:b>cryptographic key establishment</h:b> in accordance with a specified cryptographic key establishment method:
-              <h:ul>
-                <h:li><h:b>[Elliptic curve-based key establishment schemes] that meet the following: [NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”]</h:b></h:li>
-              </h:ul>
-              [<h:b>selection:</h:b> <h:i>
-                <h:ul>
-                  <h:li>RSA-based key establishment schemes that meet the following: RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017, "Public-Key Cryptography Standards (PKCS) #1:RSA Cryptography Specifications Version 2.1"</h:li>
-                  <h:li>Finite field-based key establishment schemes that meets NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”</h:li>
-                  <h:li><h:b>no other key establishment schemes</h:b></h:li>
-                </h:ul></h:i>].
+              The TSF shall  <h:b>[selection:<h:i><h:ul>
+                <h:li>invoke platform-provided functionality</h:li>
+                <h:li>implement functionality</h:li></h:ul></h:i>]</h:b>
+              
+              in
+              accordance with a specified cryptographic key <h:b>establishment</h:b> method: 
+              <h:b><h:ul><h:i>
+                <h:li>Elliptic curve-based key establishment schemes that meet the following: NIST Special
+                  Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes
+                  Using Discrete Logarithm Cryptography,” and
+                </h:li></h:i>
+              </h:ul></h:b>
+              <h:b>[selection: </h:b><h:i><h:ul>
+                <h:li>CNSA 2.0 Compliant Algorithm: <h:ul>
+                  <h:li>Module-Lattice-Based Key-Encapsulation Mechanism Standard using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</h:li>
+                </h:ul></h:li>
+                <h:li>CNSA 1.0 Compliant Algorithm: <h:ul> 
+                  <h:li>Finite field-based key establishment schemes using "safe-prime" groups that meets NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”</h:li>
+                </h:ul></h:li>
+                <h:li><h:b>No other key establishment methods</h:b></h:li>
+              </h:ul></h:i><h:b>]</h:b>.
               
             </description>
             <replace>
@@ -2726,19 +2995,27 @@ expected to enforce.<h:br/><h:br/>
                 <title>The TSF shall <selectables>
                   <selectable>invoke platform-provided functionality</selectable>
                   <selectable>implement functionality</selectable>
-                </selectables> <h:b>to perform</h:b> cryptographic <h:b>key establishment</h:b> in accordance with a specified cryptographic key <h:b>establishment</h:b>
-                  method: 
+                </selectables> to perform cryptographic key
+                  establishment in accordance with a specified cryptographic key establishment method:
                   <h:ul>
-                    <h:li><h:b>[<h:i>Elliptic curve-based key establishment schemes</h:i>]
-                      that meet the following: [<h:i>NIST Special Publication 800-56A Revision 3,
-                        "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm
-                        Cryptography"</h:i>]</h:b></h:li>
-                  </h:ul> <h:b>and</h:b>
+                    <h:li><h:b><h:i>Elliptic curve-based key establishment schemes that meet the following:
+                      NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
+                      Establishment Schemes Using Discrete Logarithm Cryptography,” and</h:i></h:b>
+                    </h:li>
+                  </h:ul>
                   <selectables linebreak="yes">
-                    <selectable>RSA-based key establishment schemes that meet the following: RSAES-PKCS1-v1_5 as specified in Section 7.2 of RFC 8017,
-                      "Public-Key Cryptography Standards (PKCS) #1:RSA Cryptography Specifications Version 2.1"</selectable>
-                    <selectable>Finite field-based key establishment schemes that meets NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography”</selectable>
-                    <selectable><h:b>no other key establishment schemes</h:b></selectable>
+                    <selectable>CNSA 2.0 Compliant Algorithm: <h:ul>
+                      <h:li>Module-Lattice-Based Key-Encapsulation Mechanism Standard using the parameter set ML-KEM-1024 that meets the following: [FIPS 203, Module-Lattice-Based Key-Encapsulation Mechanism Standard]</h:li>
+                    </h:ul></selectable>
+                    <selectable>CNSA 1.0 Compliant Algorithm: <h:ul>
+                      <h:li>
+                        Finite field-based key establishment schemes using "safe-prime" groups that meets NIST
+                        Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
+                        Establishment Schemes Using Discrete Logarithm Cryptography”
+                      </h:li>
+                    </h:ul> 
+                    </selectable>
+                    <selectable exclusive="yes"><h:b>No other key establishment schemes</h:b></selectable>
                   </selectables>.
                 </title>
               </xpath-specified>
@@ -3131,13 +3408,13 @@ that is logically distinct from other communication channels and provides assure
 				to </h:b>generate <h:b>asymmetric</h:b> cryptographic keys <h:b>used for IKE peer authentication</h:b>
 				in accordance with:
 				<h:b><selectables linebreak="yes">
-					<selectable>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix B.3 for RSA schemes</selectable>
-					<selectable>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix B.4 for
-						ECDSA schemes and implementing “NIST curve” P-384 and no other curves.
-					</selectable>
+					<selectable>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix A.1 for RSA schemes</selectable>
+					<selectable>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix A.2 for
+						ECDSA schemes and implementing “NIST curve” P-384 and <selectables><selectable>P-521</selectable><selectable>no other curves</selectable></selectables>
+				</selectable>
 				</selectables></h:b>
 				and specified cryptographic key sizes [<h:i>equivalent to, or greater than, a
-				symmetric key strength of 192 bits</h:i>] <h:s>that meet the following: 
+				symmetric key strength of 128 bits</h:i>] <h:s>that meet the following: 
 				[<h:b>assignment:</h:b> <h:i>list of standards</h:i>]</h:s>.
 			</title>
 			<note role="application">
@@ -3514,12 +3791,7 @@ that is logically distinct from other communication channels and provides assure
 				protocol uses the cryptographic algorithms [<h:i>AES-GCM-256 as specified in RFC 5282</h:i>] and no other algorithm.
             </title>
             <ext-comp-def-title>
-                <title>The TSF shall ensure the encrypted payload in the 
-                  <selectables>
-                    <selectable>IKEv1</selectable>
-                    <selectable>IKEv2</selectable>
-                  </selectables> 
-                  protocol uses the cryptographic algorithms <assignable>supported cryptographic algorithms</assignable> and no other algorithm.
+                <title>The TSF shall ensure the encrypted payload in the <assignable>key exchange protocol</assignable> protocol uses the cryptographic algorithms <assignable>supported cryptographic algorithms</assignable> and no other algorithm.
               </title>
             </ext-comp-def-title>
             <note role="application">
@@ -3550,8 +3822,7 @@ that is logically distinct from other communication channels and provides assure
             </aactivity>
           </f-element>
           <f-element id="fcs-ipsec-ext-1e7"> 
-            <title>The TSF shall ensure that 
-				[<h:i>IKEv2 SA lifetimes can be configured by 
+            <title>The TSF shall ensure that [<h:i>IKEv2 SA</h:i>] lifetimes can be configured by
 						<selectables>
 							<selectable>an administrator</selectable>
 							<selectable>a VPN gateway</selectable>
@@ -3559,46 +3830,12 @@ that is logically distinct from other communication channels and provides assure
 						based on 
 						<selectables>
 							<selectable>number of packets/number of bytes</selectable>
-							<selectable>length of time</selectable></selectables></h:i>]. 
+							<selectable>length of time</selectable></selectables>]. 
 				If length of time is used, it must include at least one option that
 				is 24 hours or less for IKE SAs and eight hours or less for Child SAs.
             </title>
             <ext-comp-def-title>
-              <title>The TSF shall ensure that 
-				<selectables>
-					<selectable>IKEv2 SA lifetimes can be configured by 
-						<selectables>
-							<selectable>an administrator</selectable>
-							<selectable>a VPN gateway</selectable>
-						</selectables> 
-						based on 
-						<selectables>
-							<selectable>number of packets/number of bytes</selectable>
-							<selectable>length of time</selectable></selectables></selectable>
-					
-				  <selectable>IKEv1 SA lifetimes
-				  <selectables>
-  				  <selectable exclusive="yes"> can be configured by
-  						<selectables>
-  							<selectable>an administrator</selectable>
-  							<selectable>a VPN gateway</selectable>
-  						</selectables> 
-  						based on 
-  						<selectables>
-  							<selectable>number of packets/number of bytes</selectable>
-  							<selectable>length of time</selectable></selectables>
-  				  </selectable>
-  				  
-  					<selectable exclusive="yes">are fixed based on 
-  						<selectables>
-  							<selectable>number of packets/number of bytes</selectable>
-  							<selectable>length of time</selectable>
-  						</selectables>
-  					</selectable>
-				  </selectables>
-				  </selectable>
-				</selectables>. 
-				If length of time is used, it must include at least one option that
+              <title>The TSF shall ensure that <assignable>key exchange protocol</assignable> lifetimes can be configured by <assignable>authorized subjects</assignable> based on <assignable>values or metrics for maximum validity of negotiated keys</assignable>. If length of time is used, it must include at least one option that
 				is 24 hours or less for Phase 1 SAs and eight hours or less for Phase 2 SAs.
             </title>
             </ext-comp-def-title>
@@ -3655,23 +3892,16 @@ that is logically distinct from other communication channels and provides assure
           </f-element>
           <f-element id="fcs-ipsec-ext-1e8">
             <title>
-              The TSF shall ensure that IKE protocols implement DH Groups <h:ul>
+              The TSF shall ensure that IKE implements DH Groups <h:ul>
                 <h:li>20 (384-bit Random ECP) according to RFC 5114 and</h:li></h:ul> 
               <selectables linebreak="yes">
-                  <selectable>15 (3072-bit MODP)</selectable>
-                  <selectable>16 (4096-bit MODP)</selectable>
-                  <selectable>17 (6144-bit MODP)</selectable>
-                  <selectable>18 (8192-bit MODP)</selectable>
-                </selectables> according to RFC 3526.
+                  <selectable>15 (3072-bit MODP) according to RFC 3526</selectable>
+                  <selectable>16 (4096-bit MODP) according to RFC 3526</selectable>
+                  <selectable>17 (6144-bit MODP) according to RFC 3526</selectable>
+                  <selectable>18 (8192-bit MODP) according to RFC 3526</selectable>
+                  <selectable>21 (521-bit Random ECP) according to RFC 5114</selectable>
+                </selectables>.
                 
-                <!--</selectable>
-                  <selectable>
-                  <selectables>
-                  <selectable>21 (521-bit Random ECP)</selectable>
-                  <selectable>24 (2048-bit MODP with 256-bit POS</selectable>
-                  <selectable exclusive="yes">no other DH Groups</selectable>
-                </selectables> according to RFC 5114</selectable>
-              </selectables>. -->
             </title>
             <note role="application">
 				The selection is used to specify additional DH groups supported. This applies to
@@ -3687,7 +3917,7 @@ that is logically distinct from other communication channels and provides assure
 				the assignment (for 1.9 they are doubled; for  they are inserted directly into
 				the assignment). For example, suppose the implementation supports DH group
 				15 (3072-bit MODP) and group 20 (ECDH using NIST curve P-384). From Table 2,
-				the bits of security value for group 14 is 128, and for group 20 it is 192. For
+				the bits of security value for group 15 is 128, and for group 20 it is 192. For
 				FCS_IPSEC_EXT.1.9, then, the assignment would read “[256, 384]” and for
 				FCS_IPSEC_EXT.1.10 it would read “[128, 192]” 
 			</note>
@@ -3708,12 +3938,20 @@ that is logically distinct from other communication channels and provides assure
           <f-element id="fcs-ipsec-ext-1e9">
             <title>The TSF shall generate the secret value x used in the
               IKE DH key exchange (“x” in g^x mod p) using the random bit
-              generator specified in FCS_RBG.1 (or FCS_RBG_EXT.1 in the case of <xref to="bibAppPP"/>, and having a length of at least
+              generator specified in FCS_RBG.1 <h:b>(or FCS_RBG_EXT.1 in the case of <xref to="bibAppPP"/>)</h:b>, and having a length of at least
               <assignable>(one or more) numbers of bits that is at least twice the “bits of
               security” value associated with the negotiated DH group as listed in
               Table 2 of NIST SP 800-57, Recommendation for Key Management – Part 1:
               General</assignable> bits.
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall generate the secret value x used in the
+                IKE DH key exchange (“x” in g^x mod p) using the random bit
+                generator specified in FCS_RBG.1, and having a length of at least
+                <assignable>number of bits</assignable> bits.
+              </title>
+            </ext-comp-def-title>
             <aactivity level="element">
               <TSS>The evaluator shall check to ensure that, for each DH group supported, the TSS describes the process for
 		generating "x" (as defined in FCS_IPSEC_EXT.1.9) and each nonce. The evaluator shall verify that the TSS
@@ -3739,9 +3977,9 @@ that is logically distinct from other communication channels and provides assure
           
           
           <f-element id="fcs-ipsec-ext-1e11">
-            <title>The TSF shall ensure that 
-              [<h:i>IKEv2 performs peer authentication using  
-                  <selectables>
+            <title>The TSF shall ensure that [<h:i>IKEv2</h:i>]
+              performs peer authentication using  
+                  [<h:i><selectables>
                     <selectable>RSA</selectable>
                     <selectable>ECDSA</selectable>
                   </selectables> 
@@ -3754,30 +3992,7 @@ that is logically distinct from other communication channels and provides assure
                   </selectables></h:i>].
             </title>
             <ext-comp-def-title>
-              <title>The TSF shall ensure that 
-              <selectables>
-                <selectable>IKEv1 performs peer authentication using  
-                  <selectables>
-                    <selectable>RSA</selectable>
-                    <selectable>ECDSA</selectable>
-                  </selectables> 
-                  that use X.509v3 certificates that conform to RFC 4945.
-                </selectable>
-                <selectable>IKEv2 performs peer authentication using  
-                  <selectables>
-                    <selectable>RSA</selectable>
-                    <selectable>ECDSA</selectable>
-                  </selectables> 
-                  that use X.509v3 certificates that conform to RFC 4945 and 
-                  <selectables>
-                    <selectable id="sel-ipsec-e11-psk">Pre-shared Keys that conform to RFC 8784</selectable>
-                    <selectable id="sel-ipsec-e11-eapttls">Pre-shared Keys transmitted via EAP-TTLS</selectable>
-                    <selectable id="sel-ipsec-e11-eaptls">EAP-TLS</selectable>
-                    <selectable exclusive="yes">no other method</selectable>
-                  </selectables>.
-                </selectable>
-              </selectables>
-              
+              <title>The TSF shall ensure that <assignable>key exchange protocol</assignable> performs peer authentication using <assignable>supported authentication mechanisms</assignable>.
             </title>
             </ext-comp-def-title>
             
