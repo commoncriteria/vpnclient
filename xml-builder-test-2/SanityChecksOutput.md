@@ -36,10 +36,55 @@
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_4'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_5'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_6'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_7'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_8'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_9'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_10'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_11'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_12'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_13'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_14'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_15'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_16'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_17'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_18'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_19'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_20'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_21'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_22'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_23'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_24'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_25'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_26'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_27'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_28'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_29'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_30'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_31'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_32'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_33'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_34'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_35'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_7'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_42'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_43'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_44'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_45'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_46'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_47'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_48'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_49'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_50'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_51'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_8'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_1'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_2'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.2_3'.
 * Error: Detected multiple elements with an id of 's-aes-ctr'.
 * Error: Detected multiple elements with an id of 's-aes-ctr'.
 * Error: Detected multiple elements with an id of 'FCS_COP.1/ENCRYPT_1'.
@@ -48,12 +93,55 @@
 * Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_2'.
 * Error: Detected multiple elements with an id of 'fel-asym-key-gen'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_4'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_5'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_6'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_7'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_8'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_9'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_10'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_11'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_12'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_13'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_14'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_15'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_16'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_17'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_18'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_19'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_20'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_21'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_22'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_23'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_24'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_25'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_26'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_27'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_28'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_29'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_30'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_31'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_32'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_33'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_34'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_35'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_6'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_7'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_42'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_43'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_44'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_45'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_46'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_47'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_48'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_49'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_50'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_51'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_8'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_9'.
 * Error: Detected multiple elements with an id of 'FCS_COP.1/ENCRYPT_1'.
 * Error: Detected multiple elements with an id of 'FCS_COP.1/ENCRYPT_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_1'.
@@ -67,10 +155,11 @@
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_6'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_7'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_8'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_9'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_1'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_3'.
@@ -187,17 +276,9 @@
                        
 * Warning: Since FCS_IPSEC_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
-* Warning: Since FCS_IPSEC_EXT.1.5 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FCS_IPSEC_EXT.1.7 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
 * Warning: Since FCS_IPSEC_EXT.1.8 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
-* Warning: Since FCS_IPSEC_EXT.1.11 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
 * Warning: Since FCS_IPSEC_EXT.1.12 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FCS_IPSEC_EXT.1.14 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
 * Warning: Since FCS_EAP_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
