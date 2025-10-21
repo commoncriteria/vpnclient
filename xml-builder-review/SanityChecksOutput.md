@@ -4,10 +4,6 @@
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[2]""/replace[1]""/xpath-specified[1]""/f-element[1]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[3]""/replace[1]""/xpath-specified[1]""/f-element[1]""
-* Error: f-element FTP_ITC.1.2  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/additional-sfrs[1]""/section[4]""/f-component[1]""/f-element[2]""
-* Error: f-element FTP_ITC.1.3  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/additional-sfrs[1]""/section[4]""/f-component[1]""/f-element[3]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
@@ -17,13 +13,13 @@
 * Error: f-element .1  appears not to have an associated evaluation activity.:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[2]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
+        /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""
+* Error: f-element .1  appears not to have an associated evaluation activity.:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[4]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[4]""/replace[1]""/xpath-specified[1]""/f-element[1]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/modified-sfrs[1]""/section[2]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""
-* Error: f-element FCS_CKM.6.2  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/additional-sfrs[1]""/section[2]""/f-component[1]""/f-element[2]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
@@ -36,36 +32,59 @@
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[2]""/replace[1]""/xpath-specified[1]""/f-element[1]""
-* Error: f-element FPT_TST_EXT.1.2/VPN  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/man-sfrs[1]""/section[5]""/f-component[2]""/f-element[2]""
-* Error: f-element FCS_EAP_EXT.1.2  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[2]""/f-component[1]""/f-element[2]""
-* Error: f-element FCS_EAP_EXT.1.3  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[2]""/f-component[1]""/f-element[3]""
-* Error: f-element FIA_PSK_EXT.1.2  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[3]"The TOE m"/f-component[1]""/f-element[2]""
-* Error: f-element FIA_PSK_EXT.3.2  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[3]"The TOE m"/f-component[3]""/f-element[2]""
-* Error: f-element FIA_PSK_EXT.3.3  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[3]"The TOE m"/f-component[3]""/f-element[3]""
-* Error: f-element FIA_PSK_EXT.3.4  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[3]"The TOE m"/f-component[3]""/f-element[4]""
-* Error: f-element FIA_PSK_EXT.3.5  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[3]"The TOE m"/f-component[3]""/f-element[5]""
-* Error: f-element FIA_PSK_EXT.3.6  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[3]"The TOE m"/f-component[3]""/f-element[6]""
-* Error: f-element FIA_PSK_EXT.3.7  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[3]"The TOE m"/f-component[3]""/f-element[7]""
-* Error: f-element FAU_GEN.1.2/VPN  appears not to have an associated evaluation activity.:
-        /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]""/f-component[1]""/f-element[2]""
 * Warning: This document still has at least one comment.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_4'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_5'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_6'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_7'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_8'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_9'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_10'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_11'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_12'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_13'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_14'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_15'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_16'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_17'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_18'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_19'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_20'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_21'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_22'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_23'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_24'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_25'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_26'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_27'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_28'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_29'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_30'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_31'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_32'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_33'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_34'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_35'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_7'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_42'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_43'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_44'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_45'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_46'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_47'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_48'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_49'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_50'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_51'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_8'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_1'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_2'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.2_3'.
 * Error: Detected multiple elements with an id of 's-aes-ctr'.
 * Error: Detected multiple elements with an id of 's-aes-ctr'.
 * Error: Detected multiple elements with an id of 'FCS_COP.1/ENCRYPT_1'.
@@ -74,12 +93,55 @@
 * Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_2'.
 * Error: Detected multiple elements with an id of 'fel-asym-key-gen'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_4'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_5'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_6'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_7'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_8'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_9'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_10'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_11'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_12'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_13'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_14'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_15'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_16'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_17'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_18'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_19'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_20'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_21'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_22'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_23'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_24'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_25'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_26'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_27'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_28'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_29'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_30'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_31'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_32'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_33'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_34'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_35'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_6'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_7'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_42'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_43'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_44'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_45'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_46'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_47'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_48'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_49'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_50'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_51'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_8'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_9'.
 * Error: Detected multiple elements with an id of 'FCS_COP.1/ENCRYPT_1'.
 * Error: Detected multiple elements with an id of 'FCS_COP.1/ENCRYPT_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_1'.
@@ -93,21 +155,16 @@
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_5'.
-* Error: Detected multiple elements with an id of 'FCS_CKM.1_6'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_7'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_8'.
+* Error: Detected multiple elements with an id of 'FCS_CKM.1_9'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_1'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_3'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_5'.
-* Error: Detected multiple elements with an id of 'sel-ipsec-e11-psk'.
-* Error: Detected multiple elements with an id of 'sel-ipsec-e11-eapttls'.
-* Error: Detected multiple elements with an id of 'sel-ipsec-e11-eaptls'.
-* Error: Detected multiple elements with an id of 'sel-ipsec-e11-psk'.
-* Error: Detected multiple elements with an id of 'sel-ipsec-e11-eapttls'.
-* Error: Detected multiple elements with an id of 'sel-ipsec-e11-eaptls'.
 * Error: Detected dangling ref-id to 's-killkey-user '.
 	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/title[1]"The TSF s"/management-function-set[1]""/management-function[35]""/app-note[1]"Function"/rule[1]""/if[1]""/ref-id[1]"s-killkey"
 * Error: Detected dangling ref-id to 'mf-keyWipeRules '.
