@@ -1,4 +1,3 @@
-* Warning: This document still has at least one comment.
 * Error: Detected dangling id-reference to feat-mystery from attribute
         on/Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/additional-sfrs[1]""/section[2]""/f-component[1]""/depends[1]""/on[1]""
 * Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_4'.
@@ -87,6 +86,14 @@
 * Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_49'.
 * Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_50'.
 * Error: Detected multiple elements with an id of 'fcs_ckm.1.1_AK_51'.
+* Error: Detected dangling ref-id to 'dummy-ref-id'.
+	  /Module[1]""/sec:Introduction[1]""/section[1]"This sect"/package-usage-list[1]""/package-usage[1]""/usage[1]""/config[1]""/ref-id[1]"dummy-ref"
+* Error: Detected dangling ref-id to 'dummy-ref-id'.
+	  /Module[1]""/sec:Introduction[1]""/section[1]"This sect"/package-usage-list[1]""/package-usage[1]""/usage[2]""/config[1]""/ref-id[1]"dummy-ref"
+* Error: Detected dangling ref-id to 'dummy-ref-id'.
+	  /Module[1]""/sec:Introduction[1]""/section[1]"This sect"/package-usage-list[1]""/package-usage[2]""/usage[1]""/config[1]""/ref-id[1]"dummy-ref"
+* Error: Detected dangling ref-id to 'dummy-ref-id'.
+	  /Module[1]""/sec:Introduction[1]""/section[1]"This sect"/package-usage-list[1]""/package-usage[2]""/usage[2]""/config[1]""/ref-id[1]"dummy-ref"
 * Error: Detected dangling ref to 'os-fcs-ckm-1'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[11]"The ST au"/ref[1]""
@@ -157,3 +164,7 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[2]""/description[1]"This SFR "/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[3]""/description[1]"This SFR "/h:p[1]""
 * Warning: fau_gen.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]""/f-component[1]""
+warning: failed to load external entity "output/.xml"
+warning: failed to load external entity "output/.xml"
+warning: failed to load external entity "output/.xml"
+warning: failed to load external entity "output/.xml"
