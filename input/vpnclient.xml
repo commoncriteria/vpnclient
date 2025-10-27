@@ -93,7 +93,6 @@
     
     <!-- 1.1 Overview --> <!-- change -->
     <sec:Overview>
-      <comment>FIA_X509_EXT references to the Base-PPs are now removed and where appropriate the X.509 package is referenced instead. However, it's unclear whether there is still sufficient mechanism to actually 'force' the X.509 SFRs to be included. That is to say, there is nothing in here that says "because IPsec functionality is dependent on X.509 validation, and because the Base-PPs conform to the X.509 FP, the ST shall make the relevant X.509 FP claims." </comment>
       
       The scope of this Protection Profile Module (PP-Module) is to describe the security functionality of a virtual private network (VPN)
       client in terms of  <xref g="CC"/> and to define functional and assurance requirements for such
@@ -370,6 +369,50 @@ requirements defined by the PP-Module, expressed as Evaluation Activities (EAs).
       </usecases>
 
   </sec:Use_Cases> 
+  <section title="Package Usage">
+    This section contains selections and assignments that are required when the listed Functional Packages are claimed by this PP-Module. <h:br/>
+    Package Usage guidance defined in the TOE's relevant Base-PP applies to the usage of the packages for this module, unless explicitly stated otherwise in this section.
+    <package-usage-list>
+      <package-usage ref="X509">
+        <usage id="usage-x509-roles" title="Certificate Verification and Assertion Required in FIA_XCU_EXT.1.1">
+            <description>
+              Because this PP-Module mandates support for mutual authentication for TLS, the ST author shall select the options to verify and assert certificate identities in FIA_XCU_EXT.1.1.
+            </description>
+            <config>
+              <ref-id>dummy-ref-id</ref-id>
+            </config>
+        </usage>
+        <usage id="usage-x509-usage" title="Required Selections for FIA_X509_EXT.2.1">
+          <description>
+            The ST author shall ensure that the assignment and selections in FIA_X509_EXT.2.1 reflect the usage of X.509 certificates for IPsec exchanges. If the TOE supports EAP-TLS and claims FCS_EAP_EXT.1, the 
+            ST author shall ensure that the assignment and selections within FIA_X509_EXT.2.1 reflect the usage of X.509 for EAP-TLS. Other selections and assignments may be made as appropriate for other TOE functionality.
+          </description> 
+          <config>
+              <ref-id>dummy-ref-id</ref-id>
+          </config>
+        </usage>
+
+      </package-usage>
+      <package-usage ref="tls">
+        <usage id="usage-tls-clientreq" title="TLS or DTLS Client Functionality Required in FCS_TLS_EXT.1.1 for EAP-TLS">
+            <description>
+              This usage requirement applies only if the TOE supports EAP-TLS. The ST author shall select the option to support client functionality for TLS or DTLS in FCS_TLS_EXT.1.1. The selection shall correspond with other protocol selections made in FCS_EAP_EXT.1.
+            </description>
+            <config>
+              <ref-id>dummy-ref-id</ref-id>
+            </config>
+          </usage>
+          <usage id="usage-tls-mutualauth" title="Mutual Authentication Required in FCS_TLSC_EXT.1.1 or FCS_DTLSC_EXT.1.1 for EAP-TLS">
+            <description>
+              This usage requirement applies only if the TOE supports EAP-TLS. The ST author shall select the option to support mutual authentication for TLS or DTLS, according with the protocol support selected in FCS_TLS_EXT.1.1.
+            </description>
+            <config>
+              <ref-id>dummy-ref-id</ref-id>
+            </config>
+          </usage>
+      </package-usage>
+    </package-usage-list>
+  </section>
 
   <section title="Requirements Focus" id="rfocus">   <!-- Section added for schema validation -->
       Regardless of the specific usage of the TOE, the focus of the Security Functional Requirements (SFRs) in this PP-Module
