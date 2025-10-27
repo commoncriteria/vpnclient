@@ -415,6 +415,8 @@ expected to enforce.
           <addressed-by>FAU_SEL.1/VPN (objective)</addressed-by>
           <rationale>This SFR mitigates the threat by optionally
             requiring the TOE to allow for the configuration of what behavior is audited.</rationale>
+          <addressed-by>FIA_X509_EXT.4 (additional to GPOS PP)</addressed-by>
+          <rationale>This SFR mitigates the threat by providing the ability to verify the integrity of the TSF using X.509 certificates.</rationale>
           <addressed-by>FMT_SMF.1/VPN</addressed-by>
           <rationale>This SFR mitigates the threat by requiring the TOE
             to implement certain administratively-configurable functions.</rationale>
@@ -461,13 +463,28 @@ expected to enforce.
             defining TOTP as an authentication mechanism.</rationale>
           <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by>
           <rationale>This SFR mitigates the threat by optionally enforcing a multifactor authentication requirement on an IPsec connection.</rationale>
+          <addressed-by>FTP_ITC.1 (additional to GPOS PP)</addressed-by>
+          <rationale>This SFR mitigates the threat by defining the use of IPsec for protecting data in transit.</rationale>
         </threat>
         <threat name="T.USER_DATA_REUSE">
           <description>Data traversing the TOE could inadvertently be sent to a different user as a consequence of a poorly-designed TOE; since these data may be            sensitive, this may cause a compromise that is unacceptable. The specific threat that must be            addressed concerns user data that is retained by the TOE in the course of processing network traffic            that could be inadvertently reused in sending network traffic to a user other than that intended by            the sender of the original network traffic.          </description>
           <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>FCS_CKM_EXT.2 (additional to App PP)</addressed-by>
+          <rationale>This SFR mitigates the threat by requiring the TOE
+            or its platform to store sensitive data in the OS' key storage.</rationale>
+          <addressed-by>FCS_CKM_EXT.2 (additional to GPOS PP)</addressed-by>
+          <rationale>This SFR mitigates the threat by requiring the TOE
+            to store sensitive data in the OS’ key storage.</rationale>
+          <addressed-by>FCS_CKM.6 (additional to App PP)</addressed-by>
+          <rationale>This SFR mitigates the threat by requiring the TOE
+            or its platform to zeroize key data when no longer needed.</rationale>
           <addressed-by>FDP_RIP.2</addressed-by>
           <rationale>This SFR mitigates the threat by requiring the TOE or its platform to ensure that
             residual data is purged from the system.</rationale>
+          <addressed-by>FDP_VPN_EXT.1 (additional to MDF PP)</addressed-by>
+          <rationale>This SFR mitigates the threat by optionally
+            requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
+            established IPsec tunnel.</rationale>
           <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by>
           <rationale>This SFR mitigates the threat by optionally
             requiring the TOE to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.</rationale>
@@ -2816,7 +2833,7 @@ expected to enforce.
                 when
                 <selectables>
                   <selectable id="fcs_ckm.6.1_4">no longer needed</selectable>
-                  <selectable id="fcs_ckm.6.1_6">
+                  <selectable>
                     <assignable>other circumstances for key or keying material destruction</assignable>
                   </selectable>
                 </selectables>.
@@ -2896,8 +2913,8 @@ expected to enforce.
                 <Tests>
                   For each key clearing situation described in the TSS, the evaluator shall repeat the following test.
                   <testlist>
-                    <test>The evaluator shall use appropriate combinations of specialized OE and development tools (debuggers, simulators, etc.) for the TOE and instrumented TOE builds to test that keys are cleared correctly, including all intermediate copies of the key that may have been created internally by the TOE during normal cryptographic processing with that key. <h:br/><h:br/>  <h:br/><h:br/> Cryptographic TOE implementations in software shall be loaded and exercised under a debugger to perform such tests. The evaluator shall perform the following test for each key subject to clearing, including intermediate copies of keys that are persisted encrypted by the TOE: <h:br/><h:br/>  <h:br/><h:br/>  <h:ol type="1"><h:li>Load the instrumented TOE build in a debugger.</h:li> <h:li>Record the value of the key in the TOE subject to clearing.</h:li> <h:li>Cause the TOE to perform a normal cryptographic processing with the key from #1.</h:li> <h:li>Cause the TOE to clear the key.</h:li> <h:li>Cause the TOE to stop the execution but not exit.</h:li> <h:li>Cause the TOE to dump the entire memory footprint of the TOE into a binary file.</h:li> <h:li>Search the content of the binary file created in #6 for instances of the known key value from
-  					                  #1.</h:li></h:ol>  <h:br/><h:br/> The test succeeds if no copies of the key from #1 are found in step #7 above and fails otherwise. <h:br/><h:br/>  <h:br/><h:br/> The evaluator shall perform this test on all keys, including those persisted in encrypted form, to ensure intermediate copies are cleared.</test>
+                    <test>The evaluator shall use appropriate combinations of specialized OE and development tools (debuggers, simulators, etc.) for the TOE and instrumented TOE builds to test that keys are cleared correctly, including all intermediate copies of the key that may have been created internally by the TOE during normal cryptographic processing with that key. <h:br/>Cryptographic TOE implementations in software shall be loaded and exercised under a debugger to perform such tests. The evaluator shall perform the following test for each key subject to clearing, including intermediate copies of keys that are persisted encrypted by the TOE: <h:br/><h:ol type="1"><h:li>Load the instrumented TOE build in a debugger.</h:li> <h:li>Record the value of the key in the TOE subject to clearing.</h:li> <h:li>Cause the TOE to perform a normal cryptographic processing with the key from #1.</h:li> <h:li>Cause the TOE to clear the key.</h:li> <h:li>Cause the TOE to stop the execution but not exit.</h:li> <h:li>Cause the TOE to dump the entire memory footprint of the TOE into a binary file.</h:li> <h:li>Search the content of the binary file created in #6 for instances of the known key value from
+  					                  #1.</h:li></h:ol>  <h:br/>The test succeeds if no copies of the key from #1 are found in step #7 above and fails otherwise. <h:br/>The evaluator shall perform this test on all keys, including those persisted in encrypted form, to ensure intermediate copies are cleared.</test>
                   </testlist>
                 </Tests>
               </aactivity>
