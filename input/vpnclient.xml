@@ -42,14 +42,14 @@
       <subject>CC:2022 conversion, limitation of cryptographic algorithms to CNSA 1.0, incorporation of TDs </subject>
     </entry>
   </RevisionHistory>
-  <include-pkg id="pkg-ssh">
+  <include-pkg id="ssh">
     <git>
       <url>https://github.com/commoncriteria/ssh</url>
       <branch>master</branch>
     </git>
     <url>https://www.niap-ccevs.org/protectionprofiles/515</url>
   </include-pkg>
-  <include-pkg id="pkg-tls">
+  <include-pkg id="tls">
     <git>
       <url>https://github.com/commoncriteria/tls</url>
       <branch>release-2.1</branch>
@@ -57,7 +57,7 @@
     <url>https://www.niap-ccevs.org/protectionprofiles/465</url>
     <depends on="fcs-eap-ext-1"/>
   </include-pkg>
-  <include-pkg id="pkg-x509">
+  <include-pkg id="X509">
     <git>
       <url>https://github.com/commoncriteria/X509</url>
       <branch>master</branch>
@@ -67,7 +67,6 @@
   <pp-preferences/>
   <sec:Introduction>
     <sec:Overview title="Overview">
-      <comment>FIA_X509_EXT references to the Base-PPs are now removed and where appropriate the X.509 package is referenced instead. However, it's unclear whether there is still sufficient mechanism to actually 'force' the X.509 SFRs to be included. That is to say, there is nothing in here that says "because IPsec functionality is dependent on X.509 validation, and because the Base-PPs conform to the X.509 FP, the ST shall make the relevant X.509 FP claims." </comment>
       The scope of this Protection Profile Module (PP-Module) is to describe the security functionality of a virtual private network (VPN)
       client in terms of
       <xref g="CC"/>
@@ -322,6 +321,11 @@ requirements defined by the PP-Module, expressed as Evaluation Activities (EAs).
         </usecase>
       </usecases>
     </sec:Use_Cases>
+    <section title="Package Usage">
+      This section contains selections and assignments that are required when the listed Functional Packages are claimed by this PP-Module.
+      <h:br/>
+      Package Usage guidance defined in the TOE's relevant Base-PP applies to the usage of the packages for this module, unless explicitly stated otherwise in this section.
+    </section>
     <section title="Requirements Focus" id="rfocus">
       Regardless of the specific usage of the TOE, the focus of the Security Functional Requirements (SFRs) in this PP-Module
       is on the following fundamental aspects of a VPN client.
@@ -415,6 +419,8 @@ expected to enforce.
           <addressed-by>FAU_SEL.1/VPN (objective)</addressed-by>
           <rationale>This SFR mitigates the threat by optionally
             requiring the TOE to allow for the configuration of what behavior is audited.</rationale>
+          <addressed-by>FIA_X509_EXT.4 (additional to GPOS PP)</addressed-by>
+          <rationale>This SFR mitigates the threat by providing the ability to verify the integrity of the TSF using X.509 certificates.</rationale>
           <addressed-by>FMT_SMF.1/VPN</addressed-by>
           <rationale>This SFR mitigates the threat by requiring the TOE
             to implement certain administratively-configurable functions.</rationale>
@@ -461,13 +467,28 @@ expected to enforce.
             defining TOTP as an authentication mechanism.</rationale>
           <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by>
           <rationale>This SFR mitigates the threat by optionally enforcing a multifactor authentication requirement on an IPsec connection.</rationale>
+          <addressed-by>FTP_ITC.1 (additional to GPOS PP)</addressed-by>
+          <rationale>This SFR mitigates the threat by defining the use of IPsec for protecting data in transit.</rationale>
         </threat>
         <threat name="T.USER_DATA_REUSE">
           <description>Data traversing the TOE could inadvertently be sent to a different user as a consequence of a poorly-designed TOE; since these data may be            sensitive, this may cause a compromise that is unacceptable. The specific threat that must be            addressed concerns user data that is retained by the TOE in the course of processing network traffic            that could be inadvertently reused in sending network traffic to a user other than that intended by            the sender of the original network traffic.          </description>
           <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>FCS_CKM_EXT.2 (additional to App PP)</addressed-by>
+          <rationale>This SFR mitigates the threat by requiring the TOE
+            or its platform to store sensitive data in the OS' key storage.</rationale>
+          <addressed-by>FCS_CKM_EXT.2 (additional to GPOS PP)</addressed-by>
+          <rationale>This SFR mitigates the threat by requiring the TOE
+            to store sensitive data in the OS’ key storage.</rationale>
+          <addressed-by>FCS_CKM.6 (additional to App PP)</addressed-by>
+          <rationale>This SFR mitigates the threat by requiring the TOE
+            or its platform to zeroize key data when no longer needed.</rationale>
           <addressed-by>FDP_RIP.2</addressed-by>
           <rationale>This SFR mitigates the threat by requiring the TOE or its platform to ensure that
             residual data is purged from the system.</rationale>
+          <addressed-by>FDP_VPN_EXT.1 (additional to MDF PP)</addressed-by>
+          <rationale>This SFR mitigates the threat by optionally
+            requiring the TOE to prohibit split-tunneling so that network traffic cannot be transmitted outside of an
+            established IPsec tunnel.</rationale>
           <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by>
           <rationale>This SFR mitigates the threat by optionally
             requiring the TOE to prohibit transmission of packet data aside from those packets needed to perform multifactor authentication.</rationale>
@@ -846,11 +867,11 @@ expected to enforce.
                     cannot be established (for example, due to a network error). The behavior of the
                     TOE in these cases is described by the second selection. If the TOE has
                     determined the certificate is valid according to all other rules in FIA_X509_EXT.1 in
-                <xref to="pkg-x509"/>,
+                <xref to="X509"/>,
                     the behavior indicated in the second selection will determine the validity. The
                     TOE must not accept the certificate if it fails any of the other validation rules in
                     FIA_X509_EXT.1 in
-                <xref to="pkg-x509"/>. If the administrator-configured option is selected by the ST
+                <xref to="X509"/>. If the administrator-configured option is selected by the ST
                     Author, the ST author must also make the appropriate selection in
                     FMT_SMF.1/VPN.
               </note>
@@ -2133,7 +2154,7 @@ expected to enforce.
             <replace>
               <xpath-specified xpath="*//cc:f-element[@id='fel-wlan']">
                 <f-element id="fel-wlan">
-                  <title>The TSF shall use <h:ul><h:li>802.11-2012 in accordance with the [<h:i><xref to="mod-wlanclient"/></h:i>],</h:li> <h:li>802.1X in accordance with the [<h:i><xref to="mod-wlanclient"/></h:i>],</h:li> <h:li>EAP-TLS in accordance with the [<h:i><xref to="mod-wlanclient"/></h:i>],</h:li> <h:li>Mutually authenticated TLS in accordance with [<h:i>the <xref to="pkg-tls"/></h:i>]</h:li> <h:li>IPsec in accordance with the [<h:i><xref to="mod-vpnclient"/></h:i>],</h:li></h:ul> and <selectables linebreak="yes"><selectable id="itc_dtls">mutually authenticated DTLS as defined in the <xref to="pkg-tls"/></selectable><selectable id="FTP_ITC_EXT.1_1">HTTPS</selectable><selectable id="FTP_ITC_EXT.1_2"><h:b>no other</h:b></selectable></selectables> protocols to provide a communication channel between itself and another trusted IT product using certificates as defined in [ <h:i><xref to="pkg-x509"/></h:i> ] that is logically distinct from other communication channels, provides assured identification of its end points, protects channel data from disclosure, and detects modification of the channel data.</title>
+                  <title>The TSF shall use <h:ul><h:li>802.11-2012 in accordance with the [<h:i><xref to="mod-wlanclient"/></h:i>],</h:li> <h:li>802.1X in accordance with the [<h:i><xref to="mod-wlanclient"/></h:i>],</h:li> <h:li>EAP-TLS in accordance with the [<h:i><xref to="mod-wlanclient"/></h:i>],</h:li> <h:li>Mutually authenticated TLS in accordance with [<h:i>the <xref to="tls"/></h:i>]</h:li> <h:li>IPsec in accordance with the [<h:i><xref to="mod-vpnclient"/></h:i>],</h:li></h:ul> and <selectables linebreak="yes"><selectable id="itc_dtls">mutually authenticated DTLS as defined in the <xref to="tls"/></selectable><selectable id="FTP_ITC_EXT.1_1">HTTPS</selectable><selectable id="FTP_ITC_EXT.1_2"><h:b>no other</h:b></selectable></selectables> protocols to provide a communication channel between itself and another trusted IT product using certificates as defined in [ <h:i><xref to="X509"/></h:i> ] that is logically distinct from other communication channels, provides assured identification of its end points, protects channel data from disclosure, and detects modification of the channel data.</title>
                   <ext-comp-def-title>
                     <title>The TSF shall use <h:ul><h:li>802.11-2012 in accordance with <assignable>requirements or standards defining implementation of this protocol </assignable>, </h:li> <h:li>802.1X in accordance with <assignable>requirements or standards defining implementation of this protocol </assignable>, </h:li> <h:li>EAP-TLS in accordance with <assignable>requirements or standards defining implementation of this protocol </assignable>, </h:li> <h:li>Mutually authenticated TLS in accordance with <assignable>requirements or standards defining implementation of this protocol </assignable> </h:li> </h:ul> and <assignable>other protocols </assignable> protocols to provide a communication channel between itself and another trusted IT product using certificates as defined in <assignable>requirement or standard defining the use of certificates </assignable> that is logically distinct from other communication channels, provides assured identification of its end points, protects channel data from disclosure, and detects modification of the channel data. </title>
                   </ext-comp-def-title>
@@ -2896,8 +2917,8 @@ expected to enforce.
                 <Tests>
                   For each key clearing situation described in the TSS, the evaluator shall repeat the following test.
                   <testlist>
-                    <test>The evaluator shall use appropriate combinations of specialized OE and development tools (debuggers, simulators, etc.) for the TOE and instrumented TOE builds to test that keys are cleared correctly, including all intermediate copies of the key that may have been created internally by the TOE during normal cryptographic processing with that key. <h:br/><h:br/>  <h:br/><h:br/> Cryptographic TOE implementations in software shall be loaded and exercised under a debugger to perform such tests. The evaluator shall perform the following test for each key subject to clearing, including intermediate copies of keys that are persisted encrypted by the TOE: <h:br/><h:br/>  <h:br/><h:br/>  <h:ol type="1"><h:li>Load the instrumented TOE build in a debugger.</h:li> <h:li>Record the value of the key in the TOE subject to clearing.</h:li> <h:li>Cause the TOE to perform a normal cryptographic processing with the key from #1.</h:li> <h:li>Cause the TOE to clear the key.</h:li> <h:li>Cause the TOE to stop the execution but not exit.</h:li> <h:li>Cause the TOE to dump the entire memory footprint of the TOE into a binary file.</h:li> <h:li>Search the content of the binary file created in #6 for instances of the known key value from
-  					                  #1.</h:li></h:ol>  <h:br/><h:br/> The test succeeds if no copies of the key from #1 are found in step #7 above and fails otherwise. <h:br/><h:br/>  <h:br/><h:br/> The evaluator shall perform this test on all keys, including those persisted in encrypted form, to ensure intermediate copies are cleared.</test>
+                    <test>The evaluator shall use appropriate combinations of specialized OE and development tools (debuggers, simulators, etc.) for the TOE and instrumented TOE builds to test that keys are cleared correctly, including all intermediate copies of the key that may have been created internally by the TOE during normal cryptographic processing with that key. <h:br/>Cryptographic TOE implementations in software shall be loaded and exercised under a debugger to perform such tests. The evaluator shall perform the following test for each key subject to clearing, including intermediate copies of keys that are persisted encrypted by the TOE: <h:br/><h:ol type="1"><h:li>Load the instrumented TOE build in a debugger.</h:li> <h:li>Record the value of the key in the TOE subject to clearing.</h:li> <h:li>Cause the TOE to perform a normal cryptographic processing with the key from #1.</h:li> <h:li>Cause the TOE to clear the key.</h:li> <h:li>Cause the TOE to stop the execution but not exit.</h:li> <h:li>Cause the TOE to dump the entire memory footprint of the TOE into a binary file.</h:li> <h:li>Search the content of the binary file created in #6 for instances of the known key value from
+  					                  #1.</h:li></h:ol>  <h:br/>The test succeeds if no copies of the key from #1 are found in step #7 above and fails otherwise. <h:br/>The evaluator shall perform this test on all keys, including those persisted in encrypted form, to ensure intermediate copies are cleared.</test>
                   </testlist>
                 </Tests>
               </aactivity>
@@ -4240,8 +4261,7 @@ expected to enforce.
             <title>
               The TSF shall generate nonces used in IKE exchanges in a manner such that the
 				probability that a specific nonce value will be repeated during the life a specific
-				IPsec SA is less than 1 in 2^
-              <assignable>(one or more) “bits of security” values associated with the negotiated DH group as listed in Table 2 of NIST SP 800-57, Recommendation for Key Management – Part 1: General</assignable>.
+				IPsec SA is less than 1 in 2^<assignable>(one or more) “bits of security” values associated with the negotiated DH group as listed in Table 2 of NIST SP 800-57, Recommendation for Key Management – Part 1: General</assignable>.
             </title>
             <aactivity level="element">
               <no-tests>EAs for this element are tested through EAs for FCS_IPSEC_EXT.1.9.</no-tests>
@@ -4278,7 +4298,7 @@ expected to enforce.
               appropriate FCS requirements reflecting the algorithms used (and key
               generation capabilities, if provided) are listed to support those methods. Note
               that the TSS will elaborate on the way in which these algorithms are to be used. X.509 certificates will be validated against FIA_X509_EXT.1 from
-              <xref to="pkg-x509"/>, which is referenced in each supported Base-PP.
+              <xref to="X509"/>, which is referenced in each supported Base-PP.
               <h:br/>
               <h:br/>
               If a selection with “EAP-TLS” or “EAP-TTLS” is chosen, the selection-based requirement FCS_EAP_EXT.1 must be claimed. 
@@ -4335,7 +4355,7 @@ expected to enforce.
                 For efficiency’s sake, the testing that is performed here has been combined with the testing for
                 <no-link>FIA_X509_EXT.2</no-link>
                 in
-                <xref to="pkg-x509"/>
+                <xref to="X509"/>
                 and
                 <no-link>FIA_X509_EXT.4</no-link>
                 (for IPsec connections and depending on the Base-PP),
