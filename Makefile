@@ -1,3 +1,4 @@
+DIFF_TAGS=master
 TRANS?=transforms
 # Optionally include some User preferences.
 -include User.make
