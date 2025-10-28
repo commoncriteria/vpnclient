@@ -32,7 +32,6 @@
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""
 * Error: f-element .1  appears not to have an associated evaluation activity.:
         /Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[2]""/replace[1]""/xpath-specified[1]""/f-element[1]""
-* Warning: This document still has at least one comment.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_3'.
@@ -165,6 +164,14 @@
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_3'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_5'.
+* Error: Detected dangling ref-id to 'dummy-ref-id'.
+	  /Module[1]""/sec:Introduction[1]""/section[1]"This sect"/package-usage-list[1]""/package-usage[1]""/usage[1]""/config[1]""/ref-id[1]"dummy-ref"
+* Error: Detected dangling ref-id to 'dummy-ref-id'.
+	  /Module[1]""/sec:Introduction[1]""/section[1]"This sect"/package-usage-list[1]""/package-usage[1]""/usage[2]""/config[1]""/ref-id[1]"dummy-ref"
+* Error: Detected dangling ref-id to 'dummy-ref-id'.
+	  /Module[1]""/sec:Introduction[1]""/section[1]"This sect"/package-usage-list[1]""/package-usage[2]""/usage[1]""/config[1]""/ref-id[1]"dummy-ref"
+* Error: Detected dangling ref-id to 'dummy-ref-id'.
+	  /Module[1]""/sec:Introduction[1]""/section[1]"This sect"/package-usage-list[1]""/package-usage[2]""/usage[2]""/config[1]""/ref-id[1]"dummy-ref"
 * Error: Detected dangling ref-id to 's-killkey-user '.
 	  /Module[1]""/sec:Security_Requirements[1]""/base-pp[2]""/modified-sfrs[1]""/section[3]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/title[1]"The TSF s"/management-function-set[1]""/management-function[35]""/app-note[1]"Function"/rule[1]""/if[1]""/ref-id[1]"s-killkey"
 * Error: Detected dangling ref-id to 'mf-keyWipeRules '.
