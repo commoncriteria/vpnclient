@@ -325,8 +325,40 @@ requirements defined by the PP-Module, expressed as Evaluation Activities (EAs).
       This section contains selections and assignments that are required when the listed Functional Packages are claimed by this PP-Module.
       <h:br/>
       Package Usage guidance defined in the TOE's relevant Base-PP applies to the usage of the packages for this module, unless explicitly stated otherwise in this section.
+      <package-usage-list>
+        <package-usage ref="X509">
+          <usage id="usage-x509-roles" title="Certificate Verification and Assertion Required in FIA_XCU_EXT.1.1">
+            <description>Because this PP-Module mandates support for mutual authentication for TLS, the ST author shall select the options to verify and assert certificate identities in FIA_XCU_EXT.1.1.</description>
+            <config>
+              <ref-id>dummy-ref-id</ref-id>
+            </config>
+          </usage>
+          <usage id="usage-x509-usage" title="Required Selections for FIA_X509_EXT.2.1">
+            <description>The ST author shall ensure that the assignment and selections in FIA_X509_EXT.2.1 reflect the usage of X.509 certificates for IPsec exchanges. If the TOE supports EAP-TLS and claims FCS_EAP_EXT.1, the 
+            ST author shall ensure that the assignment and selections within FIA_X509_EXT.2.1 reflect the usage of X.509 for EAP-TLS. Other selections and assignments may be made as appropriate for other TOE functionality.</description>
+            <config>
+              <ref-id>dummy-ref-id</ref-id>
+            </config>
+          </usage>
+        </package-usage>
+        <package-usage ref="tls">
+          <usage id="usage-tls-clientreq" title="TLS or DTLS Client Functionality Required in FCS_TLS_EXT.1.1 for EAP-TLS">
+            <description>This usage requirement applies only if the TOE supports EAP-TLS. The ST author shall select the option to support client functionality for TLS or DTLS in FCS_TLS_EXT.1.1. The selection shall correspond with other protocol selections made in FCS_EAP_EXT.1.</description>
+            <config>
+              <ref-id>dummy-ref-id</ref-id>
+            </config>
+          </usage>
+          <usage id="usage-tls-mutualauth" title="Mutual Authentication Required in FCS_TLSC_EXT.1.1 or FCS_DTLSC_EXT.1.1 for EAP-TLS">
+            <description>This usage requirement applies only if the TOE supports EAP-TLS. The ST author shall select the option to support mutual authentication for TLS or DTLS, according with the protocol support selected in FCS_TLS_EXT.1.1.</description>
+            <config>
+              <ref-id>dummy-ref-id</ref-id>
+            </config>
+          </usage>
+        </package-usage>
+      </package-usage-list>
     </section>
     <section title="Requirements Focus" id="rfocus">
+      <!--   Section added for schema validation   -->
       Regardless of the specific usage of the TOE, the focus of the Security Functional Requirements (SFRs) in this PP-Module
       is on the following fundamental aspects of a VPN client.
       <h:ul>
@@ -2917,8 +2949,8 @@ expected to enforce.
                 <Tests>
                   For each key clearing situation described in the TSS, the evaluator shall repeat the following test.
                   <testlist>
-                    <test>The evaluator shall use appropriate combinations of specialized OE and development tools (debuggers, simulators, etc.) for the TOE and instrumented TOE builds to test that keys are cleared correctly, including all intermediate copies of the key that may have been created internally by the TOE during normal cryptographic processing with that key. <h:br/>Cryptographic TOE implementations in software shall be loaded and exercised under a debugger to perform such tests. The evaluator shall perform the following test for each key subject to clearing, including intermediate copies of keys that are persisted encrypted by the TOE: <h:br/><h:ol type="1"><h:li>Load the instrumented TOE build in a debugger.</h:li> <h:li>Record the value of the key in the TOE subject to clearing.</h:li> <h:li>Cause the TOE to perform a normal cryptographic processing with the key from #1.</h:li> <h:li>Cause the TOE to clear the key.</h:li> <h:li>Cause the TOE to stop the execution but not exit.</h:li> <h:li>Cause the TOE to dump the entire memory footprint of the TOE into a binary file.</h:li> <h:li>Search the content of the binary file created in #6 for instances of the known key value from
-  					                  #1.</h:li></h:ol>  <h:br/>The test succeeds if no copies of the key from #1 are found in step #7 above and fails otherwise. <h:br/>The evaluator shall perform this test on all keys, including those persisted in encrypted form, to ensure intermediate copies are cleared.</test>
+                    <test>The evaluator shall use appropriate combinations of specialized OE and development tools (debuggers, simulators, etc.) for the TOE and instrumented TOE builds to test that keys are cleared correctly, including all intermediate copies of the key that may have been created internally by the TOE during normal cryptographic processing with that key. <h:br/>  <h:br/> Cryptographic TOE implementations in software shall be loaded and exercised under a debugger to perform such tests. The evaluator shall perform the following test for each key subject to clearing, including intermediate copies of keys that are persisted encrypted by the TOE: <h:br/>  <h:br/>  <h:ol type="1"><h:li>Load the instrumented TOE build in a debugger.</h:li> <h:li>Record the value of the key in the TOE subject to clearing.</h:li> <h:li>Cause the TOE to perform a normal cryptographic processing with the key from #1.</h:li> <h:li>Cause the TOE to clear the key.</h:li> <h:li>Cause the TOE to stop the execution but not exit.</h:li> <h:li>Cause the TOE to dump the entire memory footprint of the TOE into a binary file.</h:li> <h:li>Search the content of the binary file created in #6 for instances of the known key value from
+  					                  #1.</h:li></h:ol>  <h:br/> The test succeeds if no copies of the key from #1 are found in step #7 above and fails otherwise. <h:br/>  <h:br/> The evaluator shall perform this test on all keys, including those persisted in encrypted form, to ensure intermediate copies are cleared.</test>
                   </testlist>
                 </Tests>
               </aactivity>
