@@ -96,6 +96,17 @@ jobs:
     #- name: little diff
     #  run: make little-diff || true
 
+    # Create a diff against master branch (rename gh-pages:main if necessary)
+    - name: Diff master
+      id: master_diff
+      run: |
+        git fetch origin gh-pages
+        git show origin/gh-pages:master/${{ env.action_projname }}-release-linkable.html > /tmp/master-release-linkable.html 2>/dev/null || true
+        if [ -f /tmp/master-release-linkable.html ]; then
+          java -jar ExecuteDaisy-master/*.jar /tmp/master-release-linkable.html output/${{ env.action_projname }}-release-linkable.html --file=output/Master-Diff.html
+        fi
+
+
     - name: Outstanding TDs
       id: tds
       run: |
