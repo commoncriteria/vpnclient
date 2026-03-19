@@ -149,6 +149,8 @@
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_5'.
 * Error: Detected multiple elements with an id of 'fel-asym-key-gen'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.6.1_2'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.6.1_2'.
 * Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_1'.
 * Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
@@ -164,6 +166,14 @@
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_3'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_5'.
+* Error: Detected multiple elements with an id of 'FTP_ITC.1/INTER_XFER_IT_1'.
+* Error: Detected multiple elements with an id of 'FTP_ITC.1/INTER_XFER_IT_1'.
+* Error: Detected multiple elements with an id of 'fcs_ipsec_ext.1.12_1'.
+* Error: Detected multiple elements with an id of 'fcs_ipsec_ext.1.12_1'.
+* Error: Detected multiple elements with an id of 'fmt_smf.1.1_VPN_1'.
+* Error: Detected multiple elements with an id of 'fmt_smf.1.1_VPN_1'.
+* Error: Detected multiple elements with an id of 'fia_psk_ext.3.4_1'.
+* Error: Detected multiple elements with an id of 'fia_psk_ext.3.4_1'.
 * Error: Detected dangling ref-id to 'dummy-ref-id'.
 	  /Module[1]""/sec:Introduction[1]""/section[1]"This sect"/package-usage-list[1]""/package-usage[1]""/usage[1]""/config[1]""/ref-id[1]"dummy-ref"
 * Error: Detected dangling ref-id to 'dummy-ref-id'.
@@ -279,6 +289,9 @@
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/modified-sfrs[1]""/section[2]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]""/h:p[1]"Encryptio"/h:p[11]""
 * Rules without a 'Validation Guidelines' appendix has been detected.
 * Warning: fau_gen.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]""/f-component[1]""
+ Failed to find a reference to bibAppPP.
+ Failed to find a reference to bibAppPP.
+ Failed to find a reference to bibAppPP.
 * Warning: Since FCS_CKM_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
 * Warning: Since FCS_IPSEC_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
