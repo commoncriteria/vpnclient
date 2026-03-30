@@ -295,12 +295,12 @@
       agencies, Common Criteria Test Laboratories, and members of academia.
       </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#aa-bpp-gpos" style="text-indent:10px">2.1<span>Protection Profile for General Purpose Operating System</span></a><a href="#qq-sfrs-bpp-gpos-Modified" style="text-indent:20px">2.1.1<span>Modified SFRs
         </span></a><a href="#qq-sfrs-bpp-gpos-Additional" style="text-indent:20px">2.1.2<span>Additional SFRs
-        </span></a><a href="#os-a-fcs" style="text-indent:30px">2.1.2.1<span>Cryptographic Support (FCS)</span></a><a href="#os-a-fia" style="text-indent:30px">2.1.2.2<span>Identification and Authentication (FIA)</span></a><a href="#os-a-ftp" style="text-indent:30px">2.1.2.3<span>Trusted Path/Channels (FTP)</span></a><a href="#aa-bpp-mdf" style="text-indent:10px">2.2<span>Protection Profile for Mobile Device Fundamentals</span></a><a href="#qq-sfrs-bpp-mdf-Modified" style="text-indent:20px">2.2.1<span>Modified SFRs
+        </span></a><a href="#os-a-fcs" style="text-indent:30px">2.1.2.1<span>Class FCS: Cryptographic Support</span></a><a href="#os-a-fia" style="text-indent:30px">2.1.2.2<span>Class FIA: Identification and Authentication</span></a><a href="#os-a-ftp" style="text-indent:30px">2.1.2.3<span>Class FTP: Trusted Path/Channels</span></a><a href="#aa-bpp-mdf" style="text-indent:10px">2.2<span>Protection Profile for Mobile Device Fundamentals</span></a><a href="#qq-sfrs-bpp-mdf-Modified" style="text-indent:20px">2.2.1<span>Modified SFRs
         </span></a><a href="#qq-sfrs-bpp-mdf-Additional" style="text-indent:20px">2.2.2<span>Additional SFRs
-        </span></a><a href="#ib-fdp" style="text-indent:30px">2.2.2.1<span>User Data Protection (FDP)</span></a><a href="#aa-bpp-app" style="text-indent:10px">2.3<span>Protection Profile for Application Software</span></a><a href="#qq-sfrs-bpp-app-Modified" style="text-indent:20px">2.3.1<span>Modified SFRs
+        </span></a><a href="#ib-fdp" style="text-indent:30px">2.2.2.1<span>Class FDP: User Data Protection</span></a><a href="#aa-bpp-app" style="text-indent:10px">2.3<span>Protection Profile for Application Software</span></a><a href="#qq-sfrs-bpp-app-Modified" style="text-indent:20px">2.3.1<span>Modified SFRs
         </span></a><a href="#qq-sfrs-bpp-app-Additional" style="text-indent:20px">2.3.2<span>Additional SFRs
-        </span></a><a href="#ap-a-fcs" style="text-indent:30px">2.3.2.1<span>Cryptographic Support (FCS)</span></a><a href="#aa-bpp-mdm" style="text-indent:10px">2.4<span>Protection Profile for Mobile Device Management</span></a><a href="#qq-sfrs-bpp-mdm-Modified" style="text-indent:20px">2.4.1<span>Modified SFRs
-        </span></a><a href="#man-sfrs" style="text-indent:10px">2.5<span>TOE SFR Evaluation Activities</span></a><a href="#fcs-mandatory" style="text-indent:20px">2.5.1<span>Cryptographic Support (FCS)</span></a><a href="#fdp-mandatory" style="text-indent:20px">2.5.2<span>User Data Protection (FDP)</span></a><a href="#fmt-mandatory" style="text-indent:20px">2.5.3<span>Security Management (FMT)</span></a><a href="#fpt-mandatory" style="text-indent:20px">2.5.4<span>Protection of the TSF (FPT)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.6<span>Evaluation Activities for Optional SFRs</span></a><a href="#fia-optional" style="text-indent:20px">2.6.1<span>Identification and Authentication (FIA)</span></a><a href="#fpf-optional" style="text-indent:20px">2.6.2<span>Packet Filtering (FPF)</span></a><a href="#sel-sfrs" style="text-indent:10px">2.7<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#fcs-selectionBased" style="text-indent:20px">2.7.1<span>Cryptographic Support (FCS)</span></a><a href="#fia-selectionBased" style="text-indent:20px">2.7.2<span>Identification and Authentication (FIA)</span></a><a href="#obj-sfrs" style="text-indent:10px">2.8<span>Evaluation Activities for Objective SFRs</span></a><a href="#fau-objective" style="text-indent:20px">2.8.1<span>Security Audit (FAU)</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.9<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#fau-implementationDependent" style="text-indent:20px">2.9.1<span>Security Audit (FAU)</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
+        </span></a><a href="#ap-a-fcs" style="text-indent:30px">2.3.2.1<span>Class FCS: Cryptographic Support</span></a><a href="#aa-bpp-mdm" style="text-indent:10px">2.4<span>Protection Profile for Mobile Device Management</span></a><a href="#qq-sfrs-bpp-mdm-Modified" style="text-indent:20px">2.4.1<span>Modified SFRs
+        </span></a><a href="#man-sfrs" style="text-indent:10px">2.5<span>TOE SFR Evaluation Activities</span></a><a href="#fcs-mandatory" style="text-indent:20px">2.5.1<span>Class FCS: Cryptographic Support</span></a><a href="#fdp-mandatory" style="text-indent:20px">2.5.2<span>Class FDP: User Data Protection</span></a><a href="#fmt-mandatory" style="text-indent:20px">2.5.3<span>Class FMT: Security Management</span></a><a href="#fpt-mandatory" style="text-indent:20px">2.5.4<span>Class FPT: Protection of the TSF</span></a><a href="#opt-sfrs" style="text-indent:10px">2.6<span>Evaluation Activities for Optional SFRs</span></a><a href="#fia-optional" style="text-indent:20px">2.6.1<span>Class FIA: Identification and Authentication</span></a><a href="#fpf-optional" style="text-indent:20px">2.6.2<span>Class FPF: Packet Filtering</span></a><a href="#sel-sfrs" style="text-indent:10px">2.7<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#fcs-selectionBased" style="text-indent:20px">2.7.1<span>Class FCS: Cryptographic Support</span></a><a href="#fia-selectionBased" style="text-indent:20px">2.7.2<span>Class FIA: Identification and Authentication</span></a><a href="#obj-sfrs" style="text-indent:10px">2.8<span>Evaluation Activities for Objective SFRs</span></a><a href="#fau-objective" style="text-indent:20px">2.8.1<span>Class FAU: Security Audit</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.9<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#fau-implementationDependent" style="text-indent:20px">2.9.1<span>Class FAU: Security Audit</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
     PP-Module for VPN Client is
     to describe the security functionality of 
     VPN client
@@ -431,7 +431,7 @@ The following sections list Common Criteria and technology terms used in this do
 	<h3 class="indexable" data-level="2" id="qq-sfrs-bpp-gpos-Additional">2.1.2 Additional SFRs
         </h3>
         
-        <h3 class="indexable" data-level="3" id="os-a-fcs">2.1.2.1 Cryptographic Support (FCS)</h3><div class="comp" id="OS-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.2.1</div>
+        <h3 class="indexable" data-level="3" id="os-a-fcs">2.1.2.1 Class FCS: Cryptographic Support</h3><div class="comp" id="OS-FCS-CKM-EXT-2"><h4>FCS_CKM_EXT.2 Cryptographic Key Storage</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM_EXT.2.1</div>
                 <div class="eacategory">TSS</div><div class="ea">
                   Regardless of whether this requirement is met by the VPN client or the OS, the evaluator shall check the
 			TSS to ensure that it lists each persistent secret (credential, secret key) and private key needed to meet
@@ -448,7 +448,7 @@ The following sections list Common Criteria and technology terms used in this do
                 <div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div>
                 <div class="eacategory">Tests</div><div class="ea">There are no test EAs for this component.</div>
               </span></div>
-        <h3 class="indexable" data-level="3" id="os-a-fia">2.1.2.2 Identification and Authentication (FIA)</h3><div class="comp" id="OS-FIA-X509-EXT-4"><h4>FIA_X509_EXT.4 X.509 Certificate Use and Management</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_X509_EXT.4.1</div>
+        <h3 class="indexable" data-level="3" id="os-a-fia">2.1.2.2 Class FIA: Identification and Authentication</h3><div class="comp" id="OS-FIA-X509-EXT-4"><h4>FIA_X509_EXT.4 X.509 Certificate Use and Management</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_X509_EXT.4.1</div>
                 
                   <span class="no-link">FIA_X509_EXT.4.1</span>
                   is evaluated as part of
@@ -490,7 +490,7 @@ The following sections list Common Criteria and technology terms used in this do
               <div class="element-activity-header">FIA_X509_EXT.4.3</div>
                 FIA_X509_EXT.4.3 is evaluated as part of FCS_IPSEC_EXT.1.11.<br/><br/>
               </span></div>
-        <h3 class="indexable" data-level="3" id="os-a-ftp">2.1.2.3 Trusted Path/Channels (FTP)</h3><div class="comp" id="OS-FTP-ITC-1"><h4>FTP_ITC.1 Inter-TSF Trusted Channel</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC.1</div>
+        <h3 class="indexable" data-level="3" id="os-a-ftp">2.1.2.3 Class FTP: Trusted Path/Channels</h3><div class="comp" id="OS-FTP-ITC-1"><h4>FTP_ITC.1 Inter-TSF Trusted Channel</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC.1</div>
                 
                 
                 
@@ -532,7 +532,7 @@ The following sections list Common Criteria and technology terms used in this do
 	<h3 class="indexable" data-level="2" id="qq-sfrs-bpp-mdf-Additional">2.2.2 Additional SFRs
         </h3>
         
-        <h3 class="indexable" data-level="3" id="ib-fdp">2.2.2.1 User Data Protection (FDP)</h3><div class="comp" id="FDP-VPN-EXT-1"><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4><span class="activity_pane_body"><div class="element-activity-header">FDP_VPN_EXT.1.1</div>
+        <h3 class="indexable" data-level="3" id="ib-fdp">2.2.2.1 Class FDP: User Data Protection</h3><div class="comp" id="FDP-VPN-EXT-1"><h4>FDP_VPN_EXT.1 Split Tunnel Prevention</h4><span class="activity_pane_body"><div class="element-activity-header">FDP_VPN_EXT.1.1</div>
                 <div class="eacategory">TSS</div><div class="ea">
                   The evaluator shall verify that the TSS section of the ST describes the routing of IP traffic through processes
                   on the TSF when a VPN client is enabled. The evaluator shall ensure that the description indicates which
@@ -567,7 +567,7 @@ The following sections list Common Criteria and technology terms used in this do
 	<h3 class="indexable" data-level="2" id="qq-sfrs-bpp-app-Additional">2.3.2 Additional SFRs
         </h3>
         
-        <h3 class="indexable" data-level="3" id="ap-a-fcs">2.3.2.1 Cryptographic Support (FCS)</h3><div class="comp" id="AP-FCS-CKM-6"><h4>FCS_CKM.6 Cryptographic Key Destruction</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.6</div>
+        <h3 class="indexable" data-level="3" id="ap-a-fcs">2.3.2.1 Class FCS: Cryptographic Support</h3><div class="comp" id="AP-FCS-CKM-6"><h4>FCS_CKM.6 Cryptographic Key Destruction</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.6</div>
                 
                 
                 
@@ -646,7 +646,7 @@ The following sections list Common Criteria and technology terms used in this do
         </h3>
 	  The PP-Module does not modify any requirements when the 
 	  MDM PP is the base.
-	<h2 class="indexable" data-level="1" id="man-sfrs">2.5 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="fcs-mandatory">2.5.1 Cryptographic Support (FCS)</h2><div class="comp" id="FCS-CKM-1-VPN"><h4>FCS_CKM.1/VPN VPN Cryptographic Key Generation (IKE)</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.1.1/VPN</div>
+	<h2 class="indexable" data-level="1" id="man-sfrs">2.5 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="fcs-mandatory">2.5.1 Class FCS: Cryptographic Support</h2><div class="comp" id="FCS-CKM-1-VPN"><h4>FCS_CKM.1/VPN VPN Cryptographic Key Generation (IKE)</h4><span class="activity_pane_body"><div class="element-activity-header">FCS_CKM.1.1/VPN</div>
               <div class="eacategory">TSS</div><div class="ea">
                 The evaluator shall examine the TSS to verify that it describes how the key generation functionality is
 					invoked.
@@ -1040,7 +1040,7 @@ The following sections list Common Criteria and technology terms used in this do
       The evaluator shall attempt to establish an IKEv2 Child SA for ESP (assumes the proper parameters where used to establish the IKE SA) that selects an encryption algorithm that is not identified in FCS_IPSEC_EXT.1.4. Such an attempt should fail.</li>
                 </ul></span>
               </div>
-            </span></div><h2 class="indexable" data-level="2" id="fdp-mandatory">2.5.2 User Data Protection (FDP)</h2><div class="comp" id="FDP-RIP-2"><h4>FDP_RIP.2 Full Residual Information Protection</h4><span class="activity_pane_body"><div class="element-activity-header">FDP_RIP.2.1</div>
+            </span></div><h2 class="indexable" data-level="2" id="fdp-mandatory">2.5.2 Class FDP: User Data Protection</h2><div class="comp" id="FDP-RIP-2"><h4>FDP_RIP.2 Full Residual Information Protection</h4><span class="activity_pane_body"><div class="element-activity-header">FDP_RIP.2.1</div>
               <div class="eacategory">TSS</div><div class="ea">
                 <b>Requirement met by the platform</b>
                 <br/>
@@ -1065,7 +1065,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div>
               <div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this requirement.<br/><br/></div>
               <div class="eacategory">Tests</div><div class="ea">There are no test EAs for this requirement. <br/> <br/></div>
-            </span></div><h2 class="indexable" data-level="2" id="fmt-mandatory">2.5.3 Security Management (FMT)</h2><div class="comp" id="FMT-SMF-1-VPN"><h4>FMT_SMF.1/VPN Specification of Management Functions (VPN)</h4><span class="activity_pane_body"><div class="element-activity-header">FMT_SMF.1.1/VPN</div>
+            </span></div><h2 class="indexable" data-level="2" id="fmt-mandatory">2.5.3 Class FMT: Security Management</h2><div class="comp" id="FMT-SMF-1-VPN"><h4>FMT_SMF.1/VPN Specification of Management Functions (VPN)</h4><span class="activity_pane_body"><div class="element-activity-header">FMT_SMF.1.1/VPN</div>
               <div class="eacategory">TSS</div><div class="ea">
                 The evaluator shall check to ensure the TSS describes the client credentials and how they are used by the
 		TOE.
@@ -1080,7 +1080,7 @@ The following sections list Common Criteria and technology terms used in this do
                 <br/>
               </div>
               <div class="eacategory">Tests</div><div class="ea">The evaluator shall test the TOE’s ability to provide the management functions by configuring the TOE according to the operational guidance and testing of each management activity listed in the ST. <br/> <br/>The evaluator shall ensure that all management functions claimed in the ST can be performed by completing activities described in the AGD. Note that this may be performed in the course of completing other testing.</div>
-            </span></div><h2 class="indexable" data-level="2" id="fpt-mandatory">2.5.4 Protection of the TSF (FPT)</h2><div class="comp" id="FPT-TST-EXT-1-VPN"><h4>FPT_TST_EXT.1/VPN TSF Self-Test</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_TST_EXT.1/VPN</div>
+            </span></div><h2 class="indexable" data-level="2" id="fpt-mandatory">2.5.4 Class FPT: Protection of the TSF</h2><div class="comp" id="FPT-TST-EXT-1-VPN"><h4>FPT_TST_EXT.1/VPN TSF Self-Test</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_TST_EXT.1/VPN</div>
               Except for where it is explicitly noted, the evaluator is expected to check the following information
 		regardless of whether the functionality is implemented by the TOE or by the TOE platform.
               <br/>
@@ -1123,7 +1123,7 @@ The following sections list Common Criteria and technology terms used in this do
                   <li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FPT_TST_EXT.1/VPN:2</a>:
       The evaluator shall modify the TSF executable, performs the integrity check on the modified TSF executable, and verifies that the check fails.</li>
                 </ul></span>
-              </div></div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.6 Evaluation Activities for Optional SFRs</h2><h2 class="indexable" data-level="2" id="fia-optional">2.6.1 Identification and Authentication (FIA)</h2><div class="comp" id="FIA-BMA-EXT-1"><h4>FIA_BMA_EXT.1 Biometric Activation</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_BMA_EXT.1.1</div>
+              </div></div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.6 Evaluation Activities for Optional SFRs</h2><h2 class="indexable" data-level="2" id="fia-optional">2.6.1 Class FIA: Identification and Authentication</h2><div class="comp" id="FIA-BMA-EXT-1"><h4>FIA_BMA_EXT.1 Biometric Activation</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_BMA_EXT.1.1</div>
               <div class="eacategory">TSS</div><div class="ea">The evaluator shall confirm that the TSS describes the calls to the platform and verifies they align with platform documentation.<br/><br/></div>
               <div class="eacategory">Guidance</div><div class="ea">
                 The evaluator shall ensure that any configuration details needed to enable the biometric prompt are included in the
@@ -1137,7 +1137,7 @@ The following sections list Common Criteria and technology terms used in this do
       The evaluator shall initiate a connection and verify that a biometric prompt is presented and accepted before the connection can proceed. The evaluator shall also verify the connection does not proceed if the biometric is not presented or accepted.</li>
                 </ul></span>
               </div>
-            </span></div><h2 class="indexable" data-level="2" id="fpf-optional">2.6.2 Packet Filtering (FPF)</h2><div class="comp" id="FPF-MFA-EXT-1"><h4>FPF_MFA_EXT.1 Multifactor Authentication Filtering</h4><span class="activity_pane_body"><div class="element-activity-header">FPF_MFA_EXT.1.1</div>
+            </span></div><h2 class="indexable" data-level="2" id="fpf-optional">2.6.2 Class FPF: Packet Filtering</h2><div class="comp" id="FPF-MFA-EXT-1"><h4>FPF_MFA_EXT.1 Multifactor Authentication Filtering</h4><span class="activity_pane_body"><div class="element-activity-header">FPF_MFA_EXT.1.1</div>
               <div class="eacategory">TSS</div><div class="ea">
                 The evaluator shall examine the TSS to verify that it describes how authentication packets are identified and how all
 		    other traffic is blocked until secondary authentication is successful.
@@ -1156,7 +1156,7 @@ The following sections list Common Criteria and technology terms used in this do
       The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules. The evaluator shall then provide the supported PSKs and confirm it is accepted and traffic is no longer blocked.</li>
                 </ul></span>
               </div>
-            </span></div><h2 class="indexable" data-level="1" id="sel-sfrs">2.7 Evaluation Activities for Selection-Based SFRs</h2><h2 class="indexable" data-level="2" id="fcs-selectionBased">2.7.1 Cryptographic Support (FCS)</h2><div class="comp" id="FCS-EAP-EXT-1"><h4>FCS_EAP_EXT.1 EAP-TLS</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_EAP_EXT.1</div>
+            </span></div><h2 class="indexable" data-level="1" id="sel-sfrs">2.7 Evaluation Activities for Selection-Based SFRs</h2><h2 class="indexable" data-level="2" id="fcs-selectionBased">2.7.1 Class FCS: Cryptographic Support</h2><div class="comp" id="FCS-EAP-EXT-1"><h4>FCS_EAP_EXT.1 EAP-TLS</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_EAP_EXT.1</div>
               
               
               
@@ -1185,7 +1185,7 @@ The following sections list Common Criteria and technology terms used in this do
                   <li class="test-"><a id="_t_43" class="defined" href="#_t_43">Test FCS_EAP_EXT.1:4</a>:
       The evaluator shall follow AGD guidance to configure the TSF to use a supported EAP method and register the user with the key material required for a supported authentication method. The evaluator shall configure a test client to respond to an IKEv2 exchange with EAP-request, providing valid phase 1 handshake and valid TLS handshake, but computing the phase 2 shared key using standard (non-EAP) methods. The evaluator shall initiate a VPN session between the test client and the TSF, and observe that the TSF aborts the session.</li>
                 </ul></span>
-              </div></div></span></div><h2 class="indexable" data-level="2" id="fia-selectionBased">2.7.2 Identification and Authentication (FIA)</h2><div class="comp" id="FIA-PSK-EXT-1"><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.1</div>
+              </div></div></span></div><h2 class="indexable" data-level="2" id="fia-selectionBased">2.7.2 Class FIA: Identification and Authentication</h2><div class="comp" id="FIA-PSK-EXT-1"><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.1</div>
               
               
               
@@ -1322,7 +1322,7 @@ The following sections list Common Criteria and technology terms used in this do
       The evaluator shall configure the TOE to use a supported TOTP factor, then attempt to establish a connection using that factor. The evaluator shall verify the client prompts the user for the TOTP before initiating the connection. The evaluator shall verify the server validates the TOTP or receives confirmation from an authentication server before establishing the channel.</li>
                 </ul></span>
               </div>
-            </span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.8 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="fau-objective">2.8.1 Security Audit (FAU)</h2><div class="comp" id="FAU-SEL-1-VPN"><h4>FAU_SEL.1/VPN Selective Audit</h4><span class="activity_pane_body"><div class="element-activity-header">FAU_SEL.1.1/VPN</div>
+            </span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.8 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="fau-objective">2.8.1 Class FAU: Security Audit</h2><div class="comp" id="FAU-SEL-1-VPN"><h4>FAU_SEL.1/VPN Selective Audit</h4><span class="activity_pane_body"><div class="element-activity-header">FAU_SEL.1.1/VPN</div>
               <div class="eacategory">TSS</div><div class="ea">There are no TSS EAs for this SFR.<br/><br/></div>
               <div class="eacategory">Guidance</div><div class="ea">
                 The evaluator shall review the administrative guidance to ensure that the guidance itemizes all event
@@ -1343,7 +1343,7 @@ The following sections list Common Criteria and technology terms used in this do
       [conditional] If the TSF supports specification of more complex audit pre-selection criteria (e.g., multiple attributes, logical expressions using attributes), then the evaluator shall devise tests showing that this capability is correctly implemented. The evaluator shall also, in the test plan, provide a short narrative justifying the set of tests as representative and sufficient to exercise the capability.</li>
                 </ul></span>
               </div>
-            </span></div><h2 class="indexable" data-level="1" id="impl-sfrs-">2.9 Evaluation Activities for Implementation-dependent SFRs</h2><h2 class="indexable" data-level="2" id="fau-implementationDependent">2.9.1 Security Audit (FAU)</h2><div class="comp" id="FAU-GEN-1-VPN"><h4>FAU_GEN.1/VPN Audit Data Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_GEN.1/VPN</div>
+            </span></div><h2 class="indexable" data-level="1" id="impl-sfrs-">2.9 Evaluation Activities for Implementation-dependent SFRs</h2><h2 class="indexable" data-level="2" id="fau-implementationDependent">2.9.1 Class FAU: Security Audit</h2><div class="comp" id="FAU-GEN-1-VPN"><h4>FAU_GEN.1/VPN Audit Data Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_GEN.1/VPN</div>
               
               
               
