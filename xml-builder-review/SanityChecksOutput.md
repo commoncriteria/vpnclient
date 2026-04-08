@@ -149,6 +149,8 @@
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_5'.
 * Error: Detected multiple elements with an id of 'fel-asym-key-gen'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.6.1_2'.
+* Error: Detected multiple elements with an id of 'fcs_ckm.6.1_2'.
 * Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_1'.
 * Error: Detected multiple elements with an id of 'fcs_ckm_ext.2.1_2'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.1_1'.
@@ -164,6 +166,14 @@
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_3'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_4'.
 * Error: Detected multiple elements with an id of 'FCS_CKM.2_5'.
+* Error: Detected multiple elements with an id of 'FTP_ITC.1/INTER_XFER_IT_1'.
+* Error: Detected multiple elements with an id of 'FTP_ITC.1/INTER_XFER_IT_1'.
+* Error: Detected multiple elements with an id of 'fcs_ipsec_ext.1.12_1'.
+* Error: Detected multiple elements with an id of 'fcs_ipsec_ext.1.12_1'.
+* Error: Detected multiple elements with an id of 'fmt_smf.1.1_VPN_1'.
+* Error: Detected multiple elements with an id of 'fmt_smf.1.1_VPN_1'.
+* Error: Detected multiple elements with an id of 'fia_psk_ext.3.4_1'.
+* Error: Detected multiple elements with an id of 'fia_psk_ext.3.4_1'.
 * Error: Detected dangling ref-id to 'dummy-ref-id'.
 	  /Module[1]""/sec:Introduction[1]""/section[1]"This sect"/package-usage-list[1]""/package-usage[1]""/usage[1]""/config[1]""/ref-id[1]"dummy-ref"
 * Error: Detected dangling ref-id to 'dummy-ref-id'.
@@ -252,7 +262,7 @@
 * Error: Detected dangling ref to 'dm-ftp-trp-1-1'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[4]""/con-mod[17]"When this"/ref[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[1]""/description[1]"This SFR "/h:p[1]""
+* Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[1]""/description[1]""/h:p[2]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[2]""/description[1]"This SFR "/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[3]""/description[1]"This SFR "/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/sec:Security_Requirements[1]""/base-pp[3]""/modified-sfrs[1]""/section[1]""/base-sfr-spec[1]""/replace[1]""/xpath-specified[1]""/f-element[1]""/note[1]""/h:p[1]"The ST sh"/h:p[1]""
