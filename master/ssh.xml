@@ -162,17 +162,6 @@
 <!-- 2.0 Conformance Claims	-->
 <!--			-->
 <sec:Conformance_Claims boilerplate="no">
-    <CClaimsInfo cc-version="cc-2022r1" cc-errata="v1.1" cc-approach="direct-rationale">
-      <cc-st-conf>exact</cc-st-conf> 
-      <cc-pt2-conf>extended</cc-pt2-conf>
-      <cc-pt3-conf>conformant</cc-pt3-conf>
-      <cc-pp-conf/>
-      <cc-pp-config-with/>       
-      <cc-pkg-claim/>
-    </CClaimsInfo>	
-
-
-<!--
 	<cclaims>
 		<cclaim name="Conformance Statement">
 			<description>An ST must claim exact conformance to this FP.
@@ -197,7 +186,6 @@
 			</description>
 		</cclaim>
 	</cclaims>
--->
 </sec:Conformance_Claims>
 
 <!-- 				-->
@@ -224,7 +212,7 @@
 	<!-- 			-->
 	<!-- 3.1.1 FCS: Cryptgraphic Support	-->
 	<!--			-->
-	<sec:cryptsup title="Class FCS: Cryptographic Support">
+	<sec:cryptsup title="Cryptographic Support (FCS)">
 	
 	<!-- 			-->
 	<!-- FCS_SSH_EXT.1	-->
@@ -458,8 +446,7 @@
 									<h:li>For each supported authentication method, the evaluator shall use an SSH client provided with bad authentication data (e.g., incorrectly generated certificate or incorrect password) and verify that the connection is rejected.</h:li>
 								</h:ol>
 							</test>
-							<test>[conditional] If the TOE is acting as an SSH client, the evaluator shall initiate an
-								SSH session using each supported authentication method and verify that the session is successfully established. Specifically, if password authentication is supported, then the evaluator shall use interactive, non-interactive, or both, depending on the claims made in FCS_SSH_EXT.1.2. If public key authentication is supported, then the evaluator shall use each supported algorithm claimed in FCS_SSH_EXT.1.2. 
+							<test>[conditional] If the TOE is acting as an SSH client, the evaluator shall initiate an SSH session using each supported authentication method and verify that the session is successfully established. Specifically, if password authentication is supported, then the evaluator shall use interactive, noninteractive, or both, depending on the claims made in FCS_SSH_EXT.1.2. If public key authentication is supported, then the evaluator shall use each supported algorithm claimed in FCS_SSH_EXT.1.2. 
 							</test>
 							<test>
 								[conditional] If the TOE is acting as an SSH client, the evaluator shall verify that the connection
@@ -487,7 +474,7 @@
 				</title>
 				<note role="application">
 					RFC 4253, Section 6.1 provides for the acceptance of “large packets” with the caveat that the packets should
-					be of “reasonable length” or dropped. The ST author should fill in the assignment with the maximum packet size accepted, thus defining "reasonable length for the TOE.<h:p/>
+					be of “reasonable length” or dropped. The ST author should fill in the assignment with the maximum packet size accepted, thus defining "reasonable length for the TOE.. <h:p/>
 					The upper bound on the packet size is driven by the size identified in FCS_SSH_EXT.1.8.
 				</note>
 				<aactivity level="element">
