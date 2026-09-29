@@ -171,15 +171,62 @@
         <cc-pt3-conf>extended</cc-pt3-conf>
         <cc-pp-conf/>
         <cc-pp-config-with> 
-          
-          
-          <PP-cc-ref>Protection Profile for General Purpose Operating Systems, Version 5.0</PP-cc-ref>
-          <PP-cc-ref>Protection Profile for Mobile Device Fundamentals, Version 4.0</PP-cc-ref>
-          <Mod-cc-ref>PP-Module for VPN Client, version 3.0</Mod-cc-ref>  
-          <Mod-cc-ref>PP-Module for Bluetooth, version 2.0</Mod-cc-ref>
-          <Mod-cc-ref>PP-Module for MDM Agent, version 2.0</Mod-cc-ref>
-          <Mod-cc-ref>PP-Module for WLAN Client, version 2.0</Mod-cc-ref>
-          <Mod-cc-ref>cPP-Module for Biometric Enrolment and Verification, version 2.0</Mod-cc-ref>  
+			<PP-cc-ref>
+				<!-- Protection Profile for General Purpose Operating Systems, Version 5.0 -->
+				<cc-doc-ref id="operatingsystem">
+					<git>
+						<url>https://github.com/commoncriteria/operatingsystem</url>
+						<branch>main</branch>
+					</git>
+					<url>https://www.niap-ccevs.org/protectionprofiles/469</url>
+				</cc-doc-ref>
+			</PP-cc-ref>
+			<PP-cc-ref>
+				<!-- Protection Profile for Mobile Device Fundamentals, Version 4.0 -->
+				<cc-doc-ref id="mobile-device">
+					<git>
+						<url>https://github.com/commoncriteria/mobile-device</url>
+						<branch>master</branch>
+					</git>
+					<url>https://www.niap-ccevs.org/protectionprofiles/468</url>
+				</cc-doc-ref>
+			</PP-cc-ref>
+			<Mod-cc-ref>
+				<!-- PP-Module for VPN Client, Version 3.0 -->
+				<cc-doc-ref id="vpnclient">
+					<git>
+						<url>https://github.com/commoncriteria/vpnclient</url>
+						<branch>release-3.0</branch>
+					</git>
+					<url>https://www.niap-ccevs.org/protectionprofiles/522</url>
+				</cc-doc-ref>		
+			</Mod-cc-ref>
+			<Mod-cc-ref>
+				<!-- PP-Module for Mobile Device Management Agent, version 2.0 -->
+				<cc-doc-ref id="mdm-agent">
+					<git>
+						<url>https://github.com/commoncriteria/mdm-agent</url>
+						<branch>master</branch>
+					</git>
+					<url>https://www.niap-ccevs.org/protectionprofiles/441</url>
+				</cc-doc-ref>
+			</Mod-cc-ref>
+			<Mod-cc-ref>
+				<!-- cPP-Module for Wireless LAN Clients, version 2.0 -->
+				<cc-doc-ref id="wlanclient">
+					<git>
+						<url>https://github.com/commoncriteria/wlanclient</url>
+						<branch>master</branch>
+					</git>
+					<url>https://www.niap-ccevs.org/protectionprofiles/463</url>
+				</cc-doc-ref>
+			</Mod-cc-ref>
+			<Mod-cc-ref>
+				<!-- cPP-Module for Biometric Enrolment and Verification, version 2.0 -->
+				<cc-doc-ref id="biometrics" name="cPP-Module for Biometric Enrolment and Verification" version="2.0" short="Biometric cPP" product="Biometric Device" plural="Biometric Devices" doctype="PP-Module">
+					<url>https://www.niap-ccevs.org/protectionprofiles/476</url>
+				</cc-doc-ref>	
+			</Mod-cc-ref>
         </cc-pp-config-with>
         <cc-pkg-claim/>
           </CClaimsInfo>	
@@ -318,12 +365,7 @@
     </h:ul>
 
 
-    <base-pp id="bpp-mdf" name="Mobile Device Fundamentals" product="Mobile Device" short="MDF" version="4.0">
-      <git>
-        <url>https://github.com/commoncriteria/mobile-device</url>
-        <branch>release-4.0</branch>
-      </git>
-      <url>https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html</url>
+    <base-pp ref="mobile-device">
  
       <modified-sfrs>
  
@@ -550,12 +592,7 @@
       <con-mod ref="fia-blt-ext-5">This SFR applies to the establishment of Bluetooth connectivity, which is behavior not described in or prevented by the base PP.</con-mod>
       
     </base-pp>
-    <base-pp id="bpp-gpos" name="General Purpose Operating System" product="Operating System" short="GPOS" version="5.0">
-      <git>
-        <url>https://github.com/commoncriteria/operatingsystem</url>
-        <branch>release-4.0</branch>
-      </git>
-      <url>https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html</url>
+    <base-pp ref="operatingsystem">
       <modified-sfrs>
         <section title="Class FMT: Security Management" id="gpos-mod-fmt">
           
